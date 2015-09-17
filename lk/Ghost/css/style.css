@@ -1,0 +1,324 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+}
+a {
+  transition: all 0.2s ease-in-out 0s;
+}
+.top {
+  background: red url(../images/top.jpg) no-repeat center 20%;
+  background-size: cover;
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+#leader_hide {
+  float: none;
+}
+#leader_hide span {
+  background: #505050;
+  height: 3px;
+}
+#leader_list li {
+  float: none;
+  display: inline-block;
+}
+#leader_list li a {
+  padding-left: 20px;
+  color: #525252;
+  font-size: 15px;
+  line-height: 25px;
+}
+#leader_list li a:hover {
+  background: white;
+  color: #E67E22;
+}
+#leader_list li .shouye {
+  border-bottom: 2px solid #E67E22;
+}
+@media (max-width: 768px) {
+  #leader_list li {
+    display: block;
+    text-align: left;
+  }
+}
+.content {
+  background: #EBEBEB;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  border-top: 2px solid #E1E1E1;
+  margin-top: -3px;
+}
+.content main article {
+  margin: 0px;
+  background: white;
+  padding: 10px 35px;
+  margin-bottom: 35px;
+}
+.content main article h1 {
+  width: 100%;
+  text-align: center;
+  font-weight: normal;
+}
+.content main article h1 a {
+  color: #303030;
+}
+.content main article h1 a:hover {
+  text-decoration: none;
+}
+.content main article .info {
+  width: 100%;
+  text-align: center;
+  color: #959595;
+}
+.content main article .info a {
+  color: #E67E22;
+}
+.content main article .arti {
+  width: 100%;
+}
+.content main article .arti p {
+  font-size: 14px;
+  color: #444443;
+  font-size: 18px;
+}
+.content main article .read {
+  width: 100%;
+  text-align: left;
+}
+.content main article .read a {
+  background: #E67E22;
+  color: white;
+  border: 1px solid #e67e22;
+}
+.content main article .read a:hover {
+  background: #303030;
+  border: 1px solid #303030;
+}
+.content main article footer {
+  height: 70px;
+  line-height: 70px;
+  border-top: 1px solid #EBEBEB;
+  margin-top: 30px;
+  color: #959595;
+}
+.content main article footer i {
+  font-size: 12px;
+}
+.content main article footer a {
+  color: #959595;
+}
+.content main article footer a:hover {
+  color: #E67E22;
+}
+@media (max-width: 970px) {
+  .content main {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+.content aside .shequ {
+  width: 100%;
+  background: white;
+  padding: 20px 30px;
+}
+.content aside .shequ h3 {
+  padding-bottom: 7px;
+  position: relative;
+  border-bottom: 1px solid #ebebeb;
+  margin-top: 0px;
+}
+.content aside .shequ h3:after {
+  content: "";
+  width: 90px;
+  height: 1px;
+  background: #e67e22;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+}
+.content aside .shequ p a {
+  color: #E67E22;
+}
+.content aside .download {
+  width: 100%;
+  background: white;
+  padding: 20px 30px;
+  margin-top: 35px;
+}
+.content aside .download h3 {
+  padding-bottom: 7px;
+  position: relative;
+  border-bottom: 1px solid #ebebeb;
+  margin-top: 0px;
+}
+.content aside .download h3:after {
+  content: "";
+  width: 90px;
+  height: 1px;
+  background: #e67e22;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+}
+.content aside .download .btn {
+  width: 100%;
+  background: #E67E22;
+  border: 1px solid #E67E22;
+  color: white;
+  transition: all 0.2s ease-in-out 0s;
+}
+.content aside .download .btn:hover {
+  background: #303030;
+  border: 1px solid #303030;
+}
+.content aside .tags {
+  width: 100%;
+  background: white;
+  padding: 20px 30px;
+  margin-top: 35px;
+}
+.content aside .tags h3 {
+  padding-bottom: 7px;
+  position: relative;
+  border-bottom: 1px solid #ebebeb;
+  margin-top: 0px;
+}
+.content aside .tags h3:after {
+  content: "";
+  width: 90px;
+  height: 1px;
+  background: #e67e22;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+}
+.content aside .tags p {
+  width: 100%;
+  overflow: hidden;
+}
+.content aside .tags p a {
+  display: block;
+  float: left;
+  margin: 5px 5px 0px 0px;
+  padding: 5px 10px;
+  color: #959595;
+  border: 1px solid #EBEBEB;
+  font-size: 14px;
+}
+.content aside .tags p a:hover {
+  color: white;
+  background: #E67E22;
+  text-decoration: none;
+  border: 1px solid #E67E22;
+}
+.footer {
+  background: #1F1F1F;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+.footer .foot_new,
+.footer .foot_par,
+.footer .foot_tag {
+  padding-left: 45px;
+  padding-right: 45px;
+  margin-bottom: 30px;
+}
+.footer .foot_new h3,
+.footer .foot_par h3,
+.footer .foot_tag h3 {
+  padding-bottom: 7px;
+  position: relative;
+  border-bottom: 1px solid #303030;
+  margin-top: 0px;
+  margin-bottom: 15px;
+  color: white;
+}
+.footer .foot_new h3:after,
+.footer .foot_par h3:after,
+.footer .foot_tag h3:after {
+  content: "";
+  width: 90px;
+  height: 1px;
+  background: #e67e22;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+}
+.footer .foot_new p {
+  padding-top: 5px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #303030;
+}
+.footer .foot_new p a {
+  display: block;
+  color: #959595;
+  line-height: 25px;
+}
+.footer .foot_new p a:hover {
+  color: #E67E22;
+  text-decoration: none;
+}
+.footer .foot_new p span {
+  line-height: 25px;
+  display: block;
+  color: #505050;
+}
+.footer .foot_tag p {
+  width: 100%;
+  overflow: hidden;
+}
+.footer .foot_tag p a {
+  display: block;
+  float: left;
+  margin: 5px 5px 0px 0px;
+  padding: 5px 10px;
+  color: #959595;
+  border: 1px solid #303030;
+  font-size: 14px;
+}
+.footer .foot_tag p a:hover {
+  color: white;
+  background: #E67E22;
+  border: 1px solid #E67E22;
+  text-decoration: none;
+}
+.footer .foot_par p {
+  padding-top: 5px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #303030;
+}
+.footer .foot_par p a {
+  color: #959595;
+  padding: 5px;
+  line-height: 30px;
+  margin-right: 10px;
+  white-space: nowrap;
+}
+.footer .foot_par p a:hover {
+  background: #E67E22;
+  color: white;
+  text-decoration: none;
+}
+.footer .foot_par p.par_last {
+  border: none;
+}
+.copyright {
+  background: #101010;
+  color: #555555;
+  border-top: 1px solid #303030;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+.copyright a {
+  color: #555555;
+}
+.red {
+  background: red;
+}
+.blue {
+  background: blue;
+}
+.green {
+  background: green;
+}
+/*# sourceMappingURL=style.css.map */

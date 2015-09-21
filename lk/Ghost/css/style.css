@@ -1,45 +1,57 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\000031}}
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\000036}}
 a {
-  transition: all 0.2s ease-in-out 0s;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+          transition: all 0.2s ease-in-out 0s;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\000039}}
 .top {
-  background: red url(../images/top.jpg) no-repeat center 20%;
+  background: #ff0000 url(../images/top.jpg) no-repeat center 20%;
   background-size: cover;
   padding-top: 75px;
   padding-bottom: 75px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\0000321}}
 #leader_hide {
   float: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\0000323}}
 #leader_hide span {
   background: #505050;
   height: 3px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\0000328}}
 #leader_list li {
   float: none;
   display: inline-block;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\0000331}}
 #leader_list li a {
   padding-left: 20px;
   color: #525252;
   font-size: 15px;
   line-height: 25px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\0000335}}
 #leader_list li a:hover {
   background: white;
-  color: #E67E22;
+  color: #e67e22;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\0000340}}
 #leader_list li .shouye {
-  border-bottom: 2px solid #E67E22;
+  border-bottom: 2px solid #e67e22;
 }
 @media (max-width: 768px) {
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\0000344}}
   #leader_list li {
     display: block;
     text-align: left;
   }
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\0000351}}
 .content {
   background: #EBEBEB;
   padding-top: 35px;
@@ -47,85 +59,104 @@ a {
   border-top: 2px solid #E1E1E1;
   margin-top: -3px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\0000358}}
 .content main article {
   margin: 0px;
   background: white;
   padding: 10px 35px;
   margin-bottom: 35px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\0000364}}
 .content main article h1 {
   width: 100%;
   text-align: center;
   font-weight: normal;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\0000368}}
 .content main article h1 a {
   color: #303030;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\0000370}}
 .content main article h1 a:hover {
   text-decoration: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\0000376}}
 .content main article .info {
   width: 100%;
   text-align: center;
   color: #959595;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\0000379}}
 .content main article .info a {
-  color: #E67E22;
+  color: #e67e22;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\0000384}}
 .content main article .arti {
   width: 100%;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\0000386}}
 .content main article .arti p {
   font-size: 14px;
   color: #444443;
   font-size: 18px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\0000392}}
 .content main article .read {
   width: 100%;
   text-align: left;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\0000394}}
 .content main article .read a {
-  background: #E67E22;
+  background: #e67e22;
   color: white;
   border: 1px solid #e67e22;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\0000397}}
 .content main article .read a:hover {
   background: #303030;
   border: 1px solid #303030;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003103}}
 .content main article footer {
-  height: 70px;
-  line-height: 70px;
+  padding-top: 25px;
+  padding-bottom: 25px;
   border-top: 1px solid #EBEBEB;
   margin-top: 30px;
   color: #959595;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003107}}
 .content main article footer i {
   font-size: 12px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003110}}
 .content main article footer a {
   color: #959595;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003112}}
 .content main article footer a:hover {
-  color: #E67E22;
+  color: #e67e22;
 }
 @media (max-width: 970px) {
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003120}}
   .content main {
     padding-left: 0px;
     padding-right: 0px;
   }
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003128}}
 .content aside .shequ {
   width: 100%;
   background: white;
   padding: 20px 30px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003132}}
 .content aside .shequ h3 {
   padding-bottom: 7px;
   position: relative;
   border-bottom: 1px solid #ebebeb;
   margin-top: 0px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003137}}
 .content aside .shequ h3:after {
   content: "";
   width: 90px;
@@ -135,21 +166,25 @@ a {
   left: 0;
   bottom: -1px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003145}}
 .content aside .shequ p a {
-  color: #E67E22;
+  color: #e67e22;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003151}}
 .content aside .download {
   width: 100%;
   background: white;
   padding: 20px 30px;
   margin-top: 35px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003155}}
 .content aside .download h3 {
   padding-bottom: 7px;
   position: relative;
   border-bottom: 1px solid #ebebeb;
   margin-top: 0px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003159}}
 .content aside .download h3:after {
   content: "";
   width: 90px;
@@ -159,29 +194,35 @@ a {
   left: 0;
   bottom: -1px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003167}}
 .content aside .download .btn {
   width: 100%;
-  background: #E67E22;
-  border: 1px solid #E67E22;
+  background: #e67e22;
+  border: 1px solid #e67e22;
   color: white;
-  transition: all 0.2s ease-in-out 0s;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+          transition: all 0.2s ease-in-out 0s;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003172}}
 .content aside .download .btn:hover {
   background: #303030;
   border: 1px solid #303030;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003179}}
 .content aside .tags {
   width: 100%;
   background: white;
   padding: 20px 30px;
   margin-top: 35px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003183}}
 .content aside .tags h3 {
   padding-bottom: 7px;
   position: relative;
   border-bottom: 1px solid #ebebeb;
   margin-top: 0px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003187}}
 .content aside .tags h3:after {
   content: "";
   width: 90px;
@@ -191,10 +232,12 @@ a {
   left: 0;
   bottom: -1px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003194}}
 .content aside .tags p {
   width: 100%;
   overflow: hidden;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003196}}
 .content aside .tags p a {
   display: block;
   float: left;
@@ -204,17 +247,20 @@ a {
   border: 1px solid #EBEBEB;
   font-size: 14px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003202}}
 .content aside .tags p a:hover {
   color: white;
-  background: #E67E22;
+  background: #e67e22;
   text-decoration: none;
-  border: 1px solid #E67E22;
+  border: 1px solid #e67e22;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003214}}
 .footer {
   background: #1F1F1F;
   padding-top: 35px;
   padding-bottom: 35px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003218}}
 .footer .foot_new,
 .footer .foot_par,
 .footer .foot_tag {
@@ -222,6 +268,7 @@ a {
   padding-right: 45px;
   margin-bottom: 30px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003221}}
 .footer .foot_new h3,
 .footer .foot_par h3,
 .footer .foot_tag h3 {
@@ -232,6 +279,7 @@ a {
   margin-bottom: 15px;
   color: white;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003226}}
 .footer .foot_new h3:after,
 .footer .foot_par h3:after,
 .footer .foot_tag h3:after {
@@ -243,29 +291,35 @@ a {
   left: 0;
   bottom: -1px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003236}}
 .footer .foot_new p {
   padding-top: 5px;
   padding-bottom: 15px;
   border-bottom: 1px dashed #303030;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003239}}
 .footer .foot_new p a {
   display: block;
   color: #959595;
   line-height: 25px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003242}}
 .footer .foot_new p a:hover {
-  color: #E67E22;
+  color: #e67e22;
   text-decoration: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003247}}
 .footer .foot_new p span {
   line-height: 25px;
   display: block;
   color: #505050;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003256}}
 .footer .foot_tag p {
   width: 100%;
   overflow: hidden;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003258}}
 .footer .foot_tag p a {
   display: block;
   float: left;
@@ -275,17 +329,20 @@ a {
   border: 1px solid #303030;
   font-size: 14px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003264}}
 .footer .foot_tag p a:hover {
   color: white;
-  background: #E67E22;
-  border: 1px solid #E67E22;
+  background: #e67e22;
+  border: 1px solid #e67e22;
   text-decoration: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003274}}
 .footer .foot_par p {
   padding-top: 5px;
   padding-bottom: 15px;
   border-bottom: 1px dashed #303030;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003277}}
 .footer .foot_par p a {
   color: #959595;
   padding: 5px;
@@ -293,14 +350,17 @@ a {
   margin-right: 10px;
   white-space: nowrap;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003282}}
 .footer .foot_par p a:hover {
-  background: #E67E22;
+  background: #e67e22;
   color: white;
   text-decoration: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003288}}
 .footer .foot_par p.par_last {
   border: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003295}}
 .copyright {
   background: #101010;
   color: #555555;
@@ -309,16 +369,19 @@ a {
   padding-bottom: 30px;
   text-align: center;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003300}}
 .copyright a {
   color: #555555;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003308}}
 .red {
   background: red;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003311}}
 .blue {
   background: blue;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/video_model\/css\/style\.less}line{font-family:\00003314}}
 .green {
   background: green;
 }
-/*# sourceMappingURL=style.css.map */

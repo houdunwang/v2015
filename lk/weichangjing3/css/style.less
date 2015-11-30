@@ -1,0 +1,161 @@
+*{margin: 0px;padding: 0px;}
+/*总的容器*/
+.swiper-container {
+	position: relative;
+} 
+/*音乐图标*/
+.music_logo{
+	position: absolute;
+	right: 0px;top: 0px;
+	z-index: 100;
+	width: 80px;height: 80px;
+    background: url(../images/small/music.gif) no-repeat;
+    background-size: 100% 100%;
+	@-webkit-keyframes zhuan{
+        0%{
+            transform:rotate(0deg);
+        }
+        50%{
+ 			transform:rotate(180deg);
+        }
+        100%{
+ 			transform:rotate(360deg);
+        }
+	}
+	#music_click{
+		max-width: 40px;max-height: 40px;
+		display: block;
+		line-height: 80px;margin: 0 auto;
+		margin-top: 15px;
+		transition:5s;
+		// animation动画的各参数： 执行的动画名 执行的时长 反复执行 动画速度
+		animation: zhuan 3s linear infinite;
+	}
+}
+
+/*每页 */
+.swiper-slide{
+   overflow: hidden;
+}
+
+// 第一屏----------------------------------
+.one{
+	background: url(../images/bg/bg1.jpg) no-repeat;
+	background-size: 100% 100%;
+	@keyframes huang{
+	    from{
+	       transform:rotate(0deg);
+	    }
+	    to{
+	        transform:rotate(360deg);
+	    }
+	}
+	.time{
+        width: 20vw;
+        margin-top: 8vh;margin-left: 5vw;
+        animation:huang 3s ease-in  infinite;
+	}
+	.font1{
+		width: 50vw;
+		display: block;
+		margin: 0 auto;margin-top: -5vw;
+	}
+	.font2{
+		width: 90vw;
+		display: block;
+		margin: 0 auto;margin-top: 3vh;
+	}
+	.love_box{
+		width: 80vw;height: 20vw;
+		margin: 0 auto;
+		// border: 1px solid white;
+		overflow: hidden;
+		position: relative;
+		.font3{
+			display: block;
+			width: 80vw;
+			margin: 0 auto;margin-top: 3vh;
+	    }
+	    .heart{
+	    	width: 14vw;
+	    	position: absolute;
+	    	left: 11vw;top: 5vw;
+	    	animation: tada 1s linear infinite;
+	    }
+	}
+	.book{
+		display: block;
+		width: 80vw;
+		margin: 0 auto;
+		margin-top: 5vh;
+	}
+}
+// 第二屏---------------------------------
+.two{
+	background: url(../images/bg/bg1.jpg) no-repeat;
+	background-size:100%;
+	.top{
+		width: 100vw;
+		height: 40vh;
+		margin: 0 auto;
+		position: relative;
+		overflow: hidden;
+		.font4{
+			width: 100vw;
+			display: block;
+			margin: 0 auto;margin-top: 8vh;
+		}
+		.earth{
+			width: 20vw;
+			position: absolute;
+			right: 5vw;top: 0vh;
+			animation: tada 3s linear infinite;
+		}
+	}
+	.huojian{
+		width: 70vw;
+		display: block;
+		margin: 0 auto;
+	}
+	
+
+}
+// 第三屏------------------------------
+.three{
+	background: url(../images/bg/bg1.jpg) no-repeat;
+	background-size:100% 100%;
+	.top{
+		width: 90vw;height: 50vh;
+		// border: 1px solid white;
+		margin: 0 auto;margin-top: 6vh;
+		position: relative;
+		.black{
+			width: 90vw;
+		}
+		.font5{
+			width: 80vw;
+			position: absolute;
+			left: 5vw;top: 18vh;
+		}
+		.font6{
+			width: 80vw;
+			position: absolute;
+			left: 5vw;top: 30vh;
+		}
+	}	
+	.bottom{
+		width: 90vw;
+		margin: 0 auto;margin-top: 3vh;
+		overflow: hidden;
+		.font8{
+			width: 30vw;
+			display: block;
+			margin: 0 auto;
+			margin-top: 5vw;
+		}
+	}		
+}
+
+
+
+

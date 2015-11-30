@@ -1,0 +1,251 @@
+*{margin: 0px;padding: 0px;}
+/*总的容器*/
+.swiper-container {
+	position: relative;
+} 
+/*音乐图标*/
+.music_logo{
+	position: absolute;
+	right: 0px;top: 0px;
+	z-index: 100;
+	width: 80px;height: 80px;
+    background: url(../images/small/music.gif) no-repeat;
+    background-size: 100% 100%;
+	@-webkit-keyframes zhuan{
+        0%{
+            transform:rotate(0deg);
+        }
+        50%{
+ 			transform:rotate(180deg);
+        }
+        100%{
+ 			transform:rotate(360deg);
+        }
+	}
+	#music_click{
+		max-width: 40px;max-height: 40px;
+		display: block;
+		line-height: 80px;margin: 0 auto;
+		margin-top: 15px;
+		transition:5s; 
+		// animation动画的各参数： 执行的动画名 执行的时长 反复执行 动画速度
+		animation: zhuan 3s infinite linear;
+	}
+}
+
+/*每页 */
+.swiper-slide{
+   overflow: hidden;
+}
+
+// 第一屏----------------------------------
+.one{
+	background: url(../images/bg/bg1.jpg) no-repeat;
+	background-size: 100% 100%;
+	.content{
+		width: 90vw;height: 90vh;
+		margin: 0 auto;margin-top: 5vh;
+		position: relative;overflow: hidden;
+		.cover{
+			width: 90vw;height: 90vh;
+		    opacity: 0.5;background: black;	
+			position: absolute;
+			left: 0px;top: 0px;
+		}
+		.art{
+			width: 90vw;height: 90vh;
+			padding:5vw;box-sizing:border-box;
+			position: absolute;
+			left: 0px;top: 0px;
+			h1{
+			    color:#E3E4E5;
+			    font-size: 10vw;
+			    line-height: 10vw;
+			    img{
+			    	width: 18vw;
+			    }
+			}
+			hr{
+				margin-top: 2vh;margin-bottom: 3vh;
+			}
+			p{
+				color: #ccc;
+				text-indent: 2em;
+				line-height: 8vw;
+				font-size: 5.5vw;
+			}
+			.airplane{
+				width: 25vw;height: 25vw;
+                background:url(../images/small/airplane.png) no-repeat;
+                background-size: 100% 100%;
+                position: absolute;
+                bottom: -2vh;right: 0px;
+			} 
+		}
+		
+	}
+}
+// 第二屏---------------------------------
+.two{
+	background: url(../images/bg/bg2.jpg) no-repeat;
+	background-size:100% 100%;
+	.top{
+		width: 88vw;height: 22vw;
+		position: relative;
+		margin: 0 auto;margin-top: 5vh;
+		opacity: 0.9;
+		overflow: hidden;
+		border-radius: 10px;
+		background: url(../images/small/rain.png) no-repeat center;
+		background-size: 100%;
+		h1{
+			color: white;
+			font-size: 10vw;
+			line-height: 13vh;
+			text-indent: 1em;
+			text-align: center;
+		}
+		img{
+			width: 21.5vw;height: 21.5vw;	
+			position: absolute;
+			bottom: 0px;left: 500px;	
+			border-radius: 50%;
+		}
+	}
+	.content{
+		width: 88vw;height: 78vh;
+		background-color: rgba(0, 0, 0, 0.4);
+		margin: 0 auto;margin-top: 2vh;
+		overflow: hidden;
+		li{
+			width: 80vw;height: 8vh;
+			margin: 0 auto;
+			background-color: rgba(255, 255, 255, 0.2);
+			margin-top: 1.5vh;list-style: none;
+			text-align: center;line-height: 8vh;
+			color:#E8E7E4;font-size: 6vw;
+		}
+	}
+}
+// 第三屏------------------------------
+.three{
+	background: url(../images/bg/bg3.png) no-repeat;
+	background-size:100% 100%;
+	h1{
+		color: #39BD8D;
+		text-align: center;
+		margin-top: 10vh;
+		font-size: 8vh;
+	}
+	h3{
+		color: #828282;
+        font-size: 5vw;
+		text-align: center;
+		line-height: 10vh;
+	}
+	.content{
+		width: 95vw;height: 70vh;
+        margin: 0 auto;
+        li{
+        	list-style: none;
+        	width: 35vw;height: 35vw;
+        	float: left;
+        	margin-left:8vw;margin-top: 6vh;
+        	border-radius: 50%;
+        	position: relative;
+        	img{
+        		width: 30vw;height: 30vw;
+        		border-radius:50%;
+        		display: block;
+        		margin: 0 auto;margin-top: 2.5vw;
+        		box-shadow: 0px 0px 50px 10px #39BD8D;
+        		opacity: 0.9;
+        	}
+        	span{
+        		display: block;
+        		width: 18vw;height: 10vw;
+        		margin: 0 auto;text-align: center;
+        		color:white;
+        		font-size: 4vw;
+        		margin-top: 2vh;
+        		// position: absolute;
+        		// left: 45px;bottom: -15px;
+        	}
+        }
+	}
+}
+// 第四屏------------------------------------------------
+.four{
+	background: url(../images/bg/bg4.jpg) no-repeat;
+	background-size: 100% 100%;
+	.trans{
+		width: 42vw;height: 42vw;
+		// border:3px dotted red;
+		border-radius: 50%;
+		margin: 0 auto;
+		position: relative;
+		top: 20vw;
+		// background:#00A0E1;
+		@keyframes trans{
+			0%{transform:rotate(0deg);}
+			50%{transform:rotate(180deg);}
+			100%{transform:rotate(360deg);}
+		}
+		.zhuan{
+			width: 42vw;height: 42vw;
+		    border:3px dotted #ccc;
+		    border-radius: 50%;
+  			position: absolute;
+  		    left: -3px;top: -8px;
+  		    animation:trans 5s 1s linear infinite ;
+		}
+		img{
+			display: block;
+			width: 39vw;height: 39vw;
+			margin: 0 auto;
+			margin-top: 1.5vw;
+			border-radius: 50%;
+			box-shadow: 0px 0px 40px 10px white;
+		}
+		.line{
+			width: 2px;height: 150px;
+			background: white;
+			position: absolute;
+			left: 21vw;top: -42vw;
+		}
+	}
+	.ads{
+		text-align: center;
+		font-size: 10vw;
+		margin-top: 20vh;
+		color: white;
+	}
+	.word{
+		text-align: center;
+		font-size: 4vw;
+		margin-top: 3vh;
+		color:#ccc;		
+	}
+	.link{
+		width: 80vw;height: 15vh;
+		margin: 0 auto;
+		margin-top: 12vh;
+		li{
+			list-style: none;
+			width: 20vw;height: 20vw;
+			float: left;
+			margin-left: 5vw;
+			img{
+				width: 20vw;height: 20vw;
+			    border:2px solid white;
+				border-radius: 50%;
+			}
+		}
+	}
+}
+
+
+
+
+
+

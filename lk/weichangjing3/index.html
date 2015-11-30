@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>Document</title>
+<!-- 外部的引入文件 -->
+<link rel="stylesheet" href="css/swiper.min.css">
+<link rel="stylesheet" href="css/animate.css">
+
+<script src="js/jquery.min.js"></script>
+<script src="js/swiper.animate.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<!-- 本页面的样式和效果 -->
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<div class="swiper-container" id="box">
+    <div class="music_logo">
+        <img id="music_click" src="images/small/music_off.png" alt="">
+        <audio id="music_mp3" src="zrcx.mp3" loop="loop"  autoplay="autoplay"></audio>
+    </div>
+    <div class="swiper-wrapper">
+        <!-- 第一屏 -->
+        <div class="swiper-slide one">
+            <img class="time" src="images/small/time.png" alt="">
+            <img class="font1 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="2s" swiper-animate-delay="0.5s" src="images/small/font1.png" alt="">
+            <img class="font2 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="3s" swiper-animate-delay="1.5s" src="images/small/font2.png" alt="">
+            <div class="love_box ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="3s" swiper-animate-delay="2.5s">    
+                <img class="font3"  src="images/small/font3.png" alt="">
+                <img class="heart" src="images/small/heart.png" alt="">
+            </div>
+            <img class="book ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="3s" swiper-animate-delay="3.5s" src="images/small/book.png" alt="">
+        </div>
+        <!-- 第二屏 -->
+        <div class="swiper-slide two">
+            <div class="top" >
+                <img class="font4 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="4s" swiper-animate-delay="0.5s" src="images/small/font4.png" alt="">
+                <img class="earth" src="images/small/earth.png" alt="">
+            </div>
+            <img class="huojian ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="3s" swiper-animate-delay="2s" src="images/small/huojian.png" alt="">
+        </div>
+        <!-- 第三屏 -->
+        <div class="swiper-slide three">
+            <div class="top">
+                <img class="black ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="2s" swiper-animate-delay="0s" src="images/small/black.png" alt="">
+                <img class="font5 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="2s" swiper-animate-delay="1s" src="images/small/font5.png" alt="">
+                <img class="font6 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="4s" swiper-animate-delay="2s"  src="images/small/font6.png" alt="">
+            </div>
+            <div class="bottom">
+                 <img class="font8 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="2s" swiper-animate-delay="2s" src="images/small/erweima.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div> 
+    
+    <!-- 前进后退按钮 -->
+<!--     <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div> -->
+
+</div>
+<script src="js/js.js"></script>
+</body>
+</html>

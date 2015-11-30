@@ -10,13 +10,15 @@ var c = 0;
 // 点击播放和暂停
 m_c.onclick=function(){
 	if(c==0){
-    // 音乐暂停
-	  m_m.pause();
-	  c=1;
+        // 音乐暂停
+	    m_m.pause();
+        m_c.style.animationPlayState = "paused";
+	    c=1;
 	}else{
-    // 音乐播放
-    m_m.play();
-    c=0;
+        // 音乐播放
+        m_m.play();
+        m_c.style.animationPlayState = "running";
+        c=0;
 	}	
 }
 

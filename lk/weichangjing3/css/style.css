@@ -23,15 +23,18 @@
 @-webkit-keyframes zhuan {
   @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/weichangjing3\/css\/style\.less}line{font-family:\0000315}}
   0% {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/weichangjing3\/css\/style\.less}line{font-family:\0000318}}
   50% {
-    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
   }
   @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/weichangjing3\/css\/style\.less}line{font-family:\0000321}}
   100% {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/weichangjing3\/css\/style\.less}line{font-family:\0000325}}
@@ -42,8 +45,10 @@
   line-height: 80px;
   margin: 0 auto;
   margin-top: 15px;
-  transition: 5s;
-  animation: zhuan 3s linear infinite;
+  -webkit-transition: 5s;
+          transition: 5s;
+  -webkit-animation: zhuan 3s linear infinite;
+          animation: zhuan 3s linear infinite;
 }
 /*每页 */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/weichangjing3\/css\/style\.less}line{font-family:\0000337}}
@@ -55,14 +60,28 @@
   background: url(../images/bg/bg1.jpg) no-repeat;
   background-size: 100% 100%;
 }
-@keyframes huang {
+@-webkit-keyframes huang {
   @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/weichangjing3\/css\/style\.less}line{font-family:\0000346}}
   from {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/weichangjing3\/css\/style\.less}line{font-family:\0000349}}
   to {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes huang {
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/weichangjing3\/css\/style\.less}line{font-family:\0000346}}
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/weichangjing3\/css\/style\.less}line{font-family:\0000349}}
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/weichangjing3\/css\/style\.less}line{font-family:\0000353}}
@@ -70,7 +89,8 @@
   width: 20vw;
   margin-top: 8vh;
   margin-left: 5vw;
-  animation: huang 3s ease-in infinite;
+  -webkit-animation: huang 3s ease-in infinite;
+          animation: huang 3s ease-in infinite;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/weichangjing3\/css\/style\.less}line{font-family:\0000358}}
 .one .font1 {
@@ -107,7 +127,8 @@
   position: absolute;
   left: 11vw;
   top: 5vw;
-  animation: tada 1s linear infinite;
+  -webkit-animation: tada 1s linear infinite;
+          animation: tada 1s linear infinite;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/weichangjing3\/css\/style\.less}line{font-family:\0000386}}
 .one .book {
@@ -142,7 +163,8 @@
   position: absolute;
   right: 5vw;
   top: 0vh;
-  animation: tada 3s linear infinite;
+  -webkit-animation: tada 3s linear infinite;
+          animation: tada 3s linear infinite;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/weichangjing3\/css\/style\.less}line{font-family:\00003115}}
 .two .huojian {

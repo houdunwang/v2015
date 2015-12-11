@@ -1,0 +1,30 @@
+.im {
+  width: 100px;
+  height: 100px;
+  background: yellow; }
+
+.box {
+  height: 100px;
+  width: 100px;
+  background: red; }
+  .box .box1 {
+    width: 50px;
+    height: 50px;
+    background: yellow; }
+
+.hd, .hd1 {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #000; }
+
+.boss {
+  width: 100px;
+  height: 200px;
+  background: red;
+  -webkit-transition: width, 2s;
+  -moz-transition: width, 2s;
+  transition: width, 2s; }
+  .boss:hover {
+    width: 400px; }
+
+/*# sourceMappingURL=index.css.map */

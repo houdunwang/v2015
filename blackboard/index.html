@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+*{
+	margin: 0px;padding: 0px;
+}
+#all{
+	width: 100%;
+	height: 600px;
+	/*border: 1px solid red;*/
+}
+#cover{
+	width: 100%;
+	height: 500px;
+	position: absolute;
+	left: 0px;top: 0px;
+	z-index: 100;
+}
+#box{
+	width: 100%;height: 100px;
+	background: #ccc;
+}
+#qb{
+	width: 40px;height: 50px;
+	background: url(images/red.png) no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	left: 100px;top: 100px;
+	display: none;
+}
+/*画笔盒子部分*/
+#hb_box{
+	width: 220px;height: 100px;
+	/*border: 1px solid blue;*/
+	float: left;
+	margin-left: 100px;
+}
+#hb_box img{
+	width: 40px;height: 50px;
+	padding: 5px;
+	border-radius: 5px;
+	transition:1s;
+	cursor: pointer;
+	margin-top: 3px;
+}
+#hb_box img:hover{
+	background: white;
+}
+#hb_box h3{
+    text-align: center;
+    color: #008000;
+    margin-top: 10px;
+}
+/*橡皮擦部分*/
+#xp_box{
+	width: 200px;height: 100px;
+	/*border: 1px solid red;*/
+	float: left;
+	margin-left: 100px;
+	position: relative;
+}
+#xp_box img{
+	width: 80px;height: 80px;
+	border-radius: 25%;
+	transition:1s;
+	cursor: pointer;
+}
+#xp_box img:hover{
+	background: white;
+}
+#xp_box h3{
+    color: #008000;
+    position: absolute;
+    left: 100px;
+    bottom: 10px;
+}
+/*保存部分*/
+#save_box{
+	width: 200px;height: 100px;
+	/*border: 1px solid purple;*/
+	float: left;
+	margin-left: 100px;
+	position: relative;
+}
+#save_box img{
+	width: 60px;height: 45px;
+	border-radius: 25%;
+	padding: 10px;
+	position: absolute;
+	left: 20px;top: 5px;
+	transition:1s;
+	cursor: pointer;
+}
+#save_box img:hover{
+	background: white;
+}
+#save_box h3{
+    color: #008000;
+    position: absolute;
+    left: 100px;
+    bottom: 10px;	
+}
+</style>
+</head>
+<body>
+	<div id="all">
+	    <div id="cover"></div>
+	    <div id="qb"></div>
+		<canvas id="canvas" style="border:1px solid black;"></canvas>
+		<div id="box">
+			<div id="hb_box">
+				<img style="background:white;" src="images/red.png" alt="">
+				<img src="images/blue.png" alt="">
+				<img src="images/orange.png" alt="">
+				<img src="images/green.png" alt="">
+				<h3>画笔盒</h3>
+			</div>
+			<div id="xp_box">
+				<img onclick="e.clearBlackBoard()" src="images/xp.png" alt="">
+				<h3>橡皮</h3>
+			</div>
+			<div id="save_box">
+				<img onclick="e.saveImage()" src="images/photo.png" alt="">
+				<h3>保存图片</h3>
+			</div>
+		</div>
+	</div>
+	<br>
+	<img src="" id="img" alt="">
+</body>
+<script>
+    // 抓取遮罩
+    var cover = document.getElementById('cover');
+	// 抓取画板元素
+	var canvas = document.getElementById('canvas');
+	// 抓取铅笔
+	var qb = document.getElementById("qb");
+	// 抓取画笔元素
+	var hbs = document.getElementById("hb_box").getElementsByTagName('img');
+	// 设置画布的宽高
+    var w = document.documentElement.clientWidth;
+    var h = 500;
+    canvas.width = w;
+    canvas.height = h;
+    // 创建画布环境
+    var obj = canvas.getContext("2d");
+    // 设置画布颜色
+    obj.fillStyle = "black";
+    // 画布坐标和范围
+    obj.rect(0,0,w,h);
+    // 线宽
+    obj.lineWidth = 2;
+    // 线条颜色
+    obj.strokeStyle = "red";
+    // 执行
+    obj.fill();
+
+
+    // 画笔盒子部分
+    var color_arr = ["red","blue","orange","green"];
+    var color;
+    for(var i=0;i<hbs.length;i++){
+        hbs[i].num = i;
+        hbs[i].onclick=function(){
+        	// 所有元素底色变化
+            for(var j=0;j<hbs.length;j++){
+            	hbs[j].style.background = "#ccc";
+            }
+            // 当前元素底色变化
+        	this.style.background = "white";
+        	// 获得颜色（图片路径）
+        	color = color_arr[this.num];
+        	// 更改画笔图片
+            qb.style.background = "url(images/"+color+".png) no-repeat";
+            qb.style.backgroundSize = "100% 100%";
+            // 线条颜色
+            obj.strokeStyle = color;
+        }
+    }
+ 
+    // 黑板处理类
+    var blackboard = function(){
+    	// 鼠标是否被按下
+    	this.downstatus = false;
+        this.downEvent = function(event){
+        	// 更改点击状态
+    	    this.downstatus = true;
+    	    // 当前鼠标位置
+            this.oldX = event.pageX;
+            this.oldY = event.pageY;
+            // 铅笔的位置
+            qb.style.display = "block";
+            qb.style.left = this.oldX - 3 + "px";
+            qb.style.top = this.oldY - qb.offsetHeight + "px";
+        }
+        this.upEvent = function(){
+         	// 更改点击状态
+    	    this.downstatus = false;
+    	    // 铅笔消失   
+    	    qb.style.display = "none";    	
+        }
+        this.moveEvent = function(event){
+            if(!this.downstatus) return;
+            // 获得铅笔的位置
+            qb.style.left = this.oldX - 3 + "px";
+            qb.style.top = this.oldY - qb.offsetHeight + "px";
+            // 开始画线
+            obj.beginPath();
+            // 起始位置
+            obj.moveTo(this.oldX,this.oldY);
+            // 结束位置
+            obj.lineTo(event.pageX,event.pageY);
+            // 执行
+            obj.stroke();
+            // 鼠标的位置
+            this.oldX = event.pageX;
+            this.oldY = event.pageY;
+        }
+        this.clearBlackBoard = function(){
+        	// 清空
+        	obj.clearRect(0,0,w,h);
+        	// 设置填充颜色
+        	obj.fillStyle = "black";
+        	// 填充范围
+        	obj.fillRect(0,0,w,h);
+        }
+        this.saveImage = function(){
+        	var date = canvas.toDataURL("image/png");
+        	document.getElementById("img").src = date;
+        }
+
+
+    }
+
+    // 实例化对象
+    var e = new blackboard();
+
+    cover.addEventListener("mousedown",e.downEvent,true);
+    cover.addEventListener("mousemove",e.moveEvent,true);
+    cover.addEventListener("mouseup",e.upEvent,true);
+
+
+
+
+</script>
+</html>
+
+
+
+
+
+

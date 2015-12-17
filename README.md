@@ -7,3 +7,5 @@
 * circle_lead: 圆形导航 利用了css3和html5的语法 
 * jd_mobile: 京东移动端首页开发
 * sass: sass的简单应用
+* php操作xml
+* chart.js图表库的使用

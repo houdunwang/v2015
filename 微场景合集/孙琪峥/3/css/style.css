@@ -124,8 +124,6 @@ body {
 	width: 50%;
 	transform: translateX(-50%);
 }
-
-
 /*第一块结束*/
 
 
@@ -353,6 +351,18 @@ body {
 }
 /*第四块结束*/
 
+p.copy{
+	font-size: 3vw;
+	color: white;
+	text-align: center;
+	opacity: 0.7;
+	line-height: 1.1em;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 999;
+	width: 100%;
+}
 
 
 

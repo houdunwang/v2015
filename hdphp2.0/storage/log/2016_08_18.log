@@ -1,0 +1,8 @@
+[ 2016-08-18T23:08:13+08:00 ]EXCEPTION: Method web\home\controller\Entry::__empty() does not exist
+[ 2016-08-18T23:10:01+08:00 ]EXCEPTION: web\admin\controller\Hd 不存在
+[ 2016-08-18T23:10:10+08:00 ]EXCEPTION: web\admin\controller\Hd 不存在
+[ 2016-08-18T23:10:12+08:00 ]EXCEPTION: web\admin\controller\Hd 不存在
+[ 2016-08-18T23:19:31+08:00 ]EXCEPTION: Method web\home\controller\User::__empty() does not exist
+[ 2016-08-18T23:20:00+08:00 ]EXCEPTION: Method web\home\controller\User::__empty() does not exist
+[ 2016-08-18T23:20:04+08:00 ]EXCEPTION: Method web\home\controller\User::__empty() does not exist
+[ 2016-08-18T23:20:28+08:00 ]EXCEPTION: Method web\home\controller\User::__empty() does not exist

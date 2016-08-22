@@ -295,4 +295,25 @@ class Message extends Weixin {
 		echo $text;
 	}
 
+	//群发消息正式发送
+	public function sendall( $data ) {
+		$url = $this->apiUrl . '/cgi-bin/message/mass/sendall?access_token=' . $this->getAccessToken();
+
+		$content = Curl::post( $url, json_encode( $data, JSON_UNESCAPED_UNICODE ) );
+
+		$result = json_decode( $content, TRUE );
+
+		return $this->get( $result );
+	}
+
+	//群发消息预览发送
+	public function preview( $data ) {
+		$url = $this->apiUrl . '/cgi-bin/message/mass/preview?access_token=' . $this->getAccessToken();
+
+		$content = Curl::post( $url, json_encode( $data, JSON_UNESCAPED_UNICODE ) );
+
+		$result = json_decode( $content, TRUE );
+
+		return $this->get( $result );
+	}
 }

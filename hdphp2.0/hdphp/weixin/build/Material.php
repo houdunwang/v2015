@@ -1,4 +1,5 @@
 <?php namespace hdphp\weixin\build;
+
 /** .-------------------------------------------------------------------
  * |  Software: [HDCMS framework]
  * |      Site: www.hdcms.com
@@ -8,6 +9,7 @@
  * | Copyright (c) 2012-2019, www.houdunwang.com. All Rights Reserved.
  * '-------------------------------------------------------------------*/
 use hdphp\weixin\Weixin;
+
 //素材管理
 class Material extends Weixin {
 
@@ -28,9 +30,20 @@ class Material extends Weixin {
 			//永久素材
 			$url = $this->apiUrl . "/cgi-bin/material/add_material?access_token={$this->access_token}&type=$type";
 		}
+		$mime      = $type == 'image' ? 'image/jpeg' : '';
 		$file_path = realpath( $file_path );
-		$result    = Curl::post( $url, [ 'media' => "@$file_path" ] );
-		$result    = json_decode( $result, TRUE );
+		if ( class_exists( '\CURLFile' ) ) {
+			//关键是判断curlfile,官网推荐php5.5或更高的版本使用curlfile来实例文件
+			$filedata = [
+				'media' => new \CURLFile ( realpath( $file_path ), $mime )
+			];
+		} else {
+			$filedata = [
+				'media' => '@' . realpath( $file_path )
+			];
+		}
+		$result = Curl::post( $url, $filedata );
+		$result = json_decode( $result, TRUE );
 
 		return $this->get( $result );
 	}
@@ -49,20 +62,16 @@ class Material extends Weixin {
 	//获取永久素材
 	public function getMaterial( $media_id ) {
 		$url     = $this->apiUrl . "/cgi-bin/material/get_material?access_token={$this->access_token}";
-		$json    = '{"media_id":' . $media_id . '}';
-		$content = Curl::post( $url, $json );
-		$result  = json_decode( $content, TRUE );
-
-		return $this->get( $result );
+		$json    = '{"media_id":"' . $media_id . '"}';
+		return Curl::post( $url, $json );
 	}
 
 	//删除永久素材
 	public function delete( $media_id ) {
 		$url     = $this->apiUrl . "/cgi-bin/material/del_material?access_token={$this->access_token}";
-		$json    = '{"media_id":' . $media_id . '}';
+		$json    = '{"media_id":"' . $media_id . '"}';
 		$content = Curl::post( $url, $json );
 		$result  = json_decode( $content, TRUE );
-
 		return $this->get( $result );
 	}
 

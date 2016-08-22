@@ -382,6 +382,8 @@
                                     type: 'image',
                                     multiple: true,
                                     extensions: 'gif,jpg,jpeg,bmp,png',
+                                    data: opt.data ? opt.data : '',
+                                    hash: opt.hash ? opt.hash : ''
                                 };
                                 fileUploader.show(function (imgs) {
                                     if (imgs.length == 0) {
@@ -773,7 +775,8 @@
                 type: 'image',
                 extensions: 'gif,jpg,jpeg,bmp,png',
                 multiple: false,
-                data: ''
+                data: '',
+                hash: ''
             }, options);
 
             require(['bootstrap', 'fileUploader'], function ($, fileUploader) {

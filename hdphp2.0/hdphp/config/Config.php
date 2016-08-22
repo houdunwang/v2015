@@ -48,8 +48,9 @@ class Config {
 	 * @return bool
 	 */
 	public function set( $key, $name ) {
-		$tmp = &$this->items;
-		foreach ( explode( '.', $key ) as $d ) {
+		$tmp    = &$this->items;
+		$config = explode( '.', $key );
+		foreach ( (array) $config as $d ) {
 			if ( ! isset( $tmp[ $d ] ) ) {
 				$tmp[ $d ] = [ ];
 			}
@@ -69,8 +70,9 @@ class Config {
 	 * @return array|void
 	 */
 	public function get( $key ) {
-		$tmp = $this->items;
-		foreach ( explode( '.', $key ) as $d ) {
+		$tmp    = $this->items;
+		$config = explode( '.', $key );
+		foreach ( (array) $config as $d ) {
 			if ( isset( $tmp[ $d ] ) ) {
 				$tmp = $tmp[ $d ];
 			} else {
@@ -92,7 +94,7 @@ class Config {
 	public function getExtName( $key, $extName ) {
 		$config = $this->get( $key );
 		$data   = [ ];
-		foreach ( $config as $k => $v ) {
+		foreach ( (array) $config as $k => $v ) {
 			if ( ! in_array( $k, $extName ) ) {
 				$data[ $k ] = $v;
 			}
@@ -109,8 +111,9 @@ class Config {
 	 * @return bool
 	 */
 	public function has( $key ) {
-		$tmp = $this->items;
-		foreach ( explode( '.', $key ) as $d ) {
+		$tmp    = $this->items;
+		$config = explode( '.', $key );
+		foreach ( (array) $config as $d ) {
 			if ( isset( $tmp[ $d ] ) ) {
 				$tmp = $tmp[ $d ];
 			} else {

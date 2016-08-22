@@ -11,6 +11,7 @@
 class Entry {
 	//首页
 	public function index() {
+		//显示模板
 		View::make();
 	}
 

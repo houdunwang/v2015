@@ -7,7 +7,7 @@
  * |    WeChat: aihoudun
  * | Copyright (c) 2012-2019, www.houdunwang.com. All Rights Reserved.
  * '-------------------------------------------------------------------*/
-namespace hdphp\facade;
+namespace hdphp\crypt;
 
 use hdphp\kernel\ServiceFacade;
 

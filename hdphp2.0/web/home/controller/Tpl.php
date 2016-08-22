@@ -7,24 +7,12 @@
  * |    WeChat: aihoudun
  * | Copyright (c) 2012-2019, www.houdunwang.com. All Rights Reserved.
  * '-------------------------------------------------------------------*/
-namespace hdphp\Cache;
 
-/**
- * 缓存处理接口
- * Interface InterfaceCache
- *
- * @package Hdphp\Cache
- * @author  向军 <2300071698@qq.com>
- */
-interface InterfaceCache
-{
-    public function connect();
+namespace web\home\controller;
 
-    public function set($name, $value, $expire);
-
-    public function get($name);
-
-    public function del($name);
-
-    public function flush();
+class Tpl{
+    //动作
+	public function index(){
+		View::make();
+	}
 }

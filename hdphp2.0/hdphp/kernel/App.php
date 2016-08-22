@@ -50,28 +50,29 @@ class App extends Container {
 		define( 'APP', basename( APP_PATH ) );
 		//时区设置
 		date_default_timezone_set( Config::get( 'app.timezone' ) );
+		//CLI模式
+		$this->cli();
 		//导入钓子
 		Hook::import( Config::get( 'hook' ) );
 		//应用开始钩子
 		Hook::listen( 'app_begin' );
-		//执行请求
-		$this->exe();
+		//解析路由
+		Route::dispatch();
+		//记录日志
+		Log::save();
 		//应用结束钩子
 		Hook::listen( 'app_end' );
 	}
 
 	// 执行请求
-	public function exe() {
+	public function cli() {
 		//命令模式
 		if ( $_SERVER['SCRIPT_NAME'] == 'hd' ) {
 			require_once HDPHP_PATH . '/cli/Cli.php';
 			\hdphp\cli\Cli::run();
 			exit;
 		}
-		//解析路由
-		Route::dispatch();
-		//记录日志
-		Log::save();
+
 	}
 
 	//类文件自动加载

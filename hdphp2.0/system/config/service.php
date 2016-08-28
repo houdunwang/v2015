@@ -3,6 +3,8 @@
 return [
 	//服务提供者
 	'providers' => [
+		'hdphp\log\LogProvider',
+		'hdphp\error\ErrorProvider',
 		'hdphp\alipay\AlipayProvider',
 		'hdphp\arr\ArrProvider',
 		'hdphp\backup\BackupProvider',
@@ -16,8 +18,6 @@ return [
 		'hdphp\data\DataProvider',
 		'hdphp\db\DbProvider',
 		'hdphp\dir\DirProvider',
-		'hdphp\log\LogProvider',
-		'hdphp\error\ErrorProvider',
 		'hdphp\html\HtmlProvider',
 		'hdphp\image\ImageProvider',
 		'hdphp\lang\LangProvider',
@@ -47,6 +47,8 @@ return [
 
 	//服务外观
 	'facades'   => [
+		'Log'        => 'hdphp\log\LogFacade',
+		'Error'      => 'hdphp\error\ErrorFacade',
 		'App'        => 'hdphp\kernel\AppFacade',
 		'Alipay'     => 'hdphp\alipay\ZipFacade',
 		'Arr'        => 'hdphp\arr\ArrFacade',
@@ -61,8 +63,7 @@ return [
 		'Data'       => 'hdphp\data\DataFacade',
 		'Db'         => 'hdphp\db\DbFacade',
 		'Dir'        => 'hdphp\dir\DirFacade',
-		'Log'        => 'hdphp\log\LogFacade',
-		'Error'      => 'hdphp\error\ErrorFacade',
+
 		'Html'       => 'hdphp\html\HtmlFacade',
 		'Image'      => 'hdphp\image\ImageFacade',
 		'Lang'       => 'hdphp\lang\LangFacade',

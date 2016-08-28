@@ -14,7 +14,11 @@ use ReflectionMethod;
 
 //控制器处理类
 class Controller {
-	public static function run() {
+	//路由参数
+	protected static $routeArgs = [ ];
+
+	public static function run( $routeArgs = [ ] ) {
+		self::$routeArgs = $routeArgs;
 		//URL结构处理
 		$param = array_filter( explode( '/', q( 'get.' . c( 'http.url_var' ) ) ) );
 		switch ( count( $param ) ) {
@@ -68,7 +72,7 @@ class Controller {
 			$reflection = new ReflectionMethod( $controller, $action );
 			if ( $reflection->isPublic() ) {
 				//执行动作
-				if ( $result = call_user_func_array( [ $controller, $action ], [ ] ) ) {
+				if ( $result = call_user_func_array( [ $controller, $action ], self::$routeArgs ) ) {
 					if ( IS_AJAX ) {
 						\Response::ajax( $result );
 					} else {

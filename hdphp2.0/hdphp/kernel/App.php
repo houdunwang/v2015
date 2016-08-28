@@ -39,6 +39,7 @@ class App extends Container {
 		$this->instance( 'App', $this );
 		//设置外观类APP属性
 		ServiceFacade::setFacadeApplication( $this );
+		Error::bootstrap();
 		//导入类库别名
 		Loader::addMap( Config::get( 'app.alias' ) );
 		//自动加载文件

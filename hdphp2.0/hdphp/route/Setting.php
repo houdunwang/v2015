@@ -28,7 +28,8 @@ class Setting {
 			'route'    => $this->prefix . array_shift( $params ),
 			'callback' => array_shift( $params ),
 			'regexp'   => '/./',
-			'args'     => [ ]
+			'args'     => [ ],
+			'get'      => [ ],//路由 show/{id}.html中的get参数
 		];
 
 		return $this;

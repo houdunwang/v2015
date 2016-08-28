@@ -68,7 +68,7 @@ class Compile extends Setting {
 		} else {
 			//设置控制器与方法
 			$_GET[ c( 'http.url_var' ) ] = $this->route[ $key ]['callback'];
-			Controller::run();
+			Controller::run($this->route[ $key ]['get']);
 		}
 	}
 

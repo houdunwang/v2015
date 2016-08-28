@@ -121,7 +121,7 @@ abstract class TagBase {
 		$preg = '#([\w\-]+)\s*=\s*([\'"])(.*?)\2#i';
 		if ( preg_match_all( $preg, $con, $matches ) ) {
 			foreach ( $matches[1] as $i => $name ) {
-				//                $attr[$name] = $this->ReplaceConst($matches[3][$i]);
+				//$attr[$name] = $this->ReplaceConst($matches[3][$i]);
 				//替换eq neq 等
 				$attr[ $name ] = preg_replace( array_keys( $this->exp ), array_values( $this->exp ), $matches[3][ $i ] );
 			}

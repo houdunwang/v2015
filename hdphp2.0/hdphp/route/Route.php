@@ -40,19 +40,20 @@ class Route extends Compile {
 		$this->requestUri = $this->getRequestUri();
 	}
 
-	// 请求地址
+	//请求地址
 	protected function getRequestUri() {
 		if ( isset( $_SERVER['PATH_INFO'] ) ) {
 			$REQUEST_URI = $_SERVER['PATH_INFO'];
 		} else {
-			if ( dirname( $_SERVER['SCRIPT_NAME'] ) !== '/' ) {
+			if ( dirname( $_SERVER['SCRIPT_NAME'] ) != '/' ) {
+				//有子目录的访问  hdphp/index.php形式
 				$REQUEST_URI = str_replace( dirname( $_SERVER['SCRIPT_NAME'] ), '', $_SERVER['REQUEST_URI'] );
 			} else {
 				$REQUEST_URI = $_SERVER['REQUEST_URI'];
 			}
 		}
 
-		$REQUEST_URI = trim( preg_replace( '/\w+\.php/i', '', $REQUEST_URI ), '/' );
+		$REQUEST_URI = preg_replace( '/\w+\.php/i', '', $REQUEST_URI );
 
 		return $REQUEST_URI ? parse_url( $REQUEST_URI, PHP_URL_PATH ) : '/';
 	}
@@ -79,7 +80,7 @@ class Route extends Compile {
 		//加载路由定义
 		require ROOT_PATH . '/system/routes.php';
 		//设置路由缓存
-		if ( C( 'http.route_cache' ) && ( $route = S( 'route' ) ) ) {
+		if ( C( 'http.route_cache' ) && ( $route = Cache::get( 'route' ) ) ) {
 			$this->route = $route;
 
 			return TRUE;
@@ -132,7 +133,7 @@ class Route extends Compile {
 		}
 		//缓存路由
 		if ( C( 'http.route_cache' ) ) {
-			S( 'route', $this->route );
+			Cache::set( 'route', $this->route );
 		}
 	}
 

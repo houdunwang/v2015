@@ -31,17 +31,19 @@ class View {
 	 * @throws Exception
 	 */
 	public function make( $tpl = '', $expire = 0, $show = TRUE ) {
+		//模板文件
+		if ( ! $this->tpl = $this->getTemplateFile( $tpl ) ) {
+			return FALSE;
+		}
+		//缓存标识
+		$cacheName = md5( $_SERVER['REQUEST_URI'] . $this->tpl );
 		//缓存有效
-		if ( $expire > 0 && $content = Cache::dir( ROOT_PATH . '/storage/view/cache' )->get( $_SERVER['REQUEST_URI'] ) ) {
+		if ( $expire > 0 && $content = Cache::dir( ROOT_PATH . '/storage/view/cache' )->get( $cacheName ) ) {
 			if ( $show ) {
 				die( $content );
 			} else {
 				return $content;
 			}
-		}
-		//模板文件
-		if ( ! $this->tpl = $this->getTemplateFile( $tpl ) ) {
-			return FALSE;
 		}
 
 		//编译文件
@@ -59,7 +61,7 @@ class View {
 
 		if ( $expire > 0 ) {
 			//缓存
-			if ( ! Cache::dir( 'storage/view/cache' )->set( $_SERVER['REQUEST_URI'], $content, $expire ) ) {
+			if ( ! Cache::dir( 'storage/view/cache' )->set( $cacheName, $content, $expire ) ) {
 				throw new Exception( "创建缓存失效" );
 			}
 		}
@@ -79,7 +81,7 @@ class View {
 	/**
 	 * 获取模板文件
 	 *
-	 * @param $file 模板文件
+	 * @param string $file 模板文件
 	 *
 	 * @return bool|string
 	 * @throws Exception
@@ -94,7 +96,7 @@ class View {
 		} else if ( ! is_file( $file ) ) {
 			if ( defined( 'MODULE' ) ) {
 				//模块视图文件夹
-				$f = strtolower(MODULE_PATH . '/view/' . CONTROLLER ). '/' . ( $file ?: ACTION . C( 'view.prefix' ) );
+				$f = strtolower( MODULE_PATH . '/view/' . CONTROLLER ) . '/' . ( $file ?: ACTION . C( 'view.prefix' ) );
 
 				if ( is_file( $f ) ) {
 					return $f;
@@ -121,10 +123,17 @@ class View {
 
 	/**
 	 * 验证缓存文件
+	 *
+	 * @param string $tpl
+	 *
 	 * @return mixed
+	 * @throws \Exception
 	 */
-	public function isCache() {
-		return Cache::dir( 'storage/view/cache' )->get( $_SERVER['REQUEST_URI'] );
+	public function isCache( $tpl = '' ) {
+		//缓存标识
+		$cacheName = md5( $_SERVER['REQUEST_URI'] . $this->getTemplateFile( $tpl ) );
+
+		return Cache::dir( 'storage/view/cache' )->get( $cacheName );
 	}
 
 	//编译文件

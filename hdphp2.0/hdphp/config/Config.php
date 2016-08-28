@@ -23,19 +23,16 @@ class Config {
 		if ( is_file( '.env' ) ) {
 			$config = [ ];
 			foreach ( file( '.env' ) as $file ) {
-				$data                       = explode( '=', $file );
-				$config[ trim( $data[0] ) ] = trim( $data[1] );
+				$data = explode( '=', $file );
+				if ( count( $data ) == 2 ) {
+					$config[ trim( $data[0] ) ] = trim( $data[1] );
+				}
 			}
-			$this->set( 'database.read.host', $config['DB_HOST'] );
-			$this->set( 'database.read.user', $config['DB_USERNAME'] );
-			$this->set( 'database.read.password', $config['DB_PASSWORD'] );
-			$this->set( 'database.read.database', $config['DB_DATABASE'] );
-			$this->set( 'database.read.prefix', $config['DB_PREFIX'] );
-			$this->set( 'database.write.host', $config['DB_HOST'] );
-			$this->set( 'database.write.user', $config['DB_USERNAME'] );
-			$this->set( 'database.write.password', $config['DB_PASSWORD'] );
-			$this->set( 'database.write.database', $config['DB_DATABASE'] );
-			$this->set( 'database.write.prefix', $config['DB_PREFIX'] );
+			$this->set( 'database.host', $config['DB_HOST'] );
+			$this->set( 'database.user', $config['DB_USER'] );
+			$this->set( 'database.password', $config['DB_PASSWORD'] );
+			$this->set( 'database.database', $config['DB_DATABASE'] );
+			$this->set( 'database.prefix', $config['DB_PREFIX'] );
 		}
 	}
 

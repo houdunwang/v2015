@@ -17,7 +17,7 @@ class ErrorProvider extends ServiceProvider {
 	public $defer = FALSE;
 
 	public function boot() {
-		$this->app['Error']->bootstrap();
+//		$this->app['Error']->bootstrap();
 	}
 
 	public function register() {

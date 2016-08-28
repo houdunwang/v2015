@@ -387,7 +387,7 @@ if ( ! function_exists( 'message' ) ) {
 	 * 消息提示
 	 *
 	 * @param string $content 消息内容
-	 * @param string $redirect 跳转地址有三种方式 1:back或为空(返回上一页)  2:refresh(刷新当前页)  3:具体Url
+	 * @param string $redirect 跳转地址有三种方式 1:back(返回上一页)  2:refresh(刷新当前页)  3:具体Url
 	 * @param string $type 信息类型  success(成功），error(失败），warning(警告），info(提示）
 	 */
 	function message( $content, $redirect = 'back', $type = 'success', $timeout = 2 ) {

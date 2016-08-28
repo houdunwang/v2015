@@ -38,9 +38,9 @@ class File implements InterfaceCache {
 	public function dir( $dir ) {
 		if ( is_dir( $dir ) || mkdir( $dir, 0755, TRUE ) ) {
 			$this->dir = $dir;
-
-			return $this;
 		}
+
+		return $this;
 	}
 
 	//缓存文件

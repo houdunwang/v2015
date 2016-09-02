@@ -49,7 +49,6 @@ class Query {
 
 	public function insertGetId( $data, $action = 'insert' ) {
 		if ( $result = $this->insert( $data, $action ) ) {
-
 			return $this->connection->getInsertId();
 		} else {
 			return FALSE;
@@ -71,6 +70,7 @@ class Query {
 		if ( empty( $where ) ) {
 			throw new Exception( '缺少更新条件' );
 		}
+
 		$sql = "UPDATE " . $this->connection->getTable() . " SET {$field}={$field}-$dec " . $where;
 
 		return $this->connection->execute( $sql, $this->build()->getUpdateParams() );
@@ -97,14 +97,14 @@ class Query {
 	/**
 	 * 删除记录
 	 *
-	 * @param int /array $id 主键数据
+	 * @param string $id
 	 *
 	 * @return bool
 	 * @throws \Exception
 	 */
 	public function delete( $id = '' ) {
 		if ( ! empty( $id ) ) {
-			$this->whereIn( $this->connection->getPrimaryKey(), explode( ',', $id ) );
+			$this->whereIn( $this->connection->getPrimaryKey(), is_array( $id ) ? $id : explode( ',', $id ) );
 		}
 
 		return $this->connection->execute( $this->build()->delete(), $this->build()->getDeleteParams() );
@@ -150,11 +150,6 @@ class Query {
 		$pri = $this->connection->getPrimaryKey();
 		if ( $pri && $id ) {
 			$data = $this->where( $pri, '=', $id )->first();
-//			if ( $this->connection->getModel() ) {
-//				$this->connection->model->data( $data );
-//
-//				return $this->connection->getModel();
-//			}
 
 			return $data;
 		}
@@ -169,7 +164,11 @@ class Query {
 		return $data ? $data[0] : [ ];
 	}
 
-	public function get() {
+	public function get( array $field = [ ] ) {
+		if ( ! empty( $field ) ) {
+			$this->field( $field );
+		}
+
 		return $this->connection->query( $this->build()->select(), $this->build()->getSelectParams() );
 	}
 
@@ -181,7 +180,7 @@ class Query {
 	}
 
 	public function lists( $field ) {
-		$result = $this->get();
+		$result = $this->field($field)->get();
 		$data   = [ ];
 		if ( ! empty( $result ) ) {
 			$field = explode( ',', $field );
@@ -210,7 +209,8 @@ class Query {
 	}
 
 	public function field( $field ) {
-		foreach ( explode( ',', $field ) as $k => $v ) {
+		$field = is_array( $field ) ? $field : explode( ',', $field );
+		foreach ( (array) $field as $k => $v ) {
 			$this->build()->bindExpression( 'field', $v );
 		}
 

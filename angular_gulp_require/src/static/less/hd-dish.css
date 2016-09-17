@@ -1,0 +1,78 @@
+.hd-dish {
+  flex: 1;
+  display: flex;
+  overflow: auto;
+}
+.hd-dish .menu {
+  width: 20vw;
+  border-right: solid 1px #dddddd;
+}
+.hd-dish .menu ul {
+  background: #ececec;
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+.hd-dish .menu ul li {
+  font-size: 12px;
+  padding: 3vw 1vw;
+  text-align: center;
+}
+.hd-dish .menu ul li:nth-last-child(1) {
+  padding-bottom: 60px;
+}
+.hd-dish .lists {
+  flex: 1;
+}
+.hd-dish .lists dl:nth-last-child(1) {
+  border-bottom: solid 1px #dddddd;
+}
+.hd-dish .lists dl dt {
+  color: #333333;
+  background: #ececec;
+  font-size: 3vw;
+  padding: 2vw 2vw;
+  border: solid 1px #dddddd;
+  border-left: none;
+  border-right: none;
+}
+.hd-dish .lists dl dd {
+  margin: 0px;
+  padding: 2vw;
+  box-sizing: border-box;
+  display: flex;
+}
+.hd-dish .lists dl dd img {
+  width: 20vw;
+  height: 20vw;
+}
+.hd-dish .lists dl dd div.info {
+  color: #333333;
+  padding: 0vw 2vw;
+  flex: 1;
+}
+.hd-dish .lists dl dd div.info h3 {
+  font-size: 4vw;
+  font-weight: normal;
+  padding-bottom: 1vw;
+}
+.hd-dish .lists dl dd div.info p {
+  font-size: 12px;
+}
+.hd-dish .lists dl dd div.info div {
+  display: flex;
+  justify-content: space-between;
+  color: #009900;
+}
+.hd-dish .lists dl dd div.info div .num {
+  text-align: center;
+}
+.hd-dish .lists dl dd div.info div span.price {
+  font-size: 5vw;
+}
+.hd-dish .lists dl dd div.info div span.plus {
+  font-size: 14px;
+}
+.hd-dish .lists dl dd div.info div span.plus i {
+  font-size: 12vw;
+}

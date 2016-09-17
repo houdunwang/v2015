@@ -1,0 +1,80 @@
+.hd-dish {
+  flex     : 1;
+  display  : flex;
+  overflow : auto;
+  .menu {
+    width        : 20vw;
+    border-right : solid 1px #dddddd;
+    ul {
+      background : #ececec;
+      list-style : none;
+      padding    : 0px;
+      margin     : 0px;
+      li {
+        font-size  : 12px;
+        padding    : 3vw 1vw;
+        text-align : center;
+        &:nth-last-child(1) {
+          padding-bottom : 60px;
+        }
+      }
+    }
+  }
+  .lists {
+    flex : 1;
+    dl {
+      &:nth-last-child(1) {
+        border-bottom : solid 1px #dddddd;
+      }
+      dt {
+        color        : #333333;
+        background   : #ececec;
+        font-size    : 3vw;
+        padding      : 2vw 2vw;
+        border       : solid 1px #dddddd;
+        border-left  : none;
+        border-right : none;
+      }
+      dd {
+        margin     : 0px;
+        padding    : 2vw;
+        box-sizing : border-box;
+        display    : flex;
+        img {
+          width  : 20vw;
+          height : 20vw;
+        }
+        div.info {
+          color   : #333333;
+          padding : 0vw 2vw;
+          flex    : 1;
+          h3 {
+            font-size      : 4vw;
+            font-weight    : normal;
+            padding-bottom : 1vw;
+          }
+          p {
+            font-size : 12px;
+          }
+          div {
+            display         : flex;
+            justify-content : space-between;
+            color           : #009900;
+            .num {
+              text-align : center;
+            }
+            span.price {
+              font-size : 5vw;
+            }
+            span.plus {
+              font-size : 14px;
+              i {
+                font-size : 12vw;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

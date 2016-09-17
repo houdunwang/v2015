@@ -4,6 +4,7 @@ var gulp = require('gulp'),
     minjs = require('gulp-uglify'),
 // 定义压缩css的插件
     mincss = require('gulp-minify-css'),
+    babel = require('gulp-babel'),
 // 定义合并插件
     concat = require('gulp-concat'),
 // 定义检查js代码的插件
@@ -20,7 +21,7 @@ gulp.task('js', function () {
     // 找到我们要操作的文件
     gulp.src('src/**/*.js')
         //执行检测js的插件
-        .pipe(jshint())
+        //.pipe(jshint())
         //对代码进行报错提示
         .pipe(jshint.reporter('default'))
         //执行合并插件给合并完成的文件起一个名字
@@ -35,19 +36,22 @@ gulp.task('js', function () {
 
 //less编译任务
 gulp.task('less', function () {
-    gulp.src('static/**/*.less')  //文件路径
-        .pipe(less())  //执行编译less的插件
+    //文件路径
+    gulp.src('src/**/*.less')
+        //执行编译less的插件
+        .pipe(less())
         .pipe(concat('main.css'))
+        .pipe()
         //监听更改
         .pipe(connect.reload())
-        .pipe(gulp.dest('build'));  //将编译完成的文件放到css文件夹中
+        //将编译完成的文件放到css文件夹中
+        .pipe(gulp.dest('build'));
 })
 
 gulp.task('html', function () {
     //监听更改
     gulp.src('**/*.html').pipe(connect.reload())
 });
-
 
 gulp.task('watch', function () {
     //连接服务器，也就是说用它来连接我们的浏览器
@@ -59,9 +63,9 @@ gulp.task('watch', function () {
 
 gulp.task('connect', function () {
     //监听文件变动,刷新浏览器
-    gulp.watch('./**/*.js', ['js']);
+    gulp.watch(['./src/**/*.js', './app.js'], ['js']);
+    gulp.watch(['./src/**/*.less'], ['less','js']);
     gulp.watch('./**/*.html', ['html']);
-    gulp.watch('./**/*.less', ['less']);
 });
 
 gulp.task('default', ['watch', 'connect']);

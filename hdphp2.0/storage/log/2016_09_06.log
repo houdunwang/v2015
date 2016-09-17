@@ -1,0 +1,7 @@
+[ 2016-09-06T22:25:51+08:00 ]EXCEPTION: Method web\home\controller\D5::__empty() does not exist
+[ 2016-09-06T22:25:56+08:00 ]EXCEPTION: SELECT username,id FROM hd_news       ;BindParams:array (
+)42S22;1054;Unknown column 'username' in 'field list'
+[ 2016-09-06T22:26:05+08:00 ]EXCEPTION: SELECT username,id FROM hd_news       ;BindParams:array (
+)42S22;1054;Unknown column 'username' in 'field list'
+[ 2016-09-06T22:26:32+08:00 ]EXCEPTION: SELECT username,age FROM hd_user       ;BindParams:array (
+)42S22;1054;Unknown column 'age' in 'field list'

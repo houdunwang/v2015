@@ -1,2 +1,1 @@
-define('allControllers', ['lessonController', 'videoController'], function () {
-});
+define('allControllers', ['goodsController','cartController'], function () {});

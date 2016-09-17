@@ -9,6 +9,8 @@ require.config({
         'css': '../lib/js/css.min',
         'jquery': '../lib/js/jquery.min',
         'angular': '../lib/js/angular.min',
+        'ngRoute': '../lib/js/angular-route.min',
+        'underscore': '../lib/js/underscore-min'
     },
     shim: {
         'angular': {

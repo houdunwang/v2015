@@ -1,0 +1,16 @@
+<div class="footer-cart">
+    <div class="cart" ng-controller="cartController">
+        <div class="icon">
+            <i class="fa fa-cart-plus"></i>
+            <span>{{getGoodsNum()}}</span>
+        </div>
+        <div class="info">
+            <span class="price">￥{{getTotalPrice()}}</span>
+            <s>￥152</s>
+            <span class="desc">配送费以订单为准</span>
+        </div>
+    </div>
+    <div class="balance">
+        {{title}}
+    </div>
+</div>

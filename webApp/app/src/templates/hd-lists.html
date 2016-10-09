@@ -1,0 +1,29 @@
+<div class="hd-lists">
+    <div class="menu">
+        <ul>
+            <li ng-repeat="v in data">{{v.catname}}</li>
+        </ul>
+    </div>
+    <div class="lists">
+        <dl ng-repeat="v in data">
+            <dt>{{v.catname}}</dt>
+            <dd ng-repeat="m in v._goods">
+                <img ng-src="{{m.pic}}">
+                <div class="info">
+                    <h3>{{m.title}}</h3>
+                    <p>
+                        {{m.desc}}
+                    </p>
+                    <div>
+                        <span class="price">{{m.price}}</span>
+                        <span class="plus">
+                            <i class="fa fa-minus-circle" ng-click="cartServer.del(m)"></i>
+                            {{cartServer.getGoodsTotal(m)}}
+                            <i class="fa fa-plus-circle" ng-click="cartServer.add(m)"></i>
+                        </span>
+                    </div>
+                </div>
+            </dd>
+        </dl>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+[ 2016-09-08T23:08:00+08:00 ]EXCEPTION: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)
+[ 2016-09-08T23:11:31+08:00 ]EXCEPTION: 模板不存在:./web/home/view/
+[ 2016-09-08T23:26:34+08:00 ]EXCEPTION: web\home\controller\Shop 不存在
+[ 2016-09-08T23:27:15+08:00 ]EXCEPTION: 模板不存在:./web/home/view/
+[ 2016-09-08T23:31:54+08:00 ]EXCEPTION: 模板不存在:./web/home/view/
+[ 2016-09-08T23:42:07+08:00 ]EXCEPTION: show columns from hd_core_attachment ;BindParams:array (
+)42S02;1146;Table 'waimai.hd_core_attachment' doesn't exist
+[ 2016-09-08T23:42:16+08:00 ]EXCEPTION: show columns from hd_core_attachment ;BindParams:array (
+)42S02;1146;Table 'waimai.hd_core_attachment' doesn't exist
+[ 2016-09-08T23:42:22+08:00 ]EXCEPTION: show columns from hd_core_attachment ;BindParams:array (
+)42S02;1146;Table 'waimai.hd_core_attachment' doesn't exist

@@ -1,0 +1,83 @@
+.unusedAndReference {
+  avoid: warning;
+}
+.test-b,
+.test-c {
+  color: red;
+}
+.test-c {
+  background-color: green;
+}
+.theOnlySelector,
+.unusedAndReference {
+  shall-have: one selector;
+}
+#do-not-show-import .fix {
+  fix: fix;
+}
+#do-not-show-import .something,
+#do-not-show-import #do-not-show-import .something .invisible,
+#do-not-show-import show-all-content .something .invisible,
+#do-not-show-import show-all-content #do-not-show-import .something .invisible .invisible,
+#do-not-show-import #do-not-show-import show-all-content .something .invisible .invisible {
+  inside: something;
+}
+#do-not-show-import .something should,
+#do-not-show-import #do-not-show-import .something .invisible should,
+#do-not-show-import show-all-content .something .invisible should,
+#do-not-show-import show-all-content #do-not-show-import .something .invisible .invisible should,
+#do-not-show-import #do-not-show-import show-all-content .something .invisible .invisible should {
+  be: invisible;
+}
+#do-not-show-import .something .something,
+#do-not-show-import #do-not-show-import .something .invisible #do-not-show-import .something .invisible,
+#do-not-show-import show-all-content .something .invisible show-all-content .something .invisible,
+#do-not-show-import show-all-content #do-not-show-import .something .invisible .invisible show-all-content #do-not-show-import .something .invisible .invisible,
+#do-not-show-import #do-not-show-import show-all-content .something .invisible .invisible #do-not-show-import show-all-content .something .invisible .invisible {
+  invisible: suppress warning;
+}
+show-all-content {
+  /*
+  tralala
+*/
+}
+show-all-content .fix {
+  fix: fix;
+}
+show-all-content .something,
+show-all-content #do-not-show-import .something .invisible,
+show-all-content show-all-content .something .invisible,
+show-all-content show-all-content #do-not-show-import .something .invisible .invisible,
+show-all-content #do-not-show-import show-all-content .something .invisible .invisible {
+  inside: something;
+}
+show-all-content .something should,
+show-all-content #do-not-show-import .something .invisible should,
+show-all-content show-all-content .something .invisible should,
+show-all-content show-all-content #do-not-show-import .something .invisible .invisible should,
+show-all-content #do-not-show-import show-all-content .something .invisible .invisible should {
+  be: invisible;
+}
+show-all-content .something .something,
+show-all-content #do-not-show-import .something .invisible #do-not-show-import .something .invisible,
+show-all-content show-all-content .something .invisible show-all-content .something .invisible,
+show-all-content show-all-content #do-not-show-import .something .invisible .invisible show-all-content #do-not-show-import .something .invisible .invisible,
+show-all-content #do-not-show-import show-all-content .something .invisible .invisible #do-not-show-import show-all-content .something .invisible .invisible {
+  invisible: suppress warning;
+}
+#Namespace .mixin {
+  was: included;
+}
+#used-namespaced-mixin {
+  was: included;
+  shall-see: another property above;
+}
+.container-with-parent-selector:first-child {
+  background-color: blue;
+}
+call-mixin-with-import-by-reference-inside {
+  the-only-property: nothing-below-this;
+}
+call-mixin-with-import-by-reference-inside ruleset {
+  shall-be-invisible: less;
+}

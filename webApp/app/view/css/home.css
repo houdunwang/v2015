@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background: #f3f3f3;
+  height: 100%;
+  overflow: hidden;
+  justify-content: space-between;
+}
+.container .hd-lists {
+  flex: 1;
+}

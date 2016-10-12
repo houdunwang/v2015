@@ -1,0 +1,63 @@
+@import "common";
+
+body {
+  background : #f9f9f9 !important;
+  font-size  : 14px;
+}
+
+//面包屑导航
+ol.breadcrumb {
+  background : #f9f9f9 !important;
+}
+//后台菜单
+.admin_menu {
+  .left-menu {
+    div#search-menu {
+      input {
+        border-radius : 0;
+        font-size     : 14px;
+        height        : 43px;
+      }
+    }
+    .panel {
+      margin-bottom : 0px;
+      border-radius : 0px;
+      border-bottom : 0;
+      border-top    : 0;
+      .panel-heading {
+        position         : relative;
+        border-top-width : 0;
+        .panel-collapse {
+          width       : 50px;
+          line-height : 2.5em;
+          position    : absolute;
+          right       : 0px;
+          top         : 0px;
+          bottom      : 0px;
+          color       : #cccccc;
+          text-align  : center;
+          background  : #eeeeee;
+          border-left : solid 1px #dddddd;
+        }
+      }
+      ul {
+        &:last-child {
+          border-bottom : solid 1px #dddddd;
+        }
+        li {
+          cursor : pointer;
+        }
+      }
+    }
+  }
+}
+
+//底部菜单
+.master-footer {
+  text-align    : center;
+  border-top    : solid 1px #dddddd;
+  padding-top   : 15px;
+  margin-top    : 15px;
+  margin-bottom : 20px;
+  font-size     : 14px;
+}

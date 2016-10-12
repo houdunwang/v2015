@@ -1,0 +1,113 @@
+@import "common.less";
+
+body {
+  background-color : #f5f5f5;
+  font-size        : 14px !important;
+  &.hdcms {
+    background      : url('../images/bg.jpg');
+    background-size : 120%;
+    height          : 100%;
+  }
+}
+
+table {
+  table-layout : fixed;
+}
+
+div.system-container {
+  .breadcrumb {
+    padding-left : 0px;
+    margin       : 0px 0px .5em 0px;
+  }
+  //顶部大导航块
+  ul.nav-pills {
+    li {
+      margin-right : 10px;
+      a {
+        &.tile {
+          margin     : 0px;
+          padding    : .5em 1em .5em 1em;
+          display    : block;
+          width      : 8em;
+          text-align : center;
+          background : #438384;
+          color      : #eeeeee;
+          opacity    : .8;
+          box-shadow : rgba(0, 0, 0, 0.05) 0 2px 4px;
+          &:hover {
+            background : #006675;
+          }
+          i {
+            display : block;
+          }
+        }
+        &.active {
+          opacity    : .95;
+          background : #006675;
+        }
+      }
+    }
+  }
+  //路径导航
+  .breadcrumb {
+    background : #f5f5f5;
+    li {
+      a {
+        color : #333333;
+      }
+    }
+  }
+  //pannel
+  .panel {
+    .panel-footer {
+      a {
+        color : #999999;
+      }
+    }
+  }
+
+  //系统设置
+  h5.page-header {
+    border         : none;
+    border-left    : 0.3em #333333 solid;
+    padding-left   : 1em;
+    margin-top     : 40px;
+    padding-bottom : 0px;
+    &:first-of-type {
+      margin-top : 0px !important;
+    }
+  }
+  a.tile {
+    margin     : 0.4em;
+    padding    : .2em 1em .5em 1em;
+    display    : block;
+    float      : left;
+    width      : 8em;
+    text-align : center;
+    background : #eeeeee;
+    color      : #333333;
+    box-shadow : rgba(0, 0, 0, 0.05) 0 2px 4px;
+    i {
+      display   : block;
+      font-size : 2em;
+      margin    : 0.3em auto 0 auto;
+    }
+    &:hover {
+      background : #7dacdd;
+      color      : #ffffff;
+    }
+  }
+
+  //底部
+  div.footer {
+    margin-bottom : 50px;
+    color         : #ffffff;
+    font-size     : 15px;
+    text-align    : center;
+    a {
+      color   : #ffffff;
+      display : inline-block;
+      padding : 5px;
+    }
+  }
+}

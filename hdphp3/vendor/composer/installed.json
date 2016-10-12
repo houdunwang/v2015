@@ -1,0 +1,40 @@
+[
+    {
+        "name": "houdunwang/framework",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/framework.git",
+            "reference": "da9268668bfc195f1a542077d3fdd280b4492afa"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/houdunwang/framework/zipball/da9268668bfc195f1a542077d3fdd280b4492afa",
+            "reference": "da9268668bfc195f1a542077d3fdd280b4492afa",
+            "shasum": ""
+        },
+        "time": "2016-10-08 22:39:33",
+        "type": "project",
+        "installation-source": "source",
+        "autoload": {
+            "files": [
+                "src/kernel/helper.php"
+            ],
+            "psr-4": {
+                "hdphp\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "houdunwang",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "Hdphp Framework (Kernel)"
+    }
+]

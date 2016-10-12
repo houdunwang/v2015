@@ -1,0 +1,31 @@
+{
+  "name": "houdunwang/hdphp",
+  "description": "hdphp framework",
+  "type": "project",
+  "keywords": [
+    "houdunwang",
+    "hdphp",
+    "framework"
+  ],
+  "homepage": "http://www.hdphp.com/",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "向军",
+      "email": "2300071698@qq.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.4.0",
+    "houdunwang/framework": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "app\\": "app",
+      "system\\": "system",
+      "addons\\": "addons",
+      "module\\": "module"
+    }
+  }
+}

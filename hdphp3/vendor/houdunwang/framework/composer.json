@@ -1,0 +1,22 @@
+{
+  "name": "houdunwang/framework",
+  "description": "Hdphp Framework (Kernel)",
+  "license": "MIT",
+  "type": "project",
+  "authors": [
+    {
+      "name": "houdunwang",
+      "email": "2300071698@qq.com"
+    }
+  ],
+  "require": {
+  },
+  "autoload": {
+    "files": [
+      "src/kernel/helper.php"
+    ],
+    "psr-4": {
+      "hdphp\\": "src/"
+    }
+  }
+}

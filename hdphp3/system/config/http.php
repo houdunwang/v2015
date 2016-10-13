@@ -7,7 +7,7 @@ return [
 	//URL变量
 	'url_var'            => 's',
 	//禁止使用的模块
-	'deny_module'        => [ ],
+	'deny_module'        => [  ],
 	//默认模块
 	'default_module'     => 'home',
 	//默认控制器

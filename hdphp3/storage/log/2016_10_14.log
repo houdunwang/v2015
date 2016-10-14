@@ -1,0 +1,3 @@
+[ 2016-10-14T17:06:43+08:00 ]EXCEPTION: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)
+[ 2016-10-14T17:07:17+08:00 ]EXCEPTION: show columns from news ;BindParams:array (
+)42S02;1146;Table 'hdphp3.news' doesn't exist

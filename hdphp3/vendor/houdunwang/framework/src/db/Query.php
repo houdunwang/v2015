@@ -746,7 +746,7 @@ class Query implements \ArrayAccess, \Iterator {
 			$field = preg_replace( '/.[A-Z]/', '_\1', substr( $method, 5 ) );
 			$field = strtolower( $field );
 
-			return $this->where( $field, current( $params ) )->find();
+			return $this->where( $field, current( $params ) )->first();
 		}
 
 		return call_user_func_array( [ $this->connection, $method ], $params );

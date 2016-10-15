@@ -22,9 +22,9 @@ class Entry {
 
 	public function assign() {
 		//success error   warning
-				message( '操作成功', 'refresh', 'warning' ,95);
+		message( '操作成功', 'refresh', 'warning', 95 );
 
-//		confirm( '你确定删除吗?', u('post'), u('cancel') );
+		//		confirm( '你确定删除吗?', u('post'), u('cancel') );
 	}
 
 	public function post() {
@@ -34,4 +34,33 @@ class Entry {
 	public function cancel() {
 		echo '执行了  cancel';
 	}
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

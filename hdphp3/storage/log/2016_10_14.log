@@ -1,3 +1,13 @@
 [ 2016-10-14T17:06:43+08:00 ]EXCEPTION: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)
 [ 2016-10-14T17:07:17+08:00 ]EXCEPTION: show columns from news ;BindParams:array (
 )42S02;1146;Table 'hdphp3.news' doesn't exist
+[ 2016-10-14T17:17:01+08:00 ]EXCEPTION: Method hdphp\db\DbFacade::core() does not exist
+[ 2016-10-14T17:21:49+08:00 ]EXCEPTION: show columns from hd_user ;BindParams:array (
+)42S02;1146;Table 'hdphp3.hd_user' doesn't exist
+[ 2016-10-14T17:22:48+08:00 ]EXCEPTION: show columns from hd_user ;BindParams:array (
+)42S02;1146;Table 'hdphp3.hd_user' doesn't exist
+[ 2016-10-14T17:24:41+08:00 ]EXCEPTION: show columns from hd_user ;BindParams:array (
+)42S02;1146;Table 'hdphp3.hd_user' doesn't exist
+[ 2016-10-14T17:27:10+08:00 ]EXCEPTION: UPDATE hd_news SET decrement=decrement+99 WHERE id = ? ;BindParams:array (
+  1 => 1,
+)42S22;1054;Unknown column 'decrement' in 'field list'

@@ -10,6 +10,11 @@
 <hr>
 <a href="<?php echo u('entry/assign')?>">测试响应</a>
 <hr>
-<a href="<?php echo u('db/connect')?>">数据库连接</a>
+<dl>
+	<dt>数据库</dt>
+	<dd><a href="<?php echo u('database/connect')?>">数据库连接</a></dd>
+	<dd><a href="<?php echo u('database/core')?>">核心操作</a></dd>
+	<dd><a href="<?php echo u('database/query')?>">查询构造器</a></dd>
+</dl>
 </body>
 </html>

@@ -1,0 +1,57 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "09d299c9f9cf981057b850f8db3dd9f2",
+    "content-hash": "425502405dcd317e044ee3c07d7c8751",
+    "packages": [
+        {
+            "name": "houdunwang/framework",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/houdunwang/framework.git",
+                "reference": "720f94a7b0ab14c8edea6b5e8229834091c280f9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/houdunwang/framework/zipball/720f94a7b0ab14c8edea6b5e8229834091c280f9",
+                "reference": "720f94a7b0ab14c8edea6b5e8229834091c280f9",
+                "shasum": ""
+            },
+            "type": "project",
+            "autoload": {
+                "files": [
+                    "src/kernel/helper.php"
+                ],
+                "psr-4": {
+                    "hdphp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "houdunwang",
+                    "email": "2300071698@qq.com"
+                }
+            ],
+            "description": "Hdphp Framework (Kernel)",
+            "time": "2016-10-15 04:31:05"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=5.4.0"
+    },
+    "platform-dev": []
+}

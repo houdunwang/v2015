@@ -18,5 +18,14 @@ return array (
     'default' => NULL,
     'extra' => '',
   ),
+  'click' => 
+  array (
+    'field' => 'click',
+    'type' => 'int(11)',
+    'null' => 'YES',
+    'key' => false,
+    'default' => NULL,
+    'extra' => '',
+  ),
 );
 ?>

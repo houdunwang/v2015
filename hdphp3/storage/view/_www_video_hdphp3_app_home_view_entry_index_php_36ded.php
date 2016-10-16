@@ -16,6 +16,9 @@
 	<dd><a href="<?php echo u('database/core')?>">核心操作</a></dd>
 	<dd><a href="<?php echo u('database/query')?>">查询构造器</a></dd>
 	<dd><a href="<?php echo u('database/schema')?>">数据库操作</a></dd>
+	<dd><a href="<?php echo u('database/transaction')?>">事务处理</a></dd>
+	<dd><a href="<?php echo u('conf/base')?>">配置项</a></dd>
+	<dd><a href="<?php echo u('model/base')?>">模型基本操作</dd>
 </dl>
 </body>
 </html>

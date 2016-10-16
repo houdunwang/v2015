@@ -22,9 +22,6 @@ class {{MODEL}} extends Model{
 	//禁止填充字段
 	protected $denyFill = [ ];
 
-	//完整表名
-	protected $full = false;
-
 	//自动验证
 	protected $validate=[
 		//['字段名','验证方法','提示信息',验证条件,验证时间]

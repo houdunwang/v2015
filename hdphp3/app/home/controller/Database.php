@@ -85,19 +85,20 @@ class Database {
 
 	public function schema() {
 		//		$d = Schema::getFields('user');
-//		$d = Schema::getPrimaryKey( 'news' );
-//		dd(Schema::drop('demo'));
-//		dd(Schema::getTableSize('news'));
-//		Schema::lock('user');
-//		sleep(30);
-//		$d = Db::table('demo')->where('id','>',0)->delete();
-//		$d =Db::table('demo')->insert(['title'=>'新浪']);
-//		$d =Schema::truncate('demo');;
-//		dd($d);
+		//		$d = Schema::getPrimaryKey( 'news' );
+		//		dd(Schema::drop('demo'));
+		//		dd(Schema::getTableSize('news'));
+		//		Schema::lock('user');
+		//		sleep(30);
+		//		$d = Db::table('demo')->where('id','>',0)->delete();
+		//		$d =Db::table('demo')->insert(['title'=>'新浪']);
+		//		$d =Schema::truncate('demo');;
+		//		dd($d);
 
-//		p(Schema::getAllTableInfo('hdphp3'));
-//		dd(Schema::fieldExists('atitle','news'));
-		$sql = <<<EOF
+		//		p(Schema::getAllTableInfo('hdphp3'));
+		//		dd(Schema::fieldExists('atitle','news'));
+		$sql
+			= <<<EOF
     CREATE TABLE `hd_core_attachment` (
     `id` int(11) NOT NULL AUTO_INCREMENT,
     `uid` int(11) NOT NULL COMMENT '会员id',
@@ -123,7 +124,23 @@ class Database {
     ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='回复规则';
 EOF;
 
-		Schema::sql($sql);
+		Schema::sql( $sql );
+	}
+
+	//事务处理
+	public function transaction() {
+//		Db::transaction( function () {
+//			if ( ! Db::execute( 'DELETE FROM hd_news WHERE id=?', [ 1 ] ) ) {
+//				throw new \Exception();
+//			}
+////			throw new \Exception();
+//		});
+		$sql = "select * from ".tablename('news');
+		$d = Db::query($sql);
+		p($d);
+//		Db::beginTransaction();
+//		Db::execute('DELETE FROM hd_news WHERE id=?', [ 1 ]);
+//		DB::commit();
 	}
 }
 

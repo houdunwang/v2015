@@ -1,2 +1,12 @@
 [ 2016-10-16T11:09:14+08:00 ]EXCEPTION: show columns from hd_user ;BindParams:array (
 )42S02;1146;Table 'hdphp3.hd_user' doesn't exist
+[ 2016-10-16T15:54:30+08:00 ]EXCEPTION: There is no active transaction
+[ 2016-10-16T16:23:21+08:00 ]EXCEPTION: SQLSTATE[HY000] [2002] No such file or directory
+[ 2016-10-16T16:23:48+08:00 ]EXCEPTION: SQLSTATE[HY000] [2002] No such file or directory
+[ 2016-10-16T16:24:53+08:00 ]EXCEPTION: SQLSTATE[HY000] [2002] No such file or directory
+[ 2016-10-16T16:25:20+08:00 ]EXCEPTION: SQLSTATE[HY000] [2002] No such file or directory
+[ 2016-10-16T16:26:08+08:00 ]EXCEPTION: SQLSTATE[HY000] [2002] No such file or directory
+[ 2016-10-16T16:26:39+08:00 ]EXCEPTION: CREATE TABLE hd_article(id INT PRIMARY KEY AUTO_INCREMENT  NOT NULL,title VARCHAR(100)  NOT NULL,click tinyint  NOT NULL,created_at INT(10)  NOT NULL,updated_at INT(10)  NOT NULL)CHARSET UTF8 ;BindParams:array (
+)42S01;1050;Table 'hd_article' already exists
+[ 2016-10-16T16:27:05+08:00 ]EXCEPTION: SQLSTATE[HY000] [2002] No such file or directory
+[ 2016-10-16T18:41:41+08:00 ]EXCEPTION: 没有操作的数据

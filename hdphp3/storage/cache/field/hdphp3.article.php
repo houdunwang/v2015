@@ -3,7 +3,7 @@ return array (
   'id' => 
   array (
     'field' => 'id',
-    'type' => 'int(11) unsigned',
+    'type' => 'int(11)',
     'null' => 'NO',
     'key' => true,
     'default' => NULL,
@@ -12,8 +12,8 @@ return array (
   'title' => 
   array (
     'field' => 'title',
-    'type' => 'varchar(100)',
-    'null' => 'YES',
+    'type' => 'varchar(50)',
+    'null' => 'NO',
     'key' => false,
     'default' => NULL,
     'extra' => '',
@@ -21,35 +21,17 @@ return array (
   'click' => 
   array (
     'field' => 'click',
-    'type' => 'int(11)',
-    'null' => 'YES',
+    'type' => 'tinyint(3) unsigned',
+    'null' => 'NO',
     'key' => false,
-    'default' => NULL,
-    'extra' => '',
-  ),
-  'author' => 
-  array (
-    'field' => 'author',
-    'type' => 'varchar(20)',
-    'null' => 'YES',
-    'key' => false,
-    'default' => NULL,
-    'extra' => '',
-  ),
-  'uid' => 
-  array (
-    'field' => 'uid',
-    'type' => 'int(11)',
-    'null' => 'YES',
-    'key' => false,
-    'default' => NULL,
+    'default' => '0',
     'extra' => '',
   ),
   'created_at' => 
   array (
     'field' => 'created_at',
-    'type' => 'int(11)',
-    'null' => 'YES',
+    'type' => 'int(10)',
+    'null' => 'NO',
     'key' => false,
     'default' => NULL,
     'extra' => '',
@@ -57,8 +39,8 @@ return array (
   'updated_at' => 
   array (
     'field' => 'updated_at',
-    'type' => 'int(11)',
-    'null' => 'YES',
+    'type' => 'int(10)',
+    'null' => 'NO',
     'key' => false,
     'default' => NULL,
     'extra' => '',

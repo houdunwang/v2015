@@ -30,7 +30,7 @@ class App extends Container {
 
 	public function bootstrap() {
 		//版本号
-		define( 'HDPHP_VERSION', '3.0.2' );
+		define( 'HDPHP_VERSION', '3.0.3' );
 		define( 'IS_CLI', PHP_SAPI == 'cli' );
 		define( 'NOW', $_SERVER['REQUEST_TIME'] );
 		define( '__ROOT__', IS_CLI ? '' : trim( 'http://' . $_SERVER['HTTP_HOST'] . dirname( $_SERVER['SCRIPT_NAME'] ), '/\\' ) );

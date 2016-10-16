@@ -27,5 +27,23 @@ return array (
     'default' => NULL,
     'extra' => '',
   ),
+  'author' => 
+  array (
+    'field' => 'author',
+    'type' => 'varchar(20)',
+    'null' => 'YES',
+    'key' => false,
+    'default' => NULL,
+    'extra' => '',
+  ),
+  'uid' => 
+  array (
+    'field' => 'uid',
+    'type' => 'int(11)',
+    'null' => 'YES',
+    'key' => false,
+    'default' => NULL,
+    'extra' => '',
+  ),
 );
 ?>

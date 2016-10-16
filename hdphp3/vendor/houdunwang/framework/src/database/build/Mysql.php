@@ -85,7 +85,7 @@ class Mysql {
 	 * @return mixed
 	 */
 	public function repair( $table ) {
-		return Db::execute( "REPAIR TABLE `" . $this->getPrefix() . $table . "`" );
+		return Db::execute( "REPAIR TABLE `" . c( 'database.prefix' ) . $table . "`" );
 	}
 
 	/**
@@ -96,7 +96,7 @@ class Mysql {
 	 * @return mixed
 	 */
 	public function optimize( $table ) {
-		return Db::execute( "OPTIMIZE TABLE `" . $this->getPrefix() . $table . "`" );
+		return Db::execute( "OPTIMIZE TABLE `" . c( 'database.prefix' ) . $table . "`" );
 	}
 
 	/**

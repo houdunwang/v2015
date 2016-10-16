@@ -33,6 +33,7 @@ class Entry {
 
 	public function cancel() {
 		echo '执行了  cancel';
+
 	}
 
 }

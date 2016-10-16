@@ -121,7 +121,6 @@ class Validate extends VaAction {
 					break;
 			}
 		}
-
 	}
 
 	/**

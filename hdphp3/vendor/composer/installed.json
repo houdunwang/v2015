@@ -6,15 +6,15 @@
         "source": {
             "type": "git",
             "url": "https://github.com/houdunwang/framework.git",
-            "reference": "3f031c3d80ac4e82e229da71900ba094624f00f6"
+            "reference": "0d4aab7f3389ce3870eedcd140ac934ea562fcaf"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/houdunwang/framework/zipball/3f031c3d80ac4e82e229da71900ba094624f00f6",
-            "reference": "3f031c3d80ac4e82e229da71900ba094624f00f6",
+            "url": "https://api.github.com/repos/houdunwang/framework/zipball/0d4aab7f3389ce3870eedcd140ac934ea562fcaf",
+            "reference": "0d4aab7f3389ce3870eedcd140ac934ea562fcaf",
             "shasum": ""
         },
-        "time": "2016-10-16 10:49:30",
+        "time": "2016-10-16 11:43:47",
         "type": "project",
         "installation-source": "source",
         "autoload": {

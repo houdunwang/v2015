@@ -18,5 +18,41 @@ return array (
     'default' => NULL,
     'extra' => '',
   ),
+  'groupid' => 
+  array (
+    'field' => 'groupid',
+    'type' => 'int(11)',
+    'null' => 'YES',
+    'key' => false,
+    'default' => NULL,
+    'extra' => '',
+  ),
+  'email' => 
+  array (
+    'field' => 'email',
+    'type' => 'varchar(50)',
+    'null' => 'YES',
+    'key' => false,
+    'default' => NULL,
+    'extra' => '',
+  ),
+  'password' => 
+  array (
+    'field' => 'password',
+    'type' => 'char(45)',
+    'null' => 'YES',
+    'key' => false,
+    'default' => NULL,
+    'extra' => '',
+  ),
+  'age' => 
+  array (
+    'field' => 'age',
+    'type' => 'int(11)',
+    'null' => 'YES',
+    'key' => false,
+    'default' => NULL,
+    'extra' => '',
+  ),
 );
 ?>

@@ -41,9 +41,12 @@ class News extends Model {
 		];
 
 	public function one() {
-		echo 333;
+		//逻辑...
+		$this->error = "数据格式错误";
+
+		return FALSE;
 	}
 
 	//时间操作,需要表中存在 created_at , updated_at 字段
-	protected $timestamps = true;
+	protected $timestamps = TRUE;
 }

@@ -84,7 +84,7 @@ class Validate extends VaAction {
 							$this->error[] = $validate[2];
 						}
 					} else if ( isset( $this->validate[ $method ] ) ) {
-						$callback = $this->$validate[ $method ];
+						$callback = $this->validate[ $method ];
 						if ( $callback instanceof Closure ) {
 							//闭包函数
 							if ( $callback( $validate[0], $value, $params, $data ) !== TRUE ) {
@@ -97,7 +97,7 @@ class Validate extends VaAction {
 		}
 
 		//验证返回信息处理
-		$this->respond($this->error);
+		$this->respond( $this->error );
 
 		return $this;
 	}
@@ -105,17 +105,17 @@ class Validate extends VaAction {
 	/**
 	 * 验证返回信息处理
 	 */
-	public function respond($errors) {
+	public function respond( $errors ) {
 		//验证返回信息处理
 		if ( count( $errors ) > 0 ) {
 			switch ( c( 'error.app.validate' ) ) {
 				case 'redirect':
 					//将错误信息记录到闪存
-					\Session::flash( 'validate', $errors );
+					\Session::flash( 'errors', $errors );
 					go( __HISTORY__ );
 					break;
 				case 'show':
-					message( implode( '<br/>', $errors ), 'back', 'error' ,3);
+					message( implode( '<br/>', $errors ), 'back', 'error', 3 );
 					break;
 				case 'default':
 					break;
@@ -147,7 +147,7 @@ class Validate extends VaAction {
 	 * 获取错误信息
 	 * @return array
 	 */
-	public function all() {
+	public function getError() {
 		return $this->error;
 	}
 

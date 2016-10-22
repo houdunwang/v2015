@@ -9,7 +9,7 @@ class AppStart {
 	//执行中间件
 	public function run() {
 		//分配表单验证数据
-		$errors =\Session::flash( 'validate' );
+		$errors =\Session::flash( 'errors' );
 		\View::with( 'errors', $errors);
 		//清除闪存
 		\Session::flash( '[del]' );

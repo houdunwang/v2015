@@ -21,6 +21,10 @@
 		<dd><a href="<?php echo u('database/transaction')?>">事务处理</a></dd>
 		<dd><a href="<?php echo u('conf/base')?>">配置项</a></dd>
 		<dd><a href="<?php echo u('model/base')?>">模型基本操作</dd>
+		<dd><a href="<?php echo u('model/action')?>">模型动作</dd>
+		<dd><a href="<?php echo u('model/validate')?>">验证服务</dd>
+		<dd><a href="<?php echo u('model/auto')?>">自动完成</dd>
+		<dd><a href="<?php echo u('model/filter',['id'=>1])?>">自动过滤</dd>
 	</dl>
 </div>
 </body>

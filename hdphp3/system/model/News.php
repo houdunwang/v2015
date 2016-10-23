@@ -44,9 +44,14 @@ class News extends Model {
 		//逻辑...
 		$this->error = "数据格式错误";
 
-		return FALSE;
+		return false;
 	}
 
+	public function findOne(){
+		//业务逻辑
+		$this->error ='数据类型不对';
+		return false;
+	}
 	//时间操作,需要表中存在 created_at , updated_at 字段
-	protected $timestamps = TRUE;
+	protected $timestamps = true;
 }

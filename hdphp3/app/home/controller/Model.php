@@ -138,44 +138,16 @@ class Model {
 		Code::make();
 	}
 
-	//演示自动完的使用
-	public function auto() {
+	public function filter() {
+		$user = User::find( 1 );
 		if ( IS_POST ) {
-			$user           = new User();
-			$user->username = Request::post( 'username' );
-			$user->groupid  = Request::post( 'groupid' );
-			$user->age      = Request::post( 'age' );
-			$res            = $user->save();
-			dd( $res );
+			$user->password = Request::post( 'password' );
+			$user->email = Request::post( 'email' );
+			$user->save();
 		}
+		View::with( 'field', $user );
 
 		return view();
-	}
-
-	//自动过滤处理
-	public function filter() {
-		if ( IS_POST ) {
-			$user = new User();
-			foreach ( Request::post() as $k => $v ) {
-				$user[ $k ] = $v;
-			}
-			$user->id = Request::get( 'id' );
-			$user->save();
-			message( '修改成功' );
-		}
-		$field = Db::table( 'user' )->find( Request::get( 'id' ) );
-
-		return view()->with( 'field', $field );
-	}
-
-	public function map() {
-		$user             = new User(38);
-		$user['data']     = '666';
-		$user['username'] = 'a1';
-		$res              = $user->save();
-		dd( $res );
-		dd( $user->getError() );
-		dd( $user['data'] );
 	}
 }
 

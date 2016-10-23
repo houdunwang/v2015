@@ -38,7 +38,7 @@ class User extends Model {
 	//$params 参数比如 maxlen:10 10就是参数
 	//$data 所有表单数据
 	public function checkUser( $field, $value, $params, $data ) {
-		return Db::table( 'user' )->where( 'username', $value )->get() ? FALSE : TRUE;
+		return Db::table( 'user' )->where( 'username', $value )->get() ? false : true;
 	}
 
 	//自动完成
@@ -48,11 +48,11 @@ class User extends Model {
 			[ 'groupid', 'getGroupId', 'method', self::EMPTY_AUTO, self::MODEL_INSERT ],
 			[ 'age', 'intval', 'function', self::MUST_AUTO, self::MODEL_BOTH ],
 			[ 'password', 'md5', 'function', self::EXIST_AUTO, self::MODEL_BOTH ],
-			[ 'email', 'md5', 'string', self::MUST_AUTO, self::MODEL_BOTH ],
+//			[ 'email', 'md5', 'string', self::MUST_AUTO, self::MODEL_BOTH ],
 		];
 
 	//获取默认用户组
-	protected function getGroupId( $field, $val, $data=[] ) {
+	protected function getGroupId( $field, $val, $data = [ ] ) {
 		return Db::table( 'group' )->where( 'is_default', 1 )->pluck( 'id' );
 	}
 
@@ -60,9 +60,9 @@ class User extends Model {
 	protected $filter
 		= [
 			//[表单字段名,过滤条件,处理时间]
-		    ['password',self::EMPTY_FILTER,self::MODEL_UPDATE]
+			[ 'password', self::EMPTY_FILTER, self::MODEL_BOTH ]
 		];
 
 	//时间操作,需要表中存在created_at,updated_at字段
-	protected $timestamps = FALSE;
+	protected $timestamps = false;
 }

@@ -313,7 +313,7 @@ class Model implements ArrayAccess, Iterator {
 		if ( empty( $this->filter ) ) {
 			return;
 		}
-		$data = $this->original;
+		$data = &$this->original;
 		foreach ( $this->filter as $filter ) {
 			//验证条件
 			$filter[1] = isset( $filter[1] ) ? $filter[1] : self::EXIST_AUTO;
@@ -344,6 +344,8 @@ class Model implements ArrayAccess, Iterator {
 	 * 批量设置做准备数据
 	 *
 	 * @param array $data
+	 *
+	 * @return $this
 	 */
 	final public function create( array $data = [ ] ) {
 		if ( ! empty( $data ) ) {
@@ -373,13 +375,15 @@ class Model implements ArrayAccess, Iterator {
 			$this->original[ $this->pk ] = $this->data[ $this->pk ];
 		}
 		//修改时间
-		if ( $this->timestamps === true ) {
+		if ( $this->timestamps === true && ! empty( $this->original ) ) {
 			$this->original['updated_at'] = NOW;
 			if ( $this->actionType() == self::MODEL_INSERT ) {
 				//更新时间
 				$this->original['created_at'] = NOW;
 			}
 		}
+
+		return $this;
 	}
 
 	/**
@@ -395,8 +399,8 @@ class Model implements ArrayAccess, Iterator {
 	 * @return bool
 	 */
 	final public function touch() {
-		if ( $this->actionType() == self::MODEL_UPDATE ) {
-			return Db::table( $this->table )->where( $this->pk, $this->data[ $this->pk ] )->update( [ 'update_at' => NOW ] );
+		if ( $this->actionType() == self::MODEL_UPDATE && $this->timestamps ) {
+			return Db::table( $this->table )->where( $this->pk, $this->data[ $this->pk ] )->update( [ 'updated_at' => NOW ] );
 		}
 	}
 

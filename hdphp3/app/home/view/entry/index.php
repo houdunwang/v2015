@@ -25,6 +25,7 @@
 		<dd><a href="{{u('model/validate')}}">验证服务</dd>
 		<dd><a href="{{u('model/auto')}}">自动完成</dd>
 		<dd><a href="{{u('model/filter',['id'=>1])}}">自动过滤</dd>
+		<dd><a href="{{u('model/map')}}">字段映射</dd>
 	</dl>
 </div>
 </body>

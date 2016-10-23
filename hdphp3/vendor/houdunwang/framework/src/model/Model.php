@@ -13,7 +13,7 @@ use hdphp\traits\HdArrayAccess;
 use Iterator;
 
 class Model implements ArrayAccess, Iterator {
-	use HdArrayAccess, Relation;
+	use \hdphp\model\ArrayAccess, Relation;
 
 	//----------自动验证----------
 	//有字段时验证
@@ -61,6 +61,8 @@ class Model implements ArrayAccess, Iterator {
 	protected $denyFill = [ ];
 	//模型数据
 	protected $data = [ ];
+	//构建数据
+	protected $original = [ ];
 	//模型记录
 	protected static $links;
 	//数据库连接
@@ -84,11 +86,11 @@ class Model implements ArrayAccess, Iterator {
 	//自动过滤
 	protected $filter = [ ];
 	//时间操作
-	protected $timestamps = FALSE;
+	protected $timestamps = false;
 	//数据库驱动
 	protected $db;
 
-	public function __construct() {
+	public function __construct( $arg = null ) {
 		$this->class = get_class( $this );
 		$this->model = basename( str_replace( '/', '\\', $this->class ) );
 		$this->setTable();
@@ -96,6 +98,11 @@ class Model implements ArrayAccess, Iterator {
 		$this->db = \Db::connect()->model( $this );
 		if ( empty( $this->pk ) ) {
 			$this->pk = $this->db->getPrimaryKey();
+		}
+		if ( is_numeric( $arg ) ) {
+			$this->data = Db::table( $this->table )->find( $arg ) ?: [ ];
+		} else if ( is_array( $arg ) ) {
+			$this->create( $arg );
 		}
 	}
 
@@ -166,28 +173,26 @@ class Model implements ArrayAccess, Iterator {
 	final private function unique( $field, $value, $param, $data ) {
 		//表主键
 		$db = \Db::table( $this->table );
-		if ( isset( $data[ $this->pk ] ) ) {
-			$db->where( $this->pk, '<>', $data[ $this->pk ] );
+		if ( isset( $this->data[ $this->pk ] ) ) {
+			$db->where( $this->pk, '<>', $this->data[ $this->pk ] );
 		}
 		if ( empty( $value ) || ! $db->where( $field, $value )->pluck( $field ) ) {
-			return TRUE;
+			return true;
 		}
 	}
 
 	/**
 	 * 自动验证
 	 *
-	 * @param array $data 数据
-	 * @param int $type 类型 1添加 2更新
-	 *
 	 * @return bool
 	 */
-	final private function autoValidate( $data, $type ) {
+	final private function autoValidate() {
 		//验证库
 		$VaAction = new \hdphp\validate\VaAction;
 		if ( empty( $this->validate ) ) {
-			return TRUE;
+			return true;
 		}
+		$data = &$this->original;
 		foreach ( $this->validate as $validate ) {
 			//验证条件
 			$validate[3] = isset( $validate[3] ) ? $validate[3] : self::EXIST_VALIDATE;
@@ -207,7 +212,7 @@ class Model implements ArrayAccess, Iterator {
 			}
 			$validate[4] = isset( $validate[4] ) ? $validate[4] : self::MODEL_BOTH;
 			//验证时间判断
-			if ( $validate[4] != $type && $validate[4] != self::MODEL_BOTH ) {
+			if ( $validate[4] != $this->actionType() && $validate[4] != self::MODEL_BOTH ) {
 				continue;
 			}
 			//字段名
@@ -224,15 +229,15 @@ class Model implements ArrayAccess, Iterator {
 				$params = isset( $info[1] ) ? $info[1] : '';
 				if ( method_exists( $this, $method ) ) {
 					//类方法验证
-					if ( $this->$method( $field, $value, $params, $data ) !== TRUE ) {
+					if ( $this->$method( $field, $value, $params, $data ) !== true ) {
 						$this->error[] = $error;
 					}
 				} else if ( method_exists( $VaAction, $method ) ) {
-					if ( $VaAction->$method( $field, $value, $params, $data ) !== TRUE ) {
+					if ( $VaAction->$method( $field, $value, $params, $data ) !== true ) {
 						$this->error[] = $error;
 					}
 				} else if ( function_exists( $method ) ) {
-					if ( $method( $value ) != TRUE ) {
+					if ( $method( $value ) != true ) {
 						$this->error[] = $error;
 					}
 				} else if ( substr( $method, 0, 1 ) == '/' ) {
@@ -245,22 +250,20 @@ class Model implements ArrayAccess, Iterator {
 		}
 		\Validate::respond( $this->error );
 
-		return $this->error ? FALSE : TRUE;
+		return $this->error ? false : true;
 	}
 
 	/**
 	 * 自动完成处理
 	 *
-	 * @param $data 数据
-	 * @param int $type 时机
-	 *
-	 * @return mixed
+	 * @return void/mixed
 	 */
-	final private function autoOperation( $data, $type ) {
+	final private function autoOperation() {
 		//不存在自动完成规则
 		if ( empty( $this->auto ) ) {
-			return $data;
+			return;
 		}
+		$data =& $this->original;
 		foreach ( $this->auto as $name => $auto ) {
 			//处理类型
 			$auto[2] = isset( $auto[2] ) ? $auto[2] : 'string';
@@ -284,7 +287,7 @@ class Model implements ArrayAccess, Iterator {
 			} else if ( $auto[3] == self::MUST_AUTO ) {
 				//必须处理
 			}
-			if ( $auto[4] == $type || $auto[4] == self::MODEL_BOTH ) {
+			if ( $auto[4] == $this->actionType() || $auto[4] == self::MODEL_BOTH ) {
 				//为字段设置默认值
 				if ( empty( $data[ $auto[0] ] ) ) {
 					$data[ $auto[0] ] = '';
@@ -298,23 +301,19 @@ class Model implements ArrayAccess, Iterator {
 				}
 			}
 		}
-
-		return $data;
 	}
 
 	/**
 	 * 自动过滤掉满足条件的字段
 	 *
-	 * @param array $data 操作数据
-	 * @param $type 1 增加 2 更新
-	 *
-	 * @return array 处理后的数据
+	 * @return void
 	 */
-	final private function autoFilter( $data, $type ) {
+	final private function autoFilter() {
 		//不存在自动完成规则
 		if ( empty( $this->filter ) ) {
-			return $data;
+			return;
 		}
+		$data = $this->original;
 		foreach ( $this->filter as $filter ) {
 			//验证条件
 			$filter[1] = isset( $filter[1] ) ? $filter[1] : self::EXIST_AUTO;
@@ -335,47 +334,21 @@ class Model implements ArrayAccess, Iterator {
 			} else if ( $filter[1] == self::MUST_FILTER ) {
 				//必须处理
 			}
-			if ( $filter[2] == $type || $filter[2] == self::MODEL_BOTH ) {
+			if ( $filter[2] == $this->actionType() || $filter[2] == self::MODEL_BOTH ) {
 				unset( $data[ $filter[0] ] );
 			}
 		}
-
-		return $data;
 	}
 
 	/**
-	 * 处理字段映射
+	 * 批量设置做准备数据
 	 *
-	 * @param array $data 数据
-	 *
-	 * @return mixed
+	 * @param array $data
 	 */
-	final private function parseFieldsMap( array $data ) {
-		if ( ! empty( $this->map ) ) {
-			foreach ( $this->map as $key => $value ) {
-				if ( isset( $data[ $key ] ) ) {
-					$data[ $value ] = $data[ $key ];
-					unset( $data[ $key ] );
-				}
-
-			}
-		}
-
-		return $data;
-	}
-
-
-	/**
-	 * 创建数据对象
-	 *
-	 * @param array $data 生成对象数据
-	 *
-	 * @return array|bool
-	 */
-	final private function create( array $data = [ ] ) {
-		if ( $data ) {
+	final public function create( array $data = [ ] ) {
+		if ( ! empty( $data ) ) {
 			//允许填充的数据
-			if ( ! $this->allowFill ) {
+			if ( empty( $this->allowFill ) ) {
 				$data = [ ];
 			} else if ( $this->allowFill[0] != '*' ) {
 				$data = Arr::filter_by_keys( $data, $this->allowFill, 0 );
@@ -388,38 +361,43 @@ class Model implements ArrayAccess, Iterator {
 					$data = Arr::filter_by_keys( $data, $this->denyFill, 1 );
 				}
 			}
+			$this->original = $data;
+		}
+		//不允许设置主键字段
+		if ( isset( $this->original[ $this->pk ] ) ) {
+			unset( $this->original[ $this->pk ] );
 		}
 
-		$data = $data ?: $this->data;
-		//主键为空时删除
-		if ( isset( $data[ $this->pk ] ) ) {
-			if ( empty( $data[ $this->pk ] ) || ! Db::table( $this->table )->find( intval( $data[ $this->pk ] ) ) ) {
-				unset( $data[ $this->pk ] );
-			}
+		//更新时设置主键
+		if ( $this->actionType() == self::MODEL_UPDATE ) {
+			$this->original[ $this->pk ] = $this->data[ $this->pk ];
 		}
-		//动作类型  1 插入 2 更新
-		$type = empty( $data[ $this->pk ] ) ? self::MODEL_INSERT : self::MODEL_UPDATE;
-
-		//修改更新时间
-		if ( $this->timestamps === TRUE ) {
-			$data['updated_at'] = NOW;
-			if ( $type == self::MODEL_INSERT ) {
+		//修改时间
+		if ( $this->timestamps === true ) {
+			$this->original['updated_at'] = NOW;
+			if ( $this->actionType() == self::MODEL_INSERT ) {
 				//更新时间
-				$data['created_at'] = NOW;
+				$this->original['created_at'] = NOW;
 			}
 		}
-		//字段映射
-		$data = $this->parseFieldsMap( $data );
-		//自动完成
-		$data = $this->autoOperation( $data, $type );
-		//自动过滤
-		$data = $this->autoFilter( $data, $type );
-		//自动验证
-		if ( ! $this->autoValidate( $data, $type ) ) {
-			return FALSE;
-		}
+	}
 
-		return $data ?: [ ];
+	/**
+	 * 动作类型
+	 * @return int
+	 */
+	final public function actionType() {
+		return empty( $this->data[ $this->pk ] ) ? self::MODEL_INSERT : self::MODEL_UPDATE;
+	}
+
+	/**
+	 * 更新模型的时间戳
+	 * @return bool
+	 */
+	final public function touch() {
+		if ( $this->actionType() == self::MODEL_UPDATE ) {
+			return Db::table( $this->table )->where( $this->pk, $this->data[ $this->pk ] )->update( [ 'update_at' => NOW ] );
+		}
 	}
 
 	/**
@@ -431,45 +409,51 @@ class Model implements ArrayAccess, Iterator {
 	 * @throws \Exception
 	 */
 	final public function save( array $data = [ ] ) {
-		if ( ! $data = $this->create( $data ) ) {
-			throw new \Exception( '没有操作的数据' );
+		//批量设置数据
+		$this->create( $data );
+		//自动完成/自动过滤/自动验证
+		$this->autoOperation();
+		$this->autoFilter();
+		if ( ! $this->autoValidate() ) {
+			return false;
 		}
 		//更新条件检测
-		$action = empty( $data[ $this->pk ] ) ? 'insertGetId' : 'update';
+		$res = false;
+		$db  = Db::table( $this->table );
+		switch ( $this->actionType() ) {
+			case self::MODEL_UPDATE:
+				if ( $res = $db->update( $this->original ) ) {
+					$this->data = $db->find( $this->data[ $this->pk ] );
+				}
+				break;
+			case self::MODEL_INSERT:
+				if ( $res = $db->insertGetId( $this->original ) ) {
+					if ( is_numeric( $res ) ) {
+						$this->data = $db->find( $res );
+					}
+				}
+				break;
+		}
+		$this->original = [ ];
 
-		return $this->db->$action( $data );
+		return $res;
 	}
 
 	/**
 	 * 删除数据
-	 *
-	 * @param null $id 编号
-	 *
 	 * @return bool
 	 */
 	final public function destory() {
 		//没有查询参数如果模型数据中存在主键值,以主键值做删除条件
-		if ( empty( $this->data[ $this->pk ] ) ) {
-			return FALSE;
+		if ( ! empty( $this->data[ $this->pk ] ) ) {
+			if ( $this->db->delete( $this->data[ $this->pk ] ) ) {
+				$this->data( [ ] );
+
+				return true;
+			}
 		}
 
-		if ( $this->db->delete( $this->data[ $this->pk ] ) ) {
-			$this->data( [ ] );
-
-			return TRUE;
-		}
-
-		return FALSE;
-	}
-
-	/**
-	 * 更新模型的时间戳
-	 * @return bool
-	 */
-	final public function touch() {
-		$this->updated_at = time();
-
-		return $this->save();
+		return false;
 	}
 
 	/**
@@ -492,7 +476,7 @@ class Model implements ArrayAccess, Iterator {
 	 * @param $value
 	 */
 	public function __set( $name, $value ) {
-		$this->data[ $name ] = $value;
+		$this->original[ $name ] = $value;
 	}
 
 	/**

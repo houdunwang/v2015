@@ -123,7 +123,7 @@ class Arr {
 	 * 根据下标过滤数据元素
 	 * @param array $data 原数组数据
 	 * @param $keys 参数的下标
-	 * @param int $type 1 在$keys时过滤  0 不在时过滤
+	 * @param int $type 1 存在在$keys时过滤  0 不在时过滤
 	 *
 	 * @return array
 	 */

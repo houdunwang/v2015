@@ -20,25 +20,11 @@
     <favorites_list name="hdphp3" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Model.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/vendor/houdunwang/framework/src/model/Model.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="346" column="13" selection-start-line="346" selection-start-column="13" selection-end-line="346" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/admin/controller/Login.php" />
-        <option value="$PROJECT_DIR$/app/admin/controller/News.php" />
-        <option value="$PROJECT_DIR$/system/config/http.php" />
         <option value="$PROJECT_DIR$/app/home/view/user/add.html" />
         <option value="$PROJECT_DIR$/app/home/view/user/add.php" />
         <option value="$PROJECT_DIR$/add.php" />
@@ -71,7 +57,6 @@
         <option value="$PROJECT_DIR$/app/home/controller/Config.php" />
         <option value="$PROJECT_DIR$/system/config/sina.php" />
         <option value="$PROJECT_DIR$/app/home/controller/Conf.php" />
-        <option value="$PROJECT_DIR$/vendor/houdunwang/framework/src/db/Query.php" />
         <option value="$PROJECT_DIR$/vendor/houdunwang/framework/src/cli/make/view/model.tpl" />
         <option value="$PROJECT_DIR$/system/routes.php" />
         <option value="$PROJECT_DIR$/static.php" />
@@ -82,10 +67,14 @@
         <option value="$PROJECT_DIR$/system/config/error.php" />
         <option value="$PROJECT_DIR$/app/home/view/model/validate.php" />
         <option value="$PROJECT_DIR$/app/home/view/model/auto.php" />
-        <option value="$PROJECT_DIR$/app/home/view/entry/index.php" />
         <option value="$PROJECT_DIR$/app/home/view/model/filter.php" />
-        <option value="$PROJECT_DIR$/app/home/controller/Model.php" />
+        <option value="$PROJECT_DIR$/app/home/view/entry/index.php" />
+        <option value="$PROJECT_DIR$/app/home/view/model/map.php" />
+        <option value="$PROJECT_DIR$/vendor/houdunwang/framework/src/traits/HdArrayAccess.php" />
+        <option value="$PROJECT_DIR$/vendor/houdunwang/framework/src/model/ArrayAccess.php" />
         <option value="$PROJECT_DIR$/system/model/User.php" />
+        <option value="$PROJECT_DIR$/vendor/houdunwang/framework/src/db/Query.php" />
+        <option value="$PROJECT_DIR$/app/home/controller/Model.php" />
         <option value="$PROJECT_DIR$/vendor/houdunwang/framework/src/model/Model.php" />
       </list>
     </option>
@@ -160,6 +149,98 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdphp3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdphp3" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="houdunwang" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdphp3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdphp3" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="houdunwang" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdphp3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdphp3" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="houdunwang" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdphp3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdphp3" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="system" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -179,6 +260,42 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdphp3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdphp3" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="system" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="middleware" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdphp3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hdphp3" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="system" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -277,6 +394,10 @@
               <option name="myItemId" value="home" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -300,7 +421,9 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../hdphp" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="SearchEverywhereHistoryKey" value="Model&#9;FILE&#9;file:///www/video/hdphp3/vendor/houdunwang/framework/src/model/Model.php&#10;Validate&#9;FILE&#9;file:///www/video/hdphp3/vendor/houdunwang/framework/src/validate/Validate.php&#10;Vali&#9;FILE&#9;file:///www/video/hdphp3/vendor/houdunwang/framework/src/validate/Validate.php&#10;Session&#9;null&#9;null&#10;vali&#9;FILE&#9;file:///www/video/hdphp3/vendor/houdunwang/framework/src/validate/Validate.php&#10;Vaa&#9;null&#9;null&#10;View&#9;null&#9;null&#10;model&#9;FILE&#9;file:///www/video/hdphp3/vendor/houdunwang/framework/src/model/Model.php&#10;Validat&#9;null&#9;null&#10;Query&#9;FILE&#9;file:///www/video/hdphp3/vendor/houdunwang/framework/src/db/Query.php&#10;Schema&#9;FILE&#9;file:///www/video/hdphp3/vendor/houdunwang/framework/src/database/Schema.php&#10;Help&#9;FILE&#9;file:///www/video/hdphp3/vendor/houdunwang/framework/src/kernel/helper.php&#10;help&#9;FILE&#9;file:///www/video/hdphp3/vendor/houdunwang/framework/src/kernel/helper.php&#10;Conne&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="Query&#9;FILE&#9;file:///www/video/hdphp3/vendor/houdunwang/framework/src/db/Query.php&#10;Model&#9;FILE&#9;file:///www/video/hdphp3/vendor/houdunwang/framework/src/model/Model.php&#10;Validate&#9;FILE&#9;file:///www/video/hdphp3/vendor/houdunwang/framework/src/validate/Validate.php&#10;Vali&#9;FILE&#9;file:///www/video/hdphp3/vendor/houdunwang/framework/src/validate/Validate.php&#10;Session&#9;null&#9;null&#10;vali&#9;FILE&#9;file:///www/video/hdphp3/vendor/houdunwang/framework/src/validate/Validate.php&#10;Vaa&#9;null&#9;null&#10;View&#9;null&#9;null&#10;model&#9;FILE&#9;file:///www/video/hdphp3/vendor/houdunwang/framework/src/model/Model.php&#10;Validat&#9;null&#9;null&#10;Schema&#9;FILE&#9;file:///www/video/hdphp3/vendor/houdunwang/framework/src/database/Schema.php&#10;Help&#9;FILE&#9;file:///www/video/hdphp3/vendor/houdunwang/framework/src/kernel/helper.php&#10;help&#9;FILE&#9;file:///www/video/hdphp3/vendor/houdunwang/framework/src/kernel/helper.php&#10;Conne&#9;null&#9;null" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -384,18 +507,18 @@
       <workItem from="1476503187113" duration="13291000" />
       <workItem from="1476603463328" duration="14188000" />
       <workItem from="1476945860175" duration="13629000" />
-      <workItem from="1477060655679" duration="3462000" />
+      <workItem from="1477060655679" duration="14761000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60551000" />
+    <option name="totallyTimeSpent" value="71850000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18097281" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18097281" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -449,21 +572,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/houdunwang/framework/src/db/connection/Connection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="149" column="7" selection-start-line="149" selection-start-column="7" selection-end-line="149" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/houdunwang/framework/src/database/build/Mysql.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="116" column="7" selection-start-line="116" selection-start-column="7" selection-end-line="116" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/database/migrations/2016_10_16_606027_CreateArticleTable.php" />
     <entry file="file://$PROJECT_DIR$/vendor/houdunwang/framework/src/cli/migrate/Make.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -550,26 +658,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/houdunwang/framework/src/db/Query.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="335" column="26" selection-start-line="335" selection-start-column="13" selection-end-line="335" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/system/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="9" column="28" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/houdunwang/framework/src/model/Relation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-950">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -620,14 +712,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="87" column="46" selection-start-line="87" selection-start-column="46" selection-end-line="87" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/houdunwang/framework/src/traits/HdArrayAccess.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -724,17 +808,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system/config/error.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="31" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/houdunwang/framework/src/validate/VaAction.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
           <caret line="40" column="26" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -742,24 +820,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="20" column="44" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/home/controller/Model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="161" column="21" selection-start-line="161" selection-start-column="19" selection-end-line="161" selection-end-column="21" />
-          <folding>
-            <element signature="e#457#479#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/model/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="49" column="61" selection-start-line="49" selection-start-column="61" selection-end-line="49" selection-end-column="61" />
           <folding />
         </state>
       </provider>
@@ -782,16 +842,90 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/home/view/entry/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
+        <state relative-caret-position="513">
+          <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/houdunwang/framework/src/model/Relation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/Core_c.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1364">
+          <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/houdunwang/framework/src/traits/HdArrayAccess.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/houdunwang/framework/src/model/ArrayAccess.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/houdunwang/framework/src/model/Model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="346" column="13" selection-start-line="346" selection-start-column="13" selection-end-line="346" selection-end-column="13" />
+        <state relative-caret-position="108">
+          <caret line="163" column="24" selection-start-line="163" selection-start-column="24" selection-end-line="163" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/houdunwang/framework/src/db/Query.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="385" column="17" selection-start-line="0" selection-start-column="0" selection-end-line="768" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/config/error.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/home/controller/Model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="171" column="39" selection-start-line="171" selection-start-column="39" selection-end-line="171" selection-end-column="39" />
+          <folding>
+            <element signature="e#457#479#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/model/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="50" column="55" selection-start-line="50" selection-start-column="55" selection-end-line="50" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/home/view/model/map.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="37" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="37" />
           <folding />
         </state>
       </provider>

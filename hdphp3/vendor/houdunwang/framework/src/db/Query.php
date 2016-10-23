@@ -278,15 +278,18 @@ class Query implements \ArrayAccess, \Iterator {
 
 	/**
 	 * 更新数据
-	 *
 	 * @param $data
 	 *
-	 * @return bool
+	 * @return bool|mixed
+	 * @throws \Exception
 	 */
 	public function update( $data ) {
 		//移除表中不存在字段
 		$data = $this->filterTableField( $data );
-		foreach ( $data as $k => $v ) {
+		if ( empty( $data ) ) {
+			throw new Exception( '缺少更新数据' );
+		}
+		foreach ( (array) $data as $k => $v ) {
 			$this->build()->bindExpression( 'set', $k );
 			$this->build()->bindParams( 'values', $v );
 		}
@@ -334,7 +337,7 @@ class Query implements \ArrayAccess, \Iterator {
 	 * @return bool
 	 */
 	function firstOrCreate( $param, $data ) {
-		if ( ! $this->where( key( $param ), current( $param ) )->find() ) {
+		if ( ! $this->where( key( $param ), current( $param ) )->first() ) {
 			return $this->insert( $data );
 		} else {
 			return FALSE;
@@ -354,7 +357,7 @@ class Query implements \ArrayAccess, \Iterator {
 		//移除非法字段
 		$data = $this->filterTableField( $data );
 		if ( empty( $data ) ) {
-			throw new Exception( '没有数据用于插入,请检查字段名' );
+			throw new Exception( '没有数据用于插入' );
 		}
 
 		foreach ( $data as $k => $v ) {

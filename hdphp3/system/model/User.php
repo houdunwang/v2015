@@ -27,7 +27,7 @@ class User extends Model {
 		= [
 			//['字段名','验证方法','提示信息',验证条件,验证时间]
 			[ 'username', 'required', '用户名不能为空', self::MUST_VALIDATE, self::MODEL_INSERT ],
-			[ 'username', 'checkUser', '用户名已经存在', self::MUST_VALIDATE, self::MODEL_INSERT ],
+			[ 'username', 'unique', '用户名已经存在', self::MUST_VALIDATE, self::MODEL_INSERT ],
 			//			[ 'password', 'required', '密码不能为空', self::MUST_VALIDATE, self::MODEL_INSERT ],
 			//			[ 'password', 'confirm:password2', '两次密码不一致', self::MUST_VALIDATE, self::MODEL_INSERT ],
 			//			[ 'email', 'email', '邮箱格式错误', self::NOT_EMPTY_VALIDATE, self::MODEL_INSERT ],
@@ -48,6 +48,7 @@ class User extends Model {
 			[ 'groupid', 'getGroupId', 'method', self::EMPTY_AUTO, self::MODEL_INSERT ],
 			[ 'age', 'intval', 'function', self::MUST_AUTO, self::MODEL_BOTH ],
 			[ 'password', 'md5', 'function', self::EXIST_AUTO, self::MODEL_BOTH ],
+			[ 'email', 'md5', 'string', self::MUST_AUTO, self::MODEL_BOTH ],
 		];
 
 	//获取默认用户组

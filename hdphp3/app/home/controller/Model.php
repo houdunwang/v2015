@@ -167,6 +167,16 @@ class Model {
 
 		return view()->with( 'field', $field );
 	}
+
+	public function map() {
+		$user             = new User(38);
+		$user['data']     = '666';
+		$user['username'] = 'a1';
+		$res              = $user->save();
+		dd( $res );
+		dd( $user->getError() );
+		dd( $user['data'] );
+	}
 }
 
 

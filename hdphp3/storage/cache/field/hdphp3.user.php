@@ -54,5 +54,14 @@ return array (
     'default' => NULL,
     'extra' => '',
   ),
+  'data' => 
+  array (
+    'field' => 'data',
+    'type' => 'varchar(100)',
+    'null' => 'YES',
+    'key' => false,
+    'default' => NULL,
+    'extra' => '',
+  ),
 );
 ?>

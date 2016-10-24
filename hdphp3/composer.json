@@ -15,7 +15,7 @@
       "email": "2300071698@qq.com"
     }
   ],
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "require": {
     "php": ">=5.4.0",
     "houdunwang/framework": "*"

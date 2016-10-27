@@ -26,7 +26,7 @@ class User extends Model {
 	protected $validate
 		= [
 			//['字段名','验证方法','提示信息',验证条件,验证时间]
-			//			[ 'username', 'required', '用户名不能为空', self::MUST_VALIDATE, self::MODEL_INSERT ],
+						[ 'username', 'required', '用户名不能为空', self::MUST_VALIDATE, self::MODEL_INSERT ],
 			//			[ 'username', 'unique', '用户名已经存在', self::MUST_VALIDATE, self::MODEL_INSERT ],
 			//			[ 'password', 'required', '密码不能为空', self::MUST_VALIDATE, self::MODEL_INSERT ],
 			//			[ 'password', 'confirm:password2', '两次密码不一致', self::MUST_VALIDATE, self::MODEL_INSERT ],

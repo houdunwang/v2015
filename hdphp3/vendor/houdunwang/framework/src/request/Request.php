@@ -34,7 +34,7 @@ class Request {
 		return $this->$action( implode( '.', $exp ), $value, $method );
 	}
 
-	public function get( $name = null, $value = null, $method = [ ] ) {
+	public function get( $name = '', $value = null, $method = [ ] ) {
 		if ( empty( $name ) ) {
 			return self::$items['GET'];
 		}
@@ -46,7 +46,7 @@ class Request {
 		return $data ?: $value;
 	}
 
-	public function post( $name, $value = null, $method = [ ] ) {
+	public function post( $name = '', $value = null, $method = [ ] ) {
 		if ( empty( $name ) ) {
 			return self::$items['POST'];
 		}
@@ -58,7 +58,7 @@ class Request {
 		return $data ?: $value;
 	}
 
-	public function cookie( $name, $value = null, $method = [ ] ) {
+	public function cookie( $name = '', $value = null, $method = [ ] ) {
 		if ( empty( $name ) ) {
 			return self::$items['COOKIE'];
 		}
@@ -70,7 +70,7 @@ class Request {
 		return $data ?: $value;
 	}
 
-	public function request( $name, $value = null, $method = [ ] ) {
+	public function request( $name = '', $value = null, $method = [ ] ) {
 		if ( empty( $name ) ) {
 			return self::$items['REQUEST'];
 		}
@@ -82,7 +82,7 @@ class Request {
 		return $data ?: $value;
 	}
 
-	public function globals( $name, $value = null, $method = [ ] ) {
+	public function globals( $name = '', $value = null, $method = [ ] ) {
 		if ( empty( $name ) ) {
 			return self::$items['GLOBALS'];
 		}
@@ -94,7 +94,7 @@ class Request {
 		return $data ?: $value;
 	}
 
-	public function session( $name, $value = null, $method = [ ] ) {
+	public function session( $name = '', $value = null, $method = [ ] ) {
 		if ( empty( $name ) ) {
 			return self::$items['SESSION'];
 		}
@@ -108,7 +108,7 @@ class Request {
 
 	//客户端IP
 	public function ip( $type = 0 ) {
-		return clientIp();
+		return clientIp($type);
 	}
 
 	//https请求

@@ -14,18 +14,9 @@ use hdphp\kernel\ServiceProvider;
 class SessionProvider extends ServiceProvider {
 
 	//延迟加载
-	public $defer = FALSE;
+	public $defer = false;
 
 	public function boot() {
-		\Session::make();
-		//开启session
-		session_start();
-		//cookie的PHPSESSID过期时间
-		$expire = Config::get( 'session.expire' );
-
-		if ( $expire > 0 ) {
-			setcookie( session_name(), session_id(), time() + $expire, '/' );
-		}
 	}
 
 	public function register() {

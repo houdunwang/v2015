@@ -10,141 +10,133 @@
 namespace hdphp\request;
 //请求处理
 class Request {
-	public function __call( $method, $params ) {
-		if ( empty( $params ) ) {
-			$params[0] = $method . '.';
-		} else {
-			$params[0] = $method . '.' . $params[0];
-		}
+	static $items = [ ];
 
-		return call_user_func_array( [ $this, 'query' ], $params );
+	public function __construct() {
+		self::$items['GET']     = $_GET;
+		self::$items['POST']    = $_POST;
+		self::$items['REQUEST'] = $_REQUEST;
+		self::$items['SERVER']  = $_SERVER;
+		self::$items['GLOBALS'] = $GLOBALS;
+		self::$items['SESSION'] = Session::all();
+		self::$items['COOKIE']  = Cookie::all();
+		define( 'IS_MOBILE', $this->isMobile() );
+
 	}
 
-	/**
-	 * 获取变量
-	 *
-	 * @param       $var     变量名
-	 * @param null $default 变量不存在时设置的值
-	 * @param array $filter 过滤函数
-	 *
-	 * @return array|null
-	 */
-	public function query( $var, $default = NULL, $filter = [ ] ) {
-		//支持get.id 或 id
-		$var = explode( ".", $var );
+	public function query( $name, $value, $method = [ ] ) {
+		$exp = explode( '.', $name );
+		if ( empty( $exp ) || ! method_exists( $this, $exp[0] ) ) {
+			return null;
+		}
+		$action = array_shift( $exp );
 
-		if ( count( $var ) == 1 ) {
-			array_unshift( $var, 'REQUEST' );
+		return $this->$action( implode( '.', $exp ), $value, $method );
+	}
+
+	public function get( $name = null, $value = null, $method = [ ] ) {
+		if ( empty( $name ) ) {
+			return self::$items['GET'];
+		}
+		$data = Arr::get( self::$items['GET'], $name );
+		if ( $data && $method ) {
+			return Tool::batchFunctions( $data );
 		}
 
-		switch ( strtoupper( $var[0] ) ) {
-			case 'GET' :
-				$data = &$_GET;
-				break;
-			case 'POST' :
-				$data = &$_POST;
-				break;
-			case 'REQUEST' :
-				$data = &$_REQUEST;
-				break;
-			case 'FILES' :
-				$data = &$_FILES;
-				break;
-			case 'SESSION' :
-				$data = &$_SESSION;
-				break;
-			case 'COOKIE' :
-				$data = &$_COOKIE;
-				break;
-			case 'SERVER' :
-				$data = &$_SERVER;
-				break;
-			case 'GLOBALS' :
-				$data = &$GLOBALS;
-				break;
-			default :
-				return;
-		}
-		//q("post.")返回所有
-		if ( empty( $var[1] ) ) {
-			return $data;
-		} else if ( ! empty( $data[ $var[1] ] ) ) {
-			$value = $data[ $var[1] ];
-			//参数过滤函数
-			if ( ! empty( $filter ) ) {
-				if ( is_string( $filter ) ) {
-					$filter = explode( ',', $filter );
-				}
-				//过滤处理
-				foreach ( (array) $filter as $func ) {
-					if ( function_exists( $func ) ) {
-						$value = is_array( $value ) ? array_map( $func, $value ) : $func( $value );
-					}
-				}
-				$data[ $var[1] ] = $value;
+		return $data ?: $value;
+	}
 
-				return $value;
-			}
-
-			return $value;
-		} else {
-			return $data[ $var[1] ] = $default;
+	public function post( $name, $value = null, $method = [ ] ) {
+		if ( empty( $name ) ) {
+			return self::$items['POST'];
 		}
+		$data = Arr::get( self::$items['POST'], $name );
+		if ( $data && $method ) {
+			return Tool::batchFunctions( $data );
+		}
+
+		return $data ?: $value;
+	}
+
+	public function cookie( $name, $value = null, $method = [ ] ) {
+		if ( empty( $name ) ) {
+			return self::$items['COOKIE'];
+		}
+		$data = Arr::get( self::$items['COOKIE'], $name );
+		if ( $data && $method ) {
+			return Tool::batchFunctions( $data );
+		}
+
+		return $data ?: $value;
+	}
+
+	public function request( $name, $value = null, $method = [ ] ) {
+		if ( empty( $name ) ) {
+			return self::$items['REQUEST'];
+		}
+		$data = Arr::get( self::$items['REQUEST'], $name );
+		if ( $data && $method ) {
+			return Tool::batchFunctions( $data );
+		}
+
+		return $data ?: $value;
+	}
+
+	public function globals( $name, $value = null, $method = [ ] ) {
+		if ( empty( $name ) ) {
+			return self::$items['GLOBALS'];
+		}
+		$data = Arr::get( self::$items['GLOBALS'], $name );
+		if ( $data && $method ) {
+			return Tool::batchFunctions( $data );
+		}
+
+		return $data ?: $value;
+	}
+
+	public function session( $name, $value = null, $method = [ ] ) {
+		if ( empty( $name ) ) {
+			return self::$items['SESSION'];
+		}
+		$data = Arr::get( self::$items['SESSION'], $name );
+		if ( $data && $method ) {
+			return Tool::batchFunctions( $data );
+		}
+
+		return $data ?: $value;
 	}
 
 	//客户端IP
 	public function ip( $type = 0 ) {
-		$type = intval( $type );
-		//保存客户端IP地址
-		if ( isset( $_SERVER ) ) {
-			if ( isset( $_SERVER["HTTP_X_FORWARDED_FOR"] ) ) {
-				$ip = $_SERVER["HTTP_X_FORWARDED_FOR"];
-			} else if ( isset( $_SERVER["HTTP_CLIENT_IP"] ) ) {
-				$ip = $_SERVER["HTTP_CLIENT_IP"];
-			} else {
-				$ip = $_SERVER["REMOTE_ADDR"];
-			}
-		} else {
-			if ( getenv( "HTTP_X_FORWARDED_FOR" ) ) {
-				$ip = getenv( "HTTP_X_FORWARDED_FOR" );
-			} else if ( getenv( "HTTP_CLIENT_IP" ) ) {
-				$ip = getenv( "HTTP_CLIENT_IP" );
-			} else {
-				$ip = getenv( "REMOTE_ADDR" );
-			}
-		}
-		$long     = ip2long( $ip );
-		$clientIp = $long ? [ $ip, $long ] : [ "0.0.0.0", 0 ];
-
-		return $clientIp[ $type ];
+		return clientIp();
 	}
 
 	//https请求
 	public function isHttps() {
 		if ( isset( $_SERVER['HTTPS'] ) && ( '1' == $_SERVER['HTTPS'] || 'on' == strtolower( $_SERVER['HTTPS'] ) ) ) {
-			return TRUE;
+			return true;
 		} elseif ( isset( $_SERVER['SERVER_PORT'] ) && ( '443' == $_SERVER['SERVER_PORT'] ) ) {
-			return TRUE;
+			return true;
 		}
 
-		return FALSE;
+		return false;
 	}
 
 	//手机判断
 	public function isMobile() {
 		//微信客户端检测
 		if ( IS_WEIXIN ) {
-			return TRUE;
+			return true;
 		}
 		if ( ! empty( $_GET['mobile'] ) ) {
-			return TRUE;
+			return true;
 		}
 		$_SERVER['ALL_HTTP'] = isset( $_SERVER['ALL_HTTP'] ) ? $_SERVER['ALL_HTTP'] : '';
 		$mobile_browser      = '0';
 		if ( preg_match( '/(up.browser|up.link|mmp|symbian|smartphone|midp|wap|phone|iphone|ipad|ipod|android|xoom)/i', strtolower( $_SERVER['HTTP_USER_AGENT'] ) ) ) {
 			$mobile_browser ++;
 		}
-		if ( ( isset( $_SERVER['HTTP_ACCEPT'] ) ) and ( strpos( strtolower( $_SERVER['HTTP_ACCEPT'] ), 'application/vnd.wap.xhtml+xml' ) !== FALSE ) ) {
+		if ( ( isset( $_SERVER['HTTP_ACCEPT'] ) ) and ( strpos( strtolower( $_SERVER['HTTP_ACCEPT'] ), 'application/vnd.wap.xhtml+xml' ) !== false ) ) {
 			$mobile_browser ++;
 		}
 		if ( isset( $_SERVER['HTTP_X_WAP_PROFILE'] ) ) {
@@ -245,21 +237,21 @@ class Request {
 		if ( in_array( $mobile_ua, $mobile_agents ) ) {
 			$mobile_browser ++;
 		}
-		if ( strpos( strtolower( $_SERVER['ALL_HTTP'] ), 'operamini' ) !== FALSE ) {
+		if ( strpos( strtolower( $_SERVER['ALL_HTTP'] ), 'operamini' ) !== false ) {
 			$mobile_browser ++;
 		}
 		// Pre-final check to reset everything if the user is on Windows
-		if ( strpos( strtolower( $_SERVER['HTTP_USER_AGENT'] ), 'windows' ) !== FALSE ) {
+		if ( strpos( strtolower( $_SERVER['HTTP_USER_AGENT'] ), 'windows' ) !== false ) {
 			$mobile_browser = 0;
 		}
 		// But WP7 is also Windows, with a slightly different characteristic
-		if ( strpos( strtolower( $_SERVER['HTTP_USER_AGENT'] ), 'windows phone' ) !== FALSE ) {
+		if ( strpos( strtolower( $_SERVER['HTTP_USER_AGENT'] ), 'windows phone' ) !== false ) {
 			$mobile_browser ++;
 		}
 		if ( $mobile_browser > 0 ) {
-			return TRUE;
+			return true;
 		} else {
-			return FALSE;
+			return false;
 		}
 	}
 }

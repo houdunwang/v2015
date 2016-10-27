@@ -63,7 +63,7 @@ class Config {
 	 *
 	 * @param $key
 	 *
-	 * @return array|void
+	 * @return array|void|null
 	 */
 	public function get( $key ) {
 		$tmp    = $this->items;
@@ -72,7 +72,7 @@ class Config {
 			if ( isset( $tmp[ $d ] ) ) {
 				$tmp = $tmp[ $d ];
 			} else {
-				return;
+				return null;
 			}
 		}
 

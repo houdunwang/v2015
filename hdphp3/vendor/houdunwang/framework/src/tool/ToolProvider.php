@@ -14,7 +14,7 @@ use hdphp\kernel\ServiceProvider;
 class ToolProvider extends ServiceProvider {
 
 	//延迟加载
-	public $defer = FALSE;
+	public $defer = true;
 
 	public function boot() {
 
@@ -23,6 +23,6 @@ class ToolProvider extends ServiceProvider {
 	public function register() {
 		$this->app->single( 'Tool', function ( $app ) {
 			return new Tool( $app );
-		}, TRUE );
+		}, true );
 	}
 }

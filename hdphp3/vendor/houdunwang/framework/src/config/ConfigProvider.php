@@ -14,7 +14,7 @@ use hdphp\kernel\ServiceProvider;
 class ConfigProvider extends ServiceProvider {
 
 	//延迟加载
-	public $defer = FALSE;
+	public $defer = false;
 
 	public function boot() {
 		date_default_timezone_set( c( 'app.timezone' ) );
@@ -23,6 +23,6 @@ class ConfigProvider extends ServiceProvider {
 	public function register() {
 		$this->app->single( 'Config', function ( $app ) {
 			return new Config( $app );
-		}, TRUE );
+		}, true );
 	}
 }

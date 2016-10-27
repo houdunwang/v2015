@@ -142,10 +142,20 @@ class Model {
 		$user = User::find( 1 );
 		if ( IS_POST ) {
 			$user->password = Request::post( 'password' );
-			$user->email = Request::post( 'email' );
+			$user->email    = Request::post( 'email' );
 			$user->save();
 		}
 		View::with( 'field', $user );
+
+		return view();
+	}
+
+	public function fill() {
+		if ( IS_POST ) {
+			$user = new User();
+			$d    = $user->save( Request::post() );
+			dd( $d );
+		}
 
 		return view();
 	}

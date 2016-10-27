@@ -12,7 +12,7 @@ namespace hdphp\alipay;
 class AlipayProvider extends \hdphp\kernel\ServiceProvider {
 
 	//延迟加载
-	public $defer = TRUE;
+	public $defer = true;
 
 	public function boot() {
 

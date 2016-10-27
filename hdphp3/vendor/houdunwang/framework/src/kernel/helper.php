@@ -403,8 +403,30 @@ if ( ! function_exists( 'ajax' ) ) {
  * 获取客户端ip
  */
 if ( ! function_exists( 'clientIp' ) ) {
-	function clientIp() {
-		return \Request::ip();
+	function clientIp($type = 0) {
+		$type = intval( $type );
+		//保存客户端IP地址
+		if ( isset( $_SERVER ) ) {
+			if ( isset( $_SERVER["HTTP_X_FORWARDED_FOR"] ) ) {
+				$ip = $_SERVER["HTTP_X_FORWARDED_FOR"];
+			} else if ( isset( $_SERVER["HTTP_CLIENT_IP"] ) ) {
+				$ip = $_SERVER["HTTP_CLIENT_IP"];
+			} else {
+				$ip = $_SERVER["REMOTE_ADDR"];
+			}
+		} else {
+			if ( getenv( "HTTP_X_FORWARDED_FOR" ) ) {
+				$ip = getenv( "HTTP_X_FORWARDED_FOR" );
+			} else if ( getenv( "HTTP_CLIENT_IP" ) ) {
+				$ip = getenv( "HTTP_CLIENT_IP" );
+			} else {
+				$ip = getenv( "REMOTE_ADDR" );
+			}
+		}
+		$long     = ip2long( $ip );
+		$clientIp = $long ? [ $ip, $long ] : [ "0.0.0.0", 0 ];
+
+		return $clientIp[ $type ];
 	}
 }
 

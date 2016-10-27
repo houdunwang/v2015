@@ -14,12 +14,12 @@ class Error {
 	private $app;
 
 	public function __construct( $app ) {
-//		error_reporting(E_ALL);
 		$this->app = $app;
 
 	}
 
 	public function bootstrap() {
+		error_reporting( 0 );
 		set_error_handler( [ $this, 'error' ], E_ALL );
 		set_exception_handler( [ $this, 'exception' ] );
 		register_shutdown_function( [ $this, 'fatalError' ] );
@@ -51,7 +51,7 @@ class Error {
 				if ( c( 'app.debug' ) ) {
 					require __DIR__ . '/view/debug.php';
 				} else {
-					class_exists( 'Log', FALSE ) && Log::write( $msg, $this->errorType( $errno ) );
+					class_exists( 'Log', false ) && Log::write( $msg, $this->errorType( $errno ) );
 					_404();
 				}
 		}
@@ -125,14 +125,14 @@ class Error {
 	 *
 	 * @return void|array
 	 */
-	public function trace( $value = '[hdphp]', $label = '', $level = 'DEBUG', $record = FALSE ) {
+	public function trace( $value = '[hdphp]', $label = '', $level = 'DEBUG', $record = false ) {
 		static $trace = [ ];
 
 		if ( '[hdphp]' === $value ) {
 			// 获取trace信息
 			return $trace;
 		} else {
-			$info  = ( $label ? $label . ':' : '' ) . print_r( $value, TRUE );
+			$info  = ( $label ? $label . ':' : '' ) . print_r( $value, true );
 			$level = strtoupper( $level );
 			if ( IS_AJAX || $record ) {
 				Log::record( $info, $level, $record );

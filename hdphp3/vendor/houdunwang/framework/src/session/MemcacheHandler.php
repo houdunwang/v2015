@@ -10,66 +10,33 @@
 namespace hdphp\session;
 
 class MemcacheHandler implements AbSession {
+	use Base;
+	private $memcache;
 
-    private $memcache;
+	public function connect() {
+		$options        = Config( 'session.memcache' );
+		$this->memcache = new Memcache();
+		$this->memcache->connect( $options['host'], $options['port'] );
+	}
 
-    function __construct() {
-    }
+	//获得
+	public function read() {
+		$data = $this->memcache->get( $this->session_id );
 
-    public function make() {
-        $options = Config( 'session.memcache' );
-        $this->memcache = new Memcache();
-        $this->memcache->connect( $options['host'], $options['port'] );
-        session_set_save_handler( [ &$this, "open" ], [ &$this, "close" ], [ &$this, "read" ], [ &$this, "write" ], [ &$this, "destroy" ], [
-                &$this,
-                "gc"
-            ] );
-    }
+		return $data ? unserialize( $data ) : [ ];
+	}
 
-    public function open() {
-        return TRUE;
-    }
+	//写入
+	public function write() {
+		return $this->memcache->set( $this->session_id, serialize( $this->items ) );
+	}
 
-    /**
-     * 获得缓存数据
-     *
-     * @param string $sid
-     *
-     * @return boolean
-     */
-    public function read( $sid ) {
-        return $this->memcache->get( $sid );
-    }
+	//删除
+	public function flush() {
+		return $this->memcache->delete( $this->session_id );
+	}
 
-    /**
-     * 写入SESSION
-     *
-     * @param string $sid
-     * @param string $data
-     *
-     * @return mixed
-     */
-    public function write( $sid, $data ) {
-        return $this->memcache->set( $sid, $data );
-    }
-
-    /**
-     * 删除SESSION
-     *
-     * @param string $sid SESSION_id
-     *
-     * @return boolean
-     */
-    public function destroy( $sid ) {
-        return $this->memcache->delete( $sid );
-    }
-
-    /**
-     * 垃圾回收
-     * @return boolean
-     */
-    public function gc() {
-        return TRUE;
-    }
-
+	//垃圾回收
+	public function gc() {
+	}
 }

@@ -98,7 +98,7 @@ class Route extends Compile {
 			$method = '_' . $route['method'];
 			$this->$method( $key );
 			if ( $this->found ) {
-				return;
+				return null;
 			}
 		}
 

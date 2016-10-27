@@ -14,14 +14,16 @@ use hdphp\kernel\ServiceProvider;
 class ErrorProvider extends ServiceProvider {
 
 	//延迟加载
-	public $defer = FALSE;
+	public $defer = false;
 
 	public function boot() {
+		//定义错误/异常处理
+		\Error::bootstrap();
 	}
 
 	public function register() {
 		$this->app->single( 'Error', function ( $app ) {
 			return new Error( $app );
-		}, TRUE );
+		}, true );
 	}
 }

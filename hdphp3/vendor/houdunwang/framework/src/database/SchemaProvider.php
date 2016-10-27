@@ -18,7 +18,7 @@ use hdphp\kernel\ServiceProvider;
  */
 class SchemaProvider extends ServiceProvider {
 	//延迟加载
-	public $defer = FALSE;
+	public $defer = true;
 
 	public function boot() {
 
@@ -27,6 +27,6 @@ class SchemaProvider extends ServiceProvider {
 	public function register() {
 		$this->app->bind( 'Schema', function ( $app ) {
 			return new Schema( $app );
-		}, TRUE );
+		}, true );
 	}
 }

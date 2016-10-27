@@ -31,7 +31,6 @@ return [
 		'hdphp\session\SessionProvider',
 		'hdphp\string\StrProvider',
 		'hdphp\upload\UploadProvider',
-		'hdphp\url\UrlProvider',
 		'hdphp\validate\ValidateProvider',
 		'hdphp\auto\AutoProvider',
 		'hdphp\view\ViewProvider',
@@ -39,7 +38,6 @@ return [
 		'hdphp\xml\XmlProvider',
 		'hdphp\zip\ZipProvider',
 		'hdphp\middleware\MiddlewareProvider',
-		'hdphp\hook\HookProvider',
 		'hdphp\form\FormProvider',
 		'hdphp\tool\ToolProvider',
 		'hdphp\cloud\CloudProvider',
@@ -49,6 +47,7 @@ return [
 
 	//服务外观
 	'facades'   => [
+		'Error'      => 'hdphp\error\ErrorFacade',
 		'App'        => 'hdphp\kernel\AppFacade',
 		'Alipay'     => 'hdphp\alipay\ZipFacade',
 		'Arr'        => 'hdphp\arr\ArrFacade',
@@ -64,7 +63,6 @@ return [
 		'Db'         => 'hdphp\db\DbFacade',
 		'Dir'        => 'hdphp\dir\DirFacade',
 		'Log'        => 'hdphp\log\LogFacade',
-		'Error'      => 'hdphp\error\ErrorFacade',
 		'Html'       => 'hdphp\html\HtmlFacade',
 		'Image'      => 'hdphp\image\ImageFacade',
 		'Lang'       => 'hdphp\lang\LangFacade',
@@ -78,7 +76,6 @@ return [
 		'Session'    => 'hdphp\session\SessionFacade',
 		'Str'        => 'hdphp\string\StrFacade',
 		'Upload'     => 'hdphp\upload\UploadFacade',
-		'Url'        => 'hdphp\url\UrlFacade',
 		'Validate'   => 'hdphp\validate\ValidateFacade',
 		'Auto'       => 'hdphp\auto\AutoFacade',
 		'View'       => 'hdphp\view\ViewFacade',
@@ -86,7 +83,6 @@ return [
 		'Xml'        => 'hdphp\xml\XmlFacade',
 		'Zip'        => 'hdphp\zip\ZipFacade',
 		'Middleware' => 'hdphp\middleware\MiddlewareFacade',
-		'Hook'       => 'hdphp\hook\HookFacade',
 		'Form'       => 'hdphp\form\FormFacade',
 		'Tool'       => 'hdphp\tool\ToolFacade',
 		'Cloud'      => 'hdphp\cloud\CloudFacade',

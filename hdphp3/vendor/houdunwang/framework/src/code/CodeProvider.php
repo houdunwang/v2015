@@ -14,7 +14,7 @@ use hdphp\kernel\ServiceProvider;
 class CodeProvider extends ServiceProvider {
 
 	//延迟加载
-	public $defer = FALSE;
+	public $defer = true;
 
 	public function boot() {
 	}
@@ -22,6 +22,6 @@ class CodeProvider extends ServiceProvider {
 	public function register() {
 		$this->app->single( 'Code', function ( $app ) {
 			return new Code( $app );
-		}, TRUE );
+		}, true );
 	}
 }

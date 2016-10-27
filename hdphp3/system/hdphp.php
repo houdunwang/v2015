@@ -14,6 +14,7 @@ if ( version_compare( phpversion(), '5.4.0', '<' ) ) {
 //composer自动加载
 require __DIR__ . '/../vendor/autoload.php';
 define( 'ROOT_PATH', dirname( __DIR__ ) );
+define( 'HDPHP_VERSION', '3.0.6' );
 //启动应用
 $app = new \hdphp\kernel\App();
 $app->bootstrap();

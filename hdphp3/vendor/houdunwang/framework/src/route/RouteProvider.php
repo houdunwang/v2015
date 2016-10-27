@@ -14,7 +14,7 @@ use hdphp\kernel\ServiceProvider;
 class RouteProvider extends ServiceProvider {
 
 	//延迟加载
-	public $defer = FALSE;
+	public $defer = true;
 
 	public function boot() {
 
@@ -23,6 +23,6 @@ class RouteProvider extends ServiceProvider {
 	public function register() {
 		$this->app->single( 'Route', function ( $app ) {
 			return new Route( $app );
-		}, TRUE );
+		}, true );
 	}
 }

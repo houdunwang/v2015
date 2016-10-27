@@ -12,17 +12,22 @@ namespace hdphp\cookie;
 class Cookie {
 	public function get( $name ) {
 		if ( isset( $_COOKIE[ $name ] ) ) {
-			return unserialize( $_COOKIE[ $name ] );
+			return Crypt::decrypt( $_COOKIE[ $name ] );
 		}
 	}
 
 	public function all() {
-		return $_COOKIE;
+		$data = [ ];
+		foreach ( $_COOKIE as $name => $value ) {
+			$data[ $name ] = $this->get( $name );
+		}
+
+		return $data;
 	}
 
-	public function set( $name, $value, $expire = 0, $path = '/', $domain = NULL ) {
+	public function set( $name, $value, $expire = 0, $path = '/', $domain = null ) {
 		$expire = $expire ? time() + $expire : $expire;
-		setcookie( $name, serialize( $value ), $expire, $path, $domain );
+		setcookie( $name, Crypt::encrypt( $value ), $expire, $path, $domain );
 	}
 
 	public function del( $name ) {

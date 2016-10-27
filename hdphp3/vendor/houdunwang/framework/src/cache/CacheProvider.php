@@ -21,7 +21,7 @@ use hdphp\kernel\ServiceProvider;
 class CacheProvider extends ServiceProvider {
 
 	//延迟加载
-	public $defer = FALSE;
+	public $defer = true;
 
 	public function boot() {
 	}

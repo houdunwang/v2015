@@ -17,17 +17,17 @@ class User extends Model {
 	protected $table = "user";
 
 	//允许填充字段
-	protected $allowFill = [ ];
+	protected $allowFill = [ 'username','email'];
 
 	//禁止填充字段
-	protected $denyFill = [ ];
+	protected $denyFill = [ 'groupid' ];
 
 	//自动验证
 	protected $validate
 		= [
 			//['字段名','验证方法','提示信息',验证条件,验证时间]
-			[ 'username', 'required', '用户名不能为空', self::MUST_VALIDATE, self::MODEL_INSERT ],
-			[ 'username', 'unique', '用户名已经存在', self::MUST_VALIDATE, self::MODEL_INSERT ],
+			//			[ 'username', 'required', '用户名不能为空', self::MUST_VALIDATE, self::MODEL_INSERT ],
+			//			[ 'username', 'unique', '用户名已经存在', self::MUST_VALIDATE, self::MODEL_INSERT ],
 			//			[ 'password', 'required', '密码不能为空', self::MUST_VALIDATE, self::MODEL_INSERT ],
 			//			[ 'password', 'confirm:password2', '两次密码不一致', self::MUST_VALIDATE, self::MODEL_INSERT ],
 			//			[ 'email', 'email', '邮箱格式错误', self::NOT_EMPTY_VALIDATE, self::MODEL_INSERT ],
@@ -38,17 +38,17 @@ class User extends Model {
 	//$params 参数比如 maxlen:10 10就是参数
 	//$data 所有表单数据
 	public function checkUser( $field, $value, $params, $data ) {
-		return Db::table( 'user' )->where( 'username', $value )->get() ? false : true;
+		//		return Db::table( 'user' )->where( 'username', $value )->get() ? false : true;
 	}
 
 	//自动完成
 	protected $auto
 		= [
 			//['字段名','处理方法','方法类型',验证条件,验证时机]
-			[ 'groupid', 'getGroupId', 'method', self::EMPTY_AUTO, self::MODEL_INSERT ],
-			[ 'age', 'intval', 'function', self::MUST_AUTO, self::MODEL_BOTH ],
-			[ 'password', 'md5', 'function', self::EXIST_AUTO, self::MODEL_BOTH ],
-//			[ 'email', 'md5', 'string', self::MUST_AUTO, self::MODEL_BOTH ],
+			//			[ 'groupid', 'getGroupId', 'method', self::EMPTY_AUTO, self::MODEL_INSERT ],
+			//			[ 'age', 'intval', 'function', self::MUST_AUTO, self::MODEL_BOTH ],
+			//			[ 'password', 'md5', 'function', self::EXIST_AUTO, self::MODEL_BOTH ],
+			//			[ 'email', 'md5', 'string', self::MUST_AUTO, self::MODEL_BOTH ],
 		];
 
 	//获取默认用户组
@@ -60,7 +60,7 @@ class User extends Model {
 	protected $filter
 		= [
 			//[表单字段名,过滤条件,处理时间]
-			[ 'password', self::EMPTY_FILTER, self::MODEL_BOTH ]
+			//			[ 'password', self::EMPTY_FILTER, self::MODEL_BOTH ]
 		];
 
 	//时间操作,需要表中存在created_at,updated_at字段

@@ -10,5 +10,13 @@
 namespace Hdphp\Session;
 
 interface AbSession {
-	public function make();
+	public function connect();
+
+	public function read();
+
+	public function write();
+
+	public function gc();
+
+	public function flush();
 }

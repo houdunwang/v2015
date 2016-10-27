@@ -6,7 +6,7 @@ return [
 	'name'     => 'hdcmsid',
 	//域名
 	'domain'   => '',
-	//过期时间
+	//过期时间 0 会话时间 3600 为一小时
 	'expire'   => 0,
 	#File
 	'file'     => [

@@ -20,7 +20,7 @@ class Controller {
 	public static function run( $routeArgs = [ ] ) {
 		self::$routeArgs = $routeArgs;
 		//URL结构处理
-		$param = array_filter( explode( '/', q( 'get.' . c( 'http.url_var' ) ) ) );
+		$param = array_filter( explode( '/', Request::get( c( 'http.url_var' ) ) ) );
 		switch ( count( $param ) ) {
 			case 2:
 				array_unshift( $param, c( 'http.default_module' ) );
@@ -59,7 +59,7 @@ class Controller {
 		if ( ! class_exists( $class ) ) {
 			throw new Exception( "{$class} 不存在" );
 		}
-		$controller = Route::$app->make( $class, TRUE );
+		$controller = Route::$app->make( $class, true );
 		//执行控制器中间件
 		\Middleware::performControllerMiddleware();
 		//执行动作

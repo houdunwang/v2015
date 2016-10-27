@@ -17,7 +17,7 @@ use hdphp\kernel\ServiceProvider;
  */
 class DbProvider extends ServiceProvider {
 	//延迟加载
-	public $defer = FALSE;
+	public $defer = true;
 
 	public function boot() {
 		//将公共数据库配置合并到 write 与 read 中
@@ -40,6 +40,6 @@ class DbProvider extends ServiceProvider {
 	public function register() {
 		$this->app->bind( 'Db', function ( $app ) {
 			return new Db( $app );
-		}, TRUE );
+		}, true );
 	}
 }

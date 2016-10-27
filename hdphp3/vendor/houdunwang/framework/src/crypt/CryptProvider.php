@@ -14,7 +14,7 @@ use hdphp\kernel\ServiceProvider;
 class CryptProvider extends ServiceProvider {
 
 	//延迟加载
-	public $defer = FALSE;
+	public $defer = true;
 
 	public function boot() {
 	}
@@ -22,6 +22,6 @@ class CryptProvider extends ServiceProvider {
 	public function register() {
 		$this->app->single( 'Crypt', function ( $app ) {
 			return new Crypt( $app );
-		}, TRUE );
+		}, true );
 	}
 }

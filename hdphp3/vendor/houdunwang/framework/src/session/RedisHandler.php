@@ -10,83 +10,42 @@
 namespace hdphp\session;
 
 class RedisHandler implements AbSession {
+	use Base;
+	/**
+	 * Redis连接对象
+	 * @access private
+	 * @var Object
+	 */
+	private $redis;
 
-    /**
-     * Redis连接对象
-     * @access private
-     * @var Object
-     */
-    private $redis;
+	public function connect() {
+		$config      = C( 'session.redis' );
+		$this->redis = new Redis();
+		$this->redis->connect( $config['host'], $config['port'] );
+		if ( ! empty( $config['password'] ) ) {
+			$this->redis->auth( $config['password'] );
+		}
+		$this->redis->select( (int) $config['database'] );
+	}
 
-    function __construct() {
+	//获得
+	function read() {
+		$data = $this->redis->get( $this->session_id );
+		return $data ? unserialize( $data ) : [ ];
+	}
 
-    }
+	//写入
+	function write() {
+		return $this->redis->set( $this->session_id, serialize( $this->items ) );
+	}
 
-    public function make() {
-        $config = C( 'session.redis' );
-        $this->redis = new Redis();
-        $this->redis->connect( $config['host'], $config['port'] );
-        if ( ! empty( $config['password'] ) ) {
-            $this->redis->auth( $config['password'] );
-        }
-        $this->redis->select( (int) $config['database'] );
-        session_set_save_handler( [ &$this, "open" ], [ &$this, "close" ], [ &$this, "read" ], [ &$this, "write" ], [ &$this, "destroy" ], [
-                &$this,
-                "gc"
-            ] );
-    }
+	//删除
+	function flush() {
+		return $this->redis->delete( $this->session_id );
+	}
 
-    function open() {
-        return TRUE;
-    }
+	//垃圾回收
+	function gc() {
 
-    /**
-     * 获得缓存数据
-     *
-     * @param string $sid
-     *
-     * @return void
-     */
-    function read( $sid ) {
-        $data = $this->redis->get( $sid );
-        if ( $data ) {
-            $values = explode( "|#|", $data );
-
-            return $values[0] === $this->card ? $values[1] : '';
-        }
-
-        return $data;
-    }
-
-    /**
-     * 写入SESSION
-     *
-     * @param string $sid
-     * @param string $data
-     *
-     * @return void
-     */
-    function write( $sid, $data ) {
-        return $this->redis->set( $sid, $this->card . '|#|' . $data );
-    }
-
-    /**
-     * 删除SESSION
-     *
-     * @param string $sid SESSION_id
-     *
-     * @return boolean
-     */
-    function destroy( $sid ) {
-        return $this->redis->delete( $sid );
-    }
-
-    /**
-     * 垃圾回收
-     * @return boolean
-     */
-    function gc() {
-        return TRUE;
-    }
-
+	}
 }

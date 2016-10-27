@@ -25,15 +25,44 @@ class Arr {
 	/**
 	 * 根据键名获取数据
 	 * 如果键名不存在时返回默认值
+	 * @param array $data
+	 * @param $key
+	 * @param null $value
 	 *
-	 * @param $data 数组数据
-	 * @param $key 键名
-	 * @param null $value 默认值
-	 *
-	 * @return null
+	 * @return array|mixed|null
 	 */
-	public function get( $data, $key, $value = NULL ) {
-		return isset( $data[ $key ] ) ? $data[ $key ] : $value;
+	public function get( array $data, $key, $value = null ) {
+		$exp = explode( '.', $key );
+		foreach ( (array) $exp as $d ) {
+			if ( isset( $data[ $d ] ) ) {
+				$data = $data[ $d ];
+			} else {
+				return $value;
+			}
+		}
+
+		return $data;
+	}
+
+	/**
+	 * 设置数组元素值支持点语法
+	 * @param array $data
+	 * @param $key
+	 * @param $value
+	 *
+	 * @return array
+	 */
+	public function set( array $data, $key, $value ) {
+		$tmp =& $data;
+		foreach ( explode( '.', $key ) as $d ) {
+			if ( ! isset( $tmp[ $d ] ) ) {
+				$tmp[ $d ] = [ ];
+			}
+			$tmp = &$tmp[ $d ];
+		}
+		$tmp = $value;
+
+		return $data;
 	}
 
 	/**
@@ -44,12 +73,12 @@ class Arr {
 	 *
 	 * @return array
 	 */
-	public function array_change_key_case( $arr, $type = 0 ) {
+	public function keyCase( $arr, $type = 0 ) {
 		$func = $type ? 'strtoupper' : 'strtolower';
 		$data = [ ]; //格式化后的数组
 		foreach ( $arr as $k => $v ) {
 			$k          = $func( $k );
-			$data[ $k ] = is_array( $v ) ? $this->array_change_key_case( $v, $type ) : $v;
+			$data[ $k ] = is_array( $v ) ? $this->keyCase( $v, $type ) : $v;
 		}
 
 		return $data;
@@ -63,8 +92,8 @@ class Arr {
 	 *
 	 * @return bool
 	 */
-	public function array_key_exists( $key, $arr ) {
-		return array_key_exists( strtolower( $key ), $this->array_change_key_case( $arr ) );
+	public function keyExists( $key, $arr ) {
+		return array_key_exists( strtolower( $key ), $this->keyExists( $arr ) );
 	}
 
 	/**
@@ -75,11 +104,11 @@ class Arr {
 	 *
 	 * @return array
 	 */
-	public function array_change_value_case( $arr, $type = 0 ) {
+	public function valueCase( $arr, $type = 0 ) {
 		$func = $type ? 'strtoupper' : 'strtolower';
 		$data = [ ]; //格式化后的数组
 		foreach ( $arr as $k => $v ) {
-			$data[ $k ] = is_array( $v ) ? $this->array_change_value_case( $v, $type ) : $func( $v );
+			$data[ $k ] = is_array( $v ) ? $this->valueCase( $v, $type ) : $func( $v );
 		}
 
 		return $data;
@@ -93,7 +122,7 @@ class Arr {
 	 *
 	 * @return mixed
 	 */
-	public function int_to_string( $arr, array $map = [ 'status' => [ '0' => '禁止', '1' => '启用' ] ] ) {
+	public function intToString( $arr, array $map = [ 'status' => [ '0' => '禁止', '1' => '启用' ] ] ) {
 		foreach ( $map as $name => $m ) {
 			if ( isset( $arr[ $name ] ) && array_key_exists( $arr[ $name ], $m ) ) {
 				$arr[ '_' . $name ] = $m[ $arr[ $name ] ];
@@ -110,10 +139,10 @@ class Arr {
 	 *
 	 * @return mixed
 	 */
-	public function string_to_int( $data ) {
+	public function stringToInt( $data ) {
 		$tmp = $data;
 		foreach ( (array) $tmp as $k => $v ) {
-			$tmp[ $k ] = is_array( $v ) ? $this->string_to_int( $v ) : ( is_numeric( $v ) ? intval( $v ) : $v );
+			$tmp[ $k ] = is_array( $v ) ? $this->stringToInt( $v ) : ( is_numeric( $v ) ? intval( $v ) : $v );
 		}
 
 		return $tmp;
@@ -121,13 +150,14 @@ class Arr {
 
 	/**
 	 * 根据下标过滤数据元素
+	 *
 	 * @param array $data 原数组数据
 	 * @param $keys 参数的下标
 	 * @param int $type 1 存在在$keys时过滤  0 不在时过滤
 	 *
 	 * @return array
 	 */
-	public function filter_by_keys( array $data, $keys, $type = 1 ) {
+	public function filterKeys( array $data, $keys, $type = 1 ) {
 		$tmp = $data;
 		foreach ( $data as $k => $v ) {
 			if ( $type == 1 ) {

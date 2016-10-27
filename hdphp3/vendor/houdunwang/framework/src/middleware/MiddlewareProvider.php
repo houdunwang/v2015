@@ -13,15 +13,21 @@ use hdphp\kernel\ServiceProvider;
 
 class MiddlewareProvider extends ServiceProvider {
 	//延迟加载
-	public    $defer = FALSE;
-	protected $instance;
+	public $defer = false;
 
 	public function boot( $app ) {
+		//应用开始中间件
+		\Middleware::exe( 'app_start' );
 	}
 
 	public function register() {
 		$this->app->single( 'Middleware', function ( $app ) {
 			return new Middleware( $app );
-		}, TRUE );
+		}, true );
+	}
+
+	public function __destruct() {
+		//中间件
+		\Middleware::exe( 'app_end' );
 	}
 }

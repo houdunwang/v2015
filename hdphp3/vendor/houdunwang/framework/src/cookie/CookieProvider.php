@@ -14,7 +14,7 @@ use hdphp\kernel\ServiceProvider;
 class CookieProvider extends ServiceProvider {
 
 	//延迟加载
-	public $defer = FALSE;
+	public $defer = true;
 
 	public function boot() {
 	}
@@ -22,6 +22,6 @@ class CookieProvider extends ServiceProvider {
 	public function register() {
 		$this->app->single( 'Cookie', function ( $app ) {
 			return new Cookie( $app );
-		}, TRUE );
+		}, true );
 	}
 }

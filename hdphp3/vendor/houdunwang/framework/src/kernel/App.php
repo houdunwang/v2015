@@ -30,7 +30,7 @@ class App extends Container {
 
 	public function bootstrap() {
 		//版本号
-		define( 'HDPHP_VERSION', '3.0.5' );
+		define( 'FRAMEWORK_VERSION', '3.0.10' );
 		define( 'IS_CLI', PHP_SAPI == 'cli' );
 		define( 'NOW', $_SERVER['REQUEST_TIME'] );
 		define( '__ROOT__', IS_CLI ? '' : trim( 'http://' . $_SERVER['HTTP_HOST'] . dirname( $_SERVER['SCRIPT_NAME'] ), '/\\' ) );
@@ -56,8 +56,6 @@ class App extends Container {
 		$this->instance( 'App', $this );
 		//设置外观类APP属性
 		ServiceFacade::setFacadeApplication( $this );
-		//定义错误/异常处理
-		Error::bootstrap();
 		//导入类库别名
 		Loader::addMap( c( 'app.alias' ) );
 		//自动加载文件
@@ -66,14 +64,8 @@ class App extends Container {
 		$this->boot();
 		//CLI模式
 		$this->cli();
-		//应用开始中间件
-		\Middleware::exe( 'app_start' );
 		//解析路由
 		Route::dispatch();
-		//记录日志
-		Log::save();
-		//中间件
-		\Middleware::exe( 'app_end' );
 	}
 
 	//执行请求
@@ -162,7 +154,6 @@ class App extends Container {
 		$provider->register( $this );
 		//记录服务
 		$this->serviceProviders[] = $provider;
-
 		if ( $this->booted ) {
 			$this->bootProvider( $provider );
 		}

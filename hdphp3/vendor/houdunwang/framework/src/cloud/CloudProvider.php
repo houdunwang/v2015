@@ -19,7 +19,7 @@ use hdphp\kernel\ServiceProvider;
 class CloudProvider extends ServiceProvider {
 
 	//延迟加载
-	public $defer = FALSE;
+	public $defer = true;
 
 	public function boot() {
 
@@ -28,6 +28,6 @@ class CloudProvider extends ServiceProvider {
 	public function register() {
 		$this->app->single( 'Cloud', function ( $app ) {
 			return new Cloud( $app );
-		}, TRUE );
+		}, true );
 	}
 }

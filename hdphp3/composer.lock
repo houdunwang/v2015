@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "397947e814899762103940127518f01b",
-    "content-hash": "4f792fb6f71f421e57c44061b8ebf73d",
+    "hash": "393e555cda4de6b8fc788899a929362c",
+    "content-hash": "e52d130d787dbf30deaa60eb85fa2ebf",
     "packages": [
         {
             "name": "houdunwang/framework",
-            "version": "3.0.5",
+            "version": "v3.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/houdunwang/framework.git",
-                "reference": "2e5c585d51cd0cfab4fbfbead834430431b66398"
+                "reference": "601da38ed38d66c1f3dbdb8bf09c1d1f5cb4ad97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/houdunwang/framework/zipball/2e5c585d51cd0cfab4fbfbead834430431b66398",
-                "reference": "2e5c585d51cd0cfab4fbfbead834430431b66398",
+                "url": "https://api.github.com/repos/houdunwang/framework/zipball/601da38ed38d66c1f3dbdb8bf09c1d1f5cb4ad97",
+                "reference": "601da38ed38d66c1f3dbdb8bf09c1d1f5cb4ad97",
                 "shasum": ""
             },
             "type": "project",
@@ -41,7 +41,7 @@
                 }
             ],
             "description": "Hdphp Framework (Kernel)",
-            "time": "2016-10-23 15:29:00"
+            "time": "2016-10-26 03:38:02"
         }
     ],
     "packages-dev": [],

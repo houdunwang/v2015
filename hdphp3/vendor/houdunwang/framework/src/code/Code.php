@@ -32,9 +32,6 @@ class Code {
 	//验证码字体颜色
 	private $fontColor = '';
 
-	public function __construct() {
-	}
-
 	//创建验证码
 	public function make() {
 		if ( empty( $this->font ) ) {
@@ -109,7 +106,7 @@ class Code {
 
 	//返回验证码
 	public function get() {
-		return $_SESSION['code'];
+		return Session::get( 'code' );
 	}
 
 	//生成验证码
@@ -118,14 +115,14 @@ class Code {
 		for ( $i = 0;$i < $this->codeLen;$i ++ ) {
 			$code .= $this->codeStr [ mt_rand( 0, strlen( $this->codeStr ) - 1 ) ];
 		}
-		$this->code       = strtoupper( $code );
-		$_SESSION['code'] = $this->code;
+		$this->code = strtoupper( $code );
+		Session::set( 'code', $this->code );
 	}
 
 	//建画布
 	private function create() {
 		if ( ! $this->checkGD() ) {
-			return FALSE;
+			return false;
 		}
 		$w       = $this->width;
 		$h       = $this->height;

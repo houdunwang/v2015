@@ -14,7 +14,7 @@ use hdphp\kernel\ServiceProvider;
 class LogProvider extends ServiceProvider {
 
 	//延迟加载
-	public $defer = FALSE;
+	public $defer = true;
 
 	public function boot() {
 
@@ -23,6 +23,6 @@ class LogProvider extends ServiceProvider {
 	public function register() {
 		$this->app->single( 'Log', function ( $app ) {
 			return new Log( $app );
-		}, TRUE );
+		}, true );
 	}
 }

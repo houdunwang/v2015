@@ -16,6 +16,21 @@ class Tool {
 	}
 
 	/**
+	 * 批量执行函数
+	 * @param $functions
+	 * @param $value
+	 *
+	 * @return mixed
+	 */
+	public function batchFunctions( $functions, $value ) {
+		foreach ( [ $functions ] as $func ) {
+			$value = $func( $value );
+		}
+
+		return $value;
+	}
+
+	/**
 	 * 生成随机数字
 	 *
 	 * @param int $len 数量
@@ -61,7 +76,7 @@ class Tool {
 	 * @return string
 	 */
 	public function getSize( $size, $decimals = 2 ) {
-		switch ( TRUE ) {
+		switch ( true ) {
 			case $size >= pow( 1024, 3 ):
 				return round( $size / pow( 1024, 3 ), $decimals ) . " GB";
 			case $size >= pow( 1024, 2 ):

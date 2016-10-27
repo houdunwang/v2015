@@ -14,7 +14,7 @@ use hdphp\kernel\ServiceProvider;
 class MailProvider extends ServiceProvider {
 
 	//延迟加载
-	public $defer = TRUE;
+	public $defer = true;
 
 	public function boot() {
 	}
@@ -22,6 +22,6 @@ class MailProvider extends ServiceProvider {
 	public function register() {
 		$this->app->single( 'Mail', function ( $app ) {
 			return new Mail( $app );
-		}, TRUE );
+		}, true );
 	}
 }

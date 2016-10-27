@@ -89,7 +89,7 @@ class Model implements ArrayAccess, Iterator {
 	//数据库驱动
 	protected $db;
 
-	public function __construct( $arg = null ) {
+	public function __construct( $data = [ ] ) {
 		$this->class = get_class( $this );
 		$this->model = basename( str_replace( '/', '\\', $this->class ) );
 		$this->setTable();
@@ -98,10 +98,8 @@ class Model implements ArrayAccess, Iterator {
 		if ( empty( $this->pk ) ) {
 			$this->pk = $this->db->getPrimaryKey();
 		}
-		if ( is_numeric( $arg ) ) {
-			$this->data = Db::table( $this->table )->find( $arg ) ?: [ ];
-		} else if ( is_array( $arg ) ) {
-			$this->create( $arg );
+		if ( ! empty( $data ) ) {
+			$this->create( $data );
 		}
 	}
 
@@ -439,7 +437,6 @@ class Model implements ArrayAccess, Iterator {
 				break;
 		}
 		$this->original = [ ];
-
 		return $res;
 	}
 

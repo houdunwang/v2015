@@ -152,7 +152,7 @@ class Model {
 
 	public function fill() {
 		if ( IS_POST ) {
-			$user = new User();
+			$user = new User();p(Request::post());
 			$d    = $user->save( Request::post() );
 			dd( $d );
 		}

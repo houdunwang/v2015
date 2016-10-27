@@ -1,7 +1,7 @@
 <?php
 return [
 	//调试模式
-	'debug'              => TRUE,
+	'debug'              => true,
 	//应用目录
 	'path'               => 'app',
 	//加密key
@@ -14,12 +14,8 @@ return [
 	'lang'               => '',
 	//自动加载文件
 	'auto_load_file'     => [ ],
-	//令牌验证
-	'token_on'           => TRUE,
-	//令牌验证的表单隐藏字段名称
-	'token_name'         => '__TOKEN__',
-	//令牌验证出错后是否重置令牌 默认为true
-	'token_reset'        => TRUE,
+	//CSRF验证
+	'token_on'           => true,
 	//注册命名空间
 	'autoload_namespace' => [ ],
 	//类别名

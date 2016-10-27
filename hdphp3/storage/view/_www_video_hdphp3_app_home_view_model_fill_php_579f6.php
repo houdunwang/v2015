@@ -18,11 +18,13 @@
 
                <?php }?>
 <form action="" method="post">
+	<?php echo csrf_token()?>
+	<?php echo csrf_field()?>
 	帐号: <input type="text" name="username"><br/>
 	邮箱: <input type="text" name="email"><br/>
 	用户组: <input type="text" name="groupid" value="1">
 	年龄: <input type="text" name="age">
 	<button>提交</button>
-<input type='hidden' name='__TOKEN__' value='31cd2a5659e5999f01faf7bebf6a5944'/></form>
+</form>
 </body>
 </html>

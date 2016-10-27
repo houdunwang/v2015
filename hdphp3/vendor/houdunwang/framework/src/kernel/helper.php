@@ -107,7 +107,7 @@ if ( ! function_exists( 'c' ) ) {
  * @return mixed
  */
 if ( ! function_exists( 'q' ) ) {
-	function q( $var, $default = NULL, $filter = '' ) {
+	function q( $var, $default = null, $filter = '' ) {
 		return Request::query( $var, $default, $filter );
 	}
 }
@@ -126,7 +126,7 @@ if ( ! function_exists( '_404' ) ) {
 if ( ! function_exists( 'model' ) ) {
 	function model( $model ) {
 		static $instance = [ ];
-		$class = strpos( $model, '\\' ) === FALSE ? '\system\model\\' . ucfirst( $model ) : $model;
+		$class = strpos( $model, '\\' ) === false ? '\system\model\\' . ucfirst( $model ) : $model;
 		if ( isset( $instance[ $class ] ) ) {
 			return $instance[ $class ];
 		}
@@ -142,7 +142,7 @@ if ( ! function_exists( 'model' ) ) {
  */
 if ( ! function_exists( 'p' ) ) {
 	function p( $var ) {
-		echo "<pre>" . print_r( $var, TRUE ) . "</pre>";
+		echo "<pre>" . print_r( $var, true ) . "</pre>";
 	}
 }
 
@@ -200,7 +200,7 @@ if ( ! function_exists( 'f' ) ) {
 				}
 			}
 
-			return TRUE;
+			return true;
 		}
 
 		if ( $value === '[get]' ) {
@@ -209,23 +209,23 @@ if ( ! function_exists( 'f' ) ) {
 			} else if ( is_file( $file ) ) {
 				return $cache[ $name ] = include $file;
 			} else {
-				return FALSE;
+				return false;
 			}
 		}
 
-		$data = "<?php if(!defined('ROOT_PATH'))exit;\nreturn " . var_export( $value, TRUE ) . ";\n?>";
+		$data = "<?php if(!defined('ROOT_PATH'))exit;\nreturn " . var_export( $value, true ) . ";\n?>";
 
 		if ( ! is_dir( $path ) ) {
-			mkdir( $path, 0755, TRUE );
+			mkdir( $path, 0755, true );
 		}
 
 		if ( ! file_put_contents( $file, $data ) ) {
-			return FALSE;
+			return false;
 		}
 
 		$cache[ $name ] = $value;
 
-		return TRUE;
+		return true;
 	}
 }
 
@@ -285,14 +285,14 @@ if ( ! function_exists( 'import' ) ) {
 		if ( is_file( $file ) ) {
 			require_once $file;
 		} else {
-			return FALSE;
+			return false;
 		}
 	}
 }
 //打印用户常量
 if ( ! function_exists( 'print_const' ) ) {
 	function print_const() {
-		$d = get_defined_constants( TRUE );
+		$d = get_defined_constants( true );
 		p( $d['user'] );
 	}
 }
@@ -308,7 +308,7 @@ if ( ! function_exists( 'print_const' ) ) {
  * @return mixed
  */
 if ( ! function_exists( 'trace' ) ) {
-	function trace( $value = '[hdphp]', $label = '', $level = 'DEBUG', $record = FALSE ) {
+	function trace( $value = '[hdphp]', $label = '', $level = 'DEBUG', $record = false ) {
 		return Error::trace( $value, $label, $level, $record );
 	}
 }
@@ -321,7 +321,7 @@ if ( ! function_exists( 'trace' ) ) {
  * @return mixed 返回值
  */
 if ( ! function_exists( 'v' ) ) {
-	function v( $name = NULL, $value = '[null]' ) {
+	function v( $name = null, $value = '[null]' ) {
 		static $vars = [ ];
 		if ( is_null( $name ) ) {
 			return $vars;
@@ -332,7 +332,7 @@ if ( ! function_exists( 'v' ) ) {
 				if ( isset( $tmp[ $d ] ) ) {
 					$tmp = $tmp[ $d ];
 				} else {
-					return NULL;
+					return null;
 				}
 			}
 
@@ -403,7 +403,7 @@ if ( ! function_exists( 'ajax' ) ) {
  * 获取客户端ip
  */
 if ( ! function_exists( 'clientIp' ) ) {
-	function clientIp($type = 0) {
+	function clientIp( $type = 0 ) {
 		$type = intval( $type );
 		//保存客户端IP地址
 		if ( isset( $_SERVER ) ) {
@@ -484,5 +484,21 @@ if ( ! function_exists( 'message' ) ) {
 			echo view( Config::get( 'view.message' ) );
 		}
 		exit;
+	}
+}
+
+
+if ( ! function_exists( 'csrf_field' ) ) {
+	//CSRF 表单
+	function csrf_field() {
+		return "<input type='hidden' name='csrf_token' value='" . Session::get( 'csrf_token' ) . "'/>";
+	}
+}
+
+
+if ( ! function_exists( 'csrf_token' ) ) {
+	//CSRF 值
+	function csrf_token() {
+		return Session::get( 'csrf_token' );
 	}
 }

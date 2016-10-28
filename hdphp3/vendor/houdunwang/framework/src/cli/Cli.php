@@ -7,38 +7,34 @@
  * @author 向军 <2300071698@qq.com>
  */
 class Cli {
+	public function __construct() {
+	}
+
 	//运行
-	public static function run() {
+	public function bootstrap() {
 		//去掉hd
 		array_shift( $_SERVER['argv'] );
 		$info = explode( ':', array_shift( $_SERVER['argv'] ) );
 		//命令类
-		$class = 'hdphp\cli\\' . $info[0] . '\\' . ucfirst( $info[1] );
+		$class  = 'hdphp\cli\\' . ucfirst( $info[0] );
+		$action = isset( $info[1] ) ? $info[1] : 'run';
 		//实例
 		if ( class_exists( $class ) ) {
 			$instance = new $class();
-			call_user_func_array( [ $instance, 'run' ], $_SERVER['argv'] );
+			call_user_func_array( [ $instance, $action ], $_SERVER['argv'] );
 		} else {
-			self::error( 'Command does not exist' );
+			$this->error( 'Command does not exist' );
 		}
 	}
 
 	//输出错误信息
-	public static function error( $content ) {
-		if ( IS_CLI ) {
-			die( "\033[;36m $content \x1B[0m\n" );
-		} else {
-			message( $content, 'back', 'error' );
-		}
+	final public function error( $content ) {
+		die( "\033[;36m $content \x1B[0m\n" );
 	}
 
 	//成功信息
-	public static function success( $content ) {
-		if ( IS_CLI ) {
-			die( "\033[;32m $content \x1B[0m\n" );
-		} else {
-			message( $content, 'back', 'error' );
-		}
+	final public function success( $content ) {
+		die( "\033[;32m $content \x1B[0m\n" );
 	}
 }
 

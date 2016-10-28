@@ -8,20 +8,14 @@
 * | Copyright (c) 2012-2019, www.houdunwang.com. All Rights Reserved.
 * '-------------------------------------------------------------------*/
 
-use hdphp\database\Migration;
-use hdphp\database\Blueprint;
-class CreateShopTable extends Migration {
+use hdphp\database\Seeder;
+class a extends Seeder {
     //执行
 	public function up() {
-		Schema::create( 'shop', function ( Blueprint $table ) {
-			$table->increments( 'id' );
-			$table->string('name', 100)->nullable()->defaults('后盾')->comment('商品标题');
-            $table->timestamps();
-        });
+		Db::table('a')->insert(['title'=>'后盾人']);
     }
-
     //回滚
     public function down() {
-        Schema::drop( 'shop' );
+		Db::table('a')->where('id','>',0)->delete();
     }
 }

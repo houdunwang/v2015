@@ -15,7 +15,6 @@ class Error {
 
 	public function __construct( $app ) {
 		$this->app = $app;
-
 	}
 
 	public function bootstrap() {
@@ -28,6 +27,7 @@ class Error {
 	//自定义异常理
 	public function exception( $e ) {
 		Log::write( $e->getMessage(), 'EXCEPTION' );
+		IS_CLI and Cli::error( $e->getMessage() );
 		//命令行模式
 		if ( c( 'app.debug' ) ) {
 			require __DIR__ . '/view/exception.php';
@@ -39,6 +39,7 @@ class Error {
 	//错误处理
 	public function error( $errno, $error, $file, $line ) {
 		$msg = $error . "($errno)" . $file . " ($line).";
+		IS_CLI and Cli::error( $msg );
 		switch ( $errno ) {
 			case E_NOTICE:
 			case E_USER_NOTICE:
@@ -46,7 +47,8 @@ class Error {
 				break;
 			default:
 				if ( c( 'app.debug' ) ) {
-					require __DIR__ . '/view/debug.php';exit;
+					require __DIR__ . '/view/debug.php';
+					exit;
 				} else {
 					class_exists( 'Log', false ) && Log::write( $msg, $this->errorType( $errno ) );
 					_404();

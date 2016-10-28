@@ -1,25 +1,18 @@
 <?php
 /** .-------------------------------------------------------------------
- * |  Software: [HDPHP framework]
- * |      Site: www.hdphp.com
+ * |  Software: [HDCMS framework]
+ * |      Site: www.hdcms.com
  * |-------------------------------------------------------------------
  * |    Author: 向军 <2300071698@qq.com>
  * |    WeChat: aihoudun
  * | Copyright (c) 2012-2019, www.houdunwang.com. All Rights Reserved.
  * '-------------------------------------------------------------------*/
+namespace hdphp\cli;
 
-use hdphp\database\Seeder;
+use hdphp\kernel\ServiceFacade;
 
-class UsersTableSeeder extends Seeder {
-	//执行
-	public function up() {
-		for ( $i = 0;$i < 100;$i ++ ) {
-			Db::table( 'article' )->insert( [ 'title' => '后盾人' . md5( $i ) ] );
-		}
-	}
-
-	//回滚
-	public function down() {
-		Schema::truncate('article');
+class CliFacade extends ServiceFacade {
+	public static function getFacadeAccessor() {
+		return 'Cli';
 	}
 }

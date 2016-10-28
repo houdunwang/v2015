@@ -17,6 +17,7 @@ class ConfigProvider extends ServiceProvider {
 	public $defer = true;
 
 	public function boot() {
+		date_default_timezone_set( c( 'app.timezone' ) );
 		//将公共数据库配置合并到 write 与 read 中
 		$config = \Config::getExtName( 'database', [ 'write', 'read' ] );
 		if ( empty( $config['write'] ) ) {

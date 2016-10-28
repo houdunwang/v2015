@@ -10,19 +10,17 @@
 
 use hdphp\database\Migration;
 use hdphp\database\Blueprint;
-class CreateArticleTable extends Migration {
+class a extends Migration {
     //执行
 	public function up() {
-		Schema::create( 'article', function ( Blueprint $table ) {
+		Schema::create( 'a', function ( Blueprint $table ) {
 			$table->increments( 'id' );
-			$table->string( 'title', 100 );
-			$table->tinyInteger( 'click' )->unsigned()->defaults(0);
             $table->timestamps();
         });
     }
 
     //回滚
     public function down() {
-        Schema::drop( 'article' );
+        Schema::drop( 'a' );
     }
 }

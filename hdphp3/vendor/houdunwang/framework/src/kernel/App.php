@@ -29,10 +29,6 @@ class App extends Container {
 	protected $serviceProviders = [ ];
 
 	public function bootstrap() {
-		//命令行模式
-		if ( PHP_SAPI == 'cli' ) {
-			$this->cli();
-		}
 		$this->constant();
 		//加载服务配置项
 		$servers              = require __DIR__ . '/service.php';
@@ -56,6 +52,8 @@ class App extends Container {
 		$this->boot();
 		//定义错误/异常处理
 		Error::bootstrap();
+		//命令行模式
+		IS_CLI and die( Cli::bootstrap() );
 		//解析路由
 		Route::dispatch();
 	}
@@ -82,9 +80,8 @@ class App extends Container {
 	protected function cli() {
 		//命令模式
 		if ( $_SERVER['SCRIPT_NAME'] == 'hd' ) {
-			require_once __DIR__ . '/../cli/Cli.php';
-			\hdphp\cli\Cli::run();
-			exit;
+			call_user_func_array( [ new \hdphp\cli\Cli(), 'start' ], [ ] );
+			die;
 		}
 	}
 

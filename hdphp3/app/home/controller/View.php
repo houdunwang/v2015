@@ -13,6 +13,7 @@ namespace app\home\controller;
 class View {
 	//动作
 	public function tag() {
+		p(c('database'));
 		$data = Db::table( 'user' )->get();
 		return view()->with( 'data', $data );
 	}

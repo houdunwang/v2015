@@ -14,15 +14,29 @@ use hdphp\kernel\ServiceProvider;
 class ConfigProvider extends ServiceProvider {
 
 	//延迟加载
-	public $defer = false;
+	public $defer = true;
 
 	public function boot() {
-		date_default_timezone_set( c( 'app.timezone' ) );
+		//将公共数据库配置合并到 write 与 read 中
+		$config = \Config::getExtName( 'database', [ 'write', 'read' ] );
+		if ( empty( $config['write'] ) ) {
+			$config['write'][] = \Config::getExtName( 'database', [
+				'write',
+				'read'
+			] );
+		}
+		if ( empty( $config['read'] ) ) {
+			$config['read'][] = \Config::getExtName( 'database', [
+				'write',
+				'read'
+			] );
+		}
+		\Config::set( 'database', $config );
 	}
 
 	public function register() {
 		$this->app->single( 'Config', function ( $app ) {
 			return new Config( $app );
-		}, true );
+		} );
 	}
 }

@@ -28,6 +28,6 @@ class CloudProvider extends ServiceProvider {
 	public function register() {
 		$this->app->single( 'Cloud', function ( $app ) {
 			return new Cloud( $app );
-		}, true );
+		});
 	}
 }

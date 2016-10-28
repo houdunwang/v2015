@@ -22,6 +22,6 @@ class MailProvider extends ServiceProvider {
 	public function register() {
 		$this->app->single( 'Mail', function ( $app ) {
 			return new Mail( $app );
-		}, true );
+		});
 	}
 }

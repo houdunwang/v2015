@@ -21,7 +21,6 @@ class Request {
 		self::$items['SESSION'] = Session::all();
 		self::$items['COOKIE']  = Cookie::all();
 		define( 'IS_MOBILE', $this->isMobile() );
-
 	}
 
 	public function query( $name, $value, $method = [ ] ) {

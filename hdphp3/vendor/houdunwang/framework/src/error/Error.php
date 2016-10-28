@@ -29,7 +29,6 @@ class Error {
 	public function exception( $e ) {
 		Log::write( $e->getMessage(), 'EXCEPTION' );
 		//命令行模式
-		IS_CLI and \hdphp\cli\Cli::error( $e->getMessage() );
 		if ( c( 'app.debug' ) ) {
 			require __DIR__ . '/view/exception.php';
 		} else {
@@ -40,8 +39,6 @@ class Error {
 	//错误处理
 	public function error( $errno, $error, $file, $line ) {
 		$msg = $error . "($errno)" . $file . " ($line).";
-		//命令行模式
-		IS_CLI and \hdphp\cli\Cli::error( $msg );
 		switch ( $errno ) {
 			case E_NOTICE:
 			case E_USER_NOTICE:
@@ -49,7 +46,7 @@ class Error {
 				break;
 			default:
 				if ( c( 'app.debug' ) ) {
-					require __DIR__ . '/view/debug.php';
+					require __DIR__ . '/view/debug.php';exit;
 				} else {
 					class_exists( 'Log', false ) && Log::write( $msg, $this->errorType( $errno ) );
 					_404();

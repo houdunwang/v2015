@@ -23,6 +23,6 @@ class LogProvider extends ServiceProvider {
 	public function register() {
 		$this->app->single( 'Log', function ( $app ) {
 			return new Log( $app );
-		}, true );
+		} );
 	}
 }

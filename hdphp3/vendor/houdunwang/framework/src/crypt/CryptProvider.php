@@ -22,6 +22,6 @@ class CryptProvider extends ServiceProvider {
 	public function register() {
 		$this->app->single( 'Crypt', function ( $app ) {
 			return new Crypt( $app );
-		}, true );
+		});
 	}
 }

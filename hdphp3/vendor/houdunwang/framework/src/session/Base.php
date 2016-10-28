@@ -9,7 +9,7 @@ trait Base {
 	//session 数据
 	protected $items = [ ];
 
-	public function start() {
+	public function __construct() {
 		$this->session_name = c( 'session.name' );
 		$this->session_id   = $this->getSessionId();
 		$this->expire       = c( 'session.expire' ) ?: 3600;

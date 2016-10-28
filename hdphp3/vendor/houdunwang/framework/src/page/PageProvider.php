@@ -22,6 +22,6 @@ class PageProvider extends ServiceProvider {
 	public function register() {
 		$this->app->single( 'Page', function ( $app ) {
 			return new Page( $app );
-		}, true );
+		} );
 	}
 }

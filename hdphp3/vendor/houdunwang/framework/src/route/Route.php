@@ -20,7 +20,7 @@ class Route extends Compile {
 	public $route = [ ];
 
 	//匹配到路由
-	protected $found = FALSE;
+	protected $found = false;
 
 	//匹配到的参数
 	protected $args = [ ];
@@ -56,9 +56,7 @@ class Route extends Compile {
 				$REQUEST_URI = $_SERVER['REQUEST_URI'];
 			}
 		}
-
 		$REQUEST_URI = preg_replace( '/\w+\.php/i', '', $REQUEST_URI );
-
 		return $REQUEST_URI ? parse_url( $REQUEST_URI, PHP_URL_PATH ) : '/';
 	}
 
@@ -68,7 +66,7 @@ class Route extends Compile {
 	 * @param $name
 	 * @param null $regexp
 	 */
-	public function where( $name, $regexp = NULL ) {
+	public function where( $name, $regexp = null ) {
 		if ( is_array( $name ) ) {
 			foreach ( $name as $k => $v ) {
 				$this->route[ count( $this->route ) - 1 ]['where'][ $k ] = '#^' . $v . '$#';
@@ -90,7 +88,7 @@ class Route extends Compile {
 		if ( C( 'http.route_cache' ) && ( $route = Cache::get( 'route' ) ) ) {
 			$this->route = $route;
 
-			return TRUE;
+			return true;
 		}
 		$this->parseRoute();
 		//匹配路由
@@ -119,7 +117,7 @@ class Route extends Compile {
 			//原始路由数据
 			$regexp = $value['route'];
 			//将:all等符号替换为标签路由字符
-			if ( strpos( $regexp, ':' ) !== FALSE ) {
+			if ( strpos( $regexp, ':' ) !== false ) {
 				//替换正则符号
 				$regexp = str_replace( array_keys( $this->patterns ), array_values( $this->patterns ), $regexp );
 			}
@@ -154,6 +152,6 @@ class Route extends Compile {
 	 * @return mixed|null
 	 */
 	public function input( $name ) {
-		return isset( $this->args[ $name ] ) ? $this->args[ $name ] : NULL;
+		return isset( $this->args[ $name ] ) ? $this->args[ $name ] : null;
 	}
 }

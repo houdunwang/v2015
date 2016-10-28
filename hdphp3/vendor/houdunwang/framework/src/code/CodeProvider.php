@@ -22,6 +22,6 @@ class CodeProvider extends ServiceProvider {
 	public function register() {
 		$this->app->single( 'Code', function ( $app ) {
 			return new Code( $app );
-		}, true );
+		});
 	}
 }

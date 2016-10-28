@@ -25,8 +25,8 @@ class SchemaProvider extends ServiceProvider {
 	}
 
 	public function register() {
-		$this->app->bind( 'Schema', function ( $app ) {
+		$this->app->single( 'Schema', function ( $app ) {
 			return new Schema( $app );
-		}, true );
+		});
 	}
 }

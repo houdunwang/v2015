@@ -24,4 +24,6 @@ class SessionProvider extends ServiceProvider {
 			return new Session( $app );
 		} );
 	}
+
+
 }

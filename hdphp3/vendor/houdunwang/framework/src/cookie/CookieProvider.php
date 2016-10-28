@@ -22,6 +22,6 @@ class CookieProvider extends ServiceProvider {
 	public function register() {
 		$this->app->single( 'Cookie', function ( $app ) {
 			return new Cookie( $app );
-		}, true );
+		});
 	}
 }

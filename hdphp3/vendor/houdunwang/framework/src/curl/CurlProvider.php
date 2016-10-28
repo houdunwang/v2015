@@ -22,6 +22,6 @@ class CurlProvider extends ServiceProvider {
 	public function register() {
 		$this->app->single( 'Curl', function ( $app ) {
 			return new Curl( $app );
-		}, true );
+		});
 	}
 }

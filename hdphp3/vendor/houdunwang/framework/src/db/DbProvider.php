@@ -20,26 +20,12 @@ class DbProvider extends ServiceProvider {
 	public $defer = true;
 
 	public function boot() {
-		//将公共数据库配置合并到 write 与 read 中
-		$config = \Config::getExtName( 'database', [ 'write', 'read' ] );
-		if ( empty( $config['write'] ) ) {
-			$config['write'][] = \Config::getExtName( 'database', [
-				'write',
-				'read'
-			] );
-		}
-		if ( empty( $config['read'] ) ) {
-			$config['read'][] = \Config::getExtName( 'database', [
-				'write',
-				'read'
-			] );
-		}
-		\Config::set( 'database', $config );
+
 	}
 
 	public function register() {
-		$this->app->bind( 'Db', function ( $app ) {
+		$this->app->single( 'Db', function ( $app ) {
 			return new Db( $app );
-		}, true );
+		});
 	}
 }

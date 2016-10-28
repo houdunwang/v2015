@@ -27,6 +27,10 @@
 		<dd><a href="{{u('model/filter')}}">自动过滤</dd>
 		<dd><a href="{{u('model/fill')}}">字段保护</dd>
 	</dl>
+	<dl>
+		<dt>模板</dt>
+		<dd><a href="{{u('view/tag')}}">标签</a></dd>
+	</dl>
 </div>
 </body>
 </html>

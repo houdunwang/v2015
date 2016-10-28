@@ -152,9 +152,14 @@ class Model {
 
 	public function fill() {
 		if ( IS_POST ) {
-			$user = new User();p(Request::post());
-			$d    = $user->save( Request::post() );
-			dd( $d );
+//			$user = new User();
+//			$d    = $user->save( Request::post() );
+//			dd( $d );
+//			$user = new User();
+//			$d = $user->save(Request::post());
+			$user = User::find(1);
+			$d = $user->save(Request::post());
+			dd($d);
 		}
 
 		return view();

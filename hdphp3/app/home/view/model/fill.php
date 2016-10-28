@@ -16,7 +16,7 @@
 	</div>
 </if>
 <form action="" method="post">
-	{{csrf_field()}}
+	{{ csrf_field() }}
 	帐号: <input type="text" name="username"><br/>
 	邮箱: <input type="text" name="email"><br/>
 	用户组: <input type="text" name="groupid" value="1">

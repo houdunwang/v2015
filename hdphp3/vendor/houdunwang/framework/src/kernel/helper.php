@@ -411,16 +411,20 @@ if ( ! function_exists( 'clientIp' ) ) {
 				$ip = $_SERVER["HTTP_X_FORWARDED_FOR"];
 			} else if ( isset( $_SERVER["HTTP_CLIENT_IP"] ) ) {
 				$ip = $_SERVER["HTTP_CLIENT_IP"];
-			} else {
+			} else if ( isset( $_SERVER["REMOTE_ADDR"] ) ) {
 				$ip = $_SERVER["REMOTE_ADDR"];
+			} else {
+				return '';
 			}
 		} else {
 			if ( getenv( "HTTP_X_FORWARDED_FOR" ) ) {
 				$ip = getenv( "HTTP_X_FORWARDED_FOR" );
 			} else if ( getenv( "HTTP_CLIENT_IP" ) ) {
 				$ip = getenv( "HTTP_CLIENT_IP" );
-			} else {
+			} else if ( getenv( "REMOTE_ADDR" ) ) {
 				$ip = getenv( "REMOTE_ADDR" );
+			} else {
+				return '';
 			}
 		}
 		$long     = ip2long( $ip );

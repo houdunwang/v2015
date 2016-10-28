@@ -14,7 +14,7 @@ use hdphp\kernel\ServiceProvider;
 class SessionProvider extends ServiceProvider {
 
 	//延迟加载
-	public $defer = false;
+	public $defer = true;
 
 	public function boot() {
 	}

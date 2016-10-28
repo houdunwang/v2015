@@ -27,6 +27,10 @@
 		<dd><a href="<?php echo u('model/filter')?>">自动过滤</dd>
 		<dd><a href="<?php echo u('model/fill')?>">字段保护</dd>
 	</dl>
+	<dl>
+		<dt>模板</dt>
+		<dd><a href="<?php echo u('view/tag')?>">标签</a></dd>
+	</dl>
 </div>
 </body>
 </html>

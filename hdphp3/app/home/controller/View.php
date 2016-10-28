@@ -7,21 +7,13 @@
  * |    WeChat: aihoudun
  * | Copyright (c) 2012-2019, www.houdunwang.com. All Rights Reserved.
  * '-------------------------------------------------------------------*/
-namespace hdphp\middleware;
 
-use hdphp\kernel\ServiceProvider;
+namespace app\home\controller;
 
-class MiddlewareProvider extends ServiceProvider {
-	//延迟加载
-	public $defer = true;
-
-	public function boot( $app ) {
-
-	}
-
-	public function register() {
-		$this->app->single( 'Middleware', function ( $app ) {
-			return new Middleware( $app );
-		} );
+class View {
+	//动作
+	public function tag() {
+		$data = Db::table( 'user' )->get();
+		return view()->with( 'data', $data );
 	}
 }

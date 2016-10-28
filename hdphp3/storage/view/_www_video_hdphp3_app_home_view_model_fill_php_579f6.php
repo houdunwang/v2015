@@ -18,8 +18,7 @@
 
                <?php }?>
 <form action="" method="post">
-	<?php echo csrf_token()?>
-	<?php echo csrf_field()?>
+	<?php echo  csrf_field() ?>
 	帐号: <input type="text" name="username"><br/>
 	邮箱: <input type="text" name="email"><br/>
 	用户组: <input type="text" name="groupid" value="1">

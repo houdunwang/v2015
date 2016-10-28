@@ -17,10 +17,10 @@ class User extends Model {
 	protected $table = "user";
 
 	//允许填充字段
-	protected $allowFill = [ 'username','email'];
+	protected $allowFill = ['*'];
 
 	//禁止填充字段
-	protected $denyFill = [ 'groupid' ];
+	protected $denyFill = [ ];
 
 	//自动验证
 	protected $validate

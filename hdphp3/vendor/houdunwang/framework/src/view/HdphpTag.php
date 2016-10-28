@@ -21,68 +21,38 @@ class HdphpTag extends TagBase {
 	 */
 	public $tags
 		= [
-			'foreach'   => [ 'block' => TRUE, 'level' => 5 ],
-			'list'      => [ 'block' => TRUE, 'level' => 5 ],
-			'if'        => [ 'block' => TRUE, 'level' => 5 ],
-			'elseif'    => [ 'block' => FALSE ],
-			'else'      => [ 'block' => FALSE ],
-			'jquery'    => [ 'block' => FALSE ],
-			'angular'   => [ 'block' => FALSE ],
-			'bootstrap' => [ 'block' => FALSE ],
-			'js'        => [ 'block' => FALSE ],
-			'css'       => [ 'block' => FALSE ],
-			'include'   => [ 'block' => FALSE ],
-			'extend'    => [ 'block' => FALSE ],
-			'blade'     => [ 'block' => FALSE ],
-			'parent'    => [ 'block' => FALSE ],
-			'block'     => [ 'block' => TRUE, 'level' => 5 ],
-			'widget'    => [ 'block' => TRUE, 'level' => 5 ],
-			'php'       => [ 'block' => TRUE, 'level' => 5 ],
-			'hdjs'      => [ 'block' => FALSE ],
+			'foreach' => [ 'block' => true, 'level' => 5 ],
+			'list'    => [ 'block' => true, 'level' => 5 ],
+			'if'      => [ 'block' => true, 'level' => 5 ],
+			'elseif'  => [ 'block' => false ],
+			'else'    => [ 'block' => false ],
+			'js'      => [ 'block' => false ],
+			'css'     => [ 'block' => false ],
+			'include' => [ 'block' => false ],
+			'extend'  => [ 'block' => false ],
+			'blade'   => [ 'block' => false ],
+			'parent'  => [ 'block' => false ],
+			'block'   => [ 'block' => true, 'level' => 5 ],
+			'widget'  => [ 'block' => true, 'level' => 5 ],
+			'php'     => [ 'block' => true, 'level' => 5 ],
 		];
-
-	public function _hdjs( $attr, $content, &$view ) {
-		return '<link href="resource/hdjs/css/bootstrap.min.css" rel="stylesheet">
-                <link href="resource/hdjs/css/font-awesome.min.css" rel="stylesheet">
-                <script src="resource/hdjs/js/jquery.min.js"></script>
-                <script src="resource/hdjs/js/bootstrap.min.js"></script>
-                <script src="resource/hdjs/app/util.js"></script>
-                <script src="resource/hdjs/require.js"></script>
-                <script src="resource/hdjs/app/config.js"></script>';
-	}
-
-	//jquery前端库
-	public function _jquery( $attr, $content, &$view ) {
-		return '<script src="'.__ROOT__.'/resource/hdjs/js/jquery.min.js"></script>';
-	}
-
-	//angular.js前端库
-	public function _angular( $attr, $content, &$view ) {
-		return '<script src="'.__ROOT__.'/resource/hdjs/js/angular.min.js"></script>';
-	}
-
-	//bootstrap前端库
-	public function _bootstrap( $attr, $content, &$view ) {
-		return '
-            <link href="'.__ROOT__.'/resource/hdjs/css/bootstrap.min.css" rel="stylesheet">
-            <script src="'.__ROOT__.'/resource/hdjs/js/bootstrap.min.js"></script>
-        ';
-	}
 
 	//加载模板文件
 	public function _include( $attr, $content, &$view ) {
-		return $view->make( $this->replaceConst( $attr['file'] ), 0, FALSE );
+		return $view->make( $this->replaceConst( $attr['file'] ), 0, false );
 	}
 
 	//引入CSS文件
 	public function _css( $attr, $content, &$view ) {
-		$attr['file']=$this->replaceConst( $attr['file'] );
+		$attr['file'] = $this->replaceConst( $attr['file'] );
+
 		return "<link type=\"text/css\" rel=\"stylesheet\" href=\"{$attr['file']}\"/>";
 	}
 
 	//引入JavaScript文件
 	public function _js( $attr, $content, &$hd ) {
-		$attr['file']=$this->replaceConst( $attr['file'] );
+		$attr['file'] = $this->replaceConst( $attr['file'] );
+
 		return "<script type=\"text/javascript\" src=\"{$attr['file']}\"></script>";
 	}
 
@@ -93,7 +63,7 @@ class HdphpTag extends TagBase {
 		$empty = isset( $attr['empty'] ) ? $attr['empty'] : '';//默认值
 		$row   = isset( $attr['row'] ) ? $attr['row'] : 100;//显示条数
 		$step  = isset( $attr['step'] ) && $attr['step'] > 0 ? $attr['step'] : 1;//间隔
-		$start = isset( $attr['start'] ) ? intval( $attr['start'] ) : 0;//开始数
+		$start = isset( $attr['start'] ) ? max( 0, $attr['start'] - 1 ) : 0;//开始数
 		$php
 		       = <<<php
         <?php
@@ -102,21 +72,22 @@ class HdphpTag extends TagBase {
         }else{
             //初始化
             \$_name= substr('$name',1);
-            \$hd['list'][\$_name]['first']=0;
+            \$hd['list'][\$_name]['first']=false;
             \$hd['list'][\$_name]['last'] =false;
-            \$hd['list'][\$_name]['total']=\$total=min(floor(count($from)/$step),$row);
             \$hd['list'][\$_name]['index']=0;
-            \$id=1;
-            \$_tmp=$from;
-            for(\$index=$start;\$index<\$total;\$index+=$step){
+            \$hd['list'][\$_name]['total']=0;
+            \$id=0;\$key=$start;\$_tmp=$from;
+            for(\$index=$start;\$index<count($from);\$index++){
+                $name=\$_tmp[\$key];\$key +=$step; 
                 \$hd['list'][\$_name]['first'] = \$index==$start;
-                \$hd['list'][\$_name]['last']  = (\$index+$step)>=\$total;
-                \$hd['list'][\$_name]['index'] = \$id++;
-                $name=\$_tmp[\$index];
+                \$hd['list'][\$_name]['index'] = ++\$id;
+				\$hd['list'][\$_name]['last']  = \$id>=$row || !isset(\$_tmp[\$key]);
             ?>
 php;
 		$php .= $content;
-		$php .= "<?php }}?>";
+		$php .= "<?php 
+					if(\$hd['list'][\$_name]['last']){break;}
+				}}?>";
 
 		return $php;
 	}

@@ -83,4 +83,16 @@ class Make extends Cli {
 		$data = str_replace( [ '{{className}}' ], [ $name ], $data );
 		file_put_contents( $file, $data );
 	}
+
+	//创建标签
+	public function tag( $name ) {
+		$file = ROOT_PATH . '/system/tag/' . ucfirst( $name ) . '.php';
+		if ( is_file( $file ) ) {
+			$this->error( 'File already exists\n' );
+		}
+		//创建文件
+		$data = file_get_contents( __DIR__ . '/view/tag.tpl' );
+		$data = str_replace( [ '{{NAME}}' ], [ ucfirst( $name ) ], $data );
+		file_put_contents( $file, $data );
+	}
 }

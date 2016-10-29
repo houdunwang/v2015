@@ -46,8 +46,8 @@ class Container implements ArrayAccess {
 	/**
 	 * 单例服务
 	 *
-	 * @param $name 名称
-	 * @param $object 对象
+	 * @param string $name 名称
+	 * @param mixed $object 对象
 	 */
 	public function instance( $name, $object ) {
 		$this->instances[ $name ] = $object;

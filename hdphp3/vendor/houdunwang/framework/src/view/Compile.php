@@ -33,7 +33,7 @@ class Compile {
 	 */
 	public function run() {
 		//模板内容
-		$this->content = file_get_contents( $this->view->tpl );
+		$this->content = file_get_contents( $this->view->getTpl() );
 		//解析标签
 		$this->tags();
 		//解析全局变量与常量

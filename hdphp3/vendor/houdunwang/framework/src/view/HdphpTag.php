@@ -39,7 +39,9 @@ class HdphpTag extends TagBase {
 
 	//加载模板文件
 	public function _include( $attr, $content, &$view ) {
-		return $view->make( $this->replaceConst( $attr['file'] ), 0, false );
+		$file = view( $this->replaceConst( $attr['file'] ), 0 )->getCompileFile();
+
+		return file_get_contents( $file );
 	}
 
 	//引入CSS文件
@@ -85,7 +87,8 @@ class HdphpTag extends TagBase {
             ?>
 php;
 		$php .= $content;
-		$php .= "<?php 
+		$php
+			.= "<?php 
 					if(\$hd['list'][\$_name]['last']){break;}
 				}}?>";
 

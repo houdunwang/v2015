@@ -13,8 +13,18 @@ namespace app\home\controller;
 class View {
 	//动作
 	public function tag() {
-		p(c('database'));
+		if(IS_POST){
+			Validate::make([
+				['username','required','abc']
+			]);
+		}
 		$data = Db::table( 'user' )->get();
+
 		return view()->with( 'data', $data );
+	}
+
+	//用户定义标签
+	public function user() {
+		return view();
 	}
 }

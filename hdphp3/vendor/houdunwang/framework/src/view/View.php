@@ -16,25 +16,19 @@ class View {
 	//模板变量集合
 	protected static $vars = [ ];
 	//模版文件
-	public $tpl;
+	protected $tpl;
 	//编译文件
-	public $compile;
+	protected $compileFile;
 	//缓存目录
 	protected $cacheDir;
-
-	public function __construct() {
-
-	}
 
 	/**
 	 * 解析模板
 	 *
-	 * @param string $tpl 模板
-	 * @param int $expire 过期时间
-	 * @param bool|true $show 显示或返回
+	 * @param string $tpl
+	 * @param int $expire
 	 *
-	 * @return bool|string
-	 * @throws Exception
+	 * @return $this
 	 */
 	public function make( $tpl = '', $expire = 0 ) {
 		$this->cacheDir = ROOT_PATH . '/storage/view/cache';
@@ -47,9 +41,9 @@ class View {
 			return $this;
 		}
 		//编译文件
-		$this->compile = ROOT_PATH . '/storage/view/' . preg_replace( '/[^\w]/', '_', $this->tpl ) . '_' . substr( md5( $this->tpl ), 0, 5 ) . '.php';
+		$this->compileFile = ROOT_PATH . '/storage/view/' . preg_replace( '/[^\w]/', '_', $this->tpl ) . '_' . substr( md5( $this->tpl ), 0, 5 ) . '.php';
 		//编译文件
-		$this->compileFile();
+		$this->compile();
 		//创建缓存文件
 		if ( $expire > 0 ) {
 			Cache::dir( $this->cacheDir )->set( $cacheName, $content, $expire );
@@ -58,23 +52,37 @@ class View {
 		return $this;
 	}
 
+	//获取模板文件
+	public function getTpl() {
+		return $this->tpl;
+	}
+
+	//获取编译文件
+	public function getCompileFile() {
+		return $this->compileFile;
+	}
+
 	/**
 	 * 返回模板解析后的字符
+	 *
+	 * @param string $tpl
+	 * @param int $expire
+	 *
 	 * @return mixed
 	 */
-	public function fetch( $tpl = '' ) {
-		return $this->make( $tpl )->__toString();
+	public function fetch( $tpl = '', $expire = 0 ) {
+		return $this->make( $tpl, $expire )->__toString();
 	}
 
 	/**
 	 * 获取模板文件
 	 *
-	 * @param string $file 模板文件
+	 * @param $file
 	 *
-	 * @return bool|string
-	 * @throws Exception
+	 * @return string
+	 * @throws \Exception
 	 */
-	public function getTemplateFile( $file ) {
+	protected function getTemplateFile( $file ) {
 		//没有扩展名时添加上
 		if ( $file && ! preg_match( '/\.[a-z]+$/i', $file ) ) {
 			$file .= c( 'view.prefix' );
@@ -115,20 +123,22 @@ class View {
 	}
 
 	//编译文件
-	private function compileFile() {
-		$status = Config::get( 'app.debug' ) || ! file_exists( $this->compile )
-		          || ! is_file( $this->compile )
-		          || ( filemtime( $this->tpl ) > filemtime( $this->compile ) );
+	protected function compile() {
+		$status = c( 'app.debug' )
+		          || ! file_exists( $this->compileFile )
+		          || ! is_file( $this->compileFile )
+		          || ( filemtime( $this->tpl ) > filemtime( $this->compileFile ) );
+
 		if ( $status ) {
 			//创建编译目录
-			$dir = dirname( $this->compile );
+			$dir = dirname( $this->compileFile );
 			if ( ! is_dir( $dir ) ) {
-				mkdir( $dir, 0755, TRUE );
+				mkdir( $dir, 0755, true );
 			}
 			//执行文件编译
 			$compile = new Compile( $this );
 			$content = $compile->run();
-			file_put_contents( $this->compile, $content );
+			file_put_contents( $this->compileFile, $content );
 		}
 	}
 
@@ -156,7 +166,7 @@ class View {
 	public function __toString() {
 		extract( self::$vars );
 		ob_start();
-		require( $this->compile );
+		include $this->compileFile;
 
 		return ob_get_clean();
 	}

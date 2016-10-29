@@ -19,8 +19,8 @@ if ( ! function_exists( 'tablename' ) ) {
  * 显示模板
  */
 if ( ! function_exists( 'view' ) ) {
-	function view( $tpl = '' ) {
-		return View::make( $tpl );
+	function view( $tpl = '', $expire = 0 ) {
+		return View::make( $tpl, $expire );
 	}
 }
 /**

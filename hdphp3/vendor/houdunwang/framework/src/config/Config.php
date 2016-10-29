@@ -14,27 +14,6 @@ class Config {
 	//配置集合
 	protected $items = [ ];
 
-	public function __construct() {
-		foreach ( glob( ROOT_PATH . '/system/config/*' ) as $file ) {
-			$info = pathinfo( $file );
-			$this->set( $info['filename'], require $file );
-		}
-		//加载.env配置
-		if ( is_file( '.env' ) ) {
-			$config = [ ];
-			foreach ( file( '.env' ) as $file ) {
-				$data = explode( '=', $file );
-				if ( count( $data ) == 2 ) {
-					$config[ trim( $data[0] ) ] = trim( $data[1] );
-				}
-			}
-			$this->set( 'database.host', $config['DB_HOST'] );
-			$this->set( 'database.user', $config['DB_USER'] );
-			$this->set( 'database.password', $config['DB_PASSWORD'] );
-			$this->set( 'database.database', $config['DB_DATABASE'] );
-		}
-	}
-
 	/**
 	 * 添加配置
 	 *
@@ -55,7 +34,7 @@ class Config {
 
 		$tmp = $name;
 
-		return TRUE;
+		return true;
 	}
 
 	/**
@@ -82,12 +61,12 @@ class Config {
 	/**
 	 * 排队字段获取数据
 	 *
-	 * @param $key 获取键名
-	 * @param $extName 排除的字段
+	 * @param string $key 获取键名
+	 * @param array $extName 排除的字段
 	 *
 	 * @return array
 	 */
-	public function getExtName( $key, $extName ) {
+	public function getExtName( $key, array $extName ) {
 		$config = $this->get( $key );
 		$data   = [ ];
 		foreach ( (array) $config as $k => $v ) {
@@ -113,11 +92,11 @@ class Config {
 			if ( isset( $tmp[ $d ] ) ) {
 				$tmp = $tmp[ $d ];
 			} else {
-				return FALSE;
+				return false;
 			}
 		}
 
-		return TRUE;
+		return true;
 	}
 
 	/**

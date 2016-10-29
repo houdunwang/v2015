@@ -17,6 +17,7 @@ class ErrorProvider extends ServiceProvider {
 	public $defer = true;
 
 	public function boot() {
+
 	}
 
 	public function register() {

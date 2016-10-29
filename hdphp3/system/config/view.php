@@ -5,7 +5,7 @@ return [
 	//模板后缀
 	'prefix'    => '.php',
 	//标签
-	'tags'      => [ 'system\tag\Tag' ],
+	'tags'      => ['system\tag\Common'],
 	//消息模板
 	'message'   => ROOT_PATH . '/resource/view/message.php',
 	//有确定提示的模板页面
@@ -19,5 +19,5 @@ return [
 	//右标签
 	'tag_right' => '>',
 	//blade 模板功能开关
-	'blade'     => TRUE
+	'blade'     => true
 ];

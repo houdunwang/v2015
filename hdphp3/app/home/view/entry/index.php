@@ -30,6 +30,7 @@
 	<dl>
 		<dt>模板</dt>
 		<dd><a href="{{u('view/tag')}}">标签</a></dd>
+		<dd><a href="{{u('view/user')}}">片定义tag</a></dd>
 	</dl>
 </div>
 </body>

@@ -7,7 +7,7 @@
  */
 class AppStart {
 	//执行中间件
-	public function run() {echo 1133;
+	public function run() {
 		//分配表单验证数据
 		View::with( 'errors', Session::flash( 'errors' ) );
 		//清除闪存
@@ -15,6 +15,7 @@ class AppStart {
 		$this->csrf();
 	}
 
+	//令牌验证
 	protected function csrf() {
 		//获取令牌,不存在时创建令牌
 		if ( ! $token = Session::get( 'csrf_token' ) ) {

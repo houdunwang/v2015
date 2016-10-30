@@ -50,13 +50,13 @@ class Dir {
 			return unlink( $file );
 		}
 
-		return TRUE;
+		return true;
 	}
 
 	//删除目录
 	public function del( $dir ) {
 		if ( ! is_dir( $dir ) ) {
-			return TRUE;
+			return true;
 		}
 		foreach ( glob( $dir . "/*" ) as $v ) {
 			is_dir( $v ) ? $this->del( $v ) : unlink( $v );
@@ -68,20 +68,20 @@ class Dir {
 	//创建目录
 	public function create( $dir, $auth = 0755 ) {
 		if ( ! empty( $dir ) ) {
-			return is_dir( $dir ) or mkdir( $dir, $auth, TRUE );
+			return is_dir( $dir ) or mkdir( $dir, $auth, true );
 		}
 	}
 
 	//复制目录
 	public function copy( $old, $new ) {
-		is_dir( $new ) or mkdir( $new, 0755, TRUE );
+		is_dir( $new ) or mkdir( $new, 0755, true );
 
 		foreach ( glob( $old . '/*' ) as $v ) {
 			$to = $new . '/' . basename( $v );
 			is_file( $v ) ? copy( $v, $to ) : $this->copy( $v, $to );
 		}
 
-		return TRUE;
+		return true;
 	}
 
 	//移动目录
@@ -100,7 +100,7 @@ class Dir {
 	 * @return bool
 	 */
 	public function moveFile( $file, $dir ) {
-		is_dir( $dir ) or mkdir( $dir, 0755, TRUE );
+		is_dir( $dir ) or mkdir( $dir, 0755, true );
 		if ( is_file( $file ) && is_dir( $dir ) ) {
 			copy( $file, $dir . '/' . basename( $file ) );
 

@@ -46,26 +46,26 @@ class App extends Container {
 		ServiceFacade::setFacadeApplication( $this );
 		//启动服务
 		$this->boot();
+		//定义错误/异常处理
+		Error::bootstrap();
+		//命令行模式
+		IS_CLI and die( Cli::bootstrap() );
 		//导入类库别名
 		Loader::addMap( c( 'app.alias' ) );
 		//自动加载文件
 		Loader::autoloadFile();
-		//定义错误/异常处理
-		Error::bootstrap();
-		//应用开始中间件
-		Middleware::exe( 'app_start' );
-		//命令行模式
-		IS_CLI and die( Cli::bootstrap() );
+		//开启会话
+		Session::start();
+		//执行全局中间件
+		Middleware::globals();
 		//解析路由
 		Route::dispatch();
-		//应用结束中间件
-		Middleware::exe( 'app_end' );
 	}
 
 	//定义常量
 	protected function constant() {
 		//版本号
-		define( 'FRAMEWORK_VERSION', '3.0.14' );
+		define( 'FRAMEWORK_VERSION', '3.0.16' );
 		define( 'IS_CLI', PHP_SAPI == 'cli' );
 		define( 'NOW', $_SERVER['REQUEST_TIME'] );
 		define( '__ROOT__', IS_CLI ? '' : trim( 'http://' . $_SERVER['HTTP_HOST'] . dirname( $_SERVER['SCRIPT_NAME'] ), '/\\' ) );

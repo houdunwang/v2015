@@ -39,9 +39,7 @@ class HdphpTag extends TagBase {
 
 	//加载模板文件
 	public function _include( $attr, $content, &$view ) {
-		$file = view( $this->replaceConst( $attr['file'] ), 0 )->getCompileFile();
-
-		return file_get_contents( $file );
+		return file_get_contents( $view->compile( $attr['file'] ) );
 	}
 
 	//引入CSS文件

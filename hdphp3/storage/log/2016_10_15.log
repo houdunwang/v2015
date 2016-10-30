@@ -1,6 +1,0 @@
-[ 2016-10-15T12:00:33+08:00 ]EXCEPTION: Method app\home\controller\Database::query() does not exist
-[ 2016-10-15T12:06:04+08:00 ]EXCEPTION: show columns from hd_user ;BindParams:array (
-)42S02;1146;Table 'hdphp3.hd_user' doesn't exist
-[ 2016-10-15T12:06:35+08:00 ]EXCEPTION: SELECT * FROM hd_news  WHERE name = ?     ;BindParams:array (
-  1 => '后盾人',
-)42S22;1054;Unknown column 'name' in 'where clause'

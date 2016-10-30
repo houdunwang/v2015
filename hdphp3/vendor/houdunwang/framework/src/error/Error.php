@@ -32,6 +32,7 @@ class Error {
 		if ( c( 'app.debug' ) ) {
 			require __DIR__ . '/view/exception.php';
 		} else {
+			class_exists( 'Log' ) && Log::write( $e->getMessage(), 'Exception' );
 			_404();
 		}
 	}
@@ -50,7 +51,7 @@ class Error {
 					require __DIR__ . '/view/debug.php';
 					exit;
 				} else {
-					class_exists( 'Log', false ) && Log::write( $msg, $this->errorType( $errno ) );
+					class_exists( 'Log' ) && Log::write( $msg, $this->errorType( $errno ) );
 					_404();
 				}
 		}

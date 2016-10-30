@@ -30,7 +30,9 @@
 	<dl>
 		<dt>模板</dt>
 		<dd><a href="{{u('view/tag')}}">标签</a></dd>
-		<dd><a href="{{u('view/user')}}">片定义tag</a></dd>
+		<dd><a href="{{u('view/user')}}">用户定义tag</a></dd>
+		<dd><a href="{{u('view/cache')}}">模板缓存</a></dd>
+		<dd><a href="{{u('view/csrf')}}">csrf</a></dd>
 	</dl>
 </div>
 </body>

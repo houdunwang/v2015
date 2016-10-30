@@ -1,8 +1,0 @@
-[ 2016-10-22T11:32:32+08:00 ]EXCEPTION: 模板不存在:/www/video/hdphp3/app/home/view/model/map.php
-[ 2016-10-22T17:26:22+08:00 ]EXCEPTION: INSERT INTO hd_user (`id`,`data`,`username`,`groupid`,`age`) VALUES(?,?,?,?,?) ;BindParams:array (
-  1 => 33,
-  2 => 'abc11',
-  3 => 'abc',
-  4 => '1',
-  5 => 0,
-)23000;1062;Duplicate entry '33' for key 'PRIMARY'

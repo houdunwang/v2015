@@ -29,16 +29,17 @@ class File implements InterfaceCache {
 
 	//连接
 	public function connect() {
-		if ( ! is_dir( $this->dir ) && ! mkdir( $this->dir, 0755, TRUE ) ) {
+		if ( ! Dir::create( $this->dir ) ) {
 			throw new Exception( "缓存目录创建失败" );
 		}
 	}
 
 	//设置缓存目录
 	public function dir( $dir ) {
-		if ( is_dir( $dir ) || mkdir( $dir, 0755, TRUE ) ) {
-			$this->dir = $dir;
+		if ( ! Dir::create( $this->dir ) ) {
+			throw new Exception( "缓存目录创建失败" );
 		}
+		$this->dir = $dir;
 
 		return $this;
 	}
@@ -51,11 +52,9 @@ class File implements InterfaceCache {
 	//设置
 	public function set( $name, $data, $expire = 3600 ) {
 		$file = $this->getFile( $name );
-
 		//缓存时间
 		$expire = sprintf( "%010d", $expire );
-
-		$data = "<?php\n//" . $expire . serialize( $data ) . "\n?>";
+		$data   = "<?php\n//" . $expire . serialize( $data ) . "\n?>";
 
 		return file_put_contents( $file, $data );
 	}
@@ -63,10 +62,9 @@ class File implements InterfaceCache {
 	//获取
 	public function get( $name ) {
 		$file = $this->getFile( $name );
-
 		//缓存文件不存在
 		if ( ! is_file( $file ) ) {
-			return NULL;
+			return null;
 		}
 
 		$content = file_get_contents( $file );
@@ -77,8 +75,10 @@ class File implements InterfaceCache {
 		$mtime = filemtime( $file );
 
 		//缓存失效处理
-		if ( $expire > 0 && $mtime + $expire < time() ) {
-			return @unlink( $file );
+		if ( $expire > 0 && $mtime + $expire < NOW ) {
+			@unlink( $file );
+
+			return false;
 		}
 
 		return unserialize( substr( $content, 18, - 3 ) );

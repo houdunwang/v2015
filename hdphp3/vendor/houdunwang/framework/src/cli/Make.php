@@ -51,7 +51,7 @@ class Make extends Cli {
 		//检测文件是否存在,也检测类名
 		foreach ( glob( ROOT_PATH . '/system/database/migrations/*.php' ) as $f ) {
 			if ( substr( basename( $f ), 18, - 4 ) == $name ) {
-				$this->error( "File already exists\n" );
+				$this->error( "File already exists" );
 			}
 		}
 		$file = ROOT_PATH . '/system/database/migrations/' . date( 'Y_m_d' ) . '_' . substr( time(), - 6 ) . '_' . $name . '.php';
@@ -74,7 +74,7 @@ class Make extends Cli {
 		//检测文件是否存在,也检测类名
 		foreach ( glob( ROOT_PATH . '/system/database/seeds/*.php' ) as $f ) {
 			if ( substr( basename( $f ), 18, - 4 ) == $name ) {
-				$this->error( "File already exists\n" );
+				$this->error( "File already exists" );
 			}
 		}
 		$file = ROOT_PATH . '/system/database/seeds/' . date( 'Y_m_d' ) . '_' . substr( time(), - 6 ) . '_' . $name . '.php';
@@ -88,10 +88,22 @@ class Make extends Cli {
 	public function tag( $name ) {
 		$file = ROOT_PATH . '/system/tag/' . ucfirst( $name ) . '.php';
 		if ( is_file( $file ) ) {
-			$this->error( 'File already exists\n' );
+			$this->error( 'File already exists' );
 		}
 		//创建文件
 		$data = file_get_contents( __DIR__ . '/view/tag.tpl' );
+		$data = str_replace( [ '{{NAME}}' ], [ ucfirst( $name ) ], $data );
+		file_put_contents( $file, $data );
+	}
+
+	//创建中间件
+	public function middleware( $name ) {
+		$file = ROOT_PATH . '/system/middleware/' . ucfirst( $name ) . '.php';
+		if ( is_file( $file ) ) {
+			$this->error( 'File already exists' );
+		}
+		//创建文件
+		$data = file_get_contents( __DIR__ . '/view/middleware.tpl' );
 		$data = str_replace( [ '{{NAME}}' ], [ ucfirst( $name ) ], $data );
 		file_put_contents( $file, $data );
 	}

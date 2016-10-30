@@ -21,8 +21,8 @@ class Middleware {
 	/**
 	 * 添加控制器执行的中间件
 	 *
-	 * @param $name 中间件名称
-	 * @param $mod array 类型
+	 * @param string $name 中间件名称
+	 * @param array $mod 类型
 	 *  ['only'=>array('a','b')] 仅执行a,b控制器动作
 	 *  ['except']=>array('a','b')], 除了a,b控制器动作
 	 */
@@ -48,7 +48,7 @@ class Middleware {
 	}
 
 	//执行控制器中间件
-	public function performControllerMiddleware() {
+	public function controller() {
 		foreach ( self::$run as $class ) {
 			if ( class_exists( $class ) ) {
 				$obj = $this->app->make( $class );
@@ -59,9 +59,9 @@ class Middleware {
 		}
 	}
 
-	//执行普通中间件
-	public function exe( $name ) {
-		$middleware = array_unique( c( 'middleware.middleware.' . $name ) );
+	//执行全局中间件
+	public function globals() {
+		$middleware = array_unique( c( 'middleware.global' ) );
 		foreach ( $middleware as $class ) {
 			if ( class_exists( $class ) ) {
 				$obj = $this->app->make( $class );
@@ -69,6 +69,15 @@ class Middleware {
 					$obj->run();
 				}
 			}
+		}
+	}
+
+	//执行应用中间件
+	public function exe( $name ) {
+		$class = c( 'middleware.web.' . $name );
+		$obj   = $this->app->make( $class );
+		if ( method_exists( $obj, 'run' ) ) {
+			$obj->run();
 		}
 	}
 }

@@ -31,9 +31,9 @@ class Compile {
 	 * 运行编译
 	 * @return string
 	 */
-	public function run() {
+	public function run($tpl) {
 		//模板内容
-		$this->content = file_get_contents( $this->view->getTpl() );
+		$this->content = file_get_contents( $tpl );
 		//解析标签
 		$this->tags();
 		//解析全局变量与常量

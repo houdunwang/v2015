@@ -61,7 +61,7 @@ class Controller {
 		}
 		$controller = Route::$app->make( $class, true );
 		//执行控制器中间件
-		Middleware::performControllerMiddleware();
+		Middleware::controller();
 		//执行动作
 		try {
 			$reflection = new ReflectionMethod( $controller, ACTION );

@@ -27,7 +27,7 @@ class CacheProvider extends ServiceProvider {
 	}
 
 	public function register() {
-		$this->app->single( 'Cache', function ( $app ) {
+		$this->app->bind( 'Cache', function ( $app ) {
 			return new Cache( $app );
 		} );
 	}

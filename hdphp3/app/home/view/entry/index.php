@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="{{__ROOT__}}/resource/hdjs/css/bootstrap.min.css">
 </head>
 <body style="background: #f3f3f3;">
+<h1>你好 {{v('user.nickname')}}</h1>
 <div style="padding: 50px;">
 	<dl>
 		<dt>基础</dt>
@@ -34,6 +35,11 @@
 		<dd><a href="{{u('view/cache')}}">模板缓存</a></dd>
 		<dd><a href="{{u('view/csrf')}}">csrf</a></dd>
 	</dl>
+	<dl>
+		<dt>中间件</dt>
+		<dd><a href="{{u('admin/entry/index')}}">中间件</a></dd>
+	</dl>
+
 </div>
 </body>
 </html>

@@ -34,9 +34,9 @@ class View {
 	 *
 	 * @return $this
 	 */
-	public function make( $file = '', $expire = 0 ) {
+	public function make( $file = '', $expire = null ) {
 		$this->file   = $file;
-		$this->expire = $expire;
+		$this->expire = is_null( $expire ) ? null : intval( $expire );
 
 		return $this;
 	}
@@ -77,13 +77,13 @@ class View {
 
 	//显示模板
 	public function __toString() {
-		if ( $this->isCache( $this->file ) ) {
+		if ( ! is_null( $this->expire ) && $this->isCache( $this->file ) ) {
 			//缓存有效时返回缓存数据
 			return Cache::dir( $this->cacheDir )->get( $this->cacheName( $this->file ) ) ?: '';
 		}
 		$content = $this->fetch( $this->file );
 		//创建缓存文件
-		if ( $this->expire > 0 ) {
+		if ( ! is_null( $this->expire ) ) {
 			Cache::dir( $this->cacheDir )->set( $this->cacheName( $this->file ), $content, $this->expire );
 		}
 

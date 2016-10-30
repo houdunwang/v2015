@@ -38,11 +38,11 @@ class Request {
 			return self::$items['GET'];
 		}
 		$data = Arr::get( self::$items['GET'], $name );
-		if ( $data && $method ) {
-			return Tool::batchFunctions( $data );
+		if ( ! is_null( $data ) && $method ) {
+			return Tool::batchFunctions( $method, $data );
 		}
 
-		return $data ?: $value;
+		return is_null( $data ) ? $value : $data;
 	}
 
 	public function post( $name = '', $value = null, $method = [ ] ) {
@@ -50,11 +50,11 @@ class Request {
 			return self::$items['POST'];
 		}
 		$data = Arr::get( self::$items['POST'], $name );
-		if ( $data && $method ) {
-			return Tool::batchFunctions( $data );
+		if ( ! is_null( $data ) && $method ) {
+			return Tool::batchFunctions( $method, $data );
 		}
 
-		return $data ?: $value;
+		return is_null( $data ) ? $value : $data;
 	}
 
 	public function cookie( $name = '', $value = null, $method = [ ] ) {
@@ -62,11 +62,11 @@ class Request {
 			return self::$items['COOKIE'];
 		}
 		$data = Arr::get( self::$items['COOKIE'], $name );
-		if ( $data && $method ) {
-			return Tool::batchFunctions( $data );
+		if ( ! is_null( $data ) && $method ) {
+			return Tool::batchFunctions( $method, $data );
 		}
 
-		return $data ?: $value;
+		return is_null( $data ) ? $value : $data;
 	}
 
 	public function request( $name = '', $value = null, $method = [ ] ) {
@@ -74,11 +74,11 @@ class Request {
 			return self::$items['REQUEST'];
 		}
 		$data = Arr::get( self::$items['REQUEST'], $name );
-		if ( $data && $method ) {
-			return Tool::batchFunctions( $data );
+		if ( ! is_null( $data ) && $method ) {
+			return Tool::batchFunctions( $method, $data );
 		}
 
-		return $data ?: $value;
+		return is_null( $data ) ? $value : $data;
 	}
 
 	public function globals( $name = '', $value = null, $method = [ ] ) {
@@ -86,11 +86,11 @@ class Request {
 			return self::$items['GLOBALS'];
 		}
 		$data = Arr::get( self::$items['GLOBALS'], $name );
-		if ( $data && $method ) {
-			return Tool::batchFunctions( $data );
+		if ( ! is_null( $data ) && $method ) {
+			return Tool::batchFunctions( $method, $data );
 		}
 
-		return $data ?: $value;
+		return is_null( $data ) ? $value : $data;
 	}
 
 	public function session( $name = '', $value = null, $method = [ ] ) {
@@ -98,16 +98,16 @@ class Request {
 			return self::$items['SESSION'];
 		}
 		$data = Arr::get( self::$items['SESSION'], $name );
-		if ( $data && $method ) {
-			return Tool::batchFunctions( $data );
+		if ( ! is_null( $data ) && $method ) {
+			return Tool::batchFunctions( $method, $data );
 		}
 
-		return $data ?: $value;
+		return is_null( $data ) ? $value : $data;
 	}
 
 	//客户端IP
 	public function ip( $type = 0 ) {
-		return clientIp($type);
+		return clientIp( $type );
 	}
 
 	//https请求

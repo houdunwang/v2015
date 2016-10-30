@@ -17,13 +17,15 @@ class Tool {
 
 	/**
 	 * 批量执行函数
+	 *
 	 * @param $functions
 	 * @param $value
 	 *
 	 * @return mixed
 	 */
 	public function batchFunctions( $functions, $value ) {
-		foreach ( [ $functions ] as $func ) {
+		$functions = is_array( $functions ) ? $functions : [ $functions ];
+		foreach ( $functions as $func ) {
 			$value = $func( $value );
 		}
 

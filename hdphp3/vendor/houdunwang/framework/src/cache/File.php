@@ -21,9 +21,10 @@ use Exception;
 class File implements InterfaceCache {
 
 	//缓存目录
-	private $dir = 'storage/cache';
+	private $dir;
 
 	public function __construct() {
+		$this->dir = c( 'cache.file.dir' );
 		$this->connect();
 	}
 
@@ -36,10 +37,10 @@ class File implements InterfaceCache {
 
 	//设置缓存目录
 	public function dir( $dir ) {
-		if ( ! Dir::create( $this->dir ) ) {
-			throw new Exception( "缓存目录创建失败" );
-		}
 		$this->dir = $dir;
+		if ( ! Dir::create( $this->dir ) || ! is_writable( $this->dir ) ) {
+			throw new Exception( "缓存目录创建失败或目录不可写" );
+		}
 
 		return $this;
 	}
@@ -63,7 +64,7 @@ class File implements InterfaceCache {
 	public function get( $name ) {
 		$file = $this->getFile( $name );
 		//缓存文件不存在
-		if ( ! is_file( $file ) ) {
+		if ( ! is_file( $file ) || ! is_readable( $file ) ) {
 			return null;
 		}
 

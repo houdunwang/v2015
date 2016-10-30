@@ -26,7 +26,7 @@ class Cache {
 
     public function __construct( $app ) {
         $this->app     = $app;
-        $driver        = '\hdphp\cache\\' .ucfirst(Config::get( 'cache.type' ));
+        $driver        = '\hdphp\cache\\' .ucfirst(Config::get( 'cache.driver' ));
         $this->connect = new $driver;
     }
 

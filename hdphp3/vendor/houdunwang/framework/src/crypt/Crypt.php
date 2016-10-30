@@ -16,7 +16,7 @@ class Crypt {
 	private $securekey;
 
 	public function __construct() {
-		$this->securekey = hash( 'sha256', C( 'app.key' ), TRUE );
+		$this->securekey = hash( 'sha256', c( 'app.key' ), TRUE );
 		$this->iv        = mcrypt_create_iv( 32 );
 	}
 

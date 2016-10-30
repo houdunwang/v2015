@@ -26,12 +26,12 @@ class Mysql {
 	public function getFields( $table ) {
 		$name = c( 'database.database' ) . '.' . $table;
 		//字段缓存
-		if ( ! c( 'app.debug' ) && f( $name, '[get]', ROOT_PATH . '/storage/cache/field' ) ) {
-			$data = f( $name, '[get]', ROOT_PATH . '/storage/cache/field' );
+		if ( ! c( 'app.debug' ) && f( $name, '[get]', 0, ROOT_PATH . '/storage/field' ) ) {
+			$data = f( $name, '[get]', 0, ROOT_PATH . '/storage/cache/field' );
 		} else {
 			$sql = "show columns from " . c( 'database.prefix' ) . $table;
 			if ( ! $result = Db::query( $sql ) ) {
-				return;
+				return [ ];
 			}
 			$data = [ ];
 			foreach ( (array) $result as $res ) {
@@ -44,7 +44,7 @@ class Mysql {
 				$f ['extra']             = $res ['Extra'];
 				$data [ $res ['Field'] ] = $f;
 			}
-			f( $name, $data, ROOT_PATH . '/storage/cache/field' );
+			f( $name, $data, 0, ROOT_PATH . '/storage/field' );
 		}
 
 		return $data;
@@ -203,11 +203,11 @@ class Mysql {
 		foreach ( $tables as $k => $table ) {
 			$key = 'Tables_in_' . c( 'database.database' );
 			if ( strtolower( $table[ $key ] ) == strtolower( c( 'database.prefix' ) . $tableName ) ) {
-				return TRUE;
+				return true;
 			}
 		}
 
-		return FALSE;
+		return false;
 	}
 
 	/**
@@ -222,11 +222,11 @@ class Mysql {
 		$fieldLists = Db::query( "DESC " . c( 'database.prefix' ) . $table );
 		foreach ( (array) $fieldLists as $f ) {
 			if ( strtolower( $f['Field'] ) == strtolower( $field ) ) {
-				return TRUE;
+				return true;
 			}
 		}
 
-		return FALSE;
+		return false;
 	}
 
 	/**
@@ -242,6 +242,6 @@ class Mysql {
 			Db::execute( $r );
 		}
 
-		return TRUE;
+		return true;
 	}
 }

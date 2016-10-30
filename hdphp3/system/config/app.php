@@ -5,7 +5,7 @@ return [
 	//应用目录
 	'path'               => 'app',
 	//加密key
-	'key'                => 'ce9fdeba3a030fbcb0e2ffb2a00a34b7e1008bc55abe0251e5e1d417cd8b5476',
+	'key'                => '405305c793179059f8fd52436876750c587d19ccfbbe2a643743d021dbdcd79c',
 	//页面编码
 	'charset'            => 'utf-8',
 	//时区

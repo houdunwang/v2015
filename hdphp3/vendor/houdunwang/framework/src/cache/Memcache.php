@@ -43,7 +43,7 @@ class Memcache implements InterfaceCache
     }
 
     //设置
-    public function set($name, $value, $expire = 3600)
+    public function set($name, $value, $expire = 0)
     {
         return $this->obj->set($name, $value, 0, $expire);
     }

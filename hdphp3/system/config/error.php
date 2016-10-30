@@ -8,7 +8,7 @@ return [
 		 * show 直接显示错误信息
 		 * default 由开发者自行处理
 		 */
-		'validate' => 'redirect',
+		'validate' => 'show',
 	],
 
 	//开启Trace

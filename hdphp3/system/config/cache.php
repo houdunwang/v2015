@@ -37,6 +37,6 @@ return [
 	 * php hd table:cache
 	 */
 	'mysql'    => [
-		'table' => 'cache'
+		'table' => 'core_cache'
 	],
 ];

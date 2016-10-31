@@ -19,4 +19,10 @@ class Cache {
 		f( null );
 	}
 
+	public function db() {
+		$r = d( 'b', 'houdunren.com', 20 );
+		dd($r);
+		$res = d( 'b', 'houdunren.com999', 20 );
+		dd($res);
+	}
 }

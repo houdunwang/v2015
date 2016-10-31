@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../org/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="hd" ng-controller="ctrl">
+    <h2 ng-bind="name"></h2>
+    <h1>{{name}}</h1>
+    <input type="text" ng-model="name">
+</div>
+<script>
+    var m = angular.module('hd', []);
+    //双向数据绑定
+    m.controller('ctrl', ['$scope', function ($scope) {
+        //viewModel
+        $scope.name = '后盾网';//model   server
+    }]);
+</script>
+</body>
+</html>

@@ -8,45 +8,35 @@
  * | Copyright (c) 2012-2019, www.houdunwang.com. All Rights Reserved.
  * '-------------------------------------------------------------------*/
 namespace hdphp\cache;
-
-use Exception;
-
 /**
  * Mysql缓存
  * Class Mysql
  * @package hdphp\cache
  */
 class Mysql implements InterfaceCache {
-
+	use Base;
 	//缓存目录
-	protected $obj;
-
-	public function __construct() {
-		$this->connect();
-	}
+	protected $link;
 
 	//连接
 	public function connect() {
-		$this->obj = Db::table( c( 'cache.mysql.table' ) );
+		$this->link = Db::table( c( 'cache.mysql.table' ) );
 	}
 
 	//设置
 	public function set( $name, $data, $expire = 0 ) {
 		$data = [ 'name' => $name, 'data' => serialize( $data ), 'create_at' => NOW, 'expire' => $expire ];
-
-		return $this->obj->insert( $data ) ? true : false;
+		if ( ! $this->link->where( 'name', $name )->get() ) {
+			return $this->link->insert( $data ) ? true : false;
+		}
 	}
 
 	//获取
 	public function get( $name ) {
-		$data = $this->obj->where( 'name', $name )->first();
-		if ( empty( $data ) ) {
-			return null;
-		} else if ( $data['expire'] > 0 && $data['create_at'] + $data['expire'] < NOW ) {
+		$data = $this->link->where( 'name', $name )->first();
+		if ( $data['expire'] > 0 && $data['create_at'] + $data['expire'] < NOW ) {
 			//缓存过期
-			$this->obj->where( 'name', $name )->delete();
-
-			return null;
+			$this->link->where( 'name', $name )->delete();
 		} else {
 			return unserialize( $data['data'] );
 		}
@@ -54,7 +44,7 @@ class Mysql implements InterfaceCache {
 
 	//删除
 	public function del( $name ) {
-		return $this->obj->where( 'name', $name )->delete();
+		return $this->link->where( 'name', $name )->delete();
 	}
 
 	//删除所有

@@ -19,20 +19,13 @@ use Exception;
  * @author  向军 <2300071698@qq.com>
  */
 class File implements InterfaceCache {
-
+	use Base;
 	//缓存目录
 	private $dir;
 
-	public function __construct() {
-		$this->dir = c( 'cache.file.dir' );
-		$this->connect();
-	}
-
 	//连接
 	public function connect() {
-		if ( ! Dir::create( $this->dir ) ) {
-			throw new Exception( "缓存目录创建失败" );
-		}
+		$this->dir( c( 'cache.file.dir' ) );
 	}
 
 	//设置缓存目录

@@ -18,32 +18,29 @@ namespace hdphp\cache;
  */
 class Cache {
 
-    //应用
-    public $app;
+	//应用
+	public $app;
 
-    //连接
-    protected $connect;
+	//连接
+	protected $link;
 
-    public function __construct( $app ) {
-        $this->app     = $app;
-        $driver        = '\hdphp\cache\\' .ucfirst(Config::get( 'cache.driver' ));
-        $this->connect = new $driver;
-    }
+	//更改缓存驱动
+	public function driver( $driver = '' ) {
+		$driver     = $driver ?: c( 'cache.driver' );
+		$driver     = '\hdphp\cache\\' . ucfirst( $driver );
+		$this->link = new $driver;
+		$this->link->connect();
 
-    //更改缓存驱动
-    public function driver( $driver ) {
-        $driver        = '\hdphp\cache\\' . $driver;
-        $this->connect = new $driver;
+		return $this;
+	}
 
-        return $this;
-    }
-
-    public function __call( $method, $params ) {
-        if ( method_exists( $this->connect, $method ) ) {
-            return call_user_func_array( [ $this->connect, $method ], $params );
-        } else {
-            return $this;
-        }
-    }
+	public function __call( $method, $params ) {
+		$this->link or $this->driver();
+		if ( method_exists( $this->link, $method ) ) {
+			return call_user_func_array( [ $this->link, $method ], $params );
+		} else {
+			return $this;
+		}
+	}
 
 }

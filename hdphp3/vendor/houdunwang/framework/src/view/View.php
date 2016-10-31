@@ -124,13 +124,13 @@ class View {
 		if ( ! is_file( $file ) ) {
 			if ( defined( 'MODULE' ) ) {
 				//模块视图文件夹
-				$file = strtolower( MODULE_PATH . '/view/' . CONTROLLER ) . '/' . ( $file ?: ACTION . c( 'view.prefix' ) );
+				$file = c( 'app.path' ) . '/' . strtolower( MODULE . '/view/' . CONTROLLER ) . '/' . ( $file ?: ACTION . c( 'view.prefix' ) );
 				if ( ! is_file( $file ) ) {
 					trigger_error( "模板不存在:$file", E_USER_ERROR );
 				}
 			} else {
 				//路由访问时
-				$file = ROOT_PATH . '/' . c( 'view.path' ) . '/' . $file . c( 'view.prefix' );
+				$file = c( 'view.path' ) . '/' . $file . c( 'view.prefix' );
 				if ( ! is_file( $file ) ) {
 					trigger_error( "模板不存在:$file", E_USER_ERROR );
 				}

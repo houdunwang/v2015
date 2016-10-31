@@ -6,7 +6,7 @@ return [
 	 * memcache、redis需要自行安装服务器软件
 	 * mysql缓存需要创建数据表
 	 */
-	'driver'   => 'file',
+	'driver'   => 'mysql',
 	/**
 	 * 文件缓存
 	 */
@@ -37,6 +37,6 @@ return [
 	 * php hd table:cache
 	 */
 	'mysql'    => [
-		'table' => 'core_cache'
+		'table' => 'cache'
 	],
 ];

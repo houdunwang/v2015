@@ -42,9 +42,9 @@ class Controller {
 		define( 'MODULE', $param[0] );
 		define( 'CONTROLLER', ucfirst( $param[1] ) );
 		define( 'ACTION', $param[2] );
-		define( 'MODULE_PATH', ROOT_PATH . '/app/' . MODULE );
+		define( 'MODULE_PATH', ROOT_PATH . '/' . c( 'app.path' ) . '/' . MODULE );
 		define( 'VIEW_PATH', MODULE_PATH . '/' . 'view' );
-		define( '__VIEW__', __ROOT__ . '/app/' . MODULE . '/view' );
+		define( '__VIEW__', __ROOT__ . '/' . c( 'app.path' ) . '/' . MODULE . '/view' );
 		self::action();
 	}
 

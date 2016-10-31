@@ -39,7 +39,11 @@
 		<dt>中间件</dt>
 		<dd><a href="<?php echo u('admin/entry/index')?>">中间件</a></dd>
 	</dl>
-
+	<dl>
+		<dt>缓存</dt>
+		<dd><a href="<?php echo u('cache/index')?>">文件缓存</a></dd>
+		<dd><a href="<?php echo u('cache/db')?>">数据库缓存</a></dd>
+	</dl>
 </div>
 </body>
 </html>

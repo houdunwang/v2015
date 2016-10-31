@@ -18,57 +18,45 @@ use Exception;
  * @package Hdphp\Cache
  * @author  向军 <2300071698@qq.com>
  */
-class Redis implements InterfaceCache
-{
+class Redis implements InterfaceCache {
+	use Base;
+	protected $link;
 
-    protected $obj;
+	//连接
+	public function connect() {
+		$conf       = Config::get( 'cache.redis' );
+		$this->link = new Redis();
+		if ( $this->link->connect( $conf['host'], $conf['port'] ) ) {
+			throw new Exception( "Redis 连接失败" );
+		}
+		$this->link->auth( $conf['password'] );
+		$this->link->select( $conf['database'] );
+	}
 
-    //连接
-    public function connect()
-    {
-        $conf      = Config::get('cache.redis');
-        $this->obj = new Redis();
+	//设置
+	public function set( $name, $value, $expire = 3600 ) {
+		if ( $this->link->set( $name, $value ) ) {
+			return $this->link->expire( $name, $expire );
+		}
+	}
 
-        if ($this->obj->connect($conf['host'], $conf['port']))
-        {
-            throw new Exception("Redis 连接失败");
-        }
+	//获得
+	public function get( $name ) {
+		return $this->link->get( $name );
+	}
 
-        $this->obj->auth($conf['password']);
-        $this->obj->select($conf['database']);
-    }
+	//删除
+	public function del( $name ) {
+		return $this->link->del( $name );
+	}
 
-    //设置
-    public function set($name, $value, $expire = 3600)
-    {
+	//清空缓存池
+	public function delAll() {
+		return $this->link->flushall();
+	}
 
-        if ($this->obj->set($name, $value))
-        {
-            return $this->obj->expire($name, $expire);
-        }
-    }
+	//清除缓存
+	public function flush() {
 
-    //获得
-    public function get($name)
-    {
-        return $this->obj->get($name);
-    }
-
-    //删除
-    public function del($name)
-    {
-        return $this->obj->del($name);
-    }
-
-    //清空缓存池
-    public function delAll()
-    {
-        return $this->obj->flushall();
-    }
-
-    //清除缓存
-    public function flush()
-    {
-
-    }
+	}
 }

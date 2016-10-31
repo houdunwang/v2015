@@ -18,52 +18,38 @@ use Exception;
  * @package Hdphp\Cache
  * @author  向军 <2300071698@qq.com>
  */
-class Memcache implements InterfaceCache
-{
+class Memcache implements InterfaceCache {
+	use Base;
+	protected $link;
 
-    protected $obj;
+	//连接
+	public function connect() {
+		$conf = Config::get( 'cache.memcache' );
+		if ( $this->link = new Memcache() ) {
+			$this->link->addServer( $conf['host'], $conf['port'] );
+		} else {
+			throw new Exception( "Memcache 连接失败" );
+		}
+	}
 
-    public function __construct()
-    {
-        $this->connect();
-    }
+	//设置
+	public function set( $name, $value, $expire = 0 ) {
+		return $this->link->set( $name, $value, 0, $expire );
+	}
 
-    //连接
-    public function connect()
-    {
-        $conf = Config::get('cache.memcache');
-        if ($this->obj = new Memcache())
-        {
-            $this->obj->addServer($conf['host'], $conf['port']);
-        }
-        else
-        {
-            throw new Exception("Memcache 连接失败");
-        }
-    }
+	//获得
+	public function get( $name ) {
+		return $this->link->get( $name );
+	}
 
-    //设置
-    public function set($name, $value, $expire = 0)
-    {
-        return $this->obj->set($name, $value, 0, $expire);
-    }
+	//删除
+	public function del( $name ) {
+		return $this->link->delete( $name );
+	}
 
-    //获得
-    public function get($name)
-    {
-        return $this->obj->get($name);
-    }
-
-    //删除
-    public function del($name)
-    {
-        return $this->obj->delete($name);
-    }
-
-    //删除缓存池
-    public function flush()
-    {
-        return $this->obj->flush();
-    }
+	//删除缓存池
+	public function flush() {
+		return $this->link->flush();
+	}
 
 }

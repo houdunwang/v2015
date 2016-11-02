@@ -10,6 +10,22 @@
 <script>
     var m = angular.module('hd', []);
     m.controller('ctrl', ['$scope', function ($scope) {
+//        var a;
+//        console.log(angular.isUndefined(a));
+//        var b=99;
+//        console.log(angular.isNumber(b))
+//        var c='houdunwang.com';
+//        console.log(angular.isString(c))
+
+//        var d = {};
+//        console.log(angular.isObject(d));
+
+//        var e = document.getElementsByTagName('body').item(0);
+//        console.log(angular.isElement(e));
+
+        f = {name: 9};
+        g = {name: 9};
+        console.log(angular.equals(f, g));
     }]);
 </script>
 </body>

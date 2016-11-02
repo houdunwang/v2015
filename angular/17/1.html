@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="hd" ng-controller="ctrl">
+    {{status}}
+    <label><input type="checkbox" ng-model="status"> 接收协议</label>
+    <button ng-init="copyright=false" ng-click="copyright=!copyright">查看协议</button>
+    <br/>
+    <textarea ng-show="copyright">协议内容: 本视频由后盾人推出。</textarea>
+    <br/>
+    <button ng-disabled="!status">登录</button>
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.controller('ctrl', ['$scope', function ($scope) {
+    }]);
+</script>
+</body>
+</html>

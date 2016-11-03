@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" ng-app="hd">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+</head>
+<body>
+<div ng-controller="ctrl">
+    <input type="text" ng-model="a">{{ope}}
+    <input type="text" ng-model="b">
+    结果:{{evel(a+opt+b)}}
+    <span ng-if="a&&b&&ope=='+'">{{a*1+b*1}}</span>
+    <span ng-if="a&&b&&ope=='-'">{{a*1-b*1}}</span>
+    <span ng-if="a&&b&&ope=='*'">{{a*1*b*1}}</span>
+    <span ng-if="a&&b&&ope=='/'">{{a*1/b*1}}</span>
+    <br/>
+    <input type="radio" ng-model="ope" value="+" ng-init="ope='+'"> +
+    <input type="radio" ng-model="ope" value="-"> -
+    <input type="radio" ng-model="ope" value="*"> *
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.controller('ctrl', ['$scope', function ($scope) {
+
+    }]);
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" ng-app="hd">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+</head>
+<body>
+<div ng-controller="ctrl">
+    <ul>
+        <!--{{$first}} 第一个  {{$last}} 最后一个  {{$middle}} 中间的 {{$even}}偶数行 {{$odd}} 奇数行-->
+        <li ng-repeat="(k,v) in data" style="{{$odd?'color:red':''}}">
+            名称:{{v.name}}   网址:{{v.url}}
+        </li>
+        <hr/>
+        <li ng-repeat="(k,v) in data">
+            <span ng-if="$first" style="{{$first?'color:red':''}}">名称:{{v.name}}   网址:{{v.url}}</span>
+            <span ng-if="$middle">名称:{{v.name}}   网址:{{v.url}}</span>
+            <span ng-if="$last" style="{{$last?'color:green':''}}">名称:{{v.name}}   网址:{{v.url}}</span>
+        </li>
+    </ul>
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.controller('ctrl', ['$scope', function ($scope) {
+        $scope.a=99;
+        $scope.data = [
+            {name: '后盾人', url: 'houdunren.com'},
+            {name: '后盾网', url: 'houdunwang.com'},
+            {name: '后盾云', url: 'houdunyun.com'},
+            {name: 'hdphp', url: 'hdphp.com'},
+            {name: 'hdcms', url: 'hdcms.com'},
+        ];
+    }]);
+</script>
+</body>
+</html>

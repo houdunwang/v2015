@@ -1,20 +1,20 @@
 [
     {
         "name": "houdunwang/framework",
-        "version": "v3.0.17",
-        "version_normalized": "3.0.17.0",
+        "version": "v3.0.18",
+        "version_normalized": "3.0.18.0",
         "source": {
             "type": "git",
             "url": "https://github.com/houdunwang/framework.git",
-            "reference": "3fc01aea701dad95a46cfefe785ee671baa603d8"
+            "reference": "64b4bbe2dfd6ba36d25a68aef388f3552b540b5e"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/houdunwang/framework/zipball/3fc01aea701dad95a46cfefe785ee671baa603d8",
-            "reference": "3fc01aea701dad95a46cfefe785ee671baa603d8",
+            "url": "https://api.github.com/repos/houdunwang/framework/zipball/64b4bbe2dfd6ba36d25a68aef388f3552b540b5e",
+            "reference": "64b4bbe2dfd6ba36d25a68aef388f3552b540b5e",
             "shasum": ""
         },
-        "time": "2016-10-30 17:51:13",
+        "time": "2016-11-04 02:42:58",
         "type": "project",
         "installation-source": "dist",
         "autoload": {

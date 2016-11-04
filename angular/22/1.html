@@ -5,14 +5,21 @@
     <script src="../org/angular.min.js"></script>
 </head>
 <body>
+<style>
+    .red{
+        background: red;
+    }
+    .font{
+        font-size: 100px;
+    }
+</style>
 <div ng-app="hd" ng-controller="ctrl">
-    协议 :<input type="checkbox" ng-model="copyright"> 接受<br/>
-    <input type="submit" ng-disabled="!copyright">
+    <div ng-class="{red:false,font:false}">hdphp</div>
 </div>
 <script>
     var m = angular.module('hd', []);
     m.controller('ctrl', ['$scope', function ($scope) {
-//        $scope.user = {sex: 1}
+
     }]);
 </script>
 </body>

@@ -1,27 +1,23 @@
 <!doctype html>
-<html lang="en" ng-app="hd">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <script src="../org/angular.min.js"></script>
 </head>
 <body>
-<div ng-controller="ctrl">
-    <input type="text" ng-model="a">{{ope}}
-    <input type="text" ng-model="b">
-    结果:{{evel(a+opt+b)}}
-    <span ng-if="a&&b&&ope=='+'">{{a*1+b*1}}</span>
-    <span ng-if="a&&b&&ope=='-'">{{a*1-b*1}}</span>
-    <span ng-if="a&&b&&ope=='*'">{{a*1*b*1}}</span>
-    <span ng-if="a&&b&&ope=='/'">{{a*1/b*1}}</span>
-    <br/>
-    <input type="radio" ng-model="ope" value="+" ng-init="ope='+'"> +
-    <input type="radio" ng-model="ope" value="-"> -
-    <input type="radio" ng-model="ope" value="*"> *
+<div ng-app="hd" ng-controller="ctrl">
+    性别 :<select ng-model="user.sex">
+    <option value="">选择性别</option>
+    <option ng-value="1" ng-selected="user.sex==1">男</option>
+    <option ng-value="2" ng-selected="user.sex==2">女</option>
+</select>
+    <input type="radio" ng-model="user.sex" ng-value="1">男
+    <input type="radio" ng-model="user.sex" ng-value="2">女
 </div>
 <script>
     var m = angular.module('hd', []);
     m.controller('ctrl', ['$scope', function ($scope) {
-
+//        $scope.user = {sex: 1}
     }]);
 </script>
 </body>

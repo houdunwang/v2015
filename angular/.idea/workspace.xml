@@ -158,7 +158,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../r" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../requirejs" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
@@ -246,12 +246,12 @@
       <workItem from="1478229265645" duration="2208000" />
       <workItem from="1478276157974" duration="2269000" />
       <workItem from="1478355757409" duration="3113000" />
-      <workItem from="1478437807752" duration="2341000" />
+      <workItem from="1478437807752" duration="2491000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64699000" />
+    <option name="totallyTimeSpent" value="64849000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />

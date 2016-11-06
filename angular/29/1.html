@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+    <link rel="stylesheet" href="../org/bootstrap.min.css">
+</head>
+<body>
+<style>
+    .mobile {
+        border  : solid 1px #999999;
+        height  : 500px;
+        display : flex;
+    }
+
+    .mobile dl {
+        margin         : 0px;
+        padding        : 0px;
+        display        : flex;
+        flex           : 1;
+        flex-direction : column-reverse;
+    }
+
+    .mobile dl dt {
+        background  : #999999;
+        color       : #ffffff;
+        height      : 30px;
+        text-align  : center;
+        border      : solid 1px #f3f3f3;
+        cursor      : pointer;
+        line-height : 2em;
+    }
+
+    .mobile dl dd {
+        display        : flex;
+        flex-direction : column;
+    }
+
+    .mobile dl dd a {
+        border          : solid 1px #f3f3f3;
+        text-align      : center;
+        padding         : 6px;
+        text-decoration : none;
+    }
+</style>
+<div ng-app="hd" ng-controller="ctrl">
+    <form action="" method="post" class="form-horizontal" role="form">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4" class="app">
+                    <div class="mobile">
+                        <dl ng-repeat="v in data.button">
+                            <dt ng-bind="v.name"></dt>
+                            <dd>
+                                <a href="" ng-repeat="d in v.sub_button" ng-bind="d.name"></a>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="col-xs-8">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">编辑</h3>
+                        </div>
+                        <div class="panel-body">
+                            <!--一级菜单开始-->
+                            <div class="panel panel-default" ng-repeat="v in data.button">
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">标题</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" ng-model="v.name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group" ng-hide="v.sub_button">
+                                        <label class="col-sm-2 control-label">类型</label>
+                                        <div class="col-sm-10">
+                                            <label class="radio-inline">
+                                                <input type="radio" ng-model="v.type" value="click"> 关键词
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" ng-model="v.type" value="view"> 网址
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" ng-if="v.type=='click' && !v.sub_button">
+                                        <label class="col-sm-2 control-label">关键词</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" ng-model="v.key">
+                                        </div>
+                                    </div>
+                                    <div class="form-group" ng-if="v.type=='view' && !v.sub_button">
+                                        <label class="col-sm-2 control-label">链接</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" ng-model="v.url">
+                                        </div>
+                                    </div>
+                                    <!--二级菜单-->
+                                    <div class="panel panel-default" ng-repeat="d in v.sub_button">
+                                        <div class="panel-body">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">标题</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" ng-model="d.name">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">类型</label>
+                                                <div class="col-sm-10">
+                                                    <label class="radio-inline">
+                                                        <input type="radio" ng-model="d.type" value="click"> 关键词
+                                                    </label>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" ng-model="d.type" value="view"> 网址
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group" ng-if="d.type=='click'">
+                                                <label class="col-sm-2 control-label">关键词</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" ng-model="d.key">
+                                                </div>
+                                            </div>
+                                            <div class="form-group" ng-if="d.type=='view'">
+                                                <label class="col-sm-2 control-label">链接</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" ng-model="d.url">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--二级菜单 end-->
+                                    <button type="button" class="btn btn-info" ng-click="addSubButton(v)">添加菜单</button>
+                                </div>
+                            </div>
+                            <!--一级菜单结束-->
+                            <button type="button" class="btn btn-success" ng-click="addTopButton()">添加一级菜单</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.controller('ctrl', ['$scope', function ($scope) {
+        $scope.data = {
+            "button": [
+                {
+                    "type": "click",
+                    "name": "今日歌曲",
+                    "key": "V1001_TODAY_MUSIC"
+                },
+                {
+                    "type": "view",
+                    "name": "后盾人",
+                    "url": "http://www.houdunren.com",
+                    "sub_button": [
+                        {
+                            "type": "view",
+                            "name": "PHP",
+                            "url": "http://www.houdunren.com/"
+                        },
+                        {
+                            "type": "view",
+                            "name": "HTML5",
+                            "url": "http://www.houdunren.com/"
+                        }
+                    ]
+                }
+            ]
+        }
+        //添加一级菜单
+        $scope.addTopButton = function () {
+            var menu = {
+                "type": "view",
+                "name": "",
+                "key": ""
+            };
+            if ($scope.data.button.length == 3) {
+                alert('一级菜单最多为三个');
+            } else {
+                $scope.data.button.push(menu);
+            }
+        }
+        //添加二级菜单   houdunren.com
+        $scope.addSubButton = function (item) {
+            var menu = {
+                "type": "view",
+                "name": "",
+                "key": ""
+            };
+            if (!item.sub_button) {
+                item.sub_button = [];
+            }
+            if (item.sub_button.length == 5) {
+                alert('二级菜单最多为五个');
+            } else {
+                item.sub_button.push(menu);
+            }
+        }
+    }]);
+</script>
+</body>
+</html>

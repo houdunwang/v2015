@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../resource/require.js"></script>
+    <script src="../resource/main.js"></script>
+</head>
+<body>
+<button onclick="test()">测试</button>
+<script>
+    //        function test() {
+    //            require(['jquery', 'angular'], function ($, angular) {
+    //                $('body').css({'backgroundColor': 'red'});
+    //            })
+    //        }
+    //    require(['lib/jquery.min', 'lib/angular.min'], function () {
+    //        $('body').css({'backgroundColor': 'red'});
+    //    })
+
+    require(['jquery', 'angular'], function ($, angular) {
+        $('body').css({'backgroundColor': 'red'});
+    })
+</script>
+</body>
+</html>

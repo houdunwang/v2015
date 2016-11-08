@@ -1,8 +1,26 @@
 require.config({
-    baseUrl: '../resource/lib',
+    baseUrl: '../resource/app',
     paths: {
-        'jquery': '../js/jquery.min',
-        'angular': 'angular.min'
+        'hd': 'hd',
+        'css': '../lib/css.min',
+        'jquery': '../lib/jquery.min',
+        'angular': '../lib/angular.min',
+        'bootstrap': '../lib/bootstrap.min',
+    },
+    shim: {
+        'hd': {
+            // exports: 'modal',
+            init: function () {
+                return {
+                    modal: modal,
+                    success: success,
+                }
+            }
+        },
+        //houdunren.com
+        'bootstrap': {
+            'deps': ['jquery', 'css!../css/bootstrap.min.css', 'css!../css/font-awesome.min.css']
+        }
     }
 });
 // require(['jquery', 'angular'], function ($, angular) {

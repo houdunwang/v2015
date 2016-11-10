@@ -14,6 +14,7 @@ class Entry {
 	}
 
 	public function handler() {
-		$content = $this->wx->getMessage();
+		$message = $this->wx->getMessage();
+		$this->wx->instance('message')->text('我收到了你的消息:'.$message->Content);
 	}
 }

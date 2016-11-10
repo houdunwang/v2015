@@ -6,12 +6,14 @@
  */
 class Wx {
 	//微信的配置项
-	protected $config = [ ];
+	static $config = [ ];
 	//粉丝发来的消息内容
 	protected $message;
 
-	public function __construct( array $config ) {
-		$this->config  = $config;
+	public function __construct( array $config = [ ] ) {
+		if ( ! empty( $config ) ) {
+			self::$config = $config;
+		}
 		$this->message = $this->parsePostRequestData();
 	}
 
@@ -22,7 +24,7 @@ class Wx {
 			$signature = $_GET["signature"];
 			$timestamp = $_GET["timestamp"];
 			$nonce     = $_GET["nonce"];
-			$token     = $this->config['token'];
+			$token     = self::$config['token'];
 			$tmpArr    = [ $token, $timestamp, $nonce ];
 			sort( $tmpArr, SORT_STRING );
 			$tmpStr = implode( $tmpArr );
@@ -44,6 +46,15 @@ class Wx {
 			return simplexml_load_string( $GLOBALS['HTTP_RAW_POST_DATA'], 'SimpleXMLElement', LIBXML_NOCDATA );
 		}
 	}
+
+	//获取功能实例如消息管理实例
+	//wx->instance('message');
+	public function instance( $name ) {
+		$class = '\wechat\build\\' . ucfirst( $name );
+
+		return new $class;
+	}
+
 }
 
 

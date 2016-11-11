@@ -41,7 +41,7 @@
 			<i class="fa fa-5x fa-w fa-warning"></i>
 		</div>
 		<div class="col-xs-9">
-			<p>对不起, 系统出现错误请稍后进行访问</p>
+			<p>系统出现错误请稍后进行访问</p>
 			<p>
 				<a href="javascript:;" onclick="window.history.back()" class="alert-link">[返回上一页]</a> &nbsp;
 				<a href="<?php echo __ROOT__;?>" class="alert-link">[回首页]</a> &nbsp;

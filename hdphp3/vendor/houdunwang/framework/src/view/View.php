@@ -130,7 +130,7 @@ class View {
 				}
 			} else {
 				//路由访问时
-				$file = c( 'view.path' ) . '/' . $file . c( 'view.prefix' );
+				$file = c( 'view.path' ) . '/' . $file;
 				if ( ! is_file( $file ) ) {
 					trigger_error( "模板不存在:$file", E_USER_ERROR );
 				}

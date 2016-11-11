@@ -4,4 +4,4 @@
 .name
 .idea/*
 .project
-storage/
+/storage

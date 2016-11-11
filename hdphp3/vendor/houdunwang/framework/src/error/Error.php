@@ -33,7 +33,7 @@ class Error {
 			require __DIR__ . '/view/exception.php';
 		} else {
 			class_exists( 'Log' ) && Log::write( $e->getMessage(), 'Exception' );
-			_404();
+			die( view( c( 'view.bug' ) ) );
 		}
 	}
 
@@ -52,7 +52,7 @@ class Error {
 					exit;
 				} else {
 					class_exists( 'Log' ) && Log::write( $msg, $this->errorType( $errno ) );
-					_404();
+					die( view( c( 'view.bug' ) ) );
 				}
 		}
 	}

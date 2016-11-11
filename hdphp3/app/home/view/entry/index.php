@@ -45,6 +45,10 @@
 		<dd><a href="{{u('cache/index')}}">文件缓存</a></dd>
 		<dd><a href="{{u('cache/db')}}">数据库缓存</a></dd>
 	</dl>
+	<dl>
+		<dt>调试</dt>
+		<dd><a href="{{u('debug/index')}}">调试</a></dd>
+	</dl>
 </div>
 </body>
 </html>

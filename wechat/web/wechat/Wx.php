@@ -4,17 +4,46 @@
  * Class Wx
  * @package wechat
  */
-class Wx {
+class Wx extends Error {
 	//微信的配置项
-	static $config = [ ];
+	static    $config = [ ];
+	protected $apiUrl;
 	//粉丝发来的消息内容
 	protected $message;
+	//access_token
+	protected $accessToken;
 
 	public function __construct( array $config = [ ] ) {
 		if ( ! empty( $config ) ) {
 			self::$config = $config;
 		}
+		$this->apiUrl  = 'https://api.weixin.qq.com';
 		$this->message = $this->parsePostRequestData();
+	}
+
+	//获取公众号的access_token
+	public function getAccessToken() {
+		//缓存名
+		$cacheName = md5( self::$config['appID'] . self::$config['appsecret'] );
+		//缓存文件
+		$file = __DIR__ . '/cache/' . $cacheName . '.php';
+		if ( is_file( $file ) && filemtime( $file ) + 7000 > time() ) {
+			//缓存有效
+			$data = include $file;
+		} else {
+			$url  = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=' . self::$config['appID'] . '&secret=' . self::$config['appsecret'];
+			$data = $this->curl( $url );
+			$data = json_decode( $data, true );
+			//获取失败
+			if ( isset( $data['errcode'] ) ) {
+				return false;
+			}
+			//缓存access_token
+			file_put_contents( $file, '<?php return ' . var_export( $data, true ) . ';?>' );
+		}
+
+		//获取access_token成功
+		return $this->accessToken = $data['access_token'];
 	}
 
 	//与微信服务器进行绑定
@@ -31,8 +60,42 @@ class Wx {
 			$tmpStr = sha1( $tmpStr );
 			if ( $tmpStr == $signature ) {
 				echo $_GET["echostr"];
+				exit;
 			}
 		}
+	}
+
+	/**
+	 * 发送请求,第二个参数有值时为Post请求
+	 *
+	 * @param string $url 请求地址
+	 * @param array $fields 发送的post表单
+	 *
+	 * @return string
+	 */
+	public function curl( $url, $fields = [ ] ) {
+		$ch = curl_init();
+		//设置我们请求的地址
+		curl_setopt( $ch, CURLOPT_URL, $url );
+		//数据返回后不要直接显示
+		curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
+		//禁止证书校验
+		curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, false );
+		curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, false );
+		if ( $fields ) {
+			curl_setopt( $ch, CURLOPT_TIMEOUT, 30 );
+			curl_setopt( $ch, CURLOPT_POST, 1 );
+			curl_setopt( $ch, CURLOPT_POSTFIELDS, $fields );
+		}
+		$data = '';
+		if ( curl_exec( $ch ) ) {
+			//发送成功,获取数据
+			$data = curl_multi_getcontent( $ch );
+		}
+		curl_close( $ch );
+
+		return $data;
+
 	}
 
 	//获取粉丝发来的消息内容

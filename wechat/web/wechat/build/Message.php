@@ -1,4 +1,5 @@
 <?php namespace wechat\build;
+
 use wechat\Wx;
 
 /**
@@ -7,6 +8,13 @@ use wechat\Wx;
  * @package wechat\build
  */
 class Message extends Wx {
+
+	#--------------事件消息类型--------
+	//关注
+	const EVENT_TYPE_SUBSCRIBE = 'subscribe';
+	//取消关注
+	const EVENT_TYPE_UNSUBSCRIBE = 'unsubscribe';
+
 	#--------------用户发送的消息类型--------
 	//消息类型为文本消息
 	const MSG_TYPE_TEXT = 'text';
@@ -23,7 +31,18 @@ class Message extends Wx {
 	//链接
 	const MSG_TYPE_LINK = 'link';
 
-	//------------------消息判断------------
+	//------------------事件消息判断------------
+	//关注
+	public function isSubscribeEvent() {
+		return $this->message->Event == self::EVENT_TYPE_SUBSCRIBE && $this->message->MsgType == 'event';
+	}
+
+	//取消关注
+	public function isUnSubscribeEvent() {
+		return $this->message->Event == self::EVENT_TYPE_UNSUBSCRIBE && $this->message->MsgType == 'event';
+	}
+
+	//------------------普通消息判断------------
 	//文本消息
 	public function isTextMsg() {
 		return $this->message->MsgType == self::MSG_TYPE_TEXT;

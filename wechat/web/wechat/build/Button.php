@@ -21,4 +21,23 @@ class Button extends Wx {
 
 		return $this->get( json_decode( $result, true ) );
 	}
+
+	//删除当前使用的按钮
+	public function flush() {
+		$url    = $this->apiUrl . '/cgi-bin/menu/delete?access_token=' . $this->getAccessToken();
+		$result = $this->curl( $url );
+
+		return $this->get( $result );
+	}
 }
+
+
+
+
+
+
+
+
+
+
+

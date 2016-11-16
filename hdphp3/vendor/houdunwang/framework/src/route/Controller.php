@@ -64,20 +64,12 @@ class Controller {
 		Middleware::controller();
 		//执行动作
 		try {
-			$reflection = new ReflectionMethod( $controller, ACTION );
-			if ( $reflection->isPublic() ) {
-				//执行动作
-				if ( $result = call_user_func_array( [ $controller, ACTION ], self::$routeArgs ) ) {
-					if ( IS_AJAX && is_array( $result ) ) {
-						ajax( $result );
-					} else {
-						echo( $result );
-					}
-				}
+			$result = App::callMethod( $controller, ACTION );
+			if ( IS_AJAX && is_array( $result ) ) {
+				ajax( $result );
 			} else {
-				throw new ReflectionException( '请求地址不存在' );
+				echo( $result );
 			}
-
 		} catch ( ReflectionException $e ) {
 			$action = new ReflectionMethod( $controller, '__call' );
 			$action->invokeArgs( $controller, [ ACTION, '' ] );

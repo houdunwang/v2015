@@ -22,12 +22,12 @@ class Compile extends Setting {
 			$this->route[ $key ]['get'] = $this->getArgs( $key );
 			//验证参数
 			if ( ! $this->checkArgs( $key ) ) {
-				return FALSE;
+				return false;
 			}
 			//设置GET参数
 			$this->args = $_GET = array_merge( $this->route[ $key ]['get'], $_GET );
 
-			return $this->found = TRUE;
+			return $this->found = true;
 		}
 	}
 
@@ -52,23 +52,41 @@ class Compile extends Setting {
 		if ( ! empty( $route['where'] ) ) {
 			foreach ( $route['where'] as $name => $regexp ) {
 				if ( isset( $route['get'][ $name ] ) && ! preg_match( $regexp, $route['get'][ $name ] ) ) {
-					return FALSE;
+					return false;
 				}
 			}
 		}
 
-		return TRUE;
+		return true;
 	}
 
 	//执行路由事件
 	public function exec( $key ) {
 		//匿名函数
 		if ( $this->route[ $key ]['callback'] instanceof Closure ) {
-			echo call_user_func_array( $this->route[ $key ]['callback'], $this->route[ $key ]['get'] );
+			//反射分析闭包
+			$reflectionFunction = new \ReflectionFunction( $this->route[ $key ]['callback'] );
+			$gets               = $this->route[ $key ]['get'];
+			$args               = [ ];
+			foreach ( $reflectionFunction->getParameters() as $k => $p ) {
+				if ( isset( $gets[ $p->name ] ) ) {
+					//如果GET变量中存在则将GET变量值赋予,也就是说GET优先级高
+					$args[ $p->name ] = $gets[ $p->name ];
+				} else {
+					//如果类型为类时分析类
+					if ( $dependency = $p->getClass() ) {
+						$args[ $p->name ] = App::build( $dependency->name );
+					} else {
+						//普通参数时获取默认值
+						$args[ $p->name ] = App::resolveNonClass( $p );
+					}
+				}
+			}
+			echo $reflectionFunction->invokeArgs( $args );
 		} else {
 			//设置控制器与方法
 			$_GET[ c( 'http.url_var' ) ] = $this->route[ $key ]['callback'];
-			Controller::run($this->route[ $key ]['get']);
+			Controller::run( $this->route[ $key ]['get'] );
 		}
 	}
 
@@ -121,7 +139,7 @@ class Compile extends Setting {
 
 	//获取请求方法
 	public function getRequestAction() {
-		switch ( TRUE ) {
+		switch ( true ) {
 			case IS_GET:
 				return 'get';
 			case IS_POST:

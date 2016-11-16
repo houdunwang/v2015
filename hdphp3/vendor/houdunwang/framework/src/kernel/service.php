@@ -35,7 +35,6 @@ return [
 		'hdphp\upload\UploadProvider',
 		'hdphp\validate\ValidateProvider',
 		'hdphp\view\ViewProvider',
-		'hdphp\weixin\WeixinProvider',
 		'hdphp\xml\XmlProvider',
 		'hdphp\zip\ZipProvider',
 		'hdphp\form\FormProvider',
@@ -43,6 +42,7 @@ return [
 		'hdphp\cloud\CloudProvider',
 		'hdphp\database\SchemaProvider',
 		'hdphp\collection\CollectionProvider',
+		'wechat\WeChatProvider',
 	],
 
 	//服务外观
@@ -79,7 +79,6 @@ return [
 		'Upload'     => 'hdphp\upload\UploadFacade',
 		'Validate'   => 'hdphp\validate\ValidateFacade',
 		'View'       => 'hdphp\view\ViewFacade',
-		'Weixin'     => 'hdphp\weixin\WeixinFacade',
 		'Xml'        => 'hdphp\xml\XmlFacade',
 		'Zip'        => 'hdphp\zip\ZipFacade',
 		'Middleware' => 'hdphp\middleware\MiddlewareFacade',
@@ -88,5 +87,6 @@ return [
 		'Cloud'      => 'hdphp\cloud\CloudFacade',
 		'Schema'     => 'hdphp\database\SchemaFacade',
 		'Collection' => 'hdphp\collection\CollectionFacade',
+		'WeChat'     => 'wechat\WeChatFacade',
 	],
 ];

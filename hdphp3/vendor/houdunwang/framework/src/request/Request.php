@@ -124,7 +124,7 @@ class Request {
 	//手机判断
 	public function isMobile() {
 		//微信客户端检测
-		if ( IS_WEIXIN ) {
+		if ( IS_WECHAT ) {
 			return true;
 		}
 		if ( ! empty( $_GET['mobile'] ) ) {

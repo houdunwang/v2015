@@ -14,3 +14,24 @@ Route::get( '/', function () {
 Route::get( '/show', function () {
 	echo 'houdunren.com';
 } );
+
+Route::get( '/user/{id?}', function ( $id = 2 ) {
+	$res = Db::table( 'user' )->find( $id );
+	p( $res );
+} );
+
+Route::get( '/user/{id}/{name}', function (\app\Demo $d,$f = '后盾人', $name, $id ) {
+	$d->show();
+} );
+
+
+
+
+
+
+
+
+
+
+
+

@@ -29,7 +29,7 @@ class Container implements ArrayAccess {
 	 * @param $closure 返回服务对象的闭包函数
 	 * @param bool $force 是否单例
 	 */
-	public function bind( $name, $closure, $force = FALSE ) {
+	public function bind( $name, $closure, $force = false ) {
 		$this->bindings[ $name ] = compact( 'closure', 'force' );
 	}
 
@@ -40,7 +40,7 @@ class Container implements ArrayAccess {
 	 * @param $closure 闭包函数
 	 */
 	public function single( $name, $closure ) {
-		$this->bind( $name, $closure, TRUE );
+		$this->bind( $name, $closure, true );
 	}
 
 	/**
@@ -61,7 +61,7 @@ class Container implements ArrayAccess {
 	 *
 	 * @return mixed|object
 	 */
-	public function make( $name, $force = FALSE ) {
+	public function make( $name, $force = false ) {
 		if ( isset( $this->instances[ $name ] ) ) {
 			return $this->instances[ $name ];
 		}
@@ -89,6 +89,38 @@ class Container implements ArrayAccess {
 	}
 
 	/**
+	 * 依赖注入方式调用函数
+	 *
+	 * @param $function
+	 *
+	 * @return mixed
+	 */
+	public function callFunction( $function ) {
+		$reflectionFunction = new \ReflectionFunction( $function );
+		$args               = App::getDependencies( $reflectionFunction->getParameters() );
+
+		return $reflectionFunction->invokeArgs( $args );
+	}
+
+	/**
+	 * 反射执行方法并实现依赖注入
+	 *
+	 * @param $class 类
+	 * @param $method 方法
+	 *
+	 * @return mixed
+	 */
+	public function callMethod( $class, $method ) {
+		//反射方法实例
+		$reflectionMethod = new \ReflectionMethod( $class, $method );
+		//解析方法参数
+		$args = App::getDependencies( $reflectionMethod->getParameters() );
+
+		//生成类并执行方法
+		return $reflectionMethod->invokeArgs( $this->build( $class ), $args );
+	}
+
+	/**
 	 * 生成服务实例
 	 *
 	 * @param $className 生成方式 类或闭包函数
@@ -96,7 +128,7 @@ class Container implements ArrayAccess {
 	 * @return object
 	 * @throws Exception
 	 */
-	protected function build( $className ) {
+	public function build( $className ) {
 		//匿名函数
 		if ( $className instanceof Closure ) {
 			//执行闭包函数
@@ -124,26 +156,24 @@ class Container implements ArrayAccess {
 	}
 
 	/**
-	 * 递归解析构造函数的参数
+	 * 递归解析参数
 	 *
 	 * @param $parameters
 	 *
 	 * @return array
 	 * @throws Exception
 	 */
-	protected function getDependencies( $parameters ) {
+	public function getDependencies( $parameters ) {
 		$dependencies = [ ];
-
 		//参数列表
 		foreach ( $parameters as $parameter ) {
 			//获取参数类型
 			$dependency = $parameter->getClass();
-
 			if ( is_null( $dependency ) ) {
-				// 是变量,有默认值则设置默认值
+				//是变量,有默认值则设置默认值
 				$dependencies[] = $this->resolveNonClass( $parameter );
 			} else {
-				// 是一个类，递归解析
+				//是一个类,递归解析
 				$dependencies[] = $this->build( $dependency->name );
 			}
 		}
@@ -159,7 +189,7 @@ class Container implements ArrayAccess {
 	 * @return mixed
 	 * @throws Exception
 	 */
-	protected function resolveNonClass( $parameter ) {
+	public function resolveNonClass( $parameter ) {
 		// 有默认值则返回默认值
 		if ( $parameter->isDefaultValueAvailable() ) {
 			return $parameter->getDefaultValue();

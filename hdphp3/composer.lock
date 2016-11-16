@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c622411af3c5cb7ce6e2c5e8c55cfdd3",
-    "content-hash": "e52d130d787dbf30deaa60eb85fa2ebf",
+    "hash": "a89243429fe33f42b10950ca9b03a008",
+    "content-hash": "a9530e4079256ba4d23cbe7b69b838c8",
     "packages": [
         {
             "name": "houdunwang/framework",
-            "version": "v3.0.19",
+            "version": "v3.0.25",
             "source": {
                 "type": "git",
                 "url": "https://github.com/houdunwang/framework.git",
-                "reference": "f755595949556585c8a7bf98900c07e3002b19f6"
+                "reference": "c8ff3c5f7fcb74c822a3113963a0fa5ae352d748"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/houdunwang/framework/zipball/f755595949556585c8a7bf98900c07e3002b19f6",
-                "reference": "f755595949556585c8a7bf98900c07e3002b19f6",
+                "url": "https://api.github.com/repos/houdunwang/framework/zipball/c8ff3c5f7fcb74c822a3113963a0fa5ae352d748",
+                "reference": "c8ff3c5f7fcb74c822a3113963a0fa5ae352d748",
                 "shasum": ""
             },
             "type": "project",
@@ -41,7 +41,40 @@
                 }
             ],
             "description": "Hdphp Framework (Kernel)",
-            "time": "2016-11-11 18:45:58"
+            "time": "2016-11-13 19:09:05"
+        },
+        {
+            "name": "houdunwang/wechat",
+            "version": "v1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/houdunwang/wechat.git",
+                "reference": "bf4d6ee9fef2dc0e0677ed703c19ffe132c0dac0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/houdunwang/wechat/zipball/bf4d6ee9fef2dc0e0677ed703c19ffe132c0dac0",
+                "reference": "bf4d6ee9fef2dc0e0677ed703c19ffe132c0dac0",
+                "shasum": ""
+            },
+            "type": "project",
+            "autoload": {
+                "psr-4": {
+                    "wechat\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "houdunwang",
+                    "email": "2300071698@qq.com"
+                }
+            ],
+            "description": "wechat framework",
+            "time": "2016-11-13 16:08:39"
         }
     ],
     "packages-dev": [],

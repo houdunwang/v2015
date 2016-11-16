@@ -8,7 +8,7 @@
     "framework"
   ],
   "homepage": "http://www.hdphp.com/",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "authors": [
     {
       "name": "向军",
@@ -18,7 +18,8 @@
   "minimum-stability": "stable",
   "require": {
     "php": ">=5.4.0",
-    "houdunwang/framework": "3.0.*"
+    "houdunwang/framework": "3.0.*",
+    "houdunwang/wechat": "1.0.*"
   },
   "autoload": {
     "psr-4": {

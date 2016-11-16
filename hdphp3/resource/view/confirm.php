@@ -4,12 +4,8 @@
     <meta charset="UTF-8">
     <title>温馨提示</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <script src="{{__ROOT__}}/resource/hdjs/js/jquery.min.js"></script>
-    <script src="{{__ROOT__}}/resource/hdjs/app/util.js"></script>
-    <script src="{{__ROOT__}}/resource/hdjs/require.js"></script>
-    <script src="{{__ROOT__}}/resource/hdjs/app/config.js"></script>
-    <link href="{{__ROOT__}}/resource/hdjs/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{__ROOT__}}/resource/hdjs/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body style="background: url('resource/images/bg.jpg');background-size: cover">
 <!--导航-->
@@ -28,22 +24,16 @@
     </div>
 </nav>
 <!--导航end-->
-
 <div class="container-fluid">
-
-    <h1>&nbsp;</h1>
-
-    <div style="background: url('web/resource/images/logo.png') no-repeat;background-size: contain;height:60px;"></div>
+    <div style="background: url('{{__ROOT__}}/resource/images/logo.png') no-repeat;background-size: contain;height:80px;margin-top: 60px;"></div>
     <br/>
-
-    <div class="alert alert-info clearfix jumbotron" s>
+    <div class="alert alert-info clearfix jumbotron">
         <br/>
         <div class="col-xs-2">
             <i class="fa fa-info-circle fa-5x"></i>
         </div>
         <div class="col-xs-10">
             <p>{{$message}}</p>
-
             <p>
                 <a href="{{$sUrl}}" class="btn btn-primary" style="width: 80px;">是</a>&nbsp;
                 <a href="{{$eUrl}}" class="btn btn-default" style="width: 80px;">否</a>

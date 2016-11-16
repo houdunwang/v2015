@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'wechat\\' => array($vendorDir . '/houdunwang/wechat/src'),
     'system\\' => array($baseDir . '/system'),
     'hdphp\\' => array($vendorDir . '/houdunwang/framework/src'),
     'app\\' => array($baseDir . '/app'),

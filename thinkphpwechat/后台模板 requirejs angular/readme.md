@@ -1,0 +1,1 @@
+这是后台模板，使用require angualr技术 需要hdjs库支持。

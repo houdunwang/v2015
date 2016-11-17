@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="1a5cdfd2-426a-4b99-9968-a22df5264875" name="thinkphpwebchat.hodunren.com" url="http://thinkphpwechat.houdunren.com">
+        <fileTransfer host="thinkphpwechat.houdunren.com" port="21" rootFolder="/wwwroot" password="dfcbdfcedfc7dfc3dfc4df92df92df92" username="thinkphpwechat">
+          <advancedOptions>
+            <advancedOptions compatibilityMode="true" dataProtectionLevel="Private" passiveMode="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

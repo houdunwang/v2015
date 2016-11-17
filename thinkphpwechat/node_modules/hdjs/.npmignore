@@ -1,0 +1,8 @@
+/storage
+.idea
+.env
+.DS_Store
+attachment
+composer.lock
+/vendor
+npm-debug.log

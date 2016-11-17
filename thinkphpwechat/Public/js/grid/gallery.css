@@ -1,0 +1,82 @@
+.galcolumn{
+	background-color: #000;
+}
+
+.gallery .item{
+	position: relative;
+	/*opacity: 0.8 !important;
+  	filter: alpha(opacity=80) !important;*/
+}
+
+.gallery .item > a{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	z-index: 2;
+	display: inline-block;
+}
+
+.gallery .item > img{
+	max-width: 100%;
+}
+
+.gallery .item .desc{
+	border: 0 solid #fff;
+	padding: 15px;
+	color: #fff !important;
+	position: absolute;
+	width: 100%;
+	top: 0;
+	bottom: 0;
+	-webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+.gallery .item .desc h4{
+	font-size: 20px;
+	position: absolute;
+	margin: 0;
+	bottom: 0;
+	left: 0;
+	padding: 15px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.gallery .item .desc span{
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	font-size: 10px;
+}
+
+.gallery .item:hover .desc,
+.gallery .item:focus .desc,
+.gallery .item:active .desc,
+.gallery .item.active .desc{
+	z-index: 1;
+	border-width: 8px;
+	display: block;
+	background-color: #000;
+	background-color: rgba(0,0,0,0.8);
+}
+.gallery .item:hover .desc span,
+.gallery .item:focus .desc span,
+.gallery .item:active .desc span,
+.gallery .item.active .desc span{
+	display: none;
+}
+
+.gallery .item .desc p{
+	display: none;
+	height: 20px;
+	overflow: hidden;
+}
+.gallery .item:hover .desc p,
+.gallery .item:focus .desc p,
+.gallery .item:active .desc p,
+.gallery .item.active .desc p{
+	display: block;
+}

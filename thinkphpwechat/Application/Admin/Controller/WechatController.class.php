@@ -15,7 +15,7 @@ namespace Admin\Controller;
 use Common\Controller\AdminController;
 use Common\Model\ConfigModel;
 
-class ConfigController extends AdminController {
+class WechatController extends AdminController {
 	public function set() {
 		if ( IS_POST ) {
 			$this->store( new ConfigModel(), I( 'post.' ) );

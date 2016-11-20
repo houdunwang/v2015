@@ -40,7 +40,7 @@
             <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
                 <i class="fa fa-bars"></i>
             </a>
-            <a href="#" class="navbar-brand" data-toggle="fullscreen"><img src="__PUBLIC__/images/logo.png" class="m-r-sm">后盾人</a>
+            <a href="#" class="navbar-brand" data-toggle="fullscreen"><img src="__PUBLIC__/images/logo.png" class="m-r-sm">{:v('config.system.webname')}</a>
             <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".nav-user">
                 <i class="fa fa-cog"></i>
             </a>
@@ -66,57 +66,7 @@
             </li>
         </ul>
         <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user">
-            <li class="hidden-xs">
-                <a href="#" class="dropdown-toggle dk" data-toggle="dropdown">
-                    <i class="fa fa-bell"></i>
-                    <span class="badge badge-sm up bg-danger m-l-n-sm count">2</span>
-                </a>
-                <section class="dropdown-menu aside-xl">
-                    <section class="panel bg-white">
-                        <header class="panel-heading b-light bg-light">
-                            <strong>You have <span class="count">2</span> notifications</strong>
-                        </header>
-                        <div class="list-group list-group-alt animated fadeInRight">
-                            <a href="#" class="media list-group-item">
-                  <span class="pull-left thumb-sm">
-                    <img src="__PUBLIC__/images/avatar.jpg" alt="John said" class="img-circle">
-                  </span>
-                                <span class="media-body block m-b-none">
-                    Use awesome animate.css<br>
-                    <small class="text-muted">10 minutes ago</small>
-                  </span>
-                            </a>
-                            <a href="#" class="media list-group-item">
-                  <span class="media-body block m-b-none">
-                    1.0 initial released<br>
-                    <small class="text-muted">1 hour ago</small>
-                  </span>
-                            </a>
-                        </div>
-                        <footer class="panel-footer text-sm">
-                            <a href="#" class="pull-right"><i class="fa fa-cog"></i></a>
-                            <a href="#notes" data-toggle="class:show animated fadeInRight">See all the notifications</a>
-                        </footer>
-                    </section>
-                </section>
-            </li>
-            <li class="dropdown hidden-xs">
-                <a href="#" class="dropdown-toggle dker" data-toggle="dropdown"><i class="fa fa-fw fa-search"></i></a>
-                <section class="dropdown-menu aside-xl animated fadeInUp">
-                    <section class="panel bg-white">
-                        <form role="search">
-                            <div class="form-group wrapper m-b-none">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search">
-                                    <span class="input-group-btn">
-                      <button type="submit" class="btn btn-info btn-icon"><i class="fa fa-search"></i></button>
-                    </span>
-                                </div>
-                            </div>
-                        </form>
-                    </section>
-                </section>
-            </li>
+
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <span class="thumb-sm avatar pull-left">
@@ -142,21 +92,7 @@
             <!-- .aside -->
             <aside class="bg-light lter b-r aside-md hidden-print hidden-xs" id="nav">
                 <section class="vbox">
-                    <header class="header bg-primary lter text-center clearfix">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-dark btn-icon" title="New project"><i class="fa fa-plus"></i></button>
-                            <div class="btn-group hidden-nav-xs">
-                                <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">
-                                    快捷导航
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu text-left">
-                                    <li><a href="#">网站配置</a></li>
-                                    <li><a href="#">公众号设置</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </header>
+
                     <section class="w-f scrollable">
                         <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="5px" data-color="#333333">
 
@@ -182,7 +118,7 @@
                                                 </a>
                                             </li>
                                             <li class="active">
-                                                <a href="{:U('wx/set')}" class="active">
+                                                <a href="{:U('wechat/set')}" class="active">
                                                     <i class="fa fa-angle-right"></i>
                                                     <span>公众号配置</span>
                                                 </a>
@@ -241,7 +177,6 @@
                                             </li>
                                             <li>
                                                 <a href="{:u('article/contentLists')}">
-                                                    <b class="badge bg-info pull-right">369</b>
                                                     <i class="fa fa-angle-right"></i>
                                                     <span>文章管理</span>
                                                 </a>
@@ -284,7 +219,7 @@
                             <i class="fa fa-angle-right text-active"></i>
                         </a>
                         <div class="btn-group hidden-nav-xs">
-                            <i class="fa fa-user-md"></i> 客服: 4000002212
+                            <i class="fa fa-user-md"></i> {:v('config.system.tel')}
                             <!--<button type="button" title="Chats" class="btn btn-icon btn-sm btn-light" data-toggle="dropdown" data-target="#chat"><i class="fa fa-comment-o"></i></button>-->
                             <!--<button type="button" title="Contacts" class="btn btn-icon btn-sm btn-light" data-toggle="dropdown" data-target="#invite"><i class="fa fa-facebook"></i></button>-->
                         </div>

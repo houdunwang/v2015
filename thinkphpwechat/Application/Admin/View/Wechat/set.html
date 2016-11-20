@@ -1,0 +1,51 @@
+<layout name="master"/>
+<ul class="breadcrumb no-border no-radius b-b b-light pull-in">
+    <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+    <li><a href="#">基本设置</a></li>
+    <li><a href="#">网站配置</a></li>
+</ul>
+<div class="m-b-md">
+    <h3 class="m-b-none">公众号配置</h3>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <section class="panel panel-default">
+            <header class="panel-heading font-bold">数据设置</header>
+            <div class="panel-body">
+                <form role="form" action="" method="post">
+                    <div class="form-group">
+                        <label>token</label>
+                        <input type="text" class="form-control" ng-model="field.token">
+                    </div>
+                    <div class="form-group">
+                        <label>appid</label>
+                        <input type="text" class="form-control" ng-model="field.appid">
+                    </div>
+                    <div class="form-group">
+                        <label>appsecret</label>
+                        <input type="text" class="form-control" ng-model="field.appsecret">
+                    </div>
+                    <input type="hidden" name="wechat" value="{{field}}">
+                    <button type="submit" class="btn btn-sm btn-default">保存</button>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script>
+    function controller($scope, $, _) {
+        $scope.field = <?php echo $field['wechat'];?>;
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+

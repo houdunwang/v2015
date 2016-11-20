@@ -13,7 +13,8 @@ class ConfigModel extends BaseModel {
 	protected $tableName = 'config';
 	protected $_validate
 	                     = [
-			[ 'system', 'require', '系统配置不能为空' ]
+			[ 'system', 'require', '系统配置不能为空' ],
+			[ 'wechat', 'require', '公众号配置不能为空' ]
 		];
 
 	//保存数据

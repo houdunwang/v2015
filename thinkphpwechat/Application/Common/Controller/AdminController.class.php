@@ -1,5 +1,4 @@
 <?php namespace Common\Controller;
-use Think\Controller;
 
 /** .-------------------------------------------------------------------
  * |  Software: [HDPHP framework, HDCMS]
@@ -10,6 +9,6 @@ use Think\Controller;
  * |    WeChat: aihoudun
  * | Copyright (c) 2012-2019, www.houdunwang.com. All Rights Reserved.
  * '-------------------------------------------------------------------*/
-class AdminController extends Controller{
+class AdminController extends BaseController {
 
 }

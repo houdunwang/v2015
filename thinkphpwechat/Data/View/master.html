@@ -20,7 +20,7 @@
         //配置后台地址
         var hdjs = {
             'base': '/node_modules/hdjs',
-            'ueditor':'',
+            'ueditor': '',
             'uploader': '/admin/Component/uploader',
             'filesLists': '/admin/Component/filesLists',
             'removeImage': '删除图片后台地址'
@@ -112,47 +112,15 @@
                                         </a>
                                         <ul class="nav lt">
                                             <li>
-                                                <a href="{:U('config/set')}">
+                                                <a href="{:U('admin/config/set')}">
                                                     <i class="fa fa-angle-right"></i>
                                                     <span>网站配置</span>
                                                 </a>
                                             </li>
                                             <li class="active">
-                                                <a href="{:U('wechat/set')}" class="active">
+                                                <a href="{:U('admin/wechat/set')}" class="active">
                                                     <i class="fa fa-angle-right"></i>
                                                     <span>公众号配置</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#layout">
-                                            <i class="fa fa-columns icon">
-                                                <b class="bg-warning"></b>
-                                            </i>
-                                            <span class="pull-right">
-                          <i class="fa fa-angle-down text"></i>
-                          <i class="fa fa-angle-up text-active"></i>
-                        </span>
-                                            <span>公众号</span>
-                                        </a>
-                                        <ul class="nav lt">
-                                            <li>
-                                                <a href="{:u('wx/button')}">
-                                                    <i class="fa fa-angle-right"></i>
-                                                    <span>微信菜单</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="{:u('wx/system')}">
-                                                    <i class="fa fa-angle-right"></i>
-                                                    <span>系统回复</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="{:u('keyword/lists')}">
-                                                    <i class="fa fa-angle-right"></i>
-                                                    <span>文字回复</span>
                                                 </a>
                                             </li>
                                         </ul>
@@ -163,26 +131,51 @@
                                                 <b class="bg-success"></b>
                                             </i>
                                             <span class="pull-right">
-                          <i class="fa fa-angle-down text"></i>
-                          <i class="fa fa-angle-up text-active"></i>
-                        </span>
-                                            <span>微官网</span>
+                                              <i class="fa fa-angle-down text"></i>
+                                              <i class="fa fa-angle-up text-active"></i>
+                                            </span>
+                                            <span>模块</span>
                                         </a>
                                         <ul class="nav lt">
                                             <li>
-                                                <a href="{:u('article/categoryLists')}">
+                                                <a href="{:u('module/manage/lists')}">
                                                     <i class="fa fa-angle-right"></i>
-                                                    <span>分类管理</span>
+                                                    <span>模块管理</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="{:u('article/contentLists')}">
+                                                <a href="{:u('module/manage/design')}">
                                                     <i class="fa fa-angle-right"></i>
-                                                    <span>文章管理</span>
+                                                    <span>设计模块</span>
                                                 </a>
                                             </li>
                                         </ul>
                                     </li>
+                                    <!--模块列表-->
+                                    <volist name="_modules" id="m">
+                                        <li>
+                                            <a href="#uikit">
+                                                <i class="fa fa-flask icon">
+                                                    <b class="bg-success"></b>
+                                                </i>
+                                                <span class="pull-right">
+                                              <i class="fa fa-angle-down text"></i>
+                                              <i class="fa fa-angle-up text-active"></i>
+                                            </span>
+                                                <span>{$m['title']}</span>
+                                            </a>
+                                            <ul class="nav lt">
+                                                <volist name="m.actions" id="d">
+                                                <li>
+                                                    <a href="{:site_url($m['name'].'.'.$d['name'])}">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>{$d['title']}</span>
+                                                    </a>
+                                                </li>
+                                                </volist>
+                                            </ul>
+                                        </li>
+                                    </volist>
                                 </ul>
                             </nav>
                             <!-- / nav -->
@@ -241,9 +234,9 @@
 </section>
 <script>
     //util   bootstrap.min.css    app.css
-//    require(['util', 'underscore'], function ($, _) {});
+    //    require(['util', 'underscore'], function ($, _) {});
     require(['util', 'underscore'], function ($, _) {
-        require(['__PUBLIC__/js/app.js','css!__PUBLIC__/css/app.css']);
+        require(['__PUBLIC__/js/app.js', 'css!__PUBLIC__/css/app.css']);
         require(['angular', 'util'], function (angular) {
             angular.module('app', []).controller('ctrl', ['$scope', function ($scope) {
                 if (angular.isFunction(controller)) {

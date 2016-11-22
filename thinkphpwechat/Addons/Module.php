@@ -1,5 +1,6 @@
-<?php namespace Common\Controller;
-use Common\Model\ModuleModel;
+<?php namespace Addons;
+
+use Common\Controller\BaseController;
 
 /** .-------------------------------------------------------------------
  * |  Software: [HDPHP framework, HDCMS]
@@ -10,9 +11,18 @@ use Common\Model\ModuleModel;
  * |    WeChat: aihoudun
  * | Copyright (c) 2012-2019, www.houdunwang.com. All Rights Reserved.
  * '-------------------------------------------------------------------*/
-class AdminController extends BaseController {
+class Module extends BaseController {
+	protected $template;
+
 	public function __construct() {
 		parent::__construct();
-		$this->assignModuelMenu();
+		$this->template = 'Addons/' . MODULE . '/View';
+	}
+
+	//显示模板
+	public function make( $name = '' ) {
+		$name = $name ?: I( 'get.ac' );
+		$tpl  = 'Addons/' . MODULE . '/View/' . $name . '.html';
+		$this->display( $tpl );
 	}
 }

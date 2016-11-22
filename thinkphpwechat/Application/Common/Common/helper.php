@@ -43,3 +43,48 @@ if ( ! function_exists( 'v' ) ) {
 		}
 	}
 }
+
+/**
+ * 生成模块的后台访问地址
+ * @param $url
+ * @param array $args
+ *
+ * @return string
+ */
+function site_url( $url, $args = [ ] ) {
+	$info = explode( '.', $url );
+
+	return __APP__ . "?mo={$info[0]}&ac={$info[1]}&t=site&" . http_build_query( $args );
+}
+
+
+/**
+ * 生成模块的前台访问地址
+ * @param $url
+ * @param array $args
+ *
+ * @return string
+ */
+function web_url( $url, $args = [ ] ) {
+	$info = explode( '.', $url );
+
+	return __APP__ . "?mo={$info[0]}&ac={$info[1]}&t=web&" . http_build_query( $args );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

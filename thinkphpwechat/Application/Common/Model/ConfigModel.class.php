@@ -20,13 +20,6 @@ class ConfigModel extends BaseModel {
 	//保存数据
 	public function store( $data ) {
 		$data['id'] = 1;
-		if ( $this->create( $data ) ) {
-			$action = isset( $data[ $this->pk ] ) ? "save" : "add";
-			$res    = $this->$action( $data );
-
-			return [ 'status' => 'success', 'data' => $res, 'message' => '操作成功' ];
-		}
-
-		return [ 'status' => 'failed', 'message' => $this->getError() ];
+		return parent::store( $data );
 	}
 }

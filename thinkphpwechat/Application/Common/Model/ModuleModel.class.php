@@ -1,6 +1,4 @@
-<?php namespace Common\Controller;
-use Common\Model\ModuleModel;
-
+<?php
 /** .-------------------------------------------------------------------
  * |  Software: [HDPHP framework, HDCMS]
  * |      Site: www.hdphp.com www.hdcms.com
@@ -10,9 +8,17 @@ use Common\Model\ModuleModel;
  * |    WeChat: aihoudun
  * | Copyright (c) 2012-2019, www.houdunwang.com. All Rights Reserved.
  * '-------------------------------------------------------------------*/
-class AdminController extends BaseController {
-	public function __construct() {
-		parent::__construct();
-		$this->assignModuelMenu();
-	}
+
+namespace Common\Model;
+
+
+class ModuleModel extends BaseModel {
+	protected $pk        = 'id';
+	protected $tableName = 'module';
+	protected $_validate
+	                     = [
+			[ 'title', 'require', '模块标题不能为空' ],
+			[ 'name', 'require', '模块标识不能为空' ],
+			[ 'actions', 'require', '模块动作不能为空' ],
+		];
 }

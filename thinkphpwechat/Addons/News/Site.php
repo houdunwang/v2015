@@ -1,5 +1,4 @@
-<?php namespace Common\Controller;
-use Common\Model\ModuleModel;
+<?php namespace Addons\news;
 
 /** .-------------------------------------------------------------------
  * |  Software: [HDPHP framework, HDCMS]
@@ -10,9 +9,20 @@ use Common\Model\ModuleModel;
  * |    WeChat: aihoudun
  * | Copyright (c) 2012-2019, www.houdunwang.com. All Rights Reserved.
  * '-------------------------------------------------------------------*/
-class AdminController extends BaseController {
-	public function __construct() {
-		parent::__construct();
-		$this->assignModuelMenu();
+
+use Addons\Module;
+
+/**
+ * 后台访问处理类
+ * Class Site
+ * @package Addons\news
+ */
+class Site extends Module {
+	public function category() {
+		echo 33;
+	}
+
+	public function article() {
+		echo 'article';
 	}
 }

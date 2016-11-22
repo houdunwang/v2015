@@ -17,8 +17,8 @@ return array(
 	'DB_RW_SEPARATE'        =>  false,       // 数据库读写是否分离 主从式有效
 	'DB_MASTER_NUM'         =>  1, // 读写分离后 主服务器数量
 	'DB_SLAVE_NO'           =>  '', // 指定从服务器序号
-	'DEFAULT_MODULE'        =>  'Admin',  // 默认模块
-	'DEFAULT_CONTROLLER'    =>  'Index', // 默认控制器名称
-	'DEFAULT_ACTION'        =>  'index', // 默认操作名称
+	'DEFAULT_MODULE'        =>  'Module',  // 默认模块
+	'DEFAULT_CONTROLLER'    =>  'Entry', // 默认控制器名称
+	'DEFAULT_ACTION'        =>  'handler', // 默认操作名称
 	'DEFAULT_FILTER'        =>  '', // 默认参数过滤方法 用于I函数...
 );

@@ -11,6 +11,7 @@
 
 namespace Common\Controller;
 
+use Common\Model\ModuleModel;
 use Think\Controller;
 
 class BaseController extends Controller {
@@ -23,7 +24,7 @@ class BaseController extends Controller {
 
 	//保存数据
 	protected function store( Model $model, $data, \Closure $callback = null ) {
-		$res = $model->store( I( 'post.' ) );
+		$res = $model->store( $data );
 		if ( $res['status'] == 'success' && $callback instanceof \Closure ) {
 			$callback( $res );
 		} else {
@@ -39,5 +40,15 @@ class BaseController extends Controller {
 			$this->error( $data['message'] );
 		}
 		exit;
+	}
+
+	//分配模块菜单,分配的变量以下划线开始的为系统分配
+	public function assignModuelMenu() {
+		$db      = new ModuleModel();
+		$modules = $db->select();
+		foreach ( $modules as $k => $m ) {
+			$modules[ $k ]['actions'] = json_decode( $m['actions'], true );
+		}
+		$this->assign( '_modules', $modules );
 	}
 }

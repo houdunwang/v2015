@@ -14,7 +14,6 @@ class ApiController extends \Common\Controller\BaseController {
 	public function __init() {
 		( new WeChat() )->valid();
 	}
-
 	//与微信对接的接口
 	public function handler() {
 		//消息管理模块

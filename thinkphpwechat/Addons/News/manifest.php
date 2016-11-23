@@ -1,6 +1,7 @@
 <?php return array (
   'title' => '微官网',
   'name' => 'news',
+  'message' => '0',
   'actions' => 
   array (
     0 => 
@@ -12,11 +13,6 @@
     array (
       'title' => '文章管理',
       'name' => 'article',
-    ),
-    2 => 
-    array (
-      'title' => '幻灯片',
-      'name' => 'slide',
     ),
   ),
 );?>

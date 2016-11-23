@@ -1,0 +1,43 @@
+<layout name="../../Data/View/master"/>
+<ul class="breadcrumb no-border no-radius b-b b-light pull-in">
+    <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+    <li><a href="#">基本设置</a></li>
+    <li><a href="#">网站配置</a></li>
+</ul>
+<div class="m-b-md">
+    <h3 class="m-b-none">栏目管理</h3>
+    <br/>
+    <a href="{:site_url('news.categoryPost')}" class="btn btn-primary">添加栏目</a>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <section class="panel panel-default">
+            <header class="panel-heading font-bold">数据设置</header>
+            <div class="panel-body">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>编号</th>
+                        <th>菜单名称</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <volist name="data" id="d">
+                        <tr>
+                            <td>{$d['id']}</td>
+                            <td>{$d['catname']}</td>
+                            <td>
+                                <div class="btn-group">
+                                    <a href="{:site_url('button.push',['id'=>$d['id']])}" class="btn btn-default">编辑</a>
+                                    <a href="{:site_url('button.set',['id'=>$d['id']])}" class="btn btn-default">删除</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </volist>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</div>

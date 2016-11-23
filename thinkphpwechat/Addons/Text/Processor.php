@@ -9,15 +9,20 @@
  * | Copyright (c) 2012-2019, www.houdunwang.com. All Rights Reserved.
  * '-------------------------------------------------------------------*/
 
-namespace Addons\Base;
+namespace Addons\Text;
 
-
-use Addons\Module;
+use Addons\HdProcessor;
+use Addons\Text\Model\TextModel;
 
 /**
- * 前台访问控制类
- * Class Web
- * @package Addons\base
+ * 微信消息处理器
+ * Class Processor
+ * @package Addons\Text
  */
-class Web extends Module {
+class Processor extends HdProcessor {
+	public function handler( $rid = '' ) {
+		$model = new TextModel();
+		$data  = $model->where( "rid=$rid" )->find();
+		$this->message->text( $data['content'] );
+	}
 }

@@ -24,6 +24,6 @@ class BaseModel extends Model {
 			return [ 'status' => 'success', 'data' => $res, 'message' => '操作成功' ];
 		}
 
-		return [ 'status' => 'failed', 'message' => $this->getError() ];
+		return [ 'status' => 'failed', 'message' => $this->getError()?:'未知错误' ];
 	}
 }

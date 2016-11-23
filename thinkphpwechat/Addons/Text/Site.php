@@ -1,4 +1,5 @@
-<?php
+<?php namespace Addons\Text;
+
 /** .-------------------------------------------------------------------
  * |  Software: [HDPHP framework, HDCMS]
  * |      Site: www.hdphp.com www.hdcms.com
@@ -9,15 +10,13 @@
  * | Copyright (c) 2012-2019, www.houdunwang.com. All Rights Reserved.
  * '-------------------------------------------------------------------*/
 
-namespace Addons\Base;
-
-
 use Addons\Module;
 
 /**
- * 前台访问控制类
- * Class Web
- * @package Addons\base
+ * 后台访问处理类
+ * Class Site
+ * @package Addons\Text
  */
-class Web extends Module {
+class Site extends Module {
+
 }

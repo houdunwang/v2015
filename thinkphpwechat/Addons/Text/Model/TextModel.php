@@ -1,4 +1,7 @@
-<?php
+<?php namespace Addons\Text\Model;
+
+use Common\Model\BaseModel;
+
 /** .-------------------------------------------------------------------
  * |  Software: [HDPHP framework, HDCMS]
  * |      Site: www.hdphp.com www.hdcms.com
@@ -8,16 +11,11 @@
  * |    WeChat: aihoudun
  * | Copyright (c) 2012-2019, www.houdunwang.com. All Rights Reserved.
  * '-------------------------------------------------------------------*/
-
-namespace Addons\Base;
-
-
-use Addons\Module;
-
-/**
- * 前台访问控制类
- * Class Web
- * @package Addons\base
- */
-class Web extends Module {
+class TextModel extends BaseModel {
+	protected $id        = 'id';
+	protected $tableName = 'text_contents';
+	protected $_validate
+	                     = [
+			[ 'content', 'require', '回复内容为空', 1 ],
+		];
 }

@@ -1,4 +1,6 @@
 <?php namespace WeChat\Controller;
+
+use Common\Model\KeywordModel;
 use wechat\WeChat;
 
 /** .-------------------------------------------------------------------
@@ -14,17 +16,53 @@ class ApiController extends \Common\Controller\BaseController {
 	public function __init() {
 		( new WeChat() )->valid();
 	}
+
 	//与微信对接的接口
 	public function handler() {
 		//消息管理模块
-		$instance = (new WeChat())->instance('message');
+		$instance = ( new WeChat() )->instance( 'message' );
 		//判断是否是文本消息
-		if ($instance->isTextMsg())
+		if ( $instance->isTextMsg() ) {
+			//获取消息内容
+			$message = $instance->getMessage();
+			//向用户回复消息
+			if ( $data = ( new KeywordModel() )->where( "keyword='{$message->Content}'" )->find() ) {
+				$this->module( $data['module'], $data['rid'] );
+			}
+		}
+		//点击菜单事件
+		if ($instance->isClickEvent())
 		{
 			//获取消息内容
 			$message = $instance->getMessage();
 			//向用户回复消息
-			$instance->text('后盾人houdunren.com收到你的消息了...:' . $message->Content);
+			if ( $data = ( new KeywordModel() )->where( "keyword='{$message->EventKey}'" )->find() ) {
+				$this->module( $data['module'], $data['rid'] );
+			}
 		}
+		//当没有回复时交给默认消息处理
+		$this->module( 'base' );
+	}
+
+	/**
+	 * 调用模块的微信处理器
+	 * @param $name
+	 * @param int $rid
+	 */
+	protected function module( $name, $rid = 0 ) {
+		$class = 'Addons\\' . ucfirst( $name ) . '\Processor';
+		call_user_func_array( [ new $class, 'handler' ], [ 'rid' => $rid ] );
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+

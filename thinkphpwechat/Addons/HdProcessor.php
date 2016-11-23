@@ -9,15 +9,14 @@
  * | Copyright (c) 2012-2019, www.houdunwang.com. All Rights Reserved.
  * '-------------------------------------------------------------------*/
 
-namespace Addons\Base;
+namespace Addons;
 
 
-use Addons\Module;
+use wechat\WeChat;
 
-/**
- * 前台访问控制类
- * Class Web
- * @package Addons\base
- */
-class Web extends Module {
+class HdProcessor {
+	protected $message;
+	public function __construct() {
+		$this->message = ( new WeChat() )->instance( 'message' );
+	}
 }

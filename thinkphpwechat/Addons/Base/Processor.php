@@ -12,12 +12,25 @@
 namespace Addons\Base;
 
 
-use Addons\Module;
+use Addons\Base\Model\BaseSystemModel;
+use Addons\HdProcessor;
 
 /**
- * 前台访问控制类
- * Class Web
- * @package Addons\base
+ * 微信消息处理器
+ * Class Processor
+ * @package Addons\Base
  */
-class Web extends Module {
+class Processor extends HdProcessor {
+	public function handler() {
+		$field = ( new BaseSystemModel() )->find( 1 );
+		//关注时回复消息
+		if ( $this->message->isSubscribeEvent() ) {
+			//向用户回复消息
+			$this->message->text( $field['welcome'] );
+		}
+		//默认消息回复
+		if ( $this->message->isTextMsg() ) {
+			$this->message->text( $field['default'] );
+		}
+	}
 }

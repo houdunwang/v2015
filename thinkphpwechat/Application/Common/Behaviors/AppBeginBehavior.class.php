@@ -29,7 +29,7 @@ class AppBeginBehavior extends \Think\Behavior {
 		v( 'config.system', $data['system'] );
 		v( 'config.wechat', $data['wechat'] );
 		$d = get_defined_constants( true );
-		define( 'MODULE', I( 'get.mo', null ) );
+		define( 'MODULE', ucfirst(I( 'get.mo', null ) ));
 	}
 
 	//设置微信配置项

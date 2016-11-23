@@ -1,4 +1,4 @@
-<?php namespace Addons\news;
+<?php namespace Addons\News;
 
 /** .-------------------------------------------------------------------
  * |  Software: [HDPHP framework, HDCMS]
@@ -11,18 +11,35 @@
  * '-------------------------------------------------------------------*/
 
 use Addons\Module;
+use Addons\News\Model\CategoryModel;
 
 /**
  * 后台访问处理类
  * Class Site
- * @package Addons\news
+ * @package Addons\News
  */
 class Site extends Module {
+	//栏目列表
 	public function category() {
-		echo 33;
+		$model = new CategoryModel();
+		$data  = $model->select();
+		$this->assign( 'data', $data );
+		$this->make();
+	}
+
+	//添加栏目
+	public function categoryPost() {
+		if ( IS_POST ) {
+			$data = I( 'post.' );
+			$this->store( new CategoryModel(), $data, function () {
+				$this->success( '保存成功', site_url( 'news.category' ) );
+				exit;
+			} );
+		}
+		$this->make();
 	}
 
 	public function article() {
-		echo 'article';
+		$this->make();
 	}
 }

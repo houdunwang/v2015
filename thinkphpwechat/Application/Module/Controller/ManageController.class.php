@@ -37,9 +37,9 @@ class ManageController extends AdminController {
 		$name = $_GET['name'];
 		$db   = new ModuleModel();
 		if ( $db->where( "name='$name'" )->delete() ) {
-			$this->success( '卸载成功', u('lists') );
+			$this->success( '卸载成功', u( 'lists' ) );
 		} else {
-			$this->error( '卸载失败', u('lists') );
+			$this->error( '卸载失败', u( 'lists' ) );
 		}
 
 	}
@@ -72,7 +72,7 @@ class ManageController extends AdminController {
 				//创建模块的目录
 				mkdir( 'Addons/' . $name . '/View', 0755, true );
 				foreach ( glob( 'Data/Module/*.php' ) as $f ) {
-					$content  = str_replace( '{NAME}', $_POST['name'], file_get_contents( $f ) );
+					$content  = str_replace( '{NAME}', $name, file_get_contents( $f ) );
 					$fileName = 'Addons/' . $name . '/' . basename( $f );
 					file_put_contents( $fileName, $content );
 				}

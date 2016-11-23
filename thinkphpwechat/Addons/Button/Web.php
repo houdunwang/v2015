@@ -9,7 +9,7 @@
  * | Copyright (c) 2012-2019, www.houdunwang.com. All Rights Reserved.
  * '-------------------------------------------------------------------*/
 
-namespace Addons\Base;
+namespace Addons\Button;
 
 
 use Addons\Module;
@@ -17,7 +17,7 @@ use Addons\Module;
 /**
  * 前台访问控制类
  * Class Web
- * @package Addons\base
+ * @package Addons\Button
  */
 class Web extends Module {
 }

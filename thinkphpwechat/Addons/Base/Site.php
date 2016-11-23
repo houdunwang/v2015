@@ -1,4 +1,4 @@
-<?php namespace Addons\base;
+<?php namespace Addons\Base;
 
 /** .-------------------------------------------------------------------
  * |  Software: [HDPHP framework, HDCMS]
@@ -24,6 +24,8 @@ class Site extends Module {
 		if ( IS_POST ) {
 			$this->store( new BaseSystemModel(), I( 'post.' ) );
 		}
+		$field = ( new BaseSystemModel() )->find( 1 );
+		$this->assign( 'field', $field );
 		$this->make();
 	}
 }

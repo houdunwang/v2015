@@ -166,13 +166,21 @@
                                             </a>
                                             <ul class="nav lt">
                                                 <volist name="m.actions" id="d">
-                                                <li>
-                                                    <a href="{:site_url($m['name'].'.'.$d['name'])}">
-                                                        <i class="fa fa-angle-right"></i>
-                                                        <span>{$d['title']}</span>
-                                                    </a>
-                                                </li>
+                                                    <li>
+                                                        <a href="{:site_url($m['name'].'.'.$d['name'])}">
+                                                            <i class="fa fa-angle-right"></i>
+                                                            <span>{$d['title']}</span>
+                                                        </a>
+                                                    </li>
                                                 </volist>
+                                                <if condition="$m['message'] eq 1">
+                                                    <li>
+                                                        <a href="{:u('module/keyword/lists',['mo'=>$m['name']])}">
+                                                            <i class="fa fa-angle-right"></i>
+                                                            <span>关键词</span>
+                                                        </a>
+                                                    </li>
+                                                </if>
                                             </ul>
                                         </li>
                                     </volist>
@@ -237,7 +245,7 @@
     //    require(['util', 'underscore'], function ($, _) {});
     require(['util', 'underscore'], function ($, _) {
         require(['__PUBLIC__/js/app.js', 'css!__PUBLIC__/css/app.css']);
-        require(['angular', 'util'], function (angular) {
+        require(['angular', 'jquery'], function (angular,$) {
             angular.module('app', []).controller('ctrl', ['$scope', function ($scope) {
                 if (angular.isFunction(controller)) {
                     controller($scope, $, _);

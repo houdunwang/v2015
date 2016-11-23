@@ -9,7 +9,7 @@
  * | Copyright (c) 2012-2019, www.houdunwang.com. All Rights Reserved.
  * '-------------------------------------------------------------------*/
 
-namespace Addons\news;
+namespace Addons\News;
 
 
 use Addons\Module;
@@ -17,7 +17,7 @@ use Addons\Module;
 /**
  * 前台访问控制类
  * Class Web
- * @package Addons\news
+ * @package Addons\News
  */
 class Web extends Module {
 }

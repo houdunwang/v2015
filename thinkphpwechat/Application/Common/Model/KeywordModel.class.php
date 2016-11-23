@@ -9,15 +9,17 @@
  * | Copyright (c) 2012-2019, www.houdunwang.com. All Rights Reserved.
  * '-------------------------------------------------------------------*/
 
-namespace Addons\Base;
+namespace Common\Model;
 
 
-use Addons\Module;
+class KeywordModel extends BaseModel {
+	protected $pk        = 'id';
+	protected $tableName = 'keyword';
+	protected $_validate
+	                     = [
+			[ 'keyword', 'require', '关键词不能为空', 1 ],
+			[ 'keyword', '', '关键词已经存在！', 0, 'unique', 1 ],
+			[ 'module', 'require', '模块标识不能为空', 1 ],
+		];
 
-/**
- * 前台访问控制类
- * Class Web
- * @package Addons\base
- */
-class Web extends Module {
 }

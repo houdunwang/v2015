@@ -1,26 +1,23 @@
-<layout name="../../Data/View/master"/>
+<layout name="../../../Data/View/master"/>
 <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
     <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
     <li><a href="#">基本功能</a></li>
-    <li><a href="#">系统回复</a></li>
+    <li><a href="#">关键词设置</a></li>
 </ul>
 <div class="m-b-md">
-    <h3 class="m-b-none">系统回复</h3>
+    <h3 class="m-b-none">关键词设置</h3>
 </div>
 <div class="row">
     <div class="col-sm-12">
         <section class="panel panel-default">
-            <header class="panel-heading font-bold">系统回复</header>
+            <header class="panel-heading font-bold">关键词设置</header>
             <div class="panel-body">
                 <form role="form" action="" method="post">
                     <div class="form-group">
-                        <label>关注时回复</label>
-                        <input type="text" class="form-control" name="welcome" value="{$field['welcome']}">
+                        <label>关键词</label>
+                        <input type="text" class="form-control" name="keyword" value="{$keyword['keyword']}">
                     </div>
-                    <div class="form-group">
-                        <label>默认回复</label>
-                        <input type="text" class="form-control" name="default" value="{$field['default']}">
-                    </div>
+                    {$moduleContent}
                     <button type="submit" class="btn btn-sm btn-default">保存</button>
                 </form>
             </div>

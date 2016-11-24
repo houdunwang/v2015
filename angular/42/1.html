@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="hd" ng-controller="ctrl">
+    标题: <input type="text" ng-model="news.title"> {{error}}
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.controller('ctrl', ['$scope', function ($scope) {
+        $scope.news = {title: ''};
+        $scope.$watch('news', function (n, o) {
+            $scope.error = n.title.length>3?'标题长度输入错误':'';
+        }, true);
+    }]);
+</script>
+</body>
+</html>

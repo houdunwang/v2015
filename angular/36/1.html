@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="hd" ng-controller="ctrl">
+    {{data|limitTo:3:1}}
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.controller('ctrl', ['$scope', function ($scope) {
+        $scope.data='后盾网人人做后盾北京PHP培训';
+    }]);
+</script>
+</body>
+</html>

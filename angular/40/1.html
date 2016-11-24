@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="hd" ng-controller="ctrl">
+    <table border="1" width="600">
+        <tr>
+            <td ng-click="orderBy('id')">编号</td>
+            <td ng-click="orderBy('click')">点击数</td>
+            <td ng-click="orderBy('title')">标题</td>
+        </tr>
+        <tr ng-repeat="(k,v) in data">
+            <td>{{v.id}}</td>
+            <td>{{v.click}}</td>
+            <td>{{v.title}}</td>
+        </tr>
+    </table>
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.controller('ctrl', ['$scope', '$filter', function ($scope, $filter) {
+        $scope.data = [
+            {id: 1, click: 100, title: '后盾人'},
+            {id: 2, click: 200, title: 'PHP'},
+            {id: 3, click: 300, title: '后盾网'},
+        ];
+        $scope.orderBy = function (field) {
+            if (arguments.callee[field] == undefined) {
+                arguments.callee[field] = false;
+            }
+            arguments.callee[field] = !arguments.callee[field];
+            $scope.data = $filter('orderBy')($scope.data, field, arguments.callee[field]);
+        }
+    }]);
+</script>
+</body>
+</html>

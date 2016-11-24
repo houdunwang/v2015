@@ -11,6 +11,7 @@
  * '-------------------------------------------------------------------*/
 
 use Addons\Module;
+use Addons\News\Model\ArticleModel;
 use Addons\News\Model\CategoryModel;
 
 /**
@@ -40,6 +41,45 @@ class Site extends Module {
 	}
 
 	public function article() {
+		$model = new ArticleModel();
+		$data  = $model->select();
+		$this->assign( 'data', $data );
 		$this->make();
 	}
+
+	//添加文章
+	public function articlePost() {
+		if ( IS_POST ) {
+			$data = I( 'post.' );
+			$this->store( new ArticleModel(), $data, function () {
+				$this->success( '保存成功', site_url( 'news.article' ) );
+				exit;
+			} );
+		}
+		$this->make();
+	}
+
+	//删除文章
+	public function articleRemove() {
+		$id    = I( 'get.id' );
+		$model = new ArticleModel();
+		if ( $model->delete( $id ) ) {
+			$this->success( '删除成功' ,site_url('news.article'));;exit;
+		} else {
+			$this->error( '删除失败' );
+		}
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

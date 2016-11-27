@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="hd" ng-controller="ctrl">
+    <h1 hdcms hd-color="callback()"></h1>
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.directive('hdcms', [function () {
+        return {
+            restrict: 'AEC',//a attr e element  c class  scope
+            template: '<h3>{{color()}}</h3>',
+            scope: {color: '&hdColor'}
+        }
+    }]);
+    m.controller('ctrl', ['$scope', function ($scope) {
+        $scope.callback = function () {
+            return '后盾人';
+        }
+    }]);
+</script>
+</body>
+</html>

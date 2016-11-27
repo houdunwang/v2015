@@ -19,40 +19,9 @@
   <component name="FavoritesManager">
     <favorites_list name="angular" />
   </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="1.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/44/1.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/10/1.html" />
-        <option value="$PROJECT_DIR$/11/1.html" />
-        <option value="$PROJECT_DIR$/12/1.html" />
-        <option value="$PROJECT_DIR$/13/1.html" />
-        <option value="$PROJECT_DIR$/14/2.php" />
-        <option value="$PROJECT_DIR$/14/1.php" />
-        <option value="$PROJECT_DIR$/14/2.html" />
-        <option value="$PROJECT_DIR$/14/1.html" />
-        <option value="$PROJECT_DIR$/14/3.php" />
-        <option value="$PROJECT_DIR$/14/3.html" />
-        <option value="$PROJECT_DIR$/14/4.php" />
-        <option value="$PROJECT_DIR$/14/4.html" />
-        <option value="$PROJECT_DIR$/15/1.html" />
-        <option value="$PROJECT_DIR$/16/1.php" />
-        <option value="$PROJECT_DIR$/16/1.html" />
-        <option value="$PROJECT_DIR$/17/1.html" />
-        <option value="$PROJECT_DIR$/18/1.html" />
         <option value="$PROJECT_DIR$/18/2.html" />
         <option value="$PROJECT_DIR$/19/1.html" />
         <option value="$PROJECT_DIR$/20/2.html" />
@@ -74,7 +43,6 @@
         <option value="$PROJECT_DIR$/31/1.html" />
         <option value="$PROJECT_DIR$/32/1.html" />
         <option value="$PROJECT_DIR$/33/1.php" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/33/1.html" />
         <option value="$PROJECT_DIR$/34/1.html" />
         <option value="$PROJECT_DIR$/35/1.html" />
@@ -87,6 +55,24 @@
         <option value="$PROJECT_DIR$/42/1.html" />
         <option value="$PROJECT_DIR$/43/1.html" />
         <option value="$PROJECT_DIR$/44/1.html" />
+        <option value="$PROJECT_DIR$/45/1.html" />
+        <option value="$PROJECT_DIR$/46/1.html" />
+        <option value="$PROJECT_DIR$/47/1.html" />
+        <option value="$PROJECT_DIR$/48/1.html" />
+        <option value="$PROJECT_DIR$/49/1.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/50/1.html" />
+        <option value="$PROJECT_DIR$/view/hdcms.html" />
+        <option value="$PROJECT_DIR$/51/1.html" />
+        <option value="$PROJECT_DIR$/52/1.html" />
+        <option value="$PROJECT_DIR$/53/1.html" />
+        <option value="$PROJECT_DIR$/54/1.html" />
+        <option value="$PROJECT_DIR$/55/1.html" />
+        <option value="$PROJECT_DIR$/56/1.html" />
+        <option value="$PROJECT_DIR$/view/57.html" />
+        <option value="$PROJECT_DIR$/view/58.html" />
+        <option value="$PROJECT_DIR$/58/1.html" />
+        <option value="$PROJECT_DIR$/57/1.html" />
       </list>
     </option>
   </component>
@@ -148,34 +134,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angular" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angular" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="44" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angular" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angular" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="43" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -190,6 +148,9 @@
     <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/43" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/org" />
@@ -273,18 +234,19 @@
       <workItem from="1478355757409" duration="3113000" />
       <workItem from="1478437807752" duration="4343000" />
       <workItem from="1479969430242" duration="1157000" />
-      <workItem from="1479977222155" duration="5817000" />
+      <workItem from="1479977222155" duration="6056000" />
+      <workItem from="1480064575305" duration="12525000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73675000" />
+    <option name="totallyTimeSpent" value="86439000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18055555" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -320,121 +282,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/14/1.php" />
-    <entry file="file://$PROJECT_DIR$/13/1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/14/4.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="23" column="49" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/14/3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/14/1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="10" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/14/4.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/14/2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="36" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/15/1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/16/1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/16/1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/17/1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/18/2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/18/1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="26" column="39" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/20/4.php" />
-    <entry file="file://$PROJECT_DIR$/20/1.php" />
-    <entry file="file://$PROJECT_DIR$/19/3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/19/2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/19/1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/19/3.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/19/1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
@@ -561,25 +408,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/33/1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/33/1.php" />
     <entry file="file://$PROJECT_DIR$/33/1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="313">
           <caret line="209" column="47" selection-start-line="209" selection-start-column="47" selection-end-line="209" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -587,7 +420,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -595,7 +427,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
           <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -603,7 +434,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -611,7 +441,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -647,30 +476,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/41/1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-261">
-          <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
-          <folding>
-            <marker date="1480001644000" expanded="true" signature="31:1523" ph="..." />
-            <marker date="1480001644000" expanded="true" signature="38:123" ph="..." />
-            <marker date="1480001644000" expanded="true" signature="130:1515" ph="..." />
-            <marker date="1480001644000" expanded="true" signature="169:908" ph="..." />
-            <marker date="1480001644000" expanded="true" signature="204:901" ph="..." />
-            <marker date="1480001644000" expanded="true" signature="217:739" ph="..." />
-            <marker date="1480001644000" expanded="true" signature="259:380" ph="..." />
-            <marker date="1480001644000" expanded="true" signature="425:553" ph="..." />
-            <marker date="1480001644000" expanded="true" signature="598:725" ph="..." />
-            <marker date="1480001644000" expanded="true" signature="778:888" ph="..." />
-            <marker date="1480001644000" expanded="true" signature="917:1507" ph="..." />
-            <marker date="1480001644000" expanded="true" signature="982:1496" ph="[...]" />
-            <marker date="1480001644000" expanded="true" signature="1031:1495" ph="{...}" />
-            <marker date="1480001644000" expanded="true" signature="1055:1207" ph="[...]" />
-            <marker date="1480001644000" expanded="true" signature="1334:1489" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/43/1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -694,8 +499,295 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/44/1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+        <state relative-caret-position="171">
+          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/41/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/47/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/48/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <folding>
+            <marker date="1480097512000" expanded="true" signature="488:507" ph="..." />
+            <marker date="1480097512000" expanded="true" signature="488:530" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/49/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/hdcms.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+          <folding>
+            <marker date="1480100142000" expanded="true" signature="4:25" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/50/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/51/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/web-forms2.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="381" column="22" selection-start-line="381" selection-start-column="22" selection-end-line="381" selection-end-column="22" />
+          <folding>
+            <marker date="1468293222000" expanded="true" signature="405:431" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="488:522" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="581:624" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="840:882" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="1025:1073" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="1139:1187" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="1243:1286" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="1339:1365" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="1419:1445" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="1499:1541" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="1601:1643" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="1695:1728" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="1783:1798" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="1853:1894" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="2306:2332" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="2379:2431" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="2480:2535" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="2584:2626" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="2702:2782" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="2837:2852" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="4816:4859" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="4907:4950" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="5381:5411" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="5458:5489" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="5536:5567" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="5619:5664" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="6210:6246" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="6299:6334" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="6387:6425" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="6483:6532" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="6957:6983" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="7026:7051" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="7094:7122" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="7170:7209" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="7643:7670" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="7714:7740" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="7784:7813" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="7862:7902" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="8346:8372" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="8415:8440" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="8483:8511" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="8559:8598" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="9022:9048" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="9091:9116" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="9159:9187" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="9235:9274" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="9773:9801" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="9846:9874" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="9919:9950" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="10000:10042" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="10536:10563" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="10607:10635" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="10679:10710" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="10759:10787" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="11365:11392" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="11447:11480" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="11537:11574" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="12038:12063" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="12109:12158" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="12675:12703" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="12752:12796" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="13275:13300" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="13346:13390" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="13731:13758" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="13806:13846" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="14196:14266" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="14988:15014" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="15062:15088" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="16304:16350" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="16394:16444" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="16500:16541" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="17152:17169" ph="{ ... }" />
+            <marker date="1468293222000" expanded="true" signature="17217:17242" ph="{ ... }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/52/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/17/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/45/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <marker date="1480091043000" expanded="true" signature="31:164" ph="..." />
+            <marker date="1480091043000" expanded="true" signature="38:123" ph="..." />
+            <marker date="1480091043000" expanded="true" signature="130:156" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/46/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding>
+            <marker date="1480095216000" expanded="true" signature="31:555" ph="..." />
+            <marker date="1480095216000" expanded="true" signature="38:123" ph="..." />
+            <marker date="1480095216000" expanded="true" signature="130:547" ph="..." />
+            <marker date="1480095216000" expanded="true" signature="148:315" ph="..." />
+            <marker date="1480095216000" expanded="true" signature="324:539" ph="..." />
+            <marker date="1480095216000" expanded="true" signature="389:528" ph="[...]" />
+            <marker date="1480095216000" expanded="true" signature="402:527" ph="{...}" />
+            <marker date="1480095216000" expanded="true" signature="419:521" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/53/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="21" />
+          <folding>
+            <marker date="1480259251000" expanded="true" signature="31:681" ph="..." />
+            <marker date="1480259251000" expanded="true" signature="38:123" ph="..." />
+            <marker date="1480259251000" expanded="true" signature="130:673" ph="..." />
+            <marker date="1480259251000" expanded="true" signature="169:283" ph="..." />
+            <marker date="1480259251000" expanded="true" signature="292:665" ph="..." />
+            <marker date="1480259251000" expanded="true" signature="357:560" ph="[...]" />
+            <marker date="1480259251000" expanded="true" signature="370:559" ph="{...}" />
+            <marker date="1480259251000" expanded="true" signature="387:553" ph="{...}" />
+            <marker date="1480259251000" expanded="true" signature="588:654" ph="[...]" />
+            <marker date="1480259251000" expanded="true" signature="617:653" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/54/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+          <folding>
+            <marker date="1480260796000" expanded="true" signature="472:487" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/55/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+          <folding>
+            <marker date="1480262123000" expanded="true" signature="466:481" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/56/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/58.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="87" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="87" />
+          <folding>
+            <marker date="1480277848000" expanded="true" signature="20:652" ph="..." />
+            <marker date="1480277848000" expanded="true" signature="32:380" ph="..." />
+            <marker date="1480277848000" expanded="true" signature="189:241" ph="{...}" />
+            <marker date="1480277848000" expanded="true" signature="268:368" ph="{...}" />
+            <marker date="1480277848000" expanded="true" signature="549:644" ph="..." />
+            <marker date="1480277848000" expanded="true" signature="562:633" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/58/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/57.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding>
+            <marker date="1480268186000" expanded="true" signature="4:249" ph="..." />
+            <marker date="1480268186000" expanded="true" signature="39:242" ph="..." />
+            <marker date="1480268186000" expanded="true" signature="52:114" ph="..." />
+            <marker date="1480268186000" expanded="true" signature="153:229" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/57/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
           <folding />
         </state>
       </provider>

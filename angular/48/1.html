@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+    <script src="../org/jquery.min.js"></script>
+</head>
+<body>
+<div ng-app="hd">
+    <div hd-cms color="green">你好后盾网</div>
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.directive('hdCms', [function () {
+        return {
+            restrict: 'AEC',//a attr e element  c class
+            template: function(elem,attr){
+                return "<span style='color:"+attr['color']+"'>"+$(elem).html()+"</span>";
+            }
+        }
+    }]);
+</script>
+</body>
+</html>

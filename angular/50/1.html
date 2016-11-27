@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+    <script src="../org/jquery.min.js"></script>
+</head>
+<body>
+<div ng-app="hd">
+    <div hd-cms>HDPHP开源框架</div>
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.directive('hdCms', [function () {
+        return {
+            restrict: 'EA',//a attr e element  c class
+//            replace: true,
+//            template:'abc'
+            templateUrl: '../view/hdcms.html'
+        }
+    }]);
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="hd" ng-controller="ctrl">
+    <input type="text" ng-model="name">
+    <h1 hdcms hd-color="name"></h1>
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.directive('hdcms', [function () {
+        return {
+            restrict: 'AEC',//a attr e element  c class  scope
+            template: '{{color}}<span style="color:{{color}}">后盾人</span><input ng-model="color"/>',
+            scope: {color:'=hdColor'}
+        }
+    }]);
+    m.controller('ctrl', ['$scope', function ($scope) {
+        $scope.name='red';
+    }]);
+</script>
+</body>
+</html>

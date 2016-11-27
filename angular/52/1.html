@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+    <script src="../org/jquery.min.js"></script>
+</head>
+<body>
+<div ng-app="hd">
+    <div ng-controller="ctrl1">
+        {{data.name}}
+        <div ng-controller="ctrl2">
+            <input type="text" ng-model="data.name">
+            {{data.name}}
+        </div>
+        <div ng-controller="ctrl3">
+            {{data.name}}
+        </div>
+    </div>
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.controller('ctrl1', ['$scope', function ($scope) {
+        $scope.data = {name: '后盾人'}
+    }]);
+    m.controller('ctrl2', ['$scope', function ($scope) {
+    }]);
+    m.controller('ctrl3', ['$scope', function ($scope) {
+    }]);
+
+</script>
+</body>
+</html>

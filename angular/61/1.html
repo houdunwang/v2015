@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+    <script src="../org/jquery.min.js"></script>
+</head>
+<body>
+<div ng-app="hd" ng-controller="ctrl">
+    {{name}}
+    <button ng-click="callback()">事件</button>
+    <hr>
+    <button id="bt">JQUERY处理</button>
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.controller('ctrl', ['$scope', function ($scope) {
+        $scope.name='后盾人';
+//        $scope.callback=function(){
+//            $scope.name='向军老师';
+//        }
+        $('#bt').click(function(){
+            $scope.name='houdunwang.com';
+            $scope.$apply();
+        })
+    }]);
+</script>
+</body>
+</html>

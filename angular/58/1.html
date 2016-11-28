@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+    <script src="../org/jquery.min.js"></script>
+</head>
+<body>
+<div ng-app="hd">
+    <hd-cms title="后盾人" bgcolor="green" fontcolor="#fff"></hd-cms>
+    <hd-cms title="houdunren.com" bgcolor="red" fontcolor="yellow"></hd-cms>
+    <hd-cms title="后盾人" bgcolor="green" fontcolor="#fff"></hd-cms>
+    <hd-cms title="后盾人" bgcolor="green" fontcolor="#fff"></hd-cms>
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.directive('hdCms', [function () {
+        return {
+            restrict: 'E',
+            scope:{
+                title:'@'
+            },
+            link:function(scope,elem,attr){
+//                console.log(attr);
+                $(elem).css({backgroundColor:attr['bgcolor'],color:attr['fontcolor']}).html(scope.title);
+            }
+        }
+    }]);
+</script>
+</body>
+</html>

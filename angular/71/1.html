@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+    <script src="../org/jquery.min.js"></script>
+</head>
+<body>
+<div ng-app="hd">
+    <div ng-controller="ctrl1">
+        <table border="1" width="600">
+            <tr>
+                <td>网站名称</td>
+                <td>网址</td>
+            </tr>
+            <tr ng-repeat="v in data.webs">
+                <td>{{v.name}}</td>
+                <td>{{v.url}}</td>
+            </tr>
+        </table>
+    </div>
+    <hr>
+    <div ng-controller="ctrl2">
+        <table border="1" width="600">
+            <tr>
+                <td>网站名称</td>
+                <td>网址</td>
+            </tr>
+            <tr ng-repeat="v in data.webs">
+                <td>{{v.name}}</td>
+                <td>{{v.url}}</td>
+            </tr>
+        </table>
+        <h1>{{web.name}}</h1>
+        <button ng-click="removeAll()">删除所有数据</button>
+    </div>
+</div>
+<script>
+    var m = angular.module('hd', []);
+    //定义服务
+    m.factory('videoServer', ['$http', function ($http) {
+        var obj = {
+            data: {webs:[]},
+            //所有数据
+            all: function () {
+                return $http({url: '1.php'}).then(function (response) {
+                    obj.data.webs = response.data;
+                    return obj.data;
+                });
+            },
+            //获取一条数据
+            find: function (id) {
+                return this.all().then(function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        if (data[i].id == id) {
+                            return data[i];
+                        }
+                    }
+                });
+            },
+            //删除所有数据
+            flush: function () {
+                obj.data.webs=[];
+            }
+        };
+        return obj;
+    }]);
+    m.controller('ctrl1', ['$scope', 'videoServer', function ($scope, videoServer) {
+        videoServer.all().then(function (data) {
+            $scope.data = data;
+        });
+    }]);
+    m.controller('ctrl2', ['$scope', 'videoServer', function ($scope, videoServer) {
+        videoServer.all().then(function (data) {
+            $scope.data = data;
+        });
+        videoServer.find(1).then(function (data) {
+            $scope.web = data;
+        })
+        $scope.removeAll=function(){
+            videoServer.flush();
+        }
+    }]);
+</script>
+</body>
+</html>

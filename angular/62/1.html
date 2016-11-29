@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+    <script src="../org/jquery.min.js"></script>
+</head>
+<body>
+<div ng-app="hd" ng-controller="ctrl">
+    {{name}}
+    <hr>
+    {{id}}
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.controller('ctrl', ['$scope','$timeout','$interval', function ($scope,$timeout,$interval) {
+        $scope.name = '后盾人';
+        $scope.id = 1;
+//        setTimeout(function () {
+//            $scope.name = 'houdunren.com';
+//            $scope.$apply();
+//        }, 2000)
+//        var timeId = $timeout(function(){
+//            $scope.name = 'houdunren.com';
+//        },2000);
+//        $timeout.cancel(timeId);
+
+        var id = $interval(function(){
+            $scope.id++;
+            if($scope.id >10){
+                $interval.cancel(id);
+            }
+        },2000);
+
+    }]);
+</script>
+</body>
+</html>

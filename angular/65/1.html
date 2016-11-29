@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+    <script src="../org/jquery.min.js"></script>
+</head>
+<body>
+<div ng-app="hd" >
+    <div ng-controller="ctrl1">
+        {{data}}
+    </div>
+    <div ng-controller="ctrl2">
+        {{data}}
+    </div>
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.controller('ctrl1', ['$scope', '$cacheFactory', function ($scope, $cacheFactory) {
+        var obj = $cacheFactory('hdphp');
+        //sessionStorage  localStorage
+        obj.put('web', {name: '后盾人', url: 'houdunren.com'});
+        obj.put('user', {name: '向军', mail: '2300071698@qq.com'});
+        $scope.data = obj.get('web').name;
+        //删除缓存数据
+//        obj.remove('web');
+//        obj.removeAll();
+//        obj.destroy();
+//        console.log(obj.get('web'));
+//        console.log(obj.get('user'));
+    }]);
+    m.controller('ctrl2', ['$scope', '$cacheFactory', function ($scope, $cacheFactory) {
+        var obj = $cacheFactory.get('hdphp');
+        $scope.data = obj.get('web').name;
+    }]);
+</script>
+</body>
+</html>

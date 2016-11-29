@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+    <script src="../org/jquery.min.js"></script>
+</head>
+<body>
+<div ng-app="hd" ng-controller="ctrl"></div>
+<script>
+    var m = angular.module('hd', []);
+    m.controller('ctrl', ['$scope', '$http', function ($scope, $http) {
+        //id=xx&name=xx
+//       $http({
+//           method:'post',
+//           url:'1.php',
+//           data:{id:1,name:'后盾人'}
+//       }).then(function(response){
+//           console.log(response.data);
+//       })
+
+        $http({
+            method:'post',
+            url:'1.php',
+            data:$.param({id:1,name:'后盾人'}),
+            headers:{'Content-type':'application/x-www-form-urlencoded'}
+        }).then(function(response){
+            console.log(response.data);
+        })
+    }]);
+</script>
+</body>
+</html>

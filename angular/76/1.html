@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+    <script src="../org/jquery.min.js"></script>
+    <script src="../org/angular-ui-router.min.js"></script>
+</head>
+<body>
+<div ng-app="hd">
+    <a href="" ui-sref="home">首页</a>
+    <a href="#/lists">列表页</a>
+    <div ui-view>后盾人提示你:你访问的页面不存在</div>
+</div>
+<script>
+    var m = angular.module('hd', ['ui.router']);
+    m.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+        //默认路由
+        $urlRouterProvider.otherwise('');
+        //定义路由规则
+        $stateProvider
+                .state('default', {
+                    url: '',
+                    template: '<h1>后盾人</h1>'
+                })
+                .state('home', {
+                    url: '/home',
+                    templateUrl: 'view/home.html'
+                })
+                .state('lists', {
+                    url: '/lists',
+                    template: '<h1>列表页</h1>'
+                })
+    }])
+</script>
+</body>
+</html>

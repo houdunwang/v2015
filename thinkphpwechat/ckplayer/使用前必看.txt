@@ -1,0 +1,1 @@
+crossdomain.xml文件直接拷贝到网站根目录下，很重要，详细功能可查看：http://www.ckplayer.com/manual/14/16.htm

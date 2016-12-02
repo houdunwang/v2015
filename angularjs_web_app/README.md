@@ -25,6 +25,12 @@
 ```
 
 ## 环境配置
+**安装bower**
+
+```
+sudo npm install -g bower
+```
+
 **安装前端库**
 
 ```
@@ -34,7 +40,7 @@ bower install jquery bootstrap
 **安装gulp**
 
 ```
-npm install -g gulp
+sudo npm install -g gulp
 ```
 
 **安装Gulp插件**

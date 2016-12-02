@@ -1,0 +1,40 @@
+body {
+  font-family: STHeiti, 'Microsoft YaHei', Helvetica, Arial, sans-serif !important;
+  word-break: break-word;
+  background: #f6f6f6;
+}
+.menu {
+  background: #fc363b;
+  height: 40px;
+  padding: 5px 10px;
+  display: flex;
+}
+.menu a {
+  color: #ececec;
+  font-size: 20px;
+  flex: 1;
+}
+.slide .item {
+  height: 200px;
+}
+.lists {
+  margin-top: 6px;
+  padding: 10px;
+}
+.lists .media {
+  border-top: solid 1px #dcdcdc;
+  padding: 10px 0px;
+}
+.lists .media .media-body h4.media-heading {
+  color: #404044;
+  font-weight: normal;
+  font-size: 4.5vw;
+}
+.lists .media .media-body span {
+  color: #999999;
+  font-size: 1vw;
+}
+.lists img {
+  width: 100px;
+  height: 65px;
+}

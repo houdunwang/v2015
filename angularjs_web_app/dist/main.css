@@ -1,3 +1,80 @@
+a {
+  text-decoration: none !important;
+}
+a:active {
+  color: #fff;
+}
+a:visited {
+  color: #fff !important;
+}
 body {
-  background: #7b007b;
+  padding: 0px;
+  margin: 0px;
+}
+
+.hdArticle .menu {
+  height: 50px;
+  font-size: 6vw;
+  padding: 3vw;
+  line-height: 1.5em;
+  background: #fc363b;
+  color: #f3f3f3;
+  margin-bottom: 10px;
+}
+.hdArticle .menu h3 {
+  color: #f3f3f3;
+  font-size: 6vw;
+  padding: 0px;
+  margin: 0px;
+}
+.hdArticle div.body {
+  padding: 10px;
+}
+.hdArticle div.body h1 {
+  font-size: 6vw;
+}
+.hdArticle div.body .content {
+  font-size: 5vw;
+  text-indent: 2em;
+  line-height: 1.5em;
+  padding: 10px;
+  color: #404040;
+}
+.hdArticle div.body .content img {
+  max-width: 95%;
+}
+
+.menu {
+  background: #fc363b;
+  height: 40px;
+  padding: 5px 10px;
+  display: flex;
+  line-height: 2em;
+}
+.menu a {
+  color: #ececec;
+  font-size: 20px;
+  flex: 1;
+}
+
+.lists {
+  margin-top: 6px;
+  padding: 10px;
+}
+.lists .media {
+  border-top: solid 1px #dcdcdc;
+  padding: 10px 0px;
+}
+.lists .media .media-body h4.media-heading {
+  color: #404044;
+  font-weight: normal;
+  font-size: 4.5vw;
+}
+.lists .media .media-body span {
+  color: #999999;
+  font-size: 1vw;
+}
+.lists img {
+  width: 100px;
+  height: 65px;
 }

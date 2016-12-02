@@ -21,7 +21,7 @@ require.config({
         },
         'bootstrap': {
             exports: '$',
-            deps: ['jquery', 'css!bower_components/bootstrap/dist/css/bootstrap.min.css']
+            deps: ['jquery', 'css!../bower_components/bootstrap/dist/css/bootstrap.min.css']
         },
         'app': {
             exports: 'app',
@@ -29,4 +29,4 @@ require.config({
         }
     }
 });
-require(['app','directives/home']);
+require(['app']);

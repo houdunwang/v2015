@@ -1,0 +1,25 @@
+{
+  "name": "require-css",
+  "version": "0.1.8",
+  "ignore": [
+    "example",
+    "test",
+    ".gitignore"
+  ],
+  "main": [
+    "css.js",
+    "css-builder.js",
+    "normalize.js"
+  ],
+  "homepage": "https://github.com/guybedford/require-css",
+  "_release": "0.1.8",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.8",
+    "commit": "3b1d86858259762e5bb9db72c3df6ea808cd9d6d"
+  },
+  "_source": "https://github.com/guybedford/require-css.git",
+  "_target": "^0.1.8",
+  "_originalSource": "require-css",
+  "_direct": true
+}

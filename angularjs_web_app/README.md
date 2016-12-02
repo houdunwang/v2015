@@ -1,5 +1,7 @@
 ##AngularJs+RequireJs+Gulp 开发移动应用
-大家在观看视频时，要使用与我相同的hdphp框架。最简单的方式直接copy视频中的hdphp框架。
+开发前需要安装nodejs bower
+
+[https://bower.io/](https://bower.io/)     [http://nodejs.org/](http://nodejs.org/)
 
 ## 目录结构
 
@@ -7,19 +9,27 @@
 ├── app.js  		应用配置
 ├── main.js 		RequireJs配置文件
 ├── gulpfile.js  	 GulpJs配置文件
-├── build 			编译目录（此目录生成通过GulpJs编译后的js、css文件）
+├── dist 			编译目录（此目录生成通过GulpJs编译后的js、css文件）
 ├── node_modules	第三方依赖包如gulp插件等
 ├── src			   项目源文件
 │   ├── controllers	控制器文件目录
 │   ├── directives	指令文件目录
 │   ├── servers		服务文件目录
 │   ├── templates	指令模板目录
+│   ├── static	    静态文件目录
+│      ├── images	图片
+│      ├── less	    样式
 │   ├── view	    路由模板目录
 │   ├── route.js	路由配置
 
 ```
 
 ## 环境配置
+**安装前端库**
+
+```
+bower install jquery bootstrap
+```
 
 **安装gulp**
 

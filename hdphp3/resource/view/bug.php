@@ -3,12 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>温馨提示</title>
-	<script src="{{__ROOT__}}/resource/hdjs/js/jquery.min.js"></script>
-	<script src="{{__ROOT__}}/resource/hdjs/app/util.js"></script>
-	<script src="{{__ROOT__}}/resource/hdjs/require.js"></script>
-	<script src="{{__ROOT__}}/resource/hdjs/app/config.js"></script>
-	<link href="{{__ROOT__}}/resource/hdjs/css/bootstrap.min.css" rel="stylesheet">
-	<link href="{{__ROOT__}}/resource/hdjs/css/font-awesome.min.css" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body style="background: url('resource/images/bg.jpg');background-size: cover">
 <!--导航-->

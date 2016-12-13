@@ -25,10 +25,9 @@ class Mysql {
 	 */
 	public function getFields( $table ) {
 		$name = c( 'database.database' ) . '.' . $table;
-		//字段缓存
-		if ( ! c( 'app.debug' ) && f( $name, '[get]', 0, ROOT_PATH . '/storage/field' ) ) {
-			$data = f( $name, '[get]', 0, ROOT_PATH . '/storage/cache/field' );
-		} else {
+		//缓存字段
+		$data = f( $name, '[get]', 0, ROOT_PATH . '/storage/field' );
+		if ( c( 'app.debug' ) || empty( $data ) ) {
 			$sql = "show columns from " . c( 'database.prefix' ) . $table;
 			if ( ! $result = Db::query( $sql ) ) {
 				return [ ];

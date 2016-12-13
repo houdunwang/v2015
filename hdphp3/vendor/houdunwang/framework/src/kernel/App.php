@@ -85,6 +85,15 @@ class App extends Container {
 		}
 	}
 
+//	//命令行模式
+//	protected function cli() {
+//		//命令模式
+//		if ( $_SERVER['SCRIPT_NAME'] == 'hd' ) {
+//			call_user_func_array( [ new \hdphp\cli\Cli(), 'start' ], [ ] );
+//			die;
+//		}
+//	}
+
 	//外观类文件自动加载
 	public function autoload( $class ) {
 		//通过外观类加载系统服务
@@ -111,8 +120,7 @@ class App extends Container {
 	protected function bindServiceProvider() {
 		foreach ( $this->servers['providers'] as $provider ) {
 			$reflectionClass = new ReflectionClass( $provider );
-			//获取类属性
-			$properties = $reflectionClass->getDefaultProperties();
+			$properties      = $reflectionClass->getDefaultProperties();
 			//获取服务延迟属性
 			if ( isset( $properties['defer'] ) && $properties['defer'] === false ) {
 				//立即加载服务

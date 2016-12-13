@@ -29,7 +29,7 @@ class Error {
 		Log::write( $e->getMessage(), 'EXCEPTION' );
 		IS_CLI and Cli::error( $e->getMessage() );
 		//命令行模式
-		if ( c( 'app.debug' ) ) {
+		if ( c( 'app.debug' ) === true ) {
 			require __DIR__ . '/view/exception.php';
 		} else {
 			class_exists( 'Log' ) && Log::write( $e->getMessage(), 'Exception' );
@@ -47,7 +47,7 @@ class Error {
 			case E_DEPRECATED:
 				break;
 			default:
-				if ( c( 'app.debug' ) ) {
+				if ( c( 'app.debug' ) === true ) {
 					require __DIR__ . '/view/debug.php';
 					exit;
 				} else {

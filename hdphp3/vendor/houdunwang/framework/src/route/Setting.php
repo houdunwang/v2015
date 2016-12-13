@@ -25,7 +25,7 @@ class Setting {
 	public function __call( $method, $params ) {
 		$this->route[] = [
 			'method'   => $method,
-			'route'    => $this->prefix . array_shift( $params ),
+			'route'    => $this->prefix . trim( array_shift( $params ), '/' ),
 			'callback' => array_shift( $params ),
 			'regexp'   => '/./',
 			'args'     => [ ],
@@ -58,6 +58,7 @@ class Setting {
 	 * @return $this
 	 */
 	public function controller( $route, $param ) {
+		$route         = trim( $route, '/' );
 		$this->route[] = [
 			'method'   => 'controller',
 			'route'    => $this->prefix . $route . '/{method}',
@@ -78,6 +79,7 @@ class Setting {
 	 * @return $this
 	 */
 	public function resource( $route, $controller ) {
+		$route = trim( $route, '/' );
 		$this->get( "$route", $controller . '/index' );
 		//添加文章视图
 		$this->get( "$route/create", $controller . '/create' );

@@ -20,7 +20,7 @@ use hdphp\alipay\lib\AlipaySubmit;
  * @package Hdphp\Alipay
  * @author 向军
  */
-class Alipay {
+class AliPay {
 	public function pay( $data ) {
 		//构造要请求的参数数组，无需改动
 		$parameter = [

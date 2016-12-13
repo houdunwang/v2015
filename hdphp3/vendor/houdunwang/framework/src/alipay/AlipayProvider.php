@@ -9,18 +9,19 @@
  * '-------------------------------------------------------------------*/
 namespace hdphp\alipay;
 
-class AlipayProvider extends \hdphp\kernel\ServiceProvider {
+use hdphp\kernel\ServiceProvider;
+
+class AliPayProvider extends ServiceProvider {
 
 	//延迟加载
 	public $defer = true;
 
 	public function boot() {
-
 	}
 
 	public function register() {
-		$this->app->single( 'Alipay', function ( $app ) {
-			return new Alipay( $app );
+		$this->app->single( 'AliPay', function ( $app ) {
+			return new AliPay( $app );
 		} );
 	}
 }

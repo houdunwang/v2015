@@ -521,7 +521,7 @@ class PHPMailer {
   }
 
   /**
-   * Outputs debugging info via user-defined method
+   * Outputs debugging info via form-defined method
    * @param string $str
    */
   private function edebug($str) {

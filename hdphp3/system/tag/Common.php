@@ -10,7 +10,6 @@ class Common extends TagBase {
 	public $tags
 		= [
 			'bootstrap' => [ 'block' => false ],
-			'user' => [ 'block' => true, 'level' => 4 ],
 		];
 
 	//line 标签
@@ -38,7 +37,7 @@ str;
 		$php
 		       = <<<php
 		<?php
-			\$_data= Db::table('user')->limit($row)->orderBy('id','$order')->get();
+			\$_data= Db::table('HdForm')->limit($row)->orderBy('id','$order')->get();
 			foreach(\$_data as \$field):?>
 php;
 		$php .= $content;

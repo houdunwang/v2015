@@ -6,7 +6,6 @@
 	<link rel="stylesheet" href="{{__ROOT__}}/resource/hdjs/css/bootstrap.min.css">
 </head>
 <body style="background: #f3f3f3;">
-<include file="../public"/>
 <h1>你好 {{v('user.nickname')}}</h1>
 <div style="padding: 50px;">
 	<dl>
@@ -48,6 +47,10 @@
 	<dl>
 		<dt>调试</dt>
 		<dd><a href="{{u('debug/index')}}">调试</a></dd>
+	</dl>
+	<dl>
+		<dt>服务</dt>
+		<dd><a href="{{u('service/index')}}">服务</a></dd>
 	</dl>
 </div>
 </body>

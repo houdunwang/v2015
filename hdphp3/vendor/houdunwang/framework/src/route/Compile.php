@@ -12,6 +12,8 @@ namespace hdphp\route;
 use Closure;
 
 class Compile extends Setting {
+	//匹配到路由
+	protected $found = false;
 	//路由参数
 	protected $args = [ ];
 
@@ -25,7 +27,7 @@ class Compile extends Setting {
 				return false;
 			}
 			//设置GET参数
-			$this->args = $_GET = array_merge( $this->route[ $key ]['get'], $_GET );
+			$this->args = $this->route[ $key ]['get'];
 
 			return $this->found = true;
 		}
@@ -85,7 +87,7 @@ class Compile extends Setting {
 			echo $reflectionFunction->invokeArgs( $args );
 		} else {
 			//设置控制器与方法
-			$_GET[ c( 'http.url_var' ) ] = $this->route[ $key ]['callback'];
+			Request::set( 'get.' . c( 'http.url_var' ), $this->route[ $key ]['callback'] );
 			Controller::run( $this->route[ $key ]['get'] );
 		}
 	}
@@ -102,19 +104,11 @@ class Compile extends Setting {
 
 	//PUT事件处理
 	protected function _put( $key ) {
-		if ( empty( $_POST ) ) {
-			parse_str( file_get_contents( 'php://input' ), $_POST );
-		}
-
 		return IS_PUT && $this->isMatch( $key ) && $this->exec( $key );
 	}
 
 	//DELETE事件
 	protected function _delete( $key ) {
-		if ( empty( $_POST ) ) {
-			parse_str( file_get_contents( 'php://input' ), $_POST );
-		}
-
 		return IS_DELETE && $this->isMatch( $key ) && $this->exec( $key );
 	}
 

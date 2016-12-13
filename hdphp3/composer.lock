@@ -9,16 +9,16 @@
     "packages": [
         {
             "name": "houdunwang/framework",
-            "version": "v3.0.25",
+            "version": "v3.0.31",
             "source": {
                 "type": "git",
                 "url": "https://github.com/houdunwang/framework.git",
-                "reference": "c8ff3c5f7fcb74c822a3113963a0fa5ae352d748"
+                "reference": "5657802585401ce5a1c76839e064c9e0c0757f88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/houdunwang/framework/zipball/c8ff3c5f7fcb74c822a3113963a0fa5ae352d748",
-                "reference": "c8ff3c5f7fcb74c822a3113963a0fa5ae352d748",
+                "url": "https://api.github.com/repos/houdunwang/framework/zipball/5657802585401ce5a1c76839e064c9e0c0757f88",
+                "reference": "5657802585401ce5a1c76839e064c9e0c0757f88",
                 "shasum": ""
             },
             "type": "project",
@@ -41,7 +41,7 @@
                 }
             ],
             "description": "Hdphp Framework (Kernel)",
-            "time": "2016-11-13 19:09:05"
+            "time": "2016-12-12 16:03:36"
         },
         {
             "name": "houdunwang/wechat",

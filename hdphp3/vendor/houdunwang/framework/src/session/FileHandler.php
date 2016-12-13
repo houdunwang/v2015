@@ -28,6 +28,7 @@ class FileHandler implements AbSession {
 			mkdir( $this->dir, 0755, true );
 			file_put_contents( $this->dir . '/index.html', '' );
 		}
+
 		$this->file = ROOT_PATH . '/storage/session/' . $this->session_id . '.php';
 	}
 

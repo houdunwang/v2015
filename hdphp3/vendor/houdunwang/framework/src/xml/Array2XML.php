@@ -6,7 +6,7 @@ use Exception;
 /**
  * Array2XML: A class to convert array in PHP to XML
  * It also takes into account attributes names unlike SimpleXML in PHP
- * It returns the XML in form of DOMDocument class for further manipulation.
+ * It returns the XML in user of DOMDocument class for further manipulation.
  * It throws exception if the tag name or attribute name has illegal chars.
  *
  * Author : Lalit Patel

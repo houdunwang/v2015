@@ -15,22 +15,12 @@ namespace hdphp\route;
  * @package hdphp\route
  */
 class Route extends Compile {
-	public static $app;
 	//路由定义
 	public $route = [ ];
-
-	//匹配到路由
-	protected $found = false;
-
-	//匹配到的参数
-	protected $args = [ ];
-
 	//请求的URI
 	protected $requestUri;
-
 	//路由缓存
 	protected $cache = [ ];
-
 	//正则替换字符
 	protected $patterns
 		= [
@@ -38,9 +28,8 @@ class Route extends Compile {
 			':all' => '.*',
 		];
 
-	// 构造函数
-	public function __construct( $app ) {
-		self::$app        = $app;
+	//构造函数
+	public function __construct() {
 		$this->requestUri = $this->getRequestUri();
 	}
 
@@ -56,8 +45,9 @@ class Route extends Compile {
 				$REQUEST_URI = $_SERVER['REQUEST_URI'];
 			}
 		}
-		$REQUEST_URI = preg_replace( '/\w+\.php/i', '', $REQUEST_URI );
-		return $REQUEST_URI ? parse_url( $REQUEST_URI, PHP_URL_PATH ) : '/';
+		$REQUEST_URI = trim( preg_replace( '/\w+\.php/i', '', $REQUEST_URI ), '/' );
+
+		return $REQUEST_URI ? parse_url( $REQUEST_URI, PHP_URL_PATH ) : '';
 	}
 
 	/**
@@ -75,6 +65,7 @@ class Route extends Compile {
 			$this->route[ count( $this->route ) - 1 ]['where'][ $name ] = '#^' . $regexp . '$#';
 		}
 
+		return $this;
 	}
 
 	/**
@@ -85,18 +76,17 @@ class Route extends Compile {
 		//加载路由定义
 		require ROOT_PATH . '/system/routes.php';
 		//设置路由缓存
-		if ( C( 'http.route_cache' ) && ( $route = Cache::get( 'route' ) ) ) {
+		if ( C( 'http.route_cache' ) && ( $route = Cache::get( '_ROUTES_' ) ) ) {
 			$this->route = $route;
-
-			return true;
+		} else {
+			$this->route = $this->parseRoute();
 		}
-		$this->parseRoute();
 		//匹配路由
 		foreach ( $this->route as $key => $route ) {
 			$method = '_' . $route['method'];
 			$this->$method( $key );
 			if ( $this->found ) {
-				return null;
+				return;
 			}
 		}
 
@@ -134,14 +124,15 @@ class Route extends Compile {
 					$regexp = str_replace( $ato[0], '([^/]+?)' . $has, $regexp );
 				}
 			}
-
 			$this->route[ $key ]['regexp'] = '#^' . $regexp . '$#';
 			$this->route[ $key ]['args']   = $args;
 		}
 		//缓存路由
 		if ( C( 'http.route_cache' ) ) {
-			Cache::set( 'route', $this->route );
+			Cache::set( '_ROUTES_', $this->route );
 		}
+
+		return $this->route;
 	}
 
 	/**
@@ -151,7 +142,11 @@ class Route extends Compile {
 	 *
 	 * @return mixed|null
 	 */
-	public function input( $name ) {
-		return isset( $this->args[ $name ] ) ? $this->args[ $name ] : null;
+	public function input( $name = null ) {
+		if ( is_null( $name ) ) {
+			return $this->args;
+		} else {
+			return isset( $this->args[ $name ] ) ? $this->args[ $name ] : null;
+		}
 	}
 }

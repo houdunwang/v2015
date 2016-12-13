@@ -21,7 +21,7 @@ class View {
 				[ 'username', 'required', 'abc' ]
 			] );
 		}
-		$data = Db::table( 'user' )->get();
+		$data = Db::table( 'HdForm' )->get();
 
 		return view( '', 5 )->with( 'data', $data )->with( 'time', time() );
 	}
@@ -34,7 +34,7 @@ class View {
 	public function cache() {
 		if ( ! \View::isCache( 'cache' ) ) {
 			echo 'no cache';
-			$data = Db::table( 'user' )->get();
+			$data = Db::table( 'HdForm' )->get();
 		}
 
 		return view( 'cache', 5 )->with( [ 'time' => NOW, 'data' => $data ] );

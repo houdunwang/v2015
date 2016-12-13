@@ -16,6 +16,7 @@ class RequestProvider extends ServiceProvider {
 	public $defer = true;
 
 	public function boot() {
+		define( 'IS_MOBILE', \Request::isMobile() );
 	}
 
 	public function register() {

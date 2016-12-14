@@ -41,10 +41,14 @@ class Xml {
 
 	/**
 	 * 生成xml字符,不能分析复杂的XML数据比如有属性的XML
+	 *
+	 * @param array $data
+	 * @param int $level
+	 *
 	 * @return string
-	 * @throws \Exception
+	 * @throws Exception
 	 */
-	public function toSimpleXml( $data, $level = 0 ) {
+	public function toSimpleXml( array $data, $level = 0 ) {
 		if ( ! is_array( $data )
 		     || count( $data ) <= 0
 		) {
@@ -83,8 +87,8 @@ class Xml {
 		}
 		//将XML转为array
 		//禁止引用外部xml实体
-		libxml_disable_entity_loader( TRUE );
+		libxml_disable_entity_loader( true );
 
-		return json_decode( json_encode( simplexml_load_string( $xml, 'SimpleXMLElement', LIBXML_NOCDATA ) ), TRUE );
+		return json_decode( json_encode( simplexml_load_string( $xml, 'SimpleXMLElement', LIBXML_NOCDATA ) ), true );
 	}
 }

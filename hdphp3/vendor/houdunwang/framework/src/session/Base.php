@@ -24,7 +24,7 @@ trait Base {
 	final private function getSessionId() {
 		$id = Cookie::get( $this->session_name );
 		if ( ! $id || substr( $id, 0, 5 ) != 'hdphp' ) {
-			$id = 'hdphp' . md5( clientIp() . microtime( true ) ) . mt_rand( 1, 99999 );
+			$id = 'hdphp' . md5( Request::ip() . microtime( true ) ) . mt_rand( 1, 99999 );
 		}
 		Cookie::set( $this->session_name, $id, $this->expire, '/', c( 'session.domain' ) );
 

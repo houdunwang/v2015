@@ -12,6 +12,7 @@
 class HdForm {
 	//构造函数
 	public function __construct() {
+		echo 'hdphp<br/>';
 	}
 
 	//测试方法
@@ -24,6 +25,10 @@ class HdForm {
 	}
 
 	public function play() {
-		echo 'houdunren.com';
+		echo 'houdunren.com<br/>';
+	}
+
+	public function bind() {
+		echo 'houdunwang.com';
 	}
 }

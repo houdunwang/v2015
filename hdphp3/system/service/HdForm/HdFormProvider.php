@@ -15,14 +15,17 @@ class HdFormProvider extends ServiceProvider {
 	//延迟加载
 	public $defer = true;
 
+
 	//服务运行时自动执行的方法
 	public function boot() {
-		echo 'boot';
+//		echo 'boot';
 	}
 
 	public function register() {
-		$this->app->single( 'HdForm', function ( $app ) {
-			return new HdForm($app);
-		} );
+//		$this->app->single( 'HdForm', 'system\service\HdForm\HdForm' );
+//		$this->app->bind('HdForm',function(){
+//			return new HdForm();
+//		});
+		$this->app->instance('HdForm',new HdForm());
 	}
 }

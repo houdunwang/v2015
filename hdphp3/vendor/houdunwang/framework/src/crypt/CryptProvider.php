@@ -17,11 +17,12 @@ class CryptProvider extends ServiceProvider {
 	public $defer = true;
 
 	public function boot() {
+		\Crypt::setSecureKey( c( 'app.key' ) );
 	}
 
 	public function register() {
 		$this->app->single( 'Crypt', function ( $app ) {
 			return new Crypt( $app );
-		});
+		} );
 	}
 }

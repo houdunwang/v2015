@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script type="text/javascript">
+		
+		
+//		双层for循环并不是刻意嵌套在一起的
+//		双层for循环里外层循环的计数器变量名字不能一样
+//		外层循环走一次,里层循环走完整的一轮
+//		for (var i=0;i<5;i++) {
+////			输出一行十个桃心
+//			for (var j=0;j<10;j++) {
+//				document.write("❤");
+//			}
+//			document.write("<br />");
+//		}
+
+	
+	
+		/////////////////////
+		for (var i=0;i<5;i++) {
+//			输出一行十个桃心
+			for (var j=0;j<i;j++) {
+				document.write("❤");
+			}
+			document.write("<br />");
+		}
+		
+		
+	</script>
+	</head>
+	<body>
+	</body>
+</html>

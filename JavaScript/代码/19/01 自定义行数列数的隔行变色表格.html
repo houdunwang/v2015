@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.hd{
+				background: purple;
+				color: white;
+			}
+		</style>
+<script type="text/javascript">
+//	在js语法中,字符串中间不能有换行
+	
+	var rows = prompt('请输入行数');
+	var cols = prompt('请输入列数');
+	
+	document.write("<table border='1'>");
+	
+	for (var i=1;i<=rows;i++) {
+//		判断奇偶行数
+		if (i%2 == 1) {//奇数行
+			document.write("<tr class='hd'>");
+		}else{//偶数行
+			document.write("<tr>");
+		}
+		
+		for (var j=1;j<=cols;j++) {
+			document.write("<td>"+i+"行"+j+"列</td>");
+		}
+		document.write("</tr>");
+	}
+	
+	document.write("</table>");
+	
+</script>
+
+	</head>
+	<body>
+		
+		
+		
+		
+	</body>
+</html>

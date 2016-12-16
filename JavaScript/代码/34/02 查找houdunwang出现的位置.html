@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script type="text/javascript">
+		
+		var str = '后盾视频下载地址:bbs.houdunwang.com，论坛地址：bbs.houdunwang.com,官方网址：www.houdunwang.com';
+		
+//		用来存储houdunwang出现的位置的数组
+		var re = [];
+		while(str.match('houdunwang')){
+//			将第一次出现的位置压入数组中
+			var index = str.indexOf('houdunwang');
+			re.push(index);
+//			将第一次出现的houdunwang替换成登场的其他字符
+			str = str.replace('houdunwang','**********');
+		}
+		document.write(re);
+		
+		
+		
+	</script>
+	</head>
+	<body>
+	</body>
+</html>

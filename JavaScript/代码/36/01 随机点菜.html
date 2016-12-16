@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+<script type="text/javascript">
+	
+//	1/将菜名放入到一个数组中
+//	2/随机抽取数组序号(下标)
+//	3/将随机数对应的序号的元素输出出来
+	
+	var cai = ['鱼香肉丝','北京烤鸭','麻婆豆腐','酸辣土豆丝','回锅肉','乱炖','煎饼卷大葱'];
+	
+//	0 到 cai.length-1
+	var num = Math.floor(Math.random()*(cai.length-1+1-0)+0);
+	
+	document.write(cai[num]);
+	
+	
+</script>
+	</head>
+	<body>
+	</body>
+</html>

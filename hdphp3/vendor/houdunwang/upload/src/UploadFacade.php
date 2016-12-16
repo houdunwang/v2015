@@ -1,4 +1,4 @@
-<?php
+<?php namespace houdunwang\upload;
 /** .-------------------------------------------------------------------
  * |  Software: [HDCMS framework]
  * |      Site: www.hdcms.com
@@ -7,21 +7,11 @@
  * |    WeChat: aihoudun
  * | Copyright (c) 2012-2019, www.houdunwang.com. All Rights Reserved.
  * '-------------------------------------------------------------------*/
-namespace hdphp\upload;
 
-use hdphp\kernel\ServiceProvider;
+use hdphp\kernel\ServiceFacade;
 
-class UploadProvider extends ServiceProvider {
-
-	//延迟加载
-	public $defer = true;
-
-	public function boot() {
-	}
-
-	public function register() {
-		$this->app->single( 'Upload', function ( $app ) {
-			return new Upload( $app );
-		} );
+class UploadFacade extends ServiceFacade {
+	public static function getFacadeAccessor() {
+		return 'Upload';
 	}
 }

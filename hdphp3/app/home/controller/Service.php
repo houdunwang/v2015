@@ -11,12 +11,17 @@
 namespace app\home\controller;
 
 use app\Demo;
+use houdunwang\response\Response;
 
 class Service {
 	public function __construct() {
 		App::single( 'Demo', function () {
 			return new Demo();
 		} );
+	}
+
+	public function test() {
+		Response::ajax(['name'=>'aa'],'xml');
 	}
 
 	//动作
@@ -26,7 +31,7 @@ class Service {
 	}
 
 	public function provider() {
-	    HdForm::play();
+		HdForm::play();
 		HdForm::play();
 		HdForm::play();
 		HdForm::play();

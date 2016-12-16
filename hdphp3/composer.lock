@@ -4,22 +4,75 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a89243429fe33f42b10950ca9b03a008",
-    "content-hash": "a9530e4079256ba4d23cbe7b69b838c8",
+    "hash": "d28622d8f6987994aa61bb82a6923f5c",
+    "content-hash": "ff896f16f7268cc75ab03954fbb2fe82",
     "packages": [
         {
-            "name": "houdunwang/framework",
-            "version": "v3.0.32",
+            "name": "houdunwang/arr",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/houdunwang/framework.git",
-                "reference": "3504ef566af82839dfb2c7576ac7337c2516a867"
+                "url": "https://github.com/houdunwang/arr.git",
+                "reference": "b33a283d707fefc73c461cba5b4a9444bc566fde"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/houdunwang/framework/zipball/3504ef566af82839dfb2c7576ac7337c2516a867",
-                "reference": "3504ef566af82839dfb2c7576ac7337c2516a867",
+                "url": "https://api.github.com/repos/houdunwang/arr/zipball/b33a283d707fefc73c461cba5b4a9444bc566fde",
+                "reference": "b33a283d707fefc73c461cba5b4a9444bc566fde",
                 "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "project",
+            "autoload": {
+                "files": [],
+                "psr-4": {
+                    "houdunwang\\arr\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "后盾网向军",
+                    "email": "2300071698@qq.com"
+                }
+            ],
+            "description": "数组增强组件主要是对数组等数据进行处理，如无限级分类操作、商品规格的迪卡尔乘积运算等",
+            "homepage": "http://www.houdunwang.com/",
+            "keywords": [
+                "array",
+                "hdphp",
+                "houdunwang",
+                "后盾人",
+                "后盾网"
+            ],
+            "time": "2016-12-14 15:38:20"
+        },
+        {
+            "name": "houdunwang/framework",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/houdunwang/framework.git",
+                "reference": "a0ece121073535c2ef94a80136898af117a3a692"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/houdunwang/framework/zipball/a0ece121073535c2ef94a80136898af117a3a692",
+                "reference": "a0ece121073535c2ef94a80136898af117a3a692",
+                "shasum": ""
+            },
+            "require": {
+                "houdunwang/arr": "~1.0",
+                "houdunwang/response": "~1.0",
+                "houdunwang/upload": "~1.0",
+                "houdunwang/wechat": "~1.0",
+                "houdunwang/xml": "~1.0",
+                "houdunwang/zip": "~1.0"
             },
             "type": "project",
             "autoload": {
@@ -36,12 +89,102 @@
             ],
             "authors": [
                 {
-                    "name": "houdunwang",
+                    "name": "后盾网向军",
                     "email": "2300071698@qq.com"
                 }
             ],
             "description": "Hdphp Framework (Kernel)",
-            "time": "2016-12-13 14:36:48"
+            "time": "2016-12-14 15:39:28"
+        },
+        {
+            "name": "houdunwang/response",
+            "version": "v1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/houdunwang/response.git",
+                "reference": "0532f69a2057028c97bc96840ba6d36b6fd3c579"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/houdunwang/response/zipball/0532f69a2057028c97bc96840ba6d36b6fd3c579",
+                "reference": "0532f69a2057028c97bc96840ba6d36b6fd3c579",
+                "shasum": ""
+            },
+            "require": {
+                "houdunwang/xml": "~1.0",
+                "php": ">=5.4.0"
+            },
+            "type": "project",
+            "autoload": {
+                "files": [],
+                "psr-4": {
+                    "houdunwang\\response\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "后盾网向军",
+                    "email": "2300071698@qq.com"
+                }
+            ],
+            "description": "服务器状态码与数据响应组件",
+            "homepage": "http://www.hdphp.com/",
+            "keywords": [
+                "ajax",
+                "hdphp",
+                "houdunwang",
+                "json"
+            ],
+            "time": "2016-12-14 11:04:38"
+        },
+        {
+            "name": "houdunwang/upload",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/houdunwang/upload.git",
+                "reference": "726562f12773f2ba92a295fc5deba4baea104b02"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/houdunwang/upload/zipball/726562f12773f2ba92a295fc5deba4baea104b02",
+                "reference": "726562f12773f2ba92a295fc5deba4baea104b02",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "project",
+            "autoload": {
+                "files": [],
+                "psr-4": {
+                    "houdunwang\\upload\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "后盾网向军",
+                    "email": "2300071698@qq.com"
+                }
+            ],
+            "description": "文件上传组件",
+            "homepage": "http://www.houdunwang.com/",
+            "keywords": [
+                "hdphp",
+                "houdunwang",
+                "upload",
+                "后盾人",
+                "后盾网"
+            ],
+            "time": "2016-12-14 15:42:27"
         },
         {
             "name": "houdunwang/wechat",
@@ -75,12 +218,104 @@
             ],
             "description": "wechat framework",
             "time": "2016-11-13 16:08:39"
+        },
+        {
+            "name": "houdunwang/xml",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/houdunwang/xml.git",
+                "reference": "cbc06e2581f019845276c704106ed655480f619f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/houdunwang/xml/zipball/cbc06e2581f019845276c704106ed655480f619f",
+                "reference": "cbc06e2581f019845276c704106ed655480f619f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "project",
+            "autoload": {
+                "files": [],
+                "psr-4": {
+                    "houdunwang\\xml\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "后盾网向军",
+                    "email": "2300071698@qq.com"
+                }
+            ],
+            "description": "XML数据生成与解析组件",
+            "homepage": "http://www.houdunwang.com/",
+            "keywords": [
+                "hdphp",
+                "houdunwang",
+                "xml",
+                "后盾人",
+                "后盾网"
+            ],
+            "time": "2016-12-14 10:06:17"
+        },
+        {
+            "name": "houdunwang/zip",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/houdunwang/zip.git",
+                "reference": "39df37b23c8bc4be6ca1abfb736c75e112b3403a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/houdunwang/zip/zipball/39df37b23c8bc4be6ca1abfb736c75e112b3403a",
+                "reference": "39df37b23c8bc4be6ca1abfb736c75e112b3403a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "project",
+            "autoload": {
+                "files": [],
+                "psr-4": {
+                    "houdunwang\\zip\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "后盾网向军",
+                    "email": "2300071698@qq.com"
+                }
+            ],
+            "description": "压缩与解压组件",
+            "homepage": "http://www.houdunwang.com/",
+            "keywords": [
+                "hdphp",
+                "houdunwang",
+                "zip",
+                "后盾人",
+                "后盾网"
+            ],
+            "time": "2016-12-14 15:16:38"
         }
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "houdunwang/framework": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

@@ -7,11 +7,11 @@
  * |    WeChat: aihoudun
  * | Copyright (c) 2012-2019, www.houdunwang.com. All Rights Reserved.
  * '-------------------------------------------------------------------*/
-namespace hdphp\data;
+namespace houdunwang\xml;
 
 use hdphp\kernel\ServiceProvider;
 
-class DataProvider extends ServiceProvider {
+class XmlProvider extends ServiceProvider {
 
 	//延迟加载
 	public $defer = true;
@@ -20,8 +20,8 @@ class DataProvider extends ServiceProvider {
 	}
 
 	public function register() {
-		$this->app->single( 'Data', function ( $app ) {
-			return new Data( $app );
+		$this->app->single( 'Xml', function () {
+			return new Xml();
 		} );
 	}
 }

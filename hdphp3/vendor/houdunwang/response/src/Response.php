@@ -7,7 +7,9 @@
  * |    WeChat: aihoudun
  * | Copyright (c) 2012-2019, www.houdunwang.com. All Rights Reserved.
  * '-------------------------------------------------------------------*/
-namespace hdphp\response;
+namespace houdunwang\response;
+
+use houdunwang\xml\Xml;
 
 class Response {
 	/**
@@ -75,27 +77,23 @@ class Response {
 	/**
 	 * Ajax输出
 	 *
-	 * @param        $data 数据
+	 * @param array $data 数据
 	 * @param string $type 数据类型 text xml json
 	 */
-	public function ajax( $data, $type = "JSON" ) {
+	public function ajax( array $data, $type = "JSON" ) {
 		switch ( strtoupper( $type ) ) {
 			case "TEXT" :
-				$_data = $data;
+				$res = $data;
 				break;
 			case "XML" :
-				//XML处理
 				header( 'Content-Type: application/xml' );
-				$_data = Xml::toSimpleXml( $data );
+				$res = ( new Xml() )->toSimpleXml( $data );
 				break;
 			case 'JSON':
 			default :
-				//JSON处理
 				header( 'Content-Type: application/json' );
-				$_data = json_encode( $data, JSON_UNESCAPED_UNICODE );
+				$res = json_encode( $data, JSON_UNESCAPED_UNICODE );
 		}
-		die( $_data );
+		die( $res );
 	}
-
-
 }

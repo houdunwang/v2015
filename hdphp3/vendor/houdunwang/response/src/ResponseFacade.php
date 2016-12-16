@@ -7,12 +7,12 @@
  * |    WeChat: aihoudun
  * | Copyright (c) 2012-2019, www.houdunwang.com. All Rights Reserved.
  * '-------------------------------------------------------------------*/
-namespace hdphp\arr;
+namespace houdunwang\response;
 
 use hdphp\kernel\ServiceFacade;
 
-class ArrFacade extends ServiceFacade {
+class ResponseFacade extends ServiceFacade {
 	public static function getFacadeAccessor() {
-		return 'Arr';
+		return 'Response';
 	}
 }

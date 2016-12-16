@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script type="text/javascript">
+		
+//		冒泡排序法
+	function paixu(arr){
+		
+		for (var j=0;j<arr.length-1;j++) {
+			for (var i=0;i<arr.length-1;i++) {
+//				将i号元素和i+1号元素进行对比,如果i号元素大于i+1号元素,就调换位置
+				if (arr[i]<arr[i+1]) {
+					var temp = arr[i];
+					arr[i] = arr[i+1];
+					arr[i+1] = temp;
+				}
+			}
+		}
+		return arr;
+	}
+		
+		
+	var shuzu = [10,75,44,32,30,7];
+	var re = paixu(shuzu);
+	document.write(re);
+		
+//		a = 1;
+//		b = 2;
+//		
+//		c = a;
+//		a = b;
+//		b = c;
+		
+	</script>
+	</head>
+	<body>
+	</body>
+</html>

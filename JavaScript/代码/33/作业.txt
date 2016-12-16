@@ -1,0 +1,4 @@
+1、将字符串中所有的后盾都替换成****
+'后盾人php后盾人论坛后盾人网站后盾人学生'
+
+2、查找字符串“后盾视频下载地址:bbs.houdunwang.com，论坛地址：bbs.houdunwang.com,官方网址：www.houdunwang.com” 将所有”houdunwang”出现的位置，打印出来

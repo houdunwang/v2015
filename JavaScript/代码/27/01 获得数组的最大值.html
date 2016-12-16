@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script type="text/javascript">
+//		函数是封闭的环境,形参只作用于函数内部,然后通过return给外界返回结果
+//		在函数内部一般不调用外部的数据,也不会再外部直接调用函数里面的数据
+		function max(arr){
+			var temp = arr[0];
+//			循环数组,让数组元素挨个和temp变量去比较大小
+			for (var i=0;i<arr.length;i++) {
+//				如果arr[i]比temp大,那么就让temp里面存储arr[i]的值
+				if (temp<arr[i]) {
+					temp = arr[i];
+				}
+			}
+			return temp;
+		}
+		
+		var sz = [1,516,233,6,43,87,3,5,55];
+		var re =max(sz);
+		document.write(re);
+		
+//		var shuzu = [1,516,233,6,43,87,3,5,55];
+//		var re =max(shuzu);
+//		document.write(re);
+		
+		
+	</script>
+	</head>
+	<body>
+	</body>
+</html>

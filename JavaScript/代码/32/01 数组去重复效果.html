@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+<script type="text/javascript">
+	
+	
+	function qcf(arr){
+		for (var i=0;i<arr.length;i++) {
+//			让i号元素去跟它后面的元素进行比较
+//			循环i号元素后面的元素,让后面的元素挨个的和i号元素进行比较
+			for (var j=i+1;j<arr.length;j++) {
+				if (arr[i]==arr[j]) {
+//					删除j号元素
+					arr.splice(j,1);
+					j--;
+				}
+			}
+		}
+		return arr;
+	}
+	
+	var shuzu = ['a','b','c','a','a','a','d','e','c','f','d'];
+	var re = qcf(shuzu);
+	document.write(re);
+	
+	
+	
+</script>
+		
+	</head>
+	<body>
+	</body>
+</html>

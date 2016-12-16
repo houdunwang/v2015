@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+	<script type="text/javascript">
+		
+	window.onload = function(){
+//		给按钮加单击事件
+		document.getElementById("btn").onclick = function(){
+//			获得行内样式定义的宽度
+//			注意,元素.style.css样式 这种写法只能获得元素的行内样式
+//			var w = document.getElementById("hd").style.width;
+//			alert(w);
+			
+//			设置css样式
+//			document.getElementById("hd").style.width = '500px';
+			
+
+		}
+	}
+		
+	</script>
+	
+	</head>
+	<body>
+		<input type="button" value="点我啊！" id="btn" />
+		
+		<br /><br />
+		<div id="hd" style="width: 300px;height: 260px;background: green;margin: 0 auto;"></div>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script type="text/javascript">
+		
+	window.onload = function(){
+//		通过id抓取元素
+//		document.getElementById("one").style.color = 'red';
+		
+//		通过id抓过来的元素只有一个
+//		但是通过class/标签名/name属性抓到的元素会以数组的形式返回回来,哪怕只抓到一个元素
+		
+//		通过class抓取元素
+//		var ps = document.getElementsByClassName('ls');
+
+//		通过name属性抓元素
+		var ps = document.getElementsByName('hd');
+
+//		通过标签名抓元素
+		var ps = document.getElementsByTagName('p');
+		
+		for (var i=0;i<ps.length;i++) {
+			ps[i].style.color = 'red';
+		}
+	}
+		
+//		document.getElementById('box').getElementsByClassName('hd');
+
+		
+		
+		
+	</script>
+	</head>
+	<body>
+		
+		<p>后盾人 人人做后盾！0</p>
+		<p id="one">后盾人 人人做后盾！1</p>
+		<p name="hd">后盾人 人人做后盾！2</p>
+		<p class="ls">后盾人 人人做后盾！3</p>
+		<p class="ls">后盾人 人人做后盾！4</p>
+		<p name="hd">后盾人 人人做后盾！5</p>
+		<p class="ls">后盾人 人人做后盾！6</p>
+		<p>后盾人 人人做后盾！7</p>
+		
+	</body>
+</html>

@@ -13,9 +13,24 @@
 	</style>
 	<script type="text/javascript">
 		
-	window.onoad = function(){
-		document.getElementById("hd").
+window.onload = function(){
+//	事件监听
+//	addEventListener是w3c的标准方法,不支持ie低版本
+//	第一个参数事件名称不要加on
+
+//	判断浏览器
+	if (document.all) {//ie
+		document.getElementById("hd").attachEvent('onclick',function(){
+			alert('低版本ie才能触发');
+		})	
+	}else{//w3c
+		document.getElementById("hd").addEventListener('click',function(){
+			alert('w3c触发啦！！！！');
+		})
 	}
+
+	
+}
 		
 	</script>
 	

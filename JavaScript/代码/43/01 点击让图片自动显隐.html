@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script type="text/javascript">
+		
+	window.onload = function(){
+		var btn = document.getElementById("btn");
+		var dog = document.getElementById("dog");
+		var sta = 1;//1对应图片的显示状态  2对应隐藏状态
+		
+//		给按钮加单击事件
+		btn.onclick = function(){
+			if (sta==1) {//现在处在显示状态
+				dog.style.display = 'none';
+				sta=2;
+			}else if(sta==2){//现在处在隐藏状态
+				dog.style.display = 'block';
+				sta=1;
+			}
+		}
+	}
+		
+	</script>
+	</head>
+	<body>
+	<input type="button" id="btn" value="点我啊！！！！" />
+		<br /><br />
+		
+	<img src="dog.jpg" alt="" id="dog" />
+	</body>
+</html>

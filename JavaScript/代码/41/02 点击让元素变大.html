@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		#hd{
+			height: 260px;
+			background: purple;
+		}
+	</style>
+<script type="text/javascript">
+window.onload = function(){
+	
+//	抓元素	
+	var btn = document.getElementById("btn");
+	var hd = document.getElementById("hd");
+	
+//	给按钮加单击事件
+	btn.onclick = function(){
+
+//		获得元素当前的宽度
+		var old_width = hd.style.width;
+	
+//		计算新的宽度值
+		var new_width = parseInt(old_width)+10;
+
+//		将新的宽度值赋值回元素
+		hd.style.width = new_width+'px';
+		
+	}
+	
+}
+
+	
+</script>
+	</head>
+	<body>
+		
+		<input type="button" id="btn" value="点我啊！" />
+		<br /><br />
+		
+		<div id="hd" style="width: 300px;"></div>
+	</body>
+</html>

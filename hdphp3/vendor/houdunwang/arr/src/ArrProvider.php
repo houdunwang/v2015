@@ -7,21 +7,22 @@
  * |    WeChat: aihoudun
  * | Copyright (c) 2012-2019, www.houdunwang.com. All Rights Reserved.
  * '-------------------------------------------------------------------*/
-namespace hdphp\response;
+namespace houdunwang\arr;
 
 use hdphp\kernel\ServiceProvider;
 
-class ResponseProvider extends ServiceProvider {
+class ArrProvider extends ServiceProvider {
 
 	//延迟加载
 	public $defer = true;
 
 	public function boot() {
+
 	}
 
 	public function register() {
-		$this->app->single( 'Response', function ( $app ) {
-			return new Response( $app );
+		$this->app->single( 'Arr', function ( $app ) {
+			return new Arr( $app );
 		} );
 	}
 }

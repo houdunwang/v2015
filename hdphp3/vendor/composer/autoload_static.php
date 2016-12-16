@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit5d8087668e89b0759ada3ea9635733af
+class ComposerStaticInit109c32918b6f1ed56b6e1882e29abc53
 {
     public static $files = array (
         'e27462e627a88b1c7e8df9acd31610f4' => __DIR__ . '/..' . '/houdunwang/framework/src/kernel/helper.php',
@@ -21,6 +21,11 @@ class ComposerStaticInit5d8087668e89b0759ada3ea9635733af
         ),
         'h' => 
         array (
+            'houdunwang\\zip\\' => 15,
+            'houdunwang\\xml\\' => 15,
+            'houdunwang\\upload\\' => 18,
+            'houdunwang\\response\\' => 20,
+            'houdunwang\\arr\\' => 15,
             'hdphp\\' => 6,
         ),
         'a' => 
@@ -38,6 +43,26 @@ class ComposerStaticInit5d8087668e89b0759ada3ea9635733af
         array (
             0 => __DIR__ . '/../..' . '/system',
         ),
+        'houdunwang\\zip\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/houdunwang/zip/src',
+        ),
+        'houdunwang\\xml\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/houdunwang/xml/src',
+        ),
+        'houdunwang\\upload\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/houdunwang/upload/src',
+        ),
+        'houdunwang\\response\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/houdunwang/response/src',
+        ),
+        'houdunwang\\arr\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/houdunwang/arr/src',
+        ),
         'hdphp\\' => 
         array (
             0 => __DIR__ . '/..' . '/houdunwang/framework/src',
@@ -51,8 +76,8 @@ class ComposerStaticInit5d8087668e89b0759ada3ea9635733af
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit5d8087668e89b0759ada3ea9635733af::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit5d8087668e89b0759ada3ea9635733af::$prefixDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit109c32918b6f1ed56b6e1882e29abc53::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit109c32918b6f1ed56b6e1882e29abc53::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }

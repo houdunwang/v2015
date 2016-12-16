@@ -9,9 +9,12 @@
  * '-------------------------------------------------------------------*/
 
 namespace app\home\controller;
+use hdphp\cache\File;
+
 class Cache {
 	//动作
 	public function index() {
+		File
 		c( 'cache.file.dir', 'cache' );
 		$data = Db::table( 'HdForm' )->get();
 		f( 'HdForm', $data, 50 );

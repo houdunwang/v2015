@@ -70,12 +70,12 @@ class Database {
 
 		//		$d = Db::table( 'news' )->groupBy('uid')->lists('uid');
 		//		$d = Db::table( 'news' )->groupBy( 'uid' )->having( "count(*)", '>=', 2 )->pluck('uid');
-		//		$d = Db::table( 'news' )->rightJoin( 'user', 'user.id', '=', 'news.uid' )->get();
+		//		$d = Db::table( 'news' )->rightJoin( 'HdForm', 'HdForm.id', '=', 'news.uid' )->get();
 
 
-		//		$d = Db::table( 'news' )->field('user.id uid,news.id nid,title,click')->join( 'user', 'user.id', '=', 'news.uid' )->where('username','向军')->get();
+		//		$d = Db::table( 'news' )->field('HdForm.id uid,news.id nid,title,click')->join( 'HdForm', 'HdForm.id', '=', 'news.uid' )->where('username','向军')->get();
 		$d = Db::table( 'news' )
-		       ->join( 'user', 'user.id', '=', 'news.uid' )
+		       ->join( 'HdForm', 'HdForm.id', '=', 'news.uid' )
 		       ->groupBy( 'news.uid' )
 		       ->having( 'count(*)', '>=', 2 )
 		       ->pluck( 'username' );
@@ -84,11 +84,11 @@ class Database {
 	}
 
 	public function schema() {
-		//		$d = Schema::getFields('user');
+		//		$d = Schema::getFields('HdForm');
 		//		$d = Schema::getPrimaryKey( 'news' );
 		//		dd(Schema::drop('demo'));
 		//		dd(Schema::getTableSize('news'));
-		//		Schema::lock('user');
+		//		Schema::lock('HdForm');
 		//		sleep(30);
 		//		$d = Db::table('demo')->where('id','>',0)->delete();
 		//		$d =Db::table('demo')->insert(['title'=>'新浪']);

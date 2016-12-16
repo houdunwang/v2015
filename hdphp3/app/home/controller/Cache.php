@@ -13,9 +13,9 @@ class Cache {
 	//动作
 	public function index() {
 		c( 'cache.file.dir', 'cache' );
-		$data = Db::table( 'user' )->get();
-		f( 'user', $data, 50 );
-		p( f( 'user' ) );
+		$data = Db::table( 'HdForm' )->get();
+		f( 'HdForm', $data, 50 );
+		p( f( 'HdForm' ) );
 		f( null );
 	}
 

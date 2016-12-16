@@ -17,5 +17,5 @@ return [
 	//数据库
 	'database' => '',
 	//表前缀
-	'prefix'   => 'hd_'
+	'prefix'   => ''
 ];

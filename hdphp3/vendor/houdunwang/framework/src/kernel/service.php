@@ -9,7 +9,7 @@ return [
 		'hdphp\middleware\MiddlewareProvider',
 		'hdphp\cli\CliProvider',
 		'hdphp\route\RouteProvider',
-		'hdphp\alipay\AlipayProvider',
+		'hdphp\alipay\AliPayProvider',
 		'hdphp\arr\ArrProvider',
 		'hdphp\backup\BackupProvider',
 		'hdphp\cache\CacheProvider',
@@ -49,7 +49,7 @@ return [
 	'facades'   => [
 		'Error'      => 'hdphp\error\ErrorFacade',
 		'App'        => 'hdphp\kernel\AppFacade',
-		'Alipay'     => 'hdphp\alipay\ZipFacade',
+		'AliPay'     => 'hdphp\alipay\AliPayFacade',
 		'Arr'        => 'hdphp\arr\ArrFacade',
 		'Backup'     => 'hdphp\backup\BackupFacade',
 		'Cache'      => 'hdphp\cache\CacheFacade',

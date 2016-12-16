@@ -366,7 +366,7 @@ class Smtp {
         require_once('ntlm_sasl_client.php');
         $temp = new stdClass();
         $ntlm_client = new ntlm_sasl_client_class;
-        if(! $ntlm_client->Initialize($temp)){//let's test if every function its available
+        if(! $ntlm_client->Initialize($temp)){//let's user if every function its available
             $this->error = array("error" => $temp->error);
             if($this->do_debug >= 1) {
                 $this->edebug("You need to enable some modules in your php.ini file: " . $this->error["error"] . $this->CRLF);

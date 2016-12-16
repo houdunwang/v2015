@@ -1,43 +1,5 @@
 [
     {
-        "name": "houdunwang/framework",
-        "version": "v3.0.25",
-        "version_normalized": "3.0.25.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/houdunwang/framework.git",
-            "reference": "c8ff3c5f7fcb74c822a3113963a0fa5ae352d748"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/houdunwang/framework/zipball/c8ff3c5f7fcb74c822a3113963a0fa5ae352d748",
-            "reference": "c8ff3c5f7fcb74c822a3113963a0fa5ae352d748",
-            "shasum": ""
-        },
-        "time": "2016-11-13 19:09:05",
-        "type": "project",
-        "installation-source": "dist",
-        "autoload": {
-            "files": [
-                "src/kernel/helper.php"
-            ],
-            "psr-4": {
-                "hdphp\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "houdunwang",
-                "email": "2300071698@qq.com"
-            }
-        ],
-        "description": "Hdphp Framework (Kernel)"
-    },
-    {
         "name": "houdunwang/wechat",
         "version": "v1.0.4",
         "version_normalized": "1.0.4.0",
@@ -71,5 +33,43 @@
             }
         ],
         "description": "wechat framework"
+    },
+    {
+        "name": "houdunwang/framework",
+        "version": "v3.0.32",
+        "version_normalized": "3.0.32.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/framework.git",
+            "reference": "3504ef566af82839dfb2c7576ac7337c2516a867"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/houdunwang/framework/zipball/3504ef566af82839dfb2c7576ac7337c2516a867",
+            "reference": "3504ef566af82839dfb2c7576ac7337c2516a867",
+            "shasum": ""
+        },
+        "time": "2016-12-13 14:36:48",
+        "type": "project",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/kernel/helper.php"
+            ],
+            "psr-4": {
+                "hdphp\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "houdunwang",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "Hdphp Framework (Kernel)"
     }
 ]

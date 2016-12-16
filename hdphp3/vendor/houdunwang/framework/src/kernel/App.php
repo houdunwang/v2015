@@ -15,21 +15,20 @@ use Hdphp\Kernel\ServiceProviders;
 class App extends Container {
 	//应用已启动
 	protected $booted = false;
-
 	//系统服务
 	protected $servers = [ ];
-
 	//外观别名
 	protected $facades = [ ];
-
 	//延迟加载服务提供者
 	protected $deferProviders = [ ];
-
 	//已加载服务提供者
 	protected $serviceProviders = [ ];
 
 	public function bootstrap() {
+		//常量定义
 		$this->constant();
+		//自定义处理处理
+		$this->errorHandler();
 		//加载服务配置项
 		$servers              = require __DIR__ . '/service.php';
 		$config               = require ROOT_PATH . '/system/config/service.php';
@@ -65,29 +64,35 @@ class App extends Container {
 	//定义常量
 	protected function constant() {
 		//版本号
-		define( 'FRAMEWORK_VERSION', '3.0.25' );
+		define( 'FRAMEWORK_VERSION', '3.0.32' );
 		define( 'IS_CLI', PHP_SAPI == 'cli' );
 		define( 'NOW', $_SERVER['REQUEST_TIME'] );
 		define( '__ROOT__', IS_CLI ? '' : trim( 'http://' . $_SERVER['HTTP_HOST'] . dirname( $_SERVER['SCRIPT_NAME'] ), '/\\' ) );
 		define( 'DS', DIRECTORY_SEPARATOR );
-		IS_CLI or define( 'IS_GET', $_SERVER['REQUEST_METHOD'] == 'GET' );
-		IS_CLI or define( 'IS_POST', $_SERVER['REQUEST_METHOD'] == 'POST' );
-		IS_CLI or define( 'IS_DELETE', $_SERVER['REQUEST_METHOD'] == 'DELETE' ? true : ( isset( $_POST['_method'] ) && $_POST['_method'] == 'DELETE' ) );
-		IS_CLI or define( 'IS_PUT', $_SERVER['REQUEST_METHOD'] == 'PUT' ? true : ( isset( $_POST['_method'] ) && $_POST['_method'] == 'PUT' ) );
-		IS_CLI or define( 'IS_AJAX', isset( $_SERVER['HTTP_X_REQUESTED_WITH'] ) && strtolower( $_SERVER['HTTP_X_REQUESTED_WITH'] ) == 'xmlhttprequest' );
-		IS_CLI or define( 'IS_WECHAT', isset( $_SERVER['HTTP_USER_AGENT'] ) && strpos( $_SERVER['HTTP_USER_AGENT'], 'MicroMessenger' ) !== false );
-		IS_CLI or define( '__URL__', trim( 'http://' . $_SERVER['HTTP_HOST'] . '/' . trim( $_SERVER['REQUEST_URI'], '/\\' ), '/' ) );
-		IS_CLI or define( "__HISTORY__", isset( $_SERVER["HTTP_REFERER"] ) ? $_SERVER["HTTP_REFERER"] : '' );
-	}
-
-	//命令行模式
-	protected function cli() {
-		//命令模式
-		if ( $_SERVER['SCRIPT_NAME'] == 'hd' ) {
-			call_user_func_array( [ new \hdphp\cli\Cli(), 'start' ], [ ] );
-			die;
+		//post数据解析
+		if ( empty( $_POST ) ) {
+			parse_str( file_get_contents( 'php://input' ), $_POST );
+		}
+		if ( IS_CLI == false ) {
+			define( 'IS_GET', $_SERVER['REQUEST_METHOD'] == 'GET' );
+			define( 'IS_POST', $_SERVER['REQUEST_METHOD'] == 'POST' );
+			define( 'IS_DELETE', $_SERVER['REQUEST_METHOD'] == 'DELETE' ? true : ( isset( $_POST['_method'] ) && $_POST['_method'] == 'DELETE' ) );
+			define( 'IS_PUT', $_SERVER['REQUEST_METHOD'] == 'PUT' ? true : ( isset( $_POST['_method'] ) && $_POST['_method'] == 'PUT' ) );
+			define( 'IS_AJAX', isset( $_SERVER['HTTP_X_REQUESTED_WITH'] ) && strtolower( $_SERVER['HTTP_X_REQUESTED_WITH'] ) == 'xmlhttprequest' );
+			define( 'IS_WECHAT', isset( $_SERVER['HTTP_USER_AGENT'] ) && strpos( $_SERVER['HTTP_USER_AGENT'], 'MicroMessenger' ) !== false );
+			define( '__URL__', trim( 'http://' . $_SERVER['HTTP_HOST'] . '/' . trim( $_SERVER['REQUEST_URI'], '/\\' ), '/' ) );
+			define( "__HISTORY__", isset( $_SERVER["HTTP_REFERER"] ) ? $_SERVER["HTTP_REFERER"] : '' );
 		}
 	}
+
+//	//命令行模式
+//	protected function cli() {
+//		//命令模式
+//		if ( $_SERVER['SCRIPT_NAME'] == 'hd' ) {
+//			call_user_func_array( [ new \hdphp\cli\Cli(), 'start' ], [ ] );
+//			die;
+//		}
+//	}
 
 	//外观类文件自动加载
 	public function autoload( $class ) {
@@ -105,7 +110,6 @@ class App extends Container {
 		if ( $this->booted ) {
 			return;
 		}
-
 		foreach ( $this->serviceProviders as $p ) {
 			$this->bootProvider( $p );
 		}
@@ -118,13 +122,13 @@ class App extends Container {
 			$reflectionClass = new ReflectionClass( $provider );
 			$properties      = $reflectionClass->getDefaultProperties();
 			//获取服务延迟属性
-			if ( isset( $properties['defer'] ) && $properties['defer'] ) {
-				$alias = substr( $reflectionClass->getShortName(), 0, - 8 );
-				//延迟加载服务
-				$this->deferProviders[ $alias ] = $provider;
-			} else {
+			if ( isset( $properties['defer'] ) && $properties['defer'] === false ) {
 				//立即加载服务
 				$this->register( new $provider( $this ) );
+			} else {
+				//延迟加载服务
+				$alias                          = substr( $reflectionClass->getShortName(), 0, - 8 );
+				$this->deferProviders[ $alias ] = $provider;
 			}
 		}
 	}
@@ -194,5 +198,26 @@ class App extends Container {
 				return $value;
 			}
 		}
+	}
+
+	protected function errorHandler() {
+		set_error_handler( [ $this, 'error' ], E_ALL );
+		set_exception_handler( [ $this, 'exception' ] );
+	}
+
+	//自定义异常理
+	public function exception( $e ) {
+		$this->errorMessageView( $e->getMessage() );
+	}
+
+	//自定义错误
+	public function error( $errno, $error, $file, $line ) {
+		$msg = $error . "($errno)" . $file . " ($line).";
+		$this->errorMessageView( $msg );
+	}
+
+	//显示错误
+	protected function errorMessageView( $message ) {
+		echo "<h3 style='border:solid 8px #5EB852;font-size:26px;color:#666;padding:30px;margin:50px;'>$message</h3>";
 	}
 }

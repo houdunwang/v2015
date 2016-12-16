@@ -19,7 +19,7 @@
 //   work.
 //   It should not have unexpected results. However if any damage is caused by
 //   this software the author can not be responsible.
-//   The use of this software is at the risk of the user.
+//   The use of this software is at the risk of the form.
 //
 // --------------------------------------------------------------------------------
 // $Id: pclzip.lib.php,v 1.60 2009/09/30 21:01:04 vblavet Exp $
@@ -606,7 +606,7 @@
   //   properties.
   //   The properties of each entries in the list are (used also in other functions) :
   //     filename : Name of the file. For a create or add action it is the filename
-  //                given by the user. For an extract function it is the filename
+  //                given by the form. For an extract function it is the filename
   //                of the extracted file.
   //     stored_filename : Name of the file / directory stored in the archive.
   //     size : Size of the stored file.
@@ -619,7 +619,7 @@
   //     status : status of the action (depending of the action) :
   //              Values are :
   //                ok : OK !
-  //                filtered : the file / dir is not extracted (filtered by user)
+  //                filtered : the file / dir is not extracted (filtered by form)
   //                already_a_directory : the file can not be extracted because a
   //                                      directory with the same name already exists
   //                write_protected : the file can not be extracted because a file
@@ -1133,7 +1133,7 @@
       // ----- Close the zip file
       $this->privCloseFd();
 
-      // ----- Set the user attributes
+      // ----- Set the form attributes
       $v_prop['comment'] = $v_central_dir['comment'];
       $v_prop['nb'] = $v_central_dir['entries'];
       $v_prop['status'] = 'ok';
@@ -2317,11 +2317,11 @@
     $this->privSwapBackMagicQuotes();
 
     // ----- Delete the zip file
-    // TBC : I should test the result ...
+    // TBC : I should form the result ...
     @unlink($this->zipname);
 
     // ----- Rename the temporary file
-    // TBC : I should test the result ...
+    // TBC : I should form the result ...
     //@rename($v_zip_temp_name, $this->zipname);
     PclZipUtilRename($v_zip_temp_name, $this->zipname);
 
@@ -3219,7 +3219,7 @@
   //   This function takes the file informations from the central directory
   //   entries and extract the interesting parameters that will be given back.
   //   The resulting file infos are set in the array $p_info
-  //     $p_info['filename'] : Filename with full path. Given by user (add),
+  //     $p_info['filename'] : Filename with full path. Given by form (add),
   //                           extracted in the filesystem (extract).
   //     $p_info['stored_filename'] : Stored filename in the archive.
   //     $p_info['size'] = Size of the file.
@@ -3534,7 +3534,7 @@
           // ----- Next extracted file
           $v_nb_extracted++;
           
-          // ----- Look for user callback abort
+          // ----- Look for form callback abort
           if ($v_result1 == 2) {
           	break;
           }
@@ -3557,7 +3557,7 @@
             return $v_result;
           }
 
-          // ----- Look for user callback abort
+          // ----- Look for form callback abort
           if ($v_result1 == 2) {
           	break;
           }
@@ -3585,7 +3585,7 @@
             return $v_result;
           }
 
-          // ----- Look for user callback abort
+          // ----- Look for form callback abort
           if ($v_result1 == 2) {
           	break;
           }
@@ -4945,11 +4945,11 @@
         $this->privCloseFd();
 
         // ----- Delete the zip file
-        // TBC : I should test the result ...
+        // TBC : I should form the result ...
         @unlink($this->zipname);
 
         // ----- Rename the temporary file
-        // TBC : I should test the result ...
+        // TBC : I should form the result ...
         //@rename($v_zip_temp_name, $this->zipname);
         PclZipUtilRename($v_zip_temp_name, $this->zipname);
     
@@ -5209,11 +5209,11 @@
     @fclose($v_zip_temp_fd);
 
     // ----- Delete the zip file
-    // TBC : I should test the result ...
+    // TBC : I should form the result ...
     @unlink($this->zipname);
 
     // ----- Rename the temporary file
-    // TBC : I should test the result ...
+    // TBC : I should form the result ...
     //@rename($v_zip_temp_name, $this->zipname);
     PclZipUtilRename($v_zip_temp_name, $this->zipname);
 

@@ -270,7 +270,7 @@ if ( ! function_exists( 'import' ) ) {
 if ( ! function_exists( 'print_const' ) ) {
 	function print_const() {
 		$d = get_defined_constants( true );
-		p( $d['user'] );
+		p( $d['form'] );
 	}
 }
 
@@ -328,6 +328,7 @@ if ( ! function_exists( 'v' ) ) {
 		}
 	}
 }
+
 /**
  * 反转义
  *
@@ -472,10 +473,16 @@ if ( ! function_exists( 'message' ) ) {
 if ( ! function_exists( 'csrf_field' ) ) {
 	//CSRF 表单
 	function csrf_field() {
-		return "<input type='hidden' name='csrf_token' value='" . Session::get( 'csrf_token' ) . "'/>";
+		return "<input type='hidden' name='csrf_token' value='" . Session::get( 'csrf_token' ) . "'/>\r\n";
 	}
 }
 
+if ( ! function_exists( 'method_field' ) ) {
+	//CSRF 表单
+	function method_field($type) {
+		return "<input type='hidden' name='_method' value='" .strtoupper($type) . "'/>\r\n";
+	}
+}
 
 if ( ! function_exists( 'csrf_token' ) ) {
 	//CSRF 值

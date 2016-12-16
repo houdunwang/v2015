@@ -7,21 +7,31 @@
  * |    WeChat: aihoudun
  * | Copyright (c) 2012-2019, www.houdunwang.com. All Rights Reserved.
  * '-------------------------------------------------------------------*/
-namespace hdphp\xml;
 
-use hdphp\kernel\ServiceProvider;
+namespace app\home\controller;
 
-class XmlProvider extends ServiceProvider {
+use system\model\News;
 
-	//延迟加载
-	public $defer = true;
-
-	public function boot() {
+class Router {
+	//动作
+	public function show( News $m ) {
+//		dd( $m->find( 1 )->title );
+//		dd( $cid );
+//		dd( $id );
+//		echo 'houdunren.com';
+		p(Route::input());
 	}
 
-	public function register() {
-		$this->app->single( 'Xml', function () {
-			return new Xml();
-		} );
+	public function getAdd() {
+		echo 'houdunren.com';
+	}
+
+	public function getLists(){
+		echo 'houdunwang.com';
+	}
+
+	public function getFind(){
+		$id = Request::get('id');
+		echo 'find...'.$id;
 	}
 }

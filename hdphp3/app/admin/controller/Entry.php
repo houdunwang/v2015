@@ -29,7 +29,7 @@ class Entry {
 				[ 'username', 'required', '用户名不能为空' ],
 				[ 'password', 'required', '密码不能为空' ],
 			] );
-			$user = Db::table( 'user' )->where( 'username', Request::post( 'username' ) )->first();
+			$user = Db::table( 'HdForm' )->where( 'username', Request::post( 'username' ) )->first();
 			if ( empty( $user ) ) {
 				message( '帐号不存在', '', 'error' );
 			}

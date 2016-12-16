@@ -20,94 +20,108 @@ class Request {
 		self::$items['GLOBALS'] = $GLOBALS;
 		self::$items['SESSION'] = Session::all();
 		self::$items['COOKIE']  = Cookie::all();
-		define( 'IS_MOBILE', $this->isMobile() );
 	}
 
-	public function query( $name, $value, $method = [ ] ) {
-		$exp = explode( '.', $name );
-		if ( empty( $exp ) || ! method_exists( $this, $exp[0] ) ) {
-			return null;
-		}
+	/**
+	 * 获取数据
+	 *
+	 * @param $name
+	 * @param $value
+	 * @param array $method
+	 *
+	 * @return null
+	 */
+	public function query( $name, $value = null, $method = [ ] ) {
+		$exp    = explode( '.', $name );
 		$action = array_shift( $exp );
 
-		return $this->$action( implode( '.', $exp ), $value, $method );
+		return $this->__call( $action, [ implode( '.', $exp ), $value, $method ] );
 	}
 
-	public function get( $name = '', $value = null, $method = [ ] ) {
-		if ( empty( $name ) ) {
-			return self::$items['GET'];
-		}
-		$data = Arr::get( self::$items['GET'], $name );
-		if ( ! is_null( $data ) && $method ) {
-			return Tool::batchFunctions( $method, $data );
-		}
+	/**
+	 * 设置值
+	 *
+	 * @param $name 类型如get.name,post.id
+	 * @param $value
+	 *
+	 * @return bool
+	 */
+	public function set( $name, $value ) {
+		$info   = explode( '.', $name );
+		$action = strtoupper( array_shift( $info ) );
+		if ( isset( self::$items[ $action ] ) ) {
+			self::$items[ $action ] = Arr::set( self::$items[ $action ], implode( '.', $info ), $value );
 
-		return is_null( $data ) ? $value : $data;
+			return true;
+		}
 	}
 
-	public function post( $name = '', $value = null, $method = [ ] ) {
-		if ( empty( $name ) ) {
-			return self::$items['POST'];
+	/**
+	 * 获取数据
+	 * 示例: Request::get('name')
+	 *
+	 * @param $action 类型如get,post
+	 * @param $arguments 参数结构如下
+	 * [
+	 *  'name'=>'变量名',//config.a 可选
+	 *  'value'=>'默认值',//可选
+	 *  'method'=>'回调函数',//数组类型 可选
+	 * ]
+	 *
+	 * @return mixed
+	 */
+	public function __call( $action, $arguments ) {
+		$action = strtoupper( $action );
+		if ( empty( $arguments ) ) {
+			return self::$items[ $action ];
 		}
-		$data = Arr::get( self::$items['POST'], $name );
-		if ( ! is_null( $data ) && $method ) {
-			return Tool::batchFunctions( $method, $data );
-		}
-
-		return is_null( $data ) ? $value : $data;
-	}
-
-	public function cookie( $name = '', $value = null, $method = [ ] ) {
-		if ( empty( $name ) ) {
-			return self::$items['COOKIE'];
-		}
-		$data = Arr::get( self::$items['COOKIE'], $name );
-		if ( ! is_null( $data ) && $method ) {
-			return Tool::batchFunctions( $method, $data );
-		}
-
-		return is_null( $data ) ? $value : $data;
-	}
-
-	public function request( $name = '', $value = null, $method = [ ] ) {
-		if ( empty( $name ) ) {
-			return self::$items['REQUEST'];
-		}
-		$data = Arr::get( self::$items['REQUEST'], $name );
-		if ( ! is_null( $data ) && $method ) {
-			return Tool::batchFunctions( $method, $data );
+		$data = Arr::get( self::$items[ $action ], $arguments[0] );
+		if ( ! is_null( $data ) && ! empty( $arguments[2] ) ) {
+			return Tool::batchFunctions( $arguments[2], $data );
 		}
 
-		return is_null( $data ) ? $value : $data;
-	}
-
-	public function globals( $name = '', $value = null, $method = [ ] ) {
-		if ( empty( $name ) ) {
-			return self::$items['GLOBALS'];
-		}
-		$data = Arr::get( self::$items['GLOBALS'], $name );
-		if ( ! is_null( $data ) && $method ) {
-			return Tool::batchFunctions( $method, $data );
-		}
-
-		return is_null( $data ) ? $value : $data;
-	}
-
-	public function session( $name = '', $value = null, $method = [ ] ) {
-		if ( empty( $name ) ) {
-			return self::$items['SESSION'];
-		}
-		$data = Arr::get( self::$items['SESSION'], $name );
-		if ( ! is_null( $data ) && $method ) {
-			return Tool::batchFunctions( $method, $data );
-		}
-
-		return is_null( $data ) ? $value : $data;
+		return is_null( $data ) ? $arguments[1] : $data;
 	}
 
 	//客户端IP
 	public function ip( $type = 0 ) {
-		return clientIp( $type );
+		$type = intval( $type );
+		//保存客户端IP地址
+		if ( isset( $_SERVER ) ) {
+			if ( isset( $_SERVER["HTTP_X_FORWARDED_FOR"] ) ) {
+				$ip = $_SERVER["HTTP_X_FORWARDED_FOR"];
+			} else if ( isset( $_SERVER["HTTP_CLIENT_IP"] ) ) {
+				$ip = $_SERVER["HTTP_CLIENT_IP"];
+			} else if ( isset( $_SERVER["REMOTE_ADDR"] ) ) {
+				$ip = $_SERVER["REMOTE_ADDR"];
+			} else {
+				return '';
+			}
+		} else {
+			if ( getenv( "HTTP_X_FORWARDED_FOR" ) ) {
+				$ip = getenv( "HTTP_X_FORWARDED_FOR" );
+			} else if ( getenv( "HTTP_CLIENT_IP" ) ) {
+				$ip = getenv( "HTTP_CLIENT_IP" );
+			} else if ( getenv( "REMOTE_ADDR" ) ) {
+				$ip = getenv( "REMOTE_ADDR" );
+			} else {
+				return '';
+			}
+		}
+		$long     = ip2long( $ip );
+		$clientIp = $long ? [ $ip, $long ] : [ "0.0.0.0", 0 ];
+
+		return $clientIp[ $type ];
+	}
+
+	//判断请求来源是否为本网站域名
+	public function isDomain() {
+		if ( isset( $_SERVER['HTTP_REFERER'] ) ) {
+			$referer = parse_url( $_SERVER['HTTP_REFERER'] );
+			$root    = parse_url( __ROOT__ );
+
+			return $referer['host'] == $root['host'];
+		}
 	}
 
 	//https请求
@@ -121,13 +135,18 @@ class Request {
 		return false;
 	}
 
-	//手机判断
+	//微信客户端检测
+	public function isWeChat() {
+		return isset( $_SERVER['HTTP_USER_AGENT'] ) && strpos( $_SERVER['HTTP_USER_AGENT'], 'MicroMessenger' ) !== false;
+	}
+
+	//手机客户端判断
 	public function isMobile() {
 		//微信客户端检测
-		if ( IS_WECHAT ) {
+		if ( $this->isWeChat() ) {
 			return true;
 		}
-		if ( ! empty( $_GET['mobile'] ) ) {
+		if ( ! empty( $_GET['_mobile'] ) ) {
 			return true;
 		}
 		$_SERVER['ALL_HTTP'] = isset( $_SERVER['ALL_HTTP'] ) ? $_SERVER['ALL_HTTP'] : '';

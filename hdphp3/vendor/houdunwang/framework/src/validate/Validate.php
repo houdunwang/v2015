@@ -104,6 +104,7 @@ class Validate extends VaAction {
 
 	/**
 	 * 验证返回信息处理
+	 * @param $errors
 	 */
 	public function respond( $errors ) {
 		//验证返回信息处理

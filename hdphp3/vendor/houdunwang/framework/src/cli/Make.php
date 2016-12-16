@@ -24,7 +24,11 @@ class Make extends Cli {
 			$this->error( 'Controller file already exists' );
 		} else {
 			$data = file_get_contents( __DIR__ . '/view/' . ucfirst( $type ) . '.tpl' );
-			$data = str_replace( [ '{{APP}}', '{{MODULE}}', '{{CONTROLLER}}' ], [ c('app.path'), $MODULE, $CONTROLLER ], $data );
+			$data = str_replace( [ '{{APP}}', '{{MODULE}}', '{{CONTROLLER}}' ], [
+				c( 'app.path' ),
+				$MODULE,
+				$CONTROLLER
+			], $data );
 			file_put_contents( $file, $data );
 		}
 	}
@@ -112,7 +116,30 @@ class Make extends Cli {
 	public function key() {
 		$key     = md5( mt_rand( 1, 99999 ) . NOW ) . md5( mt_rand( 1, 99999 ) . NOW );
 		$content = file_get_contents( 'system/config/app.php' );
-		$content = preg_replace('/(.*("|\')\s*key\s*\2\s*=>\s*)(.*)/im',"\\1'$key',",$content);
-		file_put_contents('system/config/app.php',$content);
+		$content = preg_replace( '/(.*("|\')\s*key\s*\2\s*=>\s*)(.*)/im', "\\1'$key',", $content );
+		file_put_contents( 'system/config/app.php', $content );
+	}
+
+	//创建中间件
+	public function service( $name ) {
+		$name = ucfirst($name);
+		$files = [
+			__DIR__ . '/view/service/HdForm.tpl',
+			__DIR__ . '/view/service/HdFormFacade.tpl',
+			__DIR__ . '/view/service/HdFormProvider.tpl',
+		];
+		//创建目录
+		$dir = 'system/service/' . $name;
+		Dir::create( $dir );
+		foreach ( $files as $f ) {
+			$content = str_replace( '{{NAME}}', $name, file_get_contents( $f ) );
+			if ( strpos( $f, 'Facade' ) !== false ) {
+				file_put_contents( $dir . "/{$name}Facade.php", $content );
+			} else if ( strpos( $f, 'Provider' ) !== false ) {
+				file_put_contents( $dir . "/{$name}Provider.php", $content );
+			} else {
+				file_put_contents( $dir . "/{$name}.php", $content );
+			}
+		}
 	}
 }

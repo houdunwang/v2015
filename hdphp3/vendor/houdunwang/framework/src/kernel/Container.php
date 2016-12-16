@@ -123,7 +123,7 @@ class Container implements ArrayAccess {
 	/**
 	 * 生成服务实例
 	 *
-	 * @param $className 生成方式 类或闭包函数
+	 * @param mixed $className 生成方式 类或闭包函数
 	 *
 	 * @return object
 	 * @throws Exception

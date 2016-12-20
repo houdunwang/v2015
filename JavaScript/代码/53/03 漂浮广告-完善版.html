@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#ad{
+			width: 300px;
+			height: 200px;
+			background: url(ad.jpg) no-repeat;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	</style>
+<script type="text/javascript">
+	
+window.onload = function(){
+	var ad = document.getElementById("ad");
+	var close = document.getElementById("close");
+//	获得可视区域的宽高
+	var win_height = document.documentElement.clientHeight;
+	var win_width = document.documentElement.clientWidth;
+	
+//	计算可以达到的最大的top和left值
+	var max_top = win_height - ad.offsetHeight;
+	var max_left = win_width - ad.offsetWidth;
+	var x=5,y=5;
+	
+//	定时器调用的函数
+	function run(){
+//		获得旧的left和top值
+		var old_left = ad.offsetLeft;
+		var old_top = ad.offsetTop;
+		
+//		计算新的left和top值
+		var new_left = old_left+x;
+		var new_top = old_top+y;
+		
+		if (new_top>max_top) {
+			new_top = max_top;
+		}
+		if (new_left>max_left) {
+			new_left = max_left;
+		}
+		if (new_left<0) {
+			new_left=0;
+		}
+		if (new_top<0) {
+			new_top=0;
+		}
+//		将新值赋值回去
+		ad.style.left = new_left+'px';
+		ad.style.top = new_top+'px';
+		
+		if (new_top == max_top) {
+			y = -5;
+		}
+		if (new_top==0) {
+			y = 5;
+		}
+		if (new_left==max_left) {
+			x = -5;
+		}
+		if (new_left==0) {
+			x = 5;
+		}
+	}
+//	定时器调用的函数结束
+	
+//	设置定时器,每隔一段时间就改变一下left和top
+	var timer = setInterval(run,10);
+//	定时器结束
+
+//	给ad加移入事件
+	ad.onmouseover = function(){
+//		停止定时器
+		clearInterval(timer);
+	}
+	
+//	给ad加鼠标移出事件
+	ad.onmouseout = function(){
+//		恢复定时器
+		timer = setInterval(run,10);
+	}
+	
+//	点击关闭
+	close.onclick = function(){
+//		让广告隐藏
+		ad.style.display = 'none';
+	}
+	
+//	窗口改变事件
+	window.onresize = function(){
+//		让广告归位
+		ad.style.left = 0;
+		ad.style.top = 0;
+		x=5;
+		y=5;
+	//	获得可视区域的宽高
+		var win_height = document.documentElement.clientHeight;
+		var win_width = document.documentElement.clientWidth;
+		
+	//	计算可以达到的最大的top和left值
+		max_top = win_height - ad.offsetHeight;
+		max_left = win_width - ad.offsetWidth;
+	}
+	
+	
+}
+	
+</script>
+	</head>
+	<body>
+
+		<div id="ad">
+			<img src="close.jpg" id="close"/>
+		</div>
+		
+	</body>
+</html>

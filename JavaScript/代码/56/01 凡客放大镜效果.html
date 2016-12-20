@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#left{
+			width: 400px;
+			height: 400px;
+			border: 2px solid blue;
+			margin: 15px;
+			background: url(400.jpg) no-repeat;
+			position: relative;
+			float: left;
+			cursor: crosshair;
+		}
+		#box{
+			width: 220px;
+			height: 200px;
+			background: greenyellow;
+			opacity: 0.8;
+			filter: alpah(opacity=80);
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: none;
+		}
+		#right{
+			width: 440px;
+			height: 400px;
+			border: 2px solid black;
+			float: left;
+			overflow: hidden;
+			position: relative;
+			display: none;
+		}
+		#rpic{
+			position: absolute;
+			left: 0;
+			top: 0;	
+		}
+		#cover{
+			width: 400px;
+			height: 400px;
+			background: red;
+			position: absolute;
+			left: 0;
+			top: 0;
+			opacity: 0;
+			filter: alpha(opacity=0);
+		}
+	</style>
+<script type="text/javascript">
+	
+window.onload = function(){
+	var left = document.getElementById("left");
+	var box = document.getElementById("box");
+	var right = document.getElementById("right");
+	var rpic = document.getElementById("rpic");
+	var cover = document.getElementById("cover");
+	
+//	给左侧加鼠标移动事件
+	cover.onmousemove = function(e){
+//		获得事件对象
+		var ev = window.event || e;
+		var mouse_left = ev.offsetX || ev.layerX;
+		var mouse_top = ev.offsetY || ev.layerY;
+		document.title = mouse_left +'|'+ mouse_top;
+//		计算色块的位置
+		var box_left = mouse_left - 110;
+		var box_top = mouse_top - 100;
+//		判断
+		if (box_left<0) {
+			box_left=0;
+		}
+		if (box_left>180) {
+			box_left = 180;
+		}
+		if (box_top<0) {
+			box_top = 0;
+		}
+		if (box_top>200) {
+			box_top=200;
+		}
+//		让色块移动
+		box.style.left = box_left+'px';
+		box.style.top = box_top+'px';
+		
+//		计算右侧图片的位置
+		var rpic_left = box_left*-2;
+		var rpic_top = box_top*-2;
+		
+//		让右侧图片移动
+		rpic.style.left = rpic_left+'px';
+		rpic.style.top = rpic_top+'px';
+	}
+	
+//	给左侧加鼠标移入事件
+	cover.onmouseover = function(){
+//		让左侧色块和右侧div显示
+		box.style.display = 'block';
+		right.style.display = 'block';
+	}
+	
+//	给左侧加鼠标移出事件
+	cover.onmouseout = function(){
+		box.style.display = 'none';
+		right.style.display = 'none';
+	}
+	
+}
+	
+	
+</script>
+	</head>
+	<body>
+		
+		<div id="left">
+			<div id="box"></div>
+			<div id="cover"></div>
+		</div>
+		
+		<div id="right">
+			<img src="800.jpg" alt="" id="rpic" />
+		</div>
+		
+	</body>
+</html>

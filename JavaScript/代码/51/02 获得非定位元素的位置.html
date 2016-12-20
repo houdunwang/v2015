@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#box1{
+			width: 900px;
+			height: 600px;
+			margin: 20px;
+			border: 4px solid purple;
+			position: relative;
+		}
+		#box2{
+			width: 600px;
+			height: 400px;
+			margin: 100px;
+			border: 4px solid dodgerblue;
+		}
+		#box3{
+			width: 300px;
+			height: 260px;
+			margin: 50px;
+			border: 4px solid orange;
+			background: orange;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var box3 = document.getElementById("box3");
+//			如果是没有定位的元素,参照于离他最近的有定位属性的元素来获得结果
+			var t = box3.offsetLeft;
+			alert(t);
+		}
+	</script>
+	</head>
+	<body>
+		
+		<!--#box1>#box2>#box3-->
+		<div id="box1">
+			<div id="box2">
+				<div id="box3"></div>
+			</div>
+		</div>
+		
+		
+	</body>
+</html>

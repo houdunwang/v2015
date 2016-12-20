@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#box{
+			width: 400px;
+			height: 240px;
+			background: dodgerblue;
+			position: absolute;
+			left: 123px;
+			top: 199px;
+		}
+		
+	</style>
+<script type="text/javascript">
+	
+	window.onload  = function(){
+		var box = document.getElementById("box");
+//		如果是有定位属性的元素,获得的直接是它的left和top值
+//		获得有定位属性的元素的left和top值
+//		var t = box.offsetTop;
+		var t = box.offsetLeft;
+		alert(t);
+	}
+	
+</script>
+	</head>
+	<body>
+		
+		<div id="box"></div>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		
+		#hd{
+			width: 500px;
+			height: 200px;
+			background: mediumpurple;
+			margin-top: 123px;
+		}
+		
+	</style>
+<script type="text/javascript">
+	
+	window.onload = function(){
+		var hd = document.getElementById("hd");
+//		alert(hd.style.width);
+		
+		if (document.all) {//IE
+//			var w = hd.currentStyle.width;
+//			var w = hd.currentStyle.marginTop;
+			var w = hd.currentStyle.backgroundColor;
+		}else{//W3C标准浏览器
+//			var w = getComputedStyle(hd,null).width;
+//			var w = getComputedStyle(hd,null).marginTop;
+			var w = getComputedStyle(hd,null).backgroundColor;
+		}
+		alert(w);
+		
+	}
+	
+</script>
+	</head>
+	<body>
+		
+		<div id="hd"></div>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		
+		#box{
+			width: 600px;
+			height: 500px;
+			border: 5px solid blue;
+		}
+		
+	</style>
+<script type="text/javascript">
+	
+	window.onload = function(){
+		var btn = document.getElementById("btn");
+		var box = document.getElementById("box");
+		
+//		给按钮加单击事件
+		btn.onclick = function(){
+//			创建新的input标签
+			var newfile = document.createElement('input');
+//			设置属性
+			newfile.setAttribute('type','file');
+//			将新的上传框追加到box
+			box.appendChild(newfile);
+			
+		}
+		
+	}
+	
+</script>
+	</head>
+	<body>
+	<input type="button" id="btn" value="点击增加上传框" />
+		<br />
+		
+	
+	<div id="box">
+		<input type="file" />
+	</div>
+		
+	</body>
+</html>

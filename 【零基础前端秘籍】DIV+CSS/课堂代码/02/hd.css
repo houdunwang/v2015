@@ -1,0 +1,6 @@
+/*导入样式*/
+@import url("b.css");
+
+h2{
+	color: orange;
+}

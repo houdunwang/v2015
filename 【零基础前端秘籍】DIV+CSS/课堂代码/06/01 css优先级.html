@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		div{
+			color: yellow;
+		}
+		*{
+			color: red;
+		}
+		a{
+			color: green;
+		}
+		.title{
+			color: blue;
+		}
+		#t{
+			color: pink;
+		}
+		div #t{
+			color: grey;
+		}
+
+	</style>
+	</head>
+	<body>
+		<!--继承的样式<浏览器默认的样式<通用选择器<标签选择器<class选择器<id选择器<子代选择器<行内样式-->
+		<!--规律：选择的越精准，优先级越高！-->
+		<div>
+			<a href="" class="title" id="t" style="color: orange;">后盾人</a>
+		</div>
+		
+		
+		
+		
+	</body>
+</html>

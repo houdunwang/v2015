@@ -1,0 +1,28 @@
+红色 red
+蓝色 blue
+绿色 green
+灰色 grey
+黄色 yellow
+粉色 pink
+黑色 black
+白色 white
+橙色 orange
+
+左  left
+右 right
+上 top
+下 bottom
+水平居中 center
+垂直居中 middle
+
+
+
+
+
+
+
+
+
+
+
+

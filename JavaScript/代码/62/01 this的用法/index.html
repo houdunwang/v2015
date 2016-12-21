@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			img{
+				float: left;
+				width: 230px;
+				height: 160px;
+				margin: 5px;
+			}
+		</style>
+	<script type="text/javascript">
+		
+	window.onload = function(){
+//		抓到所有图片
+		var imgs = document.getElementsByTagName('img');
+//		循环所有的图片,给每张图片都加单击事件
+		for (var i=0;i<imgs.length;i++) {
+//			给i号图片添加一个变量,用来记录序号
+			imgs[i].xuhao = i;
+//			给i号图片加单击事件
+			imgs[i].onclick = function(){
+				alert(this.xuhao);
+			}
+			
+		}
+	}
+		
+	</script>
+	</head>
+	<body>
+		
+		<!--img[src=images/$.jpg]*30-->
+		<img src="images/01.jpg" alt="" />
+		<img src="images/02.jpg" alt="" />
+		<img src="images/03.jpg" alt="" />
+		<img src="images/04.jpg" alt="" />
+		<img src="images/05.jpg" alt="" />
+		<img src="images/06.jpg" alt="" />
+		<img src="images/07.jpg" alt="" />
+		<img src="images/08.jpg" alt="" />
+		<img src="images/09.jpg" alt="" />
+		<img src="images/10.jpg" alt="" />
+		<img src="images/11.jpg" alt="" />
+		<img src="images/12.jpg" alt="" />
+		<img src="images/13.jpg" alt="" />
+		<img src="images/14.jpg" alt="" />
+		<img src="images/15.jpg" alt="" />
+		<img src="images/16.jpg" alt="" />
+		<img src="images/17.jpg" alt="" />
+		<img src="images/18.jpg" alt="" />
+		<img src="images/19.jpg" alt="" />
+		<img src="images/20.jpg" alt="" />
+		<img src="images/21.jpg" alt="" />
+		<img src="images/22.jpg" alt="" />
+		<img src="images/23.jpg" alt="" />
+		<img src="images/24.jpg" alt="" />
+		<img src="images/25.jpg" alt="" />
+		<img src="images/26.jpg" alt="" />
+		<img src="images/27.jpg" alt="" />
+		<img src="images/28.jpg" alt="" />
+		<img src="images/29.jpg" alt="" />
+		<img src="images/30.jpg" alt="" />
+		
+		
+	</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#fk{
+			width: 1200px;
+			height: 535px;
+			border: 5px solid blue;
+			margin: 20px auto;
+			position: relative;
+		}
+		#fk img{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			display: none;
+		}
+		#fk ul{
+			position: absolute;
+			left: 548px;
+			bottom: 23px;
+		}
+		#fk ul li{
+			list-style: none;
+			width: 12px;
+			height: 12px;
+			background: black;
+			float: left;
+			margin-right: 8px;
+			border-radius: 50%;
+		}
+	</style>
+	
+<script type="text/javascript">
+//	注意:多个方式控制同一块元素效果的时候,一定要走同一个变量
+
+//	window.onload = function(){
+//		var fk = document.getElementById("fk");
+//		var imgs = fk.getElementsByTagName('img');
+//		var lis = fk.getElementsByTagName('li');
+//		
+//		var c = 0;//大总管变量
+//		
+////		控制图片切换的函数
+//		function run(){
+//			c++;
+//			if (c==5) {
+//				c=0;
+//			}
+////			循环，让所有的图片隐藏，让所有的li变灰
+//			for (var i=0;i<5;i++) {
+//				imgs[i].style.display = 'none';
+//				lis[i].style.background = 'black';
+//			}
+////			让c号图片显示,c号li变红
+//			imgs[c].style.display = 'block';
+//			lis[c].style.background = '#A10000';
+//		}
+//		var timer = setInterval(run,1000);
+//		
+//		
+////		循环,给li加事件
+//		for (var i=0;i<lis.length;i++) {
+////			给i号li加序号
+//			lis[i].xuhao = i;
+////			给i号li加鼠标移入事件
+//			lis[i].onmouseover = function(){
+//				c = this.xuhao;
+////				停止定时器
+//				clearInterval(timer);
+////			循环，让所有的图片隐藏，让所有的li变灰
+//				for (var i=0;i<5;i++) {
+//					imgs[i].style.display = 'none';
+//					lis[i].style.background = 'black';
+//				}
+////				让c号对应的图片显示
+//				imgs[c].style.display = 'block';
+//				lis[c].style.background = '#A10000';
+//			}
+////			移入事件结束
+//			
+////			移出事件
+//			lis[i].onmouseout = function(){
+//				timer = setInterval(run,1000);
+//			}
+////			移出事件结束
+//		}
+//		
+//	}
+	
+</script>
+
+<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+$(function(){
+	
+//	大总管变量
+	var c = 0;
+	
+	setInterval(function(){
+		c++;
+		c = (c==5)?0:c;
+//		让c号图片显示,兄弟图片隐藏
+//		$("#fk img").eq(c).show();
+//		$("#fk img").eq(c).siblings('img').hide();
+		$("#fk img").eq(c).fadeIn(500).siblings('img').fadeOut(500);
+//		让c号li变红
+		$("#fk ul li").eq(c).css({'background':'#A10000'}).siblings('li').css({'background':'black'});
+		
+//		链式操作
+//		张三.扇一巴掌.踢一脚.泼一盆水.同桌.给个拥抱
+		
+	},1000)
+	
+})
+</script>
+	
+	</head>
+	<body>
+		
+		<div id="fk">
+			<img src="images/1.jpg" style="display: block;" />
+			<img src="images/2.jpg" />
+			<img src="images/3.jpg" />
+			<img src="images/4.jpg" />
+			<img src="images/5.jpg" />
+			<ul>
+				<li style="background: #A10000;"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		
+		
+	</body>
+</html>

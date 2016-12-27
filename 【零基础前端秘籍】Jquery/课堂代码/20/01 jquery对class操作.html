@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#btn").click(function(){
+//				给h1加一个新的class
+//				$("#title").addClass('abc');
+				
+//				删除class属性值
+//				$("#title").removeClass('biaoti');
+
+				$("#title").toggleClass('biaoti');
+				
+				
+			})
+		})
+		
+	</script>
+	</head>
+	<body>
+		<input type="button" id="btn" value="按钮" />
+		
+		<h1 id="title" class="hd bt biaoti houdu">后盾人 人人做后盾</h1>
+		
+	</body>
+</html>

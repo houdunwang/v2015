@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$(function(){
+			$("#btn").click(function(){
+//				removeAttr可以删除任意的属性,本质上是删除属性节点
+//				$("#title").removeAttr('class');
+				
+//				alert($("#title").prop('class'));
+//				removeProp是将属性的值删掉
+				$("#title").removeProp('class');
+//				alert($("#title").prop('class'));
+				
+				
+			})
+		})
+		
+	</script>
+	</head>
+	<body>
+		
+	<input type="button" id="btn" value="按钮" />
+	
+	<h1 id="title" class="biaoti" hd="houdun">后盾人 人人做后盾</h1>
+	
+		
+	</body>
+</html>

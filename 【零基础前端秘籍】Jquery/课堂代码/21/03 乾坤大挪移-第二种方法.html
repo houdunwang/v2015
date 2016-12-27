@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		#hd1{
+			width: 400px;
+			height: 230px;
+			border: 4px solid orange;
+		}
+		#hd2{
+			width: 400px;
+			height: 230px;
+			border: 4px solid dodgerblue;
+		}
+	</style>
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#btn").click(function(){
+			var con = $("#hd1").html();
+//			将hd1的内容改为hd2的内容
+			$("#hd1").html($("#hd2").html());
+//			将原来hd1的内容存到hd2里/
+			$("#hd2").html(con);
+		})
+	})
+</script>
+	</head>
+	<body>
+		
+		<div id="hd1">后盾人 人人做后盾！后盾人 人人做后盾！后盾人 人人做后盾！后盾人 人人做后盾！后盾人 人人做后盾！后盾人 人人做后盾！<img src="dan.gif" alt="" /></div>
+		
+		<br />
+		<input type="button" value="乾坤大挪移" id="btn" />
+		<br /><br />
+		
+		<div id="hd2"></div>
+		
+		
+	</body>
+</html>

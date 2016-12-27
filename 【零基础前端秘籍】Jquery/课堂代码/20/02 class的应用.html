@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		p{
+			float: left;
+			width: 150px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			font-size: 30px;
+			color: white;
+			background: purple;
+			margin: 10px;
+		}
+		p.cur{
+			color: black;
+			background: blue;
+			font-size: 50px;
+		}
+	</style>
+<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function(){
+		$("p").click(function(){
+//			$(this).css({'background':'blue','color':'black','font-size':'50px'}).siblings('p').css({'background':'purple','color':'white','font-size':'30px'})
+			$(this).addClass('cur').siblings('p').removeClass('cur');
+		})
+	})
+</script>
+	</head>
+	<body>
+		
+		<p class="cur">1</p>
+		<p>2</p>
+		<p>3</p>
+		<p>4</p>
+		<p>5</p>
+		<p>6</p>
+		<p>7</p>
+		<p>8</p>
+		
+		
+	</body>
+</html>

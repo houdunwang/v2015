@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		#dan{
+			position: absolute;
+			top: 50px;
+			left: 0px;
+		}
+	</style>
+<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	
+	$(function(){
+		$("#btn").click(function(){
+			$("#dan").animate({'left':'500px'},5000);
+		})
+		
+//		stop
+		$("#stop").click(function(){
+//			stop是停止元素身上正在执行的动画
+			$("#dan").stop();
+		})
+		
+		//finish
+		$("#finish").click(function(){
+//			finish会停止动画，并且将元素的装填立即变为运动的最终指定状态
+			$("#dan").finish();
+		})
+	})
+	
+</script>
+	</head>
+	<body>
+		
+		
+		<input type="button" value="按钮" id="btn" />
+		<input type="button" value="stop" id="stop" />
+		<input type="button" value="finish" id="finish" />
+		<img src="dan.gif" alt="" id="dan" />
+		
+		
+	</body>
+</html>

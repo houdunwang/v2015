@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		#dan{
+			position: absolute;
+			top: 50px;
+			left: 0px;
+		}
+	</style>
+<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+//	如果元素身上现在有多个运动,stop会停止元素身上现在正在执行的运动,然后开始队列中下一个运动
+//	如果元素身上现在有多个运动,Finnish会停止元素身上所有的运动,并且将元素的状态立即调整为最后一个运动指定的目标状态
+	$(function(){
+		$("#btn1").click(function(){
+			$("#dan").animate({'left':'200px'},3000);
+		})
+		$("#btn2").click(function(){
+			$("#dan").animate({'left':'400px'},3000);
+		})
+		$("#btn3").click(function(){
+			$("#dan").animate({'left':'600px'},3000);
+		})
+		$("#btn8").click(function(){
+			$("#dan").animate({'left':'800px'},3000);
+		})
+		
+//		stop
+		$("#stop").click(function(){
+			$("#dan").stop();
+		})
+		
+		//finish
+		$("#finish").click(function(){
+			$("#dan").finish();
+		})
+	})
+	
+</script>
+	</head>
+	<body>
+		
+		
+		<input type="button" value="200" id="btn1" />
+		<input type="button" value="400" id="btn2" />
+		<input type="button" value="600" id="btn3" />
+		<input type="button" value="800" id="btn4" />
+		
+		<input type="button" value="stop" id="stop" />
+		<input type="button" value="finish" id="finish" />
+		<img src="dan.gif" alt="" id="dan" />
+		
+		
+	</body>
+</html>

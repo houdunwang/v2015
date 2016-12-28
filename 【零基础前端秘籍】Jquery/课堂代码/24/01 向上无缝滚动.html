@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#hd{
+				width: 500px;
+				height: 40px;
+				margin: 200px auto;
+				border: 8px solid orangered;
+				position: relative;
+				overflow: hidden;
+			}
+			#hd ul{
+				position: absolute;
+				bottom: -40px;
+				left: 0;
+			}
+			#hd ul li{
+				width: 500px;
+				height: 40px;
+				list-style: none;
+				line-height: 40px;
+				text-align: center;
+				
+			}
+		</style>
+	
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	
+	$(function(){
+	
+		setInterval(function(){
+//			让第一个li高度变为0
+//			$("#hd ul li").first().height(0);
+//			将第一个li追加到ul的最后
+//			$("#hd ul").append($("#hd ul li").first());
+//			让最后一个li高度逐渐变为40
+//			$("#hd ul li").last().animate({'height':'40px'},500);
+
+//			用一句话实现
+			$("#hd ul").append($("#hd ul li").first().height(0).animate({'height':'40px'},500));
+		},1000)
+
+	})
+	
+	
+	</script>
+	</head>
+	<body>
+		
+		<div id="hd">
+			<ul>
+				<li style="background: greenyellow;">陕西一干部扇教师耳光 因学校让签"安全保证书"</li>
+				<li style="background: orange;">河南孤寡失明老人"吃猪食"度日 现已入住敬老院</li>
+				<li style="background: dodgerblue;">北京首列磁悬浮列车上线调试，时速100公里2017年投运</li>
+				<li style="background: deeppink;">90后爱开网店是国家隐患 危害实体经济</li>
+			</ul>
+		</div>
+		
+		
+		
+	</body>
+</html>

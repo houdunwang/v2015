@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script type="text/javascript">
+		$(function(){
+			var age = prompt('请输入年龄，如果成年了，就提交表单');
+			if (age>=18) {
+//				触发form标签的submit事件
+				$("#biaodan").trigger('submit');
+			}
+		})
+		
+	</script>
+	
+	</head>
+	<body>
+		
+		<form action="hd.php" method="post" id="biaodan">
+			用户名：<input type="text" />
+			<br /><br />
+			密码：<input type="password" />
+			<br /><br />
+			<input type="submit" value="提交数据" />
+		</form>
+		
+		
+	</body>
+</html>

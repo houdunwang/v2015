@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			img{
+				display: block;
+				margin: 0 auto;
+			}
+			img#menu.f{
+				position: fixed;
+				left: 50%;
+				margin-left: -480px;
+				top: 0;
+			}
+		</style>
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+//			给浏览器加滚动条事件
+			$(window).scroll(function(){
+//				获得当前已经滚动上去的距离
+				var t = $(document).scrollTop();
+				document.title = t;
+				if (t>109) {
+//					让导航条固定定位
+					$("#menu").addClass('f');
+				}else{
+					$("#menu").removeClass('f');
+				}
+			})
+		})
+	</script>
+	</head>
+	<body>
+		
+		<img src="1.jpg" />
+		<img src="2.jpg" id="menu" />
+		<img src="3.jpg" />
+		
+		
+	</body>
+</html>

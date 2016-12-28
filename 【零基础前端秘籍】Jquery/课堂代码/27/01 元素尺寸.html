@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#news{
+			width: 500px;
+			border: 5px solid blue;
+			margin: 0 auto;
+			padding: 30px;
+		}
+	</style>
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+//			获得内容的高度
+//			var re = $("#news").height();
+//			alert(re);
+
+//			设置内容高度
+//			$("#news").height(1000)
+
+//			获得的是内边距+内容的高度
+//			var re = $("#news").innerHeight();
+//			alert(re);
+
+//			获得的是总高度(内容+内边距+边框)
+			var re = $("#news").outerHeight();
+			alert(re);
+			
+		})
+	</script>
+	</head>
+	<body>
+		
+		
+		<div id="news">
+			环球网报道 记者 查希】英国《泰晤士报》12月26日称，津巴布韦第一夫人格雷丝• 穆加贝将本国动物送往中国的野生动物园，用以偿付为刚果民主共和国军队购买军备用品所欠款项。
+
+　　《泰晤士报》称，一名了解该交易的自然保护主义者透露，51岁的津巴布韦第一夫人送出了35头小象、8只狮子、12只鬣狗还有1只长颈鹿，用它们来偿还为刚果军队购买军服和靴子时所拖欠的债务。
+
+　　美媒称，这批野生动物被装上一架波音747货机，途径莫斯科、上海，最后运抵目的地广州长隆野生动物园。35头幼象是在津巴布韦的万盖国家公园被捕。
+
+　　英媒担心，这些小象可能会在中国面临象牙交易的悲惨境遇。《泰晤士报》称，津巴布韦的一位野生动物专家表示，强迫幼象和象群分开是“残酷的疯狂举动”。不过，津巴布韦负责野生动物保护的官员则认为，抓捕大象并将其送至国外，能够帮助“超负荷运作”的国家公园减轻压力。 
+		</div>
+		
+		
+		
+	</body>
+</html>

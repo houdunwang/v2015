@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#hd{
+				width: 500px;
+				height: 300px;
+				background: dodgerblue;
+			}
+		</style>
+		<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+//				给元素绑定一个只执行一次的事件
+				$("#hd").one('click',function(){
+					alert('后会有期！');
+				})
+			})
+		</script>
+	</head>
+	<body>
+		
+		
+		<div id="hd"></div>
+		
+	</body>
+</html>

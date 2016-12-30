@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		canvas{
+			background: #272822;
+		}
+	</style>
+	</head>
+	<body>
+		
+	<canvas id="canvas" width="800" height="500"></canvas>
+	
+	<script type="text/javascript">
+		var canvas = document.getElementById("canvas");
+		var cv = canvas.getContext('2d');
+		
+//		创建图片资源
+		var newimg = new Image();
+		newimg.src = 'xiaogou.jpg';
+		
+		var guize = cv.createPattern(newimg,'repeat');
+//		画一个矩形区域
+		cv.rect(10,10,700,450);
+		cv.fillStyle = guize;
+		cv.fill();
+	</script>
+		
+		
+	</body>
+</html>

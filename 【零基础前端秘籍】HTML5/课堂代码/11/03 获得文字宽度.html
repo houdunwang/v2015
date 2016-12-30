@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				background: #272822;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<canvas id="canvas" width="900" height="600"></canvas>
+		
+<script type="text/javascript">
+	
+	var canvas = document.getElementById("canvas");
+	var cv = canvas.getContext('2d');
+	
+//	画参考线
+//	开启路径
+	cv.beginPath();
+	cv.moveTo(0,200);
+	cv.lineTo(900,200);
+	cv.strokeStyle = 'white';
+	cv.lineWidth = 2;
+	cv.stroke();
+	
+//	画竖线
+	cv.beginPath();
+	cv.moveTo(300,0);
+	cv.lineTo(300,600);
+	cv.strokeStyle = 'white';
+	cv.lineWidth = 2;
+	cv.stroke();
+	
+	
+	
+//	设置文字属性
+	cv.font = '35px 微软雅黑';
+	
+//	设置填充颜色
+	cv.fillStyle = 'yellow';
+//	水平对齐方式
+	cv.textAlign = 'center';
+//	设置基线
+	cv.textBaseline = 'bottom';
+	var str = '后盾人人人做后盾';
+	var re = cv.measureText(str).width;
+	alert(re);
+//	将文字画入
+	cv.fillText(str,300,200);
+	
+
+</script>
+		
+		
+		
+	</body>
+</html>

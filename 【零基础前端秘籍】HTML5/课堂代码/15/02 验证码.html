@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<canvas id="canvas" width="800" height="300"></canvas>
+		
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+		var cv = canvas.getContext('2d');
+		
+		cv.fillStyle = '#272822';
+		cv.fillRect(0,0,800,500);
+		
+		cv.font = '100px 微软雅黑';
+		cv.fillStyle = 'greenyellow';
+		cv.fillText('后 盾 人',200,200);
+		
+//		获得所有的图像像素点信息
+		var alldata = cv.getImageData(0,0,800,500);
+//		获得像素点的个数
+		var dian = alldata.data.length/4;
+		for (var i=0;i<10000;i++) {
+//			取随机数
+			var num = Math.floor(Math.random()*dian);
+//			计算像素点对应的四条信息从几号开始
+			var start = (num-1)*4;
+//			取随机数
+
+			alldata.data[start] = Math.floor(Math.random()*256);
+			alldata.data[start+1] = Math.floor(Math.random()*256);
+			alldata.data[start+2] = Math.floor(Math.random()*256);
+			
+		}
+		
+//		将数据写回画板
+		cv.putImageData(alldata,0,0);		
+	</script>
+	</body>
+</html>

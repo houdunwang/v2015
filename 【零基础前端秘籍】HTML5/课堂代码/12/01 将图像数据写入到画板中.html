@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			canvas{
+				background: #272822;
+			}
+		</style>
+	</head>
+	<body>
+		
+
+		<br />
+		<canvas id="canvas" width="1000" height="500"></canvas>
+		<img src="dog.jpg" alt="" id="dog" />
+		
+		
+	<script type="text/javascript">
+		var canvas = document.getElementById("canvas");
+		var cv = canvas.getContext('2d');
+		
+		var dog = document.getElementById("dog");
+		
+//		等dog图片加载完毕后
+		dog.onload = function(){
+	//		将图像写入到画板中
+//			这种写法:
+//			第一个参数指定图像资源
+//			第二个和第三个参数指定图像在画板中的位置
+//			cv.drawImage(dog,100,50);
+			
+			
+//			第一个参数指定图像资源
+//			第二个和第三个参数指定图像在画板中的位置
+//			第三个和第四个参数是指定图像在画板中的位置
+//			cv.drawImage(dog,100,50,200,100);
+
+
+
+//			第一个参数指定图像资源
+//			第二个和第三个参数用来指定从图片的哪个位置开始裁切
+//			第四个第五个参数用来指定在图片上裁切多大区域
+//			第六个第七个参数用来指定裁切出来的区域要放在画板的什么位置
+//			第八个第九个参数用来指定裁切出来的区域在画板中呈现的大小
+			cv.drawImage(dog,10,10,200,200,150,150,400,400);
+		}
+
+	</script>
+		
+		
+	</body>
+</html>

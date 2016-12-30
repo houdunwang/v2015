@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		
+		
+	</head>
+	<body>
+		
+		
+	<canvas id="canvas" width="800" height="500"></canvas>
+	
+	<script type="text/javascript">
+		var canvas = document.getElementById("canvas");
+		var cv = canvas.getContext('2d');
+		
+		cv.fillStyle = '#272822';
+		cv.fillRect(0,0,800,500);
+//		获得图像的所有的像素点的信息
+		var alldata = cv.getImageData(0,0,800,500);
+//		循环,将获得的数据的每个值都随机
+		for (var i=0;i<alldata.data.length;i++) {
+//			随机0-255之间的随机整数
+			var num = Math.floor(Math.random()*256);
+			alldata.data[i] = num;
+		}
+
+//		将处理后的数据存储回画板
+		cv.putImageData(alldata,0,0);
+		
+	</script>
+		
+		
+		
+		
+		
+	</body>
+</html>

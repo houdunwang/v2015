@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		canvas{
+			background: #272822;
+		}
+	</style>
+	</head>
+	<body>
+	
+	<canvas id="canvas" width="800" height="500"></canvas>
+	
+	<script type="text/javascript">
+		var canvas = document.getElementById("canvas");
+		var cv = canvas.getContext('2d');
+		
+		cv.strokeStyle = 'yellow';
+		cv.lineWidth = 10;
+		cv.strokeRect(10,10,100,100);
+		
+//		平移
+		cv.translate(200,200);
+		cv.strokeRect(10,10,100,100);
+	</script>
+		
+		
+	</body>
+</html>

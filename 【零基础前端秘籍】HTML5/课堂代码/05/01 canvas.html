@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		canvas{
+			background: #272822;
+		}
+		
+	</style>
+	</head>
+	<body>
+		
+	<canvas id="canvas" width="800" height="500"></canvas>
+		
+		
+	<script type="text/javascript">
+		
+//		获得画板
+		var canvas = document.getElementById("canvas");
+//		获得绘画环境
+		var cv = canvas.getContext('2d');
+		
+//		指定填充颜色
+//		cv.fillStyle = '#E6DB74';
+//		绘制一个填充矩形
+//		cv.fillRect(200,100,260,199);
+
+
+
+		cv.lineWidth = '10';
+//		指定线条颜色
+		cv.strokeStyle = '#F9264C';
+//		绘制空心矩形
+		cv.strokeRect(200,100,260,199);
+		
+		
+		
+		
+	</script>
+		
+		
+	</body>
+</html>

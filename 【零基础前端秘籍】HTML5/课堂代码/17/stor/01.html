@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="button" id="btn" value="向本地添加数据" />
+		
+		<script type="text/javascript">
+			
+			document.getElementById("btn").onclick = function(){
+				alert('添加数据成功');
+				localStorage.setItem('shopname','土豪手机');
+				localStorage.setItem('age','18');
+				localStorage.setItem('sex','爷们');
+				localStorage.setItem('price','19999元');
+				
+//				删除本地存储区域的内容
+//				localStorage.removeItem('sex');
+//				把本地存储中通过localStorage存储的数据全都清空
+//				localStorage.clear();
+			}
+			
+			
+		</script>
+	</body>
+</html>

@@ -38,5 +38,5 @@ return [
 	 */
 	'mysql'    => [
 		'table' => 'core_cache'
-	],
+	]
 ];

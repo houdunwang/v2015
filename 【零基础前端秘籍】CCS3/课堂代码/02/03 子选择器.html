@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		/*选择的是#hd里第一个p标签*/
+		/*#hd p:first-of-type{
+			color: red;
+			font-size: 25px;
+		}*/
+		
+		/*如果div中只有一个p标签,就选中这个p标签*/
+		/*p标签可以有兄弟元素,但是如果找父级元素中的p标签,只有他一个*/
+		/*div p:only-of-type{
+			color: red;
+			font-size: 25px;
+		}*/
+		
+		/*选择的是div中独生子的p标签*/
+		/*也就是说,要求p标签没有任何兄弟元素*/
+		/*div p:only-child{
+			color: red;
+			font-size: 25px;
+		}*/
+		
+		/*选择的是div中第2个元素,并且要求第二个元素是p标签*/
+		/*div p:nth-child(2){
+			color: red;
+			font-size: 25px;
+		}*/
+		
+		/*选择的是div中第2个p标签*/
+		/*div p:nth-of-type(2){
+			color: red;
+			font-size: 25px;
+		}*/
+		
+		/*选择的是div里的第一个标签,并且要求第一个标签符合冒号前面的选择器的要求*/
+		div p:first-child{
+			color: red;
+			font-size: 25px;
+		}
+	</style>
+	</head>
+	<body>
+		
+		<div id="hd">
+			<span>我是span标签</span>
+			<p>后盾人 人人做后盾0</p>
+			<p>后盾人 人人做后盾1</p>
+			<p>后盾人 人人做后盾2</p>
+			<p>后盾人 人人做后盾3</p>
+			<p>后盾人 人人做后盾4</p>
+			<p>后盾人 人人做后盾5</p>
+			<p>后盾人 人人做后盾6</p>
+			<p>后盾人 人人做后盾7</p>
+		</div>
+		
+		<div>
+			<span>6666666span</span>
+			<p>我是p标签</p>
+		</div>
+		
+	</body>
+</html>

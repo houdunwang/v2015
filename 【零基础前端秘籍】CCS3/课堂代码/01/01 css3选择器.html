@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		/*选择的是#hd里的儿子辈的p标签*/
+		/*#hd>p{
+			color: red;
+			font-size: 25px;
+		}*/
+		
+		/*选择的是紧邻在#one后面的p标签*/
+		/*#one+p{
+			color: red;
+			font-size: 25px;
+		}*/
+		
+		/*选择的是#one后面所有同级的p标签*/
+		/*#one~p{
+			color: red;
+			font-size: 25px;
+		}*/
+		
+		/*选择的是#hd里有id属性的p标签,不论id是多少,只要有id属性就行!*/
+		/*#hd p[id]{
+			color: red;
+			font-size: 25px;
+		}*/
+		
+		/*选择的是#hd里name属性值是shuai的元素*/
+		/*#hd p[name=shuai]{
+			color: red;
+			font-size: 25px;
+		}*/
+		
+		/*选择的是#Hd里id属性以o开头的p标签*/
+		/*#hd p[id^=o]{
+			color: red;
+			font-size: 25px;
+		}*/
+		
+		/*选择的是#hd中id属性以e结尾的p标签*/
+		/*#hd p[id$=e]{
+			color: red;
+			font-size: 25px;
+		}*/
+		
+/*		选择的是#hd里id属性值中有iv的p标签*/
+		#hd p[id*=iv]{
+			color: red;
+			font-size: 25px;
+		}
+	</style>
+	</head>
+	<body>
+		
+		<div id="hd">
+			<p>后盾人 人人做后盾0</p>
+			<p id="one">后盾人 人人做后盾1</p>
+			<p>后盾人 人人做后盾2</p>
+			<p name='shuai'>后盾人 人人做后盾3</p>
+			<p>后盾人 人人做后盾4</p>
+			<p id="five">后盾人 人人做后盾5</p>
+			<p>后盾人 人人做后盾6</p>
+			<p>后盾人 人人做后盾7</p>
+			<div>
+				<p>我们也是p标签</p>
+				<p>我们也是p标签</p>
+				<p>我们也是p标签</p>
+			</div>
+		</div>
+		
+		
+	</body>
+</html>

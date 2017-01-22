@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="script/index.js"></script>
+</head>
+<body>
+    
+<img src="image/pic.jpg" id="top">
+
+<div id="circle"></div>
+
+<p id="time"><span>0</span>秒</p>
+<p id="remind"></p>
+
+
+
+
+</body>
+</html>

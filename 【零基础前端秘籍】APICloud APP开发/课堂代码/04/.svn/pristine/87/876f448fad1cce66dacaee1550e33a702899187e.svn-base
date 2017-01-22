@@ -1,0 +1,29 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	background: white;
+}
+#top{
+	width: 75%;
+	display: block;
+	margin: 0 auto;
+	margin-top: 15%;
+}
+#circle{
+	width: 180px;
+	height: 180px;
+	/*background: blue;*/
+	background: linear-gradient(top,#3BCFE9,#0189A3,#3BCFE9);
+	background: -webkit-linear-gradient(top,#3BCFE9,#0189A3,#3BCFE9);
+	border-radius: 50%;
+	border: 5px #A6A6A6 solid;
+	margin: 0 auto;
+	margin-top: 10%;
+}
+#time,#remind{
+	font-size: 25px;
+	text-align: center;
+	line-height: 3em;
+}

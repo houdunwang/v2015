@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="script/api.js"></script>
+</head>
+<body>
+    
+<!-- 顶部 -->
+<div id="top">
+    网易
+</div>
+<!-- 顶部结束 -->
+
+
+<script>
+   
+apiready = function(){
+     // 导肮条
+    var NVNavigationBar = api.require('NVNavigationBar');
+NVNavigationBar.open({
+    rect: {
+         x: 0,
+         y: 50,
+         w: api.frameWidth,
+         h: 30
+    },
+   styles: {
+         orientation: 'horizontal',
+         bg: '#FAFAFA',
+         bgAlpha: 1,
+         font: {
+         size: 14,
+         sizeSelected: 14,
+         color: '#ABABAB',
+         colorSelected: '#EB413D',
+         alpha: 1
+         },
+         itemSize: {
+             w: 60,
+             h: 44
+         }
+   },
+    items: [{
+       title: '头条',
+       },{
+       title: '娱乐',
+       },{
+       title: '热点',
+       },{
+       title: '体育',
+       },{
+       title: '北京',
+       },{
+       title: '财经',
+       },{
+       title: '科技',
+       },{
+       title: '段子',
+       },{
+       title: '图片',
+       },{
+       title: '汽车',
+       }],
+       selectedIndex: 1,
+       fixedOn: api.frameName,
+       id: 'first'
+}, function(ret, err) {
+    // api.alert({msg:JSON.stringify(ret)});
+});
+ // 导航条结束 
+
+
+// frame组
+api.openFrameGroup({
+    name: 'group1',
+    background: '#fff',
+    scrollEnabled: true,
+    rect: {
+        x: 0,
+        y: 80,
+        w: 'auto',
+        h: 'auto'
+    },
+    index: 0,
+    frames: [{
+        name: 'toutiao',
+        url: 'html/toutiao.html',
+        bgColor: '#f00'
+    }, {
+        name: 'yule',
+        url: 'html/yule.html',
+        bgColor: '#f00'
+    }]
+}, function(ret, err) {
+    var index = ret.index;
+});
+// frame组结束
+
+
+}
+</script>
+
+
+
+
+</body>
+</html>

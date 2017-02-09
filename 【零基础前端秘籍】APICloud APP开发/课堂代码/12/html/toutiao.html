@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../script/api.js"></script>
+</head>
+<body>
+
+<script>
+
+apiready = function(){
+      
+// 轮播图
+var UIScrollPicture = api.require('UIScrollPicture');
+UIScrollPicture.open({
+    rect: {
+        x: 0,
+        y: 0,
+        w: api.winWidth,
+        h: api.winHeight / 3
+    },
+    data: {
+        paths: [
+            'http://e.hiphotos.baidu.com/news/q%3D100/sign=da63ac7dc71b9d168cc79e61c3dfb4eb/6609c93d70cf3bc73398f34ed800baa1cc112af3.jpg',
+            'http://f.hiphotos.baidu.com/news/q%3D100/sign=767539f60a4f78f0860b9ef349300a83/63d9f2d3572c11df247418816a2762d0f603c2ef.jpg',
+            'http://d.hiphotos.baidu.com/news/q%3D100/sign=4fd7687ff91f3a295cc8d1cea924bce3/cc11728b4710b9120b7f3f5fcafdfc03934522d1.jpg',
+            'http://g.hiphotos.baidu.com/news/q%3D100/sign=6685a98d9ccad1c8d6bbf8274f3f67c4/43a7d933c895d143fb805d817af082025baf0799.jpg',
+            'http://d.hiphotos.baidu.com/news/q%3D100/sign=badc68c7ba19ebc4c6787299b227cf79/622762d0f703918f63016a68583d269758eec444.jpg'
+        ],
+        captions: ['标题1', '标题2', '标题3', '标题4','标题5']
+    },
+    styles: {
+        caption: {
+            height: 35,
+            color: '#333',
+            size: 13,
+            bgColor: '#F6F6F6',
+            position: 'bottom'
+        },
+        indicator: {
+            align: 'center',
+            color: '#FFFFFF',
+            activeColor: '#DA70D6'
+        }
+    },
+    placeholderImg: 'widget://res/dog.jpg',//图片家在过程中显示的图片
+    contentMode: 'scaleToFill',
+    interval: 3,
+    fixedOn: api.frameName,
+    loop: true,
+    fixed: false
+}, function(ret, err) {
+    if (ret) {
+        alert(JSON.stringify(ret));
+    } else {
+        alert(JSON.stringify(err));
+    }
+});
+// 轮播图结束
+}
+  
+
+
+</script>
+
+
+
+</body>
+</html>

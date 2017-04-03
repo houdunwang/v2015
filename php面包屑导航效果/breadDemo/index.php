@@ -1,6 +1,8 @@
 <?php
 	include "./functions.php";
 
+
+
 	$sql="SELECT * FROM category LIMIT 1";
 	$cdata=query($sql);
 	$cdata=current($cdata);	

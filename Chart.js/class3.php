@@ -3,7 +3,9 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<title>Document</title>
-	<script type="text/javascript" src="./Chart.min.js"></script>
+	<script type="text/javascript" src="./Chart.min.js"></script>     
+
+	
 </head>
 <body>
 	<!-- 图像绘制的容器，就相当于画板 -->

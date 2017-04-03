@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="22c0d7cf-9e3e-4fa0-be27-3afb29a7c9f6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/【零基础前端秘籍】DIV+CSS/课堂代码/02/02 css的引入方式.html" afterPath="$PROJECT_DIR$/【零基础前端秘籍】DIV+CSS/课堂代码/02/02 css的引入方式.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,8 +17,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="42">
-                <caret line="2" column="49" lean-forward="false" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
+              <first_editor relative-caret-position="84">
+                <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -123,12 +122,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1491234452609</updated>
-      <workItem from="1491234453790" duration="406000" />
+      <workItem from="1491234453790" duration="518000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="406000" />
+    <option name="totallyTimeSpent" value="518000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="720" y="23" width="720" height="873" extended-state="0" />
@@ -340,8 +339,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="42">
-            <caret line="2" column="49" lean-forward="false" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
+          <first_editor relative-caret-position="84">
+            <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
             <folding />
           </first_editor>
           <second_editor />

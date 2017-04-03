@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22c0d7cf-9e3e-4fa0-be27-3afb29a7c9f6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/【零基础前端秘籍】CCS3/课堂代码/03/01 rgba.html" afterPath="$PROJECT_DIR$/【零基础前端秘籍】CCS3/课堂代码/03/01 rgba.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/【零基础前端秘籍】DIV+CSS/课堂代码/01/01.html" afterPath="$PROJECT_DIR$/【零基础前端秘籍】DIV+CSS/课堂代码/01/01.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/【零基础前端秘籍】DIV+CSS/课堂代码/02/02 css的引入方式.html" afterPath="$PROJECT_DIR$/【零基础前端秘籍】DIV+CSS/课堂代码/02/02 css的引入方式.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="01 rgba.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/【零基础前端秘籍】CCS3/课堂代码/03/01 rgba.html">
+      <file leaf-file-name="02 css的引入方式.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/【零基础前端秘籍】DIV+CSS/课堂代码/02/02 css的引入方式.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+            <state relative-caret-position="378">
+              <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -44,6 +43,7 @@
         <option value="$PROJECT_DIR$/【零基础前端秘籍】CCS3/课堂代码/02/01 css3文本选择器.html" />
         <option value="$PROJECT_DIR$/【零基础前端秘籍】DIV+CSS/课堂代码/01/01.html" />
         <option value="$PROJECT_DIR$/【零基础前端秘籍】CCS3/课堂代码/03/01 rgba.html" />
+        <option value="$PROJECT_DIR$/【零基础前端秘籍】DIV+CSS/课堂代码/02/02 css的引入方式.html" />
       </list>
     </option>
   </component>
@@ -163,60 +163,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="video" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="video" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="【零基础前端秘籍】CCS3" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="课堂代码" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="video" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="video" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="【零基础前端秘籍】CCS3" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="课堂代码" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="03" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="video" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="video" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="【零基础前端秘籍】CCS3" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -249,12 +195,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1491234452609</updated>
-      <workItem from="1491234453790" duration="201000" />
+      <workItem from="1491234453790" duration="237000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201000" />
+    <option name="totallyTimeSpent" value="237000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="720" y="23" width="720" height="873" extended-state="0" />
@@ -438,6 +384,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
           <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+          <folding>
+            <marker date="1491234688000" expanded="true" signature="21:409" ph="..." />
+            <marker date="1491234688000" expanded="true" signature="29:336" ph="..." />
+            <marker date="1491234688000" expanded="true" signature="97:325" ph="..." />
+            <marker date="1491234688000" expanded="true" signature="104:131" ph="{...}" />
+            <marker date="1491234688000" expanded="true" signature="137:316" ph="{...}" />
+            <marker date="1491234688000" expanded="true" signature="235:275" ph="/*...*/" />
+            <marker date="1491234688000" expanded="true" signature="344:401" ph="..." />
+            <marker date="1491234688000" expanded="true" signature="363:386" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/【零基础前端秘籍】DIV+CSS/课堂代码/02/02 css的引入方式.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
           <folding />
         </state>
       </provider>

@@ -5,7 +5,7 @@
 		print_r($hd);
 		echo '</pre>';
 	}
-
+ 
 	// 连接数据库方法
 	function query($sql){
 		$dsn='mysql:host=localhost;dbname=smarty';

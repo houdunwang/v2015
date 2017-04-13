@@ -1,0 +1,543 @@
+[ 2017-04-10T21:22:52+08:00 ] ::1 ::1 GET /
+[ log ] blog.com:8080/ [运行时间：0.047697s][吞吐率：20.97req/s] [内存消耗：1,502.78kb] [文件加载：32]
+[ info ] [ LANG ] /Users/wubin/Desktop/blog/blog/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'blog.com:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8,en;q=0.6',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ /Users/wubin/Desktop/blog/blog/application/index/controller/Index.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-10T21:22:55+08:00 ] ::1 ::1 GET /admin
+[ log ] blog.com:8080/admin [运行时间：0.028243s][吞吐率：35.41req/s] [内存消耗：1,553.48kb] [文件加载：34]
+[ info ] [ LANG ] /Users/wubin/Desktop/blog/blog/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'blog.com:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8,en;q=0.6',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-10T21:23:00+08:00 ] ::1 ::1 GET /admin/entry
+[ log ] blog.com:8080/admin/entry [运行时间：0.043883s][吞吐率：22.79req/s] [内存消耗：1,989.28kb] [文件加载：42]
+[ info ] [ LANG ] /Users/wubin/Desktop/blog/blog/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'entry',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'blog.com:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8,en;q=0.6',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-10T21:23:00+08:00 ] ::1 ::1 GET /admin/login/login.html
+[ log ] blog.com:8080/admin/login/login.html [运行时间：0.031659s][吞吐率：31.59req/s] [内存消耗：1,952.16kb] [文件加载：40]
+[ info ] [ LANG ] /Users/wubin/Desktop/blog/blog/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'blog.com:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8,en;q=0.6',
+  'cookie' => 'PHPSESSID=c120446800517c65f3e17b21537f9d80',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ /Users/wubin/Desktop/blog/blog/application/admin/controller/Login.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/blog/blog/public/../application/admin/view/login/index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-10T21:23:00+08:00 ] ::1 ::1 GET /static/admin/admin.ui/js/slimscroll/jquery.slimscroll.min.js
+[ log ] blog.com:8080/static/admin/admin.ui/js/slimscroll/jquery.slimscroll.min.js [运行时间：0.021890s][吞吐率：45.68req/s] [内存消耗：1,553.52kb] [文件加载：34]
+[ info ] [ LANG ] /Users/wubin/Desktop/blog/blog/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'admin',
+    2 => 'admin.ui',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'blog.com:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.98 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://blog.com:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8,en;q=0.6',
+  'cookie' => 'PHPSESSID=c120446800517c65f3e17b21537f9d80',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'slimscroll',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-10T21:23:00+08:00 ] ::1 ::1 GET /captcha.html
+[ log ] blog.com:8080/captcha.html [运行时间：0.070000s][吞吐率：14.29req/s] [内存消耗：1,582.45kb] [文件加载：33]
+[ info ] [ LANG ] /Users/wubin/Desktop/blog/blog/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'blog.com:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.98 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://blog.com:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8,en;q=0.6',
+  'cookie' => 'PHPSESSID=c120446800517c65f3e17b21537f9d80',
+)
+[ info ] [ PARAM ] array (
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ /Users/wubin/Desktop/blog/blog/vendor/topthink/think-captcha/src/CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-10T21:23:00+08:00 ] ::1 ::1 GET /static/admin/admin.ui/js/slimscroll/jquery.slimscroll.min.js
+[ log ] blog.com:8080/static/admin/admin.ui/js/slimscroll/jquery.slimscroll.min.js [运行时间：0.022004s][吞吐率：45.45req/s] [内存消耗：1,553.53kb] [文件加载：34]
+[ info ] [ LANG ] /Users/wubin/Desktop/blog/blog/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'admin',
+    2 => 'admin.ui',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'blog.com:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.98 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://blog.com:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8,en;q=0.6',
+  'cookie' => 'PHPSESSID=c120446800517c65f3e17b21537f9d80',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'slimscroll',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-10T21:23:05+08:00 ] ::1 ::1 POST /admin/login/login.html
+[ log ] blog.com:8080/admin/login/login.html [运行时间：0.076735s][吞吐率：13.03req/s] [内存消耗：3,408.58kb] [文件加载：54]
+[ info ] [ LANG ] /Users/wubin/Desktop/blog/blog/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'blog.com:8080',
+  'connection' => 'keep-alive',
+  'content-length' => '52',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://blog.com:8080',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.98 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://blog.com:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,en;q=0.6',
+  'cookie' => 'PHPSESSID=c120446800517c65f3e17b21537f9d80',
+)
+[ info ] [ PARAM ] array (
+  'admin_username' => 'admin',
+  'admin_password' => 'admin888',
+  'code' => 'kb',
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ /Users/wubin/Desktop/blog/blog/application/admin/controller/Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] /Users/wubin/Desktop/blog/blog/thinkphp/tpl/dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001223s ] mysql:dbname=blog;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_admin` [ RunTime:0.003959s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_admin` WHERE  `admin_username` = 'admin'  AND `admin_password` = 'h3vPU8JGuF3VS/uxIpjRSw==' LIMIT 1 [ RunTime:0.000878s ]
+
+---------------------------------------------------------------
+[ 2017-04-10T21:23:06+08:00 ] ::1 ::1 GET /admin/entry/index.html
+[ log ] blog.com:8080/admin/entry/index.html [运行时间：0.029123s][吞吐率：34.34req/s] [内存消耗：1,964.86kb] [文件加载：41]
+[ info ] [ LANG ] /Users/wubin/Desktop/blog/blog/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'entry',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'blog.com:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://blog.com:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8,en;q=0.6',
+  'cookie' => 'PHPSESSID=c120446800517c65f3e17b21537f9d80',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Entry->index[ /Users/wubin/Desktop/blog/blog/application/admin/controller/Entry.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/blog/blog/public/../application/admin/view/entry/index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-10T21:23:09+08:00 ] ::1 ::1 GET /admin/tag/index.html
+[ log ] blog.com:8080/admin/tag/index.html [运行时间：0.083187s][吞吐率：12.02req/s] [内存消耗：3,429.29kb] [文件加载：52]
+[ info ] [ LANG ] /Users/wubin/Desktop/blog/blog/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'tag',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'blog.com:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://blog.com:8080/admin/entry/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8,en;q=0.6',
+  'cookie' => 'PHPSESSID=c120446800517c65f3e17b21537f9d80',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Tag->index[ /Users/wubin/Desktop/blog/blog/application/admin/controller/Tag.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /Users/wubin/Desktop/blog/blog/public/../application/admin/view/tag/index.html [ array (
+  0 => 'field',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000587s ] mysql:dbname=blog;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_tag` [ RunTime:0.004928s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `blog_tag` LIMIT 1 [ RunTime:0.000435s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_tag` LIMIT 0,2 [ RunTime:0.000863s ]
+
+---------------------------------------------------------------
+[ 2017-04-10T21:23:09+08:00 ] ::1 ::1 GET /admin/article/index.html
+[ log ] blog.com:8080/admin/article/index.html [运行时间：0.035031s][吞吐率：28.55req/s] [内存消耗：1,955.12kb] [文件加载：40]
+[ info ] [ LANG ] /Users/wubin/Desktop/blog/blog/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'blog.com:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://blog.com:8080/admin/tag/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8,en;q=0.6',
+  'cookie' => 'PHPSESSID=c120446800517c65f3e17b21537f9d80',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Article->index[ /Users/wubin/Desktop/blog/blog/application/admin/controller/Article.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/blog/blog/public/../application/admin/view/article/index.html [ array (
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-10T21:23:12+08:00 ] ::1 ::1 GET /admin/article/store.html
+[ log ] blog.com:8080/admin/article/store.html [运行时间：0.083013s][吞吐率：12.05req/s] [内存消耗：3,403.01kb] [文件加载：51]
+[ info ] [ LANG ] /Users/wubin/Desktop/blog/blog/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article',
+    2 => 'store',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'blog.com:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://blog.com:8080/admin/article/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8,en;q=0.6',
+  'cookie' => 'PHPSESSID=c120446800517c65f3e17b21537f9d80',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Article->store[ /Users/wubin/Desktop/blog/blog/application/admin/controller/Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /Users/wubin/Desktop/blog/blog/public/../application/admin/view/article/store.html [ array (
+  0 => 'cateData',
+  1 => 'tagData',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000733s ] mysql:dbname=blog;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_cate` [ RunTime:0.005053s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_cate` ORDER BY cate_sort desc,cate_id [ RunTime:0.001102s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000727s ] mysql:dbname=blog;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_tag` [ RunTime:0.003255s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_tag` [ RunTime:0.000640s ]
+
+---------------------------------------------------------------
+[ 2017-04-10T21:23:33+08:00 ] ::1 ::1 GET /static/node_modules/hdjs/js/underscore-min.map
+[ log ] blog.com:8080/static/node_modules/hdjs/js/underscore-min.map [运行时间：0.039504s][吞吐率：25.31req/s] [内存消耗：1,553.05kb] [文件加载：34]
+[ info ] [ LANG ] /Users/wubin/Desktop/blog/blog/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'node_modules',
+    2 => 'hdjs',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'blog.com:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.98 Safari/537.36',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8,en;q=0.6',
+  'cookie' => 'PHPSESSID=c120446800517c65f3e17b21537f9d80',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'underscore-min.map',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-10T21:23:34+08:00 ] ::1 ::1 POST /admin/article/store.html?s=home/component/filesLists&type=image
+[ log ] blog.com:8080/admin/article/store.html?s=home/component/filesLists&type=image [运行时间：0.035099s][吞吐率：28.49req/s] [内存消耗：1,558.57kb] [文件加载：34]
+[ info ] [ LANG ] /Users/wubin/Desktop/blog/blog/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'component',
+    2 => 'filesLists',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'blog.com:8080',
+  'connection' => 'keep-alive',
+  'content-length' => '33',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://blog.com:8080',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.98 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://blog.com:8080/admin/article/store.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,en;q=0.6',
+  'cookie' => 'PHPSESSID=c120446800517c65f3e17b21537f9d80',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'image',
+  'extensions' => 'gif,jpg,jpeg,png',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-10T21:23:44+08:00 ] ::1 ::1 GET /admin/article/store.html
+[ log ] blog.com:8080/admin/article/store.html [运行时间：0.052624s][吞吐率：19.00req/s] [内存消耗：3,402.92kb] [文件加载：51]
+[ info ] [ LANG ] /Users/wubin/Desktop/blog/blog/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article',
+    2 => 'store',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'blog.com:8080',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.98 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://blog.com:8080/admin/article/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8,en;q=0.6',
+  'cookie' => 'PHPSESSID=c120446800517c65f3e17b21537f9d80',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Article->store[ /Users/wubin/Desktop/blog/blog/application/admin/controller/Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /Users/wubin/Desktop/blog/blog/public/../application/admin/view/article/store.html [ array (
+  0 => 'cateData',
+  1 => 'tagData',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000412s ] mysql:dbname=blog;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_cate` [ RunTime:0.008215s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_cate` ORDER BY cate_sort desc,cate_id [ RunTime:0.000505s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000515s ] mysql:dbname=blog;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_tag` [ RunTime:0.002471s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_tag` [ RunTime:0.000509s ]
+
+---------------------------------------------------------------

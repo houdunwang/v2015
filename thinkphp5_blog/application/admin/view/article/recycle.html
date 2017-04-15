@@ -6,12 +6,11 @@
             文章管理</a>
     </li>
     <li class="active">
-        <a href="">文章列表</a>
+        <a href="">回收站</a>
     </li>
 </ol>
 <ul class="nav nav-tabs" role="tablist">
-    <li class="active"><a href="#tab1">文章管理</a></li>
-    <li><a href="{:url('store')}">文章添加</a></li>
+    <li class="active"><a href="#tab1">回收站</a></li>
 </ul>
 <form action="" method="post">
     <div class="panel panel-default">
@@ -43,9 +42,9 @@
                         <div class="btn-group">
                             <button data-toggle="dropdown" class="btn btn-primary btn-xs dropdown-toggle">操作 <span class="caret"></span></button>
                             <ul class="dropdown-menu dropdown-menu-right">
-                                <li><a href="{:url('edit',['arc_id'=>$vo['arc_id']])}">编辑</a></li>
+                                <li><a href="{:url('outToRecycle',['arc_id'=>$vo['arc_id']])}">恢复数据</a></li>
                                 <li class="divider"></li>
-                                <li><a href="{:url('delToRecycle',['arc_id'=>$vo['arc_id']])}">删除到回收站</a></li>
+                                <li><a href="javascript:;" onclick="del({$vo['arc_id']})">删除</a></li>
                             </ul>
                         </div>
                     </td>
@@ -60,6 +59,13 @@
     {$field->render()}
 </div>
 <script>
+    //删除
+    function del(arc_id) {
+        util.confirm('确定删除吗?',function(){
+           location.href = "{:url('del')}" + '?arc_id='+arc_id;
+        })
+    }
+    //修改排序
     function changeSort(obj,arc_id)
     {
         //获取修改完成之后的排序值

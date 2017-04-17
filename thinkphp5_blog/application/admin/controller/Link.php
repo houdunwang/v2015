@@ -2,9 +2,8 @@
 
 namespace app\admin\controller;
 
-use think\Controller;
 
-class Link extends Controller
+class Link extends Common
 {
 
 	protected $db;

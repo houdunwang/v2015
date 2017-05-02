@@ -1,3 +1,0 @@
-[ 2016-09-03T00:35:51+08:00 ]EXCEPTION: SELECT sum() AS m FROM hd_user  WHERE total > ?     ;BindParams:array (
-  1 => 5,
-)42000;1064;You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') AS m FROM hd_user  WHERE total > 5' at line 1

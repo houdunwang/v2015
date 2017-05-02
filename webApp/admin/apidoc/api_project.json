@@ -1,1 +1,0 @@
-{  "name": "微外卖",  "version": "1.0.0",  "description": "基于微信客户端的O2O应用",  "title": "api接口文档",  "url": "http://localhost/a/admin/index.php?s=api",  "sampleUrl": "http://localhost/a/admin/index.php?s=api",  "apidoc": "0.2.0",  "generator": {    "name": "apidoc",    "time": "2016-09-08T17:45:10.566Z",    "url": "http://apidocjs.com",    "version": "0.16.1"  }}

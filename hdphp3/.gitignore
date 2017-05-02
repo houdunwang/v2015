@@ -1,7 +1,0 @@
-.env
-.DS_Store
-.gitignore.swp
-.name
-.idea/*
-.project
-/storage

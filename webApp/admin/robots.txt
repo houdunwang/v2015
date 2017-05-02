@@ -1,6 +1,0 @@
-User-agent: *
-Disallow: /hdphp/
-Disallow: /resource/
-Disallow: /storage/
-Disallow: /system/
-Disallow: /web/

@@ -1,1 +1,0 @@
-define('allControllers',['homeController']);

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 300px;
+			height: 150px;
+		}
+		#one{
+			background: #22B14C;
+		}
+		#two{
+			background: #FF7F27;
+			/*相对定位*/
+			position: relative;
+			left: 100px;
+			top: 50px;
+		}
+		#three{
+			background: #00A2E8;
+		}
+	</style>
+	</head>
+	<body>
+		
+		<!--相对定位-->
+		<!--1、相对于原来的位置进行定位-->
+		<!--2、元素原来在文档流里的位置还会被保留着-->
+		<!--注意：右和下是正方向，左和上是负方向-->
+		<!--相对定位理解的时候，可以理解成是完全脱离文档流的-->
+		<div id="one"></div>
+		<div id="two"></div>
+		<div id="three"></div>
+		
+		
+		
+		
+	</body>
+</html>

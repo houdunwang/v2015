@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+</head>
+<body>
+<style>
+    .red{
+        background: red;
+    }
+    .font{
+        font-size: 100px;
+    }
+</style>
+<div ng-app="hd" ng-controller="ctrl">
+    <div ng-class="{red:false,font:false}">hdphp</div>
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.controller('ctrl', ['$scope', function ($scope) {
+
+    }]);
+</script>
+</body>
+</html>

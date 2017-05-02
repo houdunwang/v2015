@@ -1,0 +1,1 @@
+define('allDirectives',['newsDirective','menuDirective','slideDirective','articleDirective']);

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding="utf-8"?>
+<message>
+	<line>
+		<author>后盾网</author>
+		<face>1.jpg</face>
+		<time>12334545</time>
+		<content>后盾网，人人做后盾</content>
+	</line>
+	<line>
+		<author>快学网</author>
+		<face>2.jpg</face>
+		<time>12334545</time>
+		<content>后盾网旗下品牌</content>
+	</line>
+	<line>
+		<author>百度</author>
+		<face>3.jpg</face>
+		<time>12334545</time>
+		<content>百度一下，你就知道</content>
+	</line>
+	<line>
+		<author>腾讯</author>
+		<face>4.jpg</face>
+		<time>12334545</time>
+		<content>qq,微信</content>
+	</line>
+</message>

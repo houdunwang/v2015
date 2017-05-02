@@ -1,0 +1,49 @@
+<div class="hd-dish">
+    <div class="menu" ng-controller="goodsController">
+        <ul>
+            <li ng-repeat="v in data">{{v.title}}</li>
+            <li>热辣海鲜</li>
+            <li>夏季撸串</li>
+            <li>饮料水果</li>
+            <li>热辣海鲜</li>
+            <li>夏季撸串</li>
+            <li>饮料水果</li>
+            <li>热辣海鲜</li>
+            <li>夏季撸串</li>
+            <li>饮料水果</li>
+            <li>热辣海鲜</li>
+            <li>夏季撸串</li>
+            <li>饮料水果</li>
+            <li>热辣海鲜</li>
+            <li>夏季撸串</li>
+        </ul>
+    </div>
+    <div class="lists" ng-controller="goodsController">
+        <dl ng-repeat="v in data">
+            <dt>{{v.title}}</dt>
+            <dd ng-repeat="m in v.goods">
+                <img ng-src="{{m.pic}}">
+                <div class="info">
+                    <h3>{{m.title}}</h3>
+                    <p>
+                        {{m.desc}}
+                    </p>
+                    <div ng-if="!cartServer.getGoodsTotal(m)">
+                        <span class="price">{{m.price}}</span>
+                        <span class="plus" ng-controller="cartController">
+                            <i class="fa fa-plus-circle" ng-click="add(m)"></i>
+                        </span>
+                    </div>
+                    <div ng-if="cartServer.getGoodsTotal(m)">
+                        <span class="price">{{m.price}}</span>
+                        <span class="plus" ng-controller="cartController">
+                            <i class="fa fa-minus-circle" ng-click="cartServer.del(m)"></i>
+                            {{cartServer.getGoodsTotal(m)}}
+                            <i class="fa fa-plus-circle" ng-click="add(m)"></i>
+                        </span>
+                    </div>
+                </div>
+            </dd>
+        </dl>
+    </div>
+</div>

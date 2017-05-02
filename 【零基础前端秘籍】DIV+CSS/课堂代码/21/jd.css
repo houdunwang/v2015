@@ -1,0 +1,119 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	background: #F6F6F6;
+}
+/*顶部广告*/
+#topad{
+	width: 100%;
+	height: 80px;
+	background: #150A38;
+}
+#topad a{
+	width: 1190px;
+	height: 80px;
+	display: block;
+	/*background: yellow;*/
+	background: url(jdtop.png) no-repeat;
+	margin: 0 auto;
+}
+/*顶部广告结束*/
+
+
+/*顶部灰色区域*/
+#top{
+	width: 100%;
+	height: 30px;
+	background: #E3E4E5;
+	border-bottom: 1px solid #ddd;
+}
+#top .center{
+	width: 1190px;
+	height: 30px;
+	background: greenyellow;
+	margin: 0 auto;
+}
+/*顶部灰色区域结束*/
+
+/*搜索区域*/
+#search{
+	width: 1190px;
+	height: 140px;
+	background: orangered;
+	margin: 0 auto;
+}
+/*搜索区域结束*/
+
+
+/*轮播图区域*/
+#flash{
+	width: 1190px;
+	height: 480px;
+	border: 2px solid blue;
+	margin: 0 auto;
+	margin-bottom: 500px;
+}
+#flash .left{
+	width: 190px;
+	height: 480px;
+	background: #6C6669;
+	float: left;
+}
+#flash .center{
+	width: 790px;
+	height: 480px;
+	/*background: red;*/
+	float: left;
+	margin-left: 10px;
+}
+#flash .center img{
+	float: left;
+}
+#flash .center img.one{
+	margin-bottom: 10px;
+}
+#flash .center img.three{
+	float: right;
+}
+#flash .right{
+	float: right;
+	width: 190px;
+	height: 480px;
+	background: dodgerblue;
+}
+/*轮播图区域结束*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

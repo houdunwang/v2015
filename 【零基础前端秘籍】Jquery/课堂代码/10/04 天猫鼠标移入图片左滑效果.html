@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.tm{
+				width: 400px;
+				height: 300px;
+				border: 4px solid orange;
+				float: left;
+				position: relative;
+				margin: 10px;
+			}
+			.tm .pic{
+				width: 200px;
+				border: 1px solid green;
+				position: absolute;
+				left: 200px;
+				bottom: 0px;
+			}
+		</style>
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$(function(){
+//			给div加鼠标移入事件
+			$(".tm").mouseenter(function(){
+				$(this).find('.pic').stop().animate({'left':'170px'},300);
+			})
+			
+//			给div加鼠标移出事件
+			$(".tm").mouseleave(function(){
+				$(this).find('.pic').stop().animate({'left':'200px'},300);
+			})
+		})
+		
+	</script>
+	</head>
+	<body>
+		
+		<div class="tm">
+			<img src="tmallmeinv.jpg" class="pic" />
+		</div>
+		<div class="tm">
+			<img src="tmallmeinv.jpg" class="pic" />
+		</div>
+		<div class="tm">
+			<img src="tmallmeinv.jpg" class="pic" />
+		</div>
+		<div class="tm">
+			<img src="tmallmeinv.jpg" class="pic" />
+		</div>
+		<div class="tm">
+			<img src="tmallmeinv.jpg" class="pic" />
+		</div>
+		<div class="tm">
+			<img src="tmallmeinv.jpg" class="pic" />
+		</div>
+		<div class="tm">
+			<img src="tmallmeinv.jpg" class="pic" />
+		</div>
+		<div class="tm">
+			<img src="tmallmeinv.jpg" class="pic" />
+		</div>
+		<div class="tm">
+			<img src="tmallmeinv.jpg" class="pic" />
+		</div>
+		
+	</body>
+</html>

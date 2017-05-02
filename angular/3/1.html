@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" ng-app="hd">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+</head>
+<body>
+<div ng-controller="ctrl">
+    {{name}}
+</div>
+<script>
+    var m = angular.module('hd', []);
+    //IOC
+    m.controller('ctrl', ['$scope', function ($scope) {
+        $scope.name = "向军";
+    }]);
+//    m.controller('ctrl', function ($scope) {
+//        $scope.name = "向军";
+//    });
+</script>
+</body>
+</html>

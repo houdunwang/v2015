@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		#box{
+			width: 600px;
+			height: 500px;
+			border: 5px solid blue;
+		}
+	</style>
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	
+	$(function(){
+		$("#btn").click(function(){
+			//		创建一个新的h2标签
+	//		在jquery中创建新标签只需要将标签最终的代码写成字符串形式即可
+//			var newH = '<h2 class="hd">我是新来的！</h2>';
+//			将新创建的标签追加到box中
+//			$("#box").append(newH);
+
+//			元素的追加
+//			$("#box").append($("#title"));
+//			$("#title").appendTo($("#box"));
+			
+//			从头部追加
+//			$("#box").prepend($("#title"));
+//			$("#title").prependTo($("#box"));
+			
+//			插队
+//			$("#box h2").eq(1).after($("#title"));
+//			$("#title").insertAfter($("#box h2").eq(1));
+			
+//			$("#box h2").eq(1).before($("#title"));
+			$("#title").insertBefore($("#box h2").eq(1));
+			
+			
+		})
+	})
+	
+</script>
+	</head>
+	<body>
+	<input type="button" id="btn" value="我是按钮" />
+		<br />
+		
+	<h1 id="title">我是h1标签</h1>
+	
+	<div id="box">
+		<h2>后盾人 人人做后盾0</h2>
+		<h2>后盾人 人人做后盾1</h2>
+		<h2>后盾人 人人做后盾2</h2>
+		<h2>后盾人 人人做后盾3</h2>
+		<h2>后盾人 人人做后盾4</h2>
+	</div>
+		
+	</body>
+</html>

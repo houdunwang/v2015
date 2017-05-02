@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				background: #272822;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<canvas id="canvas" width="900" height="600"></canvas>
+		
+<script type="text/javascript">
+	
+	var canvas = document.getElementById("canvas");
+	var cv = canvas.getContext('2d');
+	
+//	设置文字属性
+	cv.font = '35px 微软雅黑';
+	
+////	设置填充颜色
+//	cv.fillStyle = 'yellow';
+////	将文字画入
+//	cv.fillText('后盾人人人做后盾',300,200);
+	
+//	设置线条颜色
+	cv.strokeStyle = 'yellow';
+//	将空心文字画入
+	cv.strokeText('后盾人人人做后盾',300,200);
+//	cv.strokeText('后盾人人人做后盾',300,200,200);
+	
+</script>
+		
+		
+		
+	</body>
+</html>

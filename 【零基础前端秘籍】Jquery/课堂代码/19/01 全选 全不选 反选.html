@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$(function(){
+//			全选
+			$("#quanxuan").click(function(){
+//				找到所有的复选框,加上checked属性，属性值为true
+				$("#list :checkbox").prop('checked',true);
+			})
+			
+//			全不选
+			$("#quanbuxuan").click(function(){
+//				找到所有的复选框,将checked属性设置为false
+				$("#list :checkbox").removeProp('checked');
+			})
+			
+			
+//			 反选
+//			$("#fanxuan").click(function(){
+////				获得现在处在选中状态下的元素
+//				var objs = $("#list :checked");
+////				全选
+//				$("#list :checkbox").prop('checked',true);
+////				将刚才处在被选中状态的元素取消选中状态
+//				objs.removeProp('checked');
+//			})
+
+//			第二种方法实现反选
+			$("#fanxuan").click(function(){
+				$("#list :checkbox").prop('checked',function(i,val){
+					return !val;
+				})
+			})
+			
+		})
+		
+	</script>
+	</head>
+	<body>
+		
+		<input type="button" id="quanxuan" value="全选" />
+		<input type="button" id="quanbuxuan" value="全不选" />
+		<input type="button" id="fanxuan" value="反选" />
+		
+		<table id="list">
+			<tr>
+				<td><input type="checkbox" /></td>
+				<td>后盾人 人人做后盾</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" /></td>
+				<td>后盾人 人人做后盾</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" /></td>
+				<td>后盾人 人人做后盾</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" /></td>
+				<td>后盾人 人人做后盾</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" /></td>
+				<td>后盾人 人人做后盾</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" /></td>
+				<td>后盾人 人人做后盾</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" /></td>
+				<td>后盾人 人人做后盾</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" /></td>
+				<td>后盾人 人人做后盾</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" /></td>
+				<td>后盾人 人人做后盾</td>
+			</tr>
+		</table>
+		
+		
+		
+	</body>
+</html>

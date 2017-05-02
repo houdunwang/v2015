@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+</head>
+<body>
+<style>
+    input[readonly]{background: #f3f3f3;border:solid 1px #aaa;}
+</style>
+<div ng-app="hd" ng-controller="ctrl">
+    <!--<form action="3.php" method="post">-->
+    <!--<input type="text" name="a" readonly="readonly" value="hdphp"><br/>-->
+    <!--<input type="text" name="b" disabled="disabled" value="disabled"><br/>-->
+    <!--<input type="submit">-->
+    <!--</form>-->
+    年龄: <input type="text" ng-model="user.age"><br/>
+    邮箱: <input type="text" ng-model="user.mail" ng-readonly="user.uid">
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.controller('ctrl', ['$scope', function ($scope) {
+        $scope.user = {age: 33, uid: 1, mail: '2300071698@qq.com'}
+    }]);
+</script>
+</body>
+</html>

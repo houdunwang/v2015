@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		
+		#box{
+			width: 600px;
+			height: 500px;
+			border: 5px solid blue;
+		}
+		
+	</style>
+<script type="text/javascript">
+	
+	window.onload = function(){
+		var btn = document.getElementById("btn");
+		var box = document.getElementById("box");
+		var title = document.getElementById("title");
+		var hs = box.getElementsByTagName('h2');
+		
+//		给按钮加单击事件
+		btn.onclick = function(){
+//			创建新的空标签
+//			var obj = document.createElement('h2');
+//			给新标签添加内容
+//			obj.innerHTML = '我是新来的！！！';
+//			给新标签添加属性
+//			obj.setAttribute('class','houdun');
+			
+//			将obj追加到box的尾部
+//			box.appendChild(obj);
+//			box.appendChild(title);
+
+//			将title元素添加到2号h2标签前面
+//			box.insertBefore(title,hs[2]);
+			
+//			删除标签
+//			box.removeChild(hs[1]);
+
+//			替换元素
+//			box.replaceChild(title,hs[1]);
+			
+//			复制节点
+			var newobj = title.cloneNode(true);
+//			将新复制出来的节点追加到box后面
+			box.appendChild(newobj);
+		}
+	}
+	
+</script>
+	</head>
+	<body>
+	<input type="button" id="btn" value="我是按钮" />
+		<br />
+		
+	<h1 id="title">我是h1标签</h1>
+	
+	<div id="box">
+		<h2>后盾人 人人做后盾0</h2>
+		<h2>后盾人 人人做后盾1</h2>
+		<h2>后盾人 人人做后盾2</h2>
+		<h2>后盾人 人人做后盾3</h2>
+		<h2>后盾人 人人做后盾4</h2>
+	</div>
+		
+	</body>
+</html>

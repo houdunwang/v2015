@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/jquery.min.js"></script>
+</head>
+<body>
+<style>
+    .data{
+        background: green;
+    }
+</style>
+<ul class="data"></ul>
+</body>
+</html>
+<script>
+    $.get('1.php', function (res) {
+        $(res).each(function(i){
+            html="<li>"+res[i].name+"</li>";
+            $('.data').append(html)
+        });
+    }, 'json');
+</script>

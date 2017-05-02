@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$(function(){
+			$("#btn").click(function(){
+//				获得元素属性
+//				var re = $("#title").attr('hd');
+//				alert(re);
+//				设置元素属性
+//				$("#title").attr('class','qqqqqqqqqqqqqq');
+
+//				prop一般是用来操作元素的特定属性,比如id class a标签的href img标签的src input的value
+//				能给元素提供特殊功能或效果的属性就属于特定属性
+//				attr一把用来操作元素的非特定属性
+				var re = $("#title").prop('class');
+				alert(re);
+			})
+		})
+		
+	</script>
+	</head>
+	<body>
+		
+	<input type="button" id="btn" value="按钮" />
+	
+	<h1 id="title" class="biaoti" hd="houdun">后盾人 人人做后盾</h1>
+	
+		
+	</body>
+</html>

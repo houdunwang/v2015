@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		canvas{
+			background: #272822;
+			
+		}
+	</style>
+	</head>
+	<body>
+
+		
+		<canvas id="canvas" width="900" height="500"></canvas>
+		
+	<script type="text/javascript">
+		
+//		获得画板
+		var canvas = document.getElementById("canvas");
+//		获得绘画环境
+		var cv = canvas.getContext('2d');
+		
+//		开启路径
+		cv.beginPath();
+		cv.moveTo(100,20);
+		cv.lineTo(100,480);
+//		指定笔触颜色
+		cv.strokeStyle = 'deepskyblue';
+//		指定笔触粗细
+		cv.lineWidth = 20;
+		cv.stroke();
+		cv.save();
+		
+//		开启路径
+		cv.beginPath();
+//		更改笔触的颜色和粗细
+		cv.strokeStyle = 'yellow';
+		cv.lineWidth = 10;
+		cv.moveTo(100,480);
+		cv.lineTo(200,200);
+		cv.stroke();
+//		保存当前的环境状态
+		cv.save();
+		
+		
+		//		开启路径
+		cv.beginPath();
+//		更改笔触的颜色和粗细
+		cv.strokeStyle = 'greenyellow';
+		cv.lineWidth = 30;
+		cv.moveTo(200,200);
+		cv.lineTo(350,460);
+		cv.stroke();
+		
+		
+			//		开启路径
+		cv.beginPath();
+//		更改笔触的颜色和粗细
+//		将环境状态恢复到上次保存的状态上!
+		cv.restore();
+		cv.restore();
+		cv.moveTo(350,460);
+		cv.lineTo(550,160);
+		cv.stroke();
+		
+		
+	</script>
+		
+		
+	</body>
+</html>

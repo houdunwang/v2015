@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+    <script src="../org/jquery.min.js"></script>
+    <script src="../org/angular-ui-router.min.js"></script>
+</head>
+<body>
+<div ng-app="hd">
+    <div ui-view></div>
+</div>
+<script>
+    var m = angular.module('hd', ['ui.router']);
+    m.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+        //默认路由
+        $urlRouterProvider.otherwise('/home');
+        //定义路由规则
+        $stateProvider
+                .state('home', {
+                    url: '/home',
+                    templateUrl: 'view/home.html',
+                    controller: 'ctrl'
+                })
+                .state('user', {
+                    url: '/user/{id}',
+                    template: '<h1>用户名:{{user.name}}</h1>',
+                    controller: 'ctrl'
+                })
+    }]);
+    //这是一个测试
+    m.controller('ctrl', ['$scope', '$stateParams', function ($scope, $stateParams) {
+        $scope.user = [
+            {id: 1, name: '向军'},
+            {id: 2, name: '古丽老师'},
+        ];
+        id = $stateParams.id
+        if(id){
+            for(var i=0;i<$scope.user.length;i++){
+                if(id==$scope.user[i].id){
+                    $scope.user =  $scope.user[i];
+                }
+            }
+        }
+    }])
+</script>
+</body>
+</html>
+
+你好,咱们一起学习PHP

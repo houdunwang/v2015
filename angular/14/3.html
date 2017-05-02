@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="../org/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="hd" ng-controller="ctrl">
+	{{data.username}}
+</div>
+<script>
+	//phpstudy    mamp   xampp   wamp
+	var m = angular.module('hd', []);
+	m.controller('ctrl', ['$scope', function ($scope) {
+		$scope.data = angular.fromJson('{"username":"后盾网"}');
+	}]);
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<canvas id="canvas" width="900" height="600"></canvas>
+		
+		
+	<script type="text/javascript">
+		
+//		抓到画板
+		var canvas = document.getElementById("canvas");
+//		获得绘画环境
+		var cv = canvas.getContext('2d');
+		
+//		指定填充颜色
+		cv.fillStyle = '#272822';
+//		绘制一个矩形,当做背景
+		cv.fillRect(0,0,900,600);
+//		填充背景矩形
+		cv.fill();
+		
+//		画眼睛
+		cv.arc(200,100,50,0*Math.PI/180,360*Math.PI/180);
+		cv.fillStyle = '#E6DB74';
+		cv.fill();
+		
+		//		画眼睛
+		cv.arc(600,100,50,0*Math.PI/180,360*Math.PI/180);
+		cv.fillStyle = '#E6DB74';
+		cv.fill();
+		
+//		鼻子
+		cv.fillStyle = '#A6E22E';
+		cv.fillRect(375,130,50,200);
+		
+		cv.beginPath();
+//		嘴
+		cv.arc(400,400,100,0*Math.PI/180,180*Math.PI/180)
+		cv.fillStyle = '#F92672';
+		cv.fill();
+		
+	</script>
+		
+	</body>
+</html>

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="hd" ng-controller="ctrl">
+    <input type="text" ng-model="title" ng-model-options="{updateOn:'default blur',debounce:{default:2000,blur:0}}">
+    {{title}}
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.controller('ctrl', ['$scope', function ($scope) {
+    }]);
+</script>
+</body>
+</html>

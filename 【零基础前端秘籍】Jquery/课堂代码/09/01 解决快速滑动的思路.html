@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#hd{
+				width: 300px;
+				height: 500px;
+				background: dodgerblue;
+				margin: 0 auto;
+			}
+		</style>
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$(function(){
+//			给hd加鼠标移入事件
+			$("#hd").mouseenter(function(){
+				timer = setTimeout(function(){
+					alert('哈哈哈，鼠标移入啦');
+				},200)
+			})
+			
+//			加鼠标移出事件
+			$("#hd").mouseleave(function(){
+//				清理定时器
+				clearTimeout(timer);
+			})
+		})		
+		
+	</script>
+	</head>
+	<body>
+		<div id="hd"></div>
+	</body>
+</html>

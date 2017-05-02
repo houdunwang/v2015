@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		<!--合并单元格的方法：
+		1、在代码中找到要合并的单元格
+		2、保留要合并的单元格中的第一个，删掉后面的
+		3、给保留下来的单元格指定占用的行数或列数
+		如果是合并左右单元格用colspan
+		如果是合并上下单元格用rowspan-->
+		<table border="1" width="800" height="500" align="center">
+			<!--tr*5>td{后盾网}*6-->
+			<!--第一行-->
+			<tr bgcolor="green" align="center" valign="middle">
+				<td></td>
+				<td height="50">周一</td>
+				<td>周二</td>
+				<td>周三</td>
+				<td>周四</td>
+				<td>周五</td>
+			</tr>
+			<!--第一行结束-->
+			
+			<!--第二行-->
+			<tr>
+				<td>第一节课</td>
+				<td colspan="3">语文</td>
+				
+				<td>物理</td>
+				<td>化学</td>
+			</tr>
+			<!--第二行结束-->
+			
+			<!--第三行-->
+			<tr>
+				<td>第二节课</td>
+				<td bgcolor="red">英语</td>
+				<td>生物</td>
+				<td rowspan="2">语文物理</td>
+				<td rowspan="3">化学</td>
+				<td rowspan="3">音乐英语物理</td>
+			</tr>
+			<!--第三行结束-->
+			
+			<!--第四行-->
+			<tr>
+				<td colspan="2">第三节课数学</td>
+				<td>美术</td>
+			</tr>
+			<!--第四行结束-->
+			
+			<!--第五行-->
+			<tr>
+				<td>第四节课</td>
+				<td>体育</td>
+				<td>音乐</td>
+				<td>数学</td>
+			</tr>
+			<!--第五行结束-->
+		</table>
+		
+		
+	</body>
+</html>

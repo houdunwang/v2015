@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		#dan{
+			position: absolute;
+			top: 50px;
+		}
+		#qiang{
+			position: absolute;
+			left: 720px;
+			top: 0;
+		}
+	</style>
+	
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	
+	$(function(){
+		$("#btn").click(function(){
+			$("#dan").animate({'left':'600px'},2000,function(){
+				alert('哈哈，撞墙啦！');
+			});
+		})
+	})
+	
+</script>
+	</head>
+	<body>
+		
+	<input type="button" id="btn" value="点我啊！" />
+	<br /><br />
+	
+	<img src="dan.gif" id="dan" style="left: 0px;" />
+	<img src="qiang.jpg" alt="" id="qiang" />
+	</body>
+</html>

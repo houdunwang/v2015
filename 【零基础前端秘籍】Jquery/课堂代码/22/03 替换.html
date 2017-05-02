@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		#box{
+			width: 600px;
+			height: 500px;
+			border: 5px solid blue;
+		}
+	</style>
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	
+	$(function(){
+		$("#btn").click(function(){
+		
+//			替换
+//			$("#box h2").eq(2).replaceWith($("#title"));
+//			$("#title").replaceAll($("#box h2").eq(2));
+
+			
+//			复制
+//			var newobj = $("#title").clone();
+//			$("#box").append(newobj);
+			
+		})
+	})
+	
+</script>
+	</head>
+	<body>
+	<input type="button" id="btn" value="我是按钮" />
+		<br />
+		
+	<h1 id="title">我是h1标签</h1>
+	
+	<div id="box">
+		<h2>后盾人 人人做后盾0</h2>
+		<h2>后盾人 人人做后盾1</h2>
+		<h2>后盾人 人人做后盾2</h2>
+		<h2>后盾人 人人做后盾3</h2>
+		<h2>后盾人 人人做后盾4</h2>
+	</div>
+		
+	</body>
+</html>

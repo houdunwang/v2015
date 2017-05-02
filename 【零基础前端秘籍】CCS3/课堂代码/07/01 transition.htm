@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		#hd{
+			width: 200px;
+			height: 150px;
+			background: dodgerblue;
+			/*指定要监控的属性*/
+			transition-property: width;
+			/*指定运动时间*/
+			transition-duration: 2s;
+			/*指定延迟时间*/
+			transition-delay: 0.5s;
+			/*运动曲线*/
+			transition-timing-function: ease-in;
+			/*transition: width 3s 0.2s ease-in;*/
+			
+		}
+		#hd:hover{
+			width: 900px;
+		}
+	</style>
+	</head>
+	<body>
+		
+		<div id="hd"></div>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,259 @@
+li {
+  list-style: none;
+}
+a {
+  color: #1CAF9A;
+}
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+body {
+  background: #eeeeee;
+}
+header {
+  text-align: center;
+  background: #1CAF9A url(../images/bg.jpg) no-repeat;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-position: center;
+}
+@media screen and (max-width: 768px) {
+  header {
+    padding: 30px;
+  }
+  header h1 {
+    font-size: 30px;
+  }
+}
+header h1 {
+  color: white;
+}
+nav {
+  border-top: 1px solid #ebebeb;
+  border-bottom: 2px solid #e1e1e1;
+  text-align: center;
+  font-size: 16px;
+  background: white;
+}
+@media (max-width: 768px) {
+  nav {
+    text-align: left;
+  }
+  nav .navbar-header {
+    text-align: center;
+  }
+  nav .navbar-header button.navbar-toggle {
+    float: none;
+    border: none;
+  }
+  nav .navbar-header button.navbar-toggle span.icon-bar {
+    width: 30px;
+    background: #000000;
+  }
+  nav .navbar-header button.navbar-toggle:hover {
+    background: none;
+  }
+}
+nav ul._menu {
+  margin-bottom: 0px;
+  padding-left: 0;
+}
+nav ul._menu li {
+  display: inline-block;
+  padding: 14px 20px;
+}
+@media (max-width: 768px) {
+  nav ul._menu li {
+    display: block;
+  }
+}
+nav ul._menu li a {
+  color: #505050;
+}
+nav ul._menu li._active {
+  border-bottom: 2px solid #1CAF9A;
+}
+nav ul._menu li:hover a {
+  color: #1CAF9A;
+}
+section main article {
+  background: white;
+  padding: 50px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 768px) {
+  section main article {
+    padding: 20px;
+  }
+}
+section main article._carousel {
+  padding: 30px;
+}
+@media screen and (max-width: 768px) {
+  section main article._carousel {
+    padding: 0px;
+  }
+}
+@media (max-width: 768px) {
+  section main article ._head h1 {
+    font-size: 2em;
+  }
+}
+section main article ._head time {
+  color: #999;
+}
+section main article .category_title span {
+  color: #999;
+}
+section main article ._digest {
+  margin-top: 20px;
+}
+section main article ._digest p {
+  color: #444443;
+  text-align: left;
+  font-size: 18px;
+  line-height: 1.7em;
+}
+@media screen and (max-width: 768px) {
+  section main article ._digest p {
+    height: 5em;
+    overflow: hidden;
+  }
+}
+section main article ._digest img {
+  margin-bottom: 20px;
+}
+section main article ._more {
+  text-align: left;
+  margin-top: 20px;
+}
+section main article ._more .btn-default {
+  color: white;
+  background: #1CAF9A;
+  border: none;
+  padding: 10px 20px;
+  transition: all 0.2s ease-in-out 0s;
+}
+section main article ._more .btn-default:hover {
+  background: #000000;
+  color: white;
+}
+section main article ._footer {
+  margin-top: 20px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  text-align: left;
+  color: #959595;
+}
+section main article ._footer i {
+  margin-right: 10px;
+  color: #959595;
+}
+section main article ._footer a {
+  color: #959595;
+}
+section main article ._footer a:hover {
+  color: #1CAF9A;
+}
+section aside ._widget {
+  background: white;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+section aside ._widget h4 {
+  border-bottom: 1px solid #ebebeb;
+  padding-bottom: 15px;
+  position: relative;
+  color: #000;
+}
+section aside ._widget h4:after {
+  background: #1CAF9A;
+  bottom: -1px;
+  content: "";
+  height: 1px;
+  left: 0;
+  position: absolute;
+  width: 90px;
+}
+section aside ._widget ._info {
+  margin-top: 0;
+  padding-top: 20px;
+}
+section aside ._widget a {
+  color: #959595;
+  border: 1px solid #ebebeb;
+  margin: 0 5px 5px 0px;
+  padding: 2px 7px;
+  display: inline-block;
+  transition: all 0.2s ease 0s;
+}
+section aside ._widget a:hover {
+  background: #1CAF9A;
+  color: white;
+}
+.bottom_a a {
+  color: #199f8c;
+}
+.bottom_a a:hover {
+  color: white;
+}
+footer {
+  background: #202020;
+  padding: 30px 0;
+  color: #959595;
+  font-size: 12px;
+}
+footer ._title {
+  border-bottom: 1px solid #303030;
+  padding-bottom: 15px;
+  position: relative;
+  color: white;
+}
+footer ._title:after {
+  background: #1CAF9A;
+  bottom: -1px;
+  content: "";
+  height: 1px;
+  left: 0;
+  position: absolute;
+  width: 90px;
+}
+footer ._single {
+  border-bottom: 1px dashed #303030;
+  padding: 10px 0;
+}
+footer a {
+  color: #199f8c;
+}
+footer a:hover {
+  color: white;
+}
+footer .footer_tag a {
+  color: #959595;
+  border: 1px solid #303030;
+  margin: 0 5px 5px 0px;
+  padding: 2px 7px;
+  display: inline-block;
+  transition: all 0.2s ease 0s;
+}
+footer .footer_tag a:hover {
+  background: #1CAF9A;
+  color: white;
+}
+.footer_bottom {
+  border-top: 1px solid #303030;
+  text-align: center;
+  background: #111111;
+  min-height: 80px;
+  font-size: 12px;
+  padding-top: 30px;
+}
+.footer_bottom a {
+  color: #199f8c;
+}
+.footer_bottom a:hover {
+  color: white;
+}
+/*# sourceMappingURL=index.css.map */

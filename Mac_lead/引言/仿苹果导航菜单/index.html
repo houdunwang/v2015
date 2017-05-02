@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>仿Mac的导航</title>
+<style>
+*{margin: 0;padding: 0;}
+header{
+	width: 100%;
+	position: absolute;
+	bottom: 20px;
+	text-align: center;
+	/*border: 1px solid red;*/
+}
+header div{
+	width: 100px;height: 100px;
+	border-radius: 50%;
+	/*border: 1px solid black;*/
+	display: inline-block;
+}
+.dv1{background: url(images/1.png) no-repeat;background-size:100%;}
+.dv2{background: url(images/2.png) no-repeat;background-size:100%;}
+.dv3{background: url(images/3.png) no-repeat;background-size:100%;}
+.dv4{background: url(images/4.png) no-repeat;background-size:100%;}
+.dv5{background: url(images/5.png) no-repeat;background-size:100%;}
+.dv6{background: url(images/1.png) no-repeat;background-size:100%;}
+.dv7{background: url(images/2.png) no-repeat;background-size:100%;}
+.dv8{background: url(images/3.png) no-repeat;background-size:100%;}
+</style>
+</head>
+
+<body>
+<input type="text">
+<input type="text">
+<input type="text">
+<input type="text">
+<input type="text">
+<input type="text">
+<input type="text">
+<input type="text">
+<header>
+	<div class="dv1"></div>
+	<div class="dv2"></div>
+	<div class="dv3"></div>
+	<div class="dv4"></div>
+	<div class="dv5"></div>
+	<div class="dv6"></div>
+	<div class="dv7"></div>
+	<div class="dv8"></div>
+</header>
+</body>
+<script>
+    //一. 抓取元素
+    var  inputs = document.getElementsByTagName('input');
+    var  dvs = document.getElementsByTagName('div');
+    var header = document.getElementsByTagName('header')[0];
+    //二. 绑定事件
+    document.onmousemove=function(e){
+    	//1. 兼容性的事件对象
+        var ev = window.event || e;
+        //2. 鼠标的坐标位置
+        var mou_x = ev.clientX;
+        var mou_y = ev.clientY;
+        //3. 将鼠标坐标放入title,以便实时监测
+        document.title = mou_x +"|"+ mou_y;
+        //4. 遍历每个元素
+        for(var i=0;i<dvs.length;i++){
+        	//(1) 获得元素圆心的坐标位置
+        	// 圆心的left = 当前元素父级的left + 当前元素的left + 当前元素的半径;
+        	var x = dvs[i].offsetLeft + header.offsetLeft + dvs[i].offsetWidth/2;
+        	var y = dvs[i].offsetTop + header.offsetTop + dvs[i].offsetHeight/2;
+        	//(2) 获得鼠标点与元素圆心的直线距离 （ 勾股定理: c^2 = a^2 + b^2 ）
+        	var c = Math.sqrt(Math.pow(x-mou_x,2) + Math.pow(y-mou_y,2));
+            //(3) 将距离赋值到输入框里，以便实时查看距离
+        	inputs[i].value=c;
+
+        	//鼠标与圆心的距离和圆大小变化的关系
+        	//   距离   c       300  ---  600       	
+        	//   圆直径   d       100  ---  200
+        	//   比率   rate    0.5  ---  0
+        	//   公式    d = (1-c/600)*200   
+
+        	//(4) 创建一个比率rate,使之与鼠标--圆心的距离c相对应
+            var rate = 1-c/600;
+            //(5) 限定比率的变化范围 
+            // 当比率小于0.5时，让rate固定为0.5，以此保证c大于300的时候,圆的大小不变。
+            if(rate<0.5){rate = 0.5;}
+            //(6) 得到圆的直径
+            var d = rate*200;
+            //(7) 获得新的宽高值并赋值给元素
+        	dvs[i].style.width = d + "px";
+        	dvs[i].style.height = d + "px";
+        }
+    }
+</script>
+</html>

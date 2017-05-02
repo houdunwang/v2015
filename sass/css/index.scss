@@ -1,0 +1,37 @@
+$color: yellow;
+@import "a";
+.box{
+	height:100px;
+	width:100px;
+	background:red;
+	.box1{
+		width: 50px;
+		height: 50px;
+		background:$color;
+
+	}
+}
+.hd{
+	width:200px;
+	height:200px;
+	border:1px solid #000;
+}
+.hd1{
+	@extend .hd;
+}
+@mixin width($a,$b) {
+	-webkit-transition:$a,$b;
+	-moz-transition:$a,$b;
+	transition:$a,$b;
+}
+
+.boss{
+	width:200px-100px;
+	height:200px;
+	background:red;
+	@include width(width,2s);
+	&:hover{
+		width: 400px;
+	}
+}
+

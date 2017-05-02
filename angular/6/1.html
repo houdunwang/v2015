@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<style>
+    .ng-cloak{
+        display: none;
+    }
+</style>
+<body ng-app="hd" ng-cloak class="ng-cloak">
+<div ng-controller="ctrl">
+    {{name+'houdunwang.com'}} houdunwang.com houdunren.com bbs.houdunwang.com
+    <hr>
+    {{user.username+'=>'+user.url}}
+    <hr>
+    {{num*8}}
+    <hr>
+    <h3 ng-bind="name"></h3>
+</div>
+<script src="../org/angular.min.js"></script>
+<script>
+    var m = angular.module('hd', []);
+    m.controller('ctrl', ['$scope', function ($scope) {
+        $scope.name = '后盾网';
+        $scope.num = 2;
+        $scope.user = {'username': '后盾人', 'url': 'houdunren.com'};
+    }]);
+</script>
+</body>
+</html>

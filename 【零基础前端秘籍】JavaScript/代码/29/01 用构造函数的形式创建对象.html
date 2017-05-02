@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	
+	<script type="text/javascript">
+//		用来创建手机对象的构造函数
+		function pgsj(){
+			this.size = '5.5寸';
+			this.color = '土豪金';
+			this.weight = '200g';
+			this.price = '8000元';
+			this.call = function(){
+				alert('能打电话！');
+			}
+		}
+		
+		var iphone9 = new pgsj();
+//		对象里的属性和方法是可以修改的
+		iphone9.weight = '199g';
+//		alert(iphone9.weight);
+		iphone9.call = function(){
+			alert('哈哈哈');
+		}
+//		iphone9.call();
+
+		
+		
+		var iphone92 = new pgsj();
+//		新增属性和方法
+		iphone92.yan = '挂绳子的眼';
+		iphone92.huo = function(){
+			alert('能点火');
+		}
+//		iphone92.huo();
+		
+		
+//		document.write(iphone9.color);
+		
+		
+		
+	</script>
+	
+	
+	</head>
+	<body>
+	</body>
+</html>

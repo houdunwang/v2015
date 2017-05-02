@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		canvas{
+			background: #272822;
+			
+		}
+	</style>
+	</head>
+	<body>
+		
+		<canvas id="canvas" width="900" height="500"></canvas>
+		
+	<script type="text/javascript">
+		
+//		获得画板
+		var canvas = document.getElementById("canvas");
+//		获得绘画环境
+		var cv = canvas.getContext('2d');
+		
+//		开启路径（相当于大喊一声，我要开始画啦）
+		cv.beginPath();
+//		移动笔触到开始位置
+		cv.moveTo(100,100);
+//		指定要画到哪里去
+		cv.lineTo(600,300);
+		
+//		定义拐角类型
+		cv.lineJoin = 'round';
+//		定义线条颜色
+		cv.strokeStyle = 'yellow';
+//		定义线条粗细
+		cv.lineWidth = 10;
+//		把线条画出来
+		cv.stroke();
+		
+		cv.lineTo(700,150);
+		cv.stroke()
+		
+		
+		cv.lineTo(780,400);
+		cv.stroke()
+		
+	</script>
+		
+		
+	</body>
+</html>

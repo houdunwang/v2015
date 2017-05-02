@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		#hd{
+			width: 500px;
+			height: 350px;
+			background: mediumpurple;
+			margin: 100px;
+			position: relative;
+		}
+	</style>
+<script type="text/javascript">
+	
+	window.onload = function(){
+		var hd = document.getElementById("hd");
+		hd.onclick = function(e){
+			
+//			获得事件对象
+			var ev = window.event || e;
+//			获得鼠标和可视区域边缘的距离
+//			alert(ev.clientX);
+			
+//			获得鼠标和事件源左侧或顶部的距离
+			var l = ev.offsetX || ev.layerX;
+			alert(l);
+			
+		}
+	}
+	
+</script>
+	</head>
+	<body>
+		
+		<div id="hd"></div>
+		
+		
+	</body>
+</html>

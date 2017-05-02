@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="hd" ng-controller="ctrl">
+    搜索: <input type="text" ng-model="search">
+    <table border="1" width="600">
+        <tr>
+            <td>编号</td>
+            <td>点击数</td>
+            <td>标题</td>
+        </tr>
+        <tr ng-repeat="(k,v) in lists">
+            <td>{{v.id}}</td>
+            <td>{{v.click}}</td>
+            <td>{{v.title}}</td>
+        </tr>
+    </table>
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.controller('ctrl', ['$scope', '$filter', function ($scope, $filter) {
+        $scope.data = [
+            {id: 1, click: 100, title: '后盾人'},
+            {id: 2, click: 200, title: 'PHP'},
+            {id: 3, click: 300, title: '后盾网'},
+        ];
+        //临时数据用于显示
+        $scope.lists = $scope.data;
+        $scope.$watch('search',function(n,o){
+            $scope.lists = $filter('filter')($scope.data,n);
+        });
+    }]);
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

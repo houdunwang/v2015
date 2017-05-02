@@ -1,0 +1,45 @@
+<layout name="../../Data/View/master"/>
+<ul class="breadcrumb no-border no-radius b-b b-light pull-in">
+    <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+    <li><a href="#">基本设置</a></li>
+    <li><a href="#">文章管理</a></li>
+</ul>
+<div class="m-b-md">
+    <h3 class="m-b-none">文章管理</h3>
+    <br/>
+    <a href="{:site_url('news.articlePost')}" class="btn btn-primary">添加文章</a>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <section class="panel panel-default">
+            <header class="panel-heading font-bold">数据设置</header>
+            <div class="panel-body">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>编号</th>
+                        <th>标题</th>
+                        <th>查看次数</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <volist name="data" id="d">
+                        <tr>
+                            <td>{$d['id']}</td>
+                            <td>{$d['title']}</td>
+                            <td>{$d['click']}次</td>
+                            <td>
+                                <div class="btn-group">
+                                    <a href="{:site_url('news.articleEdit',['id'=>$d['id']])}" class="btn btn-default">编辑</a>
+                                    <a href="{:site_url('news.articleRemove',['id'=>$d['id']])}" class="btn btn-default">删除</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </volist>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</div>

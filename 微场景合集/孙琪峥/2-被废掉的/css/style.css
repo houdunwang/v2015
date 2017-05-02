@@ -1,0 +1,172 @@
+html,
+body {
+	position: relative;
+	height: 100%;
+	background: darkgrey;
+}
+
+body {
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	color: #000;
+	margin: 0;
+	padding: 0;
+	font-family: 微软雅黑;
+}
+
+.swiper-container {
+	width: 100%;
+	height: 100%;
+}
+
+.swiper-slide {
+	background: #08A1EF;
+	text-align: center;
+	font-size: 18px;
+	/* Center slide text vertically */
+	/*display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;*/
+	/*display: flex;*/
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+
+#music {
+	width: 60px;
+	height: 60px;
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	z-index: 1111111;
+	/*border: 1px solid red;*/
+	background-size: 60px 60px;
+}
+
+@keyframes music {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+#music img.m {
+	width: 60px;
+	height: 60px;
+}
+
+#music img.off {
+	position: absolute;
+	left: 7px;
+	top: 7px;
+	animation: music 2s linear infinite;
+}
+
+
+/*第一块样式*/
+.swiper-slide.one {
+	background: #ED5564;
+
+}
+.swiper-slide.one .logo{
+	display: block;
+	margin: 0 auto;
+	margin-top: 40%;
+	width: 60%;
+	margin-bottom: 5%;
+}
+.swiper-slide.one .title{
+	letter-spacing: 2px;
+	display: block;
+	line-height: 2em;
+	color: #F5C51C;
+	font-weight: 700;
+	font-size: 5vw;
+}
+/*第一块结束*/
+
+/*第二块开始*/
+.swiper-slide.two{
+	background: #08A1EF url(../images/sushelou.jpg) no-repeat left top;
+	background-size: 100%;
+}
+.swiper-slide.two .top{
+	display: block;
+	padding: 3% 3%;
+	background: rgba(8,161,239,0.8);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-align: left;
+	color: white;
+	font-size: 4vw;
+	line-height: 1.5em;
+}
+/*第二块结束*/
+
+/*第三屏*/
+.swiper-slide.three img.top{
+	height: 50%;
+}
+.swiper-slide.three img.bottom{
+	height: 50%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.swiper-slide.three .description{
+	width: 100%;
+	position: absolute;
+	background: rgba(246,187,67,0.9);
+	color: white;
+	top: 50%;
+	left: 50%;
+	transform:  translateX(-50%) translateY(-50%);	
+	padding: 3% 100px;
+	font-size: 4vw;
+	line-height: 1.5em;
+	text-align: left;
+}
+.swiper-slide.three .description span{
+	margin: 0 4%;
+	display: block;
+}
+/*第三屏结束*/
+
+/*最后一屏*/
+.swiper-slide.last{
+	background: #08A1EF url(../images/xiangshanheying.png) no-repeat left bottom;
+	background-size: 100%;
+}
+.swiper-slide.last ul.info{
+	overflow: hidden;
+	margin-top: 35%;
+}
+.swiper-slide.last ul.info li{
+	line-height: 1.5em;
+	text-align: center;
+	color: #fff;
+	list-style: none;
+	font-family: arial;
+	font-weight: 700;
+	font-size: 6vw;
+	
+}
+/*最后一屏结束*/
+
+
+
+
+
+
+
+
+

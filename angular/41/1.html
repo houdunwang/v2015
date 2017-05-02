@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="hd" ng-controller="ctrl">
+    <table border="1" width="600">
+        <tr>
+            <td ng-click="orderBy('id')">编号
+                <span ng-if="status.id">升序</span>
+                <span ng-if="!status.id">降序</span>
+            </td>
+            <td ng-click="orderBy('click')">点击数
+                <span ng-if="status.click">升序</span>
+                <span ng-if="!status.click">降序</span>
+            </td>
+            <td ng-click="orderBy('title')">标题
+                <span ng-if="status.title">升序</span>
+                <span ng-if="!status.title">降序</span>
+            </td>
+        </tr>
+        <tr ng-repeat="(k,v) in data">
+            <td>{{v.id}}</td>
+            <td>{{v.click}}</td>
+            <td>{{v.title}}</td>
+        </tr>
+    </table>
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.controller('ctrl', ['$scope', '$filter', function ($scope, $filter) {
+        $scope.data = [
+            {id: 1, click: 100, title: '后盾人'},
+            {id: 2, click: 200, title: 'PHP'},
+            {id: 3, click: 300, title: '后盾网'},
+        ];
+        //记录排序的状态
+        $scope.status = {id: false, click: false, title: false};
+        $scope.orderBy = function (field) {
+            $scope.status[field]=!$scope.status[field];
+            $scope.data = $filter('orderBy')($scope.data, field, $scope.status[field]);
+        }
+    }]);
+</script>
+</body>
+</html>

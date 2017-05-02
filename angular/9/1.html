@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="hd" ng-controller="ctrl">
+    网站开启:
+    <input type="radio" ng-model="status" ng-value="1"> 开启
+    <input type="radio" ng-model="status" ng-value="0"> 关闭
+    {{status}}
+    <div ng-show="status==0">
+        <h2>关闭原因:</h2>
+        <textarea>后盾网正在维护中,2:00可以访问</textarea>
+    </div>
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.controller('ctrl', ['$scope', function ($scope) {
+        $scope.status=1;
+    }]);
+</script>
+</body>
+</html>

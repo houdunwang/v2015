@@ -1,0 +1,254 @@
+html,
+body {
+	position: relative;
+	height: 100%;
+	background: darkgrey;
+}
+
+body {
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	color: #000;
+	margin: 0;
+	padding: 0;
+	font-family: 微软雅黑;
+}
+
+.swiper-container {
+	width: 100%;
+	height: 100%;
+}
+
+.swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	/* Center slide text vertically */
+	/*display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;*/
+	/*display: flex;*/
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+
+#music {
+	width: 60px;
+	height: 60px;
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	z-index: 1111111;
+	/*border: 1px solid red;*/
+	background-size: 60px 60px;
+}
+
+@keyframes music {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+#music img.m {
+	width: 60px;
+	height: 60px;
+}
+
+#music img.off {
+	position: absolute;
+	left: 7px;
+	top: 7px;
+	animation: music 2s linear infinite;
+}
+
+
+/*第一块样式*/
+
+.swiper-slide.one {
+	background: url(../images/one_bg.jpg);
+	background-size: cover;
+}
+
+.swiper-slide.one .title h1 {
+	/*width: 200px;*/
+	margin: 0 auto;
+	text-align: center;
+	line-height: 1.5em;
+	position: absolute;
+	top: 50%;
+	transform:  translateX(-50%) translateY(-50%);
+	left: 50%;
+	color: white;
+	min-width: 200px;
+	letter-spacing: 2px;
+	font-size: 38px;
+	font-size: 6vw;
+}
+
+.swiper-slide.one .huawen {
+	width: 80%;
+	display: block;
+	position: absolute;
+	top: 50%;
+	transform:  translateX(-50%) translateY(-50%);
+	left: 50%;
+
+
+}
+/*第一块样式结束*/
+
+
+/*第二屏*/
+.swiper-slide.two{
+	border: 1px solid blue;
+}
+.swiper-slide.two .top{
+	display: block;
+	width: 100%;
+}
+.swiper-slide.two .bottom{
+	background: url(../images/2-2.jpg) no-repeat;
+	background-size: 100%;
+	height: 100%;
+}
+.swiper-slide.two .bottom span.title{
+	font-size: 4vw;
+	line-height: 2em;
+	display: block;
+	text-align: center;
+	font-weight: 700;
+}
+.swiper-slide.two .bottom span.xingao{
+	color: #990810;
+	font-size: 5vw;
+	font-weight: 700;
+	line-height: 1.2em;
+	padding-top: 7px;
+	display: block;
+
+}
+.swiper-slide.two .bottom span.xinshui{
+	font-weight: 700;
+	font-family: arial;
+	display: block;
+	text-align: center;
+	font-size: 10vw;
+	line-height: 1.2em;
+	color: #990810;
+}
+.swiper-slide.two .bottom span.xinshui span{
+	font-size: 8vw;
+}
+.swiper-slide.two .bottom span.yiban{
+	font-size: 4vw;
+	display: block;
+	text-align: center;
+	line-height: 2em;
+}
+.swiper-slide.two .bottom span.xiangqing{
+	display: block;
+	margin: 0 10%;
+	font-size: 3vw;
+	padding-top: 5%;
+	line-height: 1.8em;
+	text-align: left;
+}
+/*.swiper-slide.two .bottom span.b{
+	display: block;
+	width: 100%;
+	background: url(../images/2-2.jpg) no-repeat;
+	background-size: 100%;
+	height: 100%;
+}*/
+/*第二屏结束*/
+
+/*第三屏*/
+.swiper-slide.three{
+	background: url(../images/tangfuhong.jpg) no-repeat;
+	background-size: 100%;
+	position: relative;
+}
+.swiper-slide.three .left{
+	position: absolute;
+	bottom: 5%;
+	left: 0;
+}
+.swiper-slide.three .left .name{
+	display: block;
+	padding-left: 3%;
+	color: white;
+	line-height: 2em;
+	font-size: 4vw;
+	background: rgba(230,0,51,0.5);
+	padding-right: 3%;
+	float: left;
+}
+.swiper-slide.three .left .description{
+	padding: 2% 3%;
+	background: rgba(230,0,51,0.5);
+	display: block;
+	font-size: 2.5vw;
+	color: white;
+	text-align: left;
+	line-height: 1.5em;
+	float: left;
+	width: 80%;
+	margin-top: 1%;
+}
+
+
+
+/*第三屏结束*/
+
+
+/*最后一屏*/
+.swiper-slide.last{
+	background: url(../images/last.jpg) no-repeat 0px bottom;
+	background-size: 100%;
+}
+.swiper-slide.last p{
+	/*color: white;*/
+	font-size: 4vw;
+	line-height: 1.2em;
+	text-shadow: 0px 0px 3px #fff;
+}
+.swiper-slide.last p:nth-child(1){
+	margin-top: 15%;
+}
+.swiper-slide.last p:nth-child(3){
+	margin-top: 10%;
+}
+.swiper-slide.last p:nth-child(7){
+	margin-top: 10%;
+	font-weight: 700;
+}
+.swiper-slide.last p:nth-child(8){
+	font-weight: 700;
+}
+.swiper-slide.last p:nth-child(9){
+	font-weight: 700;
+}
+/*最后一屏结束*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

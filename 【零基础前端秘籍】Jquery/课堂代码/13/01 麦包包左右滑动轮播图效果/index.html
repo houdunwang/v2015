@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#mbb{
+			width: 952px;
+			height: 440px;
+			border: 4px solid green;
+			margin: 10px auto;
+			position: relative;
+			overflow: hidden;
+		}
+		#mbb .con{
+			width: 4760px;
+			height: 440px;
+			border: 1px solid red;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		#mbb .con img{
+			float: left;
+		}
+		#mbb ul{
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			
+		}
+		#mbb ul li{
+			list-style: none;
+			float: left;
+			width: 116px;
+			height: 29px;
+			line-height: 29px;
+			text-align: center;
+			color: white;
+			background: black;
+			opacity: 0.4;
+			font-size: 12px;
+			font-family: '宋体';
+			margin-left: 1px;
+		}
+		#mbb ul li:hover{
+			text-decoration: underline;
+			color: #c00;
+		}
+	</style>
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+$(function(){
+	var c = 0;
+//	给li加鼠标单击事件
+	$("#mbb ul li").click(function(){
+//		获得当前被点击的li的序号
+		c = $(this).index();
+//		计算大div应该到达的left值
+		var left = c*-952;
+		$("#mbb .con").stop().animate({'left':left+'px'},300);
+//		让当前被点击的li透明度变为0.7,兄弟li透明度变为0.4
+		$(this).css({'opacity':'0.7'}).siblings('li').css({'opacity':'0.4'});
+	})
+	
+})
+	</script>
+	</head>
+	
+	<body>
+		
+	<div id="mbb">
+		<div class="con">
+			<!--img[src=images/$.jpg]*5-->
+			<img src="images/1.jpg" alt="" />
+			<img src="images/2.jpg" alt="" />
+			<img src="images/3.jpg" alt="" />
+			<img src="images/4.jpg" alt="" />
+			<img src="images/5.jpg" alt="" />
+		</div>
+		<ul>
+			<li style="opacity: 0.7;">个性萌包</li>
+			<li>双肩出行</li>
+			<li>法式风情</li>
+			<li>春卷包</li>
+			<li>炫彩印花</li>
+		</ul>
+	</div>
+	
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

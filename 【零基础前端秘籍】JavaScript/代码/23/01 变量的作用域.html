@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script type="text/javascript">
+//		局部变量:在函数内部用var声明的变量,局部变量只能作用在函数内部.
+
+//		全局变量:不是局部变量的变量就一定是全局变量.作用范围是整个js区块
+
+//		提倡能用局部变量的时候,一定要用局部变量
+		
+		
+		var hd = '后盾人';
+		
+		function fn(){
+//			alert(hd);
+//			如果变量直接被赋值,可以不用var去声明
+			bd = '百度';
+		}
+		
+		fn();
+		alert(bd);
+		
+		
+	</script>
+	</head>
+	<body>
+	</body>
+</html>

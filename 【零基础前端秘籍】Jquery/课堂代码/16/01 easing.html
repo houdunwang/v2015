@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#dan{
+			position: absolute;
+			left: 0;
+			top: 50px;
+		}
+		#dan2{
+
+			position: absolute;
+			left: 0;
+			top: 200px;
+		}
+	</style>
+
+<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="jquery.easing.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	
+	$(function(){
+		$("#btn").click(function(){
+//			$("#dan").animate({'left':'600px'},1500);
+//			$("#dan2").animate({'left':'600px'},1500,'linear');
+			$("#dan").animate({'left':'600px'},500,'easeOutBounce');
+		})
+	})
+	
+</script>
+
+	</head>
+	<body>
+		
+	<input type="button" value="点我啊！" id="btn" />
+	<img src="dan.gif" id="dan"/>
+	<img src="dan.gif" id="dan2"/>
+		
+	</body>
+</html>

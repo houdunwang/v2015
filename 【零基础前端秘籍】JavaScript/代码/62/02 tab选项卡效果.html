@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#tab{
+			width: 600px;
+			height: 500px;
+			border: 5px solid blue;
+			margin: 0 auto;
+			position: relative;
+		}
+		#tab ul li{
+			list-style: none;
+			float: left;
+			width: 200px;
+			height: 50px;
+			line-height: 50px;
+			font-size: 30px;
+			/*color: white;*/
+			text-align: center;
+			
+		}
+		#tab .con{
+			width: 580px;
+			height: 420px;
+			position: absolute;
+			left: 10px;
+			top: 60px;
+			display: none;
+		}
+	</style>
+<script type="text/javascript">
+	
+	window.onload = function(){
+//		抓元素
+		var tab = document.getElementById("tab");
+		var lis = tab.getElementsByTagName('li');
+		var cons = tab.getElementsByClassName('con');
+		
+//		循环,给li加单击事件
+		for (var i=0;i<lis.length;i++) {
+//			给i号li加序号
+			lis[i].xuhao = i;
+//			给i号li加单击事件
+			lis[i].onmouseover = function(){
+//				让所有的con隐藏
+				for (var i=0;i<cons.length;i++) {
+					cons[i].style.display = 'none';
+				}
+//				让this.xuhao对应的con显示
+				cons[this.xuhao].style.display = 'block';
+			}
+		}
+		
+	}
+	
+</script>
+	</head>
+	<body>
+		
+		<div id="tab">
+			<ul>
+				<li style="background: dodgerblue;">新闻</li>
+				<li style="background: orangered;">图片</li>
+				<li style="background: forestgreen;">军事</li>
+			</ul>
+			<div class="con" style="background: dodgerblue;display: block;"></div>
+			<div class="con" style="background: orangered;"></div>
+			<div class="con" style="background: forestgreen;"></div>
+			
+		</div>
+		
+		
+		
+	</body>
+</html>

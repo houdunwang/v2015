@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+    <script src="../org/jquery.min.js"></script>
+</head>
+<body>
+<div ng-app="hd">
+    <div hd-cms></div>
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.directive('hdCms', [function () {
+        return {
+            restrict: 'EA',//a attr e element  c class
+            template: '<h1>后盾人</h1>',
+            replace: false
+        }
+    }]);
+</script>
+</body>
+</html>

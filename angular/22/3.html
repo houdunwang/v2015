@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+</head>
+<body>
+<style>
+    .red{
+        background: red;
+    }
+    .green{
+        background: green;
+    }
+</style>
+
+<div ng-app="hd" ng-controller="ctrl">
+    <table border="1" width="600">
+        <tr>
+            <td>编号</td>
+            <td>姓名</td>
+            <td>年龄</td>
+        </tr>
+        <tr ng-repeat="v in data" ng-class-odd="{green:true}" ng-class-even="{red:true}">
+            <td>{{v.id}}</td>
+            <td>{{v.username}}</td>
+            <td>{{v.age}}</td>
+        </tr>
+    </table>
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.controller('ctrl', ['$scope', function ($scope) {
+        $scope.data = [
+            {id: 1, username: '小明', 'age': 22, status: 0},
+            {id: 2, username: '后盾人', 'age': 45, status: 0},
+            {id: 3, username: 'hdcms', 'age': 12, status: 1},
+            {id: 4, username: 'hdphp', 'age': 42, status: 0},
+        ];
+    }]);
+</script>
+</body>
+</html>

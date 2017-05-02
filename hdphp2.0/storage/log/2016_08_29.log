@@ -1,0 +1,4 @@
+[ 2016-08-29T21:42:12+08:00 ]EXCEPTION: INSERT INTO user set username=:username ,mail=:mail ;BindParams:array (
+  ':username' => '向军',
+  ':mail' => '230071698@qq.com',
+)42S02;1146;Table 'hdphp2.user' doesn't exist

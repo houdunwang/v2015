@@ -1,0 +1,75 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+#gg {
+	width: 100%;
+	height: 80px;
+	background: #EF254D;
+}
+
+#gg a {
+	display: block;
+	margin: 0 auto;
+	width: 990px;
+	height: 80px;
+	background: url(top.jpg) no-repeat center center;
+}
+
+#top {
+	width: 100%;
+	height: 30px;
+	background: #E3E4E5;
+}
+
+#top>div {
+	width: 990px;
+	height: 30px;
+	border-left: 3px solid orangered;
+	border-right: 3px solid orangered;
+	margin: 0 auto;
+}
+
+#top>div .right {
+	width: 800px;
+	height: 30px;
+	float: right;
+	background: dodgerblue;
+}
+
+#search {
+	width: 990px;
+	height: 100px;
+	background: hotpink;
+	margin: 0 auto;
+}
+
+#flash {
+	width: 990px;
+	height: 450px;
+	border: 2px solid blue;
+	margin: 0 auto;
+	margin-bottom: 500px;
+}
+
+#flash .left {
+	width: 200px;
+	height: 450px;
+	background: #6E6568;
+	float: left;
+}
+
+#flash .center {
+	width: 590px;
+	height: 450px;
+	background: limegreen;
+	float: left;
+}
+
+#flash .right {
+	width: 200px;
+	height: 450px;
+	background: orangered;
+	float: left;
+}

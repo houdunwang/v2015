@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="hd" ng-controller="ctrl">
+    颜色: <input type="text" ng-model="color">
+    大小: <input type="number" ng-model="size"><br/>
+   <span ng-style="{color:color,fontSize:size+'px'}">后盾人</span>
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.controller('ctrl', ['$scope', function ($scope) {
+    }]);
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="hd" ng-controller="ctrl">
+    <!--<div onclick="run()">hdphp</div>-->
+    <!--<script>-->
+    <!--function run(){alert('hdphp')}-->
+    <!--</script>-->
+    <!--<div ng-dblclick="show()">事件</div>-->
+    <input type="text" ng-mousemove="show()" ng-model="title">
+    {{data}}
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.controller('ctrl', ['$scope', function ($scope) {
+        $scope.data = '';
+        $scope.show = function () {
+            $scope.data += 'hdphp ';
+        }
+    }]);
+</script>
+</body>
+</html>

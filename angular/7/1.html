@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="hd" ng-controller="ctrl">
+    <form action="1.php" method="post">
+        <input type="text" name="title" ng-model="name">
+        {{name}}
+        <input type="submit">
+    </form>
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.controller('ctrl', ['$scope', function ($scope) {
+        $scope.name = '后盾网';
+    }]);
+</script>
+</body>
+</html>

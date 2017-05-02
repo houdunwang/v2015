@@ -1,0 +1,51 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+/*主体div*/
+#container{
+	width: 100%;
+	height: 100%;
+	transition: all 1s;
+}
+#container .box{
+	width: 100%;
+	height: 100%;
+	
+}
+
+/*第一屏*/
+#container .box.one{
+	position: relative;
+}
+#container .box.one h1{
+	width: 60%;
+	color: white;
+	background: orange;
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	font-size: 4vw;
+	line-height: 1.5em;
+	text-align: center;
+	transform: translateX(-50%);
+	animation-delay: 2s;
+	animation-duration: 5s;
+}
+
+
+
+
+
+/*第一屏结束*/
+
+
+
+
+
+/*主体div结束*/

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#btn").click(function(){
+//				给每一个被选中的p标签加包裹
+//				$("p").wrap('<div class="hd"></div>');
+//				setTimeout(function(){
+////					取消外面的包裹结构
+//					$("p").unwrap();
+//				},2000)
+				
+				
+//				$("p").wrapAll('<div class="hd"></div>');
+
+//				将内容进行包裹
+				$("p").wrapInner('<span class="hd"></span>');
+				
+			})
+		})
+	</script>
+	</head>
+	<body>
+	
+	<input type="button" id="btn" value="包裹" />
+	
+	<br /><br />
+	
+	<p>后盾人 人人做后盾</p>
+	<p>后盾人 人人做后盾</p>
+	<p>后盾人 人人做后盾</p>
+	<p>后盾人 人人做后盾</p>
+	<p>后盾人 人人做后盾</p>
+	<p>后盾人 人人做后盾</p>
+	<p>后盾人 人人做后盾</p>
+	<p>后盾人 人人做后盾</p>
+		
+		
+	</body>
+</html>

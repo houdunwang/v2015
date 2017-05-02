@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="hd" ng-controller="ctrl">
+    {{name}} <input type="text" ng-model="name">
+    <hr>
+    <hdcms></hdcms>
+    <hr>
+    <hdcms></hdcms>
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.directive('hdcms', [function () {
+        return {
+            restrict: 'AEC',//a attr e element  c class  scope
+            template: '{{name}} <input type="text" ng-model="name">',
+            scope: {}
+        }
+    }]);
+    m.controller('ctrl', ['$scope', function ($scope) {
+        $scope.name = '后盾人';
+    }]);
+</script>
+</body>
+</html>

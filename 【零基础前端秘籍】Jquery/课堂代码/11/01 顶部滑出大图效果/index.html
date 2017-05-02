@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		img{
+			display: block;
+			margin: 0 auto;
+		}
+		#top{
+			margin-top: -300px;
+		}
+	</style>
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$(function(){
+			$("#top").animate({'margin-top':'0px'},3000,function(){
+
+//				delay一般写在运动前,表示让后面的运动延迟多久执行
+				$("#top").delay(3000).animate({'margin-top':'-300px'},2000)
+
+				
+			});
+		})
+		
+	</script>
+	</head>
+	<body>
+		
+		<img src="top.jpg" id="top"/>
+		<img src="bbs3.jpg" />
+		
+	</body>
+</html>

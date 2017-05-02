@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+</head>
+<body ng-app="hd">
+<div ng-controller="ctrl">
+    商品名称:{{goods.data.title}} <br/>
+    价格:{{goods.data.price}}<br/>
+    购买数量: {{goods.data.num}} 件<br/>
+    总计:{{goods.data.price*goods.data.num}} 元<br/>
+    <button ng-click="goods.add()">增加</button>
+    <button ng-click="goods.reduce()">减少</button>
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.controller('ctrl', ['$scope', function ($scope) {
+        $scope.goods = {
+            data: {'title': 'apple mac', 'price': 300, 'num': 0},
+            add: function () {
+                $scope.goods.data.num = Math.min(++$scope.goods.data.num, 6);
+            },
+            reduce: function () {
+                $scope.goods.data.num = Math.max(--$scope.goods.data.num, 0);
+            }
+        }
+    }]);
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script type="text/javascript">
+		
+	window.onload = function(){
+//		抓元素
+		var btn = document.getElementById("btn");
+		var pic = document.getElementById("pic");
+		var p = 1;
+		
+//		给按钮加单击事件
+		btn.onclick = function(){
+			
+//			设置定时器,每隔100毫秒换一张图片
+			setInterval(function(){
+				p++;
+//				if (p==20) {
+//					p=1;
+//				}
+				p = (p==20)?1:p;
+//				换下一张图片
+				pic.setAttribute('src','images/'+p+'.png');
+			},100)
+			
+		}
+		
+	}
+		
+		
+	</script>
+	</head>
+	<body>
+		
+		<input type="button" value="点我啊!" id="btn" />
+		
+		<br /><br />
+		
+		<img src="images/1.png" id="pic" />
+		
+		
+	</body>
+</html>

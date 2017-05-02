@@ -1,0 +1,17 @@
+[ 2016-09-09T00:12:06+08:00 ]EXCEPTION: web\home\controller\Category 不存在
+[ 2016-09-09T00:21:12+08:00 ]EXCEPTION: Method web\home\controller\Category::__empty() does not exist
+[ 2016-09-09T00:22:46+08:00 ]EXCEPTION: Method web\home\controller\Category::__empty() does not exist
+[ 2016-09-09T00:22:56+08:00 ]EXCEPTION: Method web\home\controller\Category::__empty() does not exist
+[ 2016-09-09T00:22:58+08:00 ]EXCEPTION: Method web\home\controller\Category::__empty() does not exist
+[ 2016-09-09T00:33:43+08:00 ]EXCEPTION: Method web\home\controller\Category::__empty() does not exist
+[ 2016-09-09T00:36:30+08:00 ]EXCEPTION: web\home\controller\Goods 不存在
+[ 2016-09-09T00:36:38+08:00 ]EXCEPTION: web\home\controller\Goods 不存在
+[ 2016-09-09T01:19:47+08:00 ]EXCEPTION: SELECT * FROM hd_goods  WHERE cid = ?     ;BindParams:array (
+  1 => '3',
+)42S22;1054;Unknown column 'cid' in 'where clause'
+[ 2016-09-09T01:21:18+08:00 ]EXCEPTION: SELECT * FROM hd_goods  WHERE cid = ?     ;BindParams:array (
+  1 => '3',
+)42S22;1054;Unknown column 'cid' in 'where clause'
+[ 2016-09-09T01:21:20+08:00 ]EXCEPTION: SELECT * FROM hd_goods  WHERE cid = ?     ;BindParams:array (
+  1 => '3',
+)42S22;1054;Unknown column 'cid' in 'where clause'

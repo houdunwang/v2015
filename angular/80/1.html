@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+    <script src="../org/jquery.min.js"></script>
+    <script src="../org/angular-ui-router.min.js"></script>
+</head>
+<body>
+<div ng-app="hd">
+    <div ui-view></div>
+</div>
+<script>
+    var m = angular.module('hd', ['ui.router']);
+    m.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+        //默认路由
+        $urlRouterProvider.otherwise('/home');
+        //定义路由规则
+        $stateProvider
+                .state('home', {
+                    url: '/home',
+                    templateUrl: 'view/home.html',
+                })
+                .state('home.news', {
+                    url: '/news',
+                    template: '<h1>新闻</h1>',
+                })
+                .state('game', {
+                    url: '/game',
+                    parent:'home',
+                    template: '<h1>游戏</h1>',
+                })
+                .state('login', {
+                    url: '/login',
+                    parent:'home',
+                    template: '<h1>登录</h1>',
+                })
+    }]);
+</script>
+</body>
+</html>

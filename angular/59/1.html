@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+    <script src="../org/jquery.min.js"></script>
+</head>
+<body>
+<div ng-app="hd" ng-controller="ctrl">
+    <hd-tab data="data"></hd-tab>
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.controller('ctrl', ['$scope', function ($scope) {
+                 $scope.data=[
+                    {id:1,title:'培训',data:[
+                        {id:1,title:'PHP'},
+                        {id:1,title:'HTML5'}
+                    ]},
+                    {id:2,title:'开源产品',data:[
+                        {id:1,title:'HDCMS'},
+                        {id:1,title:'HDPHP'}
+                    ]}
+                 ];
+    }]);
+    m.directive('hdTab', [function () {
+        return {
+            restrict: 'E',
+            templateUrl: '../view/59.html',
+            scope: {
+                data:'='
+            },
+            link: function (scope, elem, attr) {
+                $(elem).delegate('a', 'click', function () {
+                    $('a').removeClass('active');
+                    $(this).addClass('active');
+                    //查找a 元素出现的位置
+                    var index = $(this).index();
+                    $(elem).find('div.lists').hide();
+                    $(elem).find('div.lists').eq(index - 1).show();
+                })
+            },
+//            controller:['$scope',function($scope){
+//                $scope.data=[
+//                    {id:1,title:'培训',data:[
+//                        {id:1,title:'PHP'},
+//                        {id:1,title:'HTML5'}
+//                    ]},
+//                    {id:2,title:'开源产品',data:[
+//                        {id:1,title:'HDCMS'},
+//                        {id:1,title:'HDPHP'}
+//                    ]}
+//                ];
+//            }]
+        }
+    }]);
+
+</script>
+</body>
+</html>

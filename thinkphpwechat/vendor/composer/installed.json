@@ -1,0 +1,37 @@
+[
+    {
+        "name": "houdunwang/wechat",
+        "version": "v1.0.4",
+        "version_normalized": "1.0.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/wechat.git",
+            "reference": "bf4d6ee9fef2dc0e0677ed703c19ffe132c0dac0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/houdunwang/wechat/zipball/bf4d6ee9fef2dc0e0677ed703c19ffe132c0dac0",
+            "reference": "bf4d6ee9fef2dc0e0677ed703c19ffe132c0dac0",
+            "shasum": ""
+        },
+        "time": "2016-11-13 16:08:39",
+        "type": "project",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "wechat\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "houdunwang",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "wechat framework"
+    }
+]

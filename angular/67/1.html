@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+    <script src="../org/jquery.min.js"></script>
+</head>
+<body>
+<div ng-app="hd" ng-controller="ctrl">
+    <table border="1" width="600">
+        <tr>
+            <td>网站名称</td>
+            <td>网址</td>
+        </tr>
+        <tr ng-repeat="v in data">
+            <td>{{v.name}}</td>
+            <td>{{v.url}}</td>
+        </tr>
+    </table>
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.controller('ctrl', ['$scope', '$http', function ($scope, $http) {
+        $http({
+            method:'get',
+            url:'1.php',
+            cache:true,
+        }).then(function(response){
+            //成功时执行
+            console.log(response);
+            $scope.data = response.data;
+        },function(response){
+            //失败时执行  hdphp
+            console.log(response);
+        });
+
+        $http({
+            method:'get',
+            url:'1.php',
+            cache:true,
+        }).then(function(response){
+            //成功时执行
+            console.log(response);
+            $scope.data = response.data;
+        },function(response){
+            //失败时执行  hdphp
+            console.log(response);
+        });
+        $http({
+            method:'get',
+            url:'1.php',
+            cache:true,
+        }).then(function(response){
+            //成功时执行
+            console.log(response);
+            $scope.data = response.data;
+        },function(response){
+            //失败时执行  hdphp
+            console.log(response);
+        });
+    }]);
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+    <script src="../org/jquery.min.js"></script>
+</head>
+<body>
+<div ng-app="hd" ng-controller="ctrl" ng-init="name='后盾人'">
+    <form action="1.php" method="post">
+        标题:<input type="password" name="title" ng-model="title"><br/>
+        <input type="text" name="data"><br/>
+        <input type="submit">
+    </form>
+    {{title}}
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.controller('ctrl', ['$scope', function ($scope) {
+        $scope.title = '';
+        $('form').submit(function () {
+            $("[name='data']").val($scope.title);
+        });
+    }]);
+</script>
+</body>
+</html>

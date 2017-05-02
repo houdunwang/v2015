@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		canvas{
+			background: #272822;
+		}
+	</style>
+	</head>
+	<body>
+	
+	<canvas id="canvas" width="800" height="500"></canvas>
+	
+	<script type="text/javascript">
+		var canvas = document.getElementById("canvas");
+		var cv = canvas.getContext('2d');
+		
+		cv.strokeStyle = 'yellow';
+		cv.lineWidth = 3;
+		cv.strokeRect(0,0,100,100);
+//		缩放画布
+		cv.scale(2,2);
+		cv.strokeRect(0,0,100,100);
+		
+		cv.scale(2,2);
+		cv.strokeRect(0,0,100,100);
+		
+	</script>
+		
+		
+	</body>
+</html>

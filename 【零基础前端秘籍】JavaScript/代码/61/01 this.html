@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style>
+		#hd{
+			width: 500px;
+			height: 300px;
+			background: dodgerblue;
+		}
+	</style>
+	<script type="text/javascript">
+	
+	window.onload = function(){
+		var hd = document.getElementById("hd");
+//		this在事件中指向的是事件源对象
+		hd.onclick  = function(){
+//			hd.style.background = 'orange';
+			this.style.background = 'orange';
+		}
+	}
+	
+	</script>
+	</head>
+	<body>
+		
+		<div id="hd"></div>
+		
+		
+
+	</body>
+</html>

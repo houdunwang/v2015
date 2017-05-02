@@ -1,0 +1,120 @@
+{extend name='base'/}
+{block name='content'}
+<ol class="breadcrumb" style="background-color: #f9f9f9;padding:8px 0;margin-bottom:10px;">
+    <li>
+        <a href=""><i class="fa fa-cogs"></i>
+            文章管理</a>
+    </li>
+    <li class="active">
+        <a href="">文章编辑</a>
+    </li>
+</ol>
+<ul class="nav nav-tabs" role="tablist">
+    <li><a href="{:url('index')}">文章管理</a></li>
+    <li class="active"><a href="">文章编辑</a></li>
+</ul>
+<form class="form-horizontal" id="form"  action="" method="post">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">文章管理</h3>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">文章标题</label>
+                <div class="col-sm-9">
+                    <input type="text" name="arc_title"  class="form-control" placeholder="" value="{$oldData['arc_title']}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">文章作者</label>
+                <div class="col-sm-9">
+                    <input type="text" name="arc_author"  class="form-control" placeholder="" value="{$oldData['arc_author']}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">文章排序</label>
+                <div class="col-sm-9">
+                    <input type="number" name="arc_sort"  class="form-control" placeholder="" value="{$oldData['arc_sort']}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">所属分类</label>
+                <div class="col-sm-9">
+                    <select class="js-example-basic-single form-control" name="cate_id">
+                        <option value="0">请选择分类</option>
+                        {foreach name='cateData' item='vo'}
+                        <option {if condition="$oldData['cate_id']==$vo['cate_id']"}selected{/if} value="{$vo['cate_id']}">{$vo['_cate_name']}</option>
+                        {/foreach}
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">标签</label>
+                <div class="col-sm-9">
+                    {foreach name='tagData' item='vo'}
+                    <label class="checkbox-inline">
+                        <input {if condition="in_array($vo['tag_id'],$tag_ids)"}checked{/if} type="checkbox" name="tag[]" value="{$vo['tag_id']}"> {$vo['tag_name']}
+                    </label>
+                    {/foreach}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">缩略图</label>
+                <div class="col-sm-9">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="arc_thumb" readonly="" value="{$oldData['arc_thumb']}">
+                        <div class="input-group-btn">
+                            <button onclick="upImage(this)" class="btn btn-default" type="button">选择图片</button>
+                        </div>
+                    </div>
+                    <div class="input-group" style="margin-top:5px;">
+                        <img src="{$oldData['arc_thumb']}" class="img-responsive img-thumbnail" width="150">
+                        <em class="close" style="position:absolute; top: 0px; right: -14px;" title="删除这张图片" onclick="removeImg(this)">×</em>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">文章摘要</label>
+                <div class="col-sm-9">
+                    <textarea type="text" name="arc_digest"  class="form-control" placeholder="文章摘要">{$oldData['arc_digest']}</textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for=""  class="col-sm-2 control-label">文章内容</label>
+                <div class="col-sm-9">
+                    <textarea id="container" name="arc_content" style="height:300px;width:100%;">{$oldData['arc_content']}</textarea>
+                    <script>
+                        util.ueditor('container', {hash:2,data:'hd'}, function (editor) {
+                            //这是回调函数 editor是百度编辑器实例
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" name="arc_id" value="{:input('param.arc_id')}">
+    <button class="btn btn-primary" type="submit">确定</button>
+</form>
+<script>
+    //上传图片
+    function upImage(obj) {
+        require(['util'], function (util) {
+            options = {
+                multiple: false,//是否允许多图上传
+                //data是向后台服务器提交的POST数据
+                data:{name:'后盾人',year:2099},
+            };
+            util.image(function (images) {          //上传成功的图片，数组类型 
+                $("[name='arc_thumb']").val(images[0]);
+                $(".img-thumbnail").attr('src', images[0]);
+            }, options)
+        });
+    }
+
+    //移除图片
+    function removeImg(obj) {
+        $(obj).prev('img').attr('src', 'resource/images/nopic.jpg');
+        $(obj).parent().prev().find('input').val('');
+    }
+</script>
+{/block}

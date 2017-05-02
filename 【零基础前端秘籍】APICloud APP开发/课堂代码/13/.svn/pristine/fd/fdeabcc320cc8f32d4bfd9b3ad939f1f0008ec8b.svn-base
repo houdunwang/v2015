@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <style type="text/css">
+    html,body{
+        height: 100%;
+    }
+    #wrap{
+        height: 100%;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-flex-flow: column;
+    }
+    #header{
+        text-align: center; 
+		background-color: #81a9c3; 
+		color: #fff;
+        width: 100%;
+    }
+    #header h1{
+        font-size: 20px; 
+		height: 44px; 
+		line-height: 44px; 
+		margin: 0em; 
+		color: #fff;
+    }
+    #main{
+        -webkit-box-flex: 1; 
+        -webkit-flex: 1;
+    }
+    #footer{
+        height: 30px; 
+		line-height: 30px;
+        background-color: #81a9c3; 
+        width: 100%;
+        text-align: center;
+    }
+    #footer h5{
+        color: white;
+    }
+    .con{
+		font-size: 28px; 
+		text-align: center;
+	}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h1>APICloud</h1>
+        </div>
+        <div id="main">
+                
+        </div>
+        <div id="footer">
+            <h5>Copyright &copy;<span id="year"></span> </h5>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript">
+    apiready = function(){
+		//输出Log，Log将显示在APICloud Studio控制台
+		console.log("Hello APICloud");
+
+        var header = $api.byId('header');
+        //适配iOS7+，Android4.4+状态栏沉浸式效果，详见config文档statusBarAppearance字段
+        $api.fixStatusBar(header);
+		//动态计算header的高度，因iOS7+和Android4.4+上支持沉浸式效果，
+		//因此header的实际高度可能为css样式中声明的44px加上设备状态栏高度
+		//其中，IOS状态栏高度为20px，Android为25px
+        var headerH = $api.offset(header).h;
+		//footer高度为css样式中声明的30px
+		var footerH = 30;
+		//frame的高度为当前window高度减去header和footer的高度
+		var frameH = api.winHeight - headerH - footerH;
+        api.openFrame({
+            name: 'main',
+            url: 'html/main.html',
+            bounces: true,
+            rect: {
+                x: 0,
+                y: headerH,
+                w: 'auto',
+                h: frameH
+            }
+        });
+
+        var year = $api.byId('year');
+        year.innerHTML = new Date().getFullYear();
+
+    };
+</script>
+</html>

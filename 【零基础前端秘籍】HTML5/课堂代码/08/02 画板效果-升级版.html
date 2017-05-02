@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		canvas{
+			background: #272822;
+			position: relative;
+		}
+		
+	</style>
+	</head>
+	<body>
+		<br /><br />
+		<input type="color" id="yanse" />
+		<input type="range" id="cuxi" min="1" max="50" step="1" value="10" />
+		<span id="cx">10</span>
+		<input type="button" value="橡皮擦！" id="xiangpi" />
+		<br /><br />
+		
+		<canvas id="canvas" width="900" height="500"></canvas>
+		
+	<script type="text/javascript">
+		
+//		抓到画板
+		var canvas = document.getElementById("canvas");
+//		获得绘画环境
+		var cv = canvas.getContext('2d');
+//		设置笔触的颜色
+		cv.strokeStyle = 'yellow';
+//		设置笔触的粗细
+		cv.lineWidth = 10;
+		
+//		给画板加鼠标按下事件
+		canvas.onmousedown = function(e){
+//			获得事件对象
+			var ev = window.event || e;
+//			获得鼠标开始时候的位置
+			var m_start_left = ev.layerX || ev.offsetX;
+			var m_start_top = ev.layerY || ev.offsetY;
+//			开启路径
+			cv.beginPath();
+//			定义笔触的起始位置
+			cv.moveTo(m_start_left,m_start_top);
+			
+//			给画板加鼠标移动事件
+			canvas.onmousemove = function(e){
+//				获得事件对象
+				var ev = window.event || e;
+//				获得鼠标当前的位置
+				var m_now_left = ev.layerX || ev.offsetX;
+				var m_now_top = ev.layerY || ev.offsetY;
+//				将线条画到这个位置上来
+				cv.lineTo(m_now_left,m_now_top);
+				cv.stroke();
+			}
+		}
+//		鼠标按下事件结束
+
+
+//		鼠标抬起事件
+		canvas.onmouseup = function(){
+//			取消canvas的鼠标移动事件
+			canvas.onmousemove = null;
+		}
+//		鼠标抬起事件结束
+		
+//		给颜色选择器表单加事件
+		document.getElementById("yanse").onchange = function(){
+//			将笔触颜色改成当前表单的value值
+			cv.strokeStyle = this.value;
+		}
+		
+		
+//		给滑块加事件
+		document.getElementById("cuxi").onchange = function(){
+//			修改笔触的粗细
+			cv.lineWidth = this.value;
+//			修改span的值
+			document.getElementById("cx").innerHTML = this.value;
+		}
+		
+		
+//		加橡皮功能
+		document.getElementById("xiangpi").onclick = function(){
+			alert('请尽情的擦黑板吧！！！！！');
+//			将笔触的颜色改成背景颜色
+			cv.strokeStyle = '#272822';
+			
+		}
+		
+		
+	</script>
+		
+		
+		
+	</body>
+</html>

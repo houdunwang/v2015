@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="hd" ng-controller="ctrl">
+    协议 :<input type="checkbox" ng-model="copyright"> 接受<br/>
+    <input type="submit" ng-disabled="!copyright">
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.controller('ctrl', ['$scope', function ($scope) {
+//        $scope.user = {sex: 1}
+    }]);
+</script>
+</body>
+</html>

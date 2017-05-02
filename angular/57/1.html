@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="hd">
+    <hd-cms></hd-cms>
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.directive('hdCms', [function () {
+        return {
+            restrict: 'E',
+            replace: true,
+            templateUrl: '../view/57.html',
+            controller: ['$scope', function ($scope) {
+                $scope.data = [
+                    {id: 1, name: '后盾人'},
+                    {id: 1, name: 'hdcms'},
+                    {id: 1, name: 'hdphp'}
+                ];
+            }]
+        }
+    }]);
+</script>
+</body>
+</html>

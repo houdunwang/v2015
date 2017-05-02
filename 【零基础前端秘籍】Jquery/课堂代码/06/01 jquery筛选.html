@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$(function(){
+			
+//			$('#box p').eq(2).css({'color':'red','font-size':'25px'});
+//			$('#box p').first().css({'color':'red','font-size':'25px'});
+			
+//			给所有元素加事件
+//			$("#box p").click(function(){
+//				获得当前被点击的元素是否有class是one
+//				var re = $(this).hasClass('one');
+//				if (re) {
+//					alert('当前这个元素有个class值是one');
+//				}
+//			})
+
+//		找到#box里的所有p标签,然后从找到的结果中筛选出符合class是one的p标签
+//			$("#box p").filter('.one').css({'color':'red','font-size':'25px'});
+
+//			$("#box p").click(function(){
+////				获得当前被点击的元素是否有id值是three
+//				var re = $(this).is('#abc');
+//				if (re) {
+//					alert('当前这个元素有个id值是three');
+//				}
+//			})
+
+//			选择的是#box里含有span标签的p标签
+//			$("#box p").has('span').css({'color':'red','font-size':'25px'});
+//			$("#box p").not('.one').css({'color':'red','font-size':'25px'});
+			
+//			截取#box里的2-5号p标签,包含2号,不包含5号
+			$("#box p").slice(2,5).css({'color':'red','font-size':'25px'});
+			
+		})
+		
+	</script>
+	</head>
+	<body>
+		
+		
+		<div id="box">
+			<p>后盾人 人人做后盾0</p>
+			<p class="one">后盾人 人人做后盾1</p>
+			<p>后盾人 人人做后盾2</p>
+			<p id="three">后盾人 人人做后盾3</p>
+			<p>后盾人 人人做后盾4 <span>我是span标签</span></p>
+			<p>后盾人 人人做后盾5</p>
+			<p>后盾人 人人做后盾6</p>
+			<p>后盾人 人人做后盾7</p>
+
+		</div>
+		
+		
+		
+	</body>
+</html>

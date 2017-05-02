@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		#dan{
+			position: absolute;
+			top: 50px;
+		}
+	</style>
+	<script type="text/javascript">
+		
+	window.onload = function(){
+		
+//		抓元素
+		var btn = document.getElementById("btn");
+		var dan = document.getElementById("dan");
+		var timer;//先声明timer变量，以防止第一次点击的时候报错
+//		解决定时器叠加的思路:在设置定时器之前,先清理定时器
+//		给按钮加单击事件
+		btn.onclick = function(){
+			clearInterval(timer);
+//			设置定时器,每隔一秒钟,将left值变大10个像素
+			timer = setInterval(function(){
+//				获得当前图片的left值
+				var old_left = dan.style.left;
+//				计算新的left值
+				var new_left = parseInt(old_left)+5;
+//				将新值赋值回去
+				dan.style.left = new_left+'px';
+			},10)
+			
+		}
+		
+		
+	}
+		
+		
+	</script>
+	</head>
+	<body>
+		
+	<input type="button" id="btn" value="点我啊！" />
+	<br /><br />
+	
+	<img src="dan.gif" id="dan" style="left: 0px;" />
+		
+	</body>
+</html>

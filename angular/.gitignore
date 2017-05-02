@@ -1,0 +1,6 @@
+.DS_Store
+.gitignore.swp
+.name
+.idea
+/view
+.project

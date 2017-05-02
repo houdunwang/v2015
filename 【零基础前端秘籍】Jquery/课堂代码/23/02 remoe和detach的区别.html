@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		#box{
+			width: 600px;
+			height: 500px;
+			border: 5px solid blue;
+		}
+	</style>
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+//	remove会将元素节点和他身上的事件 效果都删除
+//	detach只删除元素节点,不删除他身上的事件和效果.
+	$(function(){
+		
+//		给h1加单击事件
+		$("#title").click(function(){
+			alert('哈哈哈后盾人');
+		})
+		
+//		删除元素
+		$("#btn").click(function(){
+//			delh1 = $("#title").remove();
+			delh1 = $("#title").detach();
+		})
+		
+//		恢复
+		$("#btn2").click(function(){
+			$("#btn2").after(delh1);
+		})
+		
+	})
+	
+</script>
+	</head>
+	<body>
+	<input type="button" id="btn" value="删除" />
+	<input type="button" id="btn2" value="恢复" />
+	
+	<h1 id="title">我是h1标签</h1>
+	
+	
+		
+	</body>
+</html>

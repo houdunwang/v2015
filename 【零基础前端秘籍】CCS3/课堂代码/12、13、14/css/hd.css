@@ -1,0 +1,101 @@
+/*自带的基础css*/
+html, body {
+        position: relative;
+        height: 100%;
+    }
+    body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color:#000;
+        margin: 0;
+        padding: 0;
+    }
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        /*display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;*/
+    }
+/*自带的基础css结束*/
+
+/*音乐*/
+#music{
+	width: 60px;
+	height: 60px;
+	border: 2px solid blue;
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	z-index: 9;
+}
+#music .music_bg{
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+@keyframes music{
+	from{
+		transform: rotate(0deg);
+	}
+	to{
+		transform: rotate(360deg);
+	}
+}
+#music .music_pic{
+	position: absolute;
+	top: 8px;
+	left: 8px;
+	animation: music 2s linear infinite;
+}
+/*音乐结束*/
+
+/*第一屏*/
+.swiper-slide.one{
+	background-image: url(../images/onebg.png);
+	background-size: 100% 100%;
+}
+.swiper-slide.one .top{
+	width: 70%;
+	height: 50%;
+	border: 9px white solid;
+	margin: 0 auto;
+	margin-top: 10%;
+	overflow: hidden;
+}
+.swiper-slide.one .top img{
+	width: 100%;
+}
+/*第一屏结束*/
+
+
+
+
+
+
+
+
+
+
+
+
+

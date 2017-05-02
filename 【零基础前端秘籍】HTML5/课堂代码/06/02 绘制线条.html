@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		canvas{
+			background: #272822;
+			
+		}
+	</style>
+	</head>
+	<body>
+		
+		<canvas id="canvas" width="900" height="500"></canvas>
+		
+	<script type="text/javascript">
+		
+//		获得画板
+		var canvas = document.getElementById("canvas");
+//		获得绘画环境
+		var cv = canvas.getContext('2d');
+		
+//		开启路径
+		cv.beginPath();
+//		笔触定义到开始位置
+		cv.moveTo(200,50);
+//		定义这条线画到哪里结束
+		cv.lineTo(200,450);
+		
+//		定义笔触颜色
+		cv.strokeStyle = 'yellow';
+//		定义粗细
+		cv.lineWidth = 10;
+//		划线
+		cv.stroke();
+		
+		
+		cv.lineTo(500,450);
+		cv.stroke();
+		
+//		关闭路径(将形状闭合,其实就是将最终笔触的位置和开始点连接起来,形成一个闭合图形)
+		cv.closePath();
+		cv.stroke();
+		
+	</script>
+		
+		
+	</body>
+</html>

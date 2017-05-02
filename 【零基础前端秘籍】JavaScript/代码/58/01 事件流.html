@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#beijing{
+			width: 800px;
+			height: 500px;
+			background: mediumpurple;
+		}
+		#chaoyang{
+			width: 500px;
+			height: 400px;
+			background: orangered;
+		}
+		#shunbailu{
+			width: 350px;
+			height: 300px;
+			background: greenyellow;
+		}
+	</style>
+<script type="text/javascript">
+//	冒泡型事件流是由最明确的事件源到最不明确的事件源依次触发.
+//	离鼠标越近,就表示越明确
+	window.onload = function(){
+		document.getElementById("beijing").onclick = function(){
+			alert('北京');
+		}
+		
+		document.getElementById("chaoyang").onclick = function(e){
+			alert('朝阳');
+			var ev = window.event || e;
+			if (document.all) {
+				ev.cancelBubble = true;
+			}else{
+				ev.stopPropagation();
+			}
+		}
+		
+		document.getElementById("shunbailu").onclick = function(){
+			alert('顺白路');
+		}
+	}
+	
+	
+</script>
+	</head>
+	<body>
+		
+		<div id="beijing">
+			北京
+			<div id="chaoyang">
+				朝阳
+				<div id="shunbailu">顺白路</div>
+			</div>
+		</div>
+		
+		
+	</body>
+</html>

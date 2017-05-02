@@ -1,0 +1,19 @@
+{
+  "name": "houdunwang/wechat",
+  "description": "wechat framework",
+  "license": "MIT",
+  "type": "project",
+  "authors": [
+    {
+      "name": "houdunwang",
+      "email": "2300071698@qq.com"
+    }
+  ],
+  "require": {
+  },
+  "autoload": {
+    "psr-4": {
+      "wechat\\": "src"
+    }
+  }
+}

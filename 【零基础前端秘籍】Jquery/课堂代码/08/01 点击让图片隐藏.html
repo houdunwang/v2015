@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script type="text/javascript">
+		
+//	window.onload = function(){
+//
+////		给按钮加单击事件
+//		document.getElementById("btn").onclick = function(){
+////			让图片隐藏
+//			document.getElementById("dog").style.display = 'none';
+//		}
+//	}
+//		
+	</script>
+<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	
+	$(function(){
+//		给按钮加单击事件
+		$("#btn").click(function(){
+//			$("#dog").fadeOut(5000);
+			
+//			回调函数会在动画执行完毕后被调用
+//			$("#dog").fadeOut(5000,function(){
+//				alert('报告长官！动画执行完毕！');
+//			});
+
+//			自动控制淡入淡出显隐
+			$("#dog").fadeToggle(2000);
+			
+		})
+	})
+	
+</script>
+	</head>
+	<body>
+	<input type="button" id="btn" value="点我啊！！！！" />
+		<br /><br />
+		
+	<img src="dog.jpg" id="dog" />
+	<h1>后盾人 人人做后盾！</h1>
+	</body>
+</html>

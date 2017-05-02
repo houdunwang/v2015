@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#pic{
+				margin: 0 auto;
+				display: block;
+				width: 500px;
+			}
+			#box{
+				width: 500px;
+				height: 50px;
+				margin: 0 auto;
+			}
+			#box input{
+				width: 150px;
+				height: 50px;
+			}
+		</style>
+	<script type="text/javascript">
+			
+		window.onload = function(){
+			var start = document.getElementById("start");
+			var end = document.getElementById("end");
+			var pic = document.getElementById("pic");
+//			用来存储图片路径的数组
+			var picarr = ['images/angelababy.jpg','images/bujiadi.jpg','images/liudehua.jpg','images/liuyifei.jpg','images/meinv2.jpg','images/qian.jpg','images/quanzhilong.jpeg','images/xiexiehuigu.jpg','images/youting.jpg','images/zhishengji.jpg'];
+			
+			var timer;
+			
+//			给开始按钮加单击事件
+			start.onclick = function(){
+				clearInterval(timer);
+//				设置定时器,每隔一秒钟就换一张图片
+				timer = setInterval(function(){
+//					抽取随机下标
+					var num = Math.floor(Math.random()*(picarr.length-1+1-0)+0);
+//					将num号路径设置给图片
+					pic.setAttribute('src',picarr[num]);
+				},100)
+				
+			}
+			
+//			停止抽奖
+			end.onclick = function(){
+//				清理定时器
+				clearInterval(timer);
+			}
+			
+			
+		}
+			
+	</script>
+	</head>
+	<body>
+		
+		<div id="box">
+			<input type="button" value="开始抽奖" id="start" />
+			<input type="button" value="停止抽奖" id="end" />
+		</div>
+		
+		
+		<br /><br />
+		
+		<img src="images/xiexiehuigu.jpg" id="pic"/>
+		
+		
+	</body>
+</html>

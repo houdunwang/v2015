@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="hd" ng-controller="ctrl">
+    商品: <input type="text" ng-model="goods.title"><br/>
+    价格: <input type="text" ng-model="goods.price" readonly="readonly"><br/>
+    数量: <input type="text" ng-model="goods.num"><br/>
+    总价: <input type="text" ng-value="goods.price*goods.num" readonly="readonly">
+</div>
+<script>
+    var m = angular.module('hd', []);
+    m.controller('ctrl', ['$scope', function ($scope) {
+        $scope.goods = {title: '后盾网视频', 'price': 89, 'num': 2};
+    }]);
+</script>
+</body>
+</html>

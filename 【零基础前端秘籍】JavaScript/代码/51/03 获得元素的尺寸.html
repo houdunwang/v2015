@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#box{
+			width: 500px;
+			border: 5px solid orange;
+			padding: 30px;
+			margin: 30px auto;
+		}
+	</style>
+<script type="text/javascript">
+	
+	window.onload = function(){
+		var box = document.getElementById("box");
+//		获得元素实际占用的总高度
+//		var h = box.offsetHeight;
+		var h = box.offsetWidth;
+		alert(h);
+	}
+	
+</script>
+	</head>
+	<body>
+		
+		<div id="box">
+			当地时间12月15日，英国宣布为通过线粒体移植生育“三亲婴儿”的技术“亮绿灯”。
+
+　　这距离2015年2月英国议会通过这项技术，已经过去近两年时间。此前，作为英国生育监管机构，人工授精与胚胎管理局（Human Fertilisation and Embryology Authority，HFEA）非常谨慎，迟迟未就这项技术给予“通行证”。而今年12月15日，英国人工授精与胚胎管理局终于“松手”，宣布在通过对其技术安全性的审核后，英国相关诊所可获得允许，为患有线粒体疾病的家庭实施这项技术。
+		</div>
+		
+	</body>
+</html>

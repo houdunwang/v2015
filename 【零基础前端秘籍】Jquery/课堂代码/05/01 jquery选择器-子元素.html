@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+//			选择div中span标签的父级的第一个子元素。父级的第一个子元素必须是span，否则不会被选中
+//			$("div span:first-child").css({'color':'red','font-size':'25px'});
+
+//			选择div中的span标签的父级元素的第一个span标签
+//			$("div span:first-of-type").css({'color':'red','font-size':'25px'});
+
+//			选择的是div里span标签的父级元素的第2个子元素
+//			注意:第2个子元素子元素如果是span,那么就选中,如果不是,就不选
+//			$("div span:nth-child(2)").css({'color':'red','font-size':'25px'});
+
+//			选择的是div里span标签的父级元素的第2个span标签
+//			$("div span:nth-of-type(2)").css({'color':'red','font-size':'25px'});
+
+//			选择是独生子的p标签
+//			$("div p:only-child").css({'color':'red','font-size':'25px'});
+	
+//			选择的是是父级元素唯一p标签的p标签
+			$("div p:only-of-type").css({'color':'red','font-size':'25px'});
+		})
+		
+	</script>
+	</head>
+	<body>
+		<div>
+			<p>我是独生子</p>
+			<span id="">
+				fafd 
+			</span>
+		</div>
+		<div>
+			<p>我是p标签0</p>
+			<span>我是span标签1</span>
+			<p>我是p标签2</p>
+			<span>我是span标签3</span>
+			<p>我是p标签4</p>
+			<span>我是span标签5</span>
+			<p>我是p标签6</p>
+			<span>我是span标签7</span>
+			<p>我是p标签8</p>
+			<span>我是span标签9</span>
+		</div>
+		======================
+		<div>
+			<p>我是p标签0</p>
+			<span>我是span标签1</span>
+			<p>我是p标签2</p>
+			<span>我是span标签3</span>
+			<p>我是p标签4</p>
+			<span>我是span标签5</span>
+			<p>我是p标签6</p>
+			<span>我是span标签7</span>
+			<p>我是p标签8</p>
+			<span>我是span标签9</span>
+		</div>
+		
+	</body>
+</html>

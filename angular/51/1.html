@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+    <script src="../org/jquery.min.js"></script>
+</head>
+<body>
+<div ng-app="hd">
+    <div ng-controller="ctrl1">
+        {{name}}<input type="text" ng-model="name">
+        <div ng-controller="ctrl2">
+            {{name}}<input type="text" ng-model="name">
+        </div>
+        <div ng-controller="ctrl3">
+            {{name}}
+        </div>
+    </div>
+</div>
+<script>
+    //    function run(){
+    //        var a=1;
+    //        var f = function(){
+    //            a=99;
+    //            alert(a);
+    //        }
+    //        f();
+    //    }
+    //    run();
+    var m = angular.module('hd', []);
+    m.controller('ctrl1', ['$scope', function ($scope) {
+        $scope.name = '后盾人'
+    }]);
+    m.controller('ctrl2', ['$scope', function ($scope) {
+//        $scope.name='hdcms';
+    }]);
+    m.controller('ctrl3', ['$scope', function ($scope) {
+//        $scope.name='hdcms';
+    }]);
+    //    m.directive('hdCms', [function () {
+    //        return {
+    //            restrict: 'EA',//a attr e element  c class
+    //        }
+    //    }]);
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 176px;
+				background: orangered;
+				position: absolute;
+				top: 23px;
+				left: 16px;
+			}
+		</style>
+		<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+	$(function(){
+		$("#box").click(function(){
+			$("#box").animate({'width':'599px','height':'365px','left':'261px','top':'174px'},3000);
+		})
+	})
+		</script>
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+</html>

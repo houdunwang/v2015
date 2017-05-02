@@ -1,0 +1,65 @@
+<layout name="../../../Data/View/master"/>
+<ul class="breadcrumb no-border no-radius b-b b-light pull-in">
+    <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+    <li><a href="#">模块管理</a></li>
+    <li><a href="#">设计模块</a></li>
+</ul>
+<div class="m-b-md">
+    <h3 class="m-b-none">设计模块</h3>
+</div>
+<div class="row">
+    <form role="form" action="" method="post">
+        <div class="col-sm-12">
+            <section class="panel panel-default">
+                <header class="panel-heading font-bold">数据设置</header>
+                <div class="panel-body">
+
+                    <div class="form-group">
+                        <label>名称</label>
+                        <input type="text" class="form-control" name="title" placeholder="中文模块名称">
+                    </div>
+                    <div class="form-group">
+                        <label>标识</label>
+                        <input type="text" class="form-control" name="name" placeholder="模块的目录必须为英文">
+                    </div>
+                    <div class="form-group">
+                        <label>微信消息处理</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="message" value="1">是
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="message" value="0" checked>否
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>动作</label>
+                        <textarea class="form-control" name="actions" rows="10" placeholder="栏目管理|category"></textarea>
+                        <span class="help-block">每行一个动作</span>
+                    </div>
+                    <button class="btn btn-primary">保存</button>
+                </div>
+
+            </section>
+        </div>
+    </form>
+</div>
+
+<script>
+    function controller($scope, $, _) {
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+

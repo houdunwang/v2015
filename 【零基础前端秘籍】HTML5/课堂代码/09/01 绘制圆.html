@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style>
+		canvas{
+			background: #272822;
+		}
+		
+	</style>
+	</head>
+	<body>
+		
+		<canvas id="canvas" width="800" height="500"></canvas>
+	
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+		var cv = canvas.getContext('2d');
+		
+//		设置一个圆形
+		cv.arc(400,300,100,0*Math.PI/180,222*Math.PI/180);
+		
+		cv.fillStyle = 'yellow';
+//		填充
+		cv.fill();
+
+//		画一个空心形状
+//		cv.strokeStyle = 'dodgerblue';
+//		cv.stroke();
+		
+		
+		
+		
+	</script>
+		
+	</body>
+</html>

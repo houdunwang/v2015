@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+    <script src="../org/jquery.min.js"></script>
+    <script src="../org/angular-ui-router.min.js"></script>
+</head>
+<body>
+<div ng-app="hd">
+    <div ui-view=""></div>
+    <div ui-view="content"></div>
+</div>
+<script>
+    var m = angular.module('hd', ['ui.router']);
+    m.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+        //默认路由
+        $urlRouterProvider.otherwise('/my');
+        //定义路由规则
+        $stateProvider
+                .state('my', {
+                    url: '/my',
+                    views: {
+                        '@': {
+                            templateUrl: 'view/my.html'
+                        },
+                        'content':{
+                            template:'欢迎来到后盾人'
+                        }
+                    }
+                })
+                .state('my.video', {
+                    url: '/video',
+                    views: {
+                        'son@my': {
+                            templateUrl: 'view/video.html'
+                        },
+                        'content@':{
+                            template:''
+                        }
+                    }
+                })
+    }]);
+</script>
+</body>
+</html>

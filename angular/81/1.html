@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../org/angular.min.js"></script>
+    <script src="../org/jquery.min.js"></script>
+    <script src="../org/angular-ui-router.min.js"></script>
+</head>
+<body>
+<style>
+    * { padding : 0px; margin : 0px; }
+
+    ul, ol, li { list-style : none }
+
+    div[ui-view=top] { background : #dcdcdc; border-bottom : solid 3px #999999; }
+
+    div[ui-view=left] { width : 200px; border : solid 1px red; float : left; }
+
+    div[ui-view=right] { position : absolute; left : 200px; right : 0px; border : solid 1px red; }
+</style>
+<div ng-app="hd">
+    <div ui-view="top"></div>
+    <div ui-view="left"></div>
+    <div ui-view="right"></div>
+</div>
+<script>
+    var m = angular.module('hd', ['ui.router']);
+    m.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+        //默认路由
+        $urlRouterProvider.otherwise('/my');
+        //定义路由规则
+        $stateProvider
+                .state('my', {
+                    url: '/my',
+                    views: {
+                        top: {
+                            templateUrl: 'view/top.html'
+                        },
+                        left: {
+                            templateUrl: 'view/menu.html'
+                        },
+                        right: {
+                            templateUrl: 'view/about.html'
+                        }
+                    }
+                })
+                .state('video', {
+                    url: '/video',
+                    views: {
+                        top: {
+                            templateUrl: 'view/top.html'
+                        },
+                        left: {
+                            templateUrl: 'view/menu.html'
+                        },
+                        right: {
+                            templateUrl: 'view/video_lists.html'
+                        }
+                    }
+                })
+    }]);
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		li{
+			list-style: none;
+			font-size: 150px;
+			font-weight: 700;
+			float: left;
+			margin-left: 50px;
+		}
+	</style>
+<script type="text/javascript">
+	
+window.onload = function(){
+//	给window绑定键盘按下事件
+	window.onkeydown = function(e){
+//		获得事件对象
+		var ev = window.event || e;
+//		获得按下的是哪个键
+		var word = String.fromCharCode(ev.keyCode);
+		
+//		抓取所有的li标签
+		var list = document.getElementById("list");
+		var ls = list.getElementsByTagName('li');
+		
+//		循环li,对比按下的键是否和li的内容一样,如果一样,就删掉li
+		for (var i=0;i<ls.length;i++) {
+			if (ls[i].innerHTML == word) {
+//				删掉i号li
+				list.removeChild(ls[i]);
+			}
+		}
+		
+	}
+}
+	
+</script>
+	</head>
+	<body>
+		
+		<ul id="list">
+			<li>A</li>
+			<li>B</li>
+			<li>C</li>
+			<li>D</li>
+			<li>E</li>
+		</ul>
+		
+		
+		
+	</body>
+</html>

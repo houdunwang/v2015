@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		body{
+			background: #5C5A5A;
+		}
+		#hd{
+
+			width: 500px;
+			height: 500px;
+			/*border: 1px solid yellow;*/
+			margin: 10px auto;
+			background: url(biaopan.png) no-repeat;
+			background-size: 100% 100%;
+			position: relative;
+			box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+			border-radius: 50%;
+			
+		}
+		#hd img{
+			width: 14px;
+			position: absolute;
+			left: 244px;
+			top: 212px;
+			/*设置旋转参考点*/
+			transform-origin: 50% 16%;
+			animation: run 60s linear infinite;
+		}
+		@keyframes run{
+			from{
+				transform: rotate(0deg);
+			}
+			to{
+				transform: rotate(360deg);
+			}
+		}
+	</style>
+	</head>
+	<body>
+		
+		<div id="hd">
+			<img src="zhizhen.png" />
+		</div>
+		
+		
+		
+		
+	</body>
+</html>

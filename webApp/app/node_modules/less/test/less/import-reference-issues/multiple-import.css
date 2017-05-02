@@ -1,0 +1,18 @@
+/*
+  tralala
+*/
+.fix {
+  fix: fix;
+}
+.something,
+.something .invisible {
+  inside: something;
+}
+.something should,
+.something .invisible should {
+  be: invisible;
+}
+.something .something,
+.something .invisible .something .invisible {
+  invisible: suppress warning;
+}

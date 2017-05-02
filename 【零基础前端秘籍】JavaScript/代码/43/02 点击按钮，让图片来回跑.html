@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		#dan{
+			position: absolute;
+			top: 60px;
+		}
+		
+	</style>
+<script type="text/javascript">
+	
+window.onload = function(){
+	
+	var btn = document.getElementById("btn");
+	var dan =document.getElementById("dan");
+	var speed = 10;
+//	给按钮加单击事件
+	btn.onclick = function(){
+//		设置定时器,每隔一秒钟就变化一次left
+		setInterval(function(){
+//			获得旧的left
+			var old_left = dan.style.left;
+//			计算新的left
+			var new_left = parseInt(old_left)+speed;
+//			赋值回去
+			dan.style.left = new_left+'px';
+//			判断边界
+			if (new_left==600 || new_left==0) {
+				speed = speed*-1;
+			}
+			
+//			if (new_left==600) {
+//				speed = -10;
+//			}
+//			if (new_left==0) {
+//				speed=10;
+//			}
+		},40)
+	}
+	
+}
+	
+</script>
+	</head>
+	<body>
+		
+	<input type="button" value="走你~~~" id="btn" />
+	<br /><br />
+	<img src="dan.gif" id="dan" style="left: 0px;" />
+		
+	</body>
+</html>

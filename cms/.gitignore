@@ -1,7 +1,7 @@
 .idea
-.env
 .DS_Store
 attachment
+.env
 /vendor
 /storage
 composer.lock

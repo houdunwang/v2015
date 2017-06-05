@@ -1,0 +1,100 @@
+html,
+body,
+h1,
+h2,
+h3 {
+  font-family: arial, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', '宋体', Tahoma, Arial, Helvetica, STHeiti !important;
+}
+a {
+  text-decoration: none !important;
+}
+.star:before {
+  color: #d20300;
+  content: ' * ';
+}
+div.modal-image ul.pagination {
+  margin: 0px;
+}
+.daterangepicker {
+  position: relative;
+  top: 0px;
+  width: 278px;
+}
+ul.image-lists {
+  display: table;
+  list-style: none;
+  padding: 0px;
+  clear: both;
+}
+ul.image-lists li {
+  float: left;
+  padding: 1px;
+  cursor: pointer;
+  position: relative;
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+ul.image-lists li div.image-pic {
+  width: 72px;
+  height: 72px;
+  background-size: contain;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-color: #eeeeee;
+}
+ul.image-lists li div.btn-close {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  position: absolute;
+  background: #333333;
+  opacity: .6;
+  right: 0px;
+  top: -8px;
+  border-radius: 50%;
+  z-index: 2;
+  display: none;
+}
+ul.image-lists li div.btn-close i {
+  color: #ffffff;
+  float: right;
+  line-height: 1.5em;
+  padding-right: 5px;
+}
+ul.image-lists li div.btn-close:hover {
+  opacity: 1;
+}
+.hd-dialog-message,
+.hd-dialog-error {
+  color: #31708f !important;
+}
+.hd-dialog-message h3,
+.hd-dialog-error h3 {
+  color: #31708f !important;
+}
+#imagelists ul.image-list-box {
+  list-style: none;
+}
+#imagelists ul.image-list-box li {
+  float: left;
+  padding: 1px;
+  cursor: pointer;
+  position: relative;
+  border: solid 1px #dddddd;
+  margin: 2px;
+  width: 75px;
+  height: 75px;
+  text-align: center;
+  background-color: #eeeeee;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+#imagelists ul.image-list-box li img {
+  width: 75px;
+  height: 75px;
+  text-align: center;
+}
+#imagelists ul.image-list-box li.selectActive {
+  border: solid 3px #00a0e9;
+}

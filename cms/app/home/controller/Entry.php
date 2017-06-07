@@ -10,11 +10,12 @@
 
 namespace app\home\controller;
 
+use system\model\Category;
+
 class Entry
 {
     public function index()
     {
-        p(Db::table('news')->get());
         return View::with('framework', 'HDPHP')->make();
     }
 }

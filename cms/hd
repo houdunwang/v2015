@@ -1,2 +1,4 @@
 <?php
-require 'index.php';
+define('RUN_MODE','CLI');
+require __DIR__ . '/system/autoload.php';
+\houdunwang\framework\App::bootstrap();

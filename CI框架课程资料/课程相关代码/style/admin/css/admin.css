@@ -1,0 +1,255 @@
+@import url("public.css");
+
+/******************头部****************/
+#top_box {
+	width:100%;
+	height:90px;
+	background:#016BA9;
+	overflow: hidden;
+}
+#top_box #top {
+	width:1000px;
+	height:90px;
+	margin:0 auto;
+	background:url("../images/top.jpg") no-repeat;
+	position:relative;
+}
+#top_box #top #top_font {
+	font-size:25px;
+	color:#fff;
+	font-weight:700;
+	position:absolute;
+	left:120px;
+	top:20px;
+}
+
+/****头部导航*****/
+#top_box #top ul#menu2 {
+	position:absolute;
+	right:100px;
+	top:63px;
+	z-index:0;
+}
+#top_box #top ul#menu2 li {
+	display:block;
+	float:left;
+	overflow:hidden;
+	position:relative;
+	font-weight:700;
+}
+/*头部导航翻滚动画效果*/
+#top_box #top ul#menu2 li a span.over {
+	background:#EBF0F3;
+	color:#016BA9;
+	border-radius:4px;
+}
+#top_box #top ul.menu li a span {
+	/* all layers will be absolute positioned */
+	position:absolute;
+	left:0;
+	width:80px;
+}
+#top_box #top ul.menu li a span.out {
+	top:0px;
+}
+#top_box #top ul.menu li a span.over,#top_box #top ul.menu li a span.bg {
+	/* hide */  
+	top:-40px;
+}
+/*头部导航动画效果结束*/
+#top_box #top ul#menu2 li a {
+	border-radius:4px;
+	display:block;
+	width:80px;
+	height:29px;
+	font-size:14px;
+	line-height:29px;
+	color:#fff;
+	border:1px solid #4F97E9;
+	background:#3B96CB;
+	text-align:center;
+	position:relative;
+}
+#top_box .top_bar .adm {
+	color:#3F3F3F;
+	font-size: 12px;
+	width: 220px;
+	height: 20px;
+	position: absolute;
+	right: 200px;
+	top: 5px;
+	line-height: 20px;
+}
+#top_box .top_bar .adm span.adm_people {
+	color:#F00;
+	padding-left: 10px;
+	padding-right: 10px;
+	line-height: 20px;
+}
+#top_box .top_bar .adm span.adm_pic {
+	background:url("../images/user.png") no-repeat;
+}
+#top_box .top_bar {
+	width:100%;
+	height:30px;
+	background:url("../images/bar1.jpg") repeat-x;
+	position:absolute;
+	z-index:1;
+	overflow: hidden;
+}
+#top_box .top_bar .now_time {
+	margin-left:20px;
+	color:#4d4e4e;
+	font-size:12px;
+	width: 300px;
+	float: left;
+	margin-top: 6px;
+}
+#top_box .top_bar .now_time span{
+	width: 200px;
+	height: 16px;
+	display: block;
+	position: absolute;
+	top: 4px;
+	left: 230px;
+	font-size:13px;
+}
+#top_box .top_bar .out {
+	position:absolute;
+	right:40px;
+	top:5px;
+}
+#top_box .top_bar .out_bg {
+	padding-left:10px;
+	background:url("../images/out.png") no-repeat;
+}
+#top_box .top_bar .out a:hover {
+	text-decoration:underline;
+}
+#top_box .top_bar .help {
+	position:absolute;
+	right:120px;
+	top:4px;
+}
+#top_box .top_bar .help_bg {
+	font-size:16px;
+	background:url("../images/help.png") no-repeat;
+}
+#top_box .top_bar .help a:hover {
+	text-decoration:underline;
+}
+
+/******************左侧****************/
+#left_box {
+	width:200px;
+	height: auto;
+	margin-top:33px;
+	border-radius:5px;
+	border:2px solid #ccc;
+	background:#3B96CB;
+	padding-left:6px;
+	padding-right:8px;
+	float:left;
+	overflow:hidden; 
+
+}
+#left_box .use {
+	text-align:center;
+	font-size:15px;
+	font-family:'微软雅黑';
+	width:200px;
+	height:30px;
+	line-height:30px;
+	background:#005181;
+	color:#fff;
+	border-radius:6px;
+	font-weight:700;
+	margin-top:10px;
+}
+#left_box div.menu_box .text {
+	position:relative;
+	+float:right;
+	+width: 100%;
+}
+#left_box div.menu_box h2 {
+	width:200px;
+	text-align:center;
+	font-size:14px;
+	font-family:'微软雅黑';
+	height:25px;
+	line-height:25px;
+	background:url("../images/bar1.jpg") repeat-x;
+	color:#016282;
+	margin-top:2px;
+	border:1px solid #016282;
+	border-radius:5px;
+}
+/*JQuery 鼠标经过背景颜色*/
+#left_box div.menu_box ul.con {
+	overflow:hidden;
+	position:relative;
+	background:#3F3F3F;
+	border-radius:4px;
+	margin-top:3px;
+	height:25px;
+}
+#left_box div.menu_box ul li {
+	text-align:center;
+	font-size:14px;
+	margin-top:5px;
+	/*position:relative;
+	*/
+}
+#left_box div.menu_box ul li a {
+	color:#fff;
+	position:relative;
+	background:url("../images/arrow_next.png") no-repeat;
+	padding-left:25px;
+	padding-right:25px;
+	background-position:5px 3px;
+}
+/*JQuery 默认背景颜色*/
+.nav_ub {
+	width:100%;
+	height:25px;
+	position:absolute;
+	top:0px;
+	background:#3B96CB;
+}
+/*	.nav_db {
+	width:100%;
+	height:25px;
+	position:absolute;
+	top:0px;
+	background:#f00;
+}
+*/
+/************右侧***************/
+#right{
+	float: left;
+	overflow: auto;
+	margin-top: 35px;
+	margin-left: 10px;
+	margin-right: 5px;
+}
+/***********底部*********/
+#foot_box {
+	width:100%;
+	height:30px;
+	background:#016BA9;
+	overflow: hidden;
+}
+#foot_box .foot {
+	width:1000px;
+	height:100%;
+	margin:0 auto;
+	background:url("../images/top.jpg") no-repeat;
+}
+#foot_box .foot p {
+	color:#fff;
+	width:1000px;
+	margin:0 auto;
+	text-align:center;
+	line-height:30px;
+	font-size:12px;
+}

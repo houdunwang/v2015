@@ -1,0 +1,160 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+	font-family:'微软雅黑';
+}
+body{
+	background: #016BA9;
+	overflow: hidden;
+}
+
+input{
+	border: none;
+	background:none;
+}
+li{
+	list-style-type: none;
+}
+#divBox {
+	width: 960px;
+	height: 500px;
+	position: relative;
+	margin: 0 auto;
+}
+
+#divBox form{
+/*	display: none;*/
+	overflow: hidden;
+	width: 474px;
+	height: 230px;
+	top: 150px;
+	left: 250px;
+	position: absolute;
+
+}
+#divBox form #verify_img{
+	position: absolute;
+	left: 145px;
+	top: 154px;
+	cursor: pointer;
+	display: none;
+	z-index: 2;
+}
+#divBox .four_bj{
+	width: 474px;
+	height: 230px;
+	/*top: -240px;*/
+	top:150px;
+	left: 250px;
+	position: absolute;
+	z-index: -1;
+
+}
+#divBox .four_bj p{
+
+
+}
+#divBox .four_bj p.f_lt{
+	background: url("../images/Adminbj_03_01.bmp") no-repeat;
+	width:237px;
+	height: 123px;
+	position : absolute;
+	top      : 700px;
+	left     : 80px;
+
+}
+#divBox .four_bj p.f_rt{
+	background: url("../images/Adminbj_03_02.bmp") no-repeat;
+	width:237px;
+	height: 123px;
+	position : absolute;
+	top      : 700px;
+	left     : 80px;
+
+}
+#divBox .four_bj p.f_lb{
+	background: url("../images/Adminbj_03_03.bmp") no-repeat;
+	width:237px;
+	height: 107px;
+	position : absolute;
+	top      : 700px;
+	left     : 80px;
+
+}
+#divBox .four_bj p.f_rb{
+	background: url("../images/Adminbj_03_04.bmp") no-repeat;
+	width:237px;
+	height: 107px;
+	position : absolute;
+	top      : 700px;
+	left     : 80px;
+
+}
+
+#divBox form #userName{
+	position: absolute;
+	left: 93px;
+	top: 99px;
+	height: 20px;
+	width: 130px;
+}
+#divBox form #psd{
+	position: absolute;
+	left: 93px;
+	top: 129px;
+	height: 19px;
+	width: 130px;
+}
+#divBox form #sub{
+	position: absolute;
+	left: 275px;
+	top: 108px;
+	height: 55px;
+	width: 84px;
+	cursor:pointer;
+}
+#divBox form #verify{
+	position: absolute;
+	left: 90px;
+	top: 159px;
+	height: 19px;
+	width: 45px;
+}
+
+
+/*提示信息*/
+ul#peo{
+	position: absolute;
+	width: 174px;
+	left: 387px;
+	top: 410px;
+}
+ul#psd{
+	position: absolute;
+	width: 174px;
+	left: 387px;
+	top: 440px;
+}
+ul#ver{
+	position: absolute;
+	width: 174px;
+	left: 387px;
+	top: 470px;
+}
+ul li.error{
+	padding-left: 30px;
+	color: #fff;
+	font-size:14px;
+	font-weight: 700;
+	border-radius: 4px;
+	background: url("../images/action_delete.png") no-repeat 5px;
+}
+ul li.success{
+	padding-left: 30px;
+	color: #fff;
+	font-size:14px;
+	font-weight: 700;
+	border-radius: 4px;
+	background: url("../images/action_check.png") no-repeat 5px;
+}

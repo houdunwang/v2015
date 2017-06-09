@@ -1,0 +1,136 @@
+@CHARSET "UTF-8";
+/* 公共css文件 */
+*{margin:0px;padding:0px;}
+body{background:#FFF; font-family:'微软雅黑'}
+ul{list-style:none;}
+a{color:#333; text-decoration:none;}
+img{border: none;}
+/********* 头部css样式  ************/
+
+#top{
+	height:20px;
+	width:100%;
+	background:#3D97CB;
+}
+#top .pos{
+	width:960px;
+	height:40px;
+	margin:0px auto;
+}
+#top .pos .user{
+	line-height:40px;
+	width:30%;
+	float:left;
+}
+#top .pos .user a{
+	color:#ffffff;
+	margin:0px 10px;
+	font-size:12px;
+	text-decoration:none;
+}
+#top .pos .search{
+	width:246px;
+	height:28px;
+	margin-top:6px;
+	float:right;
+}
+#top .pos .search .keywords{
+	width:217px;
+	height:26px;
+	border:1px solid #113f28;
+	background:#185a3a;
+	float:left;
+	color:#FFF;
+	text-indent:6px;
+	
+}
+#top .pos .search .submit{
+	width:26px;
+	height:26px;
+	border:1px solid #FFF;
+	border-radius:3px;
+	background:#03351d;
+	float:left;
+	cursor:pointer;
+	background:url(../images/search.png) no-repeat -1px -3px;
+}
+
+#header{
+	width:1000px;
+	height:136px;
+	margin:0px auto;
+	overflow:hidden;
+	/*border-bottom: 1px solid #999;*/
+}
+#header .logo{
+	width:350px;
+	height:136px;
+	float:left;
+	margin-top: 20px;
+}
+#header  .navigation{
+	width:600px;
+	float:right;
+	height:52px;
+	border-top:1px solid #3D97CB;
+	border-bottom:1px solid #3D97CB;
+	line-height:52px;
+	margin-top:40px;
+
+}
+#header  .navigation a{
+	color:#24241f;
+	margin:0px 15px;
+	text-decoration:none;
+}
+#header  .navigation a:hover{
+	color:#3D97CB;
+}
+
+
+
+
+
+/********* 尾部css样式 *****/
+#footer{
+	width:100%;
+	height:65px;
+	overflow:hidden;
+	margin-top:30px;
+}
+.bgbar{
+	width:100%;
+	height:10px;
+	background:url(../images/pixel.png);
+}
+#footer  .bottom{
+	width:100%;
+	height:55px;
+	background:#3D97CB;
+	
+}
+#footer  .bottom .pos{
+	width:960px;
+	margin:0px auto;
+	height:55px;
+}
+#footer  .bottom .pos .footerNav{
+	width:600px;
+	height:55px;
+	line-height:55px;
+	float:left;
+}
+#footer  .bottom .pos .footerNav a{
+	font-size:12px;
+	color:#fff;
+	margin:0px 10px;
+	text-decoration:none;
+}
+#footer  .bottom .pos .copyright{
+	width:360px;
+	height:55px;
+	margin: 0 auto;
+	line-height:55px;
+	color:#FFF;
+	font-size: 12px;
+}

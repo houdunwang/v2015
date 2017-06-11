@@ -1,0 +1,134 @@
+@CHARSET "UTF-8";
+/*** 首页css样式  ****/
+#main {
+	width:960px;
+	height:auto;
+	margin:10px auto;
+	overflow:hidden;
+}
+#main .news{
+	width:700px;
+	height:auto;
+	float:left;
+}
+#main .news .newsList{
+	width:100%;
+	height:auto;
+	overflow:hidden;
+	padding:20px 0px;
+	border-bottom:1px dashed #999;
+}
+
+#main .news .newsList .newsImage{
+	width:168px;
+	height:168px;
+	overflow:hidden;
+	float:left;
+}
+#main .news .newsList .newsImage img{
+	width:100%;
+	height:100%;
+}
+#main .news .newsList .newsContent{
+	width:480px;
+	height:auto;
+	float:right;
+}
+#main .news .newsList .newsContent h3{
+	width:100%;
+	height:30px;
+	font-size:14px;
+	line-height:30px;
+}
+#main .news .newsList .newsContent h3 a{
+	color:#3D97CB;	
+}
+#main .news .newsList .newsContent p{
+	width:100%;
+	height:auto;
+	line-height:24px;
+	font-size:12px;
+	color:#333;
+}
+#main .news .newsList .newsContent .more{
+	display:block;
+	width:100px;
+	height:36px;
+	background:#24241f;
+	text-align:center;
+	line-height:36px;
+	margin-top:20px;
+	color:#FFF;
+	font-size:12px;
+}
+#main .news .newsList .newsContent .more:hover{
+	background:#3D97CB;
+}
+
+
+
+
+
+
+
+
+
+#main  .sidebar{
+	float:right;
+	width:180px;
+}
+
+#main  .sidebar .item{
+	width:100%;
+	height:auto;
+}
+#main  .sidebar .item h2{
+	width:100%;
+	height:50px;
+	border-bottom:1px solid #d9d9d9;
+	font-size:16px;
+	line-height:50px;
+}
+#main  .sidebar .item .tagbox{
+	width:100%;
+	height:auto;
+	font-size:12px;
+	padding:10px 0px;
+}
+#main  .sidebar .item .tagbox a{
+	padding:0px 8px;
+	background:#3da0a0;
+	margin-right:5px;
+	margin-top:5px;
+	color:#FFF;
+	border-radius:5px;
+	display:inline-block;
+	height:22px;
+	line-height:22px;
+	text-decoration:none;
+}
+#main  .sidebar .item .tagbox a:hover{
+	box-shadow:0px 0px 3px #3da0a0;
+}
+#main  .sidebar .item .flink{
+	width:100%;
+	height:auto;
+	
+}
+#main  .sidebar .item .flink li{
+	width:100%;
+	height:24px;
+	line-height:24px;
+	background:url(../images/fontpage.png) no-repeat 0px 10px;
+	margin-top:10px;
+	text-indent:12px;
+	overflow: hidden;
+}
+#main  .sidebar .item .flink li a{
+	color:#3D97CB;
+	text-decoration:none;
+	font-size:12px;
+}
+#main  .sidebar .item .flink li a:hover{
+	text-decoration:underline;
+}

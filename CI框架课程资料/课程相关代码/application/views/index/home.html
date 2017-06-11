@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>后盾网文章管理系统</title>
+<link href="<?php echo base_url() . 'style/index/' ?>css/index.css" rel="stylesheet" />
+	<?php $this->load->view('index/head.html') ?>
+	<div id="main">
+		<div class='content'>
+			<div  class='list'>
+				<div class='title'>
+					<h2>最新文章..</h2>
+				</div>
+				<ul>
+					<?php foreach($art as $v): ?>
+					<li>
+						<div class='post-image'>
+							<span>
+								<a href="<?php echo site_url('a/' . $v['aid']) ?>"><img width="" src="<?php echo base_url() . 'uploads/'. $v['thumb']?>" /></a>
+							</span>	
+						</div>	
+						<div class='post-content'>
+							<a href="<?php echo site_url('a/' . $v['aid']) ?>"><h3><?php echo $v['title'] ?></h3></a>
+							<p><?php echo $v['info'] ?></p>
+						</div>
+					</li>
+					<?php endforeach ?>
+				</ul>
+			</div>
+			<div  class='list'>
+				<div class='title'>
+					<h2>热门文章..</h2>
+				</div>
+				<ul>
+					<?php foreach($hot as $v): ?>
+					<li>
+						<div class='post-image'>
+							<span>
+								<a href="<?php echo site_url('a/' . $v['aid']) ?>"><img width="" src="<?php echo base_url() . 'uploads/'. $v['thumb']?>" /></a>
+							</span>	
+						</div>	
+						<div class='post-content'>
+							<a href="<?php echo site_url('a/' . $v['aid']) ?>"><h3><?php echo $v['title'] ?></h3></a>
+							<p><?php echo $v['info'] ?></p>
+						</div>
+					</li>
+					<?php endforeach ?>
+	
+				</ul>
+			</div>
+		</div>
+	<?php $this->load->view('index/right.html') ?>
+	</div>
+	<?php echo $this->load->view('index/foot.html') ?>
+
+
+	

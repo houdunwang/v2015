@@ -1,0 +1,710 @@
+2013/12/09 14:29:29 [error] [exception.CException] exception 'CException' with message 'IndexController cannot find the requested view "add".' in /www/yiiweb/framework/web/CController.php:878
+Stack trace:
+#0 /www/yiiweb/blog/protected/controllers/IndexController.php(15): CController->renderPartial('add')
+#1 /www/yiiweb/framework/web/actions/CInlineAction.php(49): IndexController->actionAdd()
+#2 /www/yiiweb/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /www/yiiweb/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /www/yiiweb/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /www/yiiweb/framework/web/CWebApplication.php(282): CController->run('add')
+#6 /www/yiiweb/framework/web/CWebApplication.php(141): CWebApplication->runController('index/add')
+#7 /www/yiiweb/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#8 /www/yiiweb/blog/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/yiiweb/blog/index.php?r=index/add
+---
+2013/12/09 15:31:18 [error] [php] Undefined variable: data (/www/yiiweb/blog/protected/controllers/IndexController.php:14)
+Stack trace:
+#0 /www/yiiweb/framework/web/CController.php(286): IndexController->runAction()
+#1 /www/yiiweb/framework/web/CController.php(265): IndexController->runActionWithFilters()
+#2 /www/yiiweb/framework/web/CWebApplication.php(282): IndexController->run()
+#3 /www/yiiweb/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /www/yiiweb/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#5 /www/yiiweb/blog/index.php(14): CWebApplication->run()
+REQUEST_URI=/yiiweb/blog/
+in /www/yiiweb/blog/protected/controllers/IndexController.php (14)
+in /www/yiiweb/blog/index.php (14)
+2013/12/09 17:00:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin".' in /www/yiiweb/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/yiiweb/framework/web/CWebApplication.php(141): CWebApplication->runController('admin')
+#1 /www/yiiweb/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /www/yiiweb/blog/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiiweb/blog/index.php?r=admin
+---
+2013/12/09 17:17:56 [error] [exception.CException] exception 'CException' with message 'Property "LoginForm.username" is not defined.' in /www/yiiweb/framework/base/CComponent.php:130
+Stack trace:
+#0 /www/yiiweb/framework/web/helpers/CHtml.php(2255): CComponent->__get('username')
+#1 /www/yiiweb/framework/web/helpers/CHtml.php(1980): CHtml::resolveValue(Object(LoginForm), 'username')
+#2 /www/yiiweb/framework/web/helpers/CHtml.php(1257): CHtml::activeInputField('text', Object(LoginForm), 'username', Array)
+#3 /www/yiiweb/framework/web/widgets/CActiveForm.php(657): CHtml::activeTextField(Object(LoginForm), 'username', Array)
+#4 /www/yiiweb/blog/protected/modules/admin/views/login/index.php(13): CActiveForm->textField(Object(LoginForm), 'username', Array)
+#5 /www/yiiweb/framework/web/CBaseController.php(126): require('/www/yiiweb/blo...')
+#6 /www/yiiweb/framework/web/CBaseController.php(95): CBaseController->renderInternal('/www/yiiweb/blo...', Array, true)
+#7 /www/yiiweb/framework/web/CController.php(869): CBaseController->renderFile('/www/yiiweb/blo...', Array, true)
+#8 /www/yiiweb/blog/protected/modules/admin/controllers/LoginController.php(12): CController->renderPartial('index', Array)
+#9 /www/yiiweb/framework/web/actions/CInlineAction.php(49): LoginController->actionIndex()
+#10 /www/yiiweb/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /www/yiiweb/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#12 /www/yiiweb/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /www/yiiweb/framework/web/CWebApplication.php(282): CController->run('index')
+#14 /www/yiiweb/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/login/ind...')
+#15 /www/yiiweb/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#16 /www/yiiweb/blog/index.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/yiiweb/blog/index.php?r=admin/login/index
+---
+2013/12/09 17:19:35 [error] [exception.CException] exception 'CException' with message 'Property "LoginForm.captcha" is not defined.' in /www/yiiweb/framework/base/CComponent.php:130
+Stack trace:
+#0 /www/yiiweb/framework/web/helpers/CHtml.php(2255): CComponent->__get('captcha')
+#1 /www/yiiweb/framework/web/helpers/CHtml.php(1980): CHtml::resolveValue(Object(LoginForm), 'captcha')
+#2 /www/yiiweb/framework/web/helpers/CHtml.php(1257): CHtml::activeInputField('text', Object(LoginForm), 'captcha', Array)
+#3 /www/yiiweb/framework/web/widgets/CActiveForm.php(657): CHtml::activeTextField(Object(LoginForm), 'captcha', Array)
+#4 /www/yiiweb/blog/protected/modules/admin/views/login/index.php(15): CActiveForm->textField(Object(LoginForm), 'captcha', Array)
+#5 /www/yiiweb/framework/web/CBaseController.php(126): require('/www/yiiweb/blo...')
+#6 /www/yiiweb/framework/web/CBaseController.php(95): CBaseController->renderInternal('/www/yiiweb/blo...', Array, true)
+#7 /www/yiiweb/framework/web/CController.php(869): CBaseController->renderFile('/www/yiiweb/blo...', Array, true)
+#8 /www/yiiweb/blog/protected/modules/admin/controllers/LoginController.php(12): CController->renderPartial('index', Array)
+#9 /www/yiiweb/framework/web/actions/CInlineAction.php(49): LoginController->actionIndex()
+#10 /www/yiiweb/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /www/yiiweb/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#12 /www/yiiweb/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /www/yiiweb/framework/web/CWebApplication.php(282): CController->run('index')
+#14 /www/yiiweb/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/login/ind...')
+#15 /www/yiiweb/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#16 /www/yiiweb/blog/index.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/yiiweb/blog/index.php?r=admin/login/index
+---
+2013/12/10 13:39:52 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] No such file or directory' in /www/yiiweb/framework/db/CDbConnection.php:381
+Stack trace:
+#0 /www/yiiweb/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /www/yiiweb/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /www/yiiweb/framework/base/CModule.php(387): CDbConnection->init()
+#3 /www/yiiweb/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /www/yiiweb/blog/protected/modules/admin/controllers/LoginController.php(10): CModule->__get('db')
+#5 /www/yiiweb/framework/web/actions/CInlineAction.php(49): LoginController->actionIndex()
+#6 /www/yiiweb/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /www/yiiweb/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#8 /www/yiiweb/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /www/yiiweb/framework/web/CWebApplication.php(282): CController->run('index')
+#10 /www/yiiweb/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/login/ind...')
+#11 /www/yiiweb/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#12 /www/yiiweb/blog/index.php(14): CApplication->run()
+#13 {main}
+REQUEST_URI=/yiiweb/blog/index.php?r=admin/login/index
+---
+2013/12/11 11:12:30 [warning] [application] Failed to set unsafe attribute "password1" of "User".
+in /www/yiiweb/blog/protected/modules/admin/controllers/UserController.php (12)
+in /www/yiiweb/blog/index.php (14)
+2013/12/11 11:12:30 [warning] [application] Failed to set unsafe attribute "password2" of "User".
+in /www/yiiweb/blog/protected/modules/admin/controllers/UserController.php (12)
+in /www/yiiweb/blog/index.php (14)
+2013/12/11 11:14:02 [warning] [application] Failed to set unsafe attribute "password1" of "User".
+in /www/yiiweb/blog/protected/modules/admin/controllers/UserController.php (12)
+in /www/yiiweb/blog/index.php (14)
+2013/12/11 11:14:02 [warning] [application] Failed to set unsafe attribute "password2" of "User".
+in /www/yiiweb/blog/protected/modules/admin/controllers/UserController.php (12)
+in /www/yiiweb/blog/index.php (14)
+2013/12/11 11:14:08 [warning] [application] Failed to set unsafe attribute "password1" of "User".
+in /www/yiiweb/blog/protected/modules/admin/controllers/UserController.php (12)
+in /www/yiiweb/blog/index.php (14)
+2013/12/11 11:14:08 [warning] [application] Failed to set unsafe attribute "password2" of "User".
+in /www/yiiweb/blog/protected/modules/admin/controllers/UserController.php (12)
+in /www/yiiweb/blog/index.php (14)
+2013/12/11 11:17:45 [warning] [application] Failed to set unsafe attribute "password1" of "User".
+in /www/yiiweb/blog/protected/modules/admin/controllers/UserController.php (12)
+in /www/yiiweb/blog/index.php (14)
+2013/12/11 11:17:45 [warning] [application] Failed to set unsafe attribute "password2" of "User".
+in /www/yiiweb/blog/protected/modules/admin/controllers/UserController.php (12)
+in /www/yiiweb/blog/index.php (14)
+2013/12/11 11:17:49 [warning] [application] Failed to set unsafe attribute "password1" of "User".
+in /www/yiiweb/blog/protected/modules/admin/controllers/UserController.php (12)
+in /www/yiiweb/blog/index.php (14)
+2013/12/11 11:17:49 [warning] [application] Failed to set unsafe attribute "password2" of "User".
+in /www/yiiweb/blog/protected/modules/admin/controllers/UserController.php (12)
+in /www/yiiweb/blog/index.php (14)
+2013/12/11 11:18:35 [warning] [application] Failed to set unsafe attribute "password1" of "User".
+in /www/yiiweb/blog/protected/modules/admin/controllers/UserController.php (12)
+in /www/yiiweb/blog/index.php (14)
+2013/12/11 11:18:35 [warning] [application] Failed to set unsafe attribute "password2" of "User".
+in /www/yiiweb/blog/protected/modules/admin/controllers/UserController.php (12)
+in /www/yiiweb/blog/index.php (14)
+2013/12/11 11:20:18 [warning] [application] Failed to set unsafe attribute "password1" of "User".
+in /www/yiiweb/blog/protected/modules/admin/controllers/UserController.php (12)
+in /www/yiiweb/blog/index.php (14)
+2013/12/11 11:20:18 [warning] [application] Failed to set unsafe attribute "password2" of "User".
+in /www/yiiweb/blog/protected/modules/admin/controllers/UserController.php (12)
+in /www/yiiweb/blog/index.php (14)
+2013/12/11 11:20:29 [warning] [application] Failed to set unsafe attribute "password1" of "User".
+in /www/yiiweb/blog/protected/modules/admin/controllers/UserController.php (12)
+in /www/yiiweb/blog/index.php (14)
+2013/12/11 11:20:29 [warning] [application] Failed to set unsafe attribute "password2" of "User".
+in /www/yiiweb/blog/protected/modules/admin/controllers/UserController.php (12)
+in /www/yiiweb/blog/index.php (14)
+2013/12/11 11:21:02 [warning] [application] Failed to set unsafe attribute "password1" of "User".
+in /www/yiiweb/blog/protected/modules/admin/controllers/UserController.php (12)
+in /www/yiiweb/blog/index.php (14)
+2013/12/11 11:21:02 [warning] [application] Failed to set unsafe attribute "password2" of "User".
+in /www/yiiweb/blog/protected/modules/admin/controllers/UserController.php (12)
+in /www/yiiweb/blog/index.php (14)
+2013/12/11 14:13:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /www/yiiweb/framework/web/CController.php:483
+Stack trace:
+#0 /www/yiiweb/framework/web/CController.php(270): CController->missingAction('index')
+#1 /www/yiiweb/framework/web/CWebApplication.php(282): CController->run('index')
+#2 /www/yiiweb/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/Category/...')
+#3 /www/yiiweb/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /www/yiiweb/blog/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/yiiweb/blog/index.php?r=admin/Category/index
+HTTP_REFERER=http://localhost/yiiweb/blog/index.php?r=admin/default/index
+---
+2013/12/11 15:41:48 [error] [php] Undefined variable: categoryModel (/www/yiiweb/blog/protected/modules/admin/views/category/edit.php:25)
+Stack trace:
+#0 /www/yiiweb/framework/web/CController.php(869): CategoryController->renderFile()
+#1 /www/yiiweb/framework/web/CController.php(782): CategoryController->renderPartial()
+#2 /www/yiiweb/blog/protected/modules/admin/controllers/CategoryController.php(39): CategoryController->render()
+#3 /www/yiiweb/framework/web/actions/CInlineAction.php(49): CategoryController->actionEdit()
+#4 /www/yiiweb/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /www/yiiweb/framework/web/CController.php(286): CategoryController->runAction()
+#6 /www/yiiweb/framework/web/CController.php(265): CategoryController->runActionWithFilters()
+#7 /www/yiiweb/framework/web/CWebApplication.php(282): CategoryController->run()
+#8 /www/yiiweb/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /www/yiiweb/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /www/yiiweb/blog/index.php(14): CWebApplication->run()
+REQUEST_URI=/yiiweb/blog/index.php?r=admin/category/edit
+in /www/yiiweb/blog/protected/modules/admin/views/category/edit.php (25)
+in /www/yiiweb/blog/protected/modules/admin/controllers/CategoryController.php (39)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 10:20:46 [error] [exception.CException] exception 'CException' with message 'ArticleController and its behaviors do not have a method or closure named "endWidgt".' in /www/yiiweb/framework/base/CComponent.php:265
+Stack trace:
+#0 /www/yiiweb/blog/protected/modules/admin/views/article/add.php(72): CComponent->__call('endWidgt', Array)
+#1 /www/yiiweb/blog/protected/modules/admin/views/article/add.php(72): ArticleController->endWidgt()
+#2 /www/yiiweb/framework/web/CBaseController.php(126): require('/www/yiiweb/blo...')
+#3 /www/yiiweb/framework/web/CBaseController.php(95): CBaseController->renderInternal('/www/yiiweb/blo...', Array, true)
+#4 /www/yiiweb/framework/web/CController.php(869): CBaseController->renderFile('/www/yiiweb/blo...', Array, true)
+#5 /www/yiiweb/framework/web/CController.php(782): CController->renderPartial('add', Array, true)
+#6 /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php(11): CController->render('add', Array)
+#7 /www/yiiweb/framework/web/actions/CInlineAction.php(49): ArticleController->actionAdd()
+#8 /www/yiiweb/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /www/yiiweb/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#10 /www/yiiweb/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /www/yiiweb/framework/web/CWebApplication.php(282): CController->run('add')
+#12 /www/yiiweb/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/article/a...')
+#13 /www/yiiweb/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /www/yiiweb/blog/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/yiiweb/blog/index.php?r=admin/article/add
+HTTP_REFERER=http://localhost/yiiweb/blog/index.php?r=admin/default/index
+---
+2013/12/12 10:26:18 [error] [exception.CException] exception 'CException' with message 'CActiveForm and its behaviors do not have a method or closure named "radioBtttonList".' in /www/yiiweb/framework/base/CComponent.php:265
+Stack trace:
+#0 /www/yiiweb/blog/protected/modules/admin/views/article/add.php(44): CComponent->__call('radioBtttonList', Array)
+#1 /www/yiiweb/blog/protected/modules/admin/views/article/add.php(44): CActiveForm->radioBtttonList(Object(Article), 'type', Array)
+#2 /www/yiiweb/framework/web/CBaseController.php(126): require('/www/yiiweb/blo...')
+#3 /www/yiiweb/framework/web/CBaseController.php(95): CBaseController->renderInternal('/www/yiiweb/blo...', Array, true)
+#4 /www/yiiweb/framework/web/CController.php(869): CBaseController->renderFile('/www/yiiweb/blo...', Array, true)
+#5 /www/yiiweb/framework/web/CController.php(782): CController->renderPartial('add', Array, true)
+#6 /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php(11): CController->render('add', Array)
+#7 /www/yiiweb/framework/web/actions/CInlineAction.php(49): ArticleController->actionAdd()
+#8 /www/yiiweb/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /www/yiiweb/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#10 /www/yiiweb/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /www/yiiweb/framework/web/CWebApplication.php(282): CController->run('add')
+#12 /www/yiiweb/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/article/a...')
+#13 /www/yiiweb/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /www/yiiweb/blog/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/yiiweb/blog/index.php?r=admin/article/add
+HTTP_REFERER=http://localhost/yiiweb/blog/index.php?r=admin/default/index
+---
+2013/12/12 10:28:40 [error] [php] Missing argument 3 for CActiveForm::dropDownList(), called in /www/yiiweb/blog/protected/modules/admin/views/article/add.php on line 57 and defined (/www/yiiweb/framework/web/widgets/CActiveForm.php:761)
+Stack trace:
+#0 /www/yiiweb/framework/web/CBaseController.php(95): ArticleController->renderInternal()
+#1 /www/yiiweb/framework/web/CController.php(869): ArticleController->renderFile()
+#2 /www/yiiweb/framework/web/CController.php(782): ArticleController->renderPartial()
+#3 /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php(11): ArticleController->render()
+#4 /www/yiiweb/framework/web/actions/CInlineAction.php(49): ArticleController->actionAdd()
+#5 /www/yiiweb/framework/web/CController.php(308): CInlineAction->runWithParams()
+#6 /www/yiiweb/framework/web/CController.php(286): ArticleController->runAction()
+#7 /www/yiiweb/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#8 /www/yiiweb/framework/web/CWebApplication.php(282): ArticleController->run()
+#9 /www/yiiweb/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /www/yiiweb/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#11 /www/yiiweb/blog/index.php(14): CWebApplication->run()
+REQUEST_URI=/yiiweb/blog/index.php?r=admin/article/add
+in /www/yiiweb/blog/protected/modules/admin/views/article/add.php (57)
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (11)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 10:42:19 [warning] [application] Failed to set unsafe attribute "title" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (31)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 10:42:19 [warning] [application] Failed to set unsafe attribute "type" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (31)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 10:42:19 [warning] [application] Failed to set unsafe attribute "cid" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (31)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 10:42:19 [warning] [application] Failed to set unsafe attribute "thumb" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (31)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 10:42:19 [warning] [application] Failed to set unsafe attribute "info" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (31)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 10:42:19 [warning] [application] Failed to set unsafe attribute "content" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (31)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 10:44:19 [warning] [application] Failed to set unsafe attribute "type" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (31)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 10:44:19 [warning] [application] Failed to set unsafe attribute "cid" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (31)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 10:44:19 [warning] [application] Failed to set unsafe attribute "thumb" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (31)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 10:44:19 [warning] [application] Failed to set unsafe attribute "info" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (31)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 10:44:19 [warning] [application] Failed to set unsafe attribute "content" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (31)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 10:45:47 [warning] [application] Failed to set unsafe attribute "type" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (31)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 10:45:47 [warning] [application] Failed to set unsafe attribute "cid" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (31)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 10:45:47 [warning] [application] Failed to set unsafe attribute "thumb" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (31)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 10:45:47 [warning] [application] Failed to set unsafe attribute "info" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (31)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 10:46:23 [warning] [application] Failed to set unsafe attribute "type" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (31)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 10:46:23 [warning] [application] Failed to set unsafe attribute "cid" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (31)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 10:46:23 [warning] [application] Failed to set unsafe attribute "thumb" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (31)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 11:05:53 [warning] [application] Failed to set unsafe attribute "thumb" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (31)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 11:07:02 [warning] [application] Failed to set unsafe attribute "thumb" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (31)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 11:09:42 [warning] [application] Failed to set unsafe attribute "thumb" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (31)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 11:18:06 [warning] [application] Failed to set unsafe attribute "thumb" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (31)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 11:18:06 [error] [php] include(CUploadFile.php): failed to open stream: No such file or directory (/www/yiiweb/framework/YiiBase.php:421)
+Stack trace:
+#0 /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php(33): spl_autoload_call()
+#1 /www/yiiweb/framework/web/actions/CInlineAction.php(49): ArticleController->actionAdd()
+#2 /www/yiiweb/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /www/yiiweb/framework/web/CController.php(286): ArticleController->runAction()
+#4 /www/yiiweb/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#5 /www/yiiweb/framework/web/CWebApplication.php(282): ArticleController->run()
+#6 /www/yiiweb/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /www/yiiweb/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#8 /www/yiiweb/blog/index.php(14): CWebApplication->run()
+REQUEST_URI=/yiiweb/blog/index.php?r=admin/article/add
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (33)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 11:18:27 [warning] [application] Failed to set unsafe attribute "thumb" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (31)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 11:18:27 [error] [php] include(CUploadeFile.php): failed to open stream: No such file or directory (/www/yiiweb/framework/YiiBase.php:421)
+Stack trace:
+#0 /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php(33): spl_autoload_call()
+#1 /www/yiiweb/framework/web/actions/CInlineAction.php(49): ArticleController->actionAdd()
+#2 /www/yiiweb/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /www/yiiweb/framework/web/CController.php(286): ArticleController->runAction()
+#4 /www/yiiweb/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#5 /www/yiiweb/framework/web/CWebApplication.php(282): ArticleController->run()
+#6 /www/yiiweb/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /www/yiiweb/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#8 /www/yiiweb/blog/index.php(14): CWebApplication->run()
+REQUEST_URI=/yiiweb/blog/index.php?r=admin/article/add
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (33)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 11:22:18 [warning] [application] Failed to set unsafe attribute "thumb" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (31)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 11:22:18 [error] [php] include(CUploadFile.php): failed to open stream: No such file or directory (/www/yiiweb/framework/YiiBase.php:421)
+Stack trace:
+#0 /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php(33): spl_autoload_call()
+#1 /www/yiiweb/framework/web/actions/CInlineAction.php(49): ArticleController->actionAdd()
+#2 /www/yiiweb/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /www/yiiweb/framework/web/CController.php(286): ArticleController->runAction()
+#4 /www/yiiweb/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#5 /www/yiiweb/framework/web/CWebApplication.php(282): ArticleController->run()
+#6 /www/yiiweb/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /www/yiiweb/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#8 /www/yiiweb/blog/index.php(14): CWebApplication->run()
+REQUEST_URI=/yiiweb/blog/index.php?r=admin/article/add
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (33)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 11:22:43 [warning] [application] Failed to set unsafe attribute "thumb" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (31)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 11:22:43 [error] [exception.CException] exception 'CException' with message 'Article and its behaviors do not have a method or closure named "saveAs".' in /www/yiiweb/framework/base/CComponent.php:265
+Stack trace:
+#0 /www/yiiweb/framework/db/ar/CActiveRecord.php(225): CComponent->__call('saveAs', Array)
+#1 /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php(37): CActiveRecord->__call('saveAs', Array)
+#2 /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php(37): Article->saveAs('uploads/img_138...')
+#3 /www/yiiweb/framework/web/actions/CInlineAction.php(49): ArticleController->actionAdd()
+#4 /www/yiiweb/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /www/yiiweb/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /www/yiiweb/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /www/yiiweb/framework/web/CWebApplication.php(282): CController->run('add')
+#8 /www/yiiweb/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/article/a...')
+#9 /www/yiiweb/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /www/yiiweb/blog/index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/yiiweb/blog/index.php?r=admin/article/add
+HTTP_REFERER=http://localhost/yiiweb/blog/index.php?r=admin/article/add
+---
+2013/12/12 11:31:06 [warning] [application] Failed to set unsafe attribute "thumb" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (31)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 11:31:06 [warning] [application] Failed to set unsafe attribute "info" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (31)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 11:31:06 [warning] [application] Failed to set unsafe attribute "content" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (31)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 11:35:27 [warning] [application] Failed to set unsafe attribute "thumb" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (31)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 11:35:40 [warning] [application] Failed to set unsafe attribute "thumb" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (31)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 11:42:44 [error] [php] move_uploaded_file(uploads/img_13868197645040.png): failed to open stream: Permission denied (/www/yiiweb/framework/web/CUploadedFile.php:196)
+Stack trace:
+#0 /www/yiiweb/framework/web/actions/CInlineAction.php(49): ArticleController->actionAdd()
+#1 /www/yiiweb/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /www/yiiweb/framework/web/CController.php(286): ArticleController->runAction()
+#3 /www/yiiweb/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#4 /www/yiiweb/framework/web/CWebApplication.php(282): ArticleController->run()
+#5 /www/yiiweb/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /www/yiiweb/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#7 /www/yiiweb/blog/index.php(14): CWebApplication->run()
+REQUEST_URI=/yiiweb/blog/index.php?r=admin/article/add
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (37)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 11:43:11 [warning] [application] Failed to set unsafe attribute "thumb" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (42)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 11:52:44 [warning] [application] Failed to set unsafe attribute "thumb" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (56)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 11:53:55 [warning] [application] Failed to set unsafe attribute "thumb" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (57)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 11:55:15 [warning] [application] Failed to set unsafe attribute "thumb" of "Article".
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (57)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 14:57:56 [error] [php] include(CDbcriteria.php): failed to open stream: No such file or directory (/www/yiiweb/framework/YiiBase.php:421)
+Stack trace:
+#0 /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php(10): spl_autoload_call()
+#1 /www/yiiweb/framework/web/actions/CInlineAction.php(49): ArticleController->actionIndex()
+#2 /www/yiiweb/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /www/yiiweb/framework/web/CController.php(286): ArticleController->runAction()
+#4 /www/yiiweb/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#5 /www/yiiweb/framework/web/CWebApplication.php(282): ArticleController->run()
+#6 /www/yiiweb/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /www/yiiweb/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#8 /www/yiiweb/blog/index.php(14): CWebApplication->run()
+REQUEST_URI=/yiiweb/blog/index.php?r=admin/article/index
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (10)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 14:58:49 [error] [php] Undefined variable: articleInfo (/www/yiiweb/blog/protected/modules/admin/views/article/index.php:22)
+Stack trace:
+#0 /www/yiiweb/framework/web/CController.php(869): ArticleController->renderFile()
+#1 /www/yiiweb/framework/web/CController.php(782): ArticleController->renderPartial()
+#2 /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php(25): ArticleController->render()
+#3 /www/yiiweb/framework/web/actions/CInlineAction.php(49): ArticleController->actionIndex()
+#4 /www/yiiweb/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /www/yiiweb/framework/web/CController.php(286): ArticleController->runAction()
+#6 /www/yiiweb/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#7 /www/yiiweb/framework/web/CWebApplication.php(282): ArticleController->run()
+#8 /www/yiiweb/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /www/yiiweb/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /www/yiiweb/blog/index.php(14): CWebApplication->run()
+REQUEST_URI=/yiiweb/blog/index.php?r=admin/article/index
+in /www/yiiweb/blog/protected/modules/admin/views/article/index.php (22)
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (25)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 14:59:09 [error] [php] Undefined variable: articleInfo (/www/yiiweb/blog/protected/modules/admin/views/article/index.php:22)
+Stack trace:
+#0 /www/yiiweb/framework/web/CController.php(869): ArticleController->renderFile()
+#1 /www/yiiweb/framework/web/CController.php(782): ArticleController->renderPartial()
+#2 /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php(25): ArticleController->render()
+#3 /www/yiiweb/framework/web/actions/CInlineAction.php(49): ArticleController->actionIndex()
+#4 /www/yiiweb/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /www/yiiweb/framework/web/CController.php(286): ArticleController->runAction()
+#6 /www/yiiweb/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#7 /www/yiiweb/framework/web/CWebApplication.php(282): ArticleController->run()
+#8 /www/yiiweb/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /www/yiiweb/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /www/yiiweb/blog/index.php(14): CWebApplication->run()
+REQUEST_URI=/yiiweb/blog/index.php?r=admin/article/index
+in /www/yiiweb/blog/protected/modules/admin/views/article/index.php (22)
+in /www/yiiweb/blog/protected/modules/admin/controllers/ArticleController.php (25)
+in /www/yiiweb/blog/index.php (14)
+2013/12/12 15:12:27 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /www/yiiweb/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /www/yiiweb/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /www/yiiweb/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /www/yiiweb/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /www/yiiweb/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /www/yiiweb/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /www/yiiweb/framework/web/CController.php(291): CFilterChain->run()
+#6 /www/yiiweb/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /www/yiiweb/framework/web/CWebApplication.php(282): CController->run('add')
+#8 /www/yiiweb/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/article/a...')
+#9 /www/yiiweb/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /www/yiiweb/blog/index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/yiiweb/blog/index.php?r=admin/article/add
+HTTP_REFERER=http://localhost/yiiweb/blog/index.php?r=admin/default/index
+---
+2013/12/12 15:12:28 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /www/yiiweb/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /www/yiiweb/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /www/yiiweb/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /www/yiiweb/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /www/yiiweb/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /www/yiiweb/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /www/yiiweb/framework/web/CController.php(291): CFilterChain->run()
+#6 /www/yiiweb/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /www/yiiweb/framework/web/CWebApplication.php(282): CController->run('index')
+#8 /www/yiiweb/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/article/i...')
+#9 /www/yiiweb/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /www/yiiweb/blog/index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/yiiweb/blog/index.php?r=admin/article/index
+HTTP_REFERER=http://localhost/yiiweb/blog/index.php?r=admin/default/index
+---
+2013/12/12 15:12:32 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /www/yiiweb/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /www/yiiweb/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /www/yiiweb/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /www/yiiweb/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /www/yiiweb/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /www/yiiweb/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /www/yiiweb/framework/web/CController.php(291): CFilterChain->run()
+#6 /www/yiiweb/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /www/yiiweb/framework/web/CWebApplication.php(282): CController->run('add')
+#8 /www/yiiweb/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/article/a...')
+#9 /www/yiiweb/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /www/yiiweb/blog/index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/yiiweb/blog/index.php?r=admin/article/add
+HTTP_REFERER=http://localhost/yiiweb/blog/index.php?r=admin/default/index
+---
+2013/12/12 15:12:33 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /www/yiiweb/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /www/yiiweb/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /www/yiiweb/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /www/yiiweb/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /www/yiiweb/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /www/yiiweb/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /www/yiiweb/framework/web/CController.php(291): CFilterChain->run()
+#6 /www/yiiweb/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /www/yiiweb/framework/web/CWebApplication.php(282): CController->run('index')
+#8 /www/yiiweb/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/article/i...')
+#9 /www/yiiweb/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /www/yiiweb/blog/index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/yiiweb/blog/index.php?r=admin/article/index
+HTTP_REFERER=http://localhost/yiiweb/blog/index.php?r=admin/default/index
+---
+2013/12/12 15:13:21 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /www/yiiweb/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /www/yiiweb/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /www/yiiweb/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /www/yiiweb/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /www/yiiweb/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /www/yiiweb/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /www/yiiweb/framework/web/CController.php(291): CFilterChain->run()
+#6 /www/yiiweb/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /www/yiiweb/framework/web/CWebApplication.php(282): CController->run('index')
+#8 /www/yiiweb/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/article/i...')
+#9 /www/yiiweb/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /www/yiiweb/blog/index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/yiiweb/blog/index.php?r=admin/article/index
+HTTP_REFERER=http://localhost/yiiweb/blog/index.php?r=admin/default/index
+---
+2013/12/12 15:17:24 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /www/yiiweb/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /www/yiiweb/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /www/yiiweb/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /www/yiiweb/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /www/yiiweb/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /www/yiiweb/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /www/yiiweb/framework/web/CController.php(291): CFilterChain->run()
+#6 /www/yiiweb/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /www/yiiweb/framework/web/CWebApplication.php(282): CController->run('del')
+#8 /www/yiiweb/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/article/d...')
+#9 /www/yiiweb/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /www/yiiweb/blog/index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/yiiweb/blog/index.php?r=admin/article/del&aid=2
+HTTP_REFERER=http://localhost/yiiweb/blog/index.php?r=admin/article/index
+---
+2013/12/12 22:18:26 [error] [exception.CException] exception 'CException' with message 'Property "User.password" is not defined.' in /www/yiiweb/framework/base/CComponent.php:130
+Stack trace:
+#0 /www/yiiweb/framework/db/ar/CActiveRecord.php(143): CComponent->__get('password')
+#1 /www/yiiweb/blog/protected/components/UserIdentity.php(25): CActiveRecord->__get('password')
+#2 /www/yiiweb/blog/protected/models/LoginForm.php(55): UserIdentity->authenticate()
+#3 /www/yiiweb/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#4 /www/yiiweb/framework/validators/CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#5 /www/yiiweb/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#6 /www/yiiweb/blog/protected/modules/admin/controllers/LoginController.php(18): CModel->validate()
+#7 /www/yiiweb/framework/web/actions/CInlineAction.php(49): LoginController->actionIndex()
+#8 /www/yiiweb/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /www/yiiweb/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#10 /www/yiiweb/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /www/yiiweb/framework/web/CWebApplication.php(282): CController->run('index')
+#12 /www/yiiweb/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/login/ind...')
+#13 /www/yiiweb/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /www/yiiweb/blog/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/yiiweb/blog/index.php?r=admin/login/index
+HTTP_REFERER=http://localhost/yiiweb/blog/index.php?r=admin/login/index
+---
+2013/12/12 23:18:51 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /www/yiiweb/framework/web/CController.php:336
+Stack trace:
+#0 /www/yiiweb/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /www/yiiweb/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#2 /www/yiiweb/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 /www/yiiweb/framework/web/CWebApplication.php(282): CController->run('index')
+#4 /www/yiiweb/framework/web/CWebApplication.php(141): CWebApplication->runController('article/index')
+#5 /www/yiiweb/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#6 /www/yiiweb/blog/index.php(14): CApplication->run()
+#7 {main}
+REQUEST_URI=/yiiweb/blog/index.php?r=article/index
+---
+2013/12/12 23:22:03 [error] [php] include(Ariticle.php): failed to open stream: No such file or directory (/www/yiiweb/framework/YiiBase.php:421)
+Stack trace:
+#0 /www/yiiweb/blog/protected/controllers/ArticleController.php(10): spl_autoload_call()
+#1 unknown(0): ArticleController->actionIndex()
+#2 /www/yiiweb/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#3 /www/yiiweb/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#4 /www/yiiweb/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /www/yiiweb/framework/web/CController.php(286): ArticleController->runAction()
+#6 /www/yiiweb/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#7 /www/yiiweb/framework/web/CWebApplication.php(282): ArticleController->run()
+#8 /www/yiiweb/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /www/yiiweb/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /www/yiiweb/blog/index.php(14): CWebApplication->run()
+REQUEST_URI=/yiiweb/blog/index.php?r=article/index&aid=28
+in /www/yiiweb/blog/protected/controllers/ArticleController.php (10)
+in /www/yiiweb/blog/index.php (14)
+2013/12/13 10:38:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index.html".' in /www/yiiweb/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /www/yiiweb/framework/web/CWebApplication.php(141): CWebApplication->runController('index.html')
+#1 /www/yiiweb/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /www/yiiweb/blog/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiiweb/blog/index.html
+---
+2013/12/24 02:16:07 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'info' in 'field list'. The SQL statement executed was: SELECT thumb,aid,title,info FROM hd_article WHERE type=0 ORDER BY time DESC.
+2013/12/24 02:16:07 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'info' in 'field list'' in F:\wamp\www\my\yiiweb15\framework\db\CDbCommand.php:541
+Stack trace:
+#0 F:\wamp\www\my\yiiweb15\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 F:\wamp\www\my\yiiweb15\framework\db\ar\CActiveRecord.php(1527): CDbCommand->queryAll()
+#2 F:\wamp\www\my\yiiweb15\blog\protected\controllers\IndexController.php(28): CActiveRecord->findAllBySql('SELECT thumb,ai...')
+#3 F:\wamp\www\my\yiiweb15\framework\web\actions\CInlineAction.php(49): IndexController->actionIndex()
+#4 F:\wamp\www\my\yiiweb15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 F:\wamp\www\my\yiiweb15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 F:\wamp\www\my\yiiweb15\framework\web\widgets\COutputCache.php(151): CFilterChain->run()
+#7 F:\wamp\www\my\yiiweb15\framework\web\filters\CFilterChain.php(130): COutputCache->filter(Object(CFilterChain))
+#8 F:\wamp\www\my\yiiweb15\framework\web\CController.php(291): CFilterChain->run()
+#9 F:\wamp\www\my\yiiweb15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 F:\wamp\www\my\yiiweb15\framework\web\CWebApplication.php(282): CController->run('')
+#11 F:\wamp\www\my\yiiweb15\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#12 F:\wamp\www\my\yiiweb15\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 F:\wamp\www\my\yiiweb15\blog\index.php(14): CApplication->run()
+#14 {main}
+REQUEST_URI=/my/yiiweb15/blog/
+HTTP_REFERER=http://localhost/my/yiiweb15/
+---
+2013/12/24 02:16:10 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'info' in 'field list'. The SQL statement executed was: SELECT thumb,aid,title,info FROM hd_article WHERE type=0 ORDER BY time DESC.
+2013/12/24 02:16:10 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'info' in 'field list'' in F:\wamp\www\my\yiiweb15\framework\db\CDbCommand.php:541
+Stack trace:
+#0 F:\wamp\www\my\yiiweb15\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 F:\wamp\www\my\yiiweb15\framework\db\ar\CActiveRecord.php(1527): CDbCommand->queryAll()
+#2 F:\wamp\www\my\yiiweb15\blog\protected\controllers\IndexController.php(28): CActiveRecord->findAllBySql('SELECT thumb,ai...')
+#3 F:\wamp\www\my\yiiweb15\framework\web\actions\CInlineAction.php(49): IndexController->actionIndex()
+#4 F:\wamp\www\my\yiiweb15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 F:\wamp\www\my\yiiweb15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 F:\wamp\www\my\yiiweb15\framework\web\widgets\COutputCache.php(151): CFilterChain->run()
+#7 F:\wamp\www\my\yiiweb15\framework\web\filters\CFilterChain.php(130): COutputCache->filter(Object(CFilterChain))
+#8 F:\wamp\www\my\yiiweb15\framework\web\CController.php(291): CFilterChain->run()
+#9 F:\wamp\www\my\yiiweb15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 F:\wamp\www\my\yiiweb15\framework\web\CWebApplication.php(282): CController->run('')
+#11 F:\wamp\www\my\yiiweb15\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#12 F:\wamp\www\my\yiiweb15\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 F:\wamp\www\my\yiiweb15\blog\index.php(14): CApplication->run()
+#14 {main}
+REQUEST_URI=/my/yiiweb15/blog/
+HTTP_REFERER=http://localhost/my/yiiweb15/
+---
+2013/12/24 02:17:48 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'info' in 'field list'. The SQL statement executed was: SELECT thumb,aid,title,info FROM hd_article WHERE type=0 ORDER BY time DESC.
+2013/12/24 02:17:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'info' in 'field list'' in F:\wamp\www\my\yiiweb15\framework\db\CDbCommand.php:541
+Stack trace:
+#0 F:\wamp\www\my\yiiweb15\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 F:\wamp\www\my\yiiweb15\framework\db\ar\CActiveRecord.php(1527): CDbCommand->queryAll()
+#2 F:\wamp\www\my\yiiweb15\blog\protected\controllers\IndexController.php(28): CActiveRecord->findAllBySql('SELECT thumb,ai...')
+#3 F:\wamp\www\my\yiiweb15\framework\web\actions\CInlineAction.php(49): IndexController->actionIndex()
+#4 F:\wamp\www\my\yiiweb15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 F:\wamp\www\my\yiiweb15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 F:\wamp\www\my\yiiweb15\framework\web\widgets\COutputCache.php(151): CFilterChain->run()
+#7 F:\wamp\www\my\yiiweb15\framework\web\filters\CFilterChain.php(130): COutputCache->filter(Object(CFilterChain))
+#8 F:\wamp\www\my\yiiweb15\framework\web\CController.php(291): CFilterChain->run()
+#9 F:\wamp\www\my\yiiweb15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 F:\wamp\www\my\yiiweb15\framework\web\CWebApplication.php(282): CController->run('')
+#11 F:\wamp\www\my\yiiweb15\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#12 F:\wamp\www\my\yiiweb15\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 F:\wamp\www\my\yiiweb15\blog\index.php(14): CApplication->run()
+#14 {main}
+REQUEST_URI=/my/yiiweb15/blog/
+HTTP_REFERER=http://localhost/my/yiiweb15/
+---
+2013/12/24 02:19:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/admin".' in F:\wamp\www\my\yiiweb15\framework\web\CWebApplication.php:286
+Stack trace:
+#0 F:\wamp\www\my\yiiweb15\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/admin')
+#1 F:\wamp\www\my\yiiweb15\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 F:\wamp\www\my\yiiweb15\blog\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/my/yiiweb15/blog/admin/admin
+---
+2013/12/24 02:20:03 [error] [exception.CException] exception 'CException' with message 'Property "User.password" is not defined.' in F:\wamp\www\my\yiiweb15\framework\base\CComponent.php:130
+Stack trace:
+#0 F:\wamp\www\my\yiiweb15\framework\db\ar\CActiveRecord.php(143): CComponent->__get('password')
+#1 F:\wamp\www\my\yiiweb15\blog\protected\components\UserIdentity.php(25): CActiveRecord->__get('password')
+#2 F:\wamp\www\my\yiiweb15\blog\protected\models\LoginForm.php(55): UserIdentity->authenticate()
+#3 F:\wamp\www\my\yiiweb15\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#4 F:\wamp\www\my\yiiweb15\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#5 F:\wamp\www\my\yiiweb15\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#6 F:\wamp\www\my\yiiweb15\blog\protected\modules\admin\controllers\LoginController.php(18): CModel->validate()
+#7 F:\wamp\www\my\yiiweb15\framework\web\actions\CInlineAction.php(49): LoginController->actionIndex()
+#8 F:\wamp\www\my\yiiweb15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 F:\wamp\www\my\yiiweb15\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 F:\wamp\www\my\yiiweb15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 F:\wamp\www\my\yiiweb15\framework\web\CWebApplication.php(282): CController->run('index')
+#12 F:\wamp\www\my\yiiweb15\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/login/ind...')
+#13 F:\wamp\www\my\yiiweb15\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 F:\wamp\www\my\yiiweb15\blog\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/my/yiiweb15/blog/admin/login/index
+HTTP_REFERER=http://localhost/my/yiiweb15/blog/admin/login/index
+---

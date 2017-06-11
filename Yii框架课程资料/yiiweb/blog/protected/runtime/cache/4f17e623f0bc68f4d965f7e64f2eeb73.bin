@@ -1,0 +1,66 @@
+a:2:{i:0;a:2:{i:0;s:2459:"<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>后盾网文章管理系统</title>
+
+<link href="/yiiweb/blog/assets/index/css/common.css" rel="stylesheet" />
+</head>	
+<body>
+	<div id="top">
+	</div>
+	<div id="header">
+		<div class='logo'>
+			<a href=""><img src="/yiiweb/blog/assets/index/images/logo.jpg" alt=""></a>
+		</div>
+		<div class='navigation'>
+			<a href="/yiiweb/blog/./index.html">首页</a>
+						 				<a href="/yiiweb/blog/c/15.html">情感</a>
+							<a href="/yiiweb/blog/c/16.html">生活</a>
+					</div>
+	</div>
+
+	
+	<link href="/yiiweb/blog/assets/index/css/details.css" rel="stylesheet" />
+	<div id="main">
+		<div class='details'>
+			<h1>后盾网激情澎湃的篮球赛</h1>
+			<div class='info'>
+				<div class='base'>
+					<em>发表于 10:46:36</em>, 分类：<strong>情感</strong>
+				</div>
+			</div>
+			<div class='content'>
+				 9月30日，后盾网组织了规模盛大的篮球友谊赛，本次共有三支由后盾学员、讲师、热心盾友组成的代表队参加了比赛，以下是老鱼手中的比赛合影，更多详情等我把图片收集一下再给分享给大家哦！  
+
+  球赛完毕后，后盾组织了聚餐活动，即将毕业的20期学员为后盾网送上了锦旗，并对老师表达了诚挚的谢意，让在场的各位都非常感动。更活动揭秘请关注后续发布的活动实况录像，有你想看的，有你期待的！			</div>
+		</div>
+
+			
+	<div class='sidebar'>
+			<div class='item'>
+				<h2>文章标题</h2>
+				<ul class='flink'>
+																		<li><a href="/yiiweb/blog/a/28.html">蹲下来抱抱自己</a></li>
+													<li><a href="/yiiweb/blog/a/40.html">后盾网激情澎湃的篮球赛</a></li>
+													<li><a href="/yiiweb/blog/a/38.html">惜别，亲爱的友情</a></li>
+													<li><a href="/yiiweb/blog/a/37.html">郭敬明语录</a></li>
+													<li><a href="/yiiweb/blog/a/35.html">青春千里行、梦想始足下</a></li>
+															</ul>
+			</div>
+			
+		</div>
+	</div>
+	<div id="footer">
+		<div class='bgbar'></div>
+		<div class='bottom'>
+			<div class='pos'>
+				<div class='copyright'>
+					© Copyright 2011-2013 www.houdunwang 后盾网
+				</div>
+			</div>	
+		</div>
+	</div>
+</body>
+</html>
+";i:1;N;}i:1;N;}

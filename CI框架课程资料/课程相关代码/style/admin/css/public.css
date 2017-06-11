@@ -1,0 +1,130 @@
+* {
+	font-size:14px;
+	font-family:'微软雅黑';
+	margin:0px;
+	padding:0px;
+}
+
+li {
+	list-style-type:none;
+}
+a {
+	text-decoration:none;
+	color:blue;
+}
+
+iframe {
+	width:100%;
+	height:100%;
+	border:none;
+	overflow-x: hidden;
+	overflow: auto;
+}
+
+table,th,td {
+	border-collapse:collapse;
+	background:#fff;
+}
+th,td {
+	padding:8px 8px;
+}
+.th {
+	white-space:nowrap;
+	text-align:left;
+	font-size:15px;
+	color: #3B96CB;
+	background: url("../images/1_111219133417_2_03.gif") repeat-x;
+	font-weight: 800;
+}
+.textarea{
+	resize:none;
+	width: 422px;
+	height: 171px;
+}
+img{
+	border:none; 
+	vertical-align:
+	middle;
+}
+a.showPlus{
+	background: url("../images/action_add.png") no-repeat;
+	display:block;
+	width: 15px;
+	height: 15px;
+	margin-left: 5px;
+}
+a.showMinus{
+	background: url("../images/action_remove.png") no-repeat;
+	display:block;
+	width: 15px;
+	height: 15px;
+	margin-left: 5px;
+}
+/************表格样式1********/
+.tableTop{font-weight: 700;text-align: left;}
+.tdLittle0{width: 30px;}
+.tdLittle1{width: 20px;}
+.tdLittle2{width: 60px;}
+.tdLtitle3{width: 65px;}
+.tdLtitle4{width: 108px;}
+.tdLtitle5{width: 94px;}
+.tdLtitle6{width: 122px;}
+.tdLtitle7{width: 170px;}
+.center{text-align:center;}
+.table{width:100%;margin-top: 3px;}
+.table,.table td{border:solid 1px #ccc;}
+.table th{border:solid 1px #ccc;width:100px;text-align: center;}
+.table thead tr td{background: #eee;color:#333;}
+/*************span小图标样式**************/
+.span_server{
+	background: url("../images/base.png") no-repeat;
+	padding-left: 20px;
+}
+.span_people{
+	background: url("../images/user.png") no-repeat;
+	padding-left: 20px;
+}
+/**************input样式*************/
+.input_button{
+	width: 61px;
+	height: 28px;
+	background: #3B96CB;
+	font-size: 13px;
+	color:#fff;
+	border: none;
+	font-weight: 600;
+	margin-left: 10px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.input{
+	width: 240px;
+	height: 30px;
+}
+.edit_article{
+	resize:none;
+	width: 100%;
+	height: 350px;
+	overflow: auto;
+}
+/***页码CSS样式***/
+.page{
+	width: 100%;
+	text-align: center;
+	margin-top: 20px;
+}
+.page a{
+	margin-left: 2px;
+	border: 1px solid #ccc;
+	padding: 3px;
+}
+.page strong{
+	margin-left: 2px;
+	border: 1px solid #ccc;
+	padding: 3px;
+	font-weight: 400;
+}
+
+.select{
+	width: 150px;
+}

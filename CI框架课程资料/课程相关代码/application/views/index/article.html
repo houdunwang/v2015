@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>后盾网文章管理系统</title>
+<link href="<?php echo base_url() . 'style/index/' ?>css/details.css" rel="stylesheet" />
+<?php $this->load->view('index/head.html') ?>
+	<div id="main">
+		<div class='details'>
+			<h1><?php echo $article[0]['title'] ?></h1>
+			<div class='info'>
+				<div class='base'>
+					<em>发表于 <?php echo date('H:i:s',$article[0]['time']) ?></em>, 分类：<strong><?php echo $article[0]['cname'] ?></strong>
+				</div>
+			</div>
+			<div class='content'>
+				<?php echo $article[0]['content'] ?>
+			</div>
+		</div>
+
+	<?php $this->load->view('index/right.html') ?>
+	</div>
+	<?php $this->load->view('index/foot.html') ?>
+</body>
+</html>

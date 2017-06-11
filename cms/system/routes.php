@@ -7,3 +7,5 @@
 | 当然也可以根据业务需要两种方式都使用
 |-------------------------------------------------------------------------*/
 Route::get('/admin','app\admin\controller\Entry@index');
+Route::any('/login','app\admin\controller\Entry@login');
+Route::get('/out','app\admin\controller\Entry@out');

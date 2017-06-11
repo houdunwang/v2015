@@ -1,6 +1,5 @@
 <?php namespace app\admin\controller;
 
-use houdunwang\route\Controller;
 use system\model\Category as CategoryModel;
 use Request;
 
@@ -10,8 +9,13 @@ use Request;
  *
  * @package app\admin\controller
  */
-class Category extends Controller
+class Category extends Common
 {
+    public function __construct()
+    {
+        $this->auth();
+    }
+
     /**
      * 栏目列表
      *
@@ -43,5 +47,20 @@ class Category extends Controller
         $category = CategoryModel::getCategoryByCid($model);
 
         return view('', compact('category', 'model'));
+    }
+
+    /**
+     * 删除数据
+     *
+     * @return array
+     */
+    public function remove(CategoryModel $category)
+    {
+        $cid = Request::get('cid');
+        if ($category->remove($cid)) {
+            return $this->setRedirect('lists')->success('删除成功');
+        }
+
+        return $this->error($category->getError());
     }
 }

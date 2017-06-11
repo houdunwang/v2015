@@ -49,7 +49,7 @@
                             <i class="fa fa-reply-all"></i> 返回首页
                         </a>
                     </li>
-                    <li class="top_menu active">
+                    <li class="top_menu">
                         <a href="?s=admin/category/lists">
                             <i class="'fa-w fa fa-comments-o"></i> 文章管理 </a>
                     </li>
@@ -57,7 +57,7 @@
                         <a href="?s=wechat/config/setting">
                             <i class="'fa-w fa fa-cubes"></i> 微信功能 </a>
                     </li>
-                    <li class="top_menu">
+                    <li class="top_menu active">
                         <a href="?s=system/module/lists">
                             <i class="'fa-w fa fa-cubes"></i> 系统管理 </a>
                     </li>
@@ -94,43 +94,42 @@
             <div class="panel panel-default">
                 <!--系统菜单-->
                 <div class="panel-heading">
-                    <h4 class="panel-title">栏目管理</h4>
+                    <h4 class="panel-title">个人中心</h4>
                     <a class="panel-collapse" data-toggle="collapse" href="javascript:;">
                         <i class="fa fa-chevron-circle-down"></i>
                     </a>
                 </div>
                 <ul class="list-group menus">
                     <li class="list-group-item">
-                        <a href="{{u('category.lists')}}">栏目列表</a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="{{u('category.post')}}">添加栏目</a>
-                    </li>
-                </ul>
-
-                <div class="panel-heading">
-                    <h4 class="panel-title">文章管理</h4>
-                    <a class="panel-collapse" data-toggle="collapse" href="javascript:;">
-                        <i class="fa fa-chevron-circle-down"></i>
-                    </a>
-                </div>
-                <ul class="list-group menus">
-                    <li class="list-group-item">
-                        <a href="{{u('article.lists')}}">文章列表</a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="{{u('article.post')}}">发表文章</a>
+                        <a href="{{u('admin.user.changePassword')}}">修改密码</a>
                     </li>
                 </ul>
                 <div class="panel-heading">
-                    <h4 class="panel-title">系统管理</h4>
+                    <h4 class="panel-title">模块管理</h4>
                     <a class="panel-collapse" data-toggle="collapse" href="javascript:;">
                         <i class="fa fa-chevron-circle-down"></i>
                     </a>
                 </div>
                 <ul class="list-group menus">
                     <li class="list-group-item">
-                        <a href="{{u('config.setting')}}">网站配置</a>
+                        <a href="{{u('system.module.lists')}}">模块列表</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="{{u('system.module.post')}}">设计模块</a>
+                    </li>
+                </ul>
+                <div class="panel-heading">
+                    <h4 class="panel-title">网站备份</h4>
+                    <a class="panel-collapse" data-toggle="collapse" href="javascript:;">
+                        <i class="fa fa-chevron-circle-down"></i>
+                    </a>
+                </div>
+                <ul class="list-group menus">
+                    <li class="list-group-item">
+                        <a href="{{u('system.module.lists')}}">网站备份</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="{{u('system.module.design')}}">备份列表</a>
                     </li>
                 </ul>
             </div>

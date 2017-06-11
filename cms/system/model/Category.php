@@ -13,6 +13,9 @@ class Category extends Model
     protected $table = "category";
 
     //允许填充字段
+    /**
+     * @var array
+     */
     protected $allowFill = ['*'];
 
     //禁止填充字段
@@ -76,5 +79,25 @@ class Category extends Model
         }
 
         return $data;
+    }
+
+    /**
+     * 删除栏目
+     *
+     * @param int $cid 栏目编号
+     *
+     * @return bool
+     */
+    public function remove($cid)
+    {
+        $model    = $this->find($cid);
+        $category = $this->get();
+        if (Arr::hasChild($category, $cid, 'pid')) {
+            $this->setError(['请先删除子栏目']);
+
+            return false;
+        }
+
+        return $model->destory();
     }
 }

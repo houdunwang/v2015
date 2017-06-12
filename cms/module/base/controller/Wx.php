@@ -19,7 +19,8 @@ class Wx extends HdController
     public function lists()
     {
         $data = BaseContent::paginate(10);
-        return $this->template('wx/lists',compact('data'));
+
+        return $this->template('wx/lists', compact('data'));
     }
 
     /**
@@ -29,15 +30,33 @@ class Wx extends HdController
      */
     public function post()
     {
-        $model = new BaseContent();
+        $id    = Request::get('id');
+        $model = $id ? BaseContent::find($id) : new BaseContent();
         if (IS_POST) {
             $post = Request::post();
-            $this->saveKeyword($post);
             $model->save($post);
+            $post['module_id'] = $model['id'];
+            $this->saveKeyword($post);
 
             return $this->setRedirect(url('wx.lists'))->success('保存成功');
         }
+        $this->assignKeyword($id);
 
-        return $this->template('wx/post');
+        return $this->template('wx/post', compact('model'));
+    }
+
+    /**
+     * 删除基本回复内容
+     *
+     * @return array
+     */
+    public function remove()
+    {
+        $id = Request::get('id');
+        $this->removeKeyword($id);
+        $model = BaseContent::find($id);
+        $model->destory();
+
+        return $this->setRedirect(url('wx.lists'))->success('删除成功');
     }
 }

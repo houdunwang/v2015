@@ -1,6 +1,7 @@
 <?php namespace app\admin\controller;
 
 use houdunwang\request\Request;
+use module\WeChat;
 use system\model\Category;
 use system\model\Article as ArticleModel;
 
@@ -11,6 +12,8 @@ use system\model\Article as ArticleModel;
  */
 class Article extends Common
 {
+    use WeChat;
+
     public function __construct()
     {
         $this->auth();
@@ -38,6 +41,8 @@ class Article extends Common
         if (IS_POST) {
             $post = Request::post();
             $model->save($post);
+            $data = ['module' => 'article', 'wechat_keyword' => $post['keyword'], 'module_id' => $model['id']];
+            $this->saveKeyword($data);
 
             return $this->setRedirect('lists')->success('保存成功');
         }

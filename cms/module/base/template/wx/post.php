@@ -19,7 +19,7 @@
                 <div class="form-group">
                     <label for="" class="col-sm-2 control-label">栏目描述</label>
                     <div class="col-sm-10">
-                        <textarea name="content" class="form-control" rows="5">{{$model['description']}}</textarea>
+                        <textarea name="content" class="form-control" rows="5">{{$model['content']}}</textarea>
                     </div>
                 </div>
             </div>

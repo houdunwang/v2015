@@ -10,12 +10,19 @@
 
 namespace app\home\controller;
 
-use houdunwang\db\Db;
 use Request;
+use system\model\Article;
 use system\model\Module;
 
 class Entry
 {
+    protected $template;
+
+    public function __construct()
+    {
+        $this->template = 'template/'.(IS_MOBILE ? 'mobile' : 'web');
+    }
+
     public function index()
     {
         $content = $this->runModule();
@@ -45,5 +52,19 @@ class Entry
         }
 
         return false;
+    }
+
+    /**
+     * 文章内容页展示
+     *
+     * @param $id 文章编号
+     *
+     * @return mixed
+     */
+    public function content($id)
+    {
+        $field = Article::find($id);
+
+        return view($this->template.'/content.html', compact('field'));
     }
 }

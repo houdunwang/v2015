@@ -1,12 +1,15 @@
-<?php
-namespace addons\base\system;
+<?php namespace module\base\system;
+
 use Db;
+use module\base\model\BaseContent;
 use module\HdProcessor;
 use WeChat;
+
 class Processor extends HdProcessor
 {
     public function handler($kid)
     {
-        //此处理微信消息
+        $id = $this->getModuleId($kid);
+        $this->text(BaseContent::find($id)->content);
     }
 }

@@ -9,3 +9,6 @@
 Route::get('/admin','app\admin\controller\Entry@index');
 Route::any('/login','app\admin\controller\Entry@login');
 Route::get('/out','app\admin\controller\Entry@out');
+
+//文章路由规则
+Route::get('/{id}.html','app\home\controller\Entry@content');

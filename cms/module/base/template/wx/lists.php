@@ -10,6 +10,7 @@
                 <thead>
                 <tr>
                     <th width="80">编号</th>
+                    <th>回复内容</th>
                     <th>关键词</th>
                     <th>创建时间</th>
                     <th width="150">操作</th>
@@ -20,11 +21,12 @@
                     <tr>
                         <td>{{$d['id']}}</td>
                         <td>{{$d['content']}}</td>
+                        <td>{{$d->keyword->content}}</td>
                         <td>{{$d['created_at']}}</td>
                         <td>
                             <div class="btn-group btn-group-sm" role="group" aria-label="...">
-                                <a href="{{url('wx.post',['id'=>$d['id']])}}" class="btn btn-default">编辑</a>
-                                <a href="javascript:;" onclick="remove({{$d['cid']}})" class="btn btn-default">删除</a>
+                                <a href="{{url('wx.post','',['id'=>$d['id']])}}" class="btn btn-default">编辑</a>
+                                <a href="javascript:;" onclick="remove({{$d['id']}})" class="btn btn-default">删除</a>
                             </div>
                         </td>
                     </tr>
@@ -32,9 +34,9 @@
                 </tbody>
             </table>
             <script>
-                function remove(cid) {
+                function remove(id) {
                     if (confirm('确定删除吗?')) {
-                        location.href="{{u('remove')}}&cid="+cid;
+                        location.href="{{url('wx.remove')}}&id="+id;
                     }
                 }
             </script>

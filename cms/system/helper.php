@@ -4,12 +4,14 @@
  *
  * @param        $path
  * @param string $name 模块标识
+ * @param array  $args GET参数
  *
  * @return string
  */
-function url($path, $name = '')
+function url($path, $name = '', array $args = [])
 {
     $name = empty($name) ? Request::get('m') : $name;
 
-    return $url = __ROOT__."?m={$name}&action=controller/".str_replace('.', '/', $path);
+    return __ROOT__."?m={$name}&action=controller/".str_replace('.', '/', $path)
+                  .'&'.http_build_query($args);
 }

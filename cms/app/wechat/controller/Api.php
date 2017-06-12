@@ -1,6 +1,8 @@
 <?php namespace app\wechat\controller;
 
 use houdunwang\route\Controller;
+use system\model\Keyword;
+use system\model\Module;
 use WeChat;
 
 /**
@@ -25,7 +27,13 @@ class Api extends Controller
      */
     public function handle()
     {
-        $instance = WeChat::instance('message');
-        $instance->text($instance->Content);
+        $instance      = WeChat::instance('message');
+        $keyworContent = trim($instance->Content);
+        $keyword       = Keyword::where('content', $keyworContent)->first();
+        if ($keyword) {
+            $info  = Module::where('name', $keyword['module'])->first();
+            $class = ($info['is_system'] == 1 ? 'module' : 'addons').'\\'.$keyword['module'].'\\system\\Processor';
+            call_user_func_array([new $class, 'handler'], [$keyword['id']]);
+        }
     }
 }

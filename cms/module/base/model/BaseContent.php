@@ -1,6 +1,7 @@
 <?php namespace module\base\model;
 
 use houdunwang\model\Model;
+use system\model\Keyword;
 
 class BaseContent extends Model
 {
@@ -33,4 +34,9 @@ class BaseContent extends Model
 
     //时间操作,需要表中存在created_at,updated_at字段
     protected $timestamps = true;
+
+    public function keyword()
+    {
+        return $this->hasOne(Keyword::class, 'module_id', 'id');
+    }
 }

@@ -126,10 +126,10 @@
                 </div>
                 <ul class="list-group menus">
                     <li class="list-group-item">
-                        <a href="{{u('system.module.lists')}}">网站备份</a>
+                        <a href="{{u('system.backup.run')}}">网站备份</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="{{u('system.module.design')}}">备份列表</a>
+                        <a href="{{u('system.backup.lists')}}">备份列表</a>
                     </li>
                 </ul>
             </div>

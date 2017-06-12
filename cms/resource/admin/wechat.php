@@ -115,6 +115,9 @@
                     <li class="list-group-item">
                         <a href="?m=base&action=controller/wx/lists">文本回复</a>
                     </li>
+                    <li class="list-group-item">
+                        <a href="{{u('wechat.system.post')}}">系统回复</a>
+                    </li>
                 </ul>
             </div>
         </div>

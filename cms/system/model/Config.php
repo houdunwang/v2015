@@ -13,7 +13,7 @@ class Config extends Model
     protected $table = "config";
 
     //允许填充字段
-    protected $allowFill = [];
+    protected $allowFill = ['*'];
 
     //禁止填充字段
     protected $denyFill = [];

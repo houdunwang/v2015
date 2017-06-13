@@ -1,8 +1,8 @@
 <extend file='resource/admin/article.php'/>
 <block name="content">
     <ul class="nav nav-tabs" role="tablist">
-        <li class="active"><a href="#" role="tab" data-toggle="tab">文章列表</a></li>
-        <li><a href="{{u('post')}}" role="tab" data-toggle="tab">发表文章</a></li>
+        <li class="active"><a href="#" >文章列表</a></li>
+        <li><a href="{{u('post')}}">发表文章</a></li>
     </ul>
     <div class="panel panel-default">
         <div class="panel-body">
@@ -12,7 +12,7 @@
                     <th width="80">编号</th>
                     <th>标题</th>
                     <th>点击数</th>
-                    <th width="150">操作</th>
+                    <th width="180">操作</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -25,6 +25,7 @@
                             <div class="btn-group btn-group-sm" role="group" aria-label="...">
                                 <a href="{{u('post',['id'=>$d['id']])}}" class="btn btn-default">编辑</a>
                                 <a href="javascript:;" onclick="remove({{$d['id']}})" class="btn btn-default">删除</a>
+                                <a href="{{$d['id']}}.html" target="_blank" class="btn btn-default">预览</a>
                             </div>
                         </td>
                     </tr>

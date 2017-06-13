@@ -12,6 +12,7 @@ namespace app\home\controller;
 
 use Request;
 use system\model\Article;
+use system\model\Category;
 use system\model\Module;
 
 class Entry
@@ -21,16 +22,18 @@ class Entry
     public function __construct()
     {
         $this->template = 'template/'.(IS_MOBILE ? 'mobile' : 'web');
+        define('__TEMPLATE__', __ROOT__.'/'.$this->template);
+        $this->runModule();
     }
 
+    /**
+     * 首页处理
+     *
+     * @return mixed
+     */
     public function index()
     {
-        $content = $this->runModule();
-        if ($content !== false) {
-            return $content;
-        }
-
-        return View::with('framework', 'HDPHP')->make();
+        return view($this->template.'/index.html');
     }
 
     /**
@@ -48,10 +51,8 @@ class Entry
             $info[1] = ucfirst($info[1]);
             $class   = ($model['is_system'] == 1 ? 'module' : 'addons').'\\'.$module.'\\'.$info[0].'\\'.$info[1];
 
-            return call_user_func_array([new $class, $info[2]], []);
+            die(call_user_func_array([new $class, $info[2]], []));
         }
-
-        return false;
     }
 
     /**
@@ -66,5 +67,19 @@ class Entry
         $field = Article::find($id);
 
         return view($this->template.'/content.html', compact('field'));
+    }
+
+    /**
+     * 栏目页展示
+     *
+     * @param $cid
+     *
+     * @return mixed
+     */
+    public function category($cid)
+    {
+        $field = Category::find($cid);
+
+        return view($this->template.'/list.html', compact('field'));
     }
 }

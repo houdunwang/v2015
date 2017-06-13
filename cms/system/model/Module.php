@@ -35,4 +35,25 @@ class Module extends Model
 
     //时间操作,需要表中存在created_at,updated_at字段
     protected $timestamps = true;
+
+    /**
+     * 删除模块
+     *
+     * @param string $name 模块标识
+     *
+     * @return mixed
+     */
+    public static function remove($name)
+    {
+        Dir::del('addons/'.$name);
+        //删除模块的关联表
+        $table = [
+            'keyword',
+        ];
+        foreach ($table as $t) {
+            Db::table($t)->where('module', $name)->delete();
+        }
+
+        return self::where('name', $name)->delete();
+    }
 }

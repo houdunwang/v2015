@@ -1,17 +1,135 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>桌面端内容页</h1>
-<h2>{{$field['title']}}</h2>
-    <p>
-        {{$field['content']}}
-    </p>
-</body>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>内容页</title>
+		<link rel="stylesheet" type="text/css" href="{{__TEMPLATE__}}/css/page.css"/>
+		<script src="{{__TEMPLATE__}}/js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		
+		<!--头部-->
+		<div id="head">
+			<img src="{{__TEMPLATE__}}/images/logo.jpg" class="logo" />
+			<ul class="ad">
+				<li>顶尖PHP培训机构</li>
+				<li style="color: #ee782f;">IT技能培训首选后盾网！</li>
+			</ul>
+			<div class="right">
+				<span>www.houdunwang.com</span>
+				<p>400-682-3231</p>
+			</div>
+		</div>
+		<!--头部结束-->
+		<!--导航条-->
+		<div id="menu">
+			<div class="center">
+				<a href="" class="cur">后盾首页</a>
+				<a href="">PHP语言</a>
+				<a href="">HTML标记语言</a>
+				<a href="">CSS样式</a>
+				<a href="">JavaScript</a>
+				<a href="">Mysql数据库</a>
+				<a href="">Linux系统</a>
+				<a href="">HDPHP框架</a>
+				<a href="">HDCMS系统</a>
+			</div>
+		</div>
+		<!--导航条结束-->
+		
+		<!--搜索区域-->
+		<div id="search">
+			<span>热门关键词：</span>
+			<a href="">mysql</a>
+			<a href="">网站开发</a>
+			<a href="">高薪</a>
+			<a href="">前端</a>
+			<a href="">PHP整站开发</a>
+			
+			<form action="" method="post">
+				<input type="text" placeholder="请输入搜索关键词" class="keyword"/>
+				<input type="submit" value="" class="sub" />
+			</form>
+		</div>
+		<!--搜索区域结束-->
+		
+		<img src="{{__TEMPLATE__}}/images/20160722165047_65119.jpg" style="display: block;margin: 0 auto;"/>
+		
+		<!--大区域-->
+		<div class="main">
+			<!--左侧-->
+			<div class="left">
+				<!--面包屑导航-->
+				<p class="position">
+					<span>当前位置：</span>
+					<a href="">首页</a>
+					»
+					<a href="">文章内容页</a>
+				</p>
+				
+				<h1>感觉后盾人老师和团队，我的学习如此轻松！</h1>
+				<p class="info">文章出处：后盾网&nbsp;&nbsp;&nbsp;&nbsp;点击量：666</p>
+				<div class="content">
+				<p>至后盾人网的感谢信：</p>
+         <p>其实我是一名网络管理员，俗称网管，也有了很久的写网站的代码的人员，说实话，我不是系统的学，这里一点，哪里一点，学的不专，对于DIV+CSS代码，也算熟悉了，也知道代码如何写，但是有几个很关键性的东西，就是，绝对定位，相对定位，浮动，这些理解的不透彻，所以，在更改CSS的时候总是搞不定，也不知道为什么，看过以前其他的视频课程，让我很头疼，讲的什么根本就听不懂，孙老师，特别感谢您，您的思路非常清晰，举例也很贴切，让我们很容易一下就听懂了，您知道我们在学习这些代码的时候最想知道的一些东西和解决问题的思路，以前的老师讲的非常的非常的高大上，让我们根本就不知道他在讲什么，我一直想要学习javascript，但是那些老师讲的让我头大，真的头大，没法学下去，因为是逻辑语言，学起来很吃力，孙老师讲的JS，很容易听懂让我觉得JS根本没有想象中的那么难，我一直还想学PHP，因为JS都学不会，所以一直没有信心，但是，孙老师讲的JS教程，我是想学，爱学，能学会，学懂。。真心的感谢后盾人的团队们，给我们出了这么好的教程，这么好的老师，因为老师们都是从他们是一个学生的心态在讲课，知道怎么才能听懂，忠心祝愿后盾人办得越来越好。</p>
+         <img src="{{__TEMPLATE__}}/images/cxy.jpg" />
+<p>很容易听懂让我觉得JS根本没有想象中的那么难，我一直还想学PHP，因为JS都学不会，所以一直没有信心，但是，孙老师讲的JS教程，我是想学，爱学，能学会，学懂。。真心的感谢后盾人的团队们，给我们出了这么好的教程，这么好的老师，因为老师们都是从他们是一个学生的心态在讲课，知道怎么才能听懂，忠心祝愿后盾人办得越来越好。</p>
+<p>其实我是一名网络管理员，俗称网管，也有了很久的写网站的代码的人员，说实话，我不是系统的学，这里一点，哪里一点，学的不专，对于DIV+CSS代码，也算熟悉了，也知道代码如何写，但是有几个很关键性的东西，就是，绝对定位，相对定位，浮动，这些理解的不透彻，所以，在更改CSS的时候总是搞不定，也不知道为什么，看过以前其他的视频课程，让我很头疼，讲的什么根本就听不懂，孙老师，特别感谢您，您的思路非常清晰，举例也很贴切，让我们很容易一下就听懂了</p>
+<p>我们爱您，我们爱后盾人</p>
+					
+				</div>
+				<!--上一篇下一篇-->
+				<div class="np">
+					<p class="n">上一篇：<a href="">一个老程序员的互联网转型之路</a></p>
+					<p class="p">下一篇：<a href="">摸爬滚打不如意，果断来后盾成功转型</a></p>
+				</div>
+			</div>
+			<!--左侧结束-->
+			
+			
+			<!--右侧-->
+			<div class="right">
+				<h3>课程安排</h3>
+				<dl>
+					<dt><a href="">前端阶段</a></dt>
+    				<dd><a href="">HTML超文本标记语言</a></dd>
+    				<dd><a href="">CSS层叠样式表</a></dd>
+					<dd><a href="">JavaScript动态效果</a></dd>
+					<dd><a href="">jQuery框架</a></dd>
+					<dd><a href="">HTML5、CSS3</a></dd>
+                    <dd><a href="">混合APP开发</a></dd>
+                    <dd><a href="">Angular框架</a></dd>
+                    <dd><a href="">Vue.js框架</a></dd>
+                    <dd><a href="">微信小程序</a></dd>
+				</dl>
+				<dl>
+					<dt><a href="">PHP阶段</a></dt>
+    				<dd><a href="">PHP初级</a></dd>
+    				<dd><a href="">PHP中级</a></dd>
+					<dd><a href="">PHP高级</a></dd>
+					<dd><a href="">MySQL数据库</a></dd>
+					<dd><a href="">独立框架开发</a></dd>
+                    <dd><a href="">面向对象</a></dd>
+                    <dd><a href="">linux数据库</a></dd>
+                    <dd><a href="">微信开发</a></dd>
+                    <dd><a href="">微信三网通项目</a></dd>
+                    <dd><a href="">CMS开发</a></dd>
+                    <dd><a href="">ThinkPHP框架实战</a></dd>
+                    <dd><a href="">Laravel框架实战</a></dd>
+                    <dd><a href="">项目性能优化</a></dd>
+                    <dd><a href="">自选大项目独立开发</a></dd>
+				</dl>
+			</div>
+			<!--右侧结束-->
+		</div>
+		<!--大区域结束-->
+		
+		<!--底部-->
+		<div id="footer">
+			<p>北京后盾计算机技术培训有限责任公司</p>
+			<p>京ICP备12048441号-3</p>
+		</div>
+		<!--底部结束-->
+		
+	</body>
 </html>

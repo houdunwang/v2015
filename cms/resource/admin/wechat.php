@@ -45,7 +45,7 @@
                 <ul class="nav navbar-nav">
 
                     <li>
-                        <a href="{{__ROOT__}}">
+                        <a href="{{__ROOT__}}" target="_blank">
                             <i class="fa fa-reply-all"></i> 返回首页
                         </a>
                     </li>
@@ -101,7 +101,7 @@
                 </div>
                 <ul class="list-group menus">
                     <li class="list-group-item">
-                        <a href="{{u('category.lists')}}">连接配置</a>
+                        <a href="{{u('wechat.config.setting')}}">连接配置</a>
                     </li>
                 </ul>
                 <!--系统菜单-->

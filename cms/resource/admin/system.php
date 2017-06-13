@@ -45,7 +45,7 @@
                 <ul class="nav navbar-nav">
 
                     <li>
-                        <a href="{{__ROOT__}}">
+                        <a href="{{__ROOT__}}" target="_blank">
                             <i class="fa fa-reply-all"></i> 返回首页
                         </a>
                     </li>

@@ -1,8 +1,8 @@
 <extend file='resource/admin/article.php'/>
 <block name="content">
     <ul class="nav nav-tabs" role="tablist">
-        <li><a href="{{u('lists')}}" role="tab" data-toggle="tab">栏目列表</a></li>
-        <li class="active"><a href="{{u('post')}}" role="tab" data-toggle="tab">添加栏目</a></li>
+        <li><a href="{{u('lists')}}">栏目列表</a></li>
+        <li class="active"><a href="{{u('post')}}">添加栏目</a></li>
     </ul>
     <form action="" method="post" role="form" class="form-horizontal">
         <div class="panel panel-default">

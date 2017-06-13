@@ -37,9 +37,7 @@ class Module extends Common
      */
     public function uninstall()
     {
-        $name = Request::get('name');
-        Dir::del($name);
-        Model::where('name', $name)->delete();
+        Model::remove(Request::get('name'));
 
         return $this->setRedirect('lists')->success('模块卸载成功');
     }

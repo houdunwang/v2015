@@ -45,7 +45,7 @@
                 <ul class="nav navbar-nav">
 
                     <li>
-                        <a href="{{__ROOT__}}">
+                        <a href="{{__ROOT__}}" target="_blank">
                             <i class="fa fa-reply-all"></i> 返回首页
                         </a>
                     </li>
@@ -101,10 +101,10 @@
                 </div>
                 <ul class="list-group menus">
                     <li class="list-group-item">
-                        <a href="{{u('category.lists')}}">栏目列表</a>
+                        <a href="{{u('admin.category.lists')}}">栏目列表</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="{{u('category.post')}}">添加栏目</a>
+                        <a href="{{u('admin.category.post')}}">添加栏目</a>
                     </li>
                 </ul>
 
@@ -116,10 +116,10 @@
                 </div>
                 <ul class="list-group menus">
                     <li class="list-group-item">
-                        <a href="{{u('article.lists')}}">文章列表</a>
+                        <a href="{{u('admin.article.lists')}}">文章列表</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="{{u('article.post')}}">发表文章</a>
+                        <a href="{{u('admin.article.post')}}">发表文章</a>
                     </li>
                 </ul>
                 <div class="panel-heading">
@@ -130,7 +130,7 @@
                 </div>
                 <ul class="list-group menus">
                     <li class="list-group-item">
-                        <a href="{{u('config.setting')}}">网站配置</a>
+                        <a href="{{u('admin.config.setting')}}">网站配置</a>
                     </li>
                 </ul>
             </div>

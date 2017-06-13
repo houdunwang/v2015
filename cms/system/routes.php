@@ -11,4 +11,7 @@ Route::any('/login','app\admin\controller\Entry@login');
 Route::get('/out','app\admin\controller\Entry@out');
 
 //文章路由规则
+
+Route::get('/c{cid}.html','app\home\controller\Entry@category');
 Route::get('/{id}.html','app\home\controller\Entry@content');
+//[a-z0-9]+

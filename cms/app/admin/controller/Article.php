@@ -27,7 +27,6 @@ class Article extends Common
     public function lists()
     {
         $data = ArticleModel::paginate(v('config.article_row'));
-
         return view('', compact('data'));
     }
 

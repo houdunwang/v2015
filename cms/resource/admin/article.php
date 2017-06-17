@@ -122,6 +122,7 @@
                         <a href="{{u('admin.article.post')}}">发表文章</a>
                     </li>
                 </ul>
+
                 <div class="panel-heading">
                     <h4 class="panel-title">系统管理</h4>
                     <a class="panel-collapse" data-toggle="collapse" href="javascript:;">
@@ -131,6 +132,9 @@
                 <ul class="list-group menus">
                     <li class="list-group-item">
                         <a href="{{u('admin.config.setting')}}">网站配置</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="{{u('admin.slide.lists')}}">幻灯片管理</a>
                     </li>
                 </ul>
             </div>

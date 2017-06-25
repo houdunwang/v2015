@@ -1,0 +1,29 @@
+{
+  "name": "houdunwang/unit",
+  "description": "phpunit单元测试服务",
+  "keywords": [
+    "单元测试",
+    "后盾网",
+    "后盾人",
+    "向军老师",
+    "phpunit"
+  ],
+  "homepage": "http://www.houdunwang.com/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "后盾网向军",
+      "email": "2300071698@qq.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=5.6.0"
+  },
+  "autoload": {
+    "files": [],
+    "psr-4": {
+      "houdunwang\\unit\\": "src"
+    }
+  }
+}

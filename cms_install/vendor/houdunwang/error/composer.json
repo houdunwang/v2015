@@ -1,0 +1,40 @@
+{
+  "name": "houdunwang/error",
+  "description": "错误与异常处理",
+  "keywords": [
+    "houdunwang",
+    "hdphp",
+    "json",
+    "error"
+  ],
+  "homepage": "http://www.hdphp.com/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "后盾网向军",
+      "email": "2300071698@qq.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=5.4.0",
+    "houdunwang/log": "~1.0",
+    "houdunwang/config": "~1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.1"
+  },
+  "autoload": {
+    "files": [
+      "src/helper.php"
+    ],
+    "psr-4": {
+      "houdunwang\\error\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "tests\\": "tests"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "name": "houdunwang/route",
+  "description": "路由管理组件",
+  "keywords": [
+    "houdunwang",
+    "hdphp",
+    "后盾网",
+    "后盾人",
+    "向军老师",
+    "路由器",
+    "router"
+  ],
+  "homepage": "http://www.houdunwang.com/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "后盾网向军",
+      "email": "2300071698@qq.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=5.4.0",
+    "houdunwang/config": "~1.0",
+    "houdunwang/cache": "~1.0",
+    "houdunwang/request": "~1.0",
+    "houdunwang/container": "~1.0",
+    "houdunwang/curl": "~1.0",
+    "houdunwang/middleware": "~1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.1"
+  },
+  "autoload": {
+    "files": [
+      "src/helper.php"
+    ],
+    "psr-4": {
+      "houdunwang\\route\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "tests\\": "tests"
+    }
+  }
+}

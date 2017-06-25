@@ -1,0 +1,64 @@
+<extend file='resource/admin/module.php'/>
+<block name="module_menu">
+    <li class="list-group-item">
+        <a href="{{url('admin.index')}}">友情链接列表</a>
+    </li>
+    <li class="list-group-item">
+        <a href="{{url('admin.post')}}">添加链接</a>
+    </li>
+</block>
+<block name="content">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="{{u('lists')}}">友情链接列表</a></li>
+    </ul>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th width="80">编号</th>
+                    <th>网站名称</th>
+                    <th width="150">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <foreach from="$data" value="$d">
+                    <tr>
+                        <td>{{$d['id']}}</td>
+                        <td>
+                            <a href="{{$d['url']}}" target="_blank">{{$d['title']}}</a>
+                        </td>
+                        <td>
+                            <div class="btn-group btn-group-sm">
+                                <a href="{{url('admin.post','',['id'=>$d['id']])}}"
+                                   class="btn btn-default">编辑</a>
+                                <a href="javascript:;" onclick="remove({{$d['id']}})"
+                                   class="btn btn-default">删除</a>
+                            </div>
+                        </td>
+                    </tr>
+                </foreach>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        /**
+         * 删除链接
+         * @param id 链接编号
+         */
+        function remove(id) {
+            require(['util', 'jquery'], function (util, $) {
+                util.confirm('确定删除链接吗?', function () {
+                    $.get("{{url('admin.remove')}}", {id: id}, function (response) {
+                        if (response.valid == 1) {
+                            util.message(response.message, 'refresh', 'success');
+                        } else {
+                            util.message(response.message, 'refresh', 'error');
+                        }
+                    }, 'json');
+                })
+            })
+        }
+    </script>
+</block>

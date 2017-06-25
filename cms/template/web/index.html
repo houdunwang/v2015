@@ -25,7 +25,7 @@
 <!--导航条-->
 <div id="menu">
     <div class="center">
-        <a href="" class="cur">后盾首页</a>
+        <a href="{{root_url()}}" class="cur">后盾首页</a>
         <category pid="0">
             <a href="{{$field['url']}}">{{$field['catname']}}</a>
         </category>
@@ -97,11 +97,11 @@
         <!--产品列表-->
         <ul class="product_list">
             <arclist cid="1" thumb="1">
-            <li>
-                <a href="{{$field['url']}}" class="pic"><img src="{{$field['thumb']}}"/></a>
-                <a href="" class="product_title">{{$field['title']}}</a>
-                <p>{{$field['description']}}</p>
-            </li>
+                <li>
+                    <a href="{{$field['url']}}" class="pic"><img src="{{$field['thumb']}}"/></a>
+                    <a href="" class="product_title">{{$field['title']}}</a>
+                    <p>{{$field['description']}}</p>
+                </li>
             </arclist>
         </ul>
         <!--产品列表结束-->
@@ -142,10 +142,10 @@
     <div class="center">
         <ul>
             <arclist thumb="1">
-            <li>
-                <img src="{{$field['thumb']}}"/>
-                <a href="{{$field['url']}}">{{$field['title']}}</a>
-            </li>
+                <li>
+                    <img src="{{$field['thumb']}}"/>
+                    <a href="{{$field['url']}}">{{$field['title']}}</a>
+                </li>
             </arclist>
         </ul>
     </div>
@@ -156,16 +156,9 @@
 <!--友情链接-->
 <p id="link">友情链接</p>
 <div id="webs">
-    <a href="">后盾网</a>
-    <a href="">后盾人</a>
-    <a href="">HDCMS</a>
-    <a href="">HDPHP</a>
-    <a href="">后盾论坛</a>
-    <a href="">百度</a>
-    <a href="">腾讯</a>
-    <a href="">阿里巴巴</a>
-    <a href="">新浪</a>
-    <a href="">搜狐</a>
+    <tag action="links.link" row="3">
+        <a href="{{$field['url']}}" target="_blank">{{$field['title']}}</a>
+    </tag>
 </div>
 <!--友情链接结束-->
 

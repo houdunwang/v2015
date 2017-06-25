@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="{{__TEMPLATE__}}/css/index.css"/>
+    <script src="{{__TEMPLATE__}}/js/jquery-1.11.3.min.js" type="text/javascript"
+            charset="utf-8"></script>
+    <script src="{{__TEMPLATE__}}/js/index.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<!--头部-->
+<div id="head">
+    <img src="{{__TEMPLATE__}}/images/logo.jpg" class="logo"/>
+    <ul class="ad">
+        <li>顶尖PHP培训机构</li>
+        <li style="color: #ee782f;">IT技能培训首选后盾网！</li>
+    </ul>
+    <div class="right">
+        <span>全国抢座热线</span>
+        <p>400-682-3231</p>
+    </div>
+</div>
+<!--头部结束-->
+<!--导航条-->
+<div id="menu">
+    <div class="center">
+        <a href="{{root_url()}}" class="cur">后盾首页</a>
+        <category pid="0">
+            <a href="{{$field['url']}}">{{$field['catname']}}</a>
+        </category>
+    </div>
+</div>
+<!--导航条结束-->
+
+<!--搜索区域-->
+<div id="search">
+    <span>热门关键词：</span>
+    <a href="">mysql</a>
+    <a href="">网站开发</a>
+    <a href="">高薪</a>
+    <a href="">前端</a>
+    <a href="">PHP整站开发</a>
+
+    <form action="" method="post">
+        <input type="text" placeholder="请输入搜索关键词" class="keyword"/>
+        <input type="submit" value="" class="sub"/>
+    </form>
+</div>
+<!--搜索区域结束-->
+
+<!--轮播图-->
+<!--注意：直接向下面的div中遍历输出a标签即可，小圆点会根据a标签的数量自动创建，边界条件会自动判断。-->
+<div id="flash">
+    <style>
+        #flash img {
+            width: 960px;
+            height: 400px;
+        }
+    </style>
+    <slide>
+        <a href="{{$field['url']}}"><img src="{{$field['thumb']}}"/></a>
+    </slide>
+    <ul></ul>
+</div>
+<!--轮播图结束-->
+
+<!--大区域-->
+<div class="main">
+    <div class="left">
+        <h3>课程安排</h3>
+        <dl>
+            <dt><a href="">hdphp</a></dt>
+            <arclist cid="1">
+                <dd><a href="{{$field['url']}}">{{$field['title']}}</a></dd>
+            </arclist>
+        </dl>
+        <dl>
+            <dt><a href="">hdcms</a></dt>
+            <arclist cid="2">
+                <dd><a href="{{$field['url']}}">{{$field['title']}}</a></dd>
+            </arclist>
+        </dl>
+    </div>
+
+    <!--右侧-->
+    <div class="right">
+        <!--标题-->
+        <div class="title">
+            <p>
+                <span>hdphp</span>
+                <img src="{{__TEMPLATE__}}/images/sd02.jpg"/>
+            </p>
+            <a href=""><img src="{{__TEMPLATE__}}/images/more01.gif"/></a>
+        </div>
+        <!--标题结束-->
+        <!--产品列表-->
+        <ul class="product_list">
+            <arclist cid="1" thumb="1">
+            <li>
+                <a href="{{$field['url']}}" class="pic"><img src="{{$field['thumb']}}"/></a>
+                <a href="" class="product_title">{{$field['title']}}</a>
+                <p>{{$field['description']}}</p>
+            </li>
+            </arclist>
+        </ul>
+        <!--产品列表结束-->
+
+
+        <!--标题-->
+        <div class="title">
+            <p>
+                <span>后盾网学员回访</span>
+                <img src="{{__TEMPLATE__}}/images/sd02.jpg"/>
+            </p>
+            <a href=""><img src="{{__TEMPLATE__}}/images/more01.gif"/></a>
+        </div>
+        <!--标题结束-->
+        <!--产品列表-->
+        <ul class="product_list">
+            <arclist cid="2">
+                <li>
+                    <a href="{{$field['url']}}" class="pic"><img src="{{$field['thumb']}}"/></a>
+                    <a href="" class="product_title">{{$field['title']}}</a>
+                    <p>{{$field['description']}}</p>
+                </li>
+            </arclist>
+        </ul>
+        <!--产品列表结束-->
+    </div>
+    <!--右侧结束-->
+</div>
+<!--大区域结束-->
+
+<!--车间-->
+<!--这个轮播图非常聪明，只需要向ul里遍历li数据即可。其他的事情js帮你搞定-->
+<div id="factory">
+    <div class="line"></div>
+    <img src="{{__TEMPLATE__}}/images/sltil.jpg" class="title"/>
+    <img src="{{__TEMPLATE__}}/images/ico_l01.jpg" class="icon1"/>
+    <img src="{{__TEMPLATE__}}/images/ico_r01.jpg" class="icon2"/>
+    <div class="center">
+        <ul>
+            <arclist thumb="1">
+            <li>
+                <img src="{{$field['thumb']}}"/>
+                <a href="{{$field['url']}}">{{$field['title']}}</a>
+            </li>
+            </arclist>
+        </ul>
+    </div>
+</div>
+<!--车间结束-->
+<img src="{{__TEMPLATE__}}/images/ge02.jpg" id="shadow"/>
+
+<!--友情链接-->
+<p id="link">友情链接</p>
+<div id="webs">
+    <a href="">后盾网</a>
+    <a href="">后盾人</a>
+    <a href="">HDCMS</a>
+    <a href="">HDPHP</a>
+    <a href="">后盾论坛</a>
+    <a href="">百度</a>
+    <a href="">腾讯</a>
+    <a href="">阿里巴巴</a>
+    <a href="">新浪</a>
+    <a href="">搜狐</a>
+</div>
+<!--友情链接结束-->
+
+<!--底部-->
+<div id="footer">
+    <p>{{v('config.webname')}}</p>
+    <p>{{v('config.icp')}}</p>
+</div>
+<!--底部结束-->
+
+</body>
+</html>

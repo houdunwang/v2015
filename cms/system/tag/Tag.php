@@ -11,16 +11,27 @@ class Tag extends TagBase
      */
     public $tags
         = [
-            'line'     => ['block' => false],
+            'next'     => ['block' => false],
+            'prev'     => ['block' => false],
             'category' => ['block' => true, 'level' => 4],
             'slide'    => ['block' => true, 'level' => 4],
             'arclist'  => ['block' => true, 'level' => 4],
+            'tag'      => ['block' => true, 'level' => 4],
         ];
 
-    //line 标签
-    public function _line($attr, $content, &$view)
+    //<tag action="links.link"></tag>
+    public function _tag($attr, $content)
     {
-        return 'link标签 测试内容';
+        static $instance = [];
+        $info   = explode('.', $attr['action']);
+        $action = $info[1];
+        $module = Db::table('module')->where('name', $info[0])->first();
+        $class  = ($module['is_system'] == 1 ? "module" : "addons").'\\'.$info[0].'\\system\Tag';
+        if ( ! isset($instance[$class])) {
+            $instance[$class] = new $class;
+        }
+
+        return $instance[$class]->$action($attr, $content);
     }
 
     //栏目列表
@@ -66,10 +77,10 @@ str;
     //文章列表
     public function _arclist($attr, $content, &$view)
     {
-        $cid = isset($attr['cid']) ? $attr['cid'] : -1;
+        $cid     = isset($attr['cid']) ? $attr['cid'] : -1;
         $isThumb = isset($attr['thumb']) ? $attr['thumb'] : -1;
         $php
-            = <<<str
+                 = <<<str
         <?php 
         \$db = Db::table('article');
         if('$cid'!=-1){
@@ -85,6 +96,40 @@ str;
         ?>
             $content
         <?php endforeach;?>
+str;
+
+        return $php;
+    }
+
+    public function _next()
+    {
+        $php
+            = <<<str
+        <?php
+            \$id = \Request::get('id');
+            if(\$article = Db::table('article')->where('id','>',\$id)->first()){
+                echo "<a href='/{\$article['id']}.html'>".\$article['title']."</a>";
+            }else{
+                echo "无";
+            }
+        ?>
+str;
+
+        return $php;
+    }
+
+    public function _prev()
+    {
+        $php
+            = <<<str
+        <?php
+            \$id = \Request::get('id');
+            if(\$article = Db::table('article')->where('id','<',\$id)->first()){
+                echo "<a href='/{\$article['id']}.html'>".\$article['title']."</a>";
+            }else{
+                echo "无";
+            }
+        ?>
 str;
 
         return $php;

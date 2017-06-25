@@ -58,8 +58,12 @@
                             <i class="'fa-w fa fa-cubes"></i> 微信功能 </a>
                     </li>
                     <li class="top_menu">
-                        <a href="?s=system/module/lists">
+                        <a href="?s=system/backup/lists">
                             <i class="'fa-w fa fa-cubes"></i> 系统管理 </a>
+                    </li>
+                    <li class="top_menu">
+                        <a href="?s=system/module/lists">
+                            <i class="'fa-w fa fa-cubes"></i> 模块管理 </a>
                     </li>
                 </ul>
             </div>
@@ -130,9 +134,6 @@
                     </a>
                 </div>
                 <ul class="list-group menus">
-                    <li class="list-group-item">
-                        <a href="{{u('admin.config.setting')}}">网站配置</a>
-                    </li>
                     <li class="list-group-item">
                         <a href="{{u('admin.slide.lists')}}">幻灯片管理</a>
                     </li>

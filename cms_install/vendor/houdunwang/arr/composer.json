@@ -1,0 +1,38 @@
+{
+  "name": "houdunwang/arr",
+  "description": "数组增强组件主要是对数组等数据进行处理，如无限级分类操作、商品规格的迪卡尔乘积运算等",
+  "keywords": [
+    "houdunwang",
+    "hdphp",
+    "后盾网",
+    "后盾人",
+    "向军老师",
+    "array"
+  ],
+  "homepage": "http://www.houdunwang.com/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "后盾网向军",
+      "email": "2300071698@qq.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.1"
+  },
+  "autoload": {
+    "files": [],
+    "psr-4": {
+      "houdunwang\\arr\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "tests\\": "tests"
+    }
+  }
+}

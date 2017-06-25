@@ -1,0 +1,39 @@
+{
+  "name": "houdunwang/response",
+  "description": "服务器状态码与数据响应组件",
+  "keywords": [
+    "houdunwang",
+    "hdphp",
+    "json",
+    "ajax"
+  ],
+  "homepage": "http://www.houdunwang.com/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "后盾网向军",
+      "email": "2300071698@qq.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=5.4.0",
+    "houdunwang/xml": "~1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.1"
+  },
+  "autoload": {
+    "files": [
+      "src/helper.php"
+    ],
+    "psr-4": {
+      "houdunwang\\response\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "tests\\": "tests"
+    }
+  }
+}

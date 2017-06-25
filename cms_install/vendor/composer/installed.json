@@ -1,0 +1,4639 @@
+[
+    {
+        "name": "vlucas/phpdotenv",
+        "version": "v2.4.0",
+        "version_normalized": "2.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/vlucas/phpdotenv.git",
+            "reference": "3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/vlucas/phpdotenv/3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c.zip",
+            "reference": "3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.9"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.8 || ^5.0"
+        },
+        "time": "2016-09-01T10:05:43+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Dotenv\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause-Attribution"
+        ],
+        "authors": [
+            {
+                "name": "Vance Lucas",
+                "email": "vance@vancelucas.com",
+                "homepage": "http://www.vancelucas.com"
+            }
+        ],
+        "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
+        "keywords": [
+            "dotenv",
+            "env",
+            "environment"
+        ]
+    },
+    {
+        "name": "houdunwang/curl",
+        "version": "v1.0.9",
+        "version_normalized": "1.0.9.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/curl.git",
+            "reference": "12d25be00f3ee9bb59d4146643f834a025b0e0eb"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/curl/12d25be00f3ee9bb59d4146643f834a025b0e0eb.zip",
+            "reference": "12d25be00f3ee9bb59d4146643f834a025b0e0eb",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-05-17T03:43:45+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [],
+            "psr-4": {
+                "houdunwang\\curl\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "curl组件提供远程请求操作，支持文件的上传和下载",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "curl",
+            "hdphp",
+            "houdunwang",
+            "后盾人",
+            "后盾网",
+            "向军老师"
+        ]
+    },
+    {
+        "name": "houdunwang/cloud",
+        "version": "v1.0.4",
+        "version_normalized": "1.0.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/cloud.git",
+            "reference": "224fde82b4615c7c9b38aba02ac5050e0ebdf91b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/cloud/224fde82b4615c7c9b38aba02ac5050e0ebdf91b.zip",
+            "reference": "224fde82b4615c7c9b38aba02ac5050e0ebdf91b",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/config": "~1.0",
+            "houdunwang/curl": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "time": "2017-05-17T03:43:38+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [],
+            "psr-4": {
+                "houdunwang\\cloud\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "后盾云接口用于实现短信、邮件发送等服务",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "后盾云",
+            "后盾人",
+            "后盾网",
+            "向军老师"
+        ]
+    },
+    {
+        "name": "houdunwang/aliyunsms",
+        "version": "v1.0.9",
+        "version_normalized": "1.0.9.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/aliyunsms.git",
+            "reference": "836108eb85de1800c69ad360f486f66f6b2bb568"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/aliyunsms/836108eb85de1800c69ad360f486f66f6b2bb568.zip",
+            "reference": "836108eb85de1800c69ad360f486f66f6b2bb568",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/config": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-06-04T18:21:15+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/build/mns-autoloader.php"
+            ],
+            "psr-4": {
+                "houdunwang\\aliyunsms\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "使用阿里云短信平台发送短信，请先在阿里云开通短信服务后使用",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "sms",
+            "后盾人",
+            "后盾网",
+            "向军老师",
+            "短信",
+            "阿里云发送短信"
+        ]
+    },
+    {
+        "name": "bacon/bacon-qr-code",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Bacon/BaconQrCode.git",
+            "reference": "031a2ce68c5794064b49d11775b2daf45c96e21c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/Bacon/BaconQrCode/031a2ce68c5794064b49d11775b2daf45c96e21c.zip",
+            "reference": "031a2ce68c5794064b49d11775b2daf45c96e21c",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "suggest": {
+            "ext-gd": "to generate QR code images"
+        },
+        "time": "2016-01-09T22:55:35+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "BaconQrCode": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-2-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Ben Scholzen 'DASPRiD'",
+                "email": "mail@dasprids.de",
+                "homepage": "http://www.dasprids.de",
+                "role": "Developer"
+            }
+        ],
+        "description": "BaconQrCode is a QR code generator for PHP.",
+        "homepage": "https://github.com/Bacon/BaconQrCode"
+    },
+    {
+        "name": "houdunwang/qrcode",
+        "version": "v1.0.5",
+        "version_normalized": "1.0.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/qrcode.git",
+            "reference": "180d84fd97d554efbdc71a48f5cc3c95a9dc6160"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/qrcode/180d84fd97d554efbdc71a48f5cc3c95a9dc6160.zip",
+            "reference": "180d84fd97d554efbdc71a48f5cc3c95a9dc6160",
+            "shasum": ""
+        },
+        "require": {
+            "bacon/bacon-qr-code": "^1.0",
+            "houdunwang/config": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-05-17T03:41:12+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [],
+            "psr-4": {
+                "houdunwang\\qrcode\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "生成二维码图片或文件",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "qr",
+            "qrcode",
+            "后盾人",
+            "后盾网",
+            "向军老师"
+        ]
+    },
+    {
+        "name": "houdunwang/loader",
+        "version": "v1.0.6",
+        "version_normalized": "1.0.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/loader.git",
+            "reference": "016fa65e0ace4486760c6af48d5b02bb1e0e1eac"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/loader/016fa65e0ace4486760c6af48d5b02bb1e0e1eac.zip",
+            "reference": "016fa65e0ace4486760c6af48d5b02bb1e0e1eac",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/config": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-05-17T03:45:00+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/helper.php"
+            ],
+            "psr-4": {
+                "houdunwang\\loader\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "Loader组件提供类别名、自定义命名空间、文件自动导入等功能的组件。"
+    },
+    {
+        "name": "houdunwang/xml",
+        "version": "v1.0.7",
+        "version_normalized": "1.0.7.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/xml.git",
+            "reference": "ecb81fab5b2f0b1a16625187a189f0b09ff149d6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/xml/ecb81fab5b2f0b1a16625187a189f0b09ff149d6.zip",
+            "reference": "ecb81fab5b2f0b1a16625187a189f0b09ff149d6",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-05-17T03:47:31+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [],
+            "psr-4": {
+                "houdunwang\\xml\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "XML数据生成与解析组件",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "xml",
+            "后盾人",
+            "后盾网"
+        ]
+    },
+    {
+        "name": "houdunwang/dir",
+        "version": "v1.0.6",
+        "version_normalized": "1.0.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/dir.git",
+            "reference": "2d7c052f7defd51563e91462ab29e5f7c9acf0b2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/dir/2d7c052f7defd51563e91462ab29e5f7c9acf0b2.zip",
+            "reference": "2d7c052f7defd51563e91462ab29e5f7c9acf0b2",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-05-17T03:44:06+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [],
+            "psr-4": {
+                "houdunwang\\dir\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "目录组件用于对常用目录操作的实现",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "后盾人",
+            "后盾网",
+            "向军老师",
+            "目录管理"
+        ]
+    },
+    {
+        "name": "houdunwang/tool",
+        "version": "v1.0.6",
+        "version_normalized": "1.0.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/tool.git",
+            "reference": "e9b37ae442ba86707eb1ba1a043c066a7130f5e3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/tool/e9b37ae442ba86707eb1ba1a043c066a7130f5e3.zip",
+            "reference": "e9b37ae442ba86707eb1ba1a043c066a7130f5e3",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-05-10T04:36:10+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [],
+            "psr-4": {
+                "houdunwang\\tool\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "工具组件包含开发中常用的一些小功能",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "tool",
+            "后盾人",
+            "后盾网",
+            "向军老师"
+        ]
+    },
+    {
+        "name": "houdunwang/arr",
+        "version": "v1.0.17",
+        "version_normalized": "1.0.17.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/arr.git",
+            "reference": "d8ea488decd42bd89757bf1c2c293b77d0bc959e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/arr/d8ea488decd42bd89757bf1c2c293b77d0bc959e.zip",
+            "reference": "d8ea488decd42bd89757bf1c2c293b77d0bc959e",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-05-17T03:41:29+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [],
+            "psr-4": {
+                "houdunwang\\arr\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "数组增强组件主要是对数组等数据进行处理，如无限级分类操作、商品规格的迪卡尔乘积运算等",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "array",
+            "hdphp",
+            "houdunwang",
+            "后盾人",
+            "后盾网",
+            "向军老师"
+        ]
+    },
+    {
+        "name": "houdunwang/cookie",
+        "version": "v1.0.17",
+        "version_normalized": "1.0.17.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/cookie.git",
+            "reference": "527e514f03703ac9ecc6c432e7cc4267e7a72961"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/cookie/527e514f03703ac9ecc6c432e7cc4267e7a72961.zip",
+            "reference": "527e514f03703ac9ecc6c432e7cc4267e7a72961",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/arr": "~1.0",
+            "houdunwang/config": "~1.0",
+            "houdunwang/crypt": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-06-04T18:23:43+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [],
+            "psr-4": {
+                "houdunwang\\cookie\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "COOKIE管理组件",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "cookie",
+            "hdphp",
+            "houdunwang",
+            "后盾人",
+            "后盾网",
+            "向军老师"
+        ]
+    },
+    {
+        "name": "houdunwang/wechat",
+        "version": "v1.0.19",
+        "version_normalized": "1.0.19.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/wechat.git",
+            "reference": "c797bb86c776233662fd413041e245ed5bdfd429"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/wechat/c797bb86c776233662fd413041e245ed5bdfd429.zip",
+            "reference": "c797bb86c776233662fd413041e245ed5bdfd429",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/config": "~1.0",
+            "houdunwang/curl": "~1.0",
+            "houdunwang/dir": "~1.0",
+            "houdunwang/qrcode": "~1.0",
+            "houdunwang/request": "~1.0",
+            "houdunwang/xml": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-06-04T18:24:39+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [],
+            "psr-4": {
+                "houdunwang\\wechat\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "微信开发组件可以快速整合到主流框架中如thinkphp、laravel。为微信开发提供了很大的便利，减少开发人员底层代码的构建，节省开发时间。如果大家对微信开发不了解，后盾网已经推出了【后盾向军微信开发宝典】 请登录 后盾网论坛获取视频 http://bbs.houdunwang.com",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "mcrypt",
+            "wechat",
+            "后盾人",
+            "后盾网",
+            "向军老师",
+            "微信开发"
+        ]
+    },
+    {
+        "name": "doctrine/collections",
+        "version": "v1.4.0",
+        "version_normalized": "1.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/doctrine/collections.git",
+            "reference": "1a4fb7e902202c33cce8c55989b945612943c2ba"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/doctrine/collections/1a4fb7e902202c33cce8c55989b945612943c2ba.zip",
+            "reference": "1a4fb7e902202c33cce8c55989b945612943c2ba",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^5.6 || ^7.0"
+        },
+        "require-dev": {
+            "doctrine/coding-standard": "~0.1@dev",
+            "phpunit/phpunit": "^5.7"
+        },
+        "time": "2017-01-03T10:49:41+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.3.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Doctrine\\Common\\Collections\\": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Roman Borschel",
+                "email": "roman@code-factory.org"
+            },
+            {
+                "name": "Benjamin Eberlei",
+                "email": "kontakt@beberlei.de"
+            },
+            {
+                "name": "Guilherme Blanco",
+                "email": "guilhermeblanco@gmail.com"
+            },
+            {
+                "name": "Jonathan Wage",
+                "email": "jonwage@gmail.com"
+            },
+            {
+                "name": "Johannes Schmitt",
+                "email": "schmittjoh@gmail.com"
+            }
+        ],
+        "description": "Collections Abstraction library",
+        "homepage": "http://www.doctrine-project.org",
+        "keywords": [
+            "array",
+            "collections",
+            "iterator"
+        ]
+    },
+    {
+        "name": "alchemy/zippy",
+        "version": "0.4.8",
+        "version_normalized": "0.4.8.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/alchemy-fr/Zippy.git",
+            "reference": "2c231a0956daa0fa1e6057d411504ff98717392e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/alchemy-fr/Zippy/2c231a0956daa0fa1e6057d411504ff98717392e.zip",
+            "reference": "2c231a0956daa0fa1e6057d411504ff98717392e",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/collections": "~1.0",
+            "php": ">=5.5",
+            "symfony/filesystem": "^2.0.5|^3.0",
+            "symfony/polyfill-mbstring": "^1.3",
+            "symfony/process": "^2.1|^3.0"
+        },
+        "require-dev": {
+            "ext-zip": "*",
+            "guzzle/guzzle": "~3.0",
+            "guzzlehttp/guzzle": "^6.0",
+            "phpunit/phpunit": "^4.0|^5.0",
+            "symfony/finder": "^2.0.5|^3.0"
+        },
+        "suggest": {
+            "ext-zip": "To use the ZipExtensionAdapter",
+            "guzzle/guzzle": "To use the GuzzleTeleporter with Guzzle 3",
+            "guzzlehttp/guzzle": "To use the GuzzleTeleporter with Guzzle 6"
+        },
+        "time": "2017-03-03T08:42:32+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.4.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Alchemy\\Zippy\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Alchemy",
+                "email": "dev.team@alchemy.fr",
+                "homepage": "http://www.alchemy.fr/"
+            }
+        ],
+        "description": "Zippy, the archive manager companion",
+        "keywords": [
+            "bzip",
+            "compression",
+            "tar",
+            "zip"
+        ]
+    },
+    {
+        "name": "houdunwang/zip",
+        "version": "v1.0.7",
+        "version_normalized": "1.0.7.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/zip.git",
+            "reference": "9cb4ab67381cbcc2b1d50a7dc33571060c61ce38"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/zip/9cb4ab67381cbcc2b1d50a7dc33571060c61ce38.zip",
+            "reference": "9cb4ab67381cbcc2b1d50a7dc33571060c61ce38",
+            "shasum": ""
+        },
+        "require": {
+            "alchemy/zippy": "^0.4.8",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-05-17T03:47:40+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [],
+            "psr-4": {
+                "houdunwang\\zip\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "压缩与解压组件",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "zip",
+            "后盾人",
+            "后盾网"
+        ]
+    },
+    {
+        "name": "houdunwang/cache",
+        "version": "v1.0.16",
+        "version_normalized": "1.0.16.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/cache.git",
+            "reference": "6c0ae1e5e07751cf0dff4c834f468b1e60c1bca1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/cache/6c0ae1e5e07751cf0dff4c834f468b1e60c1bca1.zip",
+            "reference": "6c0ae1e5e07751cf0dff4c834f468b1e60c1bca1",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/arr": "~1.0",
+            "houdunwang/config": "~1.0",
+            "houdunwang/db": "~1.0",
+            "houdunwang/dir": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-05-17T03:42:39+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/helper.php"
+            ],
+            "psr-4": {
+                "houdunwang\\cache\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "缓存组件提供了多种高效的缓存处理方式，包括数据缓存、静态缓存和查询缓存等，提供多种缓存类型，并提供了快捷方法进行存取操作",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "后盾人",
+            "后盾网",
+            "向军老师",
+            "邮件处理"
+        ]
+    },
+    {
+        "name": "houdunwang/code",
+        "version": "v1.0.8",
+        "version_normalized": "1.0.8.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/code.git",
+            "reference": "5769b12247c516c52cd06d63fe6bb972ef330ac3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/code/5769b12247c516c52cd06d63fe6bb972ef330ac3.zip",
+            "reference": "5769b12247c516c52cd06d63fe6bb972ef330ac3",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/config": "~1.0",
+            "houdunwang/request": "~1.0",
+            "houdunwang/session": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-05-17T03:42:57+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [],
+            "psr-4": {
+                "houdunwang\\code\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "工具组件包含开发中常用的一些小功能",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "captcha",
+            "hdphp",
+            "houdunwang",
+            "后盾人",
+            "后盾网",
+            "向军老师",
+            "验证码"
+        ]
+    },
+    {
+        "name": "houdunwang/response",
+        "version": "v1.0.17",
+        "version_normalized": "1.0.17.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/response.git",
+            "reference": "c14aa1cc6390b5ed7421a8cc8b7acdcb9b31ebdc"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/response/c14aa1cc6390b5ed7421a8cc8b7acdcb9b31ebdc.zip",
+            "reference": "c14aa1cc6390b5ed7421a8cc8b7acdcb9b31ebdc",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/xml": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-05-22T04:28:44+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/helper.php"
+            ],
+            "psr-4": {
+                "houdunwang\\response\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "服务器状态码与数据响应组件",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "ajax",
+            "hdphp",
+            "houdunwang",
+            "json"
+        ]
+    },
+    {
+        "name": "houdunwang/validate",
+        "version": "v1.0.15",
+        "version_normalized": "1.0.15.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/validate.git",
+            "reference": "79d34fe23eb8e32d190cdd7d97bc024000944c01"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/validate/79d34fe23eb8e32d190cdd7d97bc024000944c01.zip",
+            "reference": "79d34fe23eb8e32d190cdd7d97bc024000944c01",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/code": "~1.0",
+            "houdunwang/config": "~1.0",
+            "houdunwang/db": "~1.0",
+            "houdunwang/request": "~1.0",
+            "houdunwang/response": "~1.0",
+            "houdunwang/session": "~1.0",
+            "houdunwang/view": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-06-04T18:19:31+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [],
+            "psr-4": {
+                "houdunwang\\validate\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "Validate组件提供了方便的验证机制，快速实现验证业务。",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "validate",
+            "后盾人",
+            "后盾网",
+            "向军老师",
+            "表单验证"
+        ]
+    },
+    {
+        "name": "houdunwang/str",
+        "version": "v1.0.6",
+        "version_normalized": "1.0.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/str.git",
+            "reference": "c41db0c115a899753482558f090c4b8be2f23bff"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/str/c41db0c115a899753482558f090c4b8be2f23bff.zip",
+            "reference": "c41db0c115a899753482558f090c4b8be2f23bff",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-05-17T03:47:12+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [],
+            "psr-4": {
+                "houdunwang\\str\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "str组件用于处理和字符相关的功能",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "array",
+            "hdphp",
+            "houdunwang",
+            "后盾人",
+            "后盾网",
+            "向军老师"
+        ]
+    },
+    {
+        "name": "houdunwang/container",
+        "version": "v1.0.11",
+        "version_normalized": "1.0.11.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/container.git",
+            "reference": "495988fb94be95ede2a63377e86ba2dc2e1e90f0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/container/495988fb94be95ede2a63377e86ba2dc2e1e90f0.zip",
+            "reference": "495988fb94be95ede2a63377e86ba2dc2e1e90f0",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/config": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-06-04T18:24:05+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [],
+            "psr-4": {
+                "houdunwang\\container\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "IOC服务容器管理组件",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "IOC服务容器",
+            "hdphp",
+            "houdunwang",
+            "后盾人",
+            "后盾网",
+            "向军老师"
+        ]
+    },
+    {
+        "name": "houdunwang/rbac",
+        "version": "v1.0.6",
+        "version_normalized": "1.0.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/rbac.git",
+            "reference": "4e0805dd4c6a04ff972ecaf51ad9b60c3ca4a42e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/rbac/4e0805dd4c6a04ff972ecaf51ad9b60c3ca4a42e.zip",
+            "reference": "4e0805dd4c6a04ff972ecaf51ad9b60c3ca4a42e",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/arr": "~1.0",
+            "houdunwang/config": "~1.0",
+            "houdunwang/db": "~1.0",
+            "houdunwang/session": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "time": "2017-05-17T03:46:34+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [],
+            "psr-4": {
+                "houdunwang\\rbac\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "基于角色的访问控制（Role-Based Access Control）作为传统访问控制（自主访问，强制访问）的有前景的代替受到广泛的关注。在RBAC中，权限与角色相关联，用户通过成为适当角色的成员而得到这些角色的权限。这就极大地简化了权限的管理。",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "rbac",
+            "后盾人",
+            "后盾网",
+            "向军老师"
+        ]
+    },
+    {
+        "name": "houdunwang/qq",
+        "version": "v1.0.4",
+        "version_normalized": "1.0.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/qq.git",
+            "reference": "5c5775b9f8033822af35a8438613863c2786725c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/qq/5c5775b9f8033822af35a8438613863c2786725c.zip",
+            "reference": "5c5775b9f8033822af35a8438613863c2786725c",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "time": "2017-05-17T03:46:28+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [],
+            "psr-4": {
+                "houdunwang\\qq\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "QQ登录组件",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "后盾人",
+            "后盾网",
+            "向军老师",
+            "邮件处理"
+        ]
+    },
+    {
+        "name": "nesbot/carbon",
+        "version": "1.22.1",
+        "version_normalized": "1.22.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/briannesbitt/Carbon.git",
+            "reference": "7cdf42c0b1cc763ab7e4c33c47a24e27c66bfccc"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/briannesbitt/Carbon/7cdf42c0b1cc763ab7e4c33c47a24e27c66bfccc.zip",
+            "reference": "7cdf42c0b1cc763ab7e4c33c47a24e27c66bfccc",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0",
+            "symfony/translation": "~2.6 || ~3.0"
+        },
+        "require-dev": {
+            "friendsofphp/php-cs-fixer": "~2",
+            "phpunit/phpunit": "~4.0 || ~5.0"
+        },
+        "time": "2017-01-16T07:55:07+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.23-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Carbon\\": "src/Carbon/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Brian Nesbitt",
+                "email": "brian@nesbot.com",
+                "homepage": "http://nesbot.com"
+            }
+        ],
+        "description": "A simple API extension for DateTime.",
+        "homepage": "http://carbon.nesbot.com",
+        "keywords": [
+            "date",
+            "datetime",
+            "time"
+        ]
+    },
+    {
+        "name": "phpmailer/phpmailer",
+        "version": "v5.2.23",
+        "version_normalized": "5.2.23.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/PHPMailer/PHPMailer.git",
+            "reference": "7115df4a6f76281109ebe352900c42403b728bb4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/PHPMailer/PHPMailer/7115df4a6f76281109ebe352900c42403b728bb4.zip",
+            "reference": "7115df4a6f76281109ebe352900c42403b728bb4",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.0.0"
+        },
+        "require-dev": {
+            "doctrine/annotations": "1.2.*",
+            "jms/serializer": "0.16.*",
+            "phpdocumentor/phpdocumentor": "2.*",
+            "phpunit/phpunit": "4.8.*",
+            "symfony/debug": "2.8.*",
+            "symfony/filesystem": "2.8.*",
+            "symfony/translation": "2.8.*",
+            "symfony/yaml": "2.8.*",
+            "zendframework/zend-cache": "2.5.1",
+            "zendframework/zend-config": "2.5.1",
+            "zendframework/zend-eventmanager": "2.5.1",
+            "zendframework/zend-filter": "2.5.1",
+            "zendframework/zend-i18n": "2.5.1",
+            "zendframework/zend-json": "2.5.1",
+            "zendframework/zend-math": "2.5.1",
+            "zendframework/zend-serializer": "2.5.*",
+            "zendframework/zend-servicemanager": "2.5.*",
+            "zendframework/zend-stdlib": "2.5.1"
+        },
+        "suggest": {
+            "league/oauth2-google": "Needed for Google XOAUTH2 authentication"
+        },
+        "time": "2017-03-15T19:32:56+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "class.phpmailer.php",
+                "class.phpmaileroauth.php",
+                "class.phpmaileroauthgoogle.php",
+                "class.smtp.php",
+                "class.pop3.php",
+                "extras/EasyPeasyICS.php",
+                "extras/ntlm_sasl_client.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL-2.1"
+        ],
+        "authors": [
+            {
+                "name": "Jim Jagielski",
+                "email": "jimjag@gmail.com"
+            },
+            {
+                "name": "Marcus Bointon",
+                "email": "phpmailer@synchromedia.co.uk"
+            },
+            {
+                "name": "Andy Prevost",
+                "email": "codeworxtech@users.sourceforge.net"
+            },
+            {
+                "name": "Brent R. Matzelle"
+            }
+        ],
+        "description": "PHPMailer is a full-featured email creation and transfer class for PHP"
+    },
+    {
+        "name": "houdunwang/mail",
+        "version": "v1.0.15",
+        "version_normalized": "1.0.15.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/mail.git",
+            "reference": "66bc078cba3efa1f2b81cebc8c10d2c296b726b1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/mail/66bc078cba3efa1f2b81cebc8c10d2c296b726b1.zip",
+            "reference": "66bc078cba3efa1f2b81cebc8c10d2c296b726b1",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/config": "~1.0",
+            "php": ">=5.4.0",
+            "phpmailer/phpmailer": "^5.2"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-05-22T06:23:26+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [],
+            "psr-4": {
+                "houdunwang\\mail\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "邮件组件内部集成了方便的邮件发送机制，使用非常简单",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "后盾人",
+            "后盾网",
+            "向军老师",
+            "邮件处理"
+        ]
+    },
+    {
+        "name": "houdunwang/log",
+        "version": "v1.0.10",
+        "version_normalized": "1.0.10.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/log.git",
+            "reference": "f41fbe4b56076b8ff4399efe017772a2772d151d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/log/f41fbe4b56076b8ff4399efe017772a2772d151d.zip",
+            "reference": "f41fbe4b56076b8ff4399efe017772a2772d151d",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/config": "~1.0",
+            "houdunwang/dir": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-05-17T03:45:07+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [],
+            "psr-4": {
+                "houdunwang\\log\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "日志管理",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "json",
+            "log"
+        ]
+    },
+    {
+        "name": "houdunwang/lang",
+        "version": "v1.0.6",
+        "version_normalized": "1.0.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/lang.git",
+            "reference": "897c7d4923e8c0455a0feef596c516d61b42ec33"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/lang/897c7d4923e8c0455a0feef596c516d61b42ec33.zip",
+            "reference": "897c7d4923e8c0455a0feef596c516d61b42ec33",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/arr": "~1.0",
+            "houdunwang/config": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-05-17T03:44:54+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [],
+            "psr-4": {
+                "houdunwang\\lang\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "组件提供便捷的多语言支持，程序开发人员只需要配置好语言包即可实现多语言环境构建。 ",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "language",
+            "mcrypt",
+            "后盾人",
+            "后盾网",
+            "向军老师",
+            "多语言"
+        ]
+    },
+    {
+        "name": "houdunwang/image",
+        "version": "v1.0.7",
+        "version_normalized": "1.0.7.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/image.git",
+            "reference": "1e306cc40adfdab82538b8734fb61a3f14e85d77"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/image/1e306cc40adfdab82538b8734fb61a3f14e85d77.zip",
+            "reference": "1e306cc40adfdab82538b8734fb61a3f14e85d77",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/config": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-05-17T03:44:49+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [],
+            "psr-4": {
+                "houdunwang\\image\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "图片组件提供了缩略图、水印等图像处理功能",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "image",
+            "后盾人",
+            "后盾网",
+            "后盾网向军"
+        ]
+    },
+    {
+        "name": "houdunwang/html",
+        "version": "v1.0.5",
+        "version_normalized": "1.0.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/html.git",
+            "reference": "e7ffe7790dde17418b750f8f6628adc6dc660b72"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/html/e7ffe7790dde17418b750f8f6628adc6dc660b72.zip",
+            "reference": "e7ffe7790dde17418b750f8f6628adc6dc660b72",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/request": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-05-17T03:44:41+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [],
+            "psr-4": {
+                "houdunwang\\html\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "html组件用于生成静态文件",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "html",
+            "后盾人",
+            "后盾网",
+            "生成页面静态文件"
+        ]
+    },
+    {
+        "name": "houdunwang/database",
+        "version": "v1.0.17",
+        "version_normalized": "1.0.17.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/database.git",
+            "reference": "4eced33269a1193e6efbb54cbb31e4426734802d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/database/4eced33269a1193e6efbb54cbb31e4426734802d.zip",
+            "reference": "4eced33269a1193e6efbb54cbb31e4426734802d",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/arr": "~1.0",
+            "houdunwang/config": "~1.0",
+            "houdunwang/db": "~1.0",
+            "houdunwang/dir": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-06-04T18:23:24+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [],
+            "psr-4": {
+                "houdunwang\\database\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "数据库组件用于完成数据库、表、记录的管理",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "后盾人",
+            "后盾网",
+            "向军老师",
+            "数据库管理"
+        ]
+    },
+    {
+        "name": "aliyuncs/oss-sdk-php",
+        "version": "v2.2.4",
+        "version_normalized": "2.2.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/aliyun/aliyun-oss-php-sdk.git",
+            "reference": "0b9b85b6c5c38cfc4ef3b0205a5a62d1e36acf2e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/aliyun/aliyun-oss-php-sdk/0b9b85b6c5c38cfc4ef3b0205a5a62d1e36acf2e.zip",
+            "reference": "0b9b85b6c5c38cfc4ef3b0205a5a62d1e36acf2e",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0",
+            "satooshi/php-coveralls": "~1.0"
+        },
+        "time": "2017-04-25T09:15:12+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "OSS\\": "src/OSS"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Aliyuncs",
+                "homepage": "http://www.aliyun.com"
+            }
+        ],
+        "description": "Aliyun OSS SDK for PHP",
+        "homepage": "http://www.aliyun.com/product/oss/"
+    },
+    {
+        "name": "houdunwang/oss",
+        "version": "v1.0.7",
+        "version_normalized": "1.0.7.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/oss.git",
+            "reference": "283e06b38524ea3c84cb84480e51d1f0048c9981"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/oss/283e06b38524ea3c84cb84480e51d1f0048c9981.zip",
+            "reference": "283e06b38524ea3c84cb84480e51d1f0048c9981",
+            "shasum": ""
+        },
+        "require": {
+            "aliyuncs/oss-sdk-php": "~2.0",
+            "houdunwang/config": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-05-17T03:39:01+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [],
+            "psr-4": {
+                "houdunwang\\oss\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "简单、安全的操作阿里云OSS的功能",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "oss",
+            "后盾人",
+            "后盾网",
+            "后盾网向军"
+        ]
+    },
+    {
+        "name": "houdunwang/cart",
+        "version": "v1.0.6",
+        "version_normalized": "1.0.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/cart.git",
+            "reference": "9598931c945a0ad5c742cfd21d1248ef158a0f71"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/cart/9598931c945a0ad5c742cfd21d1248ef158a0f71.zip",
+            "reference": "9598931c945a0ad5c742cfd21d1248ef158a0f71",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/arr": "~1.0",
+            "houdunwang/cookie": "~1.0",
+            "houdunwang/session": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-05-17T03:42:46+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [],
+            "psr-4": {
+                "houdunwang\\cart\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "为了便于商城系统的开发提供了完善的购物车处理类，使商城购物车处理更加方便快捷，程序员只需要专注业务流程而不用关注实现步骤，大大增加了开发效率",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "cart",
+            "hdphp",
+            "houdunwang",
+            "json",
+            "后盾人",
+            "后盾网",
+            "向军老师",
+            "购物车"
+        ]
+    },
+    {
+        "name": "houdunwang/unit",
+        "version": "v1.0.3",
+        "version_normalized": "1.0.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/unit.git",
+            "reference": "3f89646b661b9aab2cc8834c3c668e1c32ce59ad"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/unit/3f89646b661b9aab2cc8834c3c668e1c32ce59ad.zip",
+            "reference": "3f89646b661b9aab2cc8834c3c668e1c32ce59ad",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6.0"
+        },
+        "time": "2017-05-17T03:44:34+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [],
+            "psr-4": {
+                "houdunwang\\unit\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "phpunit单元测试服务",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "phpunit",
+            "单元测试",
+            "后盾人",
+            "后盾网",
+            "向军老师"
+        ]
+    },
+    {
+        "name": "sebastian/version",
+        "version": "2.0.1",
+        "version_normalized": "2.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sebastianbergmann/version.git",
+            "reference": "99732be0ddb3361e16ad77b68ba41efc8e979019"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/sebastianbergmann/version/99732be0ddb3361e16ad77b68ba41efc8e979019.zip",
+            "reference": "99732be0ddb3361e16ad77b68ba41efc8e979019",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6"
+        },
+        "time": "2016-10-03T07:35:21+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sebastian@phpunit.de",
+                "role": "lead"
+            }
+        ],
+        "description": "Library that helps with managing the version number of Git-hosted PHP projects",
+        "homepage": "https://github.com/sebastianbergmann/version"
+    },
+    {
+        "name": "sebastian/resource-operations",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sebastianbergmann/resource-operations.git",
+            "reference": "ce990bb21759f94aeafd30209e8cfcdfa8bc3f52"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/sebastianbergmann/resource-operations/ce990bb21759f94aeafd30209e8cfcdfa8bc3f52.zip",
+            "reference": "ce990bb21759f94aeafd30209e8cfcdfa8bc3f52",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6.0"
+        },
+        "time": "2015-07-28T20:34:47+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sebastian@phpunit.de"
+            }
+        ],
+        "description": "Provides a list of PHP built-in functions that operate on resources",
+        "homepage": "https://www.github.com/sebastianbergmann/resource-operations"
+    },
+    {
+        "name": "sebastian/recursion-context",
+        "version": "3.0.0",
+        "version_normalized": "3.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sebastianbergmann/recursion-context.git",
+            "reference": "5b0cd723502bac3b006cbf3dbf7a1e3fcefe4fa8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/sebastianbergmann/recursion-context/5b0cd723502bac3b006cbf3dbf7a1e3fcefe4fa8.zip",
+            "reference": "5b0cd723502bac3b006cbf3dbf7a1e3fcefe4fa8",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.0"
+        },
+        "time": "2017-03-03T06:23:57+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Jeff Welch",
+                "email": "whatthejeff@gmail.com"
+            },
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sebastian@phpunit.de"
+            },
+            {
+                "name": "Adam Harvey",
+                "email": "aharvey@php.net"
+            }
+        ],
+        "description": "Provides functionality to recursively process PHP variables",
+        "homepage": "http://www.github.com/sebastianbergmann/recursion-context"
+    },
+    {
+        "name": "sebastian/object-reflector",
+        "version": "1.1.1",
+        "version_normalized": "1.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sebastianbergmann/object-reflector.git",
+            "reference": "773f97c67f28de00d397be301821b06708fca0be"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/sebastianbergmann/object-reflector/773f97c67f28de00d397be301821b06708fca0be.zip",
+            "reference": "773f97c67f28de00d397be301821b06708fca0be",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.0"
+        },
+        "time": "2017-03-29T09:07:27+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.1-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sebastian@phpunit.de"
+            }
+        ],
+        "description": "Allows reflection of object attributes, including inherited and non-public ones",
+        "homepage": "https://github.com/sebastianbergmann/object-reflector/"
+    },
+    {
+        "name": "sebastian/object-enumerator",
+        "version": "3.0.2",
+        "version_normalized": "3.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sebastianbergmann/object-enumerator.git",
+            "reference": "31dd3379d16446c5d86dec32ab1ad1f378581ad8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/sebastianbergmann/object-enumerator/31dd3379d16446c5d86dec32ab1ad1f378581ad8.zip",
+            "reference": "31dd3379d16446c5d86dec32ab1ad1f378581ad8",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.0",
+            "sebastian/object-reflector": "^1.0",
+            "sebastian/recursion-context": "^3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.0"
+        },
+        "time": "2017-03-12T15:17:29+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sebastian@phpunit.de"
+            }
+        ],
+        "description": "Traverses array structures and object graphs to enumerate all referenced objects",
+        "homepage": "https://github.com/sebastianbergmann/object-enumerator/"
+    },
+    {
+        "name": "sebastian/global-state",
+        "version": "2.0.0",
+        "version_normalized": "2.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sebastianbergmann/global-state.git",
+            "reference": "e8ba02eed7bbbb9e59e43dedd3dddeff4a56b0c4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/sebastianbergmann/global-state/e8ba02eed7bbbb9e59e43dedd3dddeff4a56b0c4.zip",
+            "reference": "e8ba02eed7bbbb9e59e43dedd3dddeff4a56b0c4",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.0"
+        },
+        "suggest": {
+            "ext-uopz": "*"
+        },
+        "time": "2017-04-27T15:39:26+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sebastian@phpunit.de"
+            }
+        ],
+        "description": "Snapshotting of global state",
+        "homepage": "http://www.github.com/sebastianbergmann/global-state",
+        "keywords": [
+            "global state"
+        ]
+    },
+    {
+        "name": "sebastian/exporter",
+        "version": "3.1.0",
+        "version_normalized": "3.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sebastianbergmann/exporter.git",
+            "reference": "234199f4528de6d12aaa58b612e98f7d36adb937"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/sebastianbergmann/exporter/234199f4528de6d12aaa58b612e98f7d36adb937.zip",
+            "reference": "234199f4528de6d12aaa58b612e98f7d36adb937",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.0",
+            "sebastian/recursion-context": "^3.0"
+        },
+        "require-dev": {
+            "ext-mbstring": "*",
+            "phpunit/phpunit": "^6.0"
+        },
+        "time": "2017-04-03T13:19:02+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Jeff Welch",
+                "email": "whatthejeff@gmail.com"
+            },
+            {
+                "name": "Volker Dusch",
+                "email": "github@wallbash.com"
+            },
+            {
+                "name": "Bernhard Schussek",
+                "email": "bschussek@2bepublished.at"
+            },
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sebastian@phpunit.de"
+            },
+            {
+                "name": "Adam Harvey",
+                "email": "aharvey@php.net"
+            }
+        ],
+        "description": "Provides the functionality to export PHP variables for visualization",
+        "homepage": "http://www.github.com/sebastianbergmann/exporter",
+        "keywords": [
+            "export",
+            "exporter"
+        ]
+    },
+    {
+        "name": "sebastian/diff",
+        "version": "1.4.3",
+        "version_normalized": "1.4.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sebastianbergmann/diff.git",
+            "reference": "7f066a26a962dbe58ddea9f72a4e82874a3975a4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/sebastianbergmann/diff/7f066a26a962dbe58ddea9f72a4e82874a3975a4.zip",
+            "reference": "7f066a26a962dbe58ddea9f72a4e82874a3975a4",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^5.3.3 || ^7.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0"
+        },
+        "time": "2017-05-22T07:24:03+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Kore Nordmann",
+                "email": "mail@kore-nordmann.de"
+            },
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sebastian@phpunit.de"
+            }
+        ],
+        "description": "Diff implementation",
+        "homepage": "https://github.com/sebastianbergmann/diff",
+        "keywords": [
+            "diff"
+        ]
+    },
+    {
+        "name": "sebastian/comparator",
+        "version": "2.0.0",
+        "version_normalized": "2.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sebastianbergmann/comparator.git",
+            "reference": "20f84f468cb67efee293246e6a09619b891f55f0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/sebastianbergmann/comparator/20f84f468cb67efee293246e6a09619b891f55f0.zip",
+            "reference": "20f84f468cb67efee293246e6a09619b891f55f0",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.0",
+            "sebastian/diff": "^1.2",
+            "sebastian/exporter": "^3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.0"
+        },
+        "time": "2017-03-03T06:26:08+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Jeff Welch",
+                "email": "whatthejeff@gmail.com"
+            },
+            {
+                "name": "Volker Dusch",
+                "email": "github@wallbash.com"
+            },
+            {
+                "name": "Bernhard Schussek",
+                "email": "bschussek@2bepublished.at"
+            },
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sebastian@phpunit.de"
+            }
+        ],
+        "description": "Provides the functionality to compare PHP values for equality",
+        "homepage": "http://www.github.com/sebastianbergmann/comparator",
+        "keywords": [
+            "comparator",
+            "compare",
+            "equality"
+        ]
+    },
+    {
+        "name": "doctrine/instantiator",
+        "version": "1.0.5",
+        "version_normalized": "1.0.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/doctrine/instantiator.git",
+            "reference": "8e884e78f9f0eb1329e445619e04456e64d8051d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/doctrine/instantiator/8e884e78f9f0eb1329e445619e04456e64d8051d.zip",
+            "reference": "8e884e78f9f0eb1329e445619e04456e64d8051d",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3,<8.0-DEV"
+        },
+        "require-dev": {
+            "athletic/athletic": "~0.1.8",
+            "ext-pdo": "*",
+            "ext-phar": "*",
+            "phpunit/phpunit": "~4.0",
+            "squizlabs/php_codesniffer": "~2.0"
+        },
+        "time": "2015-06-14T21:17:01+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Doctrine\\Instantiator\\": "src/Doctrine/Instantiator/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Marco Pivetta",
+                "email": "ocramius@gmail.com",
+                "homepage": "http://ocramius.github.com/"
+            }
+        ],
+        "description": "A small, lightweight utility to instantiate objects in PHP without invoking their constructors",
+        "homepage": "https://github.com/doctrine/instantiator",
+        "keywords": [
+            "constructor",
+            "instantiate"
+        ]
+    },
+    {
+        "name": "phpunit/php-text-template",
+        "version": "1.2.1",
+        "version_normalized": "1.2.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sebastianbergmann/php-text-template.git",
+            "reference": "31f8b717e51d9a2afca6c9f046f5d69fc27c8686"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/sebastianbergmann/php-text-template/31f8b717e51d9a2afca6c9f046f5d69fc27c8686.zip",
+            "reference": "31f8b717e51d9a2afca6c9f046f5d69fc27c8686",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "time": "2015-06-21T13:50:34+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sebastian@phpunit.de",
+                "role": "lead"
+            }
+        ],
+        "description": "Simple template engine.",
+        "homepage": "https://github.com/sebastianbergmann/php-text-template/",
+        "keywords": [
+            "template"
+        ]
+    },
+    {
+        "name": "phpunit/phpunit-mock-objects",
+        "version": "4.0.1",
+        "version_normalized": "4.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
+            "reference": "eabce450df194817a7d7e27e19013569a903a2bf"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/sebastianbergmann/phpunit-mock-objects/eabce450df194817a7d7e27e19013569a903a2bf.zip",
+            "reference": "eabce450df194817a7d7e27e19013569a903a2bf",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/instantiator": "^1.0.2",
+            "php": "^7.0",
+            "phpunit/php-text-template": "^1.2",
+            "sebastian/exporter": "^3.0"
+        },
+        "conflict": {
+            "phpunit/phpunit": "<6.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.0"
+        },
+        "suggest": {
+            "ext-soap": "*"
+        },
+        "time": "2017-03-03T06:30:20+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "4.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sb@sebastian-bergmann.de",
+                "role": "lead"
+            }
+        ],
+        "description": "Mock Object library for PHPUnit",
+        "homepage": "https://github.com/sebastianbergmann/phpunit-mock-objects/",
+        "keywords": [
+            "mock",
+            "xunit"
+        ]
+    },
+    {
+        "name": "phpunit/php-timer",
+        "version": "1.0.9",
+        "version_normalized": "1.0.9.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sebastianbergmann/php-timer.git",
+            "reference": "3dcf38ca72b158baf0bc245e9184d3fdffa9c46f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/sebastianbergmann/php-timer/3dcf38ca72b158baf0bc245e9184d3fdffa9c46f.zip",
+            "reference": "3dcf38ca72b158baf0bc245e9184d3fdffa9c46f",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^5.3.3 || ^7.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0"
+        },
+        "time": "2017-02-26T11:10:40+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sb@sebastian-bergmann.de",
+                "role": "lead"
+            }
+        ],
+        "description": "Utility class for timing",
+        "homepage": "https://github.com/sebastianbergmann/php-timer/",
+        "keywords": [
+            "timer"
+        ]
+    },
+    {
+        "name": "phpunit/php-file-iterator",
+        "version": "1.4.2",
+        "version_normalized": "1.4.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sebastianbergmann/php-file-iterator.git",
+            "reference": "3cc8f69b3028d0f96a9078e6295d86e9bf019be5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/sebastianbergmann/php-file-iterator/3cc8f69b3028d0f96a9078e6295d86e9bf019be5.zip",
+            "reference": "3cc8f69b3028d0f96a9078e6295d86e9bf019be5",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "time": "2016-10-03T07:40:28+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.4.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sb@sebastian-bergmann.de",
+                "role": "lead"
+            }
+        ],
+        "description": "FilterIterator implementation that filters files based on a list of suffixes.",
+        "homepage": "https://github.com/sebastianbergmann/php-file-iterator/",
+        "keywords": [
+            "filesystem",
+            "iterator"
+        ]
+    },
+    {
+        "name": "theseer/tokenizer",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/theseer/tokenizer.git",
+            "reference": "cb2f008f3f05af2893a87208fe6a6c4985483f8b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/theseer/tokenizer/cb2f008f3f05af2893a87208fe6a6c4985483f8b.zip",
+            "reference": "cb2f008f3f05af2893a87208fe6a6c4985483f8b",
+            "shasum": ""
+        },
+        "require": {
+            "ext-dom": "*",
+            "ext-tokenizer": "*",
+            "ext-xmlwriter": "*",
+            "php": "^7.0"
+        },
+        "time": "2017-04-07T12:08:54+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Arne Blankerts",
+                "email": "arne@blankerts.de",
+                "role": "Developer"
+            }
+        ],
+        "description": "A small library for converting tokenized PHP source code into XML and potentially other formats"
+    },
+    {
+        "name": "sebastian/code-unit-reverse-lookup",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sebastianbergmann/code-unit-reverse-lookup.git",
+            "reference": "4419fcdb5eabb9caa61a27c7a1db532a6b55dd18"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/sebastianbergmann/code-unit-reverse-lookup/4419fcdb5eabb9caa61a27c7a1db532a6b55dd18.zip",
+            "reference": "4419fcdb5eabb9caa61a27c7a1db532a6b55dd18",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^5.6 || ^7.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^5.7 || ^6.0"
+        },
+        "time": "2017-03-04T06:30:41+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sebastian@phpunit.de"
+            }
+        ],
+        "description": "Looks up which function or method a line of code belongs to",
+        "homepage": "https://github.com/sebastianbergmann/code-unit-reverse-lookup/"
+    },
+    {
+        "name": "phpunit/php-token-stream",
+        "version": "1.4.11",
+        "version_normalized": "1.4.11.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sebastianbergmann/php-token-stream.git",
+            "reference": "e03f8f67534427a787e21a385a67ec3ca6978ea7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/sebastianbergmann/php-token-stream/e03f8f67534427a787e21a385a67ec3ca6978ea7.zip",
+            "reference": "e03f8f67534427a787e21a385a67ec3ca6978ea7",
+            "shasum": ""
+        },
+        "require": {
+            "ext-tokenizer": "*",
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.2"
+        },
+        "time": "2017-02-27T10:12:30+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sebastian@phpunit.de"
+            }
+        ],
+        "description": "Wrapper around PHP's tokenizer extension.",
+        "homepage": "https://github.com/sebastianbergmann/php-token-stream/",
+        "keywords": [
+            "tokenizer"
+        ]
+    },
+    {
+        "name": "phpunit/php-code-coverage",
+        "version": "5.2.1",
+        "version_normalized": "5.2.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
+            "reference": "dc421f9ca5082a0c0cb04afb171c765f79add85b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/sebastianbergmann/php-code-coverage/dc421f9ca5082a0c0cb04afb171c765f79add85b.zip",
+            "reference": "dc421f9ca5082a0c0cb04afb171c765f79add85b",
+            "shasum": ""
+        },
+        "require": {
+            "ext-dom": "*",
+            "ext-xmlwriter": "*",
+            "php": "^7.0",
+            "phpunit/php-file-iterator": "^1.3",
+            "phpunit/php-text-template": "^1.2",
+            "phpunit/php-token-stream": "^1.4.11 || ^2.0",
+            "sebastian/code-unit-reverse-lookup": "^1.0",
+            "sebastian/environment": "^3.0",
+            "sebastian/version": "^2.0",
+            "theseer/tokenizer": "^1.1"
+        },
+        "require-dev": {
+            "ext-xdebug": "^2.5",
+            "phpunit/phpunit": "^6.0"
+        },
+        "suggest": {
+            "ext-xdebug": "^2.5.3"
+        },
+        "time": "2017-04-21T08:03:57+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.2.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sb@sebastian-bergmann.de",
+                "role": "lead"
+            }
+        ],
+        "description": "Library that provides collection, processing, and rendering functionality for PHP code coverage information.",
+        "homepage": "https://github.com/sebastianbergmann/php-code-coverage",
+        "keywords": [
+            "coverage",
+            "testing",
+            "xunit"
+        ]
+    },
+    {
+        "name": "webmozart/assert",
+        "version": "1.2.0",
+        "version_normalized": "1.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/webmozart/assert.git",
+            "reference": "2db61e59ff05fe5126d152bd0655c9ea113e550f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/webmozart/assert/2db61e59ff05fe5126d152bd0655c9ea113e550f.zip",
+            "reference": "2db61e59ff05fe5126d152bd0655c9ea113e550f",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^5.3.3 || ^7.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.6",
+            "sebastian/version": "^1.0.1"
+        },
+        "time": "2016-11-23T20:04:58+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Webmozart\\Assert\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Bernhard Schussek",
+                "email": "bschussek@gmail.com"
+            }
+        ],
+        "description": "Assertions to validate method input/output with nice error messages.",
+        "keywords": [
+            "assert",
+            "check",
+            "validate"
+        ]
+    },
+    {
+        "name": "phpdocumentor/reflection-common",
+        "version": "1.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phpDocumentor/ReflectionCommon.git",
+            "reference": "144c307535e82c8fdcaacbcfc1d6d8eeb896687c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/phpDocumentor/ReflectionCommon/144c307535e82c8fdcaacbcfc1d6d8eeb896687c.zip",
+            "reference": "144c307535e82c8fdcaacbcfc1d6d8eeb896687c",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.6"
+        },
+        "time": "2015-12-27T11:43:31+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "phpDocumentor\\Reflection\\": [
+                    "src"
+                ]
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jaap van Otterdijk",
+                "email": "opensource@ijaap.nl"
+            }
+        ],
+        "description": "Common reflection classes used by phpdocumentor to reflect the code structure",
+        "homepage": "http://www.phpdoc.org",
+        "keywords": [
+            "FQSEN",
+            "phpDocumentor",
+            "phpdoc",
+            "reflection",
+            "static analysis"
+        ]
+    },
+    {
+        "name": "phpdocumentor/type-resolver",
+        "version": "0.2.1",
+        "version_normalized": "0.2.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phpDocumentor/TypeResolver.git",
+            "reference": "e224fb2ea2fba6d3ad6fdaef91cd09a172155ccb"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/phpDocumentor/TypeResolver/e224fb2ea2fba6d3ad6fdaef91cd09a172155ccb.zip",
+            "reference": "e224fb2ea2fba6d3ad6fdaef91cd09a172155ccb",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5",
+            "phpdocumentor/reflection-common": "^1.0"
+        },
+        "require-dev": {
+            "mockery/mockery": "^0.9.4",
+            "phpunit/phpunit": "^5.2||^4.8.24"
+        },
+        "time": "2016-11-25T06:54:22+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "phpDocumentor\\Reflection\\": [
+                    "src/"
+                ]
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Mike van Riel",
+                "email": "me@mikevanriel.com"
+            }
+        ]
+    },
+    {
+        "name": "phpdocumentor/reflection-docblock",
+        "version": "3.1.1",
+        "version_normalized": "3.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
+            "reference": "8331b5efe816ae05461b7ca1e721c01b46bafb3e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/phpDocumentor/ReflectionDocBlock/8331b5efe816ae05461b7ca1e721c01b46bafb3e.zip",
+            "reference": "8331b5efe816ae05461b7ca1e721c01b46bafb3e",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5",
+            "phpdocumentor/reflection-common": "^1.0@dev",
+            "phpdocumentor/type-resolver": "^0.2.0",
+            "webmozart/assert": "^1.0"
+        },
+        "require-dev": {
+            "mockery/mockery": "^0.9.4",
+            "phpunit/phpunit": "^4.4"
+        },
+        "time": "2016-09-30T07:12:33+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "phpDocumentor\\Reflection\\": [
+                    "src/"
+                ]
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Mike van Riel",
+                "email": "me@mikevanriel.com"
+            }
+        ],
+        "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock."
+    },
+    {
+        "name": "phpspec/prophecy",
+        "version": "v1.7.0",
+        "version_normalized": "1.7.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phpspec/prophecy.git",
+            "reference": "93d39f1f7f9326d746203c7c056f300f7f126073"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/phpspec/prophecy/93d39f1f7f9326d746203c7c056f300f7f126073.zip",
+            "reference": "93d39f1f7f9326d746203c7c056f300f7f126073",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/instantiator": "^1.0.2",
+            "php": "^5.3|^7.0",
+            "phpdocumentor/reflection-docblock": "^2.0|^3.0.2",
+            "sebastian/comparator": "^1.1|^2.0",
+            "sebastian/recursion-context": "^1.0|^2.0|^3.0"
+        },
+        "require-dev": {
+            "phpspec/phpspec": "^2.5|^3.2",
+            "phpunit/phpunit": "^4.8 || ^5.6.5"
+        },
+        "time": "2017-03-02T20:05:34+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.6.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Prophecy\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Konstantin Kudryashov",
+                "email": "ever.zet@gmail.com",
+                "homepage": "http://everzet.com"
+            },
+            {
+                "name": "Marcello Duarte",
+                "email": "marcello.duarte@gmail.com"
+            }
+        ],
+        "description": "Highly opinionated mocking framework for PHP 5.3+",
+        "homepage": "https://github.com/phpspec/prophecy",
+        "keywords": [
+            "Double",
+            "Dummy",
+            "fake",
+            "mock",
+            "spy",
+            "stub"
+        ]
+    },
+    {
+        "name": "phar-io/version",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phar-io/version.git",
+            "reference": "a70c0ced4be299a63d32fa96d9281d03e94041df"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/phar-io/version/a70c0ced4be299a63d32fa96d9281d03e94041df.zip",
+            "reference": "a70c0ced4be299a63d32fa96d9281d03e94041df",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^5.6 || ^7.0"
+        },
+        "time": "2017-03-05T17:38:23+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Arne Blankerts",
+                "email": "arne@blankerts.de",
+                "role": "Developer"
+            },
+            {
+                "name": "Sebastian Heuer",
+                "email": "sebastian@phpeople.de",
+                "role": "Developer"
+            },
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sebastian@phpunit.de",
+                "role": "Developer"
+            }
+        ],
+        "description": "Library for handling version information and constraints"
+    },
+    {
+        "name": "phar-io/manifest",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phar-io/manifest.git",
+            "reference": "2df402786ab5368a0169091f61a7c1e0eb6852d0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/phar-io/manifest/2df402786ab5368a0169091f61a7c1e0eb6852d0.zip",
+            "reference": "2df402786ab5368a0169091f61a7c1e0eb6852d0",
+            "shasum": ""
+        },
+        "require": {
+            "ext-dom": "*",
+            "ext-phar": "*",
+            "phar-io/version": "^1.0.1",
+            "php": "^5.6 || ^7.0"
+        },
+        "time": "2017-03-05T18:14:27+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Arne Blankerts",
+                "email": "arne@blankerts.de",
+                "role": "Developer"
+            },
+            {
+                "name": "Sebastian Heuer",
+                "email": "sebastian@phpeople.de",
+                "role": "Developer"
+            },
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sebastian@phpunit.de",
+                "role": "Developer"
+            }
+        ],
+        "description": "Component for reading phar.io manifest information from a PHP Archive (PHAR)"
+    },
+    {
+        "name": "myclabs/deep-copy",
+        "version": "1.6.1",
+        "version_normalized": "1.6.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/myclabs/DeepCopy.git",
+            "reference": "8e6e04167378abf1ddb4d3522d8755c5fd90d102"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/myclabs/DeepCopy/8e6e04167378abf1ddb4d3522d8755c5fd90d102.zip",
+            "reference": "8e6e04167378abf1ddb4d3522d8755c5fd90d102",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "doctrine/collections": "1.*",
+            "phpunit/phpunit": "~4.1"
+        },
+        "time": "2017-04-12T18:52:22+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "DeepCopy\\": "src/DeepCopy/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Create deep copies (clones) of your objects",
+        "homepage": "https://github.com/myclabs/DeepCopy",
+        "keywords": [
+            "clone",
+            "copy",
+            "duplicate",
+            "object",
+            "object graph"
+        ]
+    },
+    {
+        "name": "symfony/translation",
+        "version": "v3.3.2",
+        "version_normalized": "3.3.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/translation.git",
+            "reference": "dc3b2a0c6cfff60327ba1c043a82092735397543"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/symfony/translation/dc3b2a0c6cfff60327ba1c043a82092735397543.zip",
+            "reference": "dc3b2a0c6cfff60327ba1c043a82092735397543",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.9",
+            "symfony/polyfill-mbstring": "~1.0"
+        },
+        "conflict": {
+            "symfony/config": "<2.8",
+            "symfony/yaml": "<3.3"
+        },
+        "require-dev": {
+            "psr/log": "~1.0",
+            "symfony/config": "~2.8|~3.0",
+            "symfony/intl": "^2.8.18|^3.2.5",
+            "symfony/yaml": "~3.3"
+        },
+        "suggest": {
+            "psr/log": "To use logging capability in translator",
+            "symfony/config": "",
+            "symfony/yaml": ""
+        },
+        "time": "2017-05-22T07:42:36+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Translation\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Translation Component",
+        "homepage": "https://symfony.com"
+    },
+    {
+        "name": "symfony/filesystem",
+        "version": "v3.3.2",
+        "version_normalized": "3.3.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/filesystem.git",
+            "reference": "c709670bf64721202ddbe4162846f250735842c0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/symfony/filesystem/c709670bf64721202ddbe4162846f250735842c0.zip",
+            "reference": "c709670bf64721202ddbe4162846f250735842c0",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.9"
+        },
+        "time": "2017-05-28T14:08:56+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Filesystem\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Filesystem Component",
+        "homepage": "https://symfony.com"
+    },
+    {
+        "name": "symfony/process",
+        "version": "v3.3.2",
+        "version_normalized": "3.3.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/process.git",
+            "reference": "8e30690c67aafb6c7992d6d8eb0d707807dd3eaf"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/symfony/process/8e30690c67aafb6c7992d6d8eb0d707807dd3eaf.zip",
+            "reference": "8e30690c67aafb6c7992d6d8eb0d707807dd3eaf",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.9"
+        },
+        "time": "2017-05-22T12:32:03+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Process\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Process Component",
+        "homepage": "https://symfony.com"
+    },
+    {
+        "name": "houdunwang/session",
+        "version": "v1.0.24",
+        "version_normalized": "1.0.24.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/session.git",
+            "reference": "77b5e3a2ede08ae2c8e2c45d464e0d717f2e9f87"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/session/77b5e3a2ede08ae2c8e2c45d464e0d717f2e9f87.zip",
+            "reference": "77b5e3a2ede08ae2c8e2c45d464e0d717f2e9f87",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/config": "~1.0",
+            "houdunwang/cookie": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-06-07T05:37:17+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [],
+            "psr-4": {
+                "houdunwang\\session\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "SESSION会话管理组件",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "mcrypt",
+            "session",
+            "后盾人",
+            "后盾网",
+            "向军老师"
+        ]
+    },
+    {
+        "name": "houdunwang/route",
+        "version": "v1.0.21",
+        "version_normalized": "1.0.21.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/route.git",
+            "reference": "ef9c9e6e429ce4877ac927eb19309fc9fc81aa86"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/route/ef9c9e6e429ce4877ac927eb19309fc9fc81aa86.zip",
+            "reference": "ef9c9e6e429ce4877ac927eb19309fc9fc81aa86",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/cache": "~1.0",
+            "houdunwang/config": "~1.0",
+            "houdunwang/container": "~1.0",
+            "houdunwang/curl": "~1.0",
+            "houdunwang/middleware": "~1.0",
+            "houdunwang/request": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-06-07T14:35:02+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/helper.php"
+            ],
+            "psr-4": {
+                "houdunwang\\route\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "路由管理组件",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "router",
+            "后盾人",
+            "后盾网",
+            "向军老师",
+            "路由器"
+        ]
+    },
+    {
+        "name": "houdunwang/file",
+        "version": "v1.0.10",
+        "version_normalized": "1.0.10.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/file.git",
+            "reference": "96fbc04115811180793d3a6b14d90b8da51f9275"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/file/96fbc04115811180793d3a6b14d90b8da51f9275.zip",
+            "reference": "96fbc04115811180793d3a6b14d90b8da51f9275",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "time": "2017-06-07T12:05:43+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [],
+            "psr-4": {
+                "houdunwang\\file\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "File组件提供非常方便的上传处理与下载等相关功能",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "后盾人",
+            "后盾网",
+            "向军老师",
+            "文件上传"
+        ]
+    },
+    {
+        "name": "symfony/polyfill-mbstring",
+        "version": "v1.4.0",
+        "version_normalized": "1.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/polyfill-mbstring.git",
+            "reference": "f29dca382a6485c3cbe6379f0c61230167681937"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/symfony/polyfill-mbstring/f29dca382a6485c3cbe6379f0c61230167681937.zip",
+            "reference": "f29dca382a6485c3cbe6379f0c61230167681937",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "suggest": {
+            "ext-mbstring": "For best performance"
+        },
+        "time": "2017-06-09T14:24:12+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Polyfill\\Mbstring\\": ""
+            },
+            "files": [
+                "bootstrap.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nicolas Grekas",
+                "email": "p@tchwork.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony polyfill for the Mbstring extension",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "compatibility",
+            "mbstring",
+            "polyfill",
+            "portable",
+            "shim"
+        ]
+    },
+    {
+        "name": "houdunwang/middleware",
+        "version": "v1.0.17",
+        "version_normalized": "1.0.17.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/middleware.git",
+            "reference": "30356dbb93e06bd89b3f10431631e4588c5d8eab"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/middleware/30356dbb93e06bd89b3f10431631e4588c5d8eab.zip",
+            "reference": "30356dbb93e06bd89b3f10431631e4588c5d8eab",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/arr": "~1.0",
+            "houdunwang/config": "~1.0",
+            "houdunwang/container": "~1.0",
+            "houdunwang/route": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-06-11T21:52:04+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [],
+            "psr-4": {
+                "houdunwang\\middleware\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "中间件组件",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "后盾人",
+            "后盾网",
+            "向军老师",
+            "数据库管理"
+        ]
+    },
+    {
+        "name": "houdunwang/cli",
+        "version": "v1.0.27",
+        "version_normalized": "1.0.27.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/cli.git",
+            "reference": "0f5b46bdd40f5d1bb35bc9126ffaa51cfa8d6616"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/cli/0f5b46bdd40f5d1bb35bc9126ffaa51cfa8d6616.zip",
+            "reference": "0f5b46bdd40f5d1bb35bc9126ffaa51cfa8d6616",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/database": "~1.0",
+            "houdunwang/dir": "~1.0",
+            "houdunwang/model": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-06-07T20:27:06+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/helper.php"
+            ],
+            "psr-4": {
+                "houdunwang\\cli\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "命令行控制指令",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "后盾人",
+            "后盾网",
+            "向军老师",
+            "命令行"
+        ]
+    },
+    {
+        "name": "houdunwang/backup",
+        "version": "v1.0.10",
+        "version_normalized": "1.0.10.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/backup.git",
+            "reference": "c8947e787e19d084547dce191412bf8ffe33d92e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/backup/c8947e787e19d084547dce191412bf8ffe33d92e.zip",
+            "reference": "c8947e787e19d084547dce191412bf8ffe33d92e",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/arr": "~1.0",
+            "houdunwang/cache": "~1.0",
+            "houdunwang/config": "~1.0",
+            "houdunwang/cookie": "~1.0",
+            "houdunwang/database": "~1.0",
+            "houdunwang/db": "~1.0",
+            "houdunwang/dir": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-06-12T23:14:58+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [],
+            "psr-4": {
+                "houdunwang\\backup\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "backup组件可轻松完成数据备份与恢复操作",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "后盾人",
+            "后盾网",
+            "向军老师",
+            "数据库备份"
+        ]
+    },
+    {
+        "name": "houdunwang/model",
+        "version": "v1.0.24",
+        "version_normalized": "1.0.24.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/model.git",
+            "reference": "9c464185c9964f37886cb44be8ea0dc08781a532"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/model/9c464185c9964f37886cb44be8ea0dc08781a532.zip",
+            "reference": "9c464185c9964f37886cb44be8ea0dc08781a532",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/arr": "~1.0",
+            "houdunwang/collection": "~1.0",
+            "houdunwang/config": "~1.0",
+            "houdunwang/db": "~1.0",
+            "houdunwang/validate": "~1.0",
+            "nesbot/carbon": "^1.22",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-06-12T23:23:25+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/helper.php"
+            ],
+            "psr-4": {
+                "houdunwang\\model\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "模型是应用程序中用于处理应用程序数据逻辑的部分, 通常模型对象负责在数据库中存取数据。",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "model",
+            "后盾人",
+            "后盾网",
+            "向军老师",
+            "模型"
+        ]
+    },
+    {
+        "name": "phpunit/phpunit",
+        "version": "6.2.2",
+        "version_normalized": "6.2.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sebastianbergmann/phpunit.git",
+            "reference": "f2786490399836d2a544a34785c4a8d3ab32cf0e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/sebastianbergmann/phpunit/f2786490399836d2a544a34785c4a8d3ab32cf0e.zip",
+            "reference": "f2786490399836d2a544a34785c4a8d3ab32cf0e",
+            "shasum": ""
+        },
+        "require": {
+            "ext-dom": "*",
+            "ext-json": "*",
+            "ext-libxml": "*",
+            "ext-mbstring": "*",
+            "ext-xml": "*",
+            "myclabs/deep-copy": "^1.3",
+            "phar-io/manifest": "^1.0.1",
+            "phar-io/version": "^1.0",
+            "php": "^7.0",
+            "phpspec/prophecy": "^1.7",
+            "phpunit/php-code-coverage": "^5.2",
+            "phpunit/php-file-iterator": "^1.4",
+            "phpunit/php-text-template": "^1.2",
+            "phpunit/php-timer": "^1.0.6",
+            "phpunit/phpunit-mock-objects": "^4.0",
+            "sebastian/comparator": "^2.0",
+            "sebastian/diff": "^1.4.3 || ^2.0",
+            "sebastian/environment": "^3.0.2",
+            "sebastian/exporter": "^3.1",
+            "sebastian/global-state": "^1.1 || ^2.0",
+            "sebastian/object-enumerator": "^3.0.2",
+            "sebastian/resource-operations": "^1.0",
+            "sebastian/version": "^2.0"
+        },
+        "conflict": {
+            "phpdocumentor/reflection-docblock": "3.0.2",
+            "phpunit/dbunit": "<3.0"
+        },
+        "require-dev": {
+            "ext-pdo": "*"
+        },
+        "suggest": {
+            "ext-xdebug": "*",
+            "phpunit/php-invoker": "^1.1"
+        },
+        "time": "2017-06-13T14:07:07+00:00",
+        "bin": [
+            "phpunit"
+        ],
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "6.2.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sebastian@phpunit.de",
+                "role": "lead"
+            }
+        ],
+        "description": "The PHP Unit Testing framework.",
+        "homepage": "https://phpunit.de/",
+        "keywords": [
+            "phpunit",
+            "testing",
+            "xunit"
+        ]
+    },
+    {
+        "name": "houdunwang/collection",
+        "version": "v1.0.10",
+        "version_normalized": "1.0.10.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/collection.git",
+            "reference": "898ba8390c4924c7faa1a003085499ee79e6a962"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/collection/898ba8390c4924c7faa1a003085499ee79e6a962.zip",
+            "reference": "898ba8390c4924c7faa1a003085499ee79e6a962",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "houdunwang/page": "~1.0",
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-06-13T12:41:46+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/helper.php"
+            ],
+            "psr-4": {
+                "houdunwang\\collection\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "Collection 组件提供一个流畅、方便的封装来操作数据",
+        "homepage": "http://www.hdphp.com/",
+        "keywords": [
+            "collection",
+            "hdphp",
+            "houdunwang",
+            "json",
+            "集合管理"
+        ]
+    },
+    {
+        "name": "houdunwang/request",
+        "version": "v1.0.27",
+        "version_normalized": "1.0.27.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/request.git",
+            "reference": "90e0bd85aa40fe88609be870a5018f3ac3a6b328"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/request/90e0bd85aa40fe88609be870a5018f3ac3a6b328.zip",
+            "reference": "90e0bd85aa40fe88609be870a5018f3ac3a6b328",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/arr": "~1.0",
+            "houdunwang/cookie": "~1.0",
+            "houdunwang/session": "~1.0",
+            "houdunwang/tool": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-06-19T09:18:21+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/helper.php"
+            ],
+            "psr-4": {
+                "houdunwang\\request\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "客户端请求处理组件",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "json",
+            "request",
+            "后盾人",
+            "后盾网",
+            "向军老师"
+        ]
+    },
+    {
+        "name": "houdunwang/page",
+        "version": "v1.0.18",
+        "version_normalized": "1.0.18.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/page.git",
+            "reference": "4606cca599e94b9eeb576e80c4d4ebebbfeb193b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/page/4606cca599e94b9eeb576e80c4d4ebebbfeb193b.zip",
+            "reference": "4606cca599e94b9eeb576e80c4d4ebebbfeb193b",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/config": "~1.0",
+            "houdunwang/request": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-06-17T21:04:56+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [],
+            "psr-4": {
+                "houdunwang\\page\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "分页组件可以产生基于当前页面的智能「范围」链接，所产生的 HTML 兼容 Bootstrap CSS 框架.",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "page",
+            "后盾人",
+            "后盾网",
+            "后盾网向军"
+        ]
+    },
+    {
+        "name": "houdunwang/db",
+        "version": "v1.0.36",
+        "version_normalized": "1.0.36.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/db.git",
+            "reference": "031f16addcd4cb8789fe3533e006718eb26ac9d0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/db/031f16addcd4cb8789fe3533e006718eb26ac9d0.zip",
+            "reference": "031f16addcd4cb8789fe3533e006718eb26ac9d0",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/arr": "~1.0",
+            "houdunwang/config": "~1.0",
+            "houdunwang/dir": "~1.0",
+            "houdunwang/page": "~1.0",
+            "houdunwang/request": "~1.0",
+            "php": ">=5.5.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-06-19T09:17:12+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/helper.php"
+            ],
+            "psr-4": {
+                "houdunwang\\db\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "数据库管理组件提供了丰富的数据操作功能，使用我们在开发中快速的管理数据",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "后盾人",
+            "后盾网",
+            "向军老师",
+            "数据库管理"
+        ]
+    },
+    {
+        "name": "houdunwang/view",
+        "version": "v1.0.29",
+        "version_normalized": "1.0.29.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/view.git",
+            "reference": "839a2f6ba63dd5bbb6e1fe4897482f22c5ce1bf0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/view/839a2f6ba63dd5bbb6e1fe4897482f22c5ce1bf0.zip",
+            "reference": "839a2f6ba63dd5bbb6e1fe4897482f22c5ce1bf0",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/arr": "~1.0",
+            "houdunwang/cache": "~1.0",
+            "houdunwang/config": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-06-19T09:18:41+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/helper.php"
+            ],
+            "psr-4": {
+                "houdunwang\\view\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "日志管理",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "后盾人",
+            "后盾网",
+            "向军老师",
+            "模板",
+            "视图"
+        ]
+    },
+    {
+        "name": "houdunwang/error",
+        "version": "v1.0.17",
+        "version_normalized": "1.0.17.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/error.git",
+            "reference": "09e321ce5c6b2a572d2a859c6509cdbffe1db252"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/error/09e321ce5c6b2a572d2a859c6509cdbffe1db252.zip",
+            "reference": "09e321ce5c6b2a572d2a859c6509cdbffe1db252",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/config": "~1.0",
+            "houdunwang/log": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-06-19T09:17:34+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/helper.php"
+            ],
+            "psr-4": {
+                "houdunwang\\error\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "错误与异常处理",
+        "homepage": "http://www.hdphp.com/",
+        "keywords": [
+            "error",
+            "hdphp",
+            "houdunwang",
+            "json"
+        ]
+    },
+    {
+        "name": "houdunwang/alipay",
+        "version": "v1.0.18",
+        "version_normalized": "1.0.18.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/alipay.git",
+            "reference": "ea8274810dfb6faa13e1b977110a67fcae17bc10"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/alipay/ea8274810dfb6faa13e1b977110a67fcae17bc10.zip",
+            "reference": "ea8274810dfb6faa13e1b977110a67fcae17bc10",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "time": "2017-06-20T14:02:13+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/org/"
+            ],
+            "files": [],
+            "psr-4": {
+                "houdunwang\\alipay\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "支付宝组件用于实现支付宝在线支付功能",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "alipay",
+            "hdphp",
+            "houdunwang",
+            "后盾人",
+            "后盾网",
+            "向军老师",
+            "支付宝支付"
+        ]
+    },
+    {
+        "name": "sebastian/environment",
+        "version": "3.0.4",
+        "version_normalized": "3.0.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sebastianbergmann/environment.git",
+            "reference": "74776f8dbc081cab9287c2a601c0c1d842568744"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/sebastianbergmann/environment/74776f8dbc081cab9287c2a601c0c1d842568744.zip",
+            "reference": "74776f8dbc081cab9287c2a601c0c1d842568744",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-06-20T16:25:05+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sebastian@phpunit.de"
+            }
+        ],
+        "description": "Provides functionality to handle HHVM/PHP environments",
+        "homepage": "http://www.github.com/sebastianbergmann/environment",
+        "keywords": [
+            "Xdebug",
+            "environment",
+            "hhvm"
+        ]
+    },
+    {
+        "name": "houdunwang/config",
+        "version": "v1.0.22",
+        "version_normalized": "1.0.22.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/config.git",
+            "reference": "0ce607bd51ae67b6dc8c11a88fd66e1519519aea"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/config/0ce607bd51ae67b6dc8c11a88fd66e1519519aea.zip",
+            "reference": "0ce607bd51ae67b6dc8c11a88fd66e1519519aea",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-06-21T12:27:54+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/helper.php"
+            ],
+            "psr-4": {
+                "houdunwang\\config\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "config组件用于管理网站配置项",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "后盾人",
+            "后盾网",
+            "向军老师",
+            "配置管理"
+        ]
+    },
+    {
+        "name": "houdunwang/crypt",
+        "version": "v1.0.18",
+        "version_normalized": "1.0.18.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/crypt.git",
+            "reference": "7423c0c8dbe9a913e4a7210329c836cf50389b9b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/crypt/7423c0c8dbe9a913e4a7210329c836cf50389b9b.zip",
+            "reference": "7423c0c8dbe9a913e4a7210329c836cf50389b9b",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/config": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-06-21T12:28:01+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/helper.php"
+            ],
+            "psr-4": {
+                "houdunwang\\crypt\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "crypt加密组件包提供功能强大的加密功能",
+        "homepage": "http://www.houdunwang.com/",
+        "keywords": [
+            "hdphp",
+            "houdunwang",
+            "mcrypt",
+            "加密解密",
+            "后盾人",
+            "后盾网",
+            "向军老师"
+        ]
+    },
+    {
+        "name": "houdunwang/framework",
+        "version": "v3.0.120",
+        "version_normalized": "3.0.120.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/houdunwang/framework.git",
+            "reference": "d26dbd23eb5349c658bfb0e43dba9d5ad30f8350"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/houdunwang/framework/d26dbd23eb5349c658bfb0e43dba9d5ad30f8350.zip",
+            "reference": "d26dbd23eb5349c658bfb0e43dba9d5ad30f8350",
+            "shasum": ""
+        },
+        "require": {
+            "houdunwang/alipay": "~1.0",
+            "houdunwang/aliyunsms": "~1.0",
+            "houdunwang/arr": "~1.0",
+            "houdunwang/backup": "~1.0",
+            "houdunwang/cache": "~1.0",
+            "houdunwang/cart": "~1.0",
+            "houdunwang/cli": "~1.0",
+            "houdunwang/cloud": "~1.0",
+            "houdunwang/code": "~1.0",
+            "houdunwang/collection": "~1.0",
+            "houdunwang/config": "~1.0",
+            "houdunwang/container": "~1.0",
+            "houdunwang/cookie": "~1.0",
+            "houdunwang/crypt": "~1.0",
+            "houdunwang/curl": "~1.0",
+            "houdunwang/database": "~1.0",
+            "houdunwang/db": "~1.0",
+            "houdunwang/dir": "~1.0",
+            "houdunwang/error": "~1.0",
+            "houdunwang/file": "~1.0",
+            "houdunwang/html": "~1.0",
+            "houdunwang/image": "~1.0",
+            "houdunwang/lang": "~1.0",
+            "houdunwang/loader": "~1.0",
+            "houdunwang/log": "~1.0",
+            "houdunwang/mail": "~1.0",
+            "houdunwang/middleware": "~1.0",
+            "houdunwang/model": "~1.0",
+            "houdunwang/oss": "~1.0",
+            "houdunwang/page": "~1.0",
+            "houdunwang/qq": "~1.0",
+            "houdunwang/qrcode": "~1.0",
+            "houdunwang/rbac": "~1.0",
+            "houdunwang/request": "~1.0",
+            "houdunwang/response": "~1.0",
+            "houdunwang/route": "~1.0",
+            "houdunwang/session": "~1.0",
+            "houdunwang/str": "~1.0",
+            "houdunwang/tool": "~1.0",
+            "houdunwang/validate": "~1.0",
+            "houdunwang/view": "~1.0",
+            "houdunwang/wechat": "~1.0",
+            "houdunwang/xml": "~1.0",
+            "houdunwang/zip": "~1.0",
+            "php": ">=5.6.0",
+            "vlucas/phpdotenv": "~2.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.1"
+        },
+        "time": "2017-06-21T12:27:43+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/helper.php"
+            ],
+            "psr-4": {
+                "houdunwang\\framework\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "后盾网向军",
+                "email": "2300071698@qq.com"
+            }
+        ],
+        "description": "Hdphp Framework (Kernel)"
+    }
+]

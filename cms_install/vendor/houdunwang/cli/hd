@@ -1,0 +1,4 @@
+<?php
+require 'vendor/autoload.php';
+\houdunwang\config\Config::loadFiles('config');
+\houdunwang\cli\Cli::bootstrap();

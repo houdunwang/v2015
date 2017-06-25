@@ -13,9 +13,18 @@ use houdunwang\validate\Validate;
  */
 class Module extends Common
 {
+    /**
+     * Module constructor.
+     */
     public function __construct()
     {
         $this->auth();
+    }
+
+    protected function assignModuleLists()
+    {
+        $modules = Model::where('is_system', 0)->get();
+        View::with('modules', $modules);
     }
 
     /**
@@ -25,7 +34,19 @@ class Module extends Common
      */
     public function lists()
     {
-        $data = Model::where('is_system', 0)->get();
+        $this->assignModuleLists();
+        //已经安装的模块标识
+        $installModules = Model::where('is_system', 0)->lists('name');
+        $modules        = Dir::tree('addons');
+        $data           = [];
+        foreach ((array)$modules as $k => $v) {
+            $packageFile = 'addons/'.$v['basename'].'/package.json';
+            if (is_file($packageFile)) {
+                $config              = json_decode(file_get_contents($packageFile), true);
+                $config['isinstall'] = in_array($v['basename'], $installModules);
+                $data[]              = $config;
+            }
+        }
 
         return view('', compact('data'));
     }
@@ -42,12 +63,18 @@ class Module extends Common
         return $this->setRedirect('lists')->success('模块卸载成功');
     }
 
+    /**
+     * 设计模块
+     *
+     * @return array|mixed
+     */
     public function post()
     {
         if (IS_POST) {
             $post = Request::post();
             Validate::make([
                 ['name', 'required', '模块标识不能为空', Validate::MUST_VALIDATE],
+                ['name', 'regexp:/^[a-z]{3,10}$/', '模块标识只能为英文字母', Validate::MUST_VALIDATE],
                 ['title', 'required', '模块名称不能为空', Validate::MUST_VALIDATE],
                 ['preview', 'required', '预览图不能为空', Validate::MUST_VALIDATE],
             ]);
@@ -68,17 +95,22 @@ class Module extends Common
             foreach ($dirs as $dir) {
                 Dir::create("addons/{$post['name']}/".$dir);
             }
-
             //创建处理微信的文件
             $this->createProcessorFile($post['name']);
-            $model = new Model();
-            $model->save($post);
+            //生成模块配置文件
+            $pagkage = json_encode($post, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+            file_put_contents('addons/'.$post['name'].'/package.json', $pagkage);
             $this->setRedirect('lists')->success('模块创建成功');
         }
-
+        $this->assignModuleLists();
         return view();
     }
 
+    /**
+     * 生成微信处理文件
+     *
+     * @param $name
+     */
     protected function createProcessorFile($name)
     {
         $content
@@ -97,6 +129,22 @@ class Processor extends HdProcessor
 }
 str;
         file_put_contents("addons/{$name}/system/Processor.php", $content);
+    }
+
+    /**
+     * 安装模块
+     *
+     * @return array
+     */
+    public function install()
+    {
+        $name              = Request::get('name');
+        $data              = json_decode(file_get_contents('addons/'.$name.'/package.json'), true);
+        $data['is_system'] = 0;
+        $model             = new Model();
+        $model->save($data);
+
+        return $this->setRedirect('lists')->success('模块安装成功');
     }
 }
 

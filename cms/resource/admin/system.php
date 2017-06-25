@@ -58,8 +58,12 @@
                             <i class="'fa-w fa fa-cubes"></i> 微信功能 </a>
                     </li>
                     <li class="top_menu active">
-                        <a href="?s=system/module/lists">
+                        <a href="?s=system/backup/lists">
                             <i class="'fa-w fa fa-cubes"></i> 系统管理 </a>
+                    </li>
+                    <li class="top_menu">
+                        <a href="?s=system/module/lists">
+                            <i class="'fa-w fa fa-cubes"></i> 模块管理 </a>
                     </li>
                 </ul>
             </div>
@@ -94,6 +98,17 @@
             <div class="panel panel-default">
                 <!--系统菜单-->
                 <div class="panel-heading">
+                    <h4 class="panel-title">系统设置</h4>
+                    <a class="panel-collapse" data-toggle="collapse" href="javascript:;">
+                        <i class="fa fa-chevron-circle-down"></i>
+                    </a>
+                </div>
+                <ul class="list-group menus">
+                    <li class="list-group-item">
+                        <a href="{{u('admin.config.setting')}}">网站配置</a>
+                    </li>
+                </ul>
+                <div class="panel-heading">
                     <h4 class="panel-title">个人中心</h4>
                     <a class="panel-collapse" data-toggle="collapse" href="javascript:;">
                         <i class="fa fa-chevron-circle-down"></i>
@@ -102,20 +117,6 @@
                 <ul class="list-group menus">
                     <li class="list-group-item">
                         <a href="{{u('admin.user.changePassword')}}">修改密码</a>
-                    </li>
-                </ul>
-                <div class="panel-heading">
-                    <h4 class="panel-title">模块管理</h4>
-                    <a class="panel-collapse" data-toggle="collapse" href="javascript:;">
-                        <i class="fa fa-chevron-circle-down"></i>
-                    </a>
-                </div>
-                <ul class="list-group menus">
-                    <li class="list-group-item">
-                        <a href="{{u('system.module.lists')}}">模块列表</a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="{{u('system.module.post')}}">设计模块</a>
                     </li>
                 </ul>
                 <div class="panel-heading">

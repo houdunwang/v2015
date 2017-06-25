@@ -1,0 +1,32 @@
+{
+  "name": "houdunwang/cloud",
+  "description": "后盾云接口用于实现短信、邮件发送等服务",
+  "keywords": [
+    "houdunwang",
+    "hdphp",
+    "后盾网",
+    "后盾人",
+    "向军老师",
+    "后盾云"
+  ],
+  "homepage": "http://www.houdunwang.com/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "后盾网向军",
+      "email": "2300071698@qq.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=5.4.0",
+    "houdunwang/config": "~1.0",
+    "houdunwang/curl": "~1.0"
+  },
+  "autoload": {
+    "files": [],
+    "psr-4": {
+      "houdunwang\\cloud\\": "src"
+    }
+  }
+}

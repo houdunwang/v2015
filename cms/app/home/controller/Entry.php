@@ -64,9 +64,11 @@ class Entry
      */
     public function content($id)
     {
-        $field = Article::find($id);
+        $hdcms = Article::find($id);
+        //修改点击数
+        $hdcms->where('id', $id)->increment('click', 1);
 
-        return view($this->template.'/content.html', compact('field'));
+        return view($this->template.'/content.html', compact('hdcms'));
     }
 
     /**
@@ -78,8 +80,14 @@ class Entry
      */
     public function category($cid)
     {
-        $field = Category::find($cid);
+        $hdcms = Category::find($cid);
+        if ($hdcms['ishome']) {
+            //封面栏目
+            return view($this->template.'/home.html',compact('hdcms'));
+        } else {
+            $hdcms_data = Article::where('category_cid', $cid)->paginate(3);
 
-        return view($this->template.'/list.html', compact('field'));
+            return view($this->template.'/list.html', compact('hdcms', 'hdcms_data'));
+        }
     }
 }

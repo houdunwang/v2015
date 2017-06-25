@@ -1,0 +1,40 @@
+{
+  "name": "houdunwang/config",
+  "description": "config组件用于管理网站配置项",
+  "keywords": [
+    "houdunwang",
+    "hdphp",
+    "后盾网",
+    "后盾人",
+    "向军老师",
+    "配置管理"
+  ],
+  "homepage": "http://www.houdunwang.com/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "后盾网向军",
+      "email": "2300071698@qq.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.1"
+  },
+  "autoload": {
+    "files": [
+      "src/helper.php"
+    ],
+    "psr-4": {
+      "houdunwang\\config\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "tests\\": "tests"
+    }
+  }
+}

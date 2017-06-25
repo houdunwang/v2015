@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="cf83feae-9808-4cde-a956-42d86121dccb" name="cms_install.hdphp.com" url="http://cms_install.hdphp.com">
+        <fileTransfer host="cms_install.hdphp.com" port="21">
+          <advancedOptions>
+            <advancedOptions compatibilityMode="true" dataProtectionLevel="Private" passiveMode="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

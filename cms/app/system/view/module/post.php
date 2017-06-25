@@ -1,4 +1,4 @@
-<extend file='resource/admin/article.php'/>
+<extend file='resource/admin/module.php'/>
 <block name="content">
     <ul class="nav nav-tabs" role="tablist">
         <li class=""><a href="{{u('lists')}}" >模块列表</a></li>
@@ -13,32 +13,33 @@
                 <div class="form-group">
                     <label for="" class="col-sm-2 control-label">模块标识</label>
                     <div class="col-sm-10">
-                        <input type="text" name="name" class="form-control">
+                        <input type="text" name="name" class="form-control" value="{{old('name')}}">
+                        <span class="help-block">模块标识只能为英文字母</span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="" class="col-sm-2 control-label">模块名称</label>
                     <div class="col-sm-10">
-                        <input type="text" name="title" class="form-control">
+                        <input type="text" name="title" class="form-control" value="{{old('title')}}">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="" class="col-sm-2 control-label">模块描述</label>
                     <div class="col-sm-10">
-                        <textarea name="resume" class="form-control" rows="10"></textarea>
+                        <textarea name="resume" class="form-control" rows="10">{{old('resume')}}</textarea>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="" class="col-sm-2 control-label">作者</label>
                     <div class="col-sm-10">
-                        <input type="text" name="author" class="form-control">
+                        <input type="text" name="author" class="form-control" value="{{old('author')}}">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="" class="col-sm-2 control-label">预览图片</label>
                     <div class="col-sm-10">
                         <div class="input-group">
-                            <input type="text" class="form-control" name="preview" readonly="" value="">
+                            <input type="text" class="form-control" name="preview" readonly="" value="{{old('preview')}}">
                             <div class="input-group-btn">
                                 <button onclick="upImage(this)" class="btn btn-default" type="button">选择图片</button>
                             </div>
@@ -75,7 +76,12 @@
                     <label for="" class="col-sm-2 control-label">处理微信</label>
                     <div class="col-sm-10">
                         <label class="checkbox-inline">
-                            <input type="checkbox" name="is_wechat" value="1"> 是
+                            <if value="old('is_wechat')">
+                                <input type="checkbox" name="is_wechat" value="1" checked="checked"> 是
+                                <else/>
+                                <input type="checkbox" name="is_wechat" value="1"> 是
+                            </if>
+
                         </label>
                     </div>
                 </div>

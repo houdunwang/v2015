@@ -1,4 +1,4 @@
-<extend file='resource/admin/article.php'/>
+<extend file='resource/admin/system.php'/>
 <block name="content">
     <ul class="nav nav-tabs" role="tablist">
         <li class="active"><a href="#" role="tab" data-toggle="tab">网站配置</a></li>

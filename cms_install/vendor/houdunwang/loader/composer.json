@@ -1,0 +1,32 @@
+{
+  "name": "houdunwang/loader",
+  "description": "Loader组件提供类别名、自定义命名空间、文件自动导入等功能的组件。",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "后盾网向军",
+      "email": "2300071698@qq.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=5.4.0",
+    "houdunwang/config": "~1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.1"
+  },
+  "autoload": {
+    "files": [
+      "src/helper.php"
+    ],
+    "psr-4": {
+      "houdunwang\\loader\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "tests\\": "tests"
+    }
+  }
+}

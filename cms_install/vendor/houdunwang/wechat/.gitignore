@@ -1,0 +1,6 @@
+/.idea
+.DS_Store
+/vendor
+composer.lock
+/tests/config
+/tests/cert

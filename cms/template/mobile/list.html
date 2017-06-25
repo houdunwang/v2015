@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<ul>
+    <foreach from="$hdcms_data" value="$field">
+        <li>
+            <a href="/{{$field['id']}}.html" class="title">{{$field['title']}}</a>
+            <span class="time">[ {{$field['created_at']}} ]</span>
+            <p class="desc">{{$field['description']}}</p>
+        </li>
+    </foreach>
+</ul>
+</body>
+</html>

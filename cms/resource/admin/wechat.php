@@ -43,7 +43,6 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <ul class="nav navbar-nav">
-
                     <li>
                         <a href="{{__ROOT__}}" target="_blank">
                             <i class="fa fa-reply-all"></i> 返回首页
@@ -58,8 +57,12 @@
                             <i class="'fa-w fa fa-cubes"></i> 微信功能 </a>
                     </li>
                     <li class="top_menu">
-                        <a href="?s=system/module/lists">
+                        <a href="?s=system/backup/lists">
                             <i class="'fa-w fa fa-cubes"></i> 系统管理 </a>
+                    </li>
+                    <li class="top_menu">
+                        <a href="?s=system/module/lists">
+                            <i class="'fa-w fa fa-cubes"></i> 模块管理 </a>
                     </li>
                 </ul>
             </div>

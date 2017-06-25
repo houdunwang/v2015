@@ -1,0 +1,30 @@
+{
+  "name": "houdunwang/qq",
+  "description": "QQ登录组件",
+  "keywords": [
+    "houdunwang",
+    "hdphp",
+    "后盾网",
+    "后盾人",
+    "向军老师",
+    "邮件处理"
+  ],
+  "homepage": "http://www.houdunwang.com/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "后盾网向军",
+      "email": "2300071698@qq.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "autoload": {
+    "files": [],
+    "psr-4": {
+      "houdunwang\\qq\\": "src"
+    }
+  }
+}

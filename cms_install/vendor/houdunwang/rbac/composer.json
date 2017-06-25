@@ -1,0 +1,34 @@
+{
+  "name": "houdunwang/rbac",
+  "description": "基于角色的访问控制（Role-Based Access Control）作为传统访问控制（自主访问，强制访问）的有前景的代替受到广泛的关注。在RBAC中，权限与角色相关联，用户通过成为适当角色的成员而得到这些角色的权限。这就极大地简化了权限的管理。",
+  "keywords": [
+    "houdunwang",
+    "hdphp",
+    "后盾网",
+    "后盾人",
+    "向军老师",
+    "rbac"
+  ],
+  "homepage": "http://www.houdunwang.com/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "后盾网向军",
+      "email": "2300071698@qq.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=5.4.0",
+    "houdunwang/config": "~1.0",
+    "houdunwang/arr": "~1.0",
+    "houdunwang/session": "~1.0",
+    "houdunwang/db": "~1.0"
+  },
+  "autoload": {
+    "files": [],
+    "psr-4": {
+      "houdunwang\\rbac\\": "src"
+    }
+  }
+}

@@ -11,6 +11,7 @@
                 <tr>
                     <th width="80">编号</th>
                     <th>栏目名称</th>
+                    <th>封面栏目</th>
                     <th width="180">操作</th>
                 </tr>
                 </thead>
@@ -19,6 +20,13 @@
                     <tr>
                         <td>{{$d['cid']}}</td>
                         <td>{{$d['_catname']}}</td>
+                        <td>
+                            <if value="$d['ishome']">
+                                <i class="fa fa-check-circle alert-success"></i>
+                                <else/>
+                                <i class="fa fa-times-circle"></i>
+                            </if>
+                        </td>
                         <td>
                             <div class="btn-group btn-group-sm" role="group" aria-label="...">
                                 <a href="{{u('post',['cid'=>$d['cid']])}}" class="btn btn-default">编辑</a>

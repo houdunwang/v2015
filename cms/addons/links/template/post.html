@@ -1,0 +1,33 @@
+<extend file='resource/admin/module.php'/>
+<block name="module_menu">
+    <li class="list-group-item">
+        <a href="{{url('admin.index')}}">友情链接列表</a>
+    </li>
+    <li class="list-group-item">
+        <a href="{{url('admin.post')}}">添加链接</a>
+    </li>
+</block>
+<block name="content">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="{{u('lists')}}">修改链接</a></li>
+    </ul>
+    <form action="" method="post" class="form-horizontal">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="" class="col-sm-2 control-label">链接名称</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="title" class="form-control" value="{{$model['title']}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="" class="col-sm-2 control-label">链接地址</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="url" class="form-control" value="{{$model['url']}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary">保存</button>
+    </form>
+</block>

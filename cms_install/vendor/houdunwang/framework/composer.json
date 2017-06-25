@@ -1,0 +1,76 @@
+{
+  "name": "houdunwang/framework",
+  "description": "Hdphp Framework (Kernel)",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "后盾网向军",
+      "email": "2300071698@qq.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=5.6.0",
+    "houdunwang/arr": "~1.0",
+    "houdunwang/backup": "~1.0",
+    "houdunwang/cache": "~1.0",
+    "houdunwang/cart": "~1.0",
+    "houdunwang/cli": "~1.0",
+    "houdunwang/code": "~1.0",
+    "houdunwang/collection": "~1.0",
+    "houdunwang/config": "~1.0",
+    "houdunwang/oss": "~1.0",
+    "houdunwang/container": "~1.0",
+    "houdunwang/cookie": "~1.0",
+    "houdunwang/crypt": "~1.0",
+    "houdunwang/curl": "~1.0",
+    "houdunwang/database": "~1.0",
+    "houdunwang/db": "~1.0",
+    "houdunwang/dir": "~1.0",
+    "houdunwang/error": "~1.0",
+    "houdunwang/file": "~1.0",
+    "houdunwang/html": "~1.0",
+    "houdunwang/image": "~1.0",
+    "houdunwang/lang": "~1.0",
+    "houdunwang/log": "~1.0",
+    "houdunwang/mail": "~1.0",
+    "houdunwang/middleware": "~1.0",
+    "houdunwang/model": "~1.0",
+    "houdunwang/page": "~1.0",
+    "houdunwang/qq": "~1.0",
+    "houdunwang/rbac": "~1.0",
+    "houdunwang/request": "~1.0",
+    "houdunwang/response": "~1.0",
+    "houdunwang/route": "~1.0",
+    "houdunwang/session": "~1.0",
+    "houdunwang/str": "~1.0",
+    "houdunwang/tool": "~1.0",
+    "houdunwang/validate": "~1.0",
+    "houdunwang/view": "~1.0",
+    "houdunwang/xml": "~1.0",
+    "houdunwang/zip": "~1.0",
+    "houdunwang/wechat": "~1.0",
+    "houdunwang/loader": "~1.0",
+    "houdunwang/qrcode": "~1.0",
+    "houdunwang/aliyunsms": "~1.0",
+    "houdunwang/cloud": "~1.0",
+    "vlucas/phpdotenv": "~2.0",
+    "houdunwang/alipay": "~1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.1"
+  },
+  "autoload": {
+    "files": [
+      "src/helper.php"
+    ],
+    "psr-4": {
+      "houdunwang\\framework\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "tests\\": "tests"
+    }
+  }
+}

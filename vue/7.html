@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="hdcms">
+    <input type="text" v-model="n1"> +
+    <input type="text" v-model="n2"> =
+    <input type="text" v-model="sum">
+</div>
+<script>
+    var app = new Vue({
+        el: '#hdcms',
+        computed: {
+            sum() {
+                return this.n1*1+this.n2*1;
+            }
+        },
+        data: {
+            n1: 0,
+            n2: 0
+        }
+    });
+</script>
+</body>
+</html>

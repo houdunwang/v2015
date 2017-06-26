@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+    <script src="node_modules/axios/dist/axios.js"></script>
+    <script src="node_modules/lodash/lodash.js"></script>
+</head>
+<body>
+<div id="hdcms">
+    <input type="text" v-model="age">
+    <span v-if="age<20">小孩</span>
+    <span v-else-if="age<30">青年</span>
+    <span v-else-if="age<50">壮年</span>
+    <span v-else>老年</span>
+    <hr>
+    <input type="checkbox" v-model="copyright"> 接收协议<br/>
+    <span v-if="copyright==false">请先接受协议</span>
+    <button v-else>注册</button>
+</div>
+<script>
+    var app = new Vue({
+        el: '#hdcms',
+        data: {
+            copyright:false,
+            age:0
+        }
+    });
+</script>
+</body>
+</html>

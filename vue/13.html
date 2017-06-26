@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+    <script src="node_modules/axios/dist/axios.js"></script>
+    <script src="node_modules/lodash/lodash.js"></script>
+</head>
+<body>
+<div id="hdcms">
+    <h1 :style="{color:'red',fontSize:size+'px'}">后盾人</h1>
+    <h2 :style="style">后盾人</h2>
+    <h3 :style="[hdcms]">houdunren.com</h3>
+    <input type="number" v-model="size">
+</div>
+<script>
+    var app = new Vue({
+        el: '#hdcms',
+        data: {
+            red: 'green',
+            size: 16,
+            style: {
+                color: 'blue'
+            },
+            hdcms:{
+                color:'yellow',
+                backgroundColor:'blue'
+            }
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+    <script src="node_modules/axios/dist/axios.js"></script>
+    <script src="node_modules/lodash/lodash.js"></script>
+</head>
+<body>
+<div id="hdcms">
+    <table border="1">
+        <tr>
+            <th>序号</th>
+            <th>编号</th>
+            <th>标题</th>
+            <th>老师</th>
+        </tr>
+        <tbody>
+        <tr v-for="(field,key) of news">
+            <td>{{key+1}}</td>
+            <td>{{field.id}}</td>
+            <td>{{field.title}}</td>
+            <td>{{name}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script>
+    var app = new Vue({
+        el: '#hdcms',
+        data: {
+            name:'向军老师',
+            news:[
+                {id:22,title:'houdunren.com'},
+                {id:77,title:'后盾人'}
+            ]
+        }
+    });
+</script>
+</body>
+</html>

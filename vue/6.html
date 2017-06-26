@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+</head>
+<body>
+<style>
+    .hd1{color:red;}
+    .hd2{color:green;}
+</style>
+<div id="hdcms">
+    <h1 v-once="">{{n}}</h1>
+    {{n+3}}
+    <h1 :class="'hd'+n">你好后盾人</h1>
+    <input type="text" v-model="n">
+    <br>
+    <input type="radio" v-model="n" value="1"> 红
+    <input type="radio" v-model="n" value="2"> 绿
+</div>
+<script>
+    var app = new Vue({
+        el: '#hdcms',
+        data: {
+           n:1
+        }
+    });
+</script>
+</body>
+</html>

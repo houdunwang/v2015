@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+    <script src="node_modules/axios/dist/axios.js"></script>
+    <script src="node_modules/lodash/lodash.js"></script>
+</head>
+<body>
+<div id="hdcms">
+    <li v-for="(item,key,index) in user">
+      {{index}} - {{key}} -  {{item}}
+    </li>
+    <table border="1" width="100%">
+        <tr v-for="v in 20">
+            <td>{{v}}</td>
+        </tr>
+    </table>
+</div>
+<script>
+    var app = new Vue({
+        el: '#hdcms',
+        data: {
+            user: {
+                name: '向军',
+                age: '22',
+                sex: 'boy'
+            }
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+    <script src="node_modules/axios/dist/axios.js"></script>
+    <script src="node_modules/lodash/lodash.js"></script>
+</head>
+<body>
+<div id="hdcms">
+    <template v-if="regType=='mail'">
+        邮箱: <input type="text" name="username" key="mail-register">
+    </template>
+    <template v-else>
+        手机: <input type="text" name="username" key="phone-register">
+    </template>
+    <br>
+    <input type="radio" value="mail" v-model="regType"> 邮箱注册
+    <input type="radio" value="phone" v-model="regType"> 手机注册
+</div>
+<script>
+    var app = new Vue({
+        el: '#hdcms',
+        data: {
+            regType: 'mail'
+        }
+    });
+</script>
+</body>
+</html>

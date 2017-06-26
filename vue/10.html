@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+    <script src="node_modules/axios/dist/axios.js"></script>
+    <script src="node_modules/lodash/lodash.js"></script>
+</head>
+<body>
+<div id="hdcms">
+    <input type="text" v-model="word">
+    <h1>
+        结果: {{result}}
+    </h1>
+</div>
+<script>
+    var app = new Vue({
+        el: '#hdcms',
+        watch: {
+            word: _.debounce(
+                function (newV, oldV) {
+                    console.log(newV);
+                    axios.get('9.php?word=' + newV).then(function (response) {
+                        app.result = response.data;
+                    })
+                }, 500
+            )
+        },
+        data: {
+            word: '',
+            result: ''
+        }
+    });
+</script>
+</body>
+</html>

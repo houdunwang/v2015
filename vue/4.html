@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="hdcms">
+    <h1>{{hd}}</h1>
+    <h3 v-once>{{hd}}</h3>
+    <input type="text" v-model="hd">
+</div>
+<script>
+    var app = new Vue({
+        el: '#hdcms',
+        data: {
+            hd: '后盾人'
+        }
+    });
+</script>
+</body>
+</html>

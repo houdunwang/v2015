@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+    <script src="node_modules/axios/dist/axios.js"></script>
+    <script src="node_modules/lodash/lodash.js"></script>
+</head>
+<body>
+<div id="hdcms">
+    <li v-for="v in stus">
+        {{v.name}} -  {{v.sex}}
+    </li>
+    {{type}}
+    <input type="radio" v-model="type" value="girl"> 女孩
+    <input type="radio" v-model="type" value="boy"> 男孩
+</div>
+<script>
+    var app = new Vue({
+        el: '#hdcms',
+        computed:{
+          stus(){
+              if(this.type=='all'){
+                  return this.user;
+              }else{
+                  return this.user.filter((v)=>{
+                      return v.sex ==this.type;
+                  });
+              }
+          }
+        },
+        data: {
+            type:'all',
+            user:[
+                {name:'小明',sex:'boy'},
+                {name:'小强',sex:'boy'},
+                {name:'小丽',sex:'girl'},
+                {name:'小梅',sex:'girl'}
+            ]
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+    <script src="node_modules/axios/dist/axios.js"></script>
+    <script src="node_modules/lodash/lodash.js"></script>
+</head>
+<body>
+<div id="hdcms">
+    <li v-for="(v,k) in comments">
+        {{v.id}} - {{v.content}}
+        <button @click="remove(v.id)">删除</button>
+    </li>
+</div>
+<script>
+    var app = new Vue({
+        el: '#hdcms',
+        data: {
+            comments: [
+                {id: 2, content: 'HDPHP'},
+                {id: 4, content: 'HDCMS'},
+                {id: 1, content: '后盾人'},
+                {id: 3, content: '向军老师'},
+            ]
+        },
+        methods:{
+            remove(k){
+                console.log(k);
+            }
+        }
+    });
+</script>
+</body>
+</html>

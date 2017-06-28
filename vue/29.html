@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+    <script src="node_modules/axios/dist/axios.js"></script>
+    <script src="node_modules/lodash/lodash.js"></script>
+</head>
+<body>
+<div id="hdcms">
+    <input type="text" @keyup.ctrl.65="keyEvent">
+</div>
+<script>
+    var app = new Vue({
+        el: '#hdcms',
+        data: {},
+        methods: {
+            keyEvent(){
+                console.log('hdphp');
+            }
+        }
+    });
+</script>
+</body>
+</html>

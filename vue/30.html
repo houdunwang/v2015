@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+    <script src="node_modules/axios/dist/axios.js"></script>
+    <script src="node_modules/lodash/lodash.js"></script>
+</head>
+<body>
+<div id="hdcms">
+    <div :style='style' @contextmenu.prevent="handler"></div>
+</div>
+<script>
+    var app = new Vue({
+        el: '#hdcms',
+        data: {
+            style: {border: "solid 2px red", height: "300px"}
+        },
+        methods: {
+            handler(){
+                alert('hdphp');
+            }
+        }
+    });
+</script>
+</body>
+</html>

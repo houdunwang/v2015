@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+    <script src="node_modules/axios/dist/axios.js"></script>
+    <script src="node_modules/lodash/lodash.js"></script>
+</head>
+<body>
+<div id="hdcms">
+    <li v-for="v in comments">
+        {{v.content}}
+    </li>
+    <textarea v-model="current_content" cols="30" rows="10"></textarea><br>
+    <button v-on:click="push">发表</button>
+</div>
+<script>
+    var app = new Vue({
+        el: '#hdcms',
+        data: {
+            //当前用户输入内容
+            current_content:'',
+            comments: [
+                {content: '后盾人'},
+                {content: '向军老师'},
+            ]
+        },
+        methods:{
+            push(){
+                var content = {content:this.current_content}
+                this.comments.push(content);
+                this.current_content ='';
+            }
+        }
+    });
+</script>
+</body>
+</html>

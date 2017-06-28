@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+    <script src="node_modules/axios/dist/axios.js"></script>
+    <script src="node_modules/lodash/lodash.js"></script>
+</head>
+<body>
+<div id="hdcms">
+    <div @click.capture="box" :style="{border:'solid 2px red'}">
+        <a href="http://houdunwang.com" @click.stop.prevent="links">后盾网</a>
+    </div>
+</div>
+<script>
+    var app = new Vue({
+        el: '#hdcms',
+        data: {},
+        methods: {
+            box(){
+                alert('div');
+            },
+            links(){
+                alert('houdunwang.com');
+            }
+        }
+    });
+</script>
+</body>
+</html>

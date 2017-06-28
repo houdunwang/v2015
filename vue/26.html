@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+    <script src="node_modules/axios/dist/axios.js"></script>
+    <script src="node_modules/lodash/lodash.js"></script>
+</head>
+<body>
+<div id="hdcms">
+    <form action="" @submit.prevent="post('hdphp')">
+        <h1>{{times}}</h1>
+        <button>提交</button>
+    </form>
+</div>
+<script>
+    var app = new Vue({
+        el: '#hdcms',
+        data: {
+            times: new Date()
+        },
+        methods: {
+            post(num){
+                alert(num);
+            }
+        }
+    });
+</script>
+</body>
+</html>

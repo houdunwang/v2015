@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+    <script src="node_modules/axios/dist/axios.js"></script>
+    <script src="node_modules/lodash/lodash.js"></script>
+</head>
+<body>
+<div id="hdcms">
+    <a href="http://houdunren.com" @click.prevent.stop.once="links">links</a>
+</div>
+<script>
+    var app = new Vue({
+        el: '#hdcms',
+        data: {},
+        methods: {
+            links(){
+                alert('houdunwang.com');
+            }
+        }
+    });
+</script>
+</body>
+</html>

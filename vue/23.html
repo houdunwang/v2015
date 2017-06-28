@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+    <script src="node_modules/axios/dist/axios.js"></script>
+    <script src="node_modules/lodash/lodash.js"></script>
+</head>
+<body>
+<div id="hdcms">
+    <li v-for="(v,k) in comments">
+        {{v.id}} - {{v.content}}
+        <button v-on:click="remove(k)">删除</button>
+    </li>
+    <textarea v-model="current_content" cols="30" rows="10"></textarea><br>
+    <button v-on:click="push('end')">发表到后面</button>
+    <button v-on:click="push('pre')">发表到前面</button>
+    <br>
+    <button v-on:click="del('last')">删除最后一条评论</button>
+    <button v-on:click="del('first')">删除第一条评论</button>
+    <br>
+    <button v-on:click="sort()">按照编号排序</button>
+    <button v-on:click="reverse()">反转顺序</button>
+
+</div>
+<script>
+    var app = new Vue({
+        el: '#hdcms',
+        data: {
+            //当前用户输入内容
+            current_content: '',
+            comments: [
+                {id: 2, content: 'HDPHP'},
+                {id: 4, content: 'HDCMS'},
+                {id: 1, content: '后盾人'},
+                {id: 3, content: '向军老师'},
+            ]
+        },
+        methods: {
+            sort(){
+                this.comments.sort(function (a, b) {
+                    return a.id > b.id;
+                })
+            },
+            reverse(){
+                this.comments.reverse();
+            },
+            remove(k){
+                this.comments.splice(k, 1);
+            },
+            push(type){
+                var id = this.comments.length+1;
+                var content = {id:id,content: this.current_content}
+                switch (type) {
+                    case 'end':
+                        this.comments.push(content);
+                        break;
+                    case 'pre':
+                        this.comments.unshift(content);
+                        break;
+                }
+                this.current_content = '';
+            },
+            del(type){
+                switch (type) {
+                    case 'last':
+                        this.comments.pop();
+                        break;
+                    case 'first':
+                        this.comments.shift();
+                        break;
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

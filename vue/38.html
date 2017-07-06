@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          rel="stylesheet">
+</head>
+<body>
+<div id="hdcms">
+    <hd-slide></hd-slide>
+    <hd-news></hd-news>
+</div>
+<script>
+    Vue.component('hdSlide', {
+        template: '<h1>houdunren.com</h1>'
+    })
+    var hdNews = {
+        template: "<h2>你好后盾人</h2>",
+    };
+    new Vue({
+        el: '#hdcms',
+        components: {hdNews}
+    });
+</script>
+</body>
+</html>

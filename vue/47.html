@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="hdcms">
+    <button @click="type=!type">切换</button>
+    <transition name="hd">
+        <h1 v-if="type">houdunren.com后盾人</h1>
+    </transition>
+</div>
+<script>
+    new Vue({
+        el: '#hdcms',
+        data:{
+            type:false
+        }
+    });
+</script>
+<style>
+    .hd-enter,.hd-leave-to{
+        opacity: 0;
+    }
+    .hd-enter-to{
+    }
+    .hd-enter-active{
+        transition: all 5s;
+        color:red;
+    }
+    .hd-leave-active{
+        transition: all .5s;
+        color:green;
+    }
+</style>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+    <link rel="stylesheet" href="animate.css">
+</head>
+<body>
+<div id="hdcms">
+    <button @click="type=!type">切换</button>
+    <transition enter-active-class="animated slideInDown" leave-active-class="animated zoomOut">
+        <h1 v-if="type">houdunren.com后盾人</h1>
+    </transition>
+</div>
+<script>
+    new Vue({
+        el: '#hdcms',
+        data:{
+            type:false
+        }
+    });
+</script>
+</body>
+</html>

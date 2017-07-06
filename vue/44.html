@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div id="hdcms">
+    <form action="" class="form-horizontal">
+        <bs-panel>
+            <h4 slot="title">hdphp开源框架</h4>
+            <bs-input title="标题" value="后盾人" slot="body"></bs-input>
+            <bs-input title="点击数" value="100" slot="body"></bs-input>
+            abc
+        </bs-panel>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/x-template" id="bsPanel">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+             <slot name="title"></slot>
+        </div>
+        <div class="panel-body">
+            <slot name="body"></slot>
+        </div>
+        <h1>
+            <slot></slot>
+        </h1>
+    </div>
+</script>
+<script type="text/x-template" id="bsInput">
+    <div class="form-group">
+        <label for="" class="col-sm-2 control-label">{{title}}</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" :value="value">
+        </div>
+    </div>
+</script>
+<script>
+    var bsPanel = {
+        template: "#bsPanel"
+    };
+    var bsInput = {
+        template: "#bsInput",
+        props: ['title', 'value']
+    }
+    new Vue({
+        el: '#hdcms',
+        components: {bsPanel, bsInput},
+    });
+</script>
+</body>
+</html>

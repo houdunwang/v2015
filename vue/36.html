@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          rel="stylesheet">
+</head>
+<body>
+<div id="hdcms">
+    <form action="" class="form-horizontal">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">文章管理</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="" class="col-sm-2 control-label">标题</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" v-model="field.title">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="" class="col-sm-2 control-label">栏目</label>
+                    <div class="col-sm-10">
+                        <select v-model="field.cid" class="form-control" multiple>
+                            <option value="">==请选择栏目==</option>
+                            <option v-for="v in category" :value="v.cid">{{v.title}}</option>
+                        </select>
+                    </div>
+                    {{field.cid}}
+                </div>
+                <div class="form-group">
+                    <label for="" class="col-sm-2 control-label">属性</label>
+                    <div class="col-sm-10">
+                        <div class="checkbox-inline" v-for="v in flag">
+                            <input type="checkbox" v-model="field.flag" :value="v.name"> {{v.title}}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="" class="col-sm-2 control-label">点击数</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" v-model="field.click">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="" class="col-sm-2 control-label">链接</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" v-model="field.url">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="" class="col-sm-2 control-label">摘要</label>
+                    <div class="col-sm-10">
+                        <textarea name="" class="form-control"
+                                  v-model="field.description"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="" class="col-sm-2 control-label">类型</label>
+                    <div class="col-sm-10">
+                        <div class="radio-inline" v-for="v in type">
+                            <input type="radio" v-model="field.type" :value="v.name"> {{v.title}}
+                        </div>
+                        {{field.type}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary col-sm-offset-2">保存</button>
+    </form>
+</div>
+<script>
+    var app = new Vue({
+        el: '#hdcms',
+        data: {
+            type:[
+                {name:'draft',title:'草稿'},
+                {name:'send',title:'正式发布'},
+                {name:'times',title:'延迟发布'}
+            ],
+            flag:[
+                {name:'hot',title:'热门'},
+                {name:'recommend',title:'推荐'}
+            ],
+            category: [
+                {cid: 1, title: 'hdphp新闻'},
+                {cid: 2, title: 'HDCMS'},
+                {cid: 3, title: '后盾人新闻'},
+                {cid: 4, title: '后盾IT教育新闻'}
+            ],
+            field: {
+                title: '后盾人 人人做后盾',
+                click: 399,
+                url: 'houdunren.com',
+                description: '这是内容接要',
+                type: 'send',
+                flag: [],
+                cid: []
+            }
+        },
+        methods: {}
+    });
+</script>
+</body>
+</html>

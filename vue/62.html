@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+    <script src="vue-router.js"></script>
+</head>
+<body>
+<style>
+.menu{border:solid 2px #999;padding:10px;display: block;}
+.news{float:left;border:solid 1px red;padding:20px;width:300px;}
+.slide{float:left;border:solid 1px red;padding:20px;width:300px;}
+</style>
+<div id="hdcms">
+    <router-view class="menu"></router-view>
+    <router-view class="news" name="news"></router-view>
+    <router-view class="slide" name="slide"></router-view>
+</div>
+<script type="text/x-template" id="menu">
+    <div>
+        <a href="http://houdunren.com">后盾人</a>
+        <a href="http://www.houdunwang.com">后盾IT教育</a>
+    </div>
+</script>
+<script type="text/x-template" id="news">
+    <div>
+        <li v-for="v in news">{{v.title}}</li>
+    </div>
+</script>
+<script type="text/x-template" id="slide">
+    <div>
+        <li v-for="v in data">{{v.title}}</li>
+    </div>
+</script>
+<script>
+    const menu = {
+        template: '#menu',
+    }
+    const news = {
+        template: '#news',
+        data(){
+            return {
+                news:[
+                    {title:'houdunren.com'},
+                    {title:'hdphp.com'},
+                ]
+            }
+        }
+    }
+    const slide = {
+        template: '#slide',
+        data(){
+            return {
+                data:[
+                    {title:'后盾人'},
+                    {title:'后盾PHP培训'},
+                ]
+            }
+        }
+    }
+    let routes = [
+        {
+            path: '/', components: {
+            default: menu,
+            news: news,
+            slide: slide
+        }
+        },
+    ];
+    //要把组件交给路由器
+    let router = new VueRouter({routes});
+    new Vue({
+        el: '#hdcms',
+        router
+    });
+</script>
+</body>
+</html>

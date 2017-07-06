@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+    <script src="velocity.min.js"></script>
+</head>
+<body>
+<div id="hdcms">
+    <button @click="type=!type">切换</button>
+    <transition @before-enter="beforeEnter" @enter="enter" @leave="leave" :css="false">
+        <h1 v-if="type">houdunren.com后盾人</h1>
+    </transition>
+</div>
+<script>
+    new Vue({
+        el: '#hdcms',
+        data: {
+            type: false
+        },
+        methods: {
+            beforeEnter(el){
+                el.style.opacity=0;
+            },
+            enter(el,done){
+                Velocity(el,{opacity:1},{ duration: 2000 ,complete:done})
+            },
+            leave(el,done){
+                Velocity(el,{opacity:0,rotateZ:'-690deg'},{ duration: 2000 ,complete:done})
+            }
+        }
+    });
+</script>
+</body>
+</html>

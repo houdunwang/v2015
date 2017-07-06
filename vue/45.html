@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div id="hdcms">
+    <hd-list :data="news">
+        <template scope="v">
+            <li>
+                <h1>{{v.field.title}}</h1>
+            </li>
+        </template>
+    </hd-list>
+</div>
+<script type="text/x-template" id="hdList">
+    <ul>
+       <slot v-for="v in data" :field="v"></slot>
+    </ul>
+</script>
+<script>
+    var hdList = {
+        template: "#hdList",
+        props:['data']
+    };
+    new Vue({
+        el: '#hdcms',
+        components: {hdList},
+        data:{
+            news:[
+                {title:'hdcms'},
+                {title:'后盾人'}
+            ]
+        }
+    });
+</script>
+</body>
+</html>

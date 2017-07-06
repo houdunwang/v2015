@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+    <script src="vue-router.js"></script>
+</head>
+<body>
+<div id="hdcms">
+    <router-link to="/content">内容 </router-link>
+    <router-view></router-view>
+</div>
+<script type="text/x-template" id="content">
+    <div>
+        cid:{{$route.params.cid}} - id:{{$route.params.id}}
+        <br>
+        <button @click="show">检测参数</button>
+    </div>
+</script>
+<script>
+    const content={
+        template:'#content',
+        methods:{
+            show(){
+                console.log(this.$route.params);
+            }
+        }
+    }
+    let routes=[
+        {path:'/content-:cid-show-:id.html',component:content},
+    ];
+    //要把组件交给路由器
+    let router = new VueRouter({routes});
+    new Vue({
+        el: '#hdcms',
+        router
+    });
+</script>
+</body>
+</html>

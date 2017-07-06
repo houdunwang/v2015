@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          rel="stylesheet">
+</head>
+<body>
+<div id="hdcms">
+    <hd-news hd="abc" cms="后盾人houdunwang.com" :show-del-button="true" :lists="news"></hd-news>
+</div>
+<script type="text/x-template" id="hdNews">
+    <div>
+        {{hd}}-{{cms}}- {{showDelButton}}
+        <li v-for="(v,k) in lists">
+            {{v.title}}
+            <button @click="del(k)" v-if="showDelButton">删除</button>
+        </li>
+    </div>
+</script>
+<script>
+    var hdNews = {
+        template: "#hdNews",
+        props:['hd','cms','showDelButton','lists'],
+        data(){
+            return {};
+        }
+    };
+    new Vue({
+        el: '#hdcms',
+        components: {hdNews},
+        data: {
+            news:[
+                {title:'hdcms'},{title:'hdphp'},{title:'houdunren.com'}
+            ]
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div id="hdcms">
+    <div :is="formType"></div>
+    <input type="radio" v-model="formType" value="hdInput"> 文本框
+    <input type="radio" v-model="formType" value="hdTextarea"> 文本域
+</div>
+<script>
+    var hdInput = {
+        template: "<div><input/></div>",
+    };
+    var hdTextarea = {
+        template: "<div><textarea></textarea></div>",
+    };
+    new Vue({
+        el: '#hdcms',
+        components: {hdInput,hdTextarea},
+        data:{
+            formType:"hdTextarea"
+        }
+    });
+</script>
+</body>
+</html>

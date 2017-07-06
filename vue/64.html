@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+    <script src="vue-router.js"></script>
+</head>
+<body>
+<div id="hdcms">
+    <router-link to="/">首页</router-link>
+    <a href="http://www.houdunwang.com">后盾人</a>
+    <router-link to="/about">关于我们</router-link>
+    <router-view></router-view>
+</div>
+<script type="text/x-template" id="home">
+    <div>
+        <li v-for="v in news">
+            <a href="" @click.prevent="go(v.id)">{{v.title}}</a>
+        </li>
+    </div>
+</script>
+<script type="text/x-template" id="content">
+    <div>
+        <h1>{{field.title}}-{{field.id}}</h1>
+        <p>
+            {{field.content}}
+        </p>
+        <a href="" @click.prevent="back()">返回</a>
+    </div>
+</script>
+<script>
+    var data = [
+        {id:1,title:'HDPHP开源免费框架',content:'这是内容....'},
+        {id:2,title:'HDCMS内容管理系统',content:'这是HDCMS内容....'},
+        {id:3,title:'关于我们',content:'一个认真录制视频教程的有激情的团队!!!!'}
+    ];
+    const home = {
+        template: '#home',
+        data(){
+            return {
+                news:data
+            }
+        },
+        methods:{
+            go(id){
+                //写业务逻辑
+//                var url = '/content/'+id;
+                //{name:'content',params:{id:id}}
+                var url ={path:'/content/'+id}
+                this.$router.push(url);
+            }
+        }
+    }
+    const content = {
+        template: '#content',
+        data(){
+          return {
+              field:{}
+          }
+        },
+        watch:{
+          '$route'(to,from){
+              this.load();
+          }
+        },
+        mounted(){
+            this.load();
+        },
+        methods:{
+            load(){
+                var id =this.$route.params.id;
+                for(let k=0;k<data.length;k++){
+                    if(data[k].id==id){
+                        this.field = data[k];
+                    }
+                }
+            },
+            back(){
+                this.$router.go(-1);
+            }
+        }
+    }
+    let routes = [
+        {path: '/', component: home},
+        {path: '/content/:id', component: content,name:'content'},
+        {path: '/content/3', alias:['/about']},
+        {path: '/content/2', alias:['/hdphp']}
+    ];
+    //要把组件交给路由器
+    let router = new VueRouter({routes});
+    new Vue({
+        el: '#hdcms',
+        router
+    });
+</script>
+</body>
+</html>

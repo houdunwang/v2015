@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="hdcms">
+    <span v-star="color">标题</span>
+    <input type="text" v-model="color" v-focus>
+    <h1 v-hide="false">hdphp</h1>
+</div>
+<script>
+    new Vue({
+        el: '#hdcms',
+        data: {
+            title: 'houdunren.com',
+            color: 'red'
+        },
+        directives: {
+            star(el, bind){
+                var color = bind.value ? bind.value : 'red';
+                el.style.cssText = "color:" + color;
+            },
+            //bind update
+            focus: {
+                inserted(el, bind){
+                    el.focus();
+                }
+            },
+            hide(el, bind){
+                console.log(bind);
+                if (bind.value) {
+                    el.style.cssText = "display:none";
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          rel="stylesheet">
+</head>
+<body>
+<div id="hdcms">
+    <hd-news></hd-news>
+    <hr>
+    <hd-news></hd-news>
+    <hr>
+    <hd-news></hd-news>
+</div>
+<script type="text/x-template" id="hdNews">
+    <div>
+        <li v-for="(v,k) in news">
+            {{v.title}}
+            <button @click="del(k)">删除</button>
+        </li>
+    </div>
+</script>
+<script>
+    var hdNews = {
+        template: "#hdNews",
+        data(){
+            return {
+                news: [
+                    {title: 'hdcms'},
+                    {title: 'hdphp'}
+                ]
+            };
+        },
+        methods: {
+            del(k){
+                this.news.splice(k, 1);
+            }
+        }
+    };
+    new Vue({
+        el: '#hdcms',
+        components: {hdNews},
+        data: {}
+    });
+</script>
+</body>
+</html>

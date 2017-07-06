@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          rel="stylesheet">
+</head>
+<body>
+<div id="hdcms">
+    <hd-news :show-del-button="true"></hd-news>
+</div>
+<script type="text/x-template" id="hdNews">
+    <div>
+        <li v-for="(v,k) in lists">
+            {{v.title}}
+            <button @click="del(k)" v-if="showDelButton">删除</button>
+        </li>
+    </div>
+</script>
+String Number Boolean Function Object Array
+<script>
+    var hdNews = {
+        template: "#hdNews",
+        props: {
+            showDelButton: {
+                type: [Boolean, Number],
+                required: true
+            },
+//            showDelButton: {
+//                validator(v){
+//                    return v===1 || v===0;
+//                },
+//            },
+            lists: {
+                type: Array,
+                default(){
+                    return [{title: '后盾人'}]
+                }
+            }
+        },
+        data(){
+            return {};
+        }
+    };
+    new Vue({
+        el: '#hdcms',
+        components: {hdNews},
+        data: {
+            news: [
+                {title: 'hdcms'}, {title: 'hdphp'}, {title: 'houdunren.com'}
+            ]
+        }
+    });
+</script>
+</body>
+</html>

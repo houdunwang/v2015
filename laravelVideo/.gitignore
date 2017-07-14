@@ -1,6 +1,11 @@
-.idea
-.DS_Store
-attachment
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
 /vendor
-/storage
-composer.lock
+/.idea
+/.vagrant
+Homestead.json
+Homestead.yaml
+npm-debug.log
+.env

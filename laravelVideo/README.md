@@ -28,6 +28,30 @@ Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class
 #生成辅助文件
 php artisan ide-helper:generate
 ```
+### laracasts/flash
+laracasts/flash用于控制消息显示处理
+
+```
+#安装
+composer require laracasts/flash
+
+#在 config/app.php 文件中的providers 配置段中添加以下
+'providers' => [
+    Laracasts\Flash\FlashServiceProvider::class,
+];
+
+#生成模板
+php artisan vendor:publish --provider="Laracasts\Flash\FlashServiceProvider"
+```
+
+#### 模板中定义
+
+```
+ @include('flash::message')
+ <script>
+     $('#flash-overlay-modal').modal();
+ </script>
+```
 
 ## 解决mysql5.7以下出错的问题
 

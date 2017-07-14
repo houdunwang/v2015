@@ -1,0 +1,338 @@
+html,
+body,
+h1,
+h2,
+h3 {
+  font-family: "Helveticia neue", "Arial", "Tahoma", "Microsoft YaHei", "微软雅黑", "Hiragino Sans GB", "冬青黑体", "SimSun", "宋体", "STHeiti", "华文黑体", sans-serif;
+}
+.star:before {
+  color: #d20300;
+  content: ' * ';
+}
+a {
+  text-decoration: none !important;
+}
+.h4,
+h4 {
+  font-size: 18px;
+}
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+table > thead > tr > td,
+table > tbody > tr > td,
+table > tfoot > tr > td {
+  vertical-align: middle !important;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.admin-top {
+  background: #222222;
+  margin-bottom: 10px;
+}
+.admin-top .navbar {
+  border: 0;
+  margin-bottom: 0;
+}
+.list-group .list-group-item.active {
+  background: #428bca;
+  border-color: #428bca;
+}
+.list-group .list-group-item.active a {
+  color: #ffffff;
+}
+.nav.nav-tabs {
+  margin-bottom: 20px;
+  border-color: #428bca;
+}
+.nav.nav-tabs li.active a,
+.nav.nav-tabs li.active a:hover,
+.nav.nav-tabs li.active a:focus {
+  border: 1px solid #428bca !important;
+  background-color: #428bca !important;
+  color: #ffffff;
+}
+.nav.nav-tabs li a:hover {
+  background: #f3f3f3 !important;
+  border-color: #dcdcdc #dcdcdc #428bca #dcdcdc;
+}
+.nav.nav-tabs li a:focus {
+  background: none;
+  border-bottom: solid 1px #428bca;
+}
+.nav.nav-pills li a {
+  font-size: 14px;
+}
+.ng-cloak {
+  display: none;
+}
+[v-cloak] {
+  display: none;
+}
+.row {
+  margin-left: auto;
+  margin-right: auto;
+}
+#modalMessage {
+  z-index: 10000000000;
+}
+.arrow-left {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 10px solid #dddddd;
+  left: -10px;
+  top: 25px;
+  z-index: 999;
+}
+.arrow-left:after {
+  content: "";
+  left: 1px;
+  top: -8px;
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 11px solid #ffffff;
+}
+.arrow-top {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-color: transparent transparent #d1d1d1 transparent;
+  border-width: 0px 8px 10px 8px;
+  left: 50%;
+  top: -10px;
+  z-index: 999;
+}
+.arrow-top:after {
+  content: "";
+  left: -8px;
+  top: 1px;
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0px 8px 10px 8px;
+  border-bottom-color: #f3f3f3;
+  border-color: transparent transparent #f3f3f3 transparent;
+}
+.site body {
+  background: #f9f9f9 !important;
+  font-size: 14px;
+}
+.site ol.breadcrumb {
+  background: #f9f9f9 !important;
+}
+.site .admin_menu .left-menu div.search-menu input {
+  border-radius: 0;
+  font-size: 14px;
+  height: 43px;
+}
+.site .admin_menu .left-menu .module_action_type {
+  width: 100%;
+  border-bottom: solid 1px #dddddd;
+}
+.site .admin_menu .left-menu .module_action_type .btn {
+  border: none;
+  border-radius: 0px;
+  width: 33.6%;
+  height: 35px;
+  border-width: 0px 1px 0px 1px !important;
+  border-style: solid;
+  border-color: #dddddd;
+}
+.site .admin_menu .left-menu .panel {
+  margin-bottom: 0px;
+  border-radius: 0px;
+  border-bottom: 0;
+  border-top: 0;
+}
+.site .admin_menu .left-menu .panel .panel-heading {
+  position: relative;
+  border-top-width: 0;
+}
+.site .admin_menu .left-menu .panel .panel-heading .panel-collapse {
+  width: 50px;
+  line-height: 2.5em;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  color: #cccccc;
+  text-align: center;
+  background: #eeeeee;
+  border-left: solid 1px #dddddd;
+}
+.site .admin_menu .left-menu .panel ul:last-child {
+  border-bottom: solid 1px #dddddd;
+}
+.site .admin_menu .left-menu .panel ul li {
+  cursor: pointer;
+  padding: 0px;
+}
+.site .admin_menu .left-menu .panel ul li a {
+  padding: 10px 15px;
+  color: #333;
+  display: block;
+}
+.site .admin_menu .left-menu .panel ul li a.append_url {
+  color: #337ab7;
+}
+.site .admin_menu .left-menu .panel ul li.active a {
+  color: #fff !important;
+}
+.site .admin_menu .left-menu .panel ul li.active a.append_url {
+  color: #fff;
+}
+.site .master-footer {
+  text-align: center;
+  border-top: solid 1px #dddddd;
+  padding-top: 15px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  margin-bottom: 50px;
+}
+/*
+|--------------------------------------------------------------------------
+| 后台系统管理平台样式
+|--------------------------------------------------------------------------
+*/
+body.system {
+  font-size: 14px !important;
+  background: url('../images/bg.jpg');
+  background-size: 120%;
+  height: 100%;
+}
+body.system table {
+  table-layout: fixed;
+}
+body.system div.system-container .breadcrumb {
+  padding-left: 0px;
+  margin: 0px 0px .5em 0px;
+}
+body.system div.system-container ul.nav-pills li {
+  margin-right: 10px;
+}
+body.system div.system-container ul.nav-pills li a.tile {
+  margin: 0px;
+  padding: .5em 1em .5em 1em;
+  display: block;
+  width: 8em;
+  text-align: center;
+  background: #438384;
+  color: #eeeeee;
+  opacity: .8;
+  box-shadow: rgba(0, 0, 0, 0.05) 0 2px 4px;
+}
+body.system div.system-container ul.nav-pills li a.tile:hover {
+  background: #006675;
+}
+body.system div.system-container ul.nav-pills li a.tile i {
+  display: block;
+}
+body.system div.system-container ul.nav-pills li a.active {
+  opacity: .95;
+  background: #006675;
+}
+body.system div.system-container .breadcrumb {
+  background: #f5f5f5;
+}
+body.system div.system-container .breadcrumb li a {
+  color: #333333;
+}
+body.system div.system-container .panel .panel-footer a {
+  color: #999999;
+}
+body.system div.system-container h5.page-header {
+  border: none;
+  border-left: 0.3em #333333 solid;
+  padding-left: 1em;
+  margin-top: 40px;
+  padding-bottom: 0px;
+}
+body.system div.system-container h5.page-header:first-of-type {
+  margin-top: 0px !important;
+}
+body.system div.system-container a.tile {
+  margin: 0.4em;
+  padding: .2em 1em .5em 1em;
+  display: block;
+  float: left;
+  width: 8em;
+  text-align: center;
+  background: #eeeeee;
+  color: #333333;
+  box-shadow: rgba(0, 0, 0, 0.05) 0 2px 4px;
+}
+body.system div.system-container a.tile i {
+  display: block;
+  font-size: 2em;
+  margin: 0.3em auto 0 auto;
+}
+body.system div.system-container a.tile:hover {
+  background: #7dacdd;
+  color: #ffffff;
+}
+body.system div.system-container div.footer {
+  margin-bottom: 50px;
+  color: #ffffff;
+  font-size: 15px;
+  text-align: center;
+}
+body.system div.system-container div.footer a {
+  color: #ffffff;
+  display: inline-block;
+  padding: 5px;
+}
+/*
+|--------------------------------------------------------------------------
+| 后台登录与注册样式
+|--------------------------------------------------------------------------
+*/
+.hdcms-login {
+  background: url('../images/bg-sky.jpg');
+}
+.hdcms-login .logo {
+  margin-top: 100px;
+  margin-bottom: 10px;
+}
+.hdcms-login .well {
+  background: #ffffff;
+  opacity: 1;
+  padding: 30px;
+  box-shadow: 0px 0px 100px #dddddd;
+}
+.hdcms-login .copyright {
+  color: #666666;
+  font-size: 14px;
+}
+div.quick_navigate {
+  padding: 3px 6px 2px 6px;
+  background: #F2F2F2;
+  border-top: solid 1px #CCCCCC;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  z-index: 2000;
+}
+div.quick_navigate .btn-group {
+  flex: 1;
+}
+div.quick_navigate .btn-group .btn-sm {
+  border-radius: 0px;
+}
+div.quick_navigate .close_quick_menu {
+  color: #666;
+  cursor: pointer;
+  width: 30px;
+}

@@ -15,7 +15,7 @@ laravel+mysql+php+bootstrap+require.js+阿里云oss+阿里云sms+axios+vuejs+vue
 
 ## 插件
 
-## ideHelper
+### ideHelper
 是一个帮助提高laravel代码提示功能的插件
 
 ```
@@ -27,4 +27,14 @@ Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class
 
 #生成辅助文件
 php artisan ide-helper:generate
+```
+
+## 解决mysql5.7以下出错的问题
+
+在 app\Providers\AppServiceProvider.php 文件里的 boot 方法里设置一个默认值
+
+```
+public function boot(){
+ Schema::defaultStringLength(191);
+}
 ```

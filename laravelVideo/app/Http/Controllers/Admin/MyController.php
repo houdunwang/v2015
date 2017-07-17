@@ -4,10 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\AdminPost;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Auth;
 
-class MyController extends Controller
+class MyController extends CommonController
 {
     public function passwordForm()
     {

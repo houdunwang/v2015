@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <title>后盾人 - houdunren.com</title>
-    <meta name="csrf-token" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
@@ -14,8 +14,8 @@
         //HDJS组件需要的配置
         hdjs = {
             'base': '/node_modules/hdjs',
-            'uploader': '?s=component/upload/uploader&m=member&siteid=18',
-            'filesLists': '?s=component/upload/filesLists&m=member&siteid=18',
+            'uploader': '/component/uploader',
+            'filesLists': '/component/filesLists?',
             'removeImage': '?s=component/upload/removeImage&m=member&siteid=18',
             'ossSign': '?s=component/oss/sign&m=member&siteid=18',
         };
@@ -109,13 +109,10 @@
                 </div>
                 <ul class="list-group menus">
                     <li class="list-group-item" id="39">
-                        <a href="?m=ticket&action=controller/site/lists&type=1&siteid=18&mark=member&mi=39&mt="
-                           class="quickMenuLink">
-                            内容标签 </a>
+                        <a href="/admin/tag">内容标签 </a>
                     </li>
                     <li class="list-group-item" id="40">
-                        <a href="?m=ticket&action=controller/site/charge&type=1&siteid=18&mark=member&mi=40&mt="
-                           class="quickMenuLink">
+                        <a href="/admin/lesson">
                             视频管理 </a>
                     </li>
                 </ul>

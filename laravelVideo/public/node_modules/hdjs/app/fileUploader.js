@@ -10,7 +10,9 @@ define(["jquery", "underscore", "webuploader", "util"], function ($, underscore,
             }
             //针对HDCMS的表单令牌处理
             if ($('meta[name="csrf-token"]').length > 0) {
-                options.data.csrf_token = $('meta[name="csrf-token"]').attr('content');
+                var csrf_token = $('meta[name="csrf-token"]').attr('content');
+                options.data.csrf_token = csrf_token;
+                options.data._token = csrf_token;
             }
             //成功上传的图片
             var images = [];

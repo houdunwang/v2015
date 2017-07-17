@@ -4,17 +4,17 @@ define(['jquery', 'webuploader'], function ($, WebUploader) {
         opt: {},
         oss: {
             //获取签名的后台地址
-            serverUrl: window.hdjs.ossSign,
+            serverUrl: '',
             //签名本地缓存时间
             expire: 0,
             //在OSS中储存object的目录
-            dir: 'video/',
+            dir: 'hdjs/',
         }
     };
     instance.upload = function (options) {
         instance.opt = $.extend({
             //在OSS中储存object的目录
-            dir: 'video/',
+            dir: 'hdjs/',
             //允许重复上传
             duplicate:true,
             // 选完文件后，是否自动上传。
@@ -37,6 +37,7 @@ define(['jquery', 'webuploader'], function ($, WebUploader) {
             fileSingleSizeLimit: 200 * 1024 * 1024,
         }, options);
         instance.oss.dir = instance.opt.dir;
+        instance.oss.serverUrl = instance.opt.serverUrl;
         //初始化webupload上传组件
         return instance.webupload();
     }
@@ -52,7 +53,8 @@ define(['jquery', 'webuploader'], function ($, WebUploader) {
                 dataType: 'json',
                 data: {
                     csrf_token: $('meta[name="csrf-token"]').attr('content'),
-                    user_type: window.system.user_type
+                    //hdcms使用
+                    user_type: window.system?window.system.user_type:''
                 },
                 success: function (obj) {
                     instance.oss =$.extend(instance.oss, obj);

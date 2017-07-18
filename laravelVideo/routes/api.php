@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-
+header('Access-Control-Allow-Origin:*');
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,3 +16,5 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+include __DIR__.'/api/content.php';

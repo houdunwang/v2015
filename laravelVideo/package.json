@@ -17,5 +17,8 @@
     "laravel-mix": "0.*",
     "lodash": "^4.17.4",
     "vue": "^2.1.10"
+  },
+  "dependencies": {
+    "vue-awesome-swiper": "^2.5.4"
   }
 }

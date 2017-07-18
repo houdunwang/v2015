@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+		<link rel="stylesheet" href="css/swiper-3.4.1.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	</head>
+
+	<body>
+
+		<!--轮播图-->
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<a href=""><img src="images/1.jpg"/></a>
+				</div>
+				<div class="swiper-slide">
+					<a href=""><img src="images/2.jpg"/></a>
+				</div>
+				<div class="swiper-slide">
+					<a href=""><img src="images/3.jpg"/></a>
+				</div>
+			</div>
+			<!-- 如果需要分页器 -->
+			<div class="swiper-pagination"></div>
+		</div>
+		<!--轮播图结束-->
+
+		<!--推荐视频-->
+		<h2>推荐视频</h2>
+
+		<div id="recommend">
+			<a href="">
+				<img src="images/4.jpg" alt="" />
+				<i class="iconfont icon-bofang"></i>
+				<span class="time">22:56</span>
+				<span class="title">谷歌：没有扫描仪也能</span>
+			</a>
+			<a href="">
+				<img src="images/5.jpg" alt="" />
+				<i class="iconfont icon-bofang"></i>
+				<span class="time">22:56</span>
+				<span class="title">谷歌：没有扫描仪也能</span>
+			</a>
+			<a href="">
+				<img src="images/6.jpg" alt="" />
+				<i class="iconfont icon-bofang"></i>
+				<span class="time">22:56</span>
+				<span class="title">谷歌：没有扫描仪也能</span>
+			</a>
+			<a href="">
+				<img src="images/7.jpg" alt="" />
+				<i class="iconfont icon-bofang"></i>
+				<span class="time">22:56</span>
+				<span class="title">谷歌：没有扫描仪也能</span>
+			</a>
+		</div>
+		<!--推荐视频结束-->
+
+		<a href="" class="more">MORE ></a>
+
+
+		<!--今日推荐-->
+		<h2>今日推荐</h2>
+
+		<div class="today">
+			<a href="" class="title">大数据下的广告：精准投放与精准消除</a>
+			<p class="column">网络资讯</p>
+			<div class="pic">
+				<a href=""><img src="images/8.jpg"/></a>
+				<a href=""><img src="images/9.jpg"/></a>
+				<a href=""><img src="images/10.jpg"/></a>
+			</div>
+		</div>
+		<!--今日推荐结束-->
+
+
+		<!--今日推荐-->
+		<h2>今日推荐</h2>
+
+		<div class="today">
+			<a href="" class="title">大数据下的广告：精准投放与精准消除</a>
+			<p class="column">网络资讯</p>
+			<div class="pic">
+				<a href=""><img src="images/14.jpg"/></a>
+				<a href=""><img src="images/12.jpg"/></a>
+				<a href=""><img src="images/16.jpg"/></a>
+			</div>
+		</div>
+		<!--今日推荐结束-->
+
+
+
+		<!--今日推荐-->
+		<h2>今日推荐</h2>
+
+		<div class="today">
+			<a href="" class="title">大数据下的广告：精准投放与精准消除</a>
+			<p class="column">网络资讯</p>
+			<div class="pic">
+				<a href=""><img src="images/15.jpg"/></a>
+				<a href=""><img src="images/11.jpg"/></a>
+				<a href=""><img src="images/10.jpg"/></a>
+			</div>
+		</div>
+		<!--今日推荐结束-->
+
+
+		<!--今日推荐-->
+		<h2>今日推荐</h2>
+
+		<div class="today">
+			<a href="" class="title">大数据下的广告：精准投放与精准消除</a>
+			<p class="column">网络资讯</p>
+			<div class="pic">
+				<a href=""><img src="images/8.jpg"/></a>
+				<a href=""><img src="images/9.jpg"/></a>
+				<a href=""><img src="images/13.jpg"/></a>
+			</div>
+		</div>
+		<!--今日推荐结束-->
+
+		<!--底部固定导航-->
+		<ul id="bottom">
+			<li class="cur">
+				<a href="index.html">
+					<i class="iconfont icon-shouyeshouye"></i>
+					<span>首页</span>
+				</a>
+			</li>
+			<li>
+				<a href="video.html">
+					<i class="iconfont icon-icon02"></i>
+					<span>视频</span>
+				</a>
+			</li>
+		</ul>
+		<!--底部固定导航结束-->
+
+
+		<script src="js/swiper-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<!--初始化swiper-->
+		<script>
+			var mySwiper = new Swiper('.swiper-container', {
+				loop: true,
+				direction : 'horizontal',
+				// 如果需要分页器
+				pagination: '.swiper-pagination'
+			})
+		</script>
+		<!--初始化swiper结束-->
+
+	</body>
+
+</html>

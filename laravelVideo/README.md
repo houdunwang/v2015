@@ -62,3 +62,15 @@ public function boot(){
  Schema::defaultStringLength(191);
 }
 ```
+
+## 解决ajax跨域访问
+
+默认情况下前台发送Ajax是允许跨域请求的。我们可以在后台进行相关设置然后允许前台跨域请求。
+
+允许单个域名访问 header('Access-Control-Allow-Origin:http://www.houdunwang.com');
+
+允许多个域名
+$origin = isset($_SERVER['HTTP_ORIGIN'])? $_SERVER['HTTP_ORIGIN'] : ''; $allow_origin = array( 	'http://www.houdunren.com', 	'http://www.houdunwang.com' ); if(in_array($origin, $allow_origin)){ 	header('Access-Control-Allow-Origin:'.$origin); }
+
+允许所有域名请求
+header('Access-Control-Allow-Origin:*');

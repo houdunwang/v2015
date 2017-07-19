@@ -128,7 +128,7 @@
 
     .swiper-container {
         width: 100%;
-        height: 500px;
+        height: 300px;
     }
 
     .swiper-slide {
@@ -144,7 +144,7 @@
     }
 
     .swiper-container .swiper-slide img {
-        height: 500px;
+        height: 300px;
         width: 100%;
         position: absolute;
         left: 50%;

@@ -1,177 +1,82 @@
 <template>
-<div>
-    <swiper :options="swiperOption">
-        <swiper-slide v-for="v in tags" :key="v.id">
-            {{v.title}}
-        </swiper-slide>
-    </swiper>
-    <!--视频列表-->
-    <ul id="videolist">
-        <li>
-            <router-link class="pic" to="/page">
-                <img src="static/images/5.jpg"/>
-                <span>08:26</span>
-                <i class="iconfont icon-bofang"></i>
-            </router-link>
-            <router-link class="title" to="/page">
-                精准投放与精准消除
-            </router-link>
-        </li>
-        <li>
-            <a href="" class="pic">
-                <img src="static/images/17.jpg"/>
-                <span>08:26</span>
-                <i class="iconfont icon-bofang"></i>
-            </a>
-            <a href="" class="title">精准投放与精准消除</a>
-        </li>
-        <li>
-            <a href="" class="pic">
-                <img src="static/images/18.jpg"/>
-                <span>08:26</span>
-                <i class="iconfont icon-bofang"></i>
-            </a>
-            <a href="" class="title">精准投放与精准消除</a>
-        </li>
-        <li>
-            <a href="" class="pic">
-                <img src="static/images/19.jpg"/>
-                <span>08:26</span>
-                <i class="iconfont icon-bofang"></i>
-            </a>
-            <a href="" class="title">精准投放与精准消除</a>
-        </li>
-        <li>
-            <a href="" class="pic">
-                <img src="static/images/20.jpg"/>
-                <span>08:26</span>
-                <i class="iconfont icon-bofang"></i>
-            </a>
-            <a href="" class="title">精准投放与精准消除</a>
-        </li>
-        <li>
-            <a href="" class="pic">
-                <img src="static/images/21.jpg"/>
-                <span>08:26</span>
-                <i class="iconfont icon-bofang"></i>
-            </a>
-            <a href="" class="title">精准投放与精准消除</a>
-        </li>
-        <li>
-            <a href="" class="pic">
-                <img src="static/images/22.jpg"/>
-                <span>08:26</span>
-                <i class="iconfont icon-bofang"></i>
-            </a>
-            <a href="" class="title">精准投放与精准消除</a>
-        </li>
-        <li>
-            <a href="" class="pic">
-                <img src="static/images/23.jpg"/>
-                <span>08:26</span>
-                <i class="iconfont icon-bofang"></i>
-            </a>
-            <a href="" class="title">精准投放与精准消除</a>
-        </li>
-        <li>
-            <a href="" class="pic">
-                <img src="static/images/17.jpg"/>
-                <span>08:26</span>
-                <i class="iconfont icon-bofang"></i>
-            </a>
-            <a href="" class="title">精准投放与精准消除</a>
-        </li>
-        <li>
-            <a href="" class="pic">
-                <img src="static/images/18.jpg"/>
-                <span>08:26</span>
-                <i class="iconfont icon-bofang"></i>
-            </a>
-            <a href="" class="title">精准投放与精准消除</a>
-        </li>
-        <li>
-            <a href="" class="pic">
-                <img src="static/images/19.jpg"/>
-                <span>08:26</span>
-                <i class="iconfont icon-bofang"></i>
-            </a>
-            <a href="" class="title">精准投放与精准消除</a>
-        </li>
-        <li>
-            <a href="" class="pic">
-                <img src="static/images/20.jpg"/>
-                <span>08:26</span>
-                <i class="iconfont icon-bofang"></i>
-            </a>
-            <a href="" class="title">精准投放与精准消除</a>
-        </li>
-        <li>
-            <a href="" class="pic">
-                <img src="static/images/21.jpg"/>
-                <span>08:26</span>
-                <i class="iconfont icon-bofang"></i>
-            </a>
-            <a href="" class="title">精准投放与精准消除</a>
-        </li>
-        <li>
-            <a href="" class="pic">
-                <img src="static/images/22.jpg"/>
-                <span>08:26</span>
-                <i class="iconfont icon-bofang"></i>
-            </a>
-            <a href="" class="title">精准投放与精准消除</a>
-        </li>
-        <li>
-            <a href="" class="pic">
-                <img src="static/images/23.jpg"/>
-                <span>08:26</span>
-                <i class="iconfont icon-bofang"></i>
-            </a>
-            <a href="" class="title">精准投放与精准消除</a>
-        </li>
+    <div>
+        <swiper :options="swiperOption">
+            <swiper-slide v-for="v in tags" :key="v.id">
+                <router-link :to="{params:{tid:v.id},name:'Video'}">
+                    {{v.name}}
+                </router-link>
+            </swiper-slide>
+        </swiper>
+        <!--视频列表-->
+        <ul id="videolist">
+            <li v-for="v in lesson" :key="v.id">
+                <router-link :to="{params:{lessonId:v.id},name:'Page'}" class="pic" >
+                    <img :src="v.preview"/>
+                    <span>08:26</span>
+                    <i class="iconfont icon-bofang"></i>
+                </router-link>
+                <router-link :to="{params:{lessonId:v.id},name:'Page'}">{{v.title}}-{{v.id}}
+                </router-link>
+            </li>
 
-    </ul>
-    <!--视频列表结束-->
-    <!--底部固定导航-->
-    <ul id="bottom">
-        <li>
-            <router-link to="/">
-                <i class="iconfont icon-shouyeshouye"></i>
-                <span>首页</span>
-            </router-link>
-        </li>
-        <li class="cur">
-            <router-link to="/video">
-                <i class="iconfont icon-icon02"></i>
-                <span>视频</span>
-            </router-link>
-        </li>
-    </ul>
-</div>
+        </ul>
+        <!--视频列表结束-->
+        <!--底部固定导航-->
+        <ul id="bottom">
+            <li>
+                <router-link to="/">
+                    <i class="iconfont icon-shouyeshouye"></i>
+                    <span>首页</span>
+                </router-link>
+            </li>
+            <li class="cur">
+                <router-link to="/video">
+                    <i class="iconfont icon-icon02"></i>
+                    <span>视频</span>
+                </router-link>
+            </li>
+        </ul>
+    </div>
 </template>
 
 <script>
-export default {
-  name: 'video',
-  data () {
-    return {
-        tags:[
-            {id:1,title:'PHP'},
-            {id:2,title:'HTML'},
-            {id:3,title:'CSS'},
-            {id:4,title:'LINUX'},
-            {id:5,title:'MYSQL'},
-        ],
-        swiperOption: {
-            pagination: '.swiper-pagination',
-            slidesPerView: 3,
-            paginationClickable: true,
-            spaceBetween: 30,
-            freeMode: true
+    export default {
+        name: 'video',
+        watch:{
+            '$route'(to,from){
+                this.loadData();
+            }
+        },
+        mounted(){
+            this.loadData();
+        },
+        data () {
+            return {
+                tags: [],
+                lesson: [],
+                swiperOption: {
+                    pagination: '.swiper-pagination',
+                    slidesPerView: 3,
+                    paginationClickable: true,
+                    spaceBetween: 30,
+                    freeMode: true
+                }
+            }
+        },
+        methods:{
+            loadData(){
+                //获取标签
+                this.axios.get('http://laravel.hdphp.com/api/tags').then((response) => {
+                    this.tags = response.data.data;
+                })
+                //获取课程
+                let tid = this.$route.params.tid;
+                this.axios.get('http://laravel.hdphp.com/api/lesson/' + (tid ? tid : 0)).then((response) => {
+                    this.lesson = response.data.data;
+                })
+            }
         }
     }
-  }
-}
 </script>
 
 <style scoped>
@@ -202,6 +107,7 @@ export default {
         left: 0;
         top: 0;
     }
+
     .swiper-slide {
         float: left;
         width: 30%;
@@ -212,10 +118,16 @@ export default {
         position: relative;
         margin: 0 10px;
     }
-    .swiper-slide:active,.swiper-slide:link,.swiper-slide:hover{
+
+    .swiper-slide:active, .swiper-slide:link, .swiper-slide:hover {
         text-decoration: none;
         color: white;
     }
+
+    .swiper-slide a {
+        color: #fff;
+    }
+
     .swiper-slide.cur:after {
         display: block;
         content: '';
@@ -229,55 +141,61 @@ export default {
     }
 
     /*视频列表*/
-    #videolist{
+    #videolist {
         width: 94%;
         margin: 0 auto;
         margin-top: 15%;
         display: flex;
         flex-wrap: wrap;
-        justify-content:space-between;
+        justify-content: space-between;
     }
-    #videolist li{
+
+    #videolist li {
         width: 49%;
         margin-top: 10px;
     }
-    #videolist li a.pic{
+
+    #videolist li a.pic {
         display: block;
         width: 100%;
         height: 30vw;
         overflow: hidden;
         position: relative;
     }
-    #videolist li a.pic img{
+
+    #videolist li a.pic img {
         position: absolute;
         left: 50%;
         top: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
         height: 100%;
         min-width: 100%;
     }
-    #videolist li a.pic span{
+
+    #videolist li a.pic span {
         line-height: 1.5em;
         font-size: 3vw;
         color: white;
-        background: rgba(0,0,0,0.5);
+        background: rgba(0, 0, 0, 0.5);
         position: absolute;
         right: 0;
         top: 0;
         padding: 0 2%;
     }
-    #videolist li a.pic .iconfont.icon-bofang{
+
+    #videolist li a.pic .iconfont.icon-bofang {
         position: absolute;
-        color: rgba(255,255,255,1);
+        color: rgba(255, 255, 255, 1);
         left: 50%;;
         top: 50%;
         font-size: 8vw;
-        transform: translate(-50%,-50%);
-        background: rgba(0,0,0,0.4);
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.4);
         border-radius: 50%;
         line-height: 1em;
     }
-    #videolist li a.title{
+
+    #videolist li a.title {
         display: block;
         text-align: center;
         line-height: 2.5em;
@@ -285,9 +203,7 @@ export default {
         color: #31343B;
     }
 
-
     /*视频列表结束*/
-
 
     /*底部固定导航*/
     #bottom {
@@ -330,5 +246,6 @@ export default {
     #bottom li.cur span {
         color: #333;
     }
+
     /*底部固定导航结束*/
 </style>

@@ -1,18 +1,16 @@
 <template>
     <div>
         <!--视频-->
-        <video src="static/images/big_buck_bunny.mp4" controls="controls"
-               poster="static/images/510.jpg"></video>
+        <video :src="current.path" controls="controls"></video>
         <!--视频结束-->
         <h1>10 导航条样式的设置</h1>
         <ul id="list">
-            <li v-for="v in videos"><a href="">{{v.title}}</a></li>
+            <li v-for="v in videos"><a href="" @click.prevent="play(v)">{{v.title}}</a></li>
         </ul>
         <!--返回按钮-->
-        <router-link to="/video" class="iconfont back">&#xe612;</router-link>
+        <a  class="iconfont back" @click.prevent="back()">&#xe612;</a>
     </div>
 </template>
-
 <script>
     export default {
         name: 'page',
@@ -20,17 +18,28 @@
             //推荐课程
             let lessonId = this.$route.params.lessonId;
             this.axios.get('http://laravel.hdphp.com/api/videos/' + lessonId).then((response) => {
-                console.log(response);
                 if (response.status != 200 && response.data.code != 200) {
                     alert('获取视频失败,请稍后再试');
                 } else {
                     this.videos = response.data.data;
+                    this.current = this.videos[0];
                 }
             })
         },
         data () {
             return {
+                //当前视频
+                current: {},
+                //视频列表
                 videos: []
+            }
+        },
+        methods:{
+            play(video){
+                this.current=video;
+            },
+            back(){
+                this.$router.back();
             }
         }
     }

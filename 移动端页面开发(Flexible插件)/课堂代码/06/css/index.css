@@ -1,0 +1,48 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+
+/*头部*/
+#top{
+	background: #FE5500;
+	padding-top: 0.16rem;
+	padding-bottom: 0.13rem;
+	overflow: hidden;
+}
+#top .iconfont.icon-tao{
+	color: white;
+	font-size: 27px;
+	margin-left: 0.12rem;
+	float: left;
+	margin-right: 0.1466rem;
+}
+
+[data-dpr="2"] #top .iconfont.icon-tao { font-size: 54px; }
+[data-dpr="3"] #top .iconfont.icon-tao { font-size: 81px; }
+#top a{
+	width: 8.8133rem;
+	height: 0.6666rem;
+	background: #B52700;
+	display: block;
+	float: left;
+	line-height: 0.6666rem;
+	text-align: center;
+	color: #F0E0DC;
+	font-size: 13px;
+	border-radius: 0.1rem;
+}
+
+[data-dpr="2"] #top a { font-size: 26px; }
+[data-dpr="3"] #top a { font-size: 39px; }
+
+
+#top a i.iconfont.icon-fangdajing{
+	font-size: 15px;
+	margin-right: 0.1733rem;
+}
+
+[data-dpr="2"] #top a i.iconfont.icon-fangdajing { font-size: 30px; }
+[data-dpr="3"] #top a i.iconfont.icon-fangdajing { font-size: 45px; }
+/*头部结束*/

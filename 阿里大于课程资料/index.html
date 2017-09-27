@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>网站登录页面模板</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="assets/css/reset.css">
+        <link rel="stylesheet" href="assets/css/supersized.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <!-- Javascript -->
+        <script src="assets/js/jquery-1.8.2.min.js"></script>
+        <script src="assets/js/supersized.3.2.7.min.js"></script>
+        <script src="assets/js/supersized-init.js"></script>
+        <!--<script src="assets/js/scripts.js"></script>-->
+    </head>
+    <body>
+        <div class="page-container">
+            <h1>新用户注册</h1>
+            <form action="regist.php" method="post">
+                <input type="text" name="username" class="username" placeholder="手机号码">
+                <span class="sendyzm" onclick="sendcode()">发送验证码</span>
+                <input type="password" name="password" class="password" placeholder="密码">
+                <input type="test" name="code" class="text" placeholder="验证码">
+                <button type="submit">立即注册</button>
+            </form>
+        </div>
+        <script>
+            function sendcode(){
+                //获取用户输入的手机号
+                var phone = $('.username').val();
+                $.ajax({
+                    url:'api_demo/SmsDemo.php?phone='+phone,
+                    dataType:'json',
+                    success:function (res) {
+                        console.log(res);
+                        if(res.valid == 1){
+                            //代表发送成功
+                            alert(res.message);
+                        }
+                    }
+                })
+            }
+        </script>
+    </body>
+</html>
+
+

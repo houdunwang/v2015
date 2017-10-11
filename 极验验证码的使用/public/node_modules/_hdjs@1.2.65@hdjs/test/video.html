@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        window.hdjs = {};
+        window.hdjs.base = '/hdjs';
+        window.hdjs.uploader = 'php/uploader.php?';
+        window.hdjs.filesLists = 'php/filesLists.php?';
+    </script>
+    <script src="../dist/static/requirejs/require.js"></script>
+    <script src="../dist/static/requirejs/config.js"></script>
+</head>
+<body style="padding: 50px;">
+<!--如果需要加速则需要添加class VideoSpeed-->
+<video id="my-video" class="video-js vjs-big-play-centered VideoSpeed" controls preload="auto" width="1200" height="550" poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
+    <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+    <source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm">
+    <source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg">
+    <p class="vjs-no-js">
+        要查看此视频，请启用JavaScript，并考虑升级到web浏览器
+        <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+    </p>
+</video>
+<script>
+    require(['hdjs'], function (hdjs) {
+        hdjs.video('my-video',function(){
+            alert('播放器准备后执行');
+        })
+    })
+</script>
+</body>
+</html>

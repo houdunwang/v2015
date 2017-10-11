@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        window.hdjs = {};
+        window.hdjs.base = '/hdjs';
+        window.hdjs.uploader = 'php/uploader.php?';
+        window.hdjs.filesLists = 'php/filesLists.php?';
+    </script>
+    <script src="../dist/static/requirejs/require.js"></script>
+    <script src="../dist/static/requirejs/config.js"></script>
+</head>
+<body>
+<div id="app">
+    <textarea id="container" style="height:300px;width:100%;" v-model="field.content"></textarea>
+</div>
+<script>
+    require(['vue','hdjs'], function (Vue,hdjs) {
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                field: {content:''},
+            },
+            mounted() {
+                //图文编辑器
+                var This = this;
+                hdjs.ueditor('container', {}, function (editor) {
+                    //监听内容更改
+                    editor.addListener('contentChange', function () {
+                        vm.$set(vm.field, 'content', editor.getContent());
+                    });
+                    //编辑器准备结束后执行
+                    editor.addListener('ready', function () {
+                        //设置编辑器内容
+                        if (editor && editor.getContent() != This.field.content) {
+                            editor.setContent(This.field.content);
+                        }
+                        //监听vue数据
+                        vm.$watch('field', function (item) {
+                            if (editor && editor.getContent() != item.content) {
+                                editor.setContent(item.content ? item.content : '');
+                            }
+                        });
+                        editor.addListener('clearRange', function () {
+                            vm.$set(vm.field, 'content', editor.getContent());
+                        });
+                    });
+                });
+            }
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+.idea
+.env
+.DS_Store
+composer.lock
+npm-debug.log
+/test/php/config
+/node_modules
+/test/vendor
+/test/php/attachment

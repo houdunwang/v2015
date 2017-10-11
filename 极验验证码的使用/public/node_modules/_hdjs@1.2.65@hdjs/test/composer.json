@@ -1,0 +1,7 @@
+{
+    "require": {
+        "houdunwang/file": "^1.0",
+        "houdunwang/aliyunsms": "^1.0",
+        "houdunwang/oss": "^1.0"
+    }
+}

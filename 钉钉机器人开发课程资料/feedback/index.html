@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">用户反馈</h3>
+        </div>
+        <div class="panel-body">
+            <form action="./feed.php" method="post" class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">title:</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="title" class="form-control" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">type:</label>
+                    <div class="col-sm-10">
+                        <select name="type" class="form-control">
+                            <option value="1">好评反馈</option>
+                            <option value="2">差评反馈</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">content:</label>
+                    <div class="col-sm-10">
+                        <textarea name="content" cols="20" rows="5" class="form-control" style="resize:none;"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-10 col-sm-offset-2">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

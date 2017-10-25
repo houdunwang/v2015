@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script src="libs/jquery-1.11.3.min.js" ></script>
+	<script src="layer/layer.js"></script>
+	
+	<script type="text/javascript">
+		
+		$(function(){
+			$("#text").blur(function(){
+				layer.tips('我是另外一个tips，只不过我长得跟之前那位稍有些不一样。', '#text', {
+				  tips: [1, '#3595CC'],
+				  time: 4000
+				});
+			})
+		})
+		
+	</script>
+	</head>
+	<body>
+		
+	
+	<h1>鼠标触发一下单行文本的失去焦点事件试试</h1>
+	
+	<input type="text" id="text" />
+		
+	<br /><br />
+	<textarea id="tt"></textarea>
+		
+		
+	</body>
+</html>

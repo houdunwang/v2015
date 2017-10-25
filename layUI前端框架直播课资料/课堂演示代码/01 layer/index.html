@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script src="libs/jquery-1.11.3.min.js" ></script>
+	<script src="layer/layer.js"></script>
+	<script type="text/javascript">
+//		layer.confirm('您是如何看待前端开发？', {
+//		  btn: ['重要','奇葩'] //按钮
+//		}, function(){
+//		  layer.msg('的确很重要', {icon: 1});
+//		}, function(){
+//		  layer.msg('也可以这样', {
+//		    time: 20000, //20s后自动关闭
+//		    btn: ['明白了', '知道了']
+//		  });
+//		});
+		
+
+	</script>
+	<script type="text/javascript">
+		
+		window.onload = function(){
+//			抓元素
+			var btn = document.getElementById("btn");
+			btn.onclick = function(){
+//				alert('你好后盾人@！');
+//				一个漂亮layer弹窗
+				layer.confirm('你看咱们后盾人直播激动不？', {
+				  btn: ['激动','非常激动'] //按钮
+				}, function(){
+				  layer.msg('激动啊！', {icon: 1});
+				}, function(){
+				  layer.msg('非常激动啊！饭都没吃呢 ！！', {icon: 1});
+//				  layer.msg('也可以这样', {
+//				    time: 20000, //20s后自动关闭
+//				    btn: ['明白了', '知道了']
+//				  });
+				});
+			}
+		}
+		
+	</script>
+	</head>
+	<body>
+		
+		
+		<input type="button" id="btn" value="问你个问题" />
+		
+		
+		
+		
+	</body>
+</html>

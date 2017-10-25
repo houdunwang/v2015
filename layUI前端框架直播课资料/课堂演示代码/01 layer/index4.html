@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script src="libs/jquery-1.11.3.min.js" ></script>
+	<script src="layer/layer.js"></script>
+	
+	<script type="text/javascript">
+		prompt('你是第一次来后盾人直播课吗？');
+		$(function(){
+			$("#text").blur(function(){
+				
+//				创建正则规则
+				var reg = /^\d{6,20}$/;
+//				获得用户输入的内容
+				var con = $(this).val();
+//				用正则去匹配内容
+				var result = reg.test(con);
+				if (result) {//如果用户名符合规范
+					layer.tips('用户名符合规范', '#text', {
+					  tips: [1, '#3595CC'],
+					  time: 4000
+					});
+				}else{//用户名不符合规范
+					layer.tips('用户名不规范，应该是6-20位纯数字', '#text', {
+					  tips: [1, '#FF7F27'],
+					  time: 4000
+					});
+				}
+			})
+		})
+		
+	</script>
+	</head>
+	<body>
+		
+	
+	<h1>鼠标触发一下单行文本的失去焦点事件试试</h1>
+	
+	用户名：<input type="text" id="text" />
+		
+	<br /><br />
+	<textarea id="tt"></textarea>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script src="laydate/laydate.js"></script>
+	
+	<script type="text/javascript">
+//		标准版日期选择器
+		laydate.render({
+		  elem: '#date'
+		});
+
+//		带节日的日期选择器
+		laydate.render({
+		  elem: '#date2'
+		  ,calendar: true
+		});
+	</script>
+	</head>
+	<body>
+		<h1>后盾人直播课的演示页面！</h1>
+		
+		标准版：
+		<input type="text" id="date" />
+		<br /><br />
+		
+		带节日的：
+		<input type="text" id="date2" />
+		
+		
+	</body>
+</html>

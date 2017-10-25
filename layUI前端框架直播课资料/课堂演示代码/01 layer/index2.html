@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script src="libs/jquery-1.11.3.min.js" ></script>
+	<script src="layer/layer.js"></script>
+	
+	<script type="text/javascript">
+		
+		$(function(){
+			$("#btn").click(function(){
+//				弹出提示层
+//				layer.msg('玩命提示中');
+			
+//			小提示
+				layer.tips('我是另外一个tips，只不过我长得跟之前那位稍有些不一样。', '吸附元素选择器', {
+				  tips: [1, '#3595CC'],
+				  time: 4000
+				});
+			})
+		})
+		
+	</script>
+	</head>
+	<body>
+		
+		
+		<input type="button" id="btn" value="我是一个btn按钮" />
+		
+		
+		
+		
+	</body>
+</html>

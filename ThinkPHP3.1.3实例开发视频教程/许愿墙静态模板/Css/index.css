@@ -1,0 +1,233 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+img {
+	border:none;
+}
+ul {
+	list-style: none;
+}
+body{
+	background: url(../Images/bg_main.jpg);
+}
+#top {
+	width: 450px;
+	height: 81px;
+	background: url(../Images/top.jpg) no-repeat;
+	padding-top: 45px;
+	padding-left: 550px;
+}
+#send {
+	display: block;
+	width: 120px;
+	height: 65px;
+	cursor: pointer;
+	background: url(../Images/send.png) no-repeat;
+}
+#send-form {
+	width: 360px;
+	height: 400px;
+	background: #fff;
+	display: none;
+	position: absolute;
+	z-index: 999;
+}
+#send-form form p {
+	width: 340px;
+	height: auto;
+	overflow: hidden;
+	padding: 10px;
+}
+#send-form form p label {
+	display: block;
+	width: 340px;
+	height: 24px;
+	line-height: 24px;
+	color: #888888;
+}
+#font-num {
+	font-family :'Constantia,Georgia';
+	font-size: 18px;
+	font-style: italic;
+	font-weight: bold;
+	color: #444444;
+}
+#send-form input{
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	width: 180px;
+	height: 24px;
+	padding: 5px;
+}
+#send-form textarea{
+	background: #fff;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	resize: none;
+	padding: 5px;
+	width: 300px;
+	height: 80px;
+}
+#phiz{
+	width: 300px;
+	height: 30px;
+	line-height: 30px;
+	margin-left: 10px;
+}
+#phiz img {
+	cursor: pointer;
+	margin-right: 4px;
+}
+textarea:focus,
+input[type="text"]:focus{
+    border-color: rgba(82, 168, 236, 0.8);
+    outline: 0;
+    outline: thin dotted \9;
+    /* IE6-9 */
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
+    -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
+}
+#send-form .title {
+	width: 360px;
+	height: 56px;
+	background: url(../Images/send-title.png) repeat-x;
+}
+#send-form .title span {
+	display: block;
+	width: 260px;
+	height: 56px;
+	line-height: 56px;
+	color: #666666;
+    font-size: 18px;
+    font-weight: bold;
+    text-indent: 6em;
+    float: left;
+}
+#send-form .title a {
+	display: block;
+	width: 29px;
+	height: 24px;
+	background: url(../Images/close.png) no-repeat;
+	float: right;
+	margin-top: 16px;
+	margin-right: 10px;
+}
+#send-form .title a:hover {
+	background-position: -43px 0;
+}
+#send-btn {
+	display: block;
+	width: 120px;
+	height: 50px;
+	background: url(../Images/send-btn.png) no-repeat;
+	cursor: pointer;
+	float: right;
+	margin: 10px;
+}
+#main {
+	width: 100%;
+	position: relative;
+}
+.paper{
+	width: 235px;
+	height: auto;
+	overflow: hidden;
+	position: absolute;
+	color: #666;
+}
+.paper dt {
+	width: 220px;
+	height: 18px;
+	cursor: move;
+	padding-left: 15px;
+	padding-top: 50px;
+}
+.paper dt .username{
+	font-size: 13px;
+	float: left;
+	color: #3875D7;
+	padding-left: 5px;
+}
+.paper dt .num{
+	font-size: 12px;
+	float: right;
+	color: #81C01A;
+	padding-right: 10px;
+}
+.paper .content{
+	width: 205px;
+	height: auto;
+	overflow: hidden;
+	padding: 5px 5px 5px 25px;
+	font-size: 12px;
+	word-break: break-all;
+    word-wrap: normal;
+    line-height: 18px;
+}
+.paper .bottom {
+	width: 205px;
+	height: 40px;
+	padding: 32px 5px 0 25px;
+}
+.paper .bottom .time {
+	font-size: 12px;
+	color: #999999;
+	float: left;
+}
+.paper .bottom .close {
+	display: block;
+	width: 29px;
+	height: 24px;
+	background: url(../Images/close.png) no-repeat;
+	float: right;
+}
+.paper .bottom .close:hover {
+	background-position: -43px 0;
+}
+.a1 dt {
+	background: url(../Images/a1_1.gif);
+}
+.a1 .content {
+	background : url(../Images/a1_2.gif) repeat-y -2px;
+}
+.a1 .bottom{
+	background: url(../Images/a1_3.gif) no-repeat;
+}
+.a2 dt {
+	background: url(../Images/a2_1.gif);
+}
+.a2 .content {
+	background : url(../Images/a2_2.gif) repeat-y -2px;
+}
+.a2 .bottom{
+	background: url(../Images/a2_3.gif) no-repeat;
+}
+.a3 dt {
+	background: url(../Images/a3_1.gif);
+}
+.a3 .content {
+	background : url(../Images/a3_2.gif) repeat-y -2px;
+}
+.a3 .bottom{
+	background: url(../Images/a3_3.gif) no-repeat;
+}
+.a4 dt {
+	background: url(../Images/a4_1.gif);
+}
+.a4 .content {
+	background : url(../Images/a4_2.gif) repeat-y -2px;
+}
+.a4 .bottom{
+	background: url(../Images/a4_3.gif) no-repeat;
+}
+.a5 dt {
+	background: url(../Images/a5_1.gif);
+}
+.a5 .content {
+	background : url(../Images/a5_2.gif) repeat-y -2px;
+}
+.a5 .bottom{
+	background: url(../Images/a5_3.gif) no-repeat;
+}

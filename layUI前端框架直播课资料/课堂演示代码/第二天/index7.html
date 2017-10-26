@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="layui/css/layui.css" />
+		<script src="layui/layui.js"></script>
+	</head>
+	<body>
+
+	<div class="layui-collapse">
+	  <div class="layui-colla-item">
+	    <h2 class="layui-colla-title">杜甫</h2>
+	    <div class="layui-colla-content layui-show">内容区域</div>
+	  </div>
+	  <div class="layui-colla-item">
+	    <h2 class="layui-colla-title">李清照</h2>
+	    <div class="layui-colla-content">内容区域</div>
+	  </div>
+	  <div class="layui-colla-item">
+	    <h2 class="layui-colla-title">鲁迅</h2>
+	    <div class="layui-colla-content">内容区域</div>
+	  </div>
+	</div>
+	 
+	<script>
+	//注意：折叠面板 依赖 element 模块，否则无法进行功能性操作
+	layui.use('element', function(){
+	  var element = layui.element;
+	  
+	  //…
+	});
+	</script>
+	
+	</body>
+</html>

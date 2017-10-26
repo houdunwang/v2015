@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="layui/css/layui.css" />
+		<script src="layui/layui.js"></script>
+	</head>
+	<body>
+	
+	<!--进度条-->
+	<div class="layui-progress" lay-showPercent="yes">
+	  <div class="layui-progress-bar layui-bg-red" lay-percent="30%"></div>
+	</div>
+	
+	<div class="layui-tab">
+	  <ul class="layui-tab-title">
+	    <li class="layui-this">网站设置</li>
+	    <li>用户管理</li>
+	    <li>权限分配</li>
+	    <li>商品管理</li>
+	    <li>订单管理</li>
+	  </ul>
+	  <div class="layui-tab-content">
+	    <div class="layui-tab-item layui-show">后盾人 人人做后盾！</div>
+	    <div class="layui-tab-item">这里是选项卡</div>
+	    <div class="layui-tab-item">内容3</div>
+	    <div class="layui-tab-item">内容4</div>
+	    <div class="layui-tab-item">内容5</div>
+	  </div>
+	</div>
+ 
+ 	
+		
+	
+	<div class="layui-tab layui-tab-card">
+	  <ul class="layui-tab-title">
+	    <li class="layui-this">网站设置</li>
+	    <li>用户管理</li>
+	    <li>权限分配</li>
+	    <li>商品管理</li>
+	    <li>订单管理</li>
+	  </ul>
+	  <div class="layui-tab-content" style="height: 100px;">
+	    <div class="layui-tab-item layui-show">1</div>
+	    <div class="layui-tab-item">2</div>
+	    <div class="layui-tab-item">3</div>
+	    <div class="layui-tab-item">4</div>
+	    <div class="layui-tab-item">5</div>
+	    <div class="layui-tab-item">6</div>
+	  </div>
+	</div>
+
+
+
+	<script>
+		//注意：导航 依赖 element 模块，否则无法进行功能性操作
+		layui.use('element', function(){
+		  var element = layui.element;
+		  
+		  //…
+		});
+	</script>
+	
+	
+	
+	</body>
+</html>

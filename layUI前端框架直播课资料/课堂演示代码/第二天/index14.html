@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="layui/css/layui.css" />
+		<script src="layui/layui.js"></script>
+	</head>
+	<body>
+
+	<div id="houdun"></div>
+	
+	<script>
+	layui.use('laypage', function(){
+	  var laypage = layui.laypage;
+	  
+	  //执行一个laypage实例
+	  laypage.render({
+	    elem: 'houdun' //注意，这里的 houdun 是 ID，不用加 # 号
+	    ,count: 50 //数据总数，从服务端得到
+	    ,limit:3//每页的数据量
+	    ,groups:10
+	  });
+	});
+	</script>
+	
+	</body>
+</html>

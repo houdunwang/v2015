@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="layui/css/layui.css" />
+		<script src="layui/layui.js"></script>
+	</head>
+	<body>
+
+
+		<div class="layui-carousel" id="test1">
+		  <div carousel-item>
+		    <div style="background: dodgerblue;">条目1</div>
+		    <div style="background: orange;">条目2</div>
+		    <div style="background: greenyellow;">条目3</div>
+		    <div style="background: pink;">条目4</div>
+		    <div style="background: purple;">条目5</div>
+		  </div>
+		</div>
+		
+
+
+
+
+	<script>
+		
+	layui.use('carousel', function(){
+	  var carousel = layui.carousel;
+	  //建造实例
+	  carousel.render({
+	    elem: '#test1'
+	    ,width: '600px' //设置容器宽度
+	    ,arrow: 'always' //始终显示箭头
+	    //,anim: 'updown' //切换动画方式
+	    ,autoplay:false
+	  });
+	  //…
+	});
+	</script>
+	
+	</body>
+</html>

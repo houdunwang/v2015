@@ -1,0 +1,58 @@
+{extend name='base'/}
+{block name='content'}
+<ol class="breadcrumb" style="background-color: #f9f9f9;padding:8px 0;margin-bottom:10px;">
+    <li>
+        <a href=""><i class="fa fa-cogs"></i>
+            用户组管理</a>
+    </li>
+    <li class="active">
+        <a href="{:url('index')}">用户组添加</a>
+    </li>
+</ol>
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active"><a href="{:url('index')}">用户组列表</a></li>
+    <li><a href="{:url('store')}">用户组添加</a></li>
+</ul>
+<div class="panel panel-default">
+	  <div class="panel-heading">
+			<h3 class="panel-title">用户组管理</h3>
+	  </div>
+	  <div class="panel-body">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>编号</th>
+						<th>用户组名</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					{foreach name='field' item='vo'}
+					<tr>
+						<td>{$vo['id']}</td>
+						<td>{$vo['title']}</td>
+                        <td>
+                            <div class="btn-group">
+                                <button data-toggle="dropdown" class="btn btn-primary btn-xs dropdown-toggle">操作 <span class="caret"></span></button>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li><a href="{:url('edit',['id'=>$vo['id']])}">编辑</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="javascript:;" onclick="del({$vo['id']})">删除</a></li>
+                                </ul>
+                            </div>
+                        </td>
+					</tr>
+				{/foreach}
+				</tbody>
+			</table>
+	  </div>
+</div>
+{$field->render()}
+<script>
+	function del(id) {
+		util.confirm('确认删除吗',function(){
+		  	location.href = "{:url('del')}" + "?id=" + id;
+		});
+    }
+</script>
+{/block}

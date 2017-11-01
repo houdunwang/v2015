@@ -1,0 +1,338 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "3456610fa4ee7b3d6b33484cee5af89e",
+    "packages": [
+        {
+            "name": "5ini99/think-auth",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/5ini99/think-auth.git",
+                "reference": "f9f20d18b5e400d67312a7ca75e4dc35be630a4c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/5ini99/think-auth/f9f20d18b5e400d67312a7ca75e4dc35be630a4c.zip",
+                "reference": "f9f20d18b5e400d67312a7ca75e4dc35be630a4c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "think\\auth\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "xiaobo.sun",
+                    "email": "xiaobo.sun@qq.com"
+                }
+            ],
+            "description": "auth package for thinkphp5",
+            "homepage": "https://github.com/5ini99/think-auth",
+            "time": "2016-11-02T06:26:09+00:00"
+        },
+        {
+            "name": "houdunwang/arr",
+            "version": "v1.0.18",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/houdunwang/arr.git",
+                "reference": "2b6381d67f13f9dfb174cf99f7cdd7cecd88c8c3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/houdunwang/arr/2b6381d67f13f9dfb174cf99f7cdd7cecd88c8c3.zip",
+                "reference": "2b6381d67f13f9dfb174cf99f7cdd7cecd88c8c3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.1"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [],
+                "psr-4": {
+                    "houdunwang\\arr\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "后盾网向军",
+                    "email": "2300071698@qq.com"
+                }
+            ],
+            "description": "数组增强组件主要是对数组等数据进行处理，如无限级分类操作、商品规格的迪卡尔乘积运算等",
+            "homepage": "http://www.houdunwang.com/",
+            "keywords": [
+                "array",
+                "hdphp",
+                "houdunwang",
+                "后盾人",
+                "后盾网",
+                "向军老师"
+            ],
+            "time": "2017-10-10T12:17:48+00:00"
+        },
+        {
+            "name": "houdunwang/config",
+            "version": "v1.0.23",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/houdunwang/config.git",
+                "reference": "9c5d5dcf7825fec9f55ad9b48632a8f9ab1d3215"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/houdunwang/config/9c5d5dcf7825fec9f55ad9b48632a8f9ab1d3215.zip",
+                "reference": "9c5d5dcf7825fec9f55ad9b48632a8f9ab1d3215",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.1"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helper.php"
+                ],
+                "psr-4": {
+                    "houdunwang\\config\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "后盾网向军",
+                    "email": "2300071698@qq.com"
+                }
+            ],
+            "description": "config组件用于管理网站配置项",
+            "homepage": "http://www.houdunwang.com/",
+            "keywords": [
+                "hdphp",
+                "houdunwang",
+                "后盾人",
+                "后盾网",
+                "向军老师",
+                "配置管理"
+            ],
+            "time": "2017-10-10T12:21:46+00:00"
+        },
+        {
+            "name": "houdunwang/crypt",
+            "version": "v1.0.19",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/houdunwang/crypt.git",
+                "reference": "d059eed0bacf912bd59f6590876729818dfcf4fb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/houdunwang/crypt/d059eed0bacf912bd59f6590876729818dfcf4fb.zip",
+                "reference": "d059eed0bacf912bd59f6590876729818dfcf4fb",
+                "shasum": ""
+            },
+            "require": {
+                "houdunwang/config": "~1.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.1"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helper.php"
+                ],
+                "psr-4": {
+                    "houdunwang\\crypt\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "后盾网向军",
+                    "email": "2300071698@qq.com"
+                }
+            ],
+            "description": "crypt加密组件包提供功能强大的加密功能",
+            "homepage": "http://www.houdunwang.com/",
+            "keywords": [
+                "hdphp",
+                "houdunwang",
+                "mcrypt",
+                "加密解密",
+                "后盾人",
+                "后盾网",
+                "向军老师"
+            ],
+            "time": "2017-10-10T12:22:15+00:00"
+        },
+        {
+            "name": "topthink/framework",
+            "version": "v5.0.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/top-think/framework.git",
+                "reference": "926c9edb0c2682b14f563cac2c8a93f42f729016"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/top-think/framework/926c9edb0c2682b14f563cac2c8a93f42f729016.zip",
+                "reference": "926c9edb0c2682b14f563cac2c8a93f42f729016",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "topthink/think-installer": "~1.0"
+            },
+            "require-dev": {
+                "johnkary/phpunit-speedtrap": "^1.0",
+                "mikey179/vfsstream": "~1.6",
+                "phpdocumentor/reflection-docblock": "^2.0",
+                "phploc/phploc": "2.*",
+                "phpunit/phpunit": "4.8.*",
+                "sebastian/phpcpd": "2.*"
+            },
+            "type": "think-framework",
+            "autoload": {
+                "psr-4": {
+                    "think\\": "library/think"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "liu21st",
+                    "email": "liu21st@gmail.com"
+                }
+            ],
+            "description": "the new thinkphp framework",
+            "homepage": "http://thinkphp.cn/",
+            "keywords": [
+                "framework",
+                "orm",
+                "thinkphp"
+            ],
+            "time": "2017-09-13T03:30:29+00:00"
+        },
+        {
+            "name": "topthink/think-captcha",
+            "version": "v1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/top-think/think-captcha.git",
+                "reference": "0c55455df26a1626a60d0dc35d2d89002b741d44"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/top-think/think-captcha/0c55455df26a1626a60d0dc35d2d89002b741d44.zip",
+                "reference": "0c55455df26a1626a60d0dc35d2d89002b741d44",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "think\\captcha\\": "src/"
+                },
+                "files": [
+                    "src/helper.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "yunwuxin",
+                    "email": "448901948@qq.com"
+                }
+            ],
+            "description": "captcha package for thinkphp5",
+            "time": "2016-07-06T01:47:11+00:00"
+        },
+        {
+            "name": "topthink/think-installer",
+            "version": "v1.0.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/top-think/think-installer.git",
+                "reference": "1be326e68f63de4e95977ed50f46ae75f017556d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/top-think/think-installer/1be326e68f63de4e95977ed50f46ae75f017556d.zip",
+                "reference": "1be326e68f63de4e95977ed50f46ae75f017556d",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0"
+            },
+            "require-dev": {
+                "composer/composer": "1.0.*@dev"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "think\\composer\\Plugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "think\\composer\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "yunwuxin",
+                    "email": "448901948@qq.com"
+                }
+            ],
+            "time": "2017-05-27T06:58:09+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=5.4.0"
+    },
+    "platform-dev": []
+}

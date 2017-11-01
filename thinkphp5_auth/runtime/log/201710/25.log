@@ -1,0 +1,2714 @@
+---------------------------------------------------------------
+[ 2017-10-25T15:06:52+08:00 ] ::1 ::1 GET /
+[ info ] tp5auth.dev:8080/ [运行时间：0.091082s][吞吐率：10.98req/s] [内存消耗：2,391.53kb] [文件加载：51]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ /Users/wubin/Desktop/thinkphp5_auth/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/index/view/index/index.html [ array (
+  0 => '_webset',
+  1 => '_cateData',
+  2 => '_allCateData',
+  3 => '_tagData',
+  4 => '_articleData',
+  5 => '_linkData',
+  6 => 'headConf',
+  7 => 'articleData',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002560s ] mysql:host=127.0.0.1;dbname=blog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_webset` [ RunTime:0.004044s ]
+[ sql ] [ SQL ] SELECT `webset_name`,`webset_value` FROM `blog_webset` [ RunTime:0.000415s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_cate` [ RunTime:0.003095s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_cate` WHERE  `cate_pid` = 0 ORDER BY cate_sort desc LIMIT 3 [ RunTime:0.000635s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_cate` ORDER BY cate_sort desc [ RunTime:0.000431s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_tag` [ RunTime:0.003236s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_tag` [ RunTime:0.000434s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_article` [ RunTime:0.003338s ]
+[ sql ] [ SQL ] SELECT `arc_id`,`arc_title`,`sendtime` FROM `blog_article` ORDER BY sendtime desc LIMIT 2 [ RunTime:0.000351s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_link` [ RunTime:0.003059s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_link` ORDER BY link_sort desc [ RunTime:0.000383s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_article` `a` INNER JOIN `blog_cate` `c` ON `a`.`cate_id`=`c`.`cate_id` WHERE  `a`.`is_recycle` = 2 ORDER BY sendtime desc [ RunTime:0.000763s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_arc_tag` [ RunTime:0.003936s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 4 [ RunTime:0.000494s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 3 [ RunTime:0.000403s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 2 [ RunTime:0.000408s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 1 [ RunTime:0.000384s ]
+---------------------------------------------------------------
+[ 2017-10-25T15:06:57+08:00 ] ::1 ::1 GET /w/1.html
+[ info ] tp5auth.dev:8080/w/1.html [运行时间：0.081833s][吞吐率：12.22req/s] [内存消耗：2,421.71kb] [文件加载：54]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'content',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+  'arc_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Content->index[ /Users/wubin/Desktop/thinkphp5_auth/application/index/controller/Content.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/index/view/content/index.html [ array (
+  0 => '_webset',
+  1 => '_cateData',
+  2 => '_allCateData',
+  3 => '_tagData',
+  4 => '_articleData',
+  5 => '_linkData',
+  6 => 'headConf',
+  7 => 'articleData',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000704s ] mysql:host=127.0.0.1;dbname=blog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_webset` [ RunTime:0.002576s ]
+[ sql ] [ SQL ] SELECT `webset_name`,`webset_value` FROM `blog_webset` [ RunTime:0.000416s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_cate` [ RunTime:0.002037s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_cate` WHERE  `cate_pid` = 0 ORDER BY cate_sort desc LIMIT 3 [ RunTime:0.000514s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_cate` ORDER BY cate_sort desc [ RunTime:0.000455s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_tag` [ RunTime:0.002360s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_tag` [ RunTime:0.000428s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_article` [ RunTime:0.002560s ]
+[ sql ] [ SQL ] SELECT `arc_id`,`arc_title`,`sendtime` FROM `blog_article` ORDER BY sendtime desc LIMIT 2 [ RunTime:0.000491s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_link` [ RunTime:0.002194s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_link` ORDER BY link_sort desc [ RunTime:0.000462s ]
+[ sql ] [ SQL ] UPDATE `blog_article`  SET `arc_click`=arc_click+1  WHERE  `arc_id` = 1 [ RunTime:0.002063s ]
+[ sql ] [ SQL ] SELECT `arc_id`,`arc_title`,`arc_author`,`arc_content`,`sendtime` FROM `blog_article` WHERE  `arc_id` = 1 LIMIT 1 [ RunTime:0.000483s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_arc_tag` [ RunTime:0.003298s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 1 [ RunTime:0.000717s ]
+---------------------------------------------------------------
+[ 2017-10-25T15:07:02+08:00 ] ::1 ::1 GET /c/3.html
+[ info ] tp5auth.dev:8080/c/3.html [运行时间：0.069340s][吞吐率：14.42req/s] [内存消耗：2,621.80kb] [文件加载：53]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'lists',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/w/1.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+  'cate_id' => '3',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Lists->index[ /Users/wubin/Desktop/thinkphp5_auth/application/index/controller/Lists.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/index/view/lists/index.html [ array (
+  0 => '_webset',
+  1 => '_cateData',
+  2 => '_allCateData',
+  3 => '_tagData',
+  4 => '_articleData',
+  5 => '_linkData',
+  6 => 'headConf',
+  7 => 'headData',
+  8 => 'articleData',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000466s ] mysql:host=127.0.0.1;dbname=blog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_webset` [ RunTime:0.007937s ]
+[ sql ] [ SQL ] SELECT `webset_name`,`webset_value` FROM `blog_webset` [ RunTime:0.000515s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_cate` [ RunTime:0.002170s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_cate` WHERE  `cate_pid` = 0 ORDER BY cate_sort desc LIMIT 3 [ RunTime:0.000544s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_cate` ORDER BY cate_sort desc [ RunTime:0.000367s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_tag` [ RunTime:0.002011s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_tag` [ RunTime:0.000346s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_article` [ RunTime:0.001701s ]
+[ sql ] [ SQL ] SELECT `arc_id`,`arc_title`,`sendtime` FROM `blog_article` ORDER BY sendtime desc LIMIT 2 [ RunTime:0.000345s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_link` [ RunTime:0.001552s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_link` ORDER BY link_sort desc [ RunTime:0.000352s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_cate` [ RunTime:0.000379s ]
+[ sql ] [ SQL ] SELECT `cate_name` FROM `blog_cate` WHERE  `cate_id` = 3 LIMIT 1 [ RunTime:0.000377s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `blog_article` WHERE  `cate_id` IN (3) LIMIT 1 [ RunTime:0.000555s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_article` `a` INNER JOIN `blog_cate` `c` ON `a`.`cate_id`=`c`.`cate_id` WHERE  `a`.`is_recycle` = 2  AND `a`.`cate_id` IN ('3') [ RunTime:0.000605s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_arc_tag` [ RunTime:0.002503s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 1 [ RunTime:0.000459s ]
+---------------------------------------------------------------
+[ 2017-10-25T15:07:05+08:00 ] ::1 ::1 GET /index.html
+[ info ] tp5auth.dev:8080/index.html [运行时间：0.056605s][吞吐率：17.67req/s] [内存消耗：2,164.80kb] [文件加载：49]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/c/3.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ /Users/wubin/Desktop/thinkphp5_auth/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/index/view/index/index.html [ array (
+  0 => '_webset',
+  1 => '_cateData',
+  2 => '_allCateData',
+  3 => '_tagData',
+  4 => '_articleData',
+  5 => '_linkData',
+  6 => 'headConf',
+  7 => 'articleData',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000501s ] mysql:host=127.0.0.1;dbname=blog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_webset` [ RunTime:0.002347s ]
+[ sql ] [ SQL ] SELECT `webset_name`,`webset_value` FROM `blog_webset` [ RunTime:0.000457s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_cate` [ RunTime:0.002160s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_cate` WHERE  `cate_pid` = 0 ORDER BY cate_sort desc LIMIT 3 [ RunTime:0.000469s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_cate` ORDER BY cate_sort desc [ RunTime:0.000415s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_tag` [ RunTime:0.001726s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_tag` [ RunTime:0.000361s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_article` [ RunTime:0.002019s ]
+[ sql ] [ SQL ] SELECT `arc_id`,`arc_title`,`sendtime` FROM `blog_article` ORDER BY sendtime desc LIMIT 2 [ RunTime:0.000376s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_link` [ RunTime:0.001726s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_link` ORDER BY link_sort desc [ RunTime:0.000365s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_article` `a` INNER JOIN `blog_cate` `c` ON `a`.`cate_id`=`c`.`cate_id` WHERE  `a`.`is_recycle` = 2 ORDER BY sendtime desc [ RunTime:0.000641s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_arc_tag` [ RunTime:0.002268s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 4 [ RunTime:0.000496s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 3 [ RunTime:0.000460s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 2 [ RunTime:0.000510s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 1 [ RunTime:0.000478s ]
+---------------------------------------------------------------
+[ 2017-10-25T15:07:06+08:00 ] ::1 ::1 GET /c/2.html
+[ info ] tp5auth.dev:8080/c/2.html [运行时间：0.070497s][吞吐率：14.18req/s] [内存消耗：2,469.41kb] [文件加载：51]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'lists',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+  'cate_id' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Lists->index[ /Users/wubin/Desktop/thinkphp5_auth/application/index/controller/Lists.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/index/view/lists/index.html [ array (
+  0 => '_webset',
+  1 => '_cateData',
+  2 => '_allCateData',
+  3 => '_tagData',
+  4 => '_articleData',
+  5 => '_linkData',
+  6 => 'headConf',
+  7 => 'headData',
+  8 => 'articleData',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000482s ] mysql:host=127.0.0.1;dbname=blog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_webset` [ RunTime:0.008553s ]
+[ sql ] [ SQL ] SELECT `webset_name`,`webset_value` FROM `blog_webset` [ RunTime:0.000448s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_cate` [ RunTime:0.002681s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_cate` WHERE  `cate_pid` = 0 ORDER BY cate_sort desc LIMIT 3 [ RunTime:0.000663s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_cate` ORDER BY cate_sort desc [ RunTime:0.000456s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_tag` [ RunTime:0.002926s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_tag` [ RunTime:0.000469s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_article` [ RunTime:0.003232s ]
+[ sql ] [ SQL ] SELECT `arc_id`,`arc_title`,`sendtime` FROM `blog_article` ORDER BY sendtime desc LIMIT 2 [ RunTime:0.000427s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_link` [ RunTime:0.002166s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_link` ORDER BY link_sort desc [ RunTime:0.000447s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_cate` [ RunTime:0.000439s ]
+[ sql ] [ SQL ] SELECT `cate_name` FROM `blog_cate` WHERE  `cate_id` = 2 LIMIT 1 [ RunTime:0.000410s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `blog_article` WHERE  `cate_id` IN (3,4,10,2) LIMIT 1 [ RunTime:0.000460s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_article` `a` INNER JOIN `blog_cate` `c` ON `a`.`cate_id`=`c`.`cate_id` WHERE  `a`.`is_recycle` = 2  AND `a`.`cate_id` IN (3,4,10,'2') [ RunTime:0.000635s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_arc_tag` [ RunTime:0.002120s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 1 [ RunTime:0.000491s ]
+---------------------------------------------------------------
+[ 2017-10-25T15:07:07+08:00 ] ::1 ::1 GET /c/9.html
+[ info ] tp5auth.dev:8080/c/9.html [运行时间：0.068734s][吞吐率：14.55req/s] [内存消耗：2,462.18kb] [文件加载：51]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'lists',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/c/2.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+  'cate_id' => '9',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Lists->index[ /Users/wubin/Desktop/thinkphp5_auth/application/index/controller/Lists.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/index/view/lists/index.html [ array (
+  0 => '_webset',
+  1 => '_cateData',
+  2 => '_allCateData',
+  3 => '_tagData',
+  4 => '_articleData',
+  5 => '_linkData',
+  6 => 'headConf',
+  7 => 'headData',
+  8 => 'articleData',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000482s ] mysql:host=127.0.0.1;dbname=blog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_webset` [ RunTime:0.008670s ]
+[ sql ] [ SQL ] SELECT `webset_name`,`webset_value` FROM `blog_webset` [ RunTime:0.000474s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_cate` [ RunTime:0.002864s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_cate` WHERE  `cate_pid` = 0 ORDER BY cate_sort desc LIMIT 3 [ RunTime:0.000672s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_cate` ORDER BY cate_sort desc [ RunTime:0.000461s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_tag` [ RunTime:0.002422s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_tag` [ RunTime:0.000372s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_article` [ RunTime:0.002206s ]
+[ sql ] [ SQL ] SELECT `arc_id`,`arc_title`,`sendtime` FROM `blog_article` ORDER BY sendtime desc LIMIT 2 [ RunTime:0.000433s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_link` [ RunTime:0.002137s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_link` ORDER BY link_sort desc [ RunTime:0.000399s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_cate` [ RunTime:0.000450s ]
+[ sql ] [ SQL ] SELECT `cate_name` FROM `blog_cate` WHERE  `cate_id` = 9 LIMIT 1 [ RunTime:0.000437s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `blog_article` WHERE  `cate_id` IN (9) LIMIT 1 [ RunTime:0.000439s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_article` `a` INNER JOIN `blog_cate` `c` ON `a`.`cate_id`=`c`.`cate_id` WHERE  `a`.`is_recycle` = 2  AND `a`.`cate_id` IN ('9') [ RunTime:0.000665s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_arc_tag` [ RunTime:0.002135s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 3 [ RunTime:0.000525s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 4 [ RunTime:0.000462s ]
+---------------------------------------------------------------
+[ 2017-10-25T15:07:07+08:00 ] ::1 ::1 GET /index.html
+[ info ] tp5auth.dev:8080/index.html [运行时间：0.065791s][吞吐率：15.20req/s] [内存消耗：2,164.80kb] [文件加载：49]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/c/9.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ /Users/wubin/Desktop/thinkphp5_auth/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/index/view/index/index.html [ array (
+  0 => '_webset',
+  1 => '_cateData',
+  2 => '_allCateData',
+  3 => '_tagData',
+  4 => '_articleData',
+  5 => '_linkData',
+  6 => 'headConf',
+  7 => 'articleData',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000478s ] mysql:host=127.0.0.1;dbname=blog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_webset` [ RunTime:0.009027s ]
+[ sql ] [ SQL ] SELECT `webset_name`,`webset_value` FROM `blog_webset` [ RunTime:0.000698s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_cate` [ RunTime:0.003098s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_cate` WHERE  `cate_pid` = 0 ORDER BY cate_sort desc LIMIT 3 [ RunTime:0.000552s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_cate` ORDER BY cate_sort desc [ RunTime:0.000435s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_tag` [ RunTime:0.002434s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_tag` [ RunTime:0.000345s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_article` [ RunTime:0.002511s ]
+[ sql ] [ SQL ] SELECT `arc_id`,`arc_title`,`sendtime` FROM `blog_article` ORDER BY sendtime desc LIMIT 2 [ RunTime:0.000429s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_link` [ RunTime:0.001889s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_link` ORDER BY link_sort desc [ RunTime:0.000352s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_article` `a` INNER JOIN `blog_cate` `c` ON `a`.`cate_id`=`c`.`cate_id` WHERE  `a`.`is_recycle` = 2 ORDER BY sendtime desc [ RunTime:0.000631s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_arc_tag` [ RunTime:0.001653s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 4 [ RunTime:0.000499s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 3 [ RunTime:0.000429s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 2 [ RunTime:0.000441s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 1 [ RunTime:0.000451s ]
+---------------------------------------------------------------
+[ 2017-10-25T15:07:22+08:00 ] ::1 ::1 GET /admin/entry/index
+[ info ] tp5auth.dev:8080/admin/entry/index [运行时间：0.024970s][吞吐率：40.05req/s] [内存消耗：1,382.66kb] [文件加载：43]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'entry',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T15:07:22+08:00 ] ::1 ::1 GET /admin/login/login.html
+[ info ] tp5auth.dev:8080/admin/login/login.html [运行时间：0.024560s][吞吐率：40.72req/s] [内存消耗：1,574.19kb] [文件加载：43]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=794d23a742824026924160e7244e7472',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Login.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/admin/view/login/index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T15:07:22+08:00 ] ::1 ::1 GET /static/admin/admin.ui/js/slimscroll/jquery.slimscroll.min.js
+[ info ] tp5auth.dev:8080/static/admin/admin.ui/js/slimscroll/jquery.slimscroll.min.js [运行时间：0.028666s][吞吐率：34.88req/s] [内存消耗：1,124.84kb] [文件加载：35]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'admin',
+    2 => 'admin.ui',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => '*/*',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=794d23a742824026924160e7244e7472',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'slimscroll',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T15:07:22+08:00 ] ::1 ::1 GET /captcha.html
+[ info ] tp5auth.dev:8080/captcha.html [运行时间：0.058191s][吞吐率：17.18req/s] [内存消耗：1,143.25kb] [文件加载：34]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=794d23a742824026924160e7244e7472',
+)
+[ info ] [ PARAM ] array (
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ /Users/wubin/Desktop/thinkphp5_auth/vendor/topthink/think-captcha/src/CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T15:07:33+08:00 ] ::1 ::1 POST /admin/login/login.html
+[ info ] tp5auth.dev:8080/admin/login/login.html [运行时间：0.061690s][吞吐率：16.21req/s] [内存消耗：2,614.98kb] [文件加载：59]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'content-length' => '52',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://tp5auth.dev:8080',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=794d23a742824026924160e7244e7472',
+)
+[ info ] [ PARAM ] array (
+  'admin_username' => 'admin',
+  'admin_password' => 'admin888',
+  'code' => 'u8',
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/tpl/dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000677s ] mysql:host=127.0.0.1;dbname=blog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_admin` [ RunTime:0.005663s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_admin` WHERE  `admin_username` = 'admin'  AND `admin_password` = 'h3vPU8JGuF3VS/uxIpjRSw==' LIMIT 1 [ RunTime:0.000830s ]
+---------------------------------------------------------------
+[ 2017-10-25T15:07:35+08:00 ] ::1 ::1 GET /admin/entry/index.html
+[ info ] tp5auth.dev:8080/admin/entry/index.html [运行时间：0.027738s][吞吐率：36.05req/s] [内存消耗：1,609.52kb] [文件加载：44]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'entry',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=794d23a742824026924160e7244e7472',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Entry->index[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Entry.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/admin/view/entry/index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T15:08:01+08:00 ] ::1 ::1 GET /admin/login/login.html
+[ info ] tp5auth.dev:8080/admin/login/login.html [运行时间：0.029764s][吞吐率：33.60req/s] [内存消耗：1,373.52kb] [文件加载：41]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=794d23a742824026924160e7244e7472',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Login.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/admin/view/login/index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T15:08:23+08:00 ] ::1 ::1 GET /admin/login/login.html
+[ info ] tp5auth.dev:8080/admin/login/login.html [运行时间：0.032375s][吞吐率：30.89req/s] [内存消耗：1,574.58kb] [文件加载：43]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=794d23a742824026924160e7244e7472',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Login.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/admin/view/login/index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T15:08:23+08:00 ] ::1 ::1 GET /static/admin/admin.ui/js/slimscroll/jquery.slimscroll.min.js
+[ info ] tp5auth.dev:8080/static/admin/admin.ui/js/slimscroll/jquery.slimscroll.min.js [运行时间：0.025398s][吞吐率：39.37req/s] [内存消耗：1,124.84kb] [文件加载：35]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'admin',
+    2 => 'admin.ui',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => '*/*',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=794d23a742824026924160e7244e7472',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'slimscroll',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T15:08:23+08:00 ] ::1 ::1 GET /captcha.html
+[ info ] tp5auth.dev:8080/captcha.html [运行时间：0.033376s][吞吐率：29.96req/s] [内存消耗：1,144.27kb] [文件加载：34]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=794d23a742824026924160e7244e7472',
+)
+[ info ] [ PARAM ] array (
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ /Users/wubin/Desktop/thinkphp5_auth/vendor/topthink/think-captcha/src/CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T15:08:25+08:00 ] ::1 ::1 GET /admin/entry/index.html
+[ info ] tp5auth.dev:8080/admin/entry/index.html [运行时间：0.025343s][吞吐率：39.46req/s] [内存消耗：1,388.66kb] [文件加载：42]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'entry',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=794d23a742824026924160e7244e7472',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Entry->index[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Entry.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/admin/view/entry/index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T15:08:34+08:00 ] ::1 ::1 GET /admin/entry/index.html
+[ info ] tp5auth.dev:8080/admin/entry/index.html [运行时间：0.026951s][吞吐率：37.10req/s] [内存消耗：1,610.43kb] [文件加载：44]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'entry',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=794d23a742824026924160e7244e7472',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Entry->index[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Entry.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/admin/view/entry/index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T15:09:03+08:00 ] ::1 ::1 GET /admin/entry/index.html
+[ info ] tp5auth.dev:8080/admin/entry/index.html [运行时间：0.028939s][吞吐率：34.56req/s] [内存消耗：1,610.30kb] [文件加载：44]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'entry',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=794d23a742824026924160e7244e7472',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Entry->index[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Entry.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/admin/view/entry/index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T15:09:16+08:00 ] ::1 ::1 GET /admin/entry/index.html
+[ info ] tp5auth.dev:8080/admin/entry/index.html [运行时间：0.032730s][吞吐率：30.55req/s] [内存消耗：1,610.30kb] [文件加载：44]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'entry',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=794d23a742824026924160e7244e7472',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Entry->index[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Entry.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/admin/view/entry/index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T15:13:27+08:00 ] ::1 ::1 GET /
+[ info ] tp5auth.dev:8080/ [运行时间：0.068901s][吞吐率：14.51req/s] [内存消耗：2,165.07kb] [文件加载：49]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=794d23a742824026924160e7244e7472',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ /Users/wubin/Desktop/thinkphp5_auth/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/index/view/index/index.html [ array (
+  0 => '_webset',
+  1 => '_cateData',
+  2 => '_allCateData',
+  3 => '_tagData',
+  4 => '_articleData',
+  5 => '_linkData',
+  6 => 'headConf',
+  7 => 'articleData',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001003s ] mysql:host=127.0.0.1;dbname=blog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_webset` [ RunTime:0.004587s ]
+[ sql ] [ SQL ] SELECT `webset_name`,`webset_value` FROM `blog_webset` [ RunTime:0.000410s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_cate` [ RunTime:0.002346s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_cate` WHERE  `cate_pid` = 0 ORDER BY cate_sort desc LIMIT 3 [ RunTime:0.000783s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_cate` ORDER BY cate_sort desc [ RunTime:0.000777s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_tag` [ RunTime:0.003537s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_tag` [ RunTime:0.000436s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_article` [ RunTime:0.002270s ]
+[ sql ] [ SQL ] SELECT `arc_id`,`arc_title`,`sendtime` FROM `blog_article` ORDER BY sendtime desc LIMIT 2 [ RunTime:0.000454s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_link` [ RunTime:0.002036s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_link` ORDER BY link_sort desc [ RunTime:0.000403s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_article` `a` INNER JOIN `blog_cate` `c` ON `a`.`cate_id`=`c`.`cate_id` WHERE  `a`.`is_recycle` = 2 ORDER BY sendtime desc [ RunTime:0.000781s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_arc_tag` [ RunTime:0.002046s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 4 [ RunTime:0.000530s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 3 [ RunTime:0.000484s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 2 [ RunTime:0.000489s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 1 [ RunTime:0.000425s ]
+---------------------------------------------------------------
+[ 2017-10-25T15:13:35+08:00 ] ::1 ::1 GET /
+[ info ] tp5auth.dev:8080/ [运行时间：0.068946s][吞吐率：14.50req/s] [内存消耗：2,165.46kb] [文件加载：49]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=794d23a742824026924160e7244e7472',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ /Users/wubin/Desktop/thinkphp5_auth/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/index/view/index/index.html [ array (
+  0 => '_webset',
+  1 => '_cateData',
+  2 => '_allCateData',
+  3 => '_tagData',
+  4 => '_articleData',
+  5 => '_linkData',
+  6 => 'headConf',
+  7 => 'articleData',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000713s ] mysql:host=127.0.0.1;dbname=blog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_webset` [ RunTime:0.009121s ]
+[ sql ] [ SQL ] SELECT `webset_name`,`webset_value` FROM `blog_webset` [ RunTime:0.000821s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_cate` [ RunTime:0.003130s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_cate` WHERE  `cate_pid` = 0 ORDER BY cate_sort desc LIMIT 3 [ RunTime:0.000615s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_cate` ORDER BY cate_sort desc [ RunTime:0.000457s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_tag` [ RunTime:0.002317s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_tag` [ RunTime:0.000405s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_article` [ RunTime:0.002260s ]
+[ sql ] [ SQL ] SELECT `arc_id`,`arc_title`,`sendtime` FROM `blog_article` ORDER BY sendtime desc LIMIT 2 [ RunTime:0.000453s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_link` [ RunTime:0.002318s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_link` ORDER BY link_sort desc [ RunTime:0.000459s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_article` `a` INNER JOIN `blog_cate` `c` ON `a`.`cate_id`=`c`.`cate_id` WHERE  `a`.`is_recycle` = 2 ORDER BY sendtime desc [ RunTime:0.000711s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_arc_tag` [ RunTime:0.002054s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 4 [ RunTime:0.000496s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 3 [ RunTime:0.000440s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 2 [ RunTime:0.000418s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 1 [ RunTime:0.000439s ]
+---------------------------------------------------------------
+[ 2017-10-25T15:34:02+08:00 ] ::1 ::1 GET /
+[ info ] tp5auth.dev:8080/ [运行时间：0.060959s][吞吐率：16.40req/s] [内存消耗：2,165.67kb] [文件加载：49]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cache-control' => 'max-age=0',
+  'cookie' => 'PHPSESSID=794d23a742824026924160e7244e7472',
+  'proxy-connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'x-lantern-version' => '3.7.3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ /Users/wubin/Desktop/thinkphp5_auth/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/index/view/index/index.html [ array (
+  0 => '_webset',
+  1 => '_cateData',
+  2 => '_allCateData',
+  3 => '_tagData',
+  4 => '_articleData',
+  5 => '_linkData',
+  6 => 'headConf',
+  7 => 'articleData',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000680s ] mysql:host=127.0.0.1;dbname=blog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_webset` [ RunTime:0.007942s ]
+[ sql ] [ SQL ] SELECT `webset_name`,`webset_value` FROM `blog_webset` [ RunTime:0.000657s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_cate` [ RunTime:0.002991s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_cate` WHERE  `cate_pid` = 0 ORDER BY cate_sort desc LIMIT 3 [ RunTime:0.000535s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_cate` ORDER BY cate_sort desc [ RunTime:0.000426s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_tag` [ RunTime:0.001971s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_tag` [ RunTime:0.000347s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_article` [ RunTime:0.002378s ]
+[ sql ] [ SQL ] SELECT `arc_id`,`arc_title`,`sendtime` FROM `blog_article` ORDER BY sendtime desc LIMIT 2 [ RunTime:0.000448s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_link` [ RunTime:0.001927s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_link` ORDER BY link_sort desc [ RunTime:0.000403s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_article` `a` INNER JOIN `blog_cate` `c` ON `a`.`cate_id`=`c`.`cate_id` WHERE  `a`.`is_recycle` = 2 ORDER BY sendtime desc [ RunTime:0.000608s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_arc_tag` [ RunTime:0.001917s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 4 [ RunTime:0.000423s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 3 [ RunTime:0.000415s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 2 [ RunTime:0.000374s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 1 [ RunTime:0.000398s ]
+---------------------------------------------------------------
+[ 2017-10-25T16:00:29+08:00 ] ::1 ::1 GET /
+[ info ] tp5auth.dev:8080/ [运行时间：0.069158s][吞吐率：14.46req/s] [内存消耗：2,164.73kb] [文件加载：49]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ /Users/wubin/Desktop/thinkphp5_auth/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/index/view/index/index.html [ array (
+  0 => '_webset',
+  1 => '_cateData',
+  2 => '_allCateData',
+  3 => '_tagData',
+  4 => '_articleData',
+  5 => '_linkData',
+  6 => 'headConf',
+  7 => 'articleData',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000708s ] mysql:host=127.0.0.1;dbname=blog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_webset` [ RunTime:0.008287s ]
+[ sql ] [ SQL ] SELECT `webset_name`,`webset_value` FROM `blog_webset` [ RunTime:0.000922s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_cate` [ RunTime:0.002568s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_cate` WHERE  `cate_pid` = 0 ORDER BY cate_sort desc LIMIT 3 [ RunTime:0.000522s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_cate` ORDER BY cate_sort desc [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_tag` [ RunTime:0.001977s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_tag` [ RunTime:0.000401s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_article` [ RunTime:0.002189s ]
+[ sql ] [ SQL ] SELECT `arc_id`,`arc_title`,`sendtime` FROM `blog_article` ORDER BY sendtime desc LIMIT 2 [ RunTime:0.000413s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_link` [ RunTime:0.002110s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_link` ORDER BY link_sort desc [ RunTime:0.000448s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_article` `a` INNER JOIN `blog_cate` `c` ON `a`.`cate_id`=`c`.`cate_id` WHERE  `a`.`is_recycle` = 2 ORDER BY sendtime desc [ RunTime:0.000694s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_arc_tag` [ RunTime:0.002004s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 4 [ RunTime:0.000521s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 3 [ RunTime:0.000343s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 2 [ RunTime:0.000396s ]
+[ sql ] [ SQL ] SELECT `t`.`tag_id`,`t`.`tag_name` FROM `blog_arc_tag` `at` INNER JOIN `blog_tag` `t` ON `at`.`tag_id`=`t`.`tag_id` WHERE  `at`.`arc_id` = 1 [ RunTime:0.000366s ]
+---------------------------------------------------------------
+[ 2017-10-25T16:29:32+08:00 ] ::1 ::1 GET /admin/entry/index.html
+[ info ] tp5auth.dev:8080/admin/entry/index.html [运行时间：0.028688s][吞吐率：34.86req/s] [内存消耗：1,382.73kb] [文件加载：43]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'entry',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T16:29:32+08:00 ] ::1 ::1 GET /admin/login/login.html
+[ info ] tp5auth.dev:8080/admin/login/login.html [运行时间：0.025449s][吞吐率：39.29req/s] [内存消耗：1,373.52kb] [文件加载：41]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Login.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/admin/view/login/index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T16:29:32+08:00 ] ::1 ::1 GET /static/admin/admin.ui/js/slimscroll/jquery.slimscroll.min.js
+[ info ] tp5auth.dev:8080/static/admin/admin.ui/js/slimscroll/jquery.slimscroll.min.js [运行时间：0.025000s][吞吐率：40.00req/s] [内存消耗：1,124.84kb] [文件加载：35]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'admin',
+    2 => 'admin.ui',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => '*/*',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'slimscroll',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T16:29:32+08:00 ] ::1 ::1 GET /captcha.html
+[ info ] tp5auth.dev:8080/captcha.html [运行时间：0.026334s][吞吐率：37.97req/s] [内存消耗：1,143.25kb] [文件加载：34]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ /Users/wubin/Desktop/thinkphp5_auth/vendor/topthink/think-captcha/src/CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T16:29:41+08:00 ] ::1 ::1 POST /admin/login/login.html
+[ info ] tp5auth.dev:8080/admin/login/login.html [运行时间：0.051675s][吞吐率：19.35req/s] [内存消耗：2,480.22kb] [文件加载：57]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'content-length' => '52',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://tp5auth.dev:8080',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+  'admin_username' => 'admin',
+  'admin_password' => 'admin888',
+  'code' => 'wx',
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/tpl/dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000724s ] mysql:host=127.0.0.1;dbname=blog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_admin` [ RunTime:0.002846s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_admin` WHERE  `admin_username` = 'admin'  AND `admin_password` = 'h3vPU8JGuF3VS/uxIpjRSw==' LIMIT 1 [ RunTime:0.000523s ]
+---------------------------------------------------------------
+[ 2017-10-25T16:29:43+08:00 ] ::1 ::1 GET /admin/entry/index.html
+[ info ] tp5auth.dev:8080/admin/entry/index.html [运行时间：0.024970s][吞吐率：40.05req/s] [内存消耗：1,387.95kb] [文件加载：42]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'entry',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Entry->index[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Entry.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/admin/view/entry/index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T16:29:45+08:00 ] ::1 ::1 GET /admin/webset/index.html
+[ info ] tp5auth.dev:8080/admin/webset/index.html [运行时间：0.079181s][吞吐率：12.63req/s] [内存消耗：2,259.32kb] [文件加载：51]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'webset',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/entry/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Webset->index[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Webset.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/admin/view/webset/index.html [ array (
+  0 => 'field',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000755s ] mysql:host=127.0.0.1;dbname=blog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_webset` [ RunTime:0.002687s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_webset` [ RunTime:0.000431s ]
+---------------------------------------------------------------
+[ 2017-10-25T16:29:46+08:00 ] ::1 ::1 GET /admin/link/index.html
+[ info ] tp5auth.dev:8080/admin/link/index.html [运行时间：0.071408s][吞吐率：14.00req/s] [内存消耗：2,642.38kb] [文件加载：56]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'link',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/webset/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Link->index[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Link.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/admin/view/link/index.html [ array (
+  0 => 'field',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000454s ] mysql:host=127.0.0.1;dbname=blog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_link` [ RunTime:0.002300s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `blog_link` LIMIT 1 [ RunTime:0.000367s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_link` ORDER BY link_sort desc,link_id desc LIMIT 0,10 [ RunTime:0.000702s ]
+---------------------------------------------------------------
+[ 2017-10-25T16:29:47+08:00 ] ::1 ::1 GET /admin/article/recycle.html
+[ info ] tp5auth.dev:8080/admin/article/recycle.html [运行时间：0.062474s][吞吐率：16.01req/s] [内存消耗：2,667.82kb] [文件加载：56]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article',
+    2 => 'recycle',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/link/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Article->recycle[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Article.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/admin/view/article/recycle.html [ array (
+  0 => 'field',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000470s ] mysql:host=127.0.0.1;dbname=blog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_article` [ RunTime:0.002716s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `blog_article` `a` INNER JOIN `blog_cate` `c` ON `a`.`cate_id`=`c`.`cate_id` WHERE  `a`.`is_recycle` = 1 LIMIT 1 [ RunTime:0.000523s ]
+[ sql ] [ SQL ] SELECT `a`.`arc_id`,`a`.`arc_title`,`a`.`arc_author`,`a`.`sendtime`,`c`.`cate_name`,`a`.`arc_sort` FROM `blog_article` `a` INNER JOIN `blog_cate` `c` ON `a`.`cate_id`=`c`.`cate_id` WHERE  `a`.`is_recycle` = 1 ORDER BY a.arc_sort desc,a.sendtime desc,a.arc_id desc LIMIT 0,2 [ RunTime:0.000547s ]
+---------------------------------------------------------------
+[ 2017-10-25T16:29:47+08:00 ] ::1 ::1 GET /admin/article/index.html
+[ info ] tp5auth.dev:8080/admin/article/index.html [运行时间：0.065249s][吞吐率：15.33req/s] [内存消耗：2,672.35kb] [文件加载：56]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/article/recycle.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Article->index[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Article.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/admin/view/article/index.html [ array (
+  0 => 'field',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000512s ] mysql:host=127.0.0.1;dbname=blog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_article` [ RunTime:0.008253s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `blog_article` `a` INNER JOIN `blog_cate` `c` ON `a`.`cate_id`=`c`.`cate_id` WHERE  `a`.`is_recycle` = 2 LIMIT 1 [ RunTime:0.000638s ]
+[ sql ] [ SQL ] SELECT `a`.`arc_id`,`a`.`arc_title`,`a`.`arc_author`,`a`.`sendtime`,`c`.`cate_name`,`a`.`arc_sort` FROM `blog_article` `a` INNER JOIN `blog_cate` `c` ON `a`.`cate_id`=`c`.`cate_id` WHERE  `a`.`is_recycle` = 2 ORDER BY a.arc_sort desc,a.sendtime desc,a.arc_id desc LIMIT 0,2 [ RunTime:0.000608s ]
+---------------------------------------------------------------
+[ 2017-10-25T16:29:48+08:00 ] ::1 ::1 GET /admin/tag/index.html
+[ info ] tp5auth.dev:8080/admin/tag/index.html [运行时间：0.058458s][吞吐率：17.11req/s] [内存消耗：2,638.03kb] [文件加载：56]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'tag',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/article/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Tag->index[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Tag.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/admin/view/tag/index.html [ array (
+  0 => 'field',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000544s ] mysql:host=127.0.0.1;dbname=blog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_tag` [ RunTime:0.002434s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `blog_tag` LIMIT 1 [ RunTime:0.000370s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_tag` LIMIT 0,2 [ RunTime:0.000372s ]
+---------------------------------------------------------------
+[ 2017-10-25T16:29:49+08:00 ] ::1 ::1 GET /admin/category/index.html
+[ info ] tp5auth.dev:8080/admin/category/index.html [运行时间：0.073436s][吞吐率：13.62req/s] [内存消耗：2,647.71kb] [文件加载：55]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'category',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/tag/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Category->index[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Category.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/admin/view/category/index.html [ array (
+  0 => 'field',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000524s ] mysql:host=127.0.0.1;dbname=blog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_cate` [ RunTime:0.002430s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_cate` ORDER BY cate_sort desc,cate_id [ RunTime:0.000456s ]
+---------------------------------------------------------------
+[ 2017-10-25T16:29:50+08:00 ] ::1 ::1 GET /admin/webset/index.html
+[ info ] tp5auth.dev:8080/admin/webset/index.html [运行时间：0.045214s][吞吐率：22.12req/s] [内存消耗：2,100.83kb] [文件加载：49]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'webset',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/category/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Webset->index[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Webset.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/admin/view/webset/index.html [ array (
+  0 => 'field',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000446s ] mysql:host=127.0.0.1;dbname=blog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_webset` [ RunTime:0.008267s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_webset` [ RunTime:0.000453s ]
+---------------------------------------------------------------
+[ 2017-10-25T16:30:12+08:00 ] ::1 ::1 GET /admin/webset/index.html
+[ info ] tp5auth.dev:8080/admin/webset/index.html [运行时间：0.039632s][吞吐率：25.23req/s] [内存消耗：2,100.83kb] [文件加载：49]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'webset',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/webset/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Webset->index[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Webset.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/admin/view/webset/index.html [ array (
+  0 => 'field',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000508s ] mysql:host=127.0.0.1;dbname=blog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_webset` [ RunTime:0.008047s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_webset` [ RunTime:0.000517s ]
+---------------------------------------------------------------
+[ 2017-10-25T16:30:15+08:00 ] ::1 ::1 GET /admin/webset/index.html
+[ info ] tp5auth.dev:8080/admin/webset/index.html [运行时间：0.044798s][吞吐率：22.32req/s] [内存消耗：2,100.83kb] [文件加载：49]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'webset',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/webset/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Webset->index[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Webset.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/admin/view/webset/index.html [ array (
+  0 => 'field',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000487s ] mysql:host=127.0.0.1;dbname=blog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_webset` [ RunTime:0.006406s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_webset` [ RunTime:0.000415s ]
+---------------------------------------------------------------
+[ 2017-10-25T16:32:00+08:00 ] ::1 ::1 GET /admin/webset/index.html
+[ info ] tp5auth.dev:8080/admin/webset/index.html [运行时间：0.056777s][吞吐率：17.61req/s] [内存消耗：2,259.75kb] [文件加载：51]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'webset',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/webset/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Webset->index[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Webset.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/admin/view/webset/index.html [ array (
+  0 => 'field',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000723s ] mysql:host=127.0.0.1;dbname=blog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_webset` [ RunTime:0.003792s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_webset` [ RunTime:0.000428s ]
+---------------------------------------------------------------
+[ 2017-10-25T16:32:02+08:00 ] ::1 ::1 GET /admin/entry/out.html
+[ info ] tp5auth.dev:8080/admin/entry/out.html [运行时间：0.026360s][吞吐率：37.94req/s] [内存消耗：1,386.03kb] [文件加载：43]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'entry',
+    2 => 'out',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/webset/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Entry->out[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Entry.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T16:32:03+08:00 ] ::1 ::1 GET /admin/login/index.html
+[ info ] tp5auth.dev:8080/admin/login/index.html [运行时间：0.028093s][吞吐率：35.60req/s] [内存消耗：1,359.42kb] [文件加载：42]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/webset/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T16:32:27+08:00 ] ::1 ::1 GET /admin/login/login.html
+[ info ] tp5auth.dev:8080/admin/login/login.html [运行时间：0.025516s][吞吐率：39.19req/s] [内存消耗：1,373.52kb] [文件加载：41]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Login.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/admin/view/login/index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T16:32:27+08:00 ] ::1 ::1 GET /static/admin/admin.ui/js/slimscroll/jquery.slimscroll.min.js
+[ info ] tp5auth.dev:8080/static/admin/admin.ui/js/slimscroll/jquery.slimscroll.min.js [运行时间：0.030989s][吞吐率：32.27req/s] [内存消耗：1,124.84kb] [文件加载：35]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'admin',
+    2 => 'admin.ui',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => '*/*',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'slimscroll',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T16:32:27+08:00 ] ::1 ::1 GET /captcha.html
+[ info ] tp5auth.dev:8080/captcha.html [运行时间：0.048271s][吞吐率：20.72req/s] [内存消耗：1,143.25kb] [文件加载：34]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ /Users/wubin/Desktop/thinkphp5_auth/vendor/topthink/think-captcha/src/CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T16:32:31+08:00 ] ::1 ::1 GET /admin/entry/index.html
+[ info ] tp5auth.dev:8080/admin/entry/index.html [运行时间：0.027023s][吞吐率：37.01req/s] [内存消耗：1,385.53kb] [文件加载：43]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'entry',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T16:32:31+08:00 ] ::1 ::1 GET /admin/login/login.html
+[ info ] tp5auth.dev:8080/admin/login/login.html [运行时间：0.024272s][吞吐率：41.20req/s] [内存消耗：1,373.52kb] [文件加载：41]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Login.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/admin/view/login/index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T16:32:31+08:00 ] ::1 ::1 GET /static/admin/admin.ui/js/slimscroll/jquery.slimscroll.min.js
+[ info ] tp5auth.dev:8080/static/admin/admin.ui/js/slimscroll/jquery.slimscroll.min.js [运行时间：0.028517s][吞吐率：35.07req/s] [内存消耗：1,124.84kb] [文件加载：35]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'admin',
+    2 => 'admin.ui',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => '*/*',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'slimscroll',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T16:32:31+08:00 ] ::1 ::1 GET /captcha.html
+[ info ] tp5auth.dev:8080/captcha.html [运行时间：0.029312s][吞吐率：34.12req/s] [内存消耗：1,143.41kb] [文件加载：34]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ /Users/wubin/Desktop/thinkphp5_auth/vendor/topthink/think-captcha/src/CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T16:32:32+08:00 ] ::1 ::1 GET /admin/entry/index.html
+[ info ] tp5auth.dev:8080/admin/entry/index.html [运行时间：0.026701s][吞吐率：37.45req/s] [内存消耗：1,385.53kb] [文件加载：43]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'entry',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T16:32:32+08:00 ] ::1 ::1 GET /admin/login/login.html
+[ info ] tp5auth.dev:8080/admin/login/login.html [运行时间：0.024454s][吞吐率：40.89req/s] [内存消耗：1,373.52kb] [文件加载：41]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Login.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/admin/view/login/index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T16:32:32+08:00 ] ::1 ::1 GET /static/admin/admin.ui/js/slimscroll/jquery.slimscroll.min.js
+[ info ] tp5auth.dev:8080/static/admin/admin.ui/js/slimscroll/jquery.slimscroll.min.js [运行时间：0.024207s][吞吐率：41.31req/s] [内存消耗：1,124.84kb] [文件加载：35]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'admin',
+    2 => 'admin.ui',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => '*/*',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'slimscroll',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T16:32:32+08:00 ] ::1 ::1 GET /captcha.html
+[ info ] tp5auth.dev:8080/captcha.html [运行时间：0.040473s][吞吐率：24.71req/s] [内存消耗：1,143.41kb] [文件加载：34]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ /Users/wubin/Desktop/thinkphp5_auth/vendor/topthink/think-captcha/src/CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T16:32:37+08:00 ] ::1 ::1 GET /admin/entry/index.html
+[ info ] tp5auth.dev:8080/admin/entry/index.html [运行时间：0.020955s][吞吐率：47.72req/s] [内存消耗：1,385.53kb] [文件加载：43]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'entry',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T16:32:37+08:00 ] ::1 ::1 GET /admin/login/login.html
+[ info ] tp5auth.dev:8080/admin/login/login.html [运行时间：0.021526s][吞吐率：46.46req/s] [内存消耗：1,373.52kb] [文件加载：41]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Login.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/admin/view/login/index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T16:32:37+08:00 ] ::1 ::1 GET /static/admin/admin.ui/js/slimscroll/jquery.slimscroll.min.js
+[ info ] tp5auth.dev:8080/static/admin/admin.ui/js/slimscroll/jquery.slimscroll.min.js [运行时间：0.022202s][吞吐率：45.04req/s] [内存消耗：1,124.84kb] [文件加载：35]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'admin',
+    2 => 'admin.ui',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => '*/*',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'slimscroll',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T16:32:37+08:00 ] ::1 ::1 GET /captcha.html
+[ info ] tp5auth.dev:8080/captcha.html [运行时间：0.023740s][吞吐率：42.12req/s] [内存消耗：1,143.41kb] [文件加载：34]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ /Users/wubin/Desktop/thinkphp5_auth/vendor/topthink/think-captcha/src/CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T16:33:51+08:00 ] ::1 ::1 POST /admin/login/login.html
+[ info ] tp5auth.dev:8080/admin/login/login.html [运行时间：0.053908s][吞吐率：18.55req/s] [内存消耗：2,480.22kb] [文件加载：57]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'content-length' => '52',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://tp5auth.dev:8080',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+  'admin_username' => 'admin',
+  'admin_password' => 'admin888',
+  'code' => 'sp',
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/tpl/dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000743s ] mysql:host=127.0.0.1;dbname=blog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_admin` [ RunTime:0.004347s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_admin` WHERE  `admin_username` = 'admin'  AND `admin_password` = 'h3vPU8JGuF3VS/uxIpjRSw==' LIMIT 1 [ RunTime:0.000607s ]
+---------------------------------------------------------------
+[ 2017-10-25T16:33:53+08:00 ] ::1 ::1 GET /admin/entry/index.html
+[ info ] tp5auth.dev:8080/admin/entry/index.html [运行时间：0.030157s][吞吐率：33.16req/s] [内存消耗：1,610.95kb] [文件加载：44]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'entry',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Entry->index[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Entry.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/admin/view/entry/index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T16:34:07+08:00 ] ::1 ::1 GET /admin/entry/out.html
+[ info ] tp5auth.dev:8080/admin/entry/out.html [运行时间：0.029317s][吞吐率：34.11req/s] [内存消耗：1,385.98kb] [文件加载：43]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'entry',
+    2 => 'out',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/entry/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Entry->out[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Entry.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T16:34:07+08:00 ] ::1 ::1 GET /admin/login/login.html
+[ info ] tp5auth.dev:8080/admin/login/login.html [运行时间：0.024540s][吞吐率：40.75req/s] [内存消耗：1,373.95kb] [文件加载：41]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/entry/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Login.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/admin/view/login/index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T16:34:07+08:00 ] ::1 ::1 GET /static/admin/admin.ui/js/slimscroll/jquery.slimscroll.min.js
+[ info ] tp5auth.dev:8080/static/admin/admin.ui/js/slimscroll/jquery.slimscroll.min.js [运行时间：0.028880s][吞吐率：34.63req/s] [内存消耗：1,124.84kb] [文件加载：35]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'admin',
+    2 => 'admin.ui',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => '*/*',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'slimscroll',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T16:34:07+08:00 ] ::1 ::1 GET /captcha.html
+[ info ] tp5auth.dev:8080/captcha.html [运行时间：0.025245s][吞吐率：39.61req/s] [内存消耗：1,143.25kb] [文件加载：34]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ /Users/wubin/Desktop/thinkphp5_auth/vendor/topthink/think-captcha/src/CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T16:40:19+08:00 ] ::1 ::1 GET /captcha.html?0.5931129457783442
+[ info ] tp5auth.dev:8080/captcha.html?0.5931129457783442 [运行时间：0.026180s][吞吐率：38.20req/s] [内存消耗：1,143.46kb] [文件加载：34]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+  '0_5931129457783442' => '',
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ /Users/wubin/Desktop/thinkphp5_auth/vendor/topthink/think-captcha/src/CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T16:40:22+08:00 ] ::1 ::1 POST /admin/login/login.html
+[ info ] tp5auth.dev:8080/admin/login/login.html [运行时间：0.054963s][吞吐率：18.19req/s] [内存消耗：2,480.22kb] [文件加载：57]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'content-length' => '52',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://tp5auth.dev:8080',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+  'admin_username' => 'admin',
+  'admin_password' => 'admin888',
+  'code' => 'w6',
+)
+[ info ] [ RUN ] app\admin\controller\Login->login[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/tpl/dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000616s ] mysql:host=127.0.0.1;dbname=blog;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `blog_admin` [ RunTime:0.005153s ]
+[ sql ] [ SQL ] SELECT * FROM `blog_admin` WHERE  `admin_username` = 'admin'  AND `admin_password` = 'h3vPU8JGuF3VS/uxIpjRSw==' LIMIT 1 [ RunTime:0.000949s ]
+---------------------------------------------------------------
+[ 2017-10-25T16:40:23+08:00 ] ::1 ::1 GET /admin/entry/index.html
+[ info ] tp5auth.dev:8080/admin/entry/index.html [运行时间：0.025526s][吞吐率：39.18req/s] [内存消耗：1,389.52kb] [文件加载：42]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'entry',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Entry->index[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Entry.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/admin/view/entry/index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T16:47:53+08:00 ] ::1 ::1 GET /admin/entry/index.html
+[ info ] tp5auth.dev:8080/admin/entry/index.html [运行时间：0.035804s][吞吐率：27.93req/s] [内存消耗：1,612.95kb] [文件加载：44]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'entry',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Entry->index[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Entry.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/admin/view/entry/index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-25T16:55:04+08:00 ] ::1 ::1 GET /admin/entry/index.html
+[ info ] tp5auth.dev:8080/admin/entry/index.html [运行时间：0.036191s][吞吐率：27.63req/s] [内存消耗：1,611.70kb] [文件加载：44]
+[ info ] [ LANG ] /Users/wubin/Desktop/thinkphp5_auth/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'entry',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'tp5auth.dev:8080',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36 OPR/48.0.2685.50 (Edition Baidu)',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://tp5auth.dev:8080/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=8a3b0ce4d48f554dc6ed0a43734988a8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Entry->index[ /Users/wubin/Desktop/thinkphp5_auth/application/admin/controller/Entry.php ]
+[ info ] [ VIEW ] /Users/wubin/Desktop/thinkphp5_auth/public/../application/admin/view/entry/index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File

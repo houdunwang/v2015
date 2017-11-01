@@ -1,0 +1,259 @@
+li{
+    list-style: none;
+}
+a{
+    color: @fullColor;
+    &:hover{
+       text-decoration: none;
+       color: black; 
+    }
+}
+body{
+    background: lighten(#000, 93.5%);
+}
+//内容颜色，默认为白色
+@contentColor:white;
+//整体颜色
+@fullColor:#1CAF9A;
+//小屏幕（平板768px以下） 
+@screen-sm-min:768px;
+header{
+    @padding:60px;
+    @media screen and (max-width: @screen-sm-min) {
+        padding: 30px;
+        h1{
+            font-size: 30px;
+        }
+    }
+    text-align: center;
+    background: @fullColor url(../images/bg.jpg) no-repeat;
+    padding-top: @padding;
+    padding-bottom:@padding;
+    background-position:center;
+    h1{
+        color: @contentColor;
+    }
+}
+nav{
+    border-top: 1px solid  #ebebeb;
+    border-bottom: 2px solid  #e1e1e1;
+    text-align: center;
+    font-size: 16px;
+    //缩小之后让汉堡按钮的文字左对齐
+    @media (max-width: @screen-sm-min) {
+        text-align: left;
+        .navbar-header{
+            text-align: center;
+            button.navbar-toggle{
+               float: none;
+               border: none;
+               span.icon-bar{
+                   width: 30px;
+                   background: #000000;
+               }
+               &:hover{
+                   background: none;
+               }
+            }
+        }
+    }
+    background: @contentColor;
+    ul._menu{
+        margin-bottom: 0px;
+        padding-left: 0;
+        li{
+            display: inline-block;
+            //如果小于768像素的时候变为块级元素
+            @media (max-width: @screen-sm-min) {
+                display:block;
+            }
+            a{
+                 color: #505050;
+            }
+            padding: 14px 20px;
+            &._active{
+                border-bottom: 2px solid @fullColor;
+            }
+            &:hover{
+                a{
+                    color: @fullColor;
+                }
+            }
+        }
+    }   
+}
+//左侧一整条线，字的下面是半条蓝线
+.little-bottom-color(@color,@fontColor){
+    border-bottom: 1px solid @color;
+    padding-bottom: 15px;
+    position:relative;
+    color: @fontColor;
+    &:after{
+        background:@fullColor;
+        bottom: -1px;
+        content: "";
+        height: 1px;
+        left: 0;
+        position: absolute;
+        width: 90px;
+    }
+}
+section{
+    main{
+        article{
+            background: @contentColor;
+            padding: 50px;
+            @media screen and (max-width: @screen-sm-min) {
+               padding: 20px;
+            }
+            &._carousel{
+                padding: 30px;
+                @media screen and (max-width: @screen-sm-min) {
+                    padding: 0px;
+                }
+            }
+            text-align: center;
+            margin-bottom: 30px;
+            ._head{
+                h1{
+                    @media (max-width: @screen-sm-min) {
+                        font-size: 2em;
+                    }
+                }
+                time{
+                    color: #999;
+                }
+            }
+            .category_title{
+                span{
+                   color: #999; 
+                }
+            }
+            ._digest{
+                margin-top: 20px;
+                p{
+                    color: #444443;
+                    text-align: left;
+                    font-size: 18px;
+                    line-height: 1.7em;
+                     @media screen and (max-width: @screen-sm-min) {
+                         height: 5em;
+                         overflow: hidden;
+                     }
+                }
+                img{
+                    margin-bottom: 20px;
+                }
+            }
+            ._more{
+                text-align: left;
+                margin-top: 20px;
+                .btn-default{
+                    color: @contentColor;
+                    background: @fullColor;
+                    border: none;
+                    padding: 10px 20px;
+                    transition: all 0.2s ease-in-out 0s;
+                    &:hover{
+                        background: #000000;
+                        color: @contentColor;
+                    }
+                }
+            }
+            ._footer{
+                margin-top: 20px;
+                border-top: 1px solid #eee;
+                padding-top: 10px;
+                text-align: left;
+                @color:#959595;
+                color: @color;
+                i{
+                    margin-right: 10px;
+                    color: @color;
+                }
+               a{
+                   color: @color;
+                   &:hover{
+                       color: @fullColor;
+                   }
+               }
+            }
+        }
+    }
+    aside{
+        ._widget{
+           background: @contentColor;  
+           padding: 20px;
+           margin-bottom: 30px;
+           h4{
+              .little-bottom-color(#ebebeb,#000); 
+           }
+           ._info{
+               margin-top: 0;
+               padding-top: 20px;
+           }
+           ._tag;
+        }
+    }
+}
+//标签样式，为了复用
+._tag(@borderColor:#ebebeb){
+       a{
+          color: #959595;
+          border: 1px solid @borderColor;
+          margin: 0 5px 5px 0px;
+          padding: 2px 7px;
+          display: inline-block;
+          transition:all 0.2s ease 0s ;
+          &:hover{
+              background:@fullColor ;
+              color: white;
+          }
+       }
+}
+//底部的a,此处作为混合使用
+.bottom_a{
+    a{
+       color: #199f8c;
+        &:hover{
+            color: white;
+        }
+    }
+}
+@footerSize:12px;
+footer{
+    background: #202020;
+    padding: 30px 0;
+    color: #959595;
+    font-size: @footerSize;
+    ._title{
+        .little-bottom-color(#303030,@contentColor); 
+    }
+    ._single{
+        border-bottom: 1px dashed #303030;
+        padding: 10px 0;
+    }
+    .bottom_a;
+    .footer_tag{
+       ._tag(#303030); 
+    }
+    
+}
+.footer_bottom{
+    border-top: 1px solid #303030;
+    text-align: center;
+    background: #111111;
+    @height:80px;
+    min-height: @height;
+    font-size: @footerSize;
+    padding-top: 30px;
+     .bottom_a;
+}
+
+
+
+
+
+
+
+

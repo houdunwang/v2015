@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)http://dev.hdcms.com/?s=site/entry/home&p=article&menuid=71 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>HDCMS - 开源免费内容管理系统 - Powered by HDCMS.COM</title>
+	<link rel="shortcut icon" href="http://dev.hdcms.com/favicon.ico" type="image/x-icon">
+	<meta name="csrf-token" content="347adf8185905253b142f5762891b7b8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link href="./HDCMS - 开源免费内容管理系统 - Powered by HDCMS.COM_files/bootstrap.min.css" rel="stylesheet">
+	<link href="./HDCMS - 开源免费内容管理系统 - Powered by HDCMS.COM_files/font-awesome.min.css" rel="stylesheet">
+	<script src="./HDCMS - 开源免费内容管理系统 - Powered by HDCMS.COM_files/util.js"></script>
+	<script src="./HDCMS - 开源免费内容管理系统 - Powered by HDCMS.COM_files/require.js"></script>
+	<script>
+		//HDJS组件需要的配置
+		hdjs = {
+			'base': 'node_modules/hdjs',
+			'uploader': 'http://dev.hdcms.com/index.php?s=system/component/uploader',
+			'filesLists': 'http://dev.hdcms.com/index.php?s=system/component/filesLists',
+			'removeImage': 'http://dev.hdcms.com/index.php?s=system/component/removeImage',
+		};
+		window.system = {
+			attachment: "http://dev.hdcms.com/attachment",
+			user: null,
+			root: "http://dev.hdcms.com",
+			url: "http://dev.hdcms.com/?s=site/entry/home&p=article&menuid=71",
+			siteid: 13,
+			module: ""
+		}
+	</script>
+	<script src="./HDCMS - 开源免费内容管理系统 - Powered by HDCMS.COM_files/config.js"></script>
+	<script src="./HDCMS - 开源免费内容管理系统 - Powered by HDCMS.COM_files/hdcms.js"></script>
+	<script src="./HDCMS - 开源免费内容管理系统 - Powered by HDCMS.COM_files/menu.js"></script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="domReady" src="./HDCMS - 开源免费内容管理系统 - Powered by HDCMS.COM_files/domReady.js"></script>
+	<link href="./HDCMS - 开源免费内容管理系统 - Powered by HDCMS.COM_files/hdcms.css" rel="stylesheet">
+	<script>
+		require(['jquery'], function ($) {
+			//为异步请求设置CSRF令牌
+			$.ajaxSetup({
+				headers: {
+					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+				}
+			});
+		})
+		if (navigator.appName == 'Microsoft Internet Explorer') {
+			if (navigator.userAgent.indexOf("MSIE 5.0") > 0 || navigator.userAgent.indexOf("MSIE 6.0") > 0 || navigator.userAgent.indexOf("MSIE 7.0") > 0) {
+				alert('您使用的 IE 浏览器版本过低, 推荐使用 Chrome 浏览器或 IE8 及以上版本浏览器.');
+			}
+		}
+	</script><script type="text/javascript" charset="utf-8" data-requirecontext="_" data-requiremodule="jquery" src="./HDCMS - 开源免费内容管理系统 - Powered by HDCMS.COM_files/jquery.min.js"></script>
+<style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+<body class="site">
+<div class="container-fluid admin-top">
+	<!--导航-->
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="http://dev.hdcms.com/?s=system/site/lists"><i class="fa fa-reply-all"></i> 返回系统</a>
+					</li>
+											<li class="top_menu" id="top_menu_1">
+							<a href="javascript:;" datahref="?s=site/entry/home&amp;p=platform" menuid="1">
+								<i class="&#39;fa-w fa fa-comments-o"></i> 微信功能							</a>
+						</li>
+											<li class="top_menu" id="top_menu_32">
+							<a href="javascript:;" datahref="?s=site/entry/home&amp;p=member" menuid="32">
+								<i class="&#39;fa-w fa fa-cubes"></i> 会员粉丝							</a>
+						</li>
+											<li class="top_menu active" id="top_menu_71">
+							<a href="javascript:;" datahref="?s=site/entry/home&amp;p=article" menuid="71">
+								<i class="&#39;fa-w fa fa-cubes"></i> 文章系统							</a>
+						</li>
+											<li class="top_menu" id="top_menu_100">
+							<a href="javascript:;" datahref="?s=site/entry/home&amp;p=feature" menuid="100">
+								<i class="&#39;fa-w fa fa-comments-o"></i> 系统设置							</a>
+						</li>
+											<li class="top_menu" id="top_menu_10000">
+							<a href="javascript:;" datahref="?s=site/entry/home&amp;p=package" menuid="10000">
+								<i class="&#39;fa-w fa fa-arrows"></i> 扩展模块							</a>
+						</li>
+									</ul>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" style="display:block; max-width:150px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; " aria-expanded="false">
+							<i class="fa fa-group"></i> 测试 <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="http://dev.hdcms.com/?s=system/site/edit&amp;siteid=13"><i class="fa fa-weixin fa-fw"></i>
+									编辑当前账号资料</a>
+							</li>
+							<li><a href="http://dev.hdcms.com/?s=system/site/lists"><i class="fa fa-cogs fa-fw"></i> 管理其它公众号</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="http://dev.hdcms.com/?s=site/entry/home&amp;p=article&amp;menuid=71#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+							<i class="fa fa-w fa-user"></i>
+							admin							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="http://dev.hdcms.com/?s=system/user/myPassword">我的帐号</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="http://dev.hdcms.com/?s=system/manage/menu">系统选项</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="http://dev.hdcms.com/?s=system/entry/quit">退出</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!--导航end-->
+</div>
+<!--主体-->
+<div class="container-fluid admin_menu">
+	<div class="row">
+		<div class="col-xs-12 col-sm-3 col-lg-2 left-menu">
+			<div id="search-menu">
+				<input class="form-control input-lg" type="text" placeholder="输入菜单名称可快速查找" onkeyup="searchMenu(this)">
+			</div>
+			<!--扩展模块动作 start-->
+			<div class="btn-group hide menu_action_type">
+				<button type="button" class="btn btn-default" onclick="changeModuleActionType(1);">默认</button>
+				<button type="button" class="btn btn-default" onclick="changeModuleActionType(2);">系统</button>
+				<button type="button" class="btn btn-default" onclick="changeModuleActionType(3);">组合</button>
+			</div>
+			<!--扩展模块动作 end-->
+			<div class="panel panel-default" id="menus">
+				<!--系统菜单-->
+															<div class="panel-heading hide" menuid="1">
+							<h4 class="panel-title">基本功能</h4>
+							<a class="panel-collapse" data-toggle="collapse" href="javascript:;" aria-expanded="true">
+								<i class="fa fa-chevron-circle-down"></i>
+							</a>
+						</div>
+						<ul class="list-group menus collapse in hide" menuid="1">
+															<li menuid="1" class="list-group-item" datahref="?s=site/reply/lists&amp;m=basic">
+									                
+										<a class="pull-right" datahref="?s=site/reply/post&amp;m=basic" menuid="1"><i class="fa fa-plus"></i></a>
+									
+               									文字回复								</li>
+															<li menuid="1" class="list-group-item" datahref="?s=site/reply/lists&amp;m=news">
+									                
+										<a class="pull-right" datahref="?s=site/reply/post&amp;m=news" menuid="1"><i class="fa fa-plus"></i></a>
+									
+               									图文回复								</li>
+															<li menuid="1" class="list-group-item" datahref="?m=special&amp;action=site/post">
+																		系统回复								</li>
+													</ul>
+											<div class="panel-heading hide" menuid="1">
+							<h4 class="panel-title">高级功能</h4>
+							<a class="panel-collapse" data-toggle="collapse" href="javascript:;" aria-expanded="true">
+								<i class="fa fa-chevron-circle-down"></i>
+							</a>
+						</div>
+						<ul class="list-group menus collapse in hide" menuid="1">
+															<li menuid="1" class="list-group-item" datahref="?m=button&amp;action=site/lists">
+																		微信菜单								</li>
+													</ul>
+											<div class="panel-heading hide" menuid="1">
+							<h4 class="panel-title">微信素材</h4>
+							<a class="panel-collapse" data-toggle="collapse" href="javascript:;" aria-expanded="true">
+								<i class="fa fa-chevron-circle-down"></i>
+							</a>
+						</div>
+						<ul class="list-group menus collapse in hide" menuid="1">
+															<li menuid="1" class="list-group-item" datahref="?m=material&amp;action=site/image">
+																		素材&amp;群发								</li>
+													</ul>
+																				<div class="panel-heading hide" menuid="32">
+							<h4 class="panel-title">会员中心</h4>
+							<a class="panel-collapse" data-toggle="collapse" href="javascript:;" aria-expanded="true">
+								<i class="fa fa-chevron-circle-down"></i>
+							</a>
+						</div>
+						<ul class="list-group menus collapse in hide" menuid="32">
+															<li menuid="32" class="list-group-item" datahref="?m=member&amp;action=site/memberlists">
+									                
+										<a class="pull-right" datahref="?m=member&amp;action=controller/site/MemberPost" menuid="32"><i class="fa fa-plus"></i></a>
+									
+               									会员								</li>
+															<li menuid="32" class="list-group-item" datahref="?m=member&amp;action=site/groupLists">
+									                
+										<a class="pull-right" datahref="?m=member&amp;action=controller/site/groupPost" menuid="32"><i class="fa fa-plus"></i></a>
+									
+               									会员组								</li>
+															<li menuid="32" class="list-group-item" datahref="?m=member&amp;action=site/fieldlists">
+																		会员字段管理								</li>
+													</ul>
+											<div class="panel-heading hide" menuid="32">
+							<h4 class="panel-title">积分兑换</h4>
+							<a class="panel-collapse" data-toggle="collapse" href="javascript:;" aria-expanded="true">
+								<i class="fa fa-chevron-circle-down"></i>
+							</a>
+						</div>
+						<ul class="list-group menus collapse in hide" menuid="32">
+															<li menuid="32" class="list-group-item" datahref="?m=ticket&amp;action=site/lists&amp;type=1">
+									                
+										<a class="pull-right" datahref="?a=site/post&amp;t=site&amp;type=1&amp;m=ticket" menuid="32"><i class="fa fa-plus"></i></a>
+									
+               									折扣券								</li>
+															<li menuid="32" class="list-group-item" datahref="?m=ticket&amp;action=site/charge&amp;type=1">
+																		折扣券核销								</li>
+															<li menuid="32" class="list-group-item" datahref="?m=ticket&amp;action=site/lists&amp;type=2">
+									                
+										<a class="pull-right" datahref="?a=site/post&amp;t=site&amp;type=2&amp;m=ticket" menuid="32"><i class="fa fa-plus"></i></a>
+									
+               									代金券								</li>
+															<li menuid="32" class="list-group-item" datahref="?m=ticket&amp;action=site/charge&amp;type=2">
+																		代金券核销								</li>
+													</ul>
+																				<div class="panel-heading" menuid="71">
+							<h4 class="panel-title">官网管理</h4>
+							<a class="panel-collapse" data-toggle="collapse" href="javascript:;" aria-expanded="true">
+								<i class="fa fa-chevron-circle-down"></i>
+							</a>
+						</div>
+						<ul class="list-group menus collapse in" menuid="71">
+															<li menuid="71" class="list-group-item" datahref="?a=manage/template&amp;t=site&amp;m=article">
+																		官网模板								</li>
+															<li menuid="71" class="list-group-item" datahref="?a=manage/site&amp;t=site&amp;m=article">
+									                
+										<a class="pull-right" datahref="?a=manage/SitePost&amp;t=site&amp;m=article" menuid="71"><i class="fa fa-plus"></i></a>
+									
+               									站点管理								</li>
+													</ul>
+											<div class="panel-heading" menuid="71">
+							<h4 class="panel-title">内容管理</h4>
+							<a class="panel-collapse" data-toggle="collapse" href="javascript:;" aria-expanded="true">
+								<i class="fa fa-chevron-circle-down"></i>
+							</a>
+						</div>
+						<ul class="list-group menus collapse in" menuid="71">
+															<li menuid="71" class="list-group-item" datahref="?a=content/category&amp;t=site&amp;m=article">
+									                
+										<a class="pull-right" datahref="?a=content/categoryPost&amp;t=site&amp;m=article" menuid="71"><i class="fa fa-plus"></i></a>
+									
+               									分类管理								</li>
+															<li menuid="71" class="list-group-item" datahref="?a=content/article&amp;t=site&amp;m=article">
+									                
+										<a class="pull-right" datahref="?a=content/articlePost&amp;t=site&amp;m=article" menuid="71"><i class="fa fa-plus"></i></a>
+									
+               									文章管理								</li>
+													</ul>
+																				<div class="panel-heading hide" menuid="100">
+							<h4 class="panel-title">公众号选项</h4>
+							<a class="panel-collapse" data-toggle="collapse" href="javascript:;" aria-expanded="true">
+								<i class="fa fa-chevron-circle-down"></i>
+							</a>
+						</div>
+						<ul class="list-group menus collapse in hide" menuid="100">
+															<li menuid="100" class="list-group-item" datahref="?m=setting&amp;action=site/pay">
+																		支付参数								</li>
+													</ul>
+											<div class="panel-heading hide" menuid="100">
+							<h4 class="panel-title">会员与粉丝选项</h4>
+							<a class="panel-collapse" data-toggle="collapse" href="javascript:;" aria-expanded="true">
+								<i class="fa fa-chevron-circle-down"></i>
+							</a>
+						</div>
+						<ul class="list-group menus collapse in hide" menuid="100">
+															<li menuid="100" class="list-group-item" datahref="?m=setting&amp;action=site/credit">
+																		积分设置								</li>
+															<li menuid="100" class="list-group-item" datahref="?m=setting&amp;action=site/register">
+																		注册设置								</li>
+															<li menuid="100" class="list-group-item" datahref="?m=setting&amp;action=site/mail">
+																		邮件通知设置								</li>
+													</ul>
+											<div class="panel-heading hide" menuid="100">
+							<h4 class="panel-title">特殊页面管理</h4>
+							<a class="panel-collapse" data-toggle="collapse" href="javascript:;" aria-expanded="true">
+								<i class="fa fa-chevron-circle-down"></i>
+							</a>
+						</div>
+						<ul class="list-group menus collapse in hide" menuid="100">
+															<li menuid="100" class="list-group-item" datahref="?m=ucenter&amp;action=mobile/post">
+																		手机会员中心								</li>
+															<li menuid="100" class="list-group-item" datahref="?a=quickmenu/post&amp;t=site&amp;m=article">
+																		微站快捷导航								</li>
+													</ul>
+																				<div class="panel-heading hide" menuid="10000">
+							<h4 class="panel-title">管理</h4>
+							<a class="panel-collapse" data-toggle="collapse" href="javascript:;" aria-expanded="true">
+								<i class="fa fa-chevron-circle-down"></i>
+							</a>
+						</div>
+						<ul class="list-group menus collapse in hide" menuid="10000">
+															<li menuid="10000" class="list-group-item" datahref="?s=site/entry/package">
+																		扩展功能管理								</li>
+													</ul>
+													<!--系统菜单 end-->
+				<!----------返回模块列表 start------------>
+								<!----------返回模块列表 end------------>
+				<!------------------------模块菜单 start------------------------>
+												<ul class="list-group menus collapse in hide module_active" aria-expanded="true">
+																			</ul>
+												<!------------------------模块菜单 end------------------------>
+				<!--模块列表-->
+									<div class="panel-heading hide module_lists">
+						<h4 class="panel-title">主要业务</h4>
+						<a class="panel-collapse" data-toggle="collapse" href="http://dev.hdcms.com/?s=site/entry/home&amp;p=article&amp;menuid=71#moudus">
+							<i class="fa fa-chevron-circle-down"></i>
+						</a>
+					</div>
+					<ul class="list-group menus collapse in hide module_lists">
+													<li class="list-group-item" data-type="module_menu" menuid="21" datahref="?s=site/module/home&amp;m=tom">
+								tom							</li>
+											</ul>
+								<!--模块列表 end-->
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-9 col-lg-10">
+			<!--有模块管理时显示的面包屑导航-->
+						
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="http://dev.hdcms.com/?s=site/entry/home&amp;p=article&amp;menuid=71#">平台相关数据</a></li>
+    </ul>
+    <div class="page-header">
+        <h4><i class="fa fa-comments"></i> 公众号信息</h4>
+    </div>
+    <div class="panel panel-default row">
+        <div class="panel-body">
+            <div class="col-sm-7">
+                <p>
+                    <strong>后盾</strong>
+                    <span class="label label-success">
+                        认证服务号/认证媒体/政府订阅号                    </span>
+                    &nbsp;&nbsp;&nbsp;
+                                    
+                       <span class="text-success">
+                            <i class="fa fa-check-circle"></i> 接入成功
+                       </span>
+                    
+                               </p>
+                <p>
+                    <strong>接口地址:</strong>
+                    <span>http://dev.hdcms.com/index.php?s=site/api/deal&amp;siteid=13</span>
+                </p>
+                <p>
+                    <strong>Token:</strong>
+                    <span>9b790164e573e4d1b2</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+		</div>
+	</div>
+</div>
+<div class="master-footer">
+	<a href="http://www.houdunwang.com/">高端培训</a>
+	<a href="http://www.hdphp.com/">开源框架</a>
+	<a href="http://bbs.houdunwang.com/">后盾论坛</a>
+	<br>
+	Powered by hdcms v2.0 © 2014-2019 www.hdcms.com
+</div>
+
+
+</body></html>

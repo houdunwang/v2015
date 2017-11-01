@@ -1,0 +1,218 @@
+.radio-custom,
+.checkbox-custom {
+  margin-left: -20px;
+}
+.radio-custom input[type=radio],
+.checkbox-custom input[type=checkbox] {
+  position: absolute;
+  left: -9999em;
+}
+.radio-custom > i:before,
+.checkbox-custom > i:before {
+  font-size: 1.333em;
+  vertical-align: -10%;
+  margin-left: 0;
+  margin-right: 4px;
+  color: #ddd;
+}
+.radio-custom > i.checked:before,
+.checkbox-custom > i.checked:before {
+  color: #92cf5c;
+}
+.radio-custom > i.disabled:before,
+.checkbox-custom > i.disabled:before {
+  color: #eee;
+}
+.radio-custom > i.checked:before {
+  content: '\f111';
+}
+.checkbox-custom > i.checked:before {
+  content: '\f046';
+}
+.spinner .input-group-btn {
+  display: table-cell;
+  min-width: 25px;
+}
+.spinner .input-group-btn .btn {
+  width: 25px;
+  padding: 0;
+  font-size: 12px;
+  margin-left: -1px;
+  line-height: 1;
+  height: 17px;
+  overflow: hidden;
+  border-radius: 0 4px 0 0 !important;
+}
+.spinner .input-group-btn .btn+.btn {
+  height: 18px;
+  border-radius: 0 0 4px 0 !important;
+}
+.spinner .input-sm + .input-group-btn .btn {
+  font-size: 10px;
+  height: 15px;
+}
+.spinner .input-sm + .input-group-btn .btn+.btn {
+  height: 16px;
+}
+.select {
+  position: relative;
+  display: inline-block;
+}
+.pillbox {
+  border: 1px solid #e0e4e8;
+  padding: 10px;
+  border-radius: 4px;
+}
+.pillbox ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pillbox li {
+  display: inline-block;
+  font-size: 12px;
+  color: #fff;
+  padding: 6px 8px;
+  cursor: pointer;
+  margin: 2px;
+  float: left;
+}
+.pillbox li:after {
+  content: " x";
+  font-size: 11px;
+  font-weight: normal;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+}
+.pillbox li:hover:after {
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+.pillbox input {
+  border: none;
+  outline: 0;
+  padding: 2px;
+  min-height: 20px;
+  width: auto;
+  display: inline-block;
+  box-shadow: none;
+  background: transparent;
+}
+.datagrid .datagrid-sort{
+  float: right;
+  margin-top: 2px;
+}
+.datagrid tfoot th {
+  font-weight: normal;
+}
+.datagrid tfoot .grid-pager .combobox {
+  max-width: 80px;
+  position: relative;
+  top: 10px;
+}
+.datagrid tfoot .dropdown-menu {
+  min-width: 60px;
+  text-align: left;
+}
+.datagrid tbody {
+  height: 256px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+#selectTextSize {
+  position: absolute;
+  top: 0;
+  display: none;
+  visibility: hidden;
+}
+.wizard {
+  
+}
+.wizard-steps{
+  font-size: 14px;
+  padding: 0;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e8e8e8;
+}
+.step-content {
+  padding: 15px;
+}
+.wizard-steps .badge {
+  margin-right: 4px;
+}
+
+.wizard-steps ul li.complete,
+.wizard-steps ul li.complete:hover {
+  cursor: pointer;
+  background: #f1f5f9;
+}
+.wizard-steps ul li.complete:after {
+  border-left-color: #f1f5f9;
+}
+.wizard-steps ul {
+  padding: 0;
+  margin: 0;
+  list-style: none outside none;
+}
+.wizard-steps ul li {
+  position: relative;
+  float: left;
+  padding: 0 15px 0 25px;
+  margin: 0;
+  color: #999999;
+  cursor: default;
+  height: 40px;
+  line-height: 40px;
+}
+.wizard-vertical {
+  float: left;
+  border-bottom: none;
+}
+.wizard-vertical + .step-content {
+  zoom: 1;
+  overflow: hidden;
+  padding-left: 40px;
+}
+.wizard-vertical ul li {
+  position: relative;
+  float: none;
+  border-bottom: 1px solid #e8e8e8;
+  padding-left: 15px;
+}
+.wizard-steps ul li:first-child {
+  padding-left: 15px;
+  border-radius: 4px 0 0 0;
+}
+.wizard .actions {
+  float: right;
+  margin: 8px 10px 0 0;
+}
+.wizard-steps ul li:before,
+.wizard-steps ul li:after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  border: 20px solid transparent;
+  border-right: 0;
+  border-left: 10px solid #e8e8e8;
+  border-left-color: rgba(0,0,0,0.05);
+  z-index: 1;
+}
+.wizard-steps ul li:after {
+  right: -9px;
+  border-left-color: #f5f5f5;
+  z-index: 2;
+}
+.wizard-steps ul li.active {
+  color: #3a87ad;
+  background: #fff;
+}
+.wizard-steps ul li.active:after {
+  border-left-color: #fff;
+}
+.step-content .step-pane {
+  display: none;
+}
+.step-content .step-pane.active {
+  display: inherit;
+}

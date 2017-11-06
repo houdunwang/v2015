@@ -1,0 +1,23 @@
+{
+    "name": "mazhenyu/lumiya",
+    "authors": [
+        {
+            "name": "后盾网马震宇",
+            "email": "410004417@qq.com"
+        }
+    ],
+    "require": {
+        "filp/whoops": "^2.1",
+        "gregwar/captcha": "^1.1"
+    },
+    "autoload":{
+        "files":[
+            "houdunwang/core/functions.php"
+        ],
+        "psr-4":{
+            "houdunwang\\":"houdunwang\\",
+            "app\\":"app",
+            "system\\":"system"
+        }
+    }
+}

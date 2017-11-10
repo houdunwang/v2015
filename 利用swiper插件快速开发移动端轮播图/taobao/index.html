@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--引入flexible插件-->
+		<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+		<!--引入jQuery 脚本-->
+		<script src="js/jquery.min.js" type="text/javascript"></script>
+		<!--引入js文件-->
+		<script src="js/taobao.js" type="text/javascript"></script>		
+		<!--引入矢量图css-->		
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+		<!--引入css编辑文件-->
+		<link rel="stylesheet" type="text/css" href="css/taobao.css"/>
+ 	
+	</head>
+	<body>
+		<!--头部开始-->
+		<header>
+			<div class="tru">
+				<a href=""><i class="iconfont icon-iconfont-iconfangdajing"></i>寻找宝贝店铺</a>	
+			</div>
+			<div class="empty"></div>
+		</header>
+		
+		<!--头部结束-->
+		<!--轮播图开始-->
+		<link rel="stylesheet" href="css/swiper.min.css" />
+		<div id="flash">
+			<div class="swiper-container">
+			    <div class="swiper-wrapper">
+			      <div class="swiper-slide">
+			      	<img src="images/lbt01.jpg"/>
+			      </div>
+			      <div class="swiper-slide">
+			      	<img src="images/lbt02.jpg"/>
+			      </div>
+			      <div class="swiper-slide">
+			      	<img src="images/lbt03.jpg"/>
+			      </div>
+			      <div class="swiper-slide">
+			      	<img src="images/lbt04.jpg"/>
+			      </div>
+			    </div>
+			    <!-- Add Pagination -->
+			    <div class="swiper-pagination"></div>
+			</div>
+		</div>
+		
+		<script src="js/swiper.min.js"></script>
+		<script>
+		    var swiper = new Swiper('.swiper-container', {
+		      pagination: {//定义分页器
+		        el: '.swiper-pagination',
+		      },
+		      autoplay:true,
+		      loop:true
+		    });
+		</script>
+		<!--轮播图结束-->
+		<!--按钮区域开始-->
+		<nav>
+			<ul>
+				<li><img src="images/icon1.png" alt="" /><a href="">天猫</a></li>
+				<li><img src="images/icon2.png" alt="" /><a href="">聚划算</a></li>
+				<li><img src="images/icon3.png" alt="" /><a href="">天猫国际</a></li>
+				<li><img src="images/icon4.png" alt="" /><a href="">外卖</a></li>
+				<li><img src="images/icon5.png" alt="" /><a href="">天猫超市</a></li>
+				<li><img src="images/icon6.png" alt="" /><a href="">充值中心</a></li>
+				<li><img src="images/icon7.png" alt="" /><a href="">飞猪旅行</a></li>
+				<li><img src="images/icon8.png" alt="" /><a href="">领金币</a></li>
+				<li><img src="images/icon9.png" alt="" /><a href="">拍卖</a></li>
+				<li><img src="images/icon10.png" alt="" /><a href="">分类</a></li>
+			</ul>
+		</nav>
+		<!--按钮区域结束-->
+		<!--头条区域开始-->
+		<div id="hot">
+			<a href=""></a>
+			<span>最新</span>
+			<ul>
+				<li><a href="">夏季提供免疫力防感冒 6种水果最有效</a></li>
+				<li><a href="">夏季防蚊防暑小窍门</a></li>
+				<li><a href="">优派VP2768 2K专业级显示器评测</a></li>
+				<li><a href="">黑道金刚狼 - 黑帮王国 1/6 方块5&幽灵狼套装 测评</a></li>
+			</ul>
+		</div>
+		<!--头条区域结束-->
+		<!--抢购区开始-->
+		<div id="qianggou">
+			<div class="one">
+				<div>
+					<span>00</span>
+					<span class="dbdot">:</span>
+					<span>00</span>
+					<span class="dbdot">:</span>
+					<span>00</span>
+				</div>
+			</div>
+			<div class="two"></div>
+			<div class="thr"></div>
+			<div class="fou"></div>
+			<div class="fiv"></div>
+		</div>
+		
+		<!--抢购区结束-->
+		<!--实惠区域开始-->
+		<div id="shihui">
+			<span>超实惠</span>
+		</div>
+		<div id="shihui_down">
+			<div class="big a"></div>
+			<div class="small a"></div>
+			<div class="small b"></div>
+			<div class="small c"></div>
+			<div class="big b"></div>
+			<div class="small d"></div>
+			<div class="small e"></div>
+			<div class="small f"></div>
+		</div>
+		<!--实惠区域结束-->
+		<!--天猫必逛区域开始-->
+		<div id="biguang">
+			<span>天猫必逛</span>
+		</div>	
+		<!--天猫必逛区域内容-->
+		<div id="biguang_down">
+			<div class="big a"></div>
+			<div class="big b"></div>
+			<div class="small a"></div>
+			<div class="small b"></div>
+			<div class="small c"></div>
+			<div class="small d"></div>
+		</div>
+		<!--天猫必逛区域结束-->
+		<!--特色好货区域开始-->
+		<div id="spec">
+			<span>特色好货</span>			
+		</div>
+			<div id="spec_down">
+			<div class="big a"></div>
+			<div class="small a"></div>
+			<div class="small b"></div>
+			<div class="small c"></div>
+			<div class="big b"></div>
+			<div class="small d"></div>
+			<div class="small e"></div>
+			<div class="small f"></div>
+		</div>
+		<!--特色好货区域结束-->
+		<!--全民抢拍区域开始-->
+		<div id="qiangpai">
+			<span>更多服务</span>
+		</div>
+		<div id="qiangpai_down">
+
+		</div>		
+		<!--全民抢拍区域结束-->
+		<!--热门市场开始-->
+		<div id="hotmarket">
+			<span class="left">热门市场</span>
+			<span class="right">更多</span>
+		</div>
+		<!--热门市场内容-->
+		<div id="hotmarket_down">
+			<div class="small a">
+				<p>iFashion</p>
+				<span>春季种草好物</span>
+			</div>
+			<div class="small b">
+				<p>潮玩城</p>
+				<span>发现发烧装备</span>
+			</div>
+			<div class="small c">
+				<p>亲宝贝</p>
+				<span>花少钱养好娃</span>
+			</div>
+			<div class="small d">
+				<p>精选市场</p>
+				<span>更多好市场</span>	
+			</div>
+			<div class="big a">
+				<p>家有萌宠</p>
+				<span>秋意渐凉 给爱宠准备个温暖的窝吧</span>	
+				<ul>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+			<div class="big b">
+				<p>玩具百宝箱</p>
+				<span>变形机器人，送给男孩的最佳礼</span>	
+				<ul>
+					<li></li>
+					<li></li>
+				</ul>				
+			</div>
+			<div class="big c">
+				<p>私密衣橱</p>
+				<span>性感三角内裤，释放男人魅力本色</span>	
+				<ul>
+					<li></li>
+					<li></li>
+				</ul>				
+			</div>
+			<div class="big d">
+				<p>宝贝宅家</p>
+				<span>用拼图当早教，锻炼宝宝思维能力</span>	
+				<ul>
+					<li></li>
+					<li></li>
+				</ul>				
+			</div>
+			<div class="big e">
+				<p>体育馆</p>
+				<span>闪耀拉丁舞鞋，让您舞出性感</span>	
+				<ul>
+					<li></li>
+					<li></li>
+				</ul>				
+			</div>
+			<div class="big f">
+				<p>小小少年</p>
+				<span>芭比之笑亦倾城</span>	
+				<ul>
+					<li></li>
+					<li></li>
+				</ul>				
+			</div>
+		</div>
+		<!--热门市场结束-->
+		<!--底部开始-->
+		<div id="bottom">
+			<div class="head"></div>
+			<div class="hd">
+				<span></span>
+				<span>每日好店</span>
+				<span>更多</span>
+			</div>
+			<!--每日好店内容-->
+			<div class="hd_down">
+				<div class="left">
+					<a href=""></a>
+					<a href=""></a>
+					<a href=""></a>
+					<p>今日推荐</p>
+				</div>
+				<div class="right">
+					<a href=""></a>
+					<a href=""></a>
+					<a href=""></a>
+					<p>有逼格</p>
+				</div>
+				<div class="dot">
+					<span class="point"></span>
+					<span></span>
+				</div>
+			</div>
+			<!--每日好点结束-->
+			<!--猜你喜欢开始-->
+			<div class="youlike">
+				<p>猜你喜欢</p>
+				<p>实时推荐最适合你的宝贝</p>
+			</div>
+			<!--猜你喜欢结束-->
+			<!--猜你喜欢内容开始-->	
+			<ul class="youlike_down">
+				<li>
+					<p></p>
+					<p>[为你推荐]厨房蔬菜水果收纳筐塑料大号叠加筐储物架加厚玩具零食浴室置物架</p>
+					<p>
+						<span>￥</span>
+						<span>27.5</span>
+					</p>
+				</li>
+				<li>
+					<p></p>
+					<p>[为你推荐]日式和风和服江户扇子竹柄折扇礼物 棉麻竹空字凉字富士海浪扇</p>
+					<p>
+						<span>￥</span>
+						<span>28.0</span>
+					</p>					
+				</li>
+				<li>
+					<p></p>
+					<p>[为你推荐]厨房蔬菜水果收纳筐塑料大号叠加筐储物架加厚玩具零食浴室置物架</p>
+					<p>
+						<span>￥</span>
+						<span>27.5</span>
+					</p>					
+				</li>
+				<li>
+					<p></p>
+					<p>[为你推荐]包邮冰箱冻冰模制大冰块模具格盒96格冰格带盖密封送冰铲</p>
+					<p>
+						<span>￥</span>
+						<span>17.0</span>
+					</p>					
+				</li>
+				<li>
+					<p></p>
+					<p>[为你推荐]北欧风全纯棉布艺围裙防油清洁围裙厨房家居工作服面包店半身围裙</p>
+					<p>
+						<span>￥</span>
+						<span>16.92</span>
+					</p>					
+				</li>
+				<li>
+					<p></p>
+					<p>[为你推荐]精准厨房称重烘焙不锈钢家用电子秤5kg食物秤食品克称10kg小台秤</p>
+					<p>
+						<span>￥</span>
+						<span>32.9</span>
+					</p>					
+				</li>				
+				<li>
+					<p></p>
+					<p>[为你推荐]乐渔 鱿鱼仔500g包邮 带籽鱿鱼仔多口味即食海鲜墨鱼仔大连特产</p>
+					<p>
+						<span>￥</span>
+						<span>33.9</span>
+					</p>					
+				</li>
+				<li>
+					<p></p>
+					<p>[为你推荐]6月新货同城送货娃哈哈呦呦奶咖卡布奇诺味350ML*15江浙沪皖包邮</p>
+					<p>
+						<span>￥</span>
+						<span>60.8</span>
+					</p>					
+				</li>				
+				<li>
+					<p></p>
+					<p>[为你推荐]钓鱼竿伸缩蚊帐U型三开门不锈钢落地支架宫廷双人1.8米1.5m床家用</p>
+					<p>
+						<span>￥</span>
+						<span>89.0</span>
+					</p>					
+				</li>				
+				<li>
+					<p></p>
+					<p>[为你推荐]618特价  云南干花花束真花大扎满天星家居装饰进货</p>
+					<p>
+						<span>￥</span>
+						<span>16.9</span>
+					</p>					
+				</li>				
+				
+			</ul>
+			<!--猜你喜欢内容结束-->			
+		</div>
+		<!--底部结束-->
+		<!--最底部导航条开始-->
+		<footer>
+			<div class="menu">
+				<a href="">登陆</a>
+				<a href="">注册</a>
+				<a href="">电脑版</a>
+				<a href="">用户反馈</a>
+				<p>
+					<span>C</span>
+					<span>&nbsp;2016 浙 B2-20080224&nbsp;服务中心</span>
+				</p>
+			</div>
+			<div class="empty"></div>
+			<ul class="flo">
+				<li>
+					<i class="iconfont icon-shouye"></i>
+					<a>首页</a>
+				</li>
+				<li>
+					<i class="iconfont icon-wuliu"></i>
+					<a>物流</a>
+				</li>
+				<li>
+					<i class="iconfont icon-gouwucheshoppingcart"></i>
+					<a>购物车</a>
+				</li>				
+				<li>
+					<i class="iconfont icon-ttpodicon"></i>
+					<a>我的淘宝</a>
+				</li>				
+				<li>
+					<i class="iconfont icon-gengduo"></i>
+					<a>更多</a>
+				</li>				
+			</ul>
+		</footer>		
+		<!--最底部导航条结束-->
+
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#hd{
+				width: 300px;
+				height: 200px;
+				background: dodgerblue;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="hd"></div>
+		
+		<script type="text/javascript">
+			var hd = document.getElementById("hd");
+			var timer = setInterval(function(){
+//				获得元素当前的宽度
+				var old_width = hd.offsetWidth;
+//				计算新的宽度
+				var new_width = parseInt(old_width)+2;
+//				将新的宽度赋值回去
+				hd.style.width = new_width+'px';
+				if (new_width==900) {
+					clearInterval(timer);
+				}
+			},20)
+			
+		</script>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#hd{
+				width: 300px;
+				height: 200px;
+				background: dodgerblue;
+				/*transition属性可以用来监测css样式的变化,如果有变化,自动通过动画效果运动到指定的终止状态*/
+				/*第一个参数:指定要监测的css样式;
+				第二个参数:指定运动时间;
+				第三个参数:指定运动曲线*/
+				/*transition: width 2s linear;*/
+				/*第四个参数:用来指定动画延迟时间*/
+				transition: width 2s linear 1s;
+			}
+			#hd:hover{
+				width: 900px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="hd"></div>
+		
+		
+	</body>
+</html>

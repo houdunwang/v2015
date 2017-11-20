@@ -1,0 +1,97 @@
+
+.body {
+  width: 100%;
+  background: #F1F1F1;
+  height: auto;
+  padding-top: 30px;
+}
+.body .content {
+  width: 1200px;
+  margin: 0px auto;
+  height: auto;
+  overflow: hidden;
+}
+.body .content .contentL {
+  width: 265px;
+  float: left;
+  font-size: 16px;
+  background: white;
+}
+.body .content .contentL .arrows {
+  background: url(../img/arr2.gif) no-repeat !important;
+}
+.body .content .contentL .Ltitle {
+  width: 100%;
+  height: 40px;
+  background: #FF4400;
+  color: white;
+  text-indent: 22px;
+  line-height: 40px;
+  margin: 0px;
+}
+.body .content .contentL a {
+  display: block;
+  width: 100%;
+  height: 50px;
+  position: relative;
+  line-height: 50px;
+  text-indent: 22px;
+  color: #474747;
+  border-bottom: 2px solid #f1f1f1;
+}
+.body .content .contentL a:hover {
+  color: #FF4400;
+}
+.body .content .contentL a:hover span {
+  background: url(../img/arr2.gif) no-repeat !important;
+}
+.body .content .contentL a span {
+  display: block;
+  width: 9px;
+  height: 16px;
+  position: absolute;
+  background: url(../img/arr1.gif) no-repeat;
+  right: 20px;
+  top: 17px;
+}
+.body .content .contentR {
+  width: 902px;
+  float: right;
+  background: white;
+  padding: 0px 25px 20px;
+}
+.body .content .contentR .Rtitle {
+  padding-top: 4px;
+  height: 48px;
+  width: 100%;
+  border-bottom: 2px solid #F1F1F1;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 48px;
+  position: relative;
+}
+.body .content .contentR .Rtitle span {
+  width: 130px;
+  display: block;
+  height: 2px;
+  font-size: 0px;
+  overflow: hidden;
+  position: absolute;
+  left: 0px;
+  bottom: -2px;
+  background-color: #F40;
+}
+.body .content .contentR .contentS {
+  font-size: 14px;
+  color: #707070;
+  line-height: 1.5em;
+}
+.body .content .contentR .contentS h3 {
+  font-size: 14px;
+  color: #474747;
+  font-weight: bolder;
+}
+.body .content .contentR .contentS p {
+  text-indent: 2em;
+}
+/*# sourceMappingURL=help.css.map */

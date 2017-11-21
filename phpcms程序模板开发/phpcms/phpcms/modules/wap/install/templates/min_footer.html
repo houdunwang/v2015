@@ -1,0 +1,11 @@
+     <div class="catlist">
+		 {loop subtype($TYPE[$typeid]['parentid']) $s}<a href="{list_url($s[typeid])}">{$s[typename]}</a>|{if $n%4==0}<br/>{/if}{/loop}
+    </div>
+    <div class="tc"><a href="#hd"><img src="{IMG_PATH}wap/top.gif" alt="" width="46" height="16" /></a></div>
+    <div class="b_adds" id="hd">{wap_pos($typeid)}</div>
+    <div class="ft">
+    	<a href="{WAP_SITEURL}">{$WAP['sitename']}</a>-<a href="{APP_PATH}index.php?m=wap&amp;c=index&amp;a=maps">导航</a>
+    </div>
+</div>
+</body>
+</html>

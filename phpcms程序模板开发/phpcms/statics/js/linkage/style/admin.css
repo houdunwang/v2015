@@ -1,0 +1,73 @@
+
+.colselect,.colselect:link,.colselect:visited{
+	display:block;
+	border:1px solid #BCBCBC;
+	width:145px;
+	height:20px;
+	overflow:hidden;
+	line-height:20px;
+	background:url(../images/up1.png) right no-repeat;
+	text-align:left;
+}
+.colselect:active{
+	border:1px solid #BCBCBC;
+	width:144px;
+	height:19px;
+	padding:1px 0 0 1px;
+	overflow:hidden;
+}
+.colselect span{
+	width:115px;
+	padding-left:3px;
+	overflow:hidden;
+	height:20px;
+	line-height:20px;
+	font-size:12px;
+	color:#333;
+}
+.dropmenu{
+	display:none;
+	margin-top:-1px;
+	background-color:#FFF;
+	position:absolute;
+	width:141px;
+	height:auto;
+	border:1px solid #BCBCBC;
+	z-index:99;
+	padding:2px 2px
+
+}
+.dropmenu li{
+	font-size:12px;
+	line-height:25px;
+	height:25px;
+	padding-left:5px;
+	display:block;
+	width:136px;
+	cursor:default;
+	-moz-user-select:none;
+	text-align:left;
+}
+
+.rootmenu{
+	position:absolute;
+	display:none;
+	margin-top:-25px;
+	* margin-top:-8px;
+
+}
+.menuhover{
+	background:url(../images/root2.png) right no-repeat;
+	color:#FFF;
+}
+.menuout{
+	background:url(../images/root1.png) right no-repeat;
+	color:#333;
+}
+.norout{
+	color:#333;
+}
+.norhover{
+	background:url(../images/root.png) right no-repeat;
+	color:#FFF;
+}

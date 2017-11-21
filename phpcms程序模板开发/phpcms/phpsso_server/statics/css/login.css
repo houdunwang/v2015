@@ -1,0 +1,15 @@
+/* 全局样式 */
+*{margin:0;padding:0;border:0;}
+body{background:#3a6ea5;}
+.login_box{width:580px;height:320px;position:absolute;top:50%;left:50%;margin-left:-290px;margin-top:-160px;}
+.login_box_top{background:url(../images/login_box_top.gif) no-repeat;width:580px;height:13px;}
+.login_box_mid{background:url(../images/login_box_mid.gif) repeat-y;width:580px;height:289px;}
+.login_box_bot{background:url(../images/login_box_bot.gif) no-repeat;width:580px;height:13px;}
+.login_logo{float:left;display:inline; background:url(../images/login_logo.gif) no-repeat;width:97px;height:67px;margin:30px 20px 0px 60px;}
+.logo_content{float:left;width:360px;overflow:hidden;margin-top:36px;}
+.logo_content .tit{ margin:0 0 30px}
+.logo_content p{color:#464646;}
+.login_input{background:url(../images/login_input.gif) no-repeat;width:178px;height:19px;border:1px solid #ccc;padding:3px 0px 0px 4px}
+.login_list li{margin-bottom:10px;display:inline;font-size:14px;width:360px;float:left; line-height:24px}
+.login_list li label{display:inline-block;display:-moz-inline-stack;zoom:1;*display:inline; width:55px; font-family:"宋体"; font-size:14px}
+.login_button{ background:url(../images/login_button.gif) no-repeat;width:60px;height:27px;border:none; text-align:center; cursor:pointer;font-size:14px;margin-left:55px;}

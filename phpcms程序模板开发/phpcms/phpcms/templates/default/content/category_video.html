@@ -1,0 +1,444 @@
+{template "content","header"}
+<link href="{CSS_PATH}vms/vms.css" rel="stylesheet" type="text/css" />
+<!--[if lt IE 9]><link href="{CSS_PATH}vms/ielt9.css" rel="stylesheet" type="text/css" /><![endif]--> 
+<script type="text/javascript" src="{JS_PATH}jquery.tools_tabs.min.js"></script>
+<script type="text/javascript" src="{JS_PATH}cookie.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		{loop subcat($catid,0,0,$siteid) $r}
+$('#tab{$r[catid]}').tabs("div.pns{$r[catid]} > ul");
+$('#tag{$r[catid]}').tabs("div.views{$r[catid]} > ul");
+		{/loop}
+		$('#tag1').tabs("div.tabn1 > ul");
+	})
+</script>
+
+<div class="clr ct idx">
+<div class="clr">
+  <div class="lyt_1">
+    <div class="aream mFocus">
+      <div class="mBoxL zt">
+		{pc:content  action="position" posid="14" order="listorder DESC" num="1"}
+		{loop $data $r}
+        <dl class="boxVideo focusVideo">
+          <dt>
+            <div><a target="_blank" href="{$r['url']}"><img src="{$r['thumb']}" alt="{$r['title']}" style="WIDTH: 328px; HEIGHT: 250px"> </a></div>
+          </dt>
+		
+          <dd class="title">
+            <h3><span class="ico_zt"></span><a target="_blank" href="{$r['url']}">{$r['title']}</a></h3>
+          </dd>
+          <dd class="text">{str_cut($r[description],82)}<a target="_blank" href="{$r['url']}">视频详情</a>&gt;&gt;&nbsp;&nbsp;<a target="_blank" href="{$r['url']}">评论</a>&gt;&gt;</dd>
+          <dd class="info"> <span class="show">播放:<cite>{get_views('c-'.$CATEGORYS[$r[catid]][modelid].'-'.$r['id'])}</cite></span> <span class="review">评论:<cite>{get_comments(id_encode("content_$r[catid]",$r[id],$siteid))}</cite></span> </dd>
+        </dl>
+		{/loop}
+		{/pc}
+		
+		
+        <ul class="mNewsList">
+{pc:content  action="position" posid="15" order="listorder DESC" num="4"}
+{loop $data $r}
+<li>[{$CATEGORYS[$r[catid]][catname]}]<a target="_blank" href="{$r['url']}" {title_style($r[style])}>{str_cut($r[title],82)}</a></li>
+{/loop}
+{/pc} 
+        </ul>
+      </div>
+      <div class="mBoxR">
+        <ul class="mVideoList">
+		
+{pc:content  action="position" posid="16" order="listorder DESC" num="6"}
+{loop $data $r}
+{php $video_info = get_vid($r[id], $r[catid], $isspecial = 0);} 
+<li class="ico_dj">
+<dl class="boxVideo boxV_1">
+<dt> <span class="time">{dataformat($video_info['timelen'])}</span> 
+
+<span class="plus">
+<a href="{APP_PATH}index.php?m=video&c=index&a=playlist&contentid={$r[id]}&catid={$r[catid]}&title={$r[title]}" class="j" title='{$r[title]}' onclick="toggle(this);return false;" id="abc{random(8)}" catid="{$r[catid]}" contentid="{$r[id]}"></a>
+
+</span> 
+
+<a title="{$r['title']}" target="show_v" href="{$r['url']}" class="pic"><img alt="{$r['title']}" src="{$r['thumb']}"></a> 
+</dt>
+<dd class="text"><span></span><a target="show_v" href="{$r['url']}">{$r['title']}</a></dd>
+<dd class="info"> <span class="show">播放:<cite>{get_views('c-'.$CATEGORYS[$r[catid]][modelid].'-'.$r['id'])}</cite></span> <span class="review">评论:<cite>{get_comments(id_encode("content_$r[catid]",$r[id],$siteid))}</cite></span> </dd>
+</dl>
+</li>
+
+{/loop}
+{/pc} 
+  
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+     
+  	
+{loop subcat($catid,0,0,$siteid) $r}
+{php $num++}	
+	
+    <div class="box3">
+    	<div class="nav">
+			<span class="more"><a href="{$r[url]}" target="_blank">更多>></a></span>
+        	<h5>{$r[catname]}</h5>
+    		<ul class="ulin" id="tab{$r[catid]}">
+                <li><a href="#">今日热点</a></li>
+                <li><a href="#">最新视频</a></li>
+            </ul>
+    	</div>
+        <div class="clr bct">
+{pc:content  action="position" posid="10" catid="$r[catid]" order="listorder DESC" num="1" return="info"}
+        	<div class="l w200">
+			{loop $info $v}
+            	<div class="hots">
+                	<div class="clr"><a href="{$v[url]}" target="_blank"><img src="{$v[thumb]}" width="200" height="155"></a></div>
+                    <h5><a href="{$v[url]}" target="_blank">{str_cut($v[title],26)}</a></h5>
+                    <p>{str_cut($v[description],56)} <a href="{$v[url]}#comment_iframe" target="_blank">评论>></a></p>
+                </div>
+		
+			{/loop}	
+{/pc}
+            <ul class="uli">	
+			{pc:content  action="position" posid="10" catid="$r[catid]" order="listorder DESC" num="4" return="info"}
+			{loop $info $r}
+			{if $n!=1}
+				<li><a href="{$r[url]}" title="{$r[title]}" target="_blank">{str_cut($r[title],32)}</a></li>
+				{/if}
+			{/loop}
+			{/pc}
+  
+            </ul>
+				
+            </div>
+
+			<!--本栏目最新视频-->
+			<div class="wp pns{$r[catid]}">
+            <ul class="clr wp col3">
+			 {pc:content action="lists" catid="$r[catid]" num="6" order="id DESC" return="info"}
+			 {loop $info $v}
+			 <!-- 获取视频详细信息 -->
+			 {php $video_info = get_vid($v[id], $v[catid], $isspecial = 0);} 
+                  <li>
+                  <div class="w120">
+                      <div class="imgbox"><span class="tm">{dataformat($video_info['timelen'])}</span>
+					  <a href="{APP_PATH}index.php?m=video&c=index&a=playlist&contentid={$v[id]}&catid={$v[catid]}&title={$v[title]}" class="j" title='{$v[title]}' onclick="toggle(this);return false;" id="abc{random(8)}" catid="{$v[catid]}" contentid="{$v[id]}"></a>
+					  
+					  <a href="{$v[url]}" title="{$v[title]}" target="_blank"><img src="{$v[thumb]}" width="120" height="75"></a></div>
+                      <div class="lh21"><a href="{$v[url]}" title="{$v[title]}" target="_blank">{str_cut($v[title],30,false)}</a></div>
+                      <div class="sz"><span class="shows">播放数：<cite>{get_views('c-'.$CATEGORYS[$v[catid]][modelid].'-'.$v['id'])}</cite></span><span>评论：<cite>{get_comments(id_encode("content_$v[catid]",$v[id],$siteid))}</cite></span></div>
+                  </div>
+                </li> 
+			{/loop}
+			{/pc}
+            </ul>
+			<!--本栏目今日热点-->
+            <ul class="clr wp col3 hidden">
+			 {pc:content action="hits" catid="$r[catid]" num="6" order="dayviews DESC" return="info" cache="0"}
+			 {loop $info $v}
+			 {php $contentid = explode("-",$v[hitsid]);$video_info = get_vid($contentid[2], $v[catid], $isspecial = 0);} 
+                  <li>
+                  <div class="w120">
+                      <div class="imgbox"><span class="tm">{dataformat($video_info['timelen'])}</span>
+					  <a href="{APP_PATH}index.php?m=video&c=index&a=playlist&contentid={$v[id]}&catid={$v[catid]}&title={$v[title]}" class="j" title='{$v[title]}' onclick="toggle(this);return false;" id="abc{random(8)}" catid="{$v[catid]}" contentid="{$v[id]}"></a>
+					  
+					  <a href="{$v[url]}" title="{$v[title]}" target="_blank"><img src="{$v[thumb]}" width="120" height="75"></a></div>
+                      <div class="lh21"><a href="{$v[url]}" title="{$v[title]}" target="_blank">{str_cut($v[title],18,false)}</a></div>
+                      <div class="sz"><span class="shows">播放数：<cite>{get_views('c-'.$CATEGORYS[$v[catid]][modelid].'-'.$v['id'])}</cite></span><span>评论：<cite>{get_comments(id_encode("content_$v[catid]",$v[id],$siteid))}</cite></span></div>
+                  </div>
+                </li> 
+			{/loop}
+			{/pc}
+            </ul>
+			</div>
+			
+        </div>
+    </div>
+	{if $num%2 ==0}
+ 	<div class="ad">
+	<a href="http://www.phpcms.cn" title="随机广告位，欢迎访问PHPCMS.CN"><img src="http://www.phpcms.cn/statics/images/video/ad660x90.gif" width="660" height="90"></a>
+	</div>
+	{/if}
+{/loop}	
+	
+	
+    
+</div>
+  <div class="lyt_2">
+  	<div class="r1 tg">
+	<!-- 右顶广告 -->
+	<a href="http://www.phpcms.cn" title="随机广告位，欢迎访问PHPCMS.CN"><img src="http://www.phpcms.cn/statics/images/video/ad280x66.gif"></a>
+	</div>
+    <div class="box0">
+    	<div class="nav"><h5>精彩推荐</h5></div>
+        <div class="bct mg10 jctj">
+{php $category_nums = count(subcat($catid,0,0,$siteid));$num=0;} 
+{loop subcat($catid,0,0,$siteid) $r} 
+{php $num++}	
+{if $num<4}
+        	<h6>{$r[catname]}</h6>
+        	<div class="clr {if $num == $category_nums}last{/if}">
+			{pc:content  action="position" posid="17" catid="$r[catid]" order="listorder DESC" num="5" return="info"}
+			{loop $info $v}
+				{if $n==1}
+					<div class="l"><a href="{$v[url]}" title="{$v[title]}" target="_blank"><img src="{$v[thumb]}" width="101" height="78"></a></div>
+					<ul class="lh20">
+					{else}
+					<li><a href="{$v[url]}" title="{$v[title]}" target="_blank">{str_cut($v['title'],22,false)}</a></li>
+				{/if}
+			{/loop}
+            {/pc}  
+			  
+                 
+               </ul>
+            </div> 
+{/if}
+{/loop}			
+			
+        </div>
+    </div>
+    <div class="r2 tg">
+	
+<a href="http://www.phpcms.cn" title="随机广告位，欢迎访问PHPCMS.CN"><img src="http://www.phpcms.cn/statics/images/video/ad280x66.gif"></a>
+ 
+	</div>
+     <div class="mgt10 box2">
+    	<div class="nav tag3">
+        	<ul class="clr col3"  id="tag1">
+                <li><a href="#" class="ac">热点</a></li>
+                <li><a href="#">评论</a></li>
+                <li><a href="#">关注</a></li>
+            </ul>
+        </div>
+        <div class="bct tabn1">
+        	<ul class="uli4 mg10">
+			{pc:content action="hits" catid="$catid" num="10" order="views DESC"}
+			{loop $data $r}
+			{php $ids = explode('-',$r[hitsid]); $pic = get_pic($ids[2],$catid);}
+ 				{if $n==1}
+					<li class="p_r">
+						  <div class="l"><span class="bs">1</span><a href="{$r[url]}" title="{$r[title]}"><img src="{$pic[thumb]}" width="106" height="75"></a></div>
+						  <div class="lh18"><a href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],22,false)}</a></div>
+						  <div>{str_cut($r[description],44)}</div>
+					</li>
+				{else}
+					<li><a href="{$r[url]}" title="{$r[title]}" target="_blank">{str_cut($r[title],36,false)}</a></li>
+				{/if}			
+ 			{/loop}
+			{/pc}
+          </ul>
+		  
+        	<ul class="uli4 mg10 hidden">
+			{pc:comment action="bang" num="$catid" cache="3600"}
+			{loop $data $r}
+				{if $n==1}
+					<li class="p_r">
+						  <div class="l"><span class="bs">1</span><a href="{$r[url]}" title="{$r[title]}"><img src="{$r[thumb]}" width="106" height="75"></a></div>
+						  <div class="lh18"><a href="{$r[url]}" title="{$r[title]}">{$r[title]}</a></div>
+						  <div>{str_cut($r[description],45,false)}</div>
+					</li>
+				{else}
+					<li><a href="{$r[url]}" title="{$r[title]}" target="_blank">{str_cut($r[title],36,false)}</a></li>
+				{/if}			
+ 			{/loop}
+			{/pc}
+          </ul>
+		  
+        <ul class="uli4 mg10 hidden">
+			{pc:content action="hits" catid="$catid" num="10" order="views DESC"}
+			{loop $data $r}
+				{if $n==1}
+					<li class="p_r">
+						  <div class="l"><span class="bs">1</span><a href="{$r[url]}" title="{$r[title]}"><img src="{$r[thumb]}" width="106" height="75"></a></div>
+						  <div class="lh18"><a href="{$r[url]}" title="{$r[title]}">{$r[title]}</a></div>
+						  <div>{str_cut($r[description],45,false)}</div>
+					</li>
+				{else}
+					<li><a href="{$r[url]}" title="{$r[title]}" target="_blank">{str_cut($r[title],36,false)}</a></li>
+				{/if}			
+ 			{/loop}
+			{/pc}
+          </ul>
+		  
+		  
+        </div>
+    </div>
+	
+	
+	
+	 <div class="mgt10 box2">
+    	<div class="nav tag3">
+        	<ul class="clr col3">
+                <li><a href="#" class="ac">视频专辑列表</a></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="bct">
+		{pc:special action="lists" siteid="$siteid" listorder="2" num="6"}
+		<ul class="uli4 mg10">
+		{loop $data $r}
+			{if $n==1}
+			<li class="p_r">
+			<div class="l"><span class="bs">1</span><a href="{$r[url]}" ><img src="{$r[thumb]}" width="106" height="75"></a></div>
+			<div class="lh18"><a href="{$r[url]}" >{str_cut($r[title],22,false)}</a></div>
+			<div>{str_cut($r[title],22,false)}</div>
+			</li>
+			{else}
+			<li><a href="{$r[url]}" >{str_cut($r[title],22,false)}</a></li> 
+			{/if}
+		{/loop}	
+		</ul>
+		
+		{/pc}  
+        </div>
+    </div>
+	
+	
+	
+	
+	
+{loop subcat($catid,0,0,$siteid) $r}
+{php $num++}	
+    <div class="mgt10 box2">
+    	<div class="nav tag3"  id="tag{$r[catid]}">
+        	<ul class="clr col3">
+                <li><a href="#" class="ac">{$r[catname]}</a></li>
+                <li><a href="#">周排行</a></li>
+                <li><a href="#">月排行</a></li>
+            </ul>
+        </div>
+        <div class="bct views{$r[catid]}">
+		{pc:content action="hits" catid="$r[catid]" num="8" order="dayviews DESC" cache="0"}
+		<ul class="uli4 mg10">
+		{loop $data $r}
+			{if $n==1}
+			<li class="p_r">
+			<div class="l"><span class="bs">1</span><a href="{$r[url]}" target="_blank"><img src="{$r[thumb]}" width="106" height="75"></a></div>
+			<div class="lh18"><a href="{$r[url]}" target="_blank" title="{$r[title]}">{str_cut($r[title],22,false)}</a></div>
+			<div>{str_cut($r[title],26,false)}</div>
+			</li>
+			{else}
+			<li><a href="{$r[url]}" target="_blank" title="{$r[title]}">{str_cut($r[title],36,false)}</a></li> 
+			{/if}
+		{/loop}	
+		</ul>
+		
+		{/pc}
+		
+		{pc:content action="hits" catid="$r[catid]" num="8" order="weekviews DESC" cache="0"}
+		
+		<ul class="uli4 mg10 hidden">
+		{loop $data $r}
+			{if $n==1}
+			<li class="p_r">
+			<div class="l"><span class="bs">1</span><a href="{$r[url]}" target="_blank" title="{$r[title]}"><img src="{$r[thumb]}" width="106" height="75"></a></div>
+			<div class="lh18"><a href="{$r[url]}" target="_blank" title="{$r[title]}">{str_cut($r[title],22,false)}</a></div>
+			<div>{str_cut($r[title],26,false)}</div>
+			</li>
+			{else}
+			<li><a href="{$r[url]}" target="_blank" title="{$r[title]}">{str_cut($r[title],38,false)}</a></li> 
+			{/if}
+		{/loop}	
+		</ul>
+		
+		{/pc}
+	  
+		{pc:content action="hits" catid="$r[catid]" num="8" order="monthviews DESC" cache="0"}
+		
+		<ul class="uli4 mg10 hidden">
+		{loop $data $r}
+			{if $n==1}
+			<li class="p_r">
+			<div class="l"><span class="bs">1</span><a href="{$r[url]}" target="_blank" title="{$r[title]}"><img src="{$r[thumb]}" width="106" height="75"></a></div>
+			<div class="lh18"><a href="{$r[url]}" target="_blank" title="{$r[title]}">{str_cut($r[title],22,false)}</a></div>
+			<div>{str_cut($r[title],26,false)}</div>
+			</li>
+			{else}
+			<li><a href="{$r[url]}" target="_blank" title="{$r[title]}">{str_cut($r[title],38,false)}</a></li> 
+			{/if}	
+		{/loop}
+		</ul>
+	
+		{/pc} 
+        </div>
+    </div>
+{/loop}	
+{/pc}
+	
+    <div class="ad">
+	
+	<a href="http://www.phpcms.cn" title="随机广告位，欢迎访问PHPCMS.CN"><img src="http://www.phpcms.cn/statics/images/video/ad280x66.gif"></a>
+	</div>
+  
+   
+  </div>
+  </div> 
+
+<script type="text/javascript">
+$(function(){
+	delcookie('player_list'); 
+	ChangStatus();
+})
+
+/*
+*改变加入清单的图片事件和图片显示
+*/
+function ChangStatus(){
+	var player_list ;
+	var list_array= new Array();
+	player_list = getcookie('player_list');
+ 	if(player_list!=null){
+		list_array = player_list.split("|");
+		if(list_array.length>0){
+ 			for(var i=0;i<list_array.length;i++) {
+				var player;
+				player=list_array[i].split("@");  
+				$("a[contentid='"+player[2]+"']").removeClass("j"); 
+				$("a[contentid='"+player[2]+"']").addClass("j2");  
+			}
+		}
+	} 
+}
+
+function toggle(object) { 
+ 	var url = $(object).attr("href");
+	var title = $(object).attr("title");
+	var id = $(object).attr("contentid");
+	var catid = $(object).attr("catid");
+   	var isCookieExist;   
+     isCookieExist = getcookie('player_list');  
+	if(!isCookieExist){
+ 		var new_player = url+'@'+title+'@'+id+'@'+catid;
+		player_list = new_player;
+	} else{
+		var player_list = getcookie('player_list'); 
+ 		//判断是否已经存在
+ 		if(player_list.indexOf(id)!=-1){
+			//已经加入播放菜单则设置COOKIE,直接跳转至播放页面
+   			var list_array = player_list.split("|"); 
+			var player=new Array();
+			if(list_array.length>20){
+				alert('你已经添加20个播放列表，无法增加更多！');
+				return false;
+			}
+			for(var i=0;i<list_array.length;i++) {
+ 				player = list_array[i].split("@"); 
+				if(id == player[2]){
+					setcookie('now',i);
+					window.open(player[0],'_blank');
+				}
+			}
+  			return false;
+		}  
+		var new_player = '|'+url+'@'+title+'@'+id+'@'+catid;
+		player_list +=new_player;
+	}
+ 	//改变图片样式，并且去掉onclick函数
+ 	setcookie('player_list',player_list,1); 
+	$("a[contentid='"+id+"']").removeClass("j"); 
+	$("a[contentid='"+id+"']").addClass("j2"); 
+	$("a[contentid='"+id+"']").unbind("click"); 
+	return false; 
+} 
+</script>  
+{template "content","footer"} 

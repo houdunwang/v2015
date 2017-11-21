@@ -1,0 +1,46 @@
+{template 'member', 'header'}
+<div id="memberArea">
+{template 'member', 'left'}
+<div class="col-auto">
+<div class="col-1 ">
+<h6 class="title">消费记录</h6>
+<div class="content">
+<form name="searchform" action="{APP_PATH}index.php?m=pay&c=spend_list&a=init" method="get" >
+<input type="hidden" value="pay" name="m">
+<input type="hidden" value="spend_list" name="c">
+<input type="hidden" value="init" name="a">
+		<div class="search">
+		订单时间  {form::date('starttime',format::date($starttime))} 到   {form::date('endtime',format::date($endtime))}
+		{form::select(array(''=>'消费类型', '1'=>'金钱', '2'=>'积分'),$type,'name="type"')}  
+		<input type="submit" value="查询" class="button" name="dosubmit">
+		</div>
+</form>
+<table width="100%" cellspacing="0"  class="table-list">
+        <thead>
+            <tr>
+            <th width="20%">消费内容</th>
+            <th width="20%">时间</th>
+            <th width="15%">消费类型</th>
+            <th width="8%">数量</th>
+            </tr>
+        </thead>
+    <tbody>
+	{loop $list $info} 
+	<tr>
+	<td width="20%" align="center">{$info['msg']}</td>
+	<td  width="20%" align="center">{format::date($info['creat_at'], 1)}</td>
+	<td width="15%" align="center">{if $info[type]==1}金钱{elseif $info[type]==2}积分{/if}</td>
+	<td width="8%" align="center">{$info['value']}</td>
+	</tr>
+	{/loop}
+    </tbody>
+    </table>
+
+ <div id="pages"> {$pages}</div>
+</div>
+<span class="o1"></span><span class="o2"></span><span class="o3"></span><span class="o4"></span>
+</div>
+
+</div>
+</div>
+{template 'member', 'footer'}

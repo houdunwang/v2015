@@ -1,0 +1,15 @@
+<style>
+body,html{background:none; padding:0; margin:0}
+.log{line-height:24px;*line-height:27px; height:24px;float:right; font-size:12px}
+.log span{color:#ced9e7}
+.log a{color:#049;text-decoration: none;}
+.log a:hover{text-decoration: underline;}
+.log .snda{ position:relative; bottom:-3px}
+.log .upv_btn{height: 24px; padding-left: 14px; position: relative; background:url({IMG_PATH}up_btn.gif) no-repeat 0px 0px; margin-left:0px; margin-right:10px; *background-position:0px 5px;}
+.log .r{float:right;}
+.log .w27{* width:320px;}
+</style>
+<body style="background-color:transparent">
+<div class="log w27">{if $_username}{L('hellow')} {get_nickname()}, <a href="{APP_PATH}index.php?m=member&siteid={$siteid}" target="_blank">{L('member_center')}</a> <a href="{APP_PATH}index.php?m=member&c=index&a=logout&forward={urlencode($_GET['forward'])}&siteid={$siteid}" target="_top">{L('logout')}</a>&nbsp;&nbsp;<a href="{APP_PATH}index.php?m=member&c=content&a=upload_video" target="_top" class="upv_btn">上传视频</a>{else} <span class="r"><a href="{APP_PATH}index.php?m=member&c=index&a=register&siteid={$siteid}" target="_blank">{L('register')}</a> <span>|</span> <a href="{APP_PATH}index.php?m=member&c=index&a=login&forward={urlencode($_GET['forward'])}&siteid={$siteid}" target="_top">{L('login')}</a>&nbsp;&nbsp;<a href="{APP_PATH}index.php?m=member&c=content&a=upload_video" target="_top" class="upv_btn">上传视频</a></span>
+{/if}</div>
+</body>

@@ -1,0 +1,10 @@
+{template "wap","min_header"}
+<div class="wrap" id="hd">
+ <div class="adds">{wap_pos($typeid)}</div>
+<div>
+{loop $list $v}
+	<a href="{show_url($v[catid],$v[id],$typeid)}" title="{$v['title']}">{str_cut($v['title'],26,'')}</a><br/>
+{/loop}
+</div>
+ <div class="pages">{$pages}</div>
+{template "wap","min_footer"}

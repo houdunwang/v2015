@@ -1,0 +1,85 @@
+{template 'member', 'header'}
+<div id="memberArea">
+{template 'member', 'left'}
+<div class="col-auto">
+<div class="col-1 ">
+<h6 class="title">发送短消息</h6>
+<div class="content">
+<form name="myform" action="{APP_PATH}index.php?m=message&c=index&a=send" method="post" id="myform">
+<table width="100%" cellspacing="0" class="table_form">
+    <tr>
+       <th>收信人：</th>
+       <td><input name="info[send_to_id]" type="text" id="username" size="30" value=""  class="input-text"/> </td>
+     </tr>
+     <tr>
+       <th>标 题：</th>
+       <td><input name="info[subject]" type="text" id="subject" size="30" value=""  class="input-text"/></td>
+     </tr>  
+     <tr>
+       <th>内 容：</th>
+       <td><textarea name="info[content]"  id="con" rows="5" cols="50"></textarea></td>
+     </tr>
+     <tr>
+       <th>验证码：</th>
+       <td><input name="code" type="text" id="code" size="10"  class="input-text"/> {form::checkcode('code_img','4','14',110,30)}</td>
+     </tr>
+     <tr>
+       <td></td>
+       <td colspan="2"><label>
+         <input type="submit" name="dosubmit" id="dosubmit" value="确 定" class="button"/>
+         </label></td>
+     </tr>
+   </table>
+   </form>
+   </div>
+   <span class="o1"></span><span class="o2"></span><span class="o3"></span><span class="o4"></span>
+   </div>
+   </div>
+</div>
+<script type="text/javascript">
+<!--
+$(function(){
+	$.formValidator.initConfig({autotip:true,formid:"myform",onerror:function(msg){}});
+	$("#subject").formValidator({onshow:"请输入标题",onfocus:"标题不能为空"}).inputValidator({min:1,max:999,onerror:"标题不能为空"});
+	$("#con").formValidator({onshow:"请输入内容",onfocus:"内容不能为空"}).inputValidator({min:1,max:999,onerror:"内容不能为空"});
+	$("#username").formValidator({onshow:"请填写收信人",onfocus:"收信人不能为空"}).inputValidator({min:1,onerror:"请输入收件人ID"}).ajaxValidator({type : "get",url : "",data :"m=message&c=index&a=public_name",datatype : "html",async:'false',success : function(data){if( data == 1 ){return true;}else{return false;}},buttons: $("#dosubmit"),onerror : "禁止给自己或非注册用户发送消息! ",onwait : "正在链接中...."});
+	
+	$("#code").formValidator({onshow:"请输入验证码",onfocus:"验证码不能为空"}).inputValidator({min:1,max:999,onerror:"验证码不能为空"}).ajaxValidator({
+	    type : "get",
+		url : "",
+		data :"m=pay&c=deposit&a=public_checkcode",
+		datatype : "html",
+		async:'false',
+		success : function(data){	
+            if(data == 1)
+			{
+                return true;
+			}
+            else
+			{
+                return false;
+			}
+		},
+		buttons: $("#dosubmit"),
+		onerror : "验证码错误",
+		onwait : "验证中"
+	});
+})
+
+$(function(){
+	$(".payment-show").each(function(i){
+		if(i==0){
+			$(this).addClass("payment-show-on");
+		}
+   		$(this).click(
+			function(){
+				$(this).addClass("payment-show-on");
+				$(this).siblings().removeClass("payment-show-on");
+			}
+		)
+ 	});
+	
+})
+//-->
+</script>
+{template 'member', 'footer'}

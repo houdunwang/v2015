@@ -1,0 +1,27 @@
+<div class="col-left col-1 left-memu">
+        	<h5 class="title"><img src="{IMG_PATH}icon/m_1.png" width="15" height="15" /> {L('manage_center')}</h5>
+            <ul>
+       	    <li {if ROUTE_A=="publish"} class="on"{/if}><a href="index.php?m=member&c=content&a=publish"><img src="{IMG_PATH}icon/m_2.png" width="14" height="15" /> {L('online_publish')}</a></li>
+            <li {if ROUTE_A=="published"} class="on"{/if}><a href="index.php?m=member&c=content&a=published"><img src="{IMG_PATH}icon/m_3.png" width="14" height="16" /> {L('published_content')}</a></li>
+            </ul>
+            {if module_exists('pay')}
+<h6 class="title">{L('financial_management')}</h6>
+            <ul>
+            	<li{if ROUTE_A=="pay" && ROUTE_C=="deposit"} class="on"{/if}><a href="index.php?m=pay&c=deposit&a=pay"><img src="{IMG_PATH}icon/m_4.png" width="15" height="16" /> {L('online_charge')}</a></li>
+                <li{if ROUTE_A!="pay" && ROUTE_C=="deposit"} class="on"{/if}><a href="index.php?m=pay&c=deposit&a=init"><img src="{IMG_PATH}icon/m_8.png" width="16" height="16" /> {L('pay_log')}</a></li>
+                <li{if ROUTE_A!="pay" && ROUTE_C=="spend_list"} class="on"{/if}><a href="index.php?m=pay&c=spend_list&a=init"><img src="{IMG_PATH}icon/table-information.png" width="16" height="16" /> {L('cost_log')}</a></li>
+				<li{if ROUTE_A=="change_credit"} class="on"{/if}><a href="index.php?m=member&c=index&a=change_credit"><img src="{IMG_PATH}icon/coins_add.png" width="16" height="16" /> {L('credit_change')}</a></li>
+      </ul>
+      {/if}
+{pc:message action="check_new"}
+{php $new_arr = $data;}
+{/pc}
+      <h6 class="title">{L('message')}</h6>
+          <ul>
+           	  <li{if ROUTE_A=="send"} class="on"{/if}><a href="index.php?m=message&c=index&a=send"><img src="{IMG_PATH}icon/m_9.png" width="16" height="14" /> {L('send_message')}</a></li>
+           	  <li{if ROUTE_A=="inbox"} class="on"{/if}><a href="index.php?m=message&c=index&a=inbox"><img src="{IMG_PATH}icon/m_11.png" width="16" height="16" /> {L('input_box')}{if $new_arr['new_count'] >0}<font color=red>({$new_arr['new_count']})</font>{/if}</a></li>
+              <li{if ROUTE_A=="outbox"} class="on"{/if}><a href="index.php?m=message&c=index&a=outbox"><img src="{IMG_PATH}icon/m_10.png" width="16" height="16" /> {L('output_box')}</a></li>
+			   <li{if ROUTE_A=="group"} class="on"{/if}><a href="index.php?m=message&c=index&a=group"><img src="{IMG_PATH}icon/lightbulb.png" width="16" height="16" /> {L('system_message')}{if $new_arr['new_group_count'] >0}<font color=red>({$new_arr['new_group_count']})</font>{/if}</a></li>
+          </ul>
+      <span class="o1"></span><span class="o2"></span><span class="o3"></span><span class="o4"></span>
+</div>

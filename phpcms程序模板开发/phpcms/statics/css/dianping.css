@@ -1,0 +1,40 @@
+.webwidget_rating_sex{height: 18px;width:auto; float:left}
+.webwidget_rating_sex li{line-height: 0px;width: 18px;height: 18px;margin-left: 2px;list-style: none;float: left;}
+.webwidget_rating_sex li span{display: none}
+
+.dianping-box{border: 1px solid #C3D4E7;}
+.star-form{clear:both; padding:4px 0;line-height:18px; overflow:hidden}
+.star-form dt,.star-textarea dt{ width:75px; text-align:right;color: #0F0F0F;}
+.star-form dt,.star-form dd,.star-textarea dt{ float:left}
+.star-form dd .tip{ padding-left:20px}
+.star-textarea{ margin-bottom:3px;}
+.star-textarea dd{ padding-top:5px}
+.star-textarea dd textarea{border:1px solid #A7A6AA;border: 1px solid #d0d0d0;background: #FFF url(../images/admin_img/input.png) repeat-x; font-family: Verdana, Geneva, sans-serif,"宋体";font-size:12px;padding:5px; margin:0; width:500px; height:130px}
+.star-btn{ padding-left:75px; padding-bottom:16px}
+.star-btn p{ color:#666; margin-bottom:5px}
+
+
+
+.dianping-add h5 {background: url("../images/icon/user_comment.png") no-repeat 6px 4px;padding-left: 26px; height:26px; line-height:26px; margin:6px 0 0 6px}
+
+.dianping-list{padding:10px}
+.opinion-row{min-height:60px;height:auto !important;height:60px;overflow:visible; padding:10px 0}
+.opinion-row .img-box{ float:left; width:60px; margin-right:14px; text-align:center}
+.opinion-row .img-box a.img{ border:1px solid #CCC; padding:2px; display:block}
+.opinion-row .img-box a{color: #0966BE;}
+.opinion-row .text-box{ overflow:hidden;_float:left;zoom:1}
+.opinion-box{ background-color:#ebf0f3; padding:2px 5px 3px; height:18px; line-height:18px}
+.opinion-row .opinion-item .line{ color:#CCC; padding:0 10px}
+.opinion-row .opinion-item .number{color: #d00;font-weight: 700; font-family:Arial, Helvetica, sans-serif}
+.opinion-row .time{color: #999;float: right;font-family: Arial;font-size: 10px;}
+.opinion-row pre{ padding:6px 0 0px;}
+.lite-rate,.lite-rate dd{ background:url(../images/dianping/web_widget_star.gif) repeat-x; width:90px; height:18px}
+.lite-rate dd{background-position:left -28px}
+
+/* 分页 */
+#pages { padding:14px 0 10px; font-family:宋体 }
+#pages a { display:inline-block; height:22px; line-height:22px; background:#fff; border:1px solid #e3e3e3; text-align:center; color:#333; padding:0 10px}
+#pages a.a1 { background:url(../images/admin_img/pages.png) no-repeat 0 5px; width:56px; padding:0 }
+#pages a:hover { background:#f1f1f1; color:#000; text-decoration:none }
+#pages span { display:inline-block; height:22px; line-height:22px; background:#5a85b2; border:1px solid #5a85b2; color:#fff; text-align:center;padding:0 10px}
+.page .noPage { display:inline-block; width:56px; height:22px; line-height:22px; background:url(../img/icu/titleBg.png) repeat-x 0 -55px ; border:1px solid #e3e3e3; text-align:center; color:#a4a4a4; }

@@ -1,0 +1,32 @@
+{template 'member', 'header'} 
+<div id="memberArea">
+{template 'member', 'left'}
+<div class="col-auto">
+<div class="col-1 ">
+<h6 class="title">查看已发消息</h6>
+<div class="content">
+ <table width="100%" cellspacing="0" class="table_form">
+ 
+     <tr>
+       <th><div align=center><img src="{IMG_PATH}member/nophoto.gif" width="50" height="50"><br><font color=red>{$infos['send_from_id']}</font></div></th>
+       <td><b>{$infos['subject']}</b> - {date('Y-m-d H:i:s',$infos['inputtime'])}<br><br>{nl2br($infos['content'])}</td>
+     </tr>
+     
+     {loop $reply_infos $reply_info}  
+     <tr>
+       <th><div align=center><img src="{IMG_PATH}member/nophoto.gif" width="50" height="50"></img><br>{$reply_info['send_from_id']}</div></th>
+       <td>{$reply_info['subject']} - {date('Y-m-d H:i:s',$reply_info['message_time'])}<br><br></br><b>{$reply_info['content']}</b></td>
+     </tr> 
+     {/loop}
+     
+     
+         </label></td>
+     </tr>
+   </table>
+    </div>
+   <span class="o1"></span><span class="o2"></span><span class="o3"></span><span class="o4"></span>
+   </div>
+<div class="bk10"></div>
+   </div>
+</div> 
+{template 'member', 'footer'}

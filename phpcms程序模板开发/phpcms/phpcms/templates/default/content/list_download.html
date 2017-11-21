@@ -1,0 +1,66 @@
+{template "content","header"}
+<link href="{CSS_PATH}download.css" rel="stylesheet" type="text/css" />
+<!--main-->
+<div class="main">
+	<!--left_bar-->
+	<div class="col-left">
+    <div class="crumbs"><a href="#">首页</a><span> &gt; </span>{catpos($catid)}</div>
+    	<!--最新下载-->
+    <div class="box mg_b10">
+        		<h5>最新下载</h5>
+            <ul class="content news-photo col4">
+			{pc:content action="lists" catid="$catid" num="4"  thumb="1" order="id DESC"}
+			{loop $data $r}
+            	<li>
+                    <div class="img-wrap">
+                        <a href="{$r[url]}"><img src="{thumb($r[thumb],110,90)}" width="110" height="90"></a>
+                    </div>
+                    <a href="{$r[url]}" title="{$r[title]}" style="color:{$r[style]}">{str_cut($r[title],24,'')}</a>
+                </li>
+			{/loop}	
+			{/pc}
+            </ul>
+        </div>
+		{pc:content action="lists" catid="$catid" num="15" order="id DESC" page="$page"}
+        <div class="box boxsbg">
+		{loop $data $r}
+        	<dl class="down_list sysnews">
+              <dt><h5><a target="_blank" href="{$r[url]}" title="{$r[title]}">{$r[title]}</a></h5></dt>
+              <dd class="down_txt">{$r[description]}</dd>
+              <dd class="down_attribute align_r"><span class="icon_1">软件大小：{$r[filesize]}</span><span class="icon_3">星级：{$r[stars]}</span><span class="icon_4">更新时间：{date('Y-m-d',$r[inputtime])}</span></dd>
+            </dl>
+		{/loop}	
+        	<!--pages-->
+        <div class="text-c mg_t20" id="pages">{$pages}</div>
+		{/pc}
+        </div>
+    </div>
+    <!--right_bar-->
+    <div class="col-auto">
+    	<!--广告228x90-->
+    	<div class="brd mg_b10"><script language="javascript" src="{APP_PATH}caches/poster_js/5.js"></script></div>
+        <div class="box">
+            <h5 class="title-2">下载排行</h5>
+            <ul class="content digg">
+			{pc:content action="hits" catid="$catid" num="10" order="views DESC" cache="3600"}
+				{loop $data $r}
+					<li><a href="{$r[url]}" target="_blank">{$r[title]}</a></li>
+				{/loop}
+			{/pc}
+            </ul>
+        </div>
+        <div class="bk10"></div>
+        <div class="box">
+            <h5 class="title-2">推荐下载</h5>
+            <ul class="content digg">
+            	{pc:content  action="position" posid="5" order="listorder DESC" num="4"}
+        	 	{loop $data $r}        
+                <li><a href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],34)}</a></li>
+               	{/loop}  
+             	{/pc} 
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="bk10"></div>
+{template "content","footer"}

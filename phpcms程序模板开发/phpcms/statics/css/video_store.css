@@ -1,0 +1,38 @@
+ul li{line-height:22px;}
+a:link,a:visited{text-decoration:none; color:#5d5d5d;}a:hover{text-decoration:underline;}a img{overflow:hidden;}
+.clr:after{content:" "; display:block; height:0; font-size:0; clear:both; visibility:hidden;}
+.wp{overflow:hidden;}.p_r{position:relative; overflow:hidden;}.r{float:right;}.l{float:left;}
+ul,ol{list-style:none;} p{ margin:0px;}
+table{border-collapse:collapse;border-spacing:0;}
+.m_box{width:640px;}
+	ul.clr{ padding:0px; margin:0px;}
+	.ct .l{width:312px; overflow:hidden;}
+			.r1 select{ padding:2px 0px;}
+			.s_ipt{ background:url(../images/ipt_bgx.jpg) repeat-x 0% 0% #fff; margin-right:4px; border:1px solid #D0D0D0; padding:3px 2px; width:164px;}
+			.s_btn{ background:url(../images/btn_bg.jpg) no-repeat; width:44px; height:24px; cursor:pointer; text-align:center; border:none; margin-left:10px; *margin-left:6px; position:relative; top:1px;}
+		.r2{margin-top:10px; }
+			.col3{ font-size:12px; padding-left:0px; position:relative; left:-6px; *left:0px; width:330px; margin:0px; margin-top:10px;}
+			.col3 li{float:left; width:33%; margin:4px 0px;}
+			.w9{ width:90px; margin-left:auto; margin-right:auto; }
+			.w9 a.ac{position:relative;}
+			.w9 a.ac span{background:url(../images/dh.png) no-repeat 0% 0%; width:16px; height:16px; position:absolute; right:0px; bottom:2px;}
+			.w9 img{border:none;}
+			.w9 p{height:22px; line-height:22px; overflow:hidden; text-align:center;}
+			.ipages{text-align:center; font-size:12px; margin-top:8px;}
+			.ipages a{ margin:0px 2px;}
+			.ipages a.ac{font-weight:bold;color:#39c;}
+	
+	.h_box{ border-bottom:1px solid #E2E3E7; margin-bottom:10px; height:22px;}
+	.h_box ul li{ float:left; margin-right:2px; margin-left:2px; border:1px solid #E2E3E7; border-bottom:none;}
+	.h_box ul li a{ display:block; height:22px; font-size:12px; line-height:22px; background:url(../images/bg1.jpg) repeat-x 0% 100%; padding:0px 10px; float:left;}
+	.h_box ul li a:hover{background:url(../images/bg1.jpg) repeat-x 0px 2px; text-decoration:none;}
+	.h_box ul li a.ac{ background:#fff; position:relative; bottom:-1px; text-decoration:none; cursor:auto;}
+	
+.frm_tb{font-size:12px; width:96%; margin-left:auto: margin-right:auto;}
+.frm_tb th{color:#333;}
+.frm_tb th,.frm_tb td{border:1px solid #efefef; border-left:none; border-right:none; padding:6px 0px;}
+.frm_tb fieldset{border:1px solid #dfdfdf;}
+.frm_tb .tbb td,.frm_tb .tbb th{ border:none;}
+
+.cke_l_dialog .cke_dialog_contents{background-color:#fff !important}
+.mgr4{* margin-right:2px;}

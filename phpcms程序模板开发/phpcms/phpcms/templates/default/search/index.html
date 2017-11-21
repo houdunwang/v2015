@@ -1,0 +1,43 @@
+{template 'search', 'header'}
+	<div class="clr sr_body">
+    	<div class="sr_main">
+        	<div class="sr_head">
+            	<div class="l" id="search">
+				{php $j=0}
+				{loop $search_model $k=>$v}
+				{php $j++;}
+					<a href="javascript:;" onclick="setmodel({$v['typeid']}, $(this));" {if $j==1 && $typeid=$v['typeid']} class="on" {/if}>{$v['name']}</a>{if $j != count($search_model)} - {/if}
+				{/loop}
+				{php unset($j);}
+				</div>
+            	<div class="r"><script type="text/javascript">document.write('<iframe src="{APP_PATH}index.php?m=member&c=index&a=mini&forward='+encodeURIComponent(location.href)+'&siteid={get_siteid()}" allowTransparency="true"  width="300" height="24" frameborder="0" scrolling="no"></iframe>')</script>
+				</div>
+            </div>
+            <div class="sr_logo"><a href="javascript:;"><img src="{IMG_PATH}search/se_logo.png" width="230" height="158" /></a></div>
+
+			<form name="search" type="get">
+			  <input type="hidden" name="m" value="search"/>
+			  <input type="hidden" name="c" value="index"/>
+			  <input type="hidden" name="a" value="init"/>
+			  <input type="hidden" name="typeid" value="{$typeid}" id="typeid"/>
+			  <input type="hidden" name="siteid" value="{$siteid}" id="siteid"/>
+            <div class="sr_frm">
+            	<div class="sr_frm_box">
+                	<div class="sr_frmipt"><input type="text" name="q" id="q" class="ipt"><div class="sp" id="aca">▼</div><input type="submit" class="ss_btn" value="搜 索"></div>
+                </div>
+                <div id="sr_infos" class="wrap sr_infoul">
+                </div>
+            </div>
+			</form>
+{if $setting['suggestenable']}
+<script type="text/javascript" src="{JS_PATH}jquery.suggest.js"></script>
+<script type="text/javascript" src="{JS_PATH}search_suggest.js"></script>
+{/if}
+<script language="JavaScript">
+<!--
+$(document).ready(function(){
+	$("#q").focus();
+}); 
+//-->
+</script>
+{template 'search', 'footer'}

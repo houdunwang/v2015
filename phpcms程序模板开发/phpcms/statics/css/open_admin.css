@@ -1,0 +1,8 @@
+div.ibtn{height:40px; text-align: center;}div.ibtns{height:120px;}
+div.ibtn form{display: inline;}
+div.ibtn .button{background:url(../images/bgx.jpg) repeat-x 0px 0px; height:40px; line-height:40px; color:#fff; font-weight:900;cursor: pointer; border-radius: 4px; padding:0px 10px; border:none; * border:1px solid #eee; font-size:14px;}
+div.ibtn .button:hover{background:url(../images/bgx.jpg) repeat-x 0px -40px;}
+.nr{background:#FFF;border: 1px solid #D5D5D5; border-radius:6px; box-shadow: 0 0 4px #efefef; line-height: 21px; margin-bottom:20px; margin-top:10px; padding: 10px 20px;}
+.nr p{text-indent: 2em; margin:8px 0px;}
+.txtc{text-align:center}
+.fs14{font-size:14px; padding:10px 0px;font-weight: bold;}

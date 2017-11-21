@@ -1,0 +1,144 @@
+{template 'member', 'header'}
+<script type="text/javascript">
+<!--
+	var charset = '{CHARSET}';
+	var uploadurl = '{php echo pc_base::load_config('system','upload_url')}';
+//-->
+</script>
+<script type="text/javascript" src="{JS_PATH}video/swfobject.js"></script>
+<script type="text/javascript" src="{JS_PATH}video/swfobject2.js"></script>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var js4swf = {
+    onInit: function(list){
+        // 初始化时调用, 若 list.length > 0 代表有可续传文件
+        // [{file}, {file}]
+		if(list.length > 0) {
+		    var length = list.length-1;
+			$('#list_name').html("文件：《"+list[length].name+"》未上传完成，如需续传，请重新选择该文件");
+		}
+        this.showMessage('init', list);
+    },
+    onSelect: function(files){
+        // 选中文件后调用, 返回文件列表
+        // [{file}, {file}]
+        this.showMessage('select', files);
+    },
+    onSid: function(evt){
+        // 获得 sid 后返回, 更新 sid 用 (key, sid, name, type, size)
+		if ($('#title').val()=='') {
+			$('#title').val(evt.name);
+		}
+		var ku6vid = evt.vid;
+		$.get('index.php', {m:'video', c:'vid', a:'check', vid:ku6vid});
+        this.showMessage('sid', evt);
+    },
+    onStart: function(){
+        // 开始上传 (选择文件后自动开始)
+        this.showMessage('start');
+    },
+    onCancel: function(){
+        // 上传取消事件
+
+        this.showMessage('cancel');
+    },
+    onProgress: function(evt){
+        // 上传进度事件 (bytesLoaded, bytesTotal, speed) m=1 时没有这事件
+        this.showMessage('progress', evt);
+    },
+    onComplete: function(evt){
+        // 上传完成事件 (包含文件信息和完成后返回数据(data))
+		$('#vid').val(evt.vid);
+		//document.getElementById('frm').submit();
+        this.showMessage('complete', evt);
+        
+    },
+    onWarn: function(evt){
+        // 报错事件 (key, message)
+        //this.showMessage('warn', evt);
+		alert(evt.msg);
+    },
+    showMessage: function(){
+        console.log(arguments);
+    }
+};
+function checkform() {
+	if($('#vid').val()=='0') {
+		alert('您没有选择视频，或者视频正在上传中...');
+		return false;
+	}
+	if($('#title').val()=='') {
+		alert('请填写标题');
+		$('#title').focus();
+		return false;
+	}
+}
+//-->
+</SCRIPT>
+<script type="text/javascript">
+var flashvars = { m: "1", u: "{$flash_info['userid']}", ctime: "{$flash_info['passport_ctime']}", sig: "{$flash_info['passport_sig']}", c: "vms", t: "1", n: "js4swf", k: "190000" ,ms:"39",s: "8000000"};
+var params = { allowScriptAccess: "always" , wmode: "transparent"};
+var attributes = { };
+//swfobject.embedSWF("http://player.ku6cdn.com/default/podcast/upload/201104261840/ku6uploader.swf", "ku6uploader", "450", "45", "10.0.0", null, flashvars, params, attributes);
+swfobject.embedSWF("{$flash_info['flashurl']}", "ku6uploader", "450", "45", "10.0.0", null, flashvars, params, attributes);
+</script>
+<div id="memberArea">
+	{template 'member', 'left'}
+	<div class="col-auto">
+		<div class="col-1 ">
+			<h5 class="title">视频发布</h5>
+			<div class="content">
+				
+			<form method="post" action="" id="myform" name="myform">
+				<table width="100%" cellspacing="0" class="table_form">
+					<tr>
+						<th> <font color="red">*</font> 选择栏目</th>
+						<td>{$cat_list}</td>
+					</tr>
+					<tr>
+						<th width="120"> <font color="red">*</font> 选择视频</th> 
+						<td><div id="ku6uploader"></div></td>
+					</tr>
+					<tr>
+						<th width="120"> <font color="red">*</font> 标题</th> 
+						<td><input type="text" style="width:400px;" name="info[title]" id="title" value="" class="measure-input " onblur="$.post('api.php?op=get_keywords&amp;number=3&amp;sid='+Math.random()*5, {data:$('#title').val()}, function(data){if(data &amp;&amp; $('#keywords').val()=='') $('#keywords').val(data); })" onkeyup="strlen_verify(this, 'title_len', 80);"><span id="balance"><span></td>
+					</tr>
+					<tr>
+						<th width="120">视频简介</th> 
+						<td><textarea name="info[description]" id="description" style="width:60%;height:56px;" class="input-focus"></textarea></td>
+					</tr>
+					<tr>
+						<th width="120">标签</th> 
+						<td><input type="text" name="info[keywords]" id="keywords" value="" style="width:280px" class="input-text"> 多个用空格隔开</td>
+					</tr>
+					<tr>
+						<th></th>
+						<td>
+						<input name="forward" type="hidden" value="{HTTP_REFERER}">
+						<input type="hidden" name="vid" id="vid" value="0">
+						<input name="dosubmit" type="submit" id="dosubmit" value="{L('submit')}" class="button"></td>
+					</tr>
+				</table>
+			</form>
+
+			</div>
+			<span class="o1"></span><span class="o2"></span><span class="o3"></span><span class="o4"></span>
+		</div>
+	</div>
+</div>
+<div class="clear"></div>
+<script type="text/javascript"> 
+<!--
+//只能放到最下面
+$(function(){
+	$.formValidator.initConfig({formid:"myform",autotip:true,onerror:function(msg,obj){window.top.art.dialog({content:msg,lock:true,width:'200',height:'50'}, 	function(){$(obj).focus();
+	boxid = $(obj).attr('id');
+	if($('#'+boxid).attr('boxid')!=undefined) {
+		check_content(boxid);
+	}
+	})}});
+	{$formValidator}
+})
+//-->
+</script>
+{template 'member', 'footer'}

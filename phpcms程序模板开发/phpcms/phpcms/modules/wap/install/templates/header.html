@@ -1,0 +1,43 @@
+{php wmlHeader();}
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Cache-Control" content="no-cache"/>
+		<meta name="viewport" content="width=device-width; initial-scale=1.3; minimum-scale=1.0; maximum-scale=2.0"/>
+		<meta name="MobileOptimized" content="240"/>
+		<meta name="format-detection" content="telephone=no" />
+        <title>{$WAP['sitename']}</title>
+		<style type="text/css">
+		body,div,p,table,textarea,form,h2,h3,h4,h5,ul,li{margin:0; padding:0; color:#303030;line-height:160%;}
+		select, input, img{vertical-align:middle; border:none;}
+		body{background:#FFF;-webkit-user-select:none;-webkit-text-size-adjust:none;}
+		a{text-decoration:none;color:#09c;}
+		
+		.wrap{padding:3px 3px 0px; line-height:130%; font-size:14px;}
+		.tc{text-align:center; margin:10px 0px;}
+		.nav_logo{line-height:26px; margin-bottom:4px; color:#999; font-weight:bold;}
+		.nav_logo img{margin-right:10px;}
+		.hot{color:#ff0; background:#09c; padding:3px;}
+		.hot a{text-decoration:underline; color:#fff;}
+		
+		h2{background:#efefef; color:#666; margin:6px 0px; padding:2px 6px; font-size:14px;}
+		h2 a{margin-left:0.5em; font-size:12px; font-weight:100; color:#666; text-decoration:underline;}
+		h2 a.cat{font-weight:bold; font-size:14px; margin-left:0px; color:#09c; margin-right:4px; text-decoration:none;}
+		.ft{ background:#efefef; text-align:center; padding:10px 0px;}
+		</style>
+</head>
+<body>
+<div class="wrap">
+	<div class="nav_logo" id="hd">
+    	<span><a href="{WAP_SITEURL}"><img src="{$WAP['logo']}" width="70" height="50" alt="phpcms" align="left" /></a></span>
+{pc:wap action="type" typeid="0" num="10" siteid="$siteid" }
+ {loop $data $k $v}
+	   <a href="{list_url($v[typeid])}">{$v[typename]}</a>
+	   {if $n%2!=0}&nbsp;|&nbsp;{else}<br/>{/if}
+	  {/loop}
+{/pc}		
+    </div>
+ <div class="hot">
+    	热词：{hotword()} 
+    </div>

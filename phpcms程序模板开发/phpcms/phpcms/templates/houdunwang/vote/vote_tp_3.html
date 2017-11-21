@@ -1,0 +1,17 @@
+<div class="content vote">
+<form name="myform" id="myform"  action="{APP_PATH}index.php?m=vote&c=index&a=post&subjectid={$subjectid}" method="post" target="_blank">
+<h4>{$subject}</h4>
+<div class="hr bk6"><hr></div>
+<input type="hidden" name="subjectid" value="{$subjectid}">
+{loop $options $r}
+{$i++}
+{if $vote_data['total']==0 }
+{php $per=0;}
+{else}
+{php $per=intval($vote_data[$r['optionid']]/$vote_data['total']*100);}
+{/if}
+<label><input type={if $ischeckbox=='0'}"radio"{else}"checkbox"{/if} name="radio[]" id="radio" value="{$r['optionid']}" {$check_status}/>{$r['option']}</label>
+{/loop}
+<div class="btn" style="{$display}"><input type="submit" value="提交"></div><a href="{APP_PATH}index.php?m=vote&c=index&a=result&subjectid={$subjectid}&siteid={$siteid}">[查看结果]</a>
+</form>
+</div>

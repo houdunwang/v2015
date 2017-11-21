@@ -1,0 +1,18 @@
+table{border-collapse:collapse;border-spacing:0;}
+.wrap{overflow:hidden; *display:inline-block;}.wrap{*display:block;}
+.main img{_vertical-align:baseline;}
+.txt_r{text-align:right;}
+.txt_c{text-align:center;}
+.col3 li, .col4 li{overflow:hidden; float:left;}
+ul.col3 li{width:33.3%!important; *width:33.2%!important; }
+ul.col4 li{width:25%!important; *width:24.9%!important;}
+.brd{border:1px solid #C3D4E7;}
+.l{ float:left;}
+
+.tag_a a{display:inline-block;zoom:1;*display:inline;overflow:hidden;vertical-align:middle; margin:6px; white-space:nowrap; font-weight:bold; color:#004499; background:url(../images/v9/bg_member_1.gif) no-repeat -5px -124px; padding-left:10px;}
+.sqlj_btn{ background:url(../images/v9/sqyqlj_btn.jpg) no-repeat;width:142px; height:47px; display:block; margin:10px auto;}
+.cboxs h5{background:url(../images/v9/nav.png) repeat-x 0px -33px;}
+.cboxs .tag_a a{ padding:0px; background:none; margin:6px 10px; font-weight:100; margin-bottom:20px;}
+.table_form{width:100%;}
+.table_form caption{background:url(../images/v9/nav.png) repeat-x 0 -33px;border-bottom:medium none;color:#004499;font-size:14px;font-weight:bold;height:34px;line-height:30px;}
+

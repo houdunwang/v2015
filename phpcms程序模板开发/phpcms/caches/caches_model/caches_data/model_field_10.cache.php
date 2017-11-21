@@ -1,0 +1,41 @@
+<?php
+return array (
+  'birthday' => 
+  array (
+    'fieldid' => '83',
+    'modelid' => '10',
+    'siteid' => '1',
+    'field' => 'birthday',
+    'name' => '生日',
+    'tips' => '',
+    'css' => '',
+    'minlength' => '0',
+    'maxlength' => '0',
+    'pattern' => '',
+    'errortips' => '生日格式错误',
+    'formtype' => 'datetime',
+    'setting' => 'array (
+  \'fieldtype\' => \'date\',
+  \'format\' => \'Y-m-d\',
+  \'defaulttype\' => \'0\',
+)',
+    'formattribute' => '',
+    'unsetgroupids' => '',
+    'unsetroleids' => '',
+    'iscore' => '0',
+    'issystem' => '0',
+    'isunique' => '0',
+    'isbase' => '0',
+    'issearch' => '0',
+    'isadd' => '1',
+    'isfulltext' => '1',
+    'isposition' => '0',
+    'listorder' => '0',
+    'disabled' => '0',
+    'isomnipotent' => '0',
+    'fieldtype' => 'date',
+    'format' => 'Y-m-d',
+    'defaulttype' => '0',
+  ),
+);
+?>

@@ -1,0 +1,65 @@
+﻿/*	2010-06-01  */
+.ui_title_wrap, .ui_bottom button { font-size:12px 'Microsoft Yahei', Arial; }
+.ui_content_wrap { min-width:9em; }/*设置对话框最小尺寸*/
+.ui_overlay div { background:#000; filter:alpha(opacity=70); opacity:0.7; }/*设置遮罩颜色与透明度*/
+.ui_loading_tip { width:16px; height:16px; margin:-8px 0 0 -8px; text-indent:-9999em; background:url(../images/msg_img/loading.gif) no-repeat center center; }/*iframe加载的loading动画*/
+.ui_dialog_main { background:#FFF; }
+.ui_title_wrap { _width:100px; }/*IE6下设置一个最小长度，防止关闭按钮错位*/
+.ui_title { width:100%; height:26px; position:absolute; top:0; left:0; _left:auto; }
+.ui_title_text { height:26px; line-height:25px; padding:0 60px 0 12px; _padding:0 90px 0 6px; color:#FFF; font-weight:700; text-shadow:0 1px 0 #000; }
+.ui_td_00, .ui_td_02, .ui_td_10, .ui_td_12, .ui_td_20, .ui_td_22, .ui_close { background-image:url(../images/msg_img/chrome_s.png); background-repeat:no-repeat;}
+.ui_td_00 { width:5px; height:26px; background-position: -46px -9px; }/*左上*/
+.ui_td_02 { width:5px; height:26px; background-position: -53px -9px; }/*右上*/
+.ui_td_10 { background-position:-62px 0; background-repeat:repeat-y; }/*左边*/
+.ui_td_12 { background-position:-66px 0; background-repeat:repeat-y; }/*右边*/
+.ui_td_20 { width:5px; height:5px; background-position: -46px -1px;}/*左下*/
+.ui_td_22 { width:5px; height:5px; background-position: -53px -1px;}/*右下*/
+.ui_close { top:4px; right:6px; _right:3px; width:18px; height:18px; background-position:0 0; _font-size:0; _line-height:0; text-indent:-9999em; }
+.ui_close:hover { background-position:0 -19px; }
+.ui_td_01, .ui_td_21 { background-image:url(../images/msg_img/border.png); background-repeat:repeat-x; }
+.ui_td_01 { background-position:0 top; }
+.ui_td_21 { background: none #FFF; border-bottom:1px solid #6296cf}
+.ui_btns { background-color:#F6F6F6; border-top:solid 1px #DADEE5; }
+.ui_btns span, .ui_btns button { background-color:transparent; background-image:url(../images/msg_img/btns.png); background-repeat:no-repeat; }
+.ui_btns span { padding:0 0 0 5px; overflow:hidden; background-position:left -42px; }
+.ui_btns button { height:21px; line-height:21px; padding:0 10px 0 5px; max-width:200px; border:none 0; background-position:right 0; }
+.ui_btns span:hover { background-position:left -63px; }
+.ui_btns span:hover button { background-position:right -21px; }
+.ui_resize { width:10px; height:10px; }
+html:hover .ui_btns button:focus { outline:none 0; }
+.ui_move_temp div { background-color:#214FA3; filter:alpha(opacity=40); opacity:0.4; }/*拖动用的替身对话框*/
+/*
+主题拓展参数[可添加组合在'style'参数中]
+可用来支持消息类型图标等
+*/
+.ui_dialog_icon { display:inline-block; *zoom:1; *display:inline; background-image:url(../images/msg_img/icons.png); background-repeat:no-repeat; }
+/*警告消息*/
+.alert .ui_dialog_icon { margin-right:10px; width:48px; height:48px; background-position:0 -96px; }
+/*询问消息*/
+.confirm .ui_dialog_icon { margin-right:10px; width:48px; height:48px; background-position:0 -144px; }
+/*错误消息*/
+.error .ui_dialog_icon { margin-right:10px; width:48px; height:48px; background-position:0 -48px; }
+/*成功消息*/
+.succeed .ui_dialog_icon { margin-right:10px; width:48px; height:48px; background-position:0 0; }
+
+/*去除所有背景*/
+.noSkin .ui_border, .noSkin .ui_title_wrap, .noSkin .ui_dialog_icon { display:none; }
+.noSkin .ui_bottom_wrap { display:none; *display:block; *height:0; overflow:hidden; }
+* html .noSkin .ui_btns { height:0; overflow:hidden; position:absolute; left:-99999em; }
+.noSkin .ui_content { margin:0; }
+.noSkin .ui_dialog_main { background:transparent; }
+
+/*警告消息*/
+.gb_tip_layer,
+.gb_tip_layer .gtl_ico_succ,
+.gb_tip_layer .gtl_ico_fail,
+.gb_tip_layer .gtl_ico_hits,
+.gb_tip_layer .gtl_ico_clear,
+.gb_tip_layer .gtl_end{float: left;height:54px;line-height:54px;font-weight:bold;font-size:14px;color:#606060;background-image:url("../images/gb_tip_layer.png");_background-image:url("../images/gb_tip_layer_ie6.png");background-repeat:no-repeat;}
+.gb_tip_layer{background-position:0 -161px;background-repeat:repeat-x;left:50%;position:absolute;top:40%;padding:0 18px 0 9px; margin-left:-130px}
+.gb_tip_layer .gtl_ico_succ{background-position:-6px 0;left:-45px;top:0;width:45px;position:absolute;}
+.gb_tip_layer .gtl_end{background-position:0 0;position:absolute;right:-6px;top:0;width:6px;}
+.gb_tip_layer .gtl_ico_fail{background-position:-6px -108px;position:absolute;left:-45px;top:0;width:45px;}
+.gb_tip_layer .gtl_ico_hits{background-position:-6px -54px;position:absolute;left:-45px;top:0;width:45px;}
+.gb_tip_layer .gtl_ico_clear{background-position:-6px 0;left:-5px;width:5px;position:absolute;top:0;}
+.gb_tip_layer img{float:left;margin:19px 10px 0 5px ;}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+			var name = '后盾人';
+			
+			function hd(){
+				this.name = '阿里巴巴';
+				this.foo = function(){
+					var name = '腾讯';
+					return function(){
+						console.log(this.name);
+					}
+				}
+			}
+			
+			var obj = new hd();
+			
+			var re = obj.foo();
+			re();
+//			也可以这样写↓
+//			obj.foo()();
+		</script>
+		
+		
+		
+		
+	</body>
+</html>

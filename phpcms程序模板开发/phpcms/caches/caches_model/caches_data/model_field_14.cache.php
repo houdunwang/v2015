@@ -1,5 +1,38 @@
 <?php
 return array (
+  'jieshao' => 
+  array (
+    'fieldid' => '172',
+    'modelid' => '14',
+    'siteid' => '1',
+    'field' => 'jieshao',
+    'name' => '介绍',
+    'tips' => '',
+    'css' => '',
+    'minlength' => '0',
+    'maxlength' => '0',
+    'pattern' => '',
+    'errortips' => '',
+    'formtype' => 'text',
+    'setting' => '{"size":"50","defaultvalue":"","ispassword":"0"}',
+    'formattribute' => '',
+    'unsetgroupids' => '',
+    'unsetroleids' => '',
+    'iscore' => '0',
+    'issystem' => '0',
+    'isunique' => '0',
+    'isbase' => '1',
+    'issearch' => '1',
+    'isadd' => '1',
+    'isfulltext' => '1',
+    'isposition' => '0',
+    'listorder' => '0',
+    'disabled' => '0',
+    'isomnipotent' => '0',
+    'size' => '50',
+    'defaultvalue' => '',
+    'ispassword' => '0',
+  ),
   'catid' => 
   array (
     'fieldid' => '150',

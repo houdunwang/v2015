@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 孙府庄园{
+        月季花
+        柳树
+        小庄园{
+            牡丹花
+            杨树
+            孙府大管家{
+
+            }
+        }
+    } -->
+
+    <!-- 闭包：能访问局部变量的函数 -->
+
+    <script type="text/javascript">
+
+        // function foo(){
+        //     var hd = '后盾人';
+        // }
+        //
+        // foo();
+        // console.log(hd);//undefined
+
+
+        // 闭包所涉及到的数据，跟闭包函数原始作用域有关系，和闭包函数最终被导出到哪里没关系
+        var hd = '阿里巴巴';
+
+        function foo(){
+            var hd = '后盾人';
+            function A(){
+                console.log(hd);
+            }
+            return A;
+        }
+
+        var result = foo();
+        result();
+
+
+
+
+    </script>
+
+
+
+
+
+
+</body>
+</html>

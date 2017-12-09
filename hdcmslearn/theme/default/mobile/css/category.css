@@ -1,0 +1,45 @@
+#cat_header {
+  position: relative;
+  background: #B65A39;
+  font-family: "微软雅黑";
+  height: 10.66666667vw;
+  font-size: 4vw;
+  line-height: 10.66666667vw;
+  text-align: center;
+}
+#cat_header span {
+  color: white;
+}
+#cat_header a {
+  text-decoration: none;
+  position: absolute;
+  left: 2.66666667vw;
+  top: 3.46666667vw;
+  color: white;
+  cursor: pointer;
+}
+#cat_content {
+  overflow: hidden;
+  padding-top: 30px;
+}
+#cat_content .wrapBox {
+  padding: 0;
+  padding-top: 2.66666667vw;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+#cat_content .wrapBox li {
+  margin-bottom: 4vw;
+  list-style: none;
+  float: left;
+  margin-left: 3.73333333vw;
+}
+#cat_content .wrapBox li a {
+  font-size: 3.73333333vw;
+  padding: 1.33333333vw 4vw;
+  background: #EDEDED;
+  text-decoration: none;
+  margin-top: 2.66666667vw;
+  color: #333;
+}

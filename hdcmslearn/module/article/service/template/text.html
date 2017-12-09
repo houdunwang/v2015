@@ -1,0 +1,9 @@
+<div class="form-group">
+    <label class="col-sm-2 control-label star">{{$field['title']}}</label>
+    <div class="col-sm-9">
+        <textarea id="{{$field['name']}}" style="height:300px;width:100%;" name="{{$field['name']}}">{{$field['value']}}</textarea>
+        <script>
+            hdjs.ueditor({{$field['name']}});
+        </script>
+    </div>
+</div>

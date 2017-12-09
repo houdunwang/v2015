@@ -1,0 +1,174 @@
+//卡券底部导航
+.ticket {
+  //卡券兑换图片样式
+  div.voucher {
+    width: 300px;
+    box-sizing: content-box;
+    background: #ffffff;
+    margin: 10px auto;
+    border: solid 1px #dddddd;
+    .info {
+      margin: 0px;
+      padding: 10px 10px 0px;
+      h3 {
+        font-size: 16px;
+        margin: 0px;
+        font-weight: bold;
+      }
+      p.endtime {
+        font-size: 12px;
+        color: #666666;
+        margin: 5px 0px 0px;
+      }
+      .thumb {
+        height: 120px;
+        overflow: hidden;
+        border: solid 1px #dddddd;
+        img {
+          min-width: 100%;
+        }
+      }
+    }
+    .integral {
+      padding: 5px 10px;
+      line-height: 2em;
+      button {
+        float: right;
+      }
+    }
+    .more {
+      margin-top: 6px;
+      clear: both;
+      background: #00a0e9;
+      height: 25px;
+      text-align: center;
+      color: #ffffff;
+      line-height: 2em;
+      font-size: 12px;
+    }
+    .desc {
+      font-size: 12px;
+      line-height: 2em;
+      color: #252525;
+      text-indent: 2em;
+      padding: 6px;
+    }
+  }
+
+  //卡券列表页样式
+  div.card {
+    width: 320px;
+    margin: 5px auto;
+    div.item {
+      border: solid 2px #dddddd;
+      height: 75px;
+      background: #f5f5f5;
+      box-sizing: content-box;
+      background: #ffffff;
+      padding: 5px;
+      &:first-child {
+        margin-top: 20px;
+      }
+      .left-i {
+        width: 228px;
+        float: left;
+        border-right: solid 1px #dddddd;
+        .info {
+          clear: both;
+          border-bottom: solid 1px #dcdcdc;
+          height: 40px;
+          box-sizing: content-box;
+          padding: 3px 5px;
+          .title {
+            font-size: 25px;
+            color: #4bbe97;
+            float: left;
+          }
+          .nums {
+            float: right;
+            font-size: 12px;
+            line-height: 1.5em;
+            color: #666666;
+            text-align: center;
+            i {
+              color: #4bbe97;
+              font-size: 23px;
+              display: block;
+            }
+          }
+        }
+        .desc {
+          margin: 10px 0 0 6px;
+          font-size: 12px;
+          color: #666666;
+        }
+      }
+      .right-i {
+        width: 68px;
+        float: left;
+        box-sizing: content-box;
+        padding: 5px;
+        .tile {
+          font-size: 14px;
+          font-weight: bold;
+          color: #4bbe97;
+          text-align: center;
+        }
+        .times {
+          text-align: center;
+          font-size: 12px;
+          color: #666666;
+          .white-line {
+            margin: 0px;
+          }
+        }
+      }
+    }
+    .convert {
+      height: 30px;
+      background: #4bbe97;
+      color: #ffffff;
+      text-align: center;
+      font-size: 14px;
+      line-height: 2.2em;
+      a {
+        display: block;
+        color: #ffffff;
+      }
+    }
+  }
+
+  //已使用/已经过期时卡券样式
+  .status2, .status3 {
+    .title {
+      color: #afafaf !important;
+    }
+    .nums {
+      i {
+        color: #afafaf !important;
+      }
+    }
+    .tile {
+      color: #afafaf !important;
+    }
+    .convert {
+      background: #afafaf !important;
+    }
+  }
+
+  //使用卡券
+  .employ {
+    background: rgb(69, 140, 154);
+    margin-top: -5px;
+    padding: 10px;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .em-btns {
+    margin: 10px 0px;
+    .btn {
+      border-radius: 0px;
+    }
+  }
+}

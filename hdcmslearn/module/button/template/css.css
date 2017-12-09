@@ -1,0 +1,93 @@
+.button {
+  background: #f9f9f9;
+}
+.button .page-header {
+  margin: 10px 0 10px;
+}
+.button .mobile_view {
+  width: 350px;
+  border: solid 1px #e5e5e5;
+  border-radius: 15px;
+}
+.button .mobile_view .mobile-header {
+  height: 70px;
+}
+.button .mobile_view .mobile-body {
+  position: relative;
+  height: 420px;
+  border: solid 1px #e5e5e5;
+}
+.button .mobile_view .mobile-body .menu_html {
+  display: flex;
+  height: 370px;
+  align-items: flex-end;
+}
+.button .mobile_view .mobile-body .menu_html div {
+  flex: auto;
+  text-align: center;
+  border-top: solid 1px #dddddd;
+  border-right: solid 1px #dddddd;
+  height: 40px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.button .mobile_view .mobile-body .menu_html div:last-child {
+  border-right: none;
+}
+.button .mobile_view .mobile-body .menu_html div h5 {
+  padding: 0px;
+  margin: 0px;
+  cursor: pointer;
+}
+.button .mobile_view .mobile-body .menu_html div dl {
+  margin: 0px;
+  padding: 0px;
+  border: solid 1px #dddddd;
+  bottom: 60px;
+  position: absolute;
+  width: 90%;
+  display: flex;
+  flex-direction: column-reverse;
+  border-radius: 5px;
+}
+.button .mobile_view .mobile-body .menu_html div dl dt {
+  padding: 10px 0px;
+  cursor: pointer;
+}
+.button .mobile_view .mobile-body .menu_html div dl dd {
+  padding: 10px 0px;
+  border-bottom: solid 1px #dddddd;
+  cursor: pointer;
+}
+.button .mobile_view .mobile-footer {
+  height: 70px;
+}
+.button .mobile_view .mobile-footer .home-btn {
+  border: solid 1px #e5e5e5;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  margin: 10px auto 0px;
+}
+.button .slide .well {
+  position: relative;
+  background: #fefefe;
+}
+.button .slide .well h3 {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0px;
+}
+.button .slide .well .arrow-left:after {
+  border-right: 11px solid #ffffff;
+}
+.button .slide .well .alert {
+  background: #f8f8f8;
+  margin-bottom: 0px;
+}
+.button .slide .menus_setting label.radio-inline {
+  width: 30%;
+  margin-left: 0px;
+}

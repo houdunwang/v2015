@@ -1,0 +1,18 @@
+*{
+	padding: 0;
+	margin: 0;
+	font-family: "微软雅黑";
+	font-size: 12px;
+}
+img{
+	border: none;
+}
+a{
+	text-decoration: none;
+}
+li{
+	list-style: none;
+}
+input{
+	border: none;
+}

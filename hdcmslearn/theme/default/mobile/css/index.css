@@ -1,0 +1,131 @@
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #F9F9F9;
+}
+body #index_header {
+  font-size: 4.5vw;
+  padding: 3% 10px;
+  /*display: flex;*/
+  /*justify-content: space-between;*/
+  background: #F53D33;
+}
+body #index_header i {
+  color: white;
+}
+body #index_header span {
+  color: white;
+}
+body #index_header .icon-user {
+  font-size: 4.8vw;
+  font-weight: 700;
+}
+body .nav {
+  height: 10.66666667vw;
+  border-bottom: 1px solid #e0e0e0;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+}
+body .nav .left {
+  flex: 1;
+  overflow: hidden;
+  line-height: 10.66666667vw;
+  padding-left: 10px;
+  font-size: 4.26666667vw;
+
+}
+body .nav .left .current_category {
+  color: #F5433A;
+}
+body .nav .menu {
+  text-align: center;
+  width: 10.66666667vw;
+  height: 5.33333333vw;
+  line-height: 5.33333333vw;
+  margin-top: 2.66666667vw;
+  border-left: 1px solid #e0e0e0;
+  font-size: 4.8vw;
+}
+body .nav .menu a {
+  color: #707070;
+}
+body .content_wrap {
+  flex: 1;
+  overflow: auto;
+}
+body .content_wrap .flashBox img {
+  width: 100%;
+}
+body .content_wrap ul.articleList {
+  padding: 10px 10px;
+  margin: 0;
+  margin-top: 10px;
+  position: relative;
+}
+/*body .content_wrap ul.articleList:before {
+  position: absolute;
+  top: 0px;
+  left: 3vw;
+  content: ' ';
+  width: 94vw;
+  border-top: 1px solid #E1E1E1;
+}*/
+body .content_wrap ul.articleList li {
+  padding: 5px 0vw;
+  height: 26.66666667vw;
+  border-bottom: 1px solid #E1E1E1;
+  display: flex;
+}
+body .content_wrap ul.articleList li .artilce {
+  flex: 1;
+  height: 21.33333333vw;
+  margin-right: 8px;
+}
+body .content_wrap ul.articleList li .artilce .title {
+  height: 16vw;
+  line-height: 7.46666667vw;
+  font-size: 4.5vw;
+  overflow: hidden;
+  color: #333;
+}
+body .content_wrap ul.articleList li .artilce .info {
+  height: 5.33333333vw;
+  font-size: 3.73333333vw;
+  color: #A1A1A1;
+}
+body .content_wrap ul.articleList li .artilce .info span {
+  margin-left: 10px;
+}
+body .content_wrap ul.articleList li .pic {
+  width: 26.66666667vw;
+  height: 21.33333333vw;
+}
+body .content_wrap ul.articleList li .pic img {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide{
+	overflow: hidden;
+	width: auto;
+
+}
+.swiper-slide.m{
+	float: left;
+	overflow: hidden;
+	padding-left: 2%;
+	padding-right: 2%;
+	width: auto;
+}
+.swiper-slide.m a{
+	color: #333;
+	float: left;
+  color: #828282;
+  font-size: 3.8vw;
+	
+}
+a:hover,a:active{
+	text-decoration: none;
+}
+

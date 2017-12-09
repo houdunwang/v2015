@@ -1,0 +1,74 @@
+/**
+ * 前台栏目顶部导航菜单
+ * @author 向军
+ */
+.mobile_header {
+  width: 100%;
+  z-index: 9999;
+  position: relative;
+  top: 0px;
+  height: 40px;
+  background: #2c70ab;
+  display: flex;
+  justify-content: space-between;
+}
+.mobile_header .mobile_header_content {
+  color: #fff;
+  font-size: 15px;
+  line-height: 2.5em;
+}
+.mobile_header .back_url {
+  width: 30px;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+  line-height: 2.5em;
+}
+.mobile_header .cat_menu_list {
+  font-size: 20px;
+  color: #fff;
+  margin-right: 10px;
+  line-height: 2em;
+  position: relative;
+}
+.mobile_header .child_menu_list {
+  position: absolute;
+  z-index: 9999;
+  top: 40px;
+  right: 0px;
+  width: 100%;
+  background: #fefefe;
+  padding: 5px;
+  clear: both;
+  display: none;
+}
+.mobile_header .child_menu_list dl dt {
+  font-size: 1.1em;
+  border-bottom: solid 1px #eee;
+  padding-bottom: 5px;
+  margin-bottom: 6px;
+  margin-top: 15px;
+}
+.mobile_header .child_menu_list dl dt a {
+  color: #333;
+}
+.mobile_header .child_menu_list dl dd {
+  clear: both;
+  height: auto;
+  overflow: hidden;
+}
+.mobile_header .child_menu_list dl dd a {
+  color: #666;
+  float: left;
+  padding: 0px 5px;
+}
+.head-bg-gray {
+  position: absolute;
+  background: #000;
+  top: 0px;
+  width: 100%;
+  bottom: 0px;
+  z-index: 100;
+  opacity: .5;
+  display: none;
+}

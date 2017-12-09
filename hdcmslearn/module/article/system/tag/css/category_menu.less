@@ -1,0 +1,79 @@
+/**
+ * 前台栏目顶部导航菜单
+ * @author 向军
+ */
+//顶部导航
+.mobile_header {
+  width: 100%;
+  z-index: 9999;
+  position: relative;
+  top: 0px;
+  height: 40px;
+  background: #2c70ab;
+  display: flex;
+  justify-content: space-between;
+  .mobile_header_content {
+    color: #fff;
+    font-size: 15px;
+    line-height: 2.5em;
+  }
+  .back_url {
+    width: 30px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    line-height: 2.5em;
+  }
+  .cat_menu_list {
+    font-size: 20px;
+    color: #fff;
+    margin-right: 10px;
+    line-height: 2em;
+    position: relative;
+  }
+  .child_menu_list {
+    position: absolute;
+    z-index: 9999;
+    top: 40px;
+    right: 0px;
+    width: 100%;
+    background: #fefefe;
+    padding: 5px;
+    clear: both;
+    display: none;
+    dl {
+      dt {
+        font-size: 1.1em;
+        border-bottom: solid 1px #eee;
+        padding-bottom: 5px;
+        margin-bottom: 6px;
+        margin-top: 15px;
+        a {
+          color: #333;
+        }
+      }
+      dd {
+        clear: both;
+        height: auto;
+        overflow: hidden;
+        a {
+          color: #666;
+          float: left;
+          padding: 0px 5px;
+        }
+      }
+    }
+  }
+}
+
+//灰色遮罩
+.head-bg-gray {
+  position: absolute;
+  background: #000;
+  top: 0px;
+  width: 100%;
+  bottom: 0px;
+  z-index: 100;
+  opacity: .5;
+  display: none;
+}

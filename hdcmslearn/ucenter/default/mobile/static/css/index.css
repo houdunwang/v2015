@@ -1,0 +1,417 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+ul,
+ol li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+html {
+  height: 100%;
+}
+body {
+  font-family: "Microsoft Yahei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 14px;
+  height: 100%;
+}
+.NavBox {
+  height: 100%;
+  background: #F5F5F5;
+}
+.topNav {
+  width: 100%;
+  height: 35px;
+  background: #F3F3F3;
+}
+.topNav .topNavMain {
+  font-size: 12px;
+  margin-left: 20px;
+  line-height: 35px;
+  color: #888888;
+}
+.topNav .topNavMain .topNavLeft {
+  float: left;
+}
+.topNav .topNavMain .topNavLeft a {
+  color: #888888;
+  margin-left: 15px;
+}
+.topNav .topNavMain .topNavRight {
+  float: right;
+}
+.topNav .topNavMain .topNavRight ul li {
+  float: left;
+  padding-right: 23px;
+}
+.topNav .topNavMain .topNavRight ul li a {
+  color: #888888;
+}
+.topNav .topNavMain .topNavRight ul .er {
+  position: relative;
+}
+.topNav .topNavMain .topNavRight ul .er .xia {
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 6px;
+  background: url(../img/xia.png);
+  right: 11px;
+  top: 14px;
+}
+.topNav .topNavMain .topNavRight ul .er .xb {
+  position: absolute;
+  display: block;
+  background: url(../img/xb.png);
+  width: 16px;
+  height: 14px;
+  right: 6px;
+  top: 7px;
+  font-size: 10px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 14px;
+}
+.ciTop {
+  width: 100%;
+  height: 55px;
+  overflow: hidden;
+  background: #353644;
+  padding: 11px 0px;
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 1000;
+}
+.ciTop .ciTopCenter {
+  height: 58px;
+  margin-left: 20px;
+}
+.ciTop .ciTopCenter .logo {
+  float: left;
+  position: relative;
+  padding-top: 3px;
+}
+.ciTop .ciTopCenter .logo i {
+  font-size: 30px;
+  color: #57b382;
+}
+.ciTop .ciTopCenter .logo span {
+  font-size: 18px;
+  color: #57b382;
+  top: -3px;
+  position: relative;
+}
+.ciTop .ciTopCenter .TopMenu {
+  float: left;
+  height: 56px;
+  line-height: 40px;
+  margin-left: 30px;
+}
+.ciTop .ciTopCenter .TopMenu a {
+  padding: 20px 20px;
+  color: #FFFFFF;
+}
+.CenterMain {
+  width: 100%;
+  background: #F5F5F5 !important;
+  position: relative;
+  top: 55px;
+}
+.CenterMain .CenterBody {
+  margin: 0px auto;
+  overflow: hidden;
+  height: 100%;
+}
+.CenterMain .CenterBody .BodyLeft {
+  width: 150px;
+  float: left;
+  background: #f8f8f8;
+  height: 100vh;
+  overflow: auto;
+  box-sizing: border-box;
+  border-right: solid 1px #ddd;
+  position: fixed;
+}
+.CenterMain .CenterBody .BodyLeft .BodyHeader {
+  padding: 0px 23px;
+}
+.CenterMain .CenterBody .BodyLeft .HeaerTop {
+  overflow: hidden;
+  padding-top: 25px;
+}
+.CenterMain .CenterBody .BodyLeft .HeaerTop .portrait {
+  float: left;
+  width: 90px;
+  background: #fff;
+  border: 1px solid #CBCFD6;
+  padding: 4px;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.CenterMain .CenterBody .BodyLeft .HeaerTop .portrait img {
+  width: 80px;
+}
+.CenterMain .CenterBody .BodyLeft .HeaerTop .name {
+  width: 50px;
+  float: left;
+  margin-left: 9px;
+  padding-top: 5px;
+}
+.CenterMain .CenterBody .BodyLeft .HeaerTop .name p {
+  font-size: 12px;
+  color: #777777;
+  line-height: 25px;
+}
+.CenterMain .CenterBody .BodyLeft .HeaerTop .name p span {
+  font-size: 14px;
+}
+.CenterMain .CenterBody .BodyLeft .HeaerBottom {
+  overflow: hidden;
+  margin-left: -11px;
+  margin-top: 13px;
+  height: 22px;
+}
+.CenterMain .CenterBody .BodyLeft .HeaerBottom a {
+  display: block;
+  float: left;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background-color: #AEAFAD;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin-left: 10px;
+  text-align: center;
+  line-height: 23px;
+  color: #FFFFFF;
+}
+.CenterMain .CenterBody .BodyLeft .HeaerBottom .active {
+  background-color: #1CB9F7;
+}
+.CenterMain .CenterBody .BodyLeft .BodyLeftBottom {
+  overflow: hidden;
+}
+.CenterMain .CenterBody .BodyLeft .MemberCenter {
+  height: 10px;
+  line-height: 50px;
+  margin-left: 0px;
+}
+.CenterMain .CenterBody .BodyLeft .MemberCenter a {
+  color: #AFAFAF;
+  font-size: 16px;
+  font-weight: 600;
+}
+.CenterMain .CenterBody .BodyLeft .MemberCenter a .glyphicon {
+  margin-right: 10px;
+  border: 3px solid #AFAFAF;
+  padding: 3px;
+  border-radius: 50%;
+  font-size: 14px;
+}
+.CenterMain .CenterBody .BodyLeft .AccountManagementBox .AccountManagement {
+  height: 55px;
+  line-height: 60px;
+  text-align: left;
+  text-indent: 25px;
+  border-bottom: solid 1px #ddd;
+  margin-bottom: 10px;
+}
+.CenterMain .CenterBody .BodyLeft .AccountManagementBox .AccountManagement a {
+  color: #3EA0EC;
+  font-size: 16px;
+  font-weight: 600;
+}
+.CenterMain .CenterBody .BodyLeft .AccountManagementBox .AccountManagement a .glyphicon {
+  margin-right: 10px;
+  padding: 3px;
+  border-radius: 50%;
+  font-size: 14px;
+}
+.CenterMain .CenterBody .BodyLeft .AccountManagementBox ul {
+  margin-bottom: 10px;
+}
+.CenterMain .CenterBody .BodyLeft .AccountManagementBox ul li {
+  height: 35px;
+  line-height: 25px;
+  text-align: left;
+  text-indent: 25px;
+}
+.CenterMain .CenterBody .BodyLeft .AccountManagementBox ul li a {
+  color: #666;
+  font-size: 14px;
+}
+.CenterMain .CenterBody .BodyLeft .MyCKBox {
+  border-bottom: 1px solid #D8DADF;
+}
+.CenterMain .CenterBody .BodyLeft .MyCKBox .MyCK {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  margin-left: -20px;
+}
+.CenterMain .CenterBody .BodyLeft .MyCKBox .MyCK a {
+  color: #AFAFAF;
+  font-size: 16px;
+  font-weight: 600;
+}
+.CenterMain .CenterBody .BodyLeft .MyCKBox .MyCK a .glyphicon {
+  margin-right: 10px;
+  padding: 3px;
+  border-radius: 50%;
+  font-size: 14px;
+}
+.CenterMain .CenterBody .BodyLeft .active {
+  background: #3094ED;
+}
+.CenterMain .CenterBody .BodyLeft .active a {
+  color: #ffffff;
+}
+.CenterMain .CenterBody .BodyLeft .active a .glyphicon {
+  border: 3px solid #ffffff;
+}
+.CenterMain .CenterBody .BodyRight {
+  position: relative;
+  margin: 10px 10px 10px 160px;
+  overflow: hidden;
+}
+.CenterMain .CenterBody .BodyRight ul.nav-tabs {
+  margin-bottom: 20px;
+}
+.CenterMain .CenterBody .BodyRight ul.nav-tabs li a {
+  color: #666;
+}
+.CenterMain .CenterBody .BodyRight ul.nav-tabs li.active a {
+  border-bottom-color: #ddd;
+}
+.CenterMain .CenterBody .BodyRight .RightTop {
+  height: 230px;
+  padding-top: 42px;
+  padding-left: 26px;
+  box-sizing: border-box;
+}
+.CenterMain .CenterBody .BodyRight .RightTop .balance {
+  width: 140px;
+  height: 140px;
+  background: url(../img/jine.png);
+  text-align: center;
+  padding-top: 42px;
+  box-sizing: border-box;
+  font-size: 18px;
+  float: left;
+}
+.CenterMain .CenterBody .BodyRight .RightTop .balance p {
+  margin: 0px;
+}
+.CenterMain .CenterBody .BodyRight .RightTop .balance .yue {
+  color: #797979;
+}
+.CenterMain .CenterBody .BodyRight .RightTop .balance .jinE {
+  font-size: 18px;
+  color: #FD7A22;
+}
+.CenterMain .CenterBody .BodyRight .RightTop .balance .jinE span {
+  font-size: 12px;
+  margin-left: 5px;
+}
+.CenterMain .CenterBody .BodyRight .RightTop .informationBox {
+  margin-top: 20px;
+  float: left;
+}
+.CenterMain .CenterBody .BodyRight .RightTop .informationBox ul {
+  overflow: hidden;
+}
+.CenterMain .CenterBody .BodyRight .RightTop .informationBox ul li {
+  float: left;
+  width: 210px;
+  text-align: center;
+}
+.CenterMain .CenterBody .BodyRight .RightTop .informationBox ul li p {
+  margin: 0px;
+  color: #00B2F8;
+  font-weight: 600;
+}
+.CenterMain .CenterBody .BodyRight .RightTop .informationBox ul li p span {
+  font-size: 10px;
+}
+.CenterMain .CenterBody .BodyRight .RightTop .informationBox ul li .wen {
+  color: #898989;
+  font-size: 14px;
+  font-weight: 500;
+}
+.CenterMain .CenterBody .BodyRight .RightTop .informationBox ul li .chong {
+  display: block;
+  background: #FD7A22;
+  width: 140px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+}
+.CenterMain .CenterBody .BodyRight .RightTop .informationBox ul li .ti {
+  display: block;
+  background: #2D9BF6;
+  width: 140px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+}
+.CenterMain .CenterBody .BodyRight .RightTop .informationBox ul .line {
+  border-right: 1px solid #E5E5E5;
+}
+.CenterMain .CenterBody .BodyRight .noticeBox {
+  border-top: 1px solid #E2E2E2;
+}
+.CenterMain .CenterBody .BodyRight .noticeBox .NewNotice .title {
+  background: #EFF8FF;
+  height: 45px;
+  padding-left: 20px;
+}
+.CenterMain .CenterBody .BodyRight .noticeBox .NewNotice .title p {
+  margin: 0px;
+  height: 45px;
+  line-height: 45px;
+}
+.CenterMain .CenterBody .BodyRight .noticeBox .NewNotice .title .glyphicon {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #9FE9FF;
+  line-height: 25px;
+  text-align: center;
+  border-radius: 50%;
+  color: #00B2F8;
+}
+.CenterMain .CenterBody .BodyRight .noticeBox .NewNotice .Content {
+  margin: 0px;
+  padding: 0px 40px 16px 50px;
+}
+.CenterMain .CenterBody .BodyRight .noticeBox .NewNotice .Content .ContentTitle,
+.CenterMain .CenterBody .BodyRight .noticeBox .NewNotice .Content .public {
+  overflow: hidden;
+  border-bottom: 1px solid #E6E6E6;
+}
+.CenterMain .CenterBody .BodyRight .noticeBox .NewNotice .Content .ContentTitle .left,
+.CenterMain .CenterBody .BodyRight .noticeBox .NewNotice .Content .public .left {
+  min-width: 390px;
+  float: left;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+}
+.CenterMain .CenterBody .BodyRight .noticeBox .NewNotice .Content .ContentTitle .right,
+.CenterMain .CenterBody .BodyRight .noticeBox .NewNotice .Content .public .right {
+  min-width: 105px;
+  float: right;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+}
+.CenterMain .CenterBody .BodyRight .noticeBox .NewNotice .Content .no-line {
+  border: none;
+}

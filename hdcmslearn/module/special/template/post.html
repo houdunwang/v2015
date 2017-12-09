@@ -1,0 +1,97 @@
+<extend file="resource/view/site"/>
+<block name="content">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#">系统回复</a></li>
+    </ul>
+    <form method="post" class="form-horizontal">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                系统回复
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">欢迎信息关键字:</label>
+                    <div class="col-sm-10">
+                        <div class="input-group" id="welcome">
+                            <input type="text" class="form-control" name="welcome" value="{{v('site.setting.welcome')}}" placeholder="可根据关键字直接关联指定的回复规则">
+                            <ul class="dropdown-menu" style="width:92%;"></ul>
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" data-toggle="dropdown" href="#welcome"><i class="fa fa-search"></i> 搜索</button>
+                            </span>
+                        </div>
+                        <span class="help-block">
+                            设置用户添加公众帐号好友时，发送的欢迎信息。
+                            <a href="javascript:;" class="emotionLink"><i class="fa fa-github-alt"></i> 表情</a>
+                        </span>
+                        <span class="help-block">
+                           指定用户添加公众帐号好友时，发送的欢迎信息, 你可以在这里输入关键字, 那么用户添加公众号好友时就相当于发送这个内容至微擎系统
+这个过程是程序模拟的, 比如这里添加关键字: 欢迎关注, 那么用户添加公众号好友时, 微擎系统相当于接受了粉丝用户的消息, 内容为"欢迎关注"
+                      </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">默认信息关键字:</label>
+                    <div class="col-sm-10">
+                        <div class="input-group" id="default">
+                            <input type="text" class="form-control" name="default" value="{{v('site.setting.default_message')}}" placeholder="可根据关键字直接关联指定的回复规则">
+                            <ul class="dropdown-menu" style="width:92%;"></ul>
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" data-toggle="dropdown" href="#default"><i class="fa fa-search"></i> 搜索</button>
+                            </span>
+                        </div>
+                        <span class="help-block">
+                            没有匹配的关注词时回复的消息。
+                            <a href="javascript:;" class="emotionLink"><i class="fa fa-github-alt"></i> 表情</a>
+                        </span>
+                        <span class="help-block">
+                            指定系统不知道该如何回复粉丝的消息时，发送的默认信息, 你可以在这里输入关键字, 那么系统不知道该如何回复粉丝的消息时就相当于发送这个内容至微擎系统
+这个过程是程序模拟的, 比如这里添加关键字: ￥@%&%#@*, 系统不知道该如何回复粉丝的消息, 微擎系统相当于接受了粉丝用户的消息, 内容为"￥@%&%#@*"
+                      </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-default col-lg-1">保存</button>
+    </form>
+    <script>
+        require(['hdjs'], function (hdjs) {
+            $('#welcome,#default').on('show.bs.dropdown', function (e) {
+                var btn = e.relatedTarget;
+                var ipt = $(btn).parents('div').eq(0).find('input');
+                var val = ipt.val();
+                var ul = $(btn).parents('div').eq(0).find('ul');
+                $.post('?s=site/keyword/getKeywords', {key: val}, function (data) {
+                    var html = '';
+                    if (data.length == 0) {
+                        html += "<li><a href='javascript:;'>没有匹配到你输入的关键词</a></li>";
+                    } else {
+                        $(data).each(function (i) {
+                            html += "<li><a href='javascript:;' class='res_key'>" + data[i].content + "</a></li>";
+                        })
+                        $(ul).delegate('.res_key', 'click', function () {
+                            var key = $(this).text();
+                            ipt.val(key);
+                        })
+                    }
+                    ul.html(html);
+                });
+            });
+            //发送表单
+            $('form').submit(function () {
+                hdjs.submit({successUrl: 'refresh'});
+                return false;
+            })
+            //添加表情
+            $('.emotionLink').each(function (i) {
+                var input = $(this).parent().prev().find('input');
+                hdjs.emotion({
+                    btn: this,
+                    input: input,
+                    callback: function (con, btn, input) {
+                    }
+                });
+            })
+
+        })
+    </script>
+</block>

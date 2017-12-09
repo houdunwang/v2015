@@ -1,0 +1,142 @@
+div.hd-mobile-header-container {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  background: #fff;
+}
+div.hd-mobile-header-container div.hd-mobile-header {
+  display: flex;
+  height: 45px;
+  border-bottom: solid 1px #ddd;
+  justify-content: center;
+}
+div.hd-mobile-header-container div.hd-mobile-header .left-fa {
+  width: 50px;
+  font-size: 30px;
+  text-align: center;
+}
+div.hd-mobile-header-container div.hd-mobile-header .left-fa a {
+  color: #666;
+}
+div.hd-mobile-header-container div.hd-mobile-header .hd-mobile-header-title {
+  flex: 1;
+  margin-left: -30px;
+  line-height: 3em;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+input,
+button,
+.btn,
+.alert,
+.form-control {
+  border-radius: 0px !important;
+}
+.nav-tabs li > a {
+  border-radius: 0px !important;
+}
+.panel {
+  border-radius: 0px !important;
+}
+.input-group-addon {
+  border-radius: 0px !important;
+}
+.well {
+  border-radius: 0px !important;
+}
+.img-rounded {
+  border-radius: 0px !important;
+}
+.list-group-item {
+  border-radius: 0px !important;
+}
+body {
+  background: #f5f5f5 !important;
+}
+a {
+  text-decoration: none !important;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.uc-header {
+  min-height: 40px !important;
+  overflow: hidden;
+}
+.uc-header p {
+  margin: 0px;
+  line-height: 3em;
+}
+.uc-header .navbar-brand {
+  padding: 0px 15px;
+  line-height: 2.5em;
+}
+.ucenter #module-lists .list-group .list-group-item {
+  border-radius: 0px;
+}
+.ucenter #module-lists .list-group .list-group-item a {
+  font-size: 12px;
+  padding: 12px 15px;
+  color: #333333;
+}
+.ucenter .list-group {
+  margin-bottom: 5px;
+}
+.ucenter .list-group a {
+  color: #555555;
+}
+.ucenter .header {
+  height: 110px;
+  background-size: 100%;
+  color: #ffffff;
+  overflow: hidden;
+}
+.ucenter .header div.ico img {
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  border: solid 2px #ffffff;
+  margin-top: 30px;
+}
+.ucenter .header div.user {
+  padding-top: 20px;
+  text-align: left;
+  font-size: 12px;
+}
+.ucenter .header div.user a {
+  color: #ffffff;
+}
+.ucenter .header div.user h2 {
+  font-size: 16px;
+}
+.ucenter .header div.user div {
+  padding-right: 0px;
+}
+.ucenter .header .setting {
+  color: #ffffff;
+  margin-top: 50px;
+  font-size: 22px;
+}
+.ucenter div.pay {
+  padding: 10px 0px;
+  background: #ffffff;
+  clear: both;
+  border-radius: 0px;
+  margin-bottom: 5px;
+}
+.ucenter div.pay div {
+  padding: 0px;
+  text-align: center;
+  font-size: 12px;
+}
+.ucenter div.pay div a {
+  color: #333333;
+}
+.ucenter div.pay div i {
+  font-size: 22px;
+  display: block;
+  color: #aaaaaa;
+  margin-bottom: 6px;
+}

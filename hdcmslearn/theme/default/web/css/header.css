@@ -1,0 +1,45 @@
+/*头部*/
+#head{
+	width: 960px;
+	height: 104px;
+	margin: 0 auto;
+	position: relative;
+}
+#head .logo{
+	position: absolute;
+	left: 0;
+	top: 10px;
+	width: 84px;
+}
+#head .ad{
+	position: absolute;
+	left: 105px;
+	top: 28px;
+}
+#head .ad li{
+	line-height: 1.5em;
+	font-size: 18px;
+	color: #736d69;
+	
+}
+#head .right{
+	position: absolute;
+	height: 55px;
+	right: 0px;
+	top: 30px;
+	background: url(../images/t_pho.jpg) no-repeat 0 center;
+	padding-left: 55px;
+}
+#head .right span{
+	font-size: 14px;
+	color: #ababab;
+	line-height: 1.5em;
+	
+}
+#head .right p{
+	font-size: 22px;
+	color: #ee782f;
+	line-height: 1.5em;
+}
+
+/*头部结束*/

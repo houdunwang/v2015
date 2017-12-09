@@ -1,0 +1,22 @@
+.apps .thumbnail {
+  border-radius: 0px;
+  padding: 0px;
+  background: #f3f3f3;
+  border: solid 1px #ddd;
+}
+.apps .thumbnail .img {
+  height: 150px;
+  overflow: hidden;
+  text-align: center;
+}
+.apps .thumbnail .caption {
+  padding: 0px;
+}
+.apps .thumbnail .caption h4 {
+  font-size: 14px;
+  padding: 5px 6px;
+  text-align: center;
+  background: #F7F7FD;
+  margin: 0px;
+  border-top: solid 1px #ddd;
+}

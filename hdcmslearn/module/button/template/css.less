@@ -1,0 +1,99 @@
+.button {
+  background : #f9f9f9;
+  .page-header {
+    margin : 10px 0 10px;
+  }
+  //左侧手机预览
+  .mobile_view {
+    width         : 350px;
+    border        : solid 1px #e5e5e5;
+    border-radius : 15px;
+    .mobile-header {
+      height : 70px;
+    }
+    .mobile-body {
+      position : relative;
+      height   : 420px;
+      border   : solid 1px #e5e5e5;
+      .menu_html {
+        display     : flex;
+        height      : 370px;
+        align-items : flex-end;
+        div {
+          flex            : auto;
+          text-align      : center;
+          border-top      : solid 1px #dddddd;
+          border-right    : solid 1px #dddddd;
+          height          : 40px;
+          &:last-child {
+            border-right : none;
+          }
+          position        : relative;
+          display         : flex;
+          justify-content : center;
+          flex-direction  : column;
+          h5 {
+            padding : 0px;
+            margin  : 0px;
+            cursor: pointer;
+          }
+          dl {
+            margin         : 0px;
+            padding        : 0px;
+            border         : solid 1px #dddddd;
+            bottom         : 60px;
+            position       : absolute;
+            width          : 90%;
+            display        : flex;
+            flex-direction : column-reverse;
+            border-radius  : 5px;
+            dt {
+              padding : 10px 0px;
+              cursor  : pointer;
+            }
+            dd {
+              padding       : 10px 0px;
+              border-bottom : solid 1px #dddddd;
+              cursor        : pointer;
+            }
+          }
+        }
+      }
+    }
+    .mobile-footer {
+      height : 70px;
+      //底部按钮
+      .home-btn {
+        border        : solid 1px #e5e5e5;
+        width         : 55px;
+        height        : 55px;
+        border-radius : 50%;
+        margin        : 10px auto 0px;
+      }
+    }
+  }
+  .slide {
+    .well {
+      h3 {
+        font-size   : 15px;
+        font-weight : bold;
+        margin      : 0px;
+      }
+      position   : relative;
+      background : #fefefe;
+      .arrow-left:after {
+        border-right : 11px solid #ffffff;
+      }
+      .alert {
+        background    : #f8f8f8;
+        margin-bottom : 0px;
+      }
+    }
+    .menus_setting {
+      label.radio-inline {
+        width       : 30%;
+        margin-left : 0px;
+      }
+    }
+  }
+}

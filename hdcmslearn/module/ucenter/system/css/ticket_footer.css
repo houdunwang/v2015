@@ -1,0 +1,17 @@
+.card_footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 45px !important;
+}
+.card_footer a {
+  color: #252525;
+  font-size: 12px;
+  text-align: center;
+}
+.card_footer a i {
+  color: #999999;
+  display: block;
+  font-size: 16px;
+}

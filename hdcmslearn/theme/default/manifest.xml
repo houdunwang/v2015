@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <application>
+        <name><![CDATA[default]]></name>
+        <title><![CDATA[默认模板]]></title>
+        <url><![CDATA[http://open.hdcms.com]]></url>
+        <version><![CDATA[1.9]]></version>
+        <description><![CDATA[HDCMS 默认模板]]></description>
+        <author><![CDATA[后盾人]]></author>
+        <type><![CDATA[other]]></type>
+        <position><![CDATA[10]]></position>
+        <thumb><![CDATA[thumb.jpg]]></thumb>
+    </application>
+</manifest>

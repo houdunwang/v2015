@@ -57,6 +57,8 @@ class Cli extends Base
 
     /**
      * 生成版本编号
+     *
+     * @param string $type 类型
      */
     public function version($type)
     {

@@ -92,10 +92,8 @@
                             hdjs.message(response.data.message, '', 'error');
                         }
                     } else {
-                        hdjs.message(response.data.data, '', 'info');
+                        hdjs.message(response.data, '', 'info');
                     }
-                }).catch(function (error) {
-                    console.log(error);
                 })
             })
         }

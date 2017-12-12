@@ -168,7 +168,9 @@
         function delSite(siteid, name) {
             require(['hdjs'], function (hdjs) {
                 hdjs.confirm('确定删除 [' + name + '] 站点吗? 将删除站点的所有数据!', function () {
+                    var Modal = hdjs.loading()
                     $.get('?s=system/site/remove&siteid=' + siteid, function (res) {
+                        Modal.modal('hide')
                         if (res.valid) {
                             hdjs.message(res.message, 'refresh', 'success');
                         } else {

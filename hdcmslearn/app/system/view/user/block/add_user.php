@@ -1,5 +1,4 @@
 <form action="" class="form-horizontal ajaxfrom" method="post" id="addUserPost" onsubmit="addUserPost(event)">
-    {{csrf_field()}}
     <div class="form-group">
         <label class="col-sm-2 control-label star">用户名</label>
         <div class="col-sm-10">

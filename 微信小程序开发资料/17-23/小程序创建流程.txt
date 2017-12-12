@@ -1,0 +1,10 @@
+1、在项目根目录创建app.js、app.json、app.wxss(非必须)
+2、在app.js脚本中，用App()方法注册（声明）小程序
+3、在app.json中用花括号创建一个对象
+4、创建pages目录
+5、在pages目录中创建首页对应的目录index
+6、在index目录中创建首页对应的index.js、index.json、index.wxss、index.wxml文件
+7、在index.js中用Page()函数声明当前页面
+8、在index.json文件中用花括号声明一个json对象
+9、在app.json文件中，添加一个pages属性，属性值是一个数组，将首页的路径写到数组中
+

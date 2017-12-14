@@ -1,0 +1,90 @@
+ .WebFX-ContextMenu 		{
+							border: 0;/*2px outset;*/
+							width:  10px;
+						}
+
+.WebFX-ContextMenu-Body {
+							background-color: Menu;
+							margins:	0px;
+							padding:	1px;
+							border: 2px outset;
+						}
+						
+.WebFX-ContextMenu-Item {
+                			cursor:			default;
+							font:	menu;
+							color:	MenuText;
+							width:	100%;
+							padding: 2px 16px 2px 16px;
+
+						}
+
+.WebFX-ContextMenu-Over {
+                			cursor:			default;
+                			background-color: highlight;
+							font:				menu;
+							width:	100%;
+							padding: 2px 16px 2px 16px;
+							color: highlighttext;
+						}
+
+.WebFX-ContextMenu-Disabled {
+                			cursor:			default;
+							font: menu;
+							width:	100%;
+							padding: 2px 16px 2px 16px;
+							color:graytext;
+							}
+
+.WebFX-ContextMenu-Disabled-Over {
+                			cursor:			default;
+                			background-color: highlight;
+							font:	menu;
+							width:	100%;
+							padding: 2px 16px 2px 16px;
+							color: graytext;
+							}
+				
+.WebFX-ContextMenu-Separator
+{
+							font-size:      0pt;
+							border:         1px inset;
+							height:         2px;
+							overflow:       hidden;
+							margin:			3px 1px 3px 1px;
+}
+
+.WebFX-ContextMenu-Disabled-Over .WebFX-ContextMenu-DisabledContainer
+ {
+	display: block;
+	width: 100%;
+	vertical-align:	center;
+}
+
+/*very nice hack by erik below */
+.WebFX-ContextMenu-Disabled .WebFX-ContextMenu-DisabledContainer
+ {
+	display:			block;
+	background:			GrayText;
+	filter:				chroma(color=#010101) dropshadow(color=ButtonHighlight, offx=1, offy=1);
+	width:				100%;
+	vertical-align:		center;
+}
+
+.WebFX-ContextMenu-Disabled .WebFX-ContextMenu-DisabledContainer .WebFX-ContextMenu-DisabledContainer
+{
+	background:			Transparent;
+	filter:				gray()
+						/* Remove all bright shades of gray */
+						chroma(color=#ffffff) chroma(color=#fefefe) chroma(color=#fdfdfd)
+						chroma(color=#fcfcfc) chroma(color=#fbfbfb) chroma(color=#fafafa)
+						chroma(color=#f9f9f9) chroma(color=#f8f8f8) chroma(color=#f7f7f7)
+						chroma(color=#f6f6f6) chroma(color=#f5f5f5) chroma(color=#f4f4f4)
+						chroma(color=#f3f3f3) 
+						mask(color=#010101);
+}
+
+.WebFX-ContextMenu-Disabled-Over .WebFX-ContextMenu-DisabledContainer .WebFX-ContextMenu-DisabledContainer
+{
+
+}

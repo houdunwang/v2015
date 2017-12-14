@@ -1,0 +1,81 @@
+A {
+	TEXT-DECORATION: none
+}
+A:link {
+	COLOR: #552c55
+}
+A:visited {
+	COLOR: #552c55
+}
+A:hover {
+	COLOR: #ff6600
+}
+A:active {
+	COLOR: #4d2a7c
+}
+A.head:link {
+	COLOR: #552c55
+}
+A.head:visited {
+	COLOR: #552c55
+}
+A.head:hover {
+	COLOR: #ff6600
+}
+A.head:active {
+	COLOR: #4d2a7c
+}
+BODY {
+	SCROLLBAR-FACE-COLOR: #f6f6f6; FONT-SIZE: 12pt; SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; SCROLLBAR-SHADOW-COLOR: #cccccc; COLOR: #552c55; SCROLLBAR-3DLIGHT-COLOR: #cccccc; SCROLLBAR-ARROW-COLOR: #330000; SCROLLBAR-TRACK-COLOR: #fefefe; SCROLLBAR-DARKSHADOW-COLOR: #ffffff; TEXT-DECORATION: none
+}
+.DoubleColorTable TR {
+	
+}
+.DoubleColorTableJs TR {
+	
+}
+TD {
+	FONT-SIZE: 9pt; COLOR: #552c55; LINE-HEIGHT: 150%; FONT-FAMILY: 宋体
+}
+A.bottom:link {
+	COLOR: #79628e
+}
+A.bottom:visited {
+	COLOR: #79628e
+}
+A.bottom:hover {
+	COLOR: #ff6600
+}
+A.bottom:active {
+	COLOR: #79628e
+}
+.blank_button {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; WIDTH: 70px; BORDER-BOTTOM: 0px; HEIGHT: 18px; BACKGROUND-COLOR: #f7f7f7
+}
+.nav_class_title {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; FONT-FAMILY: Tahoma, Verdana, "宋体"; TEXT-ALIGN: center
+}
+.nav_class_content {
+	FONT-SIZE: 12px; COLOR: #777777; FONT-FAMILY: Tahoma, Verdana, "宋体"; TEXT-ALIGN: center
+}
+.nav_class_date {
+	FONT-SIZE: 12px; FILTER: dropshadow(color=#FFFFFF, offx=1, offy=1, positive=1); COLOR: #888888; FONT-FAMILY: Tahoma, Verdana, "宋体"; TEXT-ALIGN: center
+}
+.announce_td {
+	FONT-SIZE: 9pt; FILTER: dropshadow(color=#FFFFFF, offx=1, offy=1, positive=1); COLOR: #79628e; FONT-FAMILY: "宋体"; HEIGHT: 14px
+}
+.title_td {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #ff9900; FONT-FAMILY: Tahoma, Verdana, "宋体"; TEXT-ALIGN: center
+}
+.content_td {
+	FONT-SIZE: 9pt; FILTER: dropshadow(color=#FFFFFF, offx=1, offy=1, positive=1); COLOR: #552c55; FONT-FAMILY: "宋体"; HEIGHT: 14px
+}
+.copyright_table {
+	BORDER-TOP-WIDTH: 1px; BORDER-RIGHT: #c0c0c0 1px solid;  BORDER-BOTTOM-WIDTH: 1px; BORDER-LEFT: #c0c0c0 1px solid
+}
+.copyright_td {
+	FONT-SIZE: 9pt; FILTER: dropshadow(color=#FFFFFF, offx=1, offy=1, positive=1); COLOR: #4d2a7c; FONT-FAMILY: "宋体"; HEIGHT: 14px
+}
+.header					{ font: 9pt Tahoma, Verdana; color: #FFFFFF; font-weight: bold; background-color: #698CC3 }
+.header a				{ color: #FFFFFF }
+.tableborder			{ background: #D6E0EF; border: 1px solid #698CC3 } 

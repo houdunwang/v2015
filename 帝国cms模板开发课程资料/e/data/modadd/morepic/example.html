@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>图集显示例子</title>
+
+<style>
+
+/* 小图导航(当前图样式) */
+.espiccss{background-color:#666666;color:#ffffff;}
+
+/* 列表分页导航(当前分页样式) */
+.epiclpcss{font-weight:bold;}
+
+/* 大图显示 */
+.eimgBox{
+	position: relative;
+	float:left;
+}
+.eimgBox div{
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:50%;
+	height:98%;
+	background: #fff;
+	opacity:0.0;
+	filter:alpha(opacity=0);
+}
+.eimgBox .eimgboxleft{
+	cursor: pointer;
+}
+.eimgBox .eimgboxright{
+	left:50%;
+	cursor: pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+<table width="100%" border="0" cellspacing="1" cellpadding="3">
+	<form name="eViewPicForm" id="eViewPicForm" method="post" action="">
+	<input type="hidden" name="ethispage" id="ethispage" value="0">
+	<input type="hidden" name="autoplaystop" id="autoplaystop" value="1">
+    <tr>
+      <td colspan="3" align="center">
+		<select name="autoplaysec" id="autoplaysec">
+            <option value="1">1秒</option>
+            <option value="2">2秒</option>
+            <option value="3" selected>3秒</option>
+            <option value="4">4秒</option>
+            <option value="5">5秒</option>
+            <option value="6">6秒</option>
+            <option value="7">7秒</option>
+            <option value="8">8秒</option>
+            <option value="9">9秒</option>
+            <option value="10">10秒</option>
+          </select><input type="button" name="Submit" value="自动播放" onclick="if(document.getElementById('autoplaystop').value==1){document.getElementById('autoplaystop').value=0;ecmsPicAutoPlay();this.value='手动播放';}else{document.getElementById('autoplaystop').value=1;this.value='自动播放';}">
+      <input type="button" name="Submit2" value="上一张" onclick="ecmsShowPrePic();">
+      <input type="button" name="Submit22" value="下一张" onclick="ecmsShowNextPic();">
+      <span id="ecmsselectpagesid"></span>
+      <input type="button" name="Submit222" value="查看原图" onclick="ecmsShowTruePic();"></td>
+    </tr>
+    <tr>
+      <td colspan="3" align="center">分页：<span id="ecmslistpagesid"></span></td>
+    </tr>
+    <tr>
+      <td colspan="3">
+	  <table border="0" cellspacing="1" cellpadding="3" align="center">
+        <tr>
+          <td>
+		  <div class="eimgBox">
+		  <img src="[!--news.url--]e/data/modadd/morepic/loading.gif" width=600 height=450 id="ecmsbigpicid" onclick="ecmsShowNextPic();">
+		  <div class="eimgboxleft" title="上一张" onclick="ecmsShowPrePic();">&nbsp;</div>
+		  <div class="eimgboxright" title="下一张" onclick="ecmsShowNextPic();">&nbsp;</div>
+		  </div>
+		  </td>
+        </tr>
+        <tr>
+          <td><div align="center" class="spicid"><img src="[!--news.url--]e/data/modadd/morepic/loading.gif" id="ecmssmallpicid"></div></td>
+        </tr>
+		<tr>
+          <td><div align="center" id="ecmspicnameid">图片说明</div></td>
+        </tr>
+     </table>
+	 </td>
+    </tr>
+    <tr>
+      <td width="8%"><div align="center"><a href="#empirecms" onclick="ecmsMoveSmallPics(-120);">&lt;&lt;</a></div></td>
+      <td width="84%" height="45" align="center"><div style="width:380px; height:125px; border:1px solid red; margin:auto; overflow-y:hidden; overflow-x:scroll;word-break:keep-all;white-space:nowrap;" id="ecmssmallpicsid"> 
+	  </div></td>
+      <td width="8%"><div align="center"><a href="#empirecms" onclick="ecmsMoveSmallPics(120);">&gt;&gt;</a></div></td>
+    </tr>
+	</form>
+</table>
+
+<?=sys_ModShowMorepic(120,80,'')?>
+
+</body>
+</html>

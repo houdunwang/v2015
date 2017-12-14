@@ -1,0 +1,40 @@
+body {
+  margin-top: 0px;
+  margin-right: 0px; 
+  margin-bottom: 0px; 
+  margin-left: 0px;
+  font-family: "宋体"
+}
+
+a { text-decoration: none; color: #000000 }
+
+a:hover { text-decoration: underline; color: #FF0000}
+
+a:active { text-decoration: none; color: #000000 }
+
+td {
+  font-size: 9pt;
+  font-family: "宋体"
+}
+
+p {
+  font-family: "宋体"
+}
+
+.texts {
+  font-family: "宋体";
+  font-size: 9pt;
+  line-height: 12pt
+}
+
+.textm {
+font: 10.8pt/14pt "宋体"
+}
+
+.textb {
+font: 12pt/15pt "宋体"
+}
+.etext {
+  font-family: "Verdana", "Arial"; 
+  font-size: 9pt
+}

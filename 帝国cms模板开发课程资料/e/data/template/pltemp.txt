@@ -1,0 +1,30 @@
+<?php
+if(!defined('InEmpireCMS'))
+{
+	exit();
+}
+?>
+<!--empire.listtemp.top-->
+<?php
+while($r=$empire->fetch($sql))
+{
+	$plusername=$r[username];
+	if(empty($r[username]))
+	{
+		$plusername=$fun_r['nomember'];
+	}
+	if($r[userid])
+	{
+		$plusername="<a href='$public_r[newsurl]e/space/?userid=$r[userid]' target='_blank'>$r[username]</a>";
+	}
+	$saytime=date('Y-m-d H:i:s',$r['saytime']);
+	//ip
+	$sayip=ToReturnXhIp($r[sayip]);
+	$saytext=RepPltextFace(stripSlashes($r['saytext']));//替换表情
+	$includelink=" onclick=\"javascript:document.saypl.repid.value='".$r[plid]."';document.saypl.saytext.focus();\"";
+?>
+<!--empire.listtemp.center-->
+<?
+}
+?>
+<!--empire.listtemp.footer-->

@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>帝国备份王说明文档</title>
+<link href="images/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<table width="96%" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="#0472BC">
+  <tr>
+    <td height="25"><strong><font color="#FFFFFF">帝国备份王说明文档</font></strong></td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFFFF"><table width="100%" border="0" align="center" cellpadding="3" cellspacing="1">
+        <tr> 
+          <td height="23" bgcolor="#DBEAF5">前言、帝国备份王(Ebak)简介</td>
+        </tr>
+        <tr> 
+          <td height="22">Ebak是一款专门为mysql大数据的备份与导入而设计的软件,系统采用分卷备份与导入,理论上可备份任何大小的数据库.</td>
+        </tr>
+      </table>
+      <br>
+      <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1">
+        <tr> 
+          <td height="23" bgcolor="#DBEAF5">一、Ebak主要特点与功能</td>
+        </tr>
+        <tr> 
+          <td height="22">1．采用分组备份，系统自动将数据库分成多部分进入导出．理论上不限数据库大小，均可备份与恢复．</td>
+        </tr>
+        <tr> 
+          <td height="22">2．安全性：备份文件均生成*.php文件，并且采用登陆验证，只有登陆的管理员才能进行数据恢复．</td>
+        </tr>
+        <tr> 
+          <td height="22">3．稳定性：系统采集分组备份，每组备份数据大小后台直接设置．</td>
+        </tr>
+        <tr> 
+          <td height="22">4．使用方便：备份文件在线打包、下载与删除．</td>
+        </tr>
+        <tr> 
+          <td height="22">5．安装方便：上传程序即可直接使用，数据库参数可在线设置(HTTP)．</td>
+        </tr>
+        <tr> 
+          <td height="22">6．灵活性：备份目录、压缩目录在线自定义．</td>
+        </tr>
+        <tr> 
+          <td height="22">7．管理员帐号、密码与登陆超时在线设置．</td>
+        </tr>
+        <tr> 
+          <td height="22">8．在线建立、删除数据库，优化、修复、清空、删除数据表，查看表字段等功能．</td>
+        </tr>
+        <tr> 
+          <td height="22">9．在线执行SQL，方便用操作数据</td>
+        </tr>
+        <tr> 
+          <td height="22">10．可设置是否增加递增字段值：可以将本地数据累加到服务器上</td>
+        </tr>
+      </table>
+      <br>
+      <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1">
+        <tr> 
+          <td height="23" bgcolor="#DBEAF5">二、程序运行环境</td>
+        </tr>
+        <tr> 
+          <td height="22">PHP4.*/PHP5.*</td>
+        </tr>
+      </table>
+      <br>
+      <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1">
+        <tr> 
+          <td height="23" bgcolor="#DBEAF5">三、程序安装说明</td>
+        </tr>
+        <tr> 
+          <td height="22"><strong>1．上传程序（按二进制上传）</strong></td>
+        </tr>
+        <tr> 
+          <td height="22"><strong>2．将以下目录/文件权限设为0777<br>
+            </strong><br>
+            bdata(备份目录)<br>
+            bdata/safemod(安全模式下数据备份目录) <br>
+            zip(压缩目录)<br>
+            class/config.php(配置文件)<br>
+            key(验证码)</td>
+        </tr>
+        <tr>
+          <td height="22"><strong>3．登陆后台:http://域名/Ebak安装目录/，如http://localhost/ebak</strong><br> <br>
+            (默认的管理员帐号与密码是：admin,123456)<br> <br>
+            登陆后自己修改帐号密码与数据库参数设置．</td>
+        </tr>
+      </table>
+      <br>
+      <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1">
+        <tr> 
+          <td height="23" bgcolor="#DBEAF5">四、使用说明</td>
+        </tr>
+        <tr> 
+          <td height="22">1．<strong>备份数据：</strong>备份数据 －＞ 选择备份的数据库 －＞ 选择备份的表与设定备份参数 
+            －＞ 备份完毕</td>
+        </tr>
+        <tr> 
+          <td height="22">2．<strong>恢复数据：</strong>恢复数据 －＞ 选择恢复源目录，数据库 －＞ 恢复完毕</td>
+        </tr>
+        <tr> 
+          <td height="22">3．<strong>在线打包/下载/删除备份文件：</strong>备份目录管理 －＞ 打包/下载/删除</td>
+        </tr>
+      </table> 
+      <br>
+      <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1">
+        <tr> 
+          <td height="23" bgcolor="#DBEAF5">五、以后发展</td>
+        </tr>
+        <tr> 
+          <td height="22">Ebak暂只支持MYSQL，以后版本将支持MSSQL、POSTGRESQL、ORACLE等各种常用数据库的备份与恢复</td>
+        </tr>
+      </table> 
+      <br>
+      <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1">
+        <tr> 
+          <td height="23" bgcolor="#DBEAF5">六、版权声名</td>
+        </tr>
+        <tr> 
+          <td height="22">”帝国备份王”由<a href="http://www.phome.net" target="_blank"><strong>帝国开发工作室</strong></a>版权所有．<br>
+            <br>
+            本程序不允许在没有事先通知的情况下用于商业用途，假如您需要用于商业用途，请和我们联系(wm_chief@163.com)，以获得商业使用权</td>
+        </tr>
+      </table> 
+      <br>
+      <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1">
+        <tr> 
+          <td height="23" bgcolor="#DBEAF5">七、常见问题</td>
+        </tr>
+        <tr> 
+          <td height="22"><table width="100%" border="0" cellspacing="1" cellpadding="3">
+              <tr> 
+                <td height="25"><strong>1.出现”You have an error in your SQL syntax; 
+                  check the manual that corresponds to your MySQL server version 
+                  for the right syntax to use near '-1' at line 1”错误</strong></td>
+              </tr>
+              <tr> 
+                <td height="25">解决方法：”参数设置”那把”MYSQL支持查询方式”打勾去掉即可．</td>
+              </tr>
+              <tr> 
+                <td height="25"><strong>2.备份时提示”您来自的链接不存在”</strong></td>
+              </tr>
+              <tr> 
+                <td height="25">解决方法：您没设置好目录权限，重新设置第三步需要设置的目录权限即可解决</td>
+              </tr>
+              <tr> 
+                <td height="25"><strong>3.空间的PHP运行于安全模式怎么备份？</strong></td>
+              </tr>
+              <tr> 
+                <td height="25">解决方法：”参数设置”那把”PHP运行于安全模式”打勾．这样每次都会备份到”safemod”目录</td>
+              </tr>
+              <tr> 
+                <td height="25"><strong>4.出现错误提示：”你填写的数据库用户名或密码有误，连接不上数据库，修改不成功！”</strong></td>
+              </tr>
+              <tr> 
+                <td height="25">解决方法：排除您的用户名与密码有误外，修改数据库密码请记得要选择”修改密码请选择”那个复选框</td>
+              </tr>
+              <tr> 
+                <td height="25"><strong>5.不想显示数据库列表的方法</strong></td>
+              </tr>
+              <tr> 
+                <td height="25">解决方法：”参数设置”那输入”默认备份的数据库”即可</td>
+              </tr>
+              <tr>
+                <td height="25">（其他问题您可以到官方论坛咨询：<a href="http://bbs.phome.net" target="_blank"><u>http://bbs.phome.net</u></a>）</td>
+              </tr>
+            </table></td>
+        </tr>
+      </table> 
+      <br>
+    </td>
+  </tr>
+  <tr>
+    <td height="25" bgcolor="#FFFFFF">
+<div align="center">Powered By <a href="http://www.phome.net" target="_blank"><strong>Ebak</strong></a></div></td>
+  </tr>
+</table>
+</body>
+</html>

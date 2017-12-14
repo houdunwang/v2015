@@ -1,0 +1,34 @@
+[!--text--]
+<input name="[!--enews.var--]" type="text" id="[!--enews.var--]" value="<?=$ecmsfirstpost==1?"[!--enews.def.val--]":ehtmlspecialchars(stripSlashes($addr[[!--enews.var--]]))?>" size="[!--fsize.w--]">
+[!--text--]
+[!--password--]
+<input name="[!--enews.var--]" type="password" id="[!--enews.var--]" value="<?=$ecmsfirstpost==1?"[!--enews.def.val--]":ehtmlspecialchars(stripSlashes($addr[[!--enews.var--]]))?>" size="[!--fsize.w--]">
+[!--password--]
+[!--select--]
+<select name="[!--enews.var--]" id="[!--enews.var--]">
+[!--enews.select.var--]
+</select>
+[!--select--]
+[!--radio--]
+<select name="[!--enews.var--]" id="[!--enews.var--]">
+[!--enews.radio.var--]
+</select>
+[!--radio--]
+[!--textarea--]
+<textarea name="[!--enews.var--]" cols="[!--fsize.w--]" rows="[!--fsize.h--]" id="[!--enews.var--]"><?=$ecmsfirstpost==1?"[!--enews.def.val--]":ehtmlspecialchars(stripSlashes($addr[[!--enews.var--]]))?></textarea>
+[!--textarea--]
+[!--img--]
+<input type="file" name="[!--enews.var--]file" size="[!--fsize.w--]">
+[!--img--]
+[!--flash--]
+<input type="file" name="[!--enews.var--]file" size="[!--fsize.w--]">
+[!--flash--]
+[!--file--]
+<input type="file" name="[!--enews.var--]file" size="[!--fsize.w--]">
+[!--file--]
+[!--date--]
+<input name="[!--enews.var--]" type="text" id="[!--enews.var--]" value="<?=$ecmsfirstpost==1?"[!--enews.def.val--]":ehtmlspecialchars(stripSlashes($addr[[!--enews.var--]]))?>" size="[!--fsize.w--]" onclick="setday(this);">
+[!--date--]
+[!--color--]
+<input name="[!--enews.var--]" type="text" id="[!--enews.var--]" value="<?=$ecmsfirstpost==1?"[!--enews.def.val--]":ehtmlspecialchars(stripSlashes($addr[[!--enews.var--]]))?>" size="[!--fsize.w--]" onclick="FieldChangeColor(this);">
+[!--color--]

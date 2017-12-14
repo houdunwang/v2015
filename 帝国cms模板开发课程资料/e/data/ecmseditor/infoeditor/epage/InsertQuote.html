@@ -1,0 +1,82 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>引用</title>
+<head>
+</head>
+<body>
+<script src="../common/fck_dialog_common.js" type="text/javascript"></script>
+<script type="text/javascript">
+var dialog	= window.parent ;
+var oEditor = dialog.InnerDialogLoaded() ;
+var dialogArguments = dialog.Args() ;
+
+// Gets the document DOM
+var oDOM = oEditor.FCK.EditorDocument ;
+
+window.onload = function(){
+dialog.SetOkButton( true ) ;
+dialog.SetAutoSize( true ) ;
+}
+
+function Ok(){
+	var bordercolor=document.insertpic.bordercolor.value;
+	var bgcolor=document.insertpic.bgcolor.value;
+	var codetext=" ";
+	var imgstr="";
+	imgstr="<table border=0 width='100%' cellspacing=1 cellpadding=10 bgcolor='"+bgcolor+"'><tr><td width='100%' bgcolor='"+bordercolor+"' style='word-break:break-all;line-height:18px'>"+codetext+"</td></tr></table>";
+	oEditor.FCKUndo.SaveUndoStep();
+	oEditor.FCK.InsertHtml(imgstr);
+	window.parent.Cancel();
+}
+
+//格式化html
+function RepHtml(str)
+{
+	str=str.replace("<","&lt;");
+	str=str.replace(">","&gt;");
+	str=str.replace("&","&amp;");
+	str=str.replace("\"","&quot;");
+	str=str.replace("\n","<br>");
+	str=str.replace(" ","&nbsp;");
+	return str;
+}
+
+function foreColor(formobj)
+{
+  if (!Error())	return;
+  var arr = showModalDialog("selcolor.html", "", "dialogWidth:18.5em; dialogHeight:17.5em; status:0");
+  if (arr != null) {
+  	if(formobj==0){
+  		document.insertpic.bgcolor.value=arr;
+	}
+	else{
+		document.insertpic.bordercolor.value=arr;
+	}
+  }
+  else {
+  	if(formobj==0){
+  		document.insertpic.bgcolor.focus();
+	}
+	else{
+		document.insertpic.bordercolor.focus();
+	}
+  }
+}
+</script>
+<table width="100%" border="0" align="center" cellpadding="3" cellspacing="1">
+  <form name="insertpic" method="post" action="">
+    <tr> 
+      <td height="25"> <div align="left">背景颜色: 
+          <input name="bordercolor" type=text id="bordercolor" value="#DDEDFB" size="8">
+          <a onclick="foreColor(1);"><img src="images/color.gif" width="21" height="21" align="absbottom"></a></div></td>
+    </tr>
+    <tr> 
+      <td height="25"> 边框颜色: 
+        <input name="bgcolor" type=text id="bgcolor" value="#0099CC" size="8"> 
+        <a onclick="foreColor(0);"><img src="images/color.gif" width="21" height="21" align="absbottom"></a></td>
+    </tr>
+  </form>
+</table>
+</body>
+</html>

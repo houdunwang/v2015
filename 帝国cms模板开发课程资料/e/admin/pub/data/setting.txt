@@ -1,0 +1,31 @@
+
+
+//后台安全设置
+$ecms_config['esafe']['loginauth']='[!@--do_loginauth--@!]';	//登录认证码,如果设置登录需要输入此认证码才能通过
+$ecms_config['esafe']['ecookiernd']='[!@--do_ecookiernd--@!]';	//后台登录COOKIE认证码(填写10~50个任意字符，最好多种字符组合)
+$ecms_config['esafe']['ckhloginip']=[!@--do_ckhloginip--@!];	//后台是否验证登录IP,0为不验证,1为验证
+$ecms_config['esafe']['ckhsession']=[!@--do_ckhsession--@!];	//后台是否启用SESSION验证,0为不验证,1为验证
+$ecms_config['esafe']['ckhanytime']=[!@--do_ckhanytime--@!];	//后台随时认证码变更周期,单位:秒(0为不启用)
+$ecms_config['esafe']['theloginlog']=[!@--do_theloginlog--@!];	//是否记录登陆日志(0为记录,1为不记录)
+$ecms_config['esafe']['thedolog']=[!@--do_thedolog--@!];		//是否记录操作日志(0为记录,1为不记录)
+$ecms_config['esafe']['ckfromurl']=[!@--do_ckfromurl--@!];	//是否启用来源地址验证,0为不验证,1为全部验证,2为后台验证,3为前台验证
+$ecms_config['esafe']['ckhash']=[!@--do_ckhash--@!];	//启用后台来源认证码,0为金刚模式验证,1为刺猬模式验证,2为关闭验证
+
+//COOKIE设置
+$ecms_config['cks']['ckdomain']='[!@--phome_cookiedomain--@!]';		//cookie作用域
+$ecms_config['cks']['ckpath']='[!@--phome_cookiepath--@!]';		//cookie作用路径
+$ecms_config['cks']['ckvarpre']='[!@--phome_cookievarpre--@!]';		//前台cookie变量前缀
+$ecms_config['cks']['ckadminvarpre']='[!@--phome_cookieadminvarpre--@!]';		//后台cookie变量前缀
+$ecms_config['cks']['ckrnd']='[!@--phome_cookieckrnd--@!]';	//COOKIE验证随机码(填写10~50个任意字符，最好多种字符组合)
+$ecms_config['cks']['ckrndtwo']='[!@--phome_cookieckrndtwo--@!]';	//COOKIE验证随机码2(填写10~50个任意字符，最好多种字符组合)
+
+//网站防火墙配置
+$ecms_config['fw']['eopen']=[!@--efw_open--@!];	//开启防火墙(0为关闭,1为开启)
+$ecms_config['fw']['epass']='[!@--efw_pass--@!]';	//防火墙加密密钥(填写10~50个任意字符，最好多种字符组合)
+$ecms_config['fw']['adminloginurl']='[!@--efw_adminloginurl--@!]';	//允许后台登陆的域名,设置后必须通过这个域名才能访问后台
+$ecms_config['fw']['adminhour']='[!@--efw_adminhour--@!]';	//允许登陆后台的时间：0~23小时，多个时间点用半角逗号格开
+$ecms_config['fw']['adminweek']='[!@--efw_adminweek--@!]';	//允许登陆后台的星期：星期0~6，多个星期用半角逗号格开
+$ecms_config['fw']['adminckpassvar']='[!@--efw_adminckpassvar--@!]';	//后台预登陆验证变量名
+$ecms_config['fw']['adminckpassval']='[!@--efw_adminckpassval--@!]';	//后台预登陆认证码
+$ecms_config['fw']['cleargettext']='[!@--efw_cleargettext--@!]';	//屏蔽提交敏感字符，多个用半角逗号格开
+

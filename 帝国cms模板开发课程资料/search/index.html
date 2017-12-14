@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>高级搜索 - Powered by EmpireCMS</title>
+<link href="/skin/default/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/skin/default/js/tabs.js"></script>
+<script src="/e/data/images/setday.js"></script>
+</head>
+<body class="listpage">
+<!-- 页头 -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="top">
+<tr>
+<td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="63%">
+<!-- 登录 -->
+<script>
+document.write('<script src="/e/member/login/loginjs.php?t='+Math.random()+'"><'+'/script>');
+</script>
+</td>
+<td align="right">
+<a onclick="window.external.addFavorite(location.href,document.title)" href="#ecms">加入收藏</a> | <a onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('/')" href="#ecms">设为首页</a> | <a href="/e/member/cp/">会员中心</a> | <a href="/e/DoInfo/">我要投稿</a> | <a href="/e/web/?type=rss2" target="_blank">RSS<img src="/skin/default/images/rss.gif" border="0" hspace="2" /></a>
+</td>
+</tr>
+</table></td>
+</tr>
+</table>
+<table width="100%" border="0" cellpadding="0" cellspacing="10">
+<tr valign="middle">
+<td width="240" align="center"><a href="/"><img src="/skin/default/images/logo.gif" width="200" height="65" border="0" /></a></td>
+<td align="center"><a href="http://www.phome.net/OpenSource/" target="_blank"><img src="/skin/default/images/opensource.gif" width="100%" height="70" border="0" /></a></td>
+</tr>
+</table>
+<!-- 导航tab选项卡 -->
+<table width="920" border="0" align="center" cellpadding="0" cellspacing="0" class="nav">
+  <tr> 
+    <td class="nav_global"><ul>
+        <li class="curr" id="tabnav_btn_0" onmouseover="tabit(this)"><a href="/">首页</a></li>
+        <li id="tabnav_btn_1" onmouseover="tabit(this)"><a href="/news/">新闻中心</a></li>
+        <li id="tabnav_btn_2" onmouseover="tabit(this)"><a href="/download/">下载中心</a></li>
+        <li id="tabnav_btn_3" onmouseover="tabit(this)"><a href="/movie/">影视频道</a></li>
+        <li id="tabnav_btn_4" onmouseover="tabit(this)"><a href="/shop/">网上商城</a></li>
+        <li id="tabnav_btn_5" onmouseover="tabit(this)"><a href="/flash/">FLASH频道</a></li>
+        <li id="tabnav_btn_6" onmouseover="tabit(this)"><a href="/photo/">图片频道</a></li>
+        <li id="tabnav_btn_7" onmouseover="tabit(this)"><a href="/article/">文章中心</a></li>
+        <li id="tabnav_btn_8" onmouseover="tabit(this)"><a href="/info/">分类信息</a></li>
+      </ul></td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="10" cellpadding="0">
+	<tr valign="top">
+		<td class="list_content"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="position">
+				<tr>
+					<td>现在的位置：<a href='/'>首页</a>&nbsp;>&nbsp;<a href='../search/'>高级搜索</a>&nbsp;></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="box">
+				<tr>
+					<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td><form action='/e/search/index.php' method="post" name="search_news" id="search_news">
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="54%"><table width="100%" border="0" cellpadding="6" cellspacing="0">
+													<tr>
+														<td bgcolor="#F4F4F4"><strong>搜索范围</strong></td>
+													</tr>
+											</table></td>
+											<td width="46%"><table width="100%" border="0" cellpadding="6" cellspacing="0">
+													<tr>
+														<td bgcolor="#F4F4F4"><strong>搜索栏目</strong></td>
+													</tr>
+											</table></td>
+										</tr>
+										<tr>
+											<td valign="top"><table width="100%" border="0" cellpadding="6" cellspacing="0">
+													<tr>
+														<td><input type="radio" name="show" value="title" checked="checked" />
+															标题
+															<input type="radio" name="show" value="smalltext" />
+															简介
+															<input type="radio" name="show" value="newstext" />
+															内容
+															<input type="radio" name="show" value="writer" />
+															作者
+															<input name="show" type="radio" value="title,smalltext,newstext,writer" />
+															不限</td>
+													</tr>
+												</table>
+													<br />
+													<table width="100%" border="0" cellpadding="6" cellspacing="0">
+														<tr bgcolor="#F4F4F4">
+															<td><strong>时间限制</strong><font color="#666666">(0000-00-00为不限制)</font></td>
+														</tr>
+														<tr>
+															<td height="30" valign="top">从
+																<input name="starttime" type="text" value="0000-00-00" size="12" onclick="setday(this)" />
+																到
+																<input name="endtime" type="text" value="0000-00-00" size="12" onclick="setday(this)" />
+																之间的数据</td>
+														</tr>
+														<tr>
+															<td bgcolor="#F4F4F4"><strong>价格限制</strong><font color="#666666">(商城模型中有效,0为不限制)</font></td>
+														</tr>
+														<tr>
+															<td>从
+																<input name="startprice" type="text" id="startprice" value="0" size="6" />
+																到
+																<input name="endprice" type="text" id="endprice" value="0" size="6" />
+																元之间</td>
+														</tr>
+												</table></td>
+											<td valign="top"><table width="100%" border="0" cellspacing="6" cellpadding="0">
+													<tr>
+														<td><select name="classid" size="8" id="select2" style="width: 100%;height:112px">
+																<option value="0" selected="selected">所有栏目</option>
+															<option value='3' style='background:#99C4E3'>|-轮播图</option>
+          
+														</select></td>
+													</tr>
+												</table>
+													<table width="100%" border="0" cellpadding="6" cellspacing="0">
+														<tr>
+															<td bgcolor="#F4F4F4"><strong>结果显示</strong></td>
+														</tr>
+														<tr>
+															<td height="30"><select name="orderby" id="select4">
+																	<option value="">按发布日期</option>
+																	<option value="id">信息ID</option>
+																	<option value="plnum">评论数</option>
+																	<option value="onclick">人气</option>
+																	<option value="totaldown">下载数</option>
+																</select>
+																	<select name="myorder" id="select5">
+																		<option value="0">倒序排列</option>
+																		<option value="1">顺序排列</option>
+																	</select>
+															</td>
+														</tr>
+												</table></td>
+										</tr>
+									</table>
+								<table width="100%" border="0" cellpadding="4" cellspacing="0">
+										<tr>
+											<td>关键字：
+												<input name="keyboard" type="text" id="keyboard2" size="60" />
+													<input type="submit" name="Submit22" value="搜索" />
+											</td>
+										</tr>
+									</table>
+							</form></td>
+						</tr>
+					</table></td>
+				</tr>
+			</table></td>
+	</tr>
+</table>
+<!-- 页脚 -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center" class="search">
+<form action="/e/search/index.php" method="post" name="searchform" id="searchform">
+<table border="0" cellspacing="6" cellpadding="0">
+<tr>
+<td><strong>站内搜索：</strong>
+<input name="keyboard" type="text" size="32" id="keyboard" class="inputText" />
+<input type="hidden" name="show" value="title" />
+<input type="hidden" name="tempid" value="1" />
+<select name="tbname">
+<option value="news">新闻</option>
+<option value="download">下载</option>
+<option value="photo">图库</option>
+<option value="flash">FLASH</option>
+<option value="movie">电影</option>
+<option value="shop">商品</option>
+<option value="article">文章</option>
+<option value="info">分类信息</option>
+</select>
+</td>
+<td><input type="image" class="inputSub" src="/skin/default/images/search.gif" />
+</td>
+<td><a href="/search/" target="_blank">高级搜索</a></td>
+</tr>
+</table>
+</form>
+</td>
+</tr>
+<tr>
+<td>
+	<table width="100%" border="0" cellpadding="0" cellspacing="4" class="copyright">
+        <tr> 
+          <td align="center"><a href="/">网站首页</a> | <a href="#">关于我们</a> 
+            | <a href="#">服务条款</a> | <a href="#">广告服务</a> | <a href="#">联系我们</a> 
+            | <a href="#">网站地图</a> | <a href="#">免责声明</a> | <a href="/e/wap/" target="_blank">WAP</a></td>
+        </tr>
+        <tr> 
+          <td align="center">Powered by <strong><a href="http://www.phome.net" target="_blank">EmpireCMS</a></strong> 
+            <strong><font color="#FF9900">7.2</font></strong>&nbsp; &copy; 2002-2015 
+            <a href="http://www.digod.com" target="_blank">EmpireSoft Inc.</a></td>
+        </tr>
+	</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

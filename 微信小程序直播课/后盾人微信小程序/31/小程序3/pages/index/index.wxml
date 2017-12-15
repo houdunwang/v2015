@@ -1,0 +1,17 @@
+<view wx:for="{{hd}}">
+  课程名：{{index}}{{item.name}}
+  时长：{{item.time}}
+</view>
+
+<!-- 自定义代表当前元素下标的变量名
+自定义代表当前元素内容的变量名 -->
+<view wx:for="{{hd}}" wx:for-index="a" wx:for-item="b">
+  课程名：{{a}}{{b.name}}
+</view>
+
+
+<view>今天在线听课的同学名字</view>
+
+<view wx:for="{{users}}">{{item}}</view>
+
+

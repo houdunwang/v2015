@@ -1,0 +1,73 @@
+{template 'member', 'header'}
+<div id="memberArea">
+{template 'member', 'left'}
+    <div class="col-auto">
+	{pc:announce action="lists" num="1" siteid="$memberinfo[siteid]" cache="3600"}
+		{loop $data $r}
+		{php $announceid = $r[aid];}
+    	<div class="point" id='announcement' style="display:none">
+        	<a href="javascript:hide_element('announcement');setcookie('announcement_{$memberinfo[userid]}_{$r[aid]}', 1);" hidefocus="true" class="close"><span>{L('close')}</span></a>
+            <div class="content">
+					<strong class="title">{$r[title]}</strong>
+					<p>{$r[content]}</p>
+            </div>
+            <span class="o1"></span><span class="o2"></span><span class="o3"></span><span class="o4"></span>
+        </div>
+		{/loop}
+	{/pc}
+    	<div class="col-auto">
+        	<div class="col-1 member-info">
+            	<div class="content">
+                    <div class="col-left himg">
+					<a title="{L('modify').L('avatar')}" href="index.php?m=member&c=index&a=account_manage_avatar&t=1"><img src="{$avatar[90]}" width="60" height="60" onerror="this.src='{$phpsso_api_url}/statics/images/member/nophoto.gif'"></a>
+					</div>
+                  <div class="col-auto">
+                   	<h5>{if $memberinfo['vip']}<img src="{IMG_PATH}icon/vip.gif">{elseif $memberinfo['overduedate']}<img src="{IMG_PATH}icon/vip-expired.gif" title="{L('overdue')}，{L('overduedate')}：{format::date($memberinfo['overduedate'],1)}">{/if}
+					{if $memberinfo['from']}<img src="{IMG_PATH}member/logo/{$memberinfo['from']}_16_16.png">{/if}
+					<font color="{$grouplist[$memberinfo[groupid]]['usernamecolor']}">
+					{if $memberinfo['nickname']} {$memberinfo['nickname']} {else} {$memberinfo['username']}{/if}
+					</font>
+					{if $memberinfo['email']}（{$memberinfo['email']}）{/if}
+					</h5>
+                    <p class="blue">
+					  {L('member_group')}：{$memberinfo['groupname']}，
+                      {L('account_remain')}：<font style="color:#F00; font-size:22px;font-family:Georgia,Arial; font-weight:700">{$memberinfo[amount]}</font> {L('unit_yuan')}，
+					{L('point')}：<font style="color:#F00; font-size:12px;font-family:Georgia,Arial; font-weight:700">{$memberinfo[point]}</font> {L('unit_point')} {if $memberinfo['vip']}，vip{L('overduedate')}：<font style="color:#F00; font-size:12px;font-family:Georgia,Arial; font-weight:700">{format::date($memberinfo['overduedate'])}</font>{/if}
+                      </p>
+                    </div>
+           	  </div>
+
+            	<span class="o1"></span><span class="o2"></span><span class="o3"></span><span class="o4"></span>
+            </div>
+            <div class="bk10"></div>
+
+            <div class="col-1 ">
+            	<h5 class="title">{L('collect')}</h5>
+            	<div class="content">
+					{pc:member  action="favoritelist" userid="$memberinfo[userid]" num="10"}	
+                    <ul class="title-list">
+					{loop $data $k $v}
+                    	<li>·<a href="{$v['url']}" target="_blank">{$v['title']}</a><span><em>{format::date($v['adddate'], 1)}</em> <a href="index.php?m=member&c=index&a=favorite&id={$v['id']}">{L('delete')}</a></span></li>
+                    {/loop}
+                    </ul>
+					{$pages}
+					{/pc}
+            	</div>
+            	<span class="o1"></span><span class="o2"></span><span class="o3"></span><span class="o4"></span>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<script type="text/javascript" src="{JS_PATH}cookie.js"></script>
+<script language="JavaScript">
+<!--
+$(document).ready(function() {
+	var announcement = getcookie('announcement_{$memberinfo[userid]}_{$announceid}');
+	if(announcement==null || announcement=='') {
+		$("#announcement").fadeIn("slow");
+	}
+});
+//-->
+</script>
+{template 'member', 'footer'}

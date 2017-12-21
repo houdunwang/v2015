@@ -1,0 +1,45 @@
+table{border-collapse:collapse;border-spacing:0;}
+.wrap{overflow:hidden; *display:inline-block;}.wrap{*display:block;}
+.main img{_vertical-align:baseline;}
+.align_r{ text-align:right;}
+.brd{border:1px solid #C3D4E7;}
+.l{ float:left;}
+.r{ float:right;}
+.footer p.info{margin-top:0px;}
+.tit{color:#1E50A0;}
+.tit h5{ margin-left:1em;}
+.tit span.r{ margin-right:1em;}
+.txt_b{ font-weight:bold;}
+.nobrd{ border:none;}
+
+.vote_result,.tit,.vote_result .c_box{background:url(../images/vote/vote_bg.jpg) repeat-x;}
+.vote_result{margin:20px; border:1px solid #C3D4E7; background:url(../images/vote/vote_bg2.jpg) repeat-x 0% 100%;}
+.tit{background-position:0px 0px; height:33px; line-height:33px; overflow:hidden;}
+.tit h5{ background:url(../images/vote/vote_bg.gif) no-repeat 0px 10px; padding-left:20px;}
+.vote_result .tit span{ background:url(../images/vote/vote_bg.gif) no-repeat 0px -32px;padding-left:20px;}
+.vote_result .tit span strong{color:#900;}
+.vote_result .c_box{background-position:0px -46px;}
+.vote_result .c_box table{ margin:40px 0px;}
+.vote_result .c_box table td,.vote_result .c_box table th,.vote_result .c_box table{ border:1px solid #E7EEF5;}
+.vote_result .c_box table th{ text-align:center; font-weight:bold; color:#999; width:2em;}
+.vote_result .c_box table td{ padding:10px 4px;}
+.vote_result .c_box table td.tdcol3{width:5em; font-weight:bold; color:#1E50A0;}
+.tp_tit{ width:30em;color:#1E50A0;}
+.vote_result .c_box table td div{ background:#efefef; padding:4px 0px;}
+.vote_result .c_box table td div img{ height:11px;}
+
+.vote_listt{margin:20px;}
+.vote_listt .tit{ border-bottom:2px solid #99B4D2; }
+.licol2 li{float:left; width:50%;}
+.icon3j{margin-top:20px;}
+.icon3j li{ height:30px; line-height:30px; overflow:hidden;}
+.icon3j li a{background:url(../images/vote/bg_member_1.gif) no-repeat 0px -128px; padding-left:20px;}
+.icon3j li span{background:url(../images/vote/v9/icon.png) no-repeat 0 -71px #FFFFFF; padding-left:13px; width:30px; margin-left:10px;}
+
+.tp .tp_tit{ text-align:center; width:2em;}
+.tp td.ls{color:#1E50A0;}
+.shuru_btn{text-align:center;}
+.tp_btn{ background:url(../images/vote/tp_btn.jpg) no-repeat; width:136px; height:59px;margin:20px; border:none;cursor:pointer;}
+.votesss .col-left{margin:0px; margin-right:10px;}
+.votesss  .mg_t10{margin-top:10px;}
+.tps .vote_result,.tps .vote_listt{margin:10px 0px;}

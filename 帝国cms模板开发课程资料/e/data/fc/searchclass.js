@@ -1,1 +1,1 @@
-document.write("<option value=\'3\'>|-轮播图</option>");
+document.write("<option value=\'3\'>|-轮播图</option><option value=\'5\'>|-网站新闻</option>");

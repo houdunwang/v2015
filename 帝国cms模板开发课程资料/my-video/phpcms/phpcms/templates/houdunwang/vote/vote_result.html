@@ -1,0 +1,43 @@
+{template "content","header"}
+<link href="{CSS_PATH}vote.css" rel="stylesheet" type="text/css" />
+<!--main-->
+<div class="main tps">
+<div class="crumbs"><a href="{siteurl($siteid)}">首页</a><span> &gt; </span> <a href="{APP_PATH}index.php?m=vote&c=index&a=lists&siteid={$siteid}">投票</a>  </div>
+<div class="vote_result">
+    	<div class="tit"><span class="r">总票数：<strong>{$vote_data['total']}</strong></span><h5>{$subject}</h5></div>
+        <div class="c_box wrap">
+        	<table width="100%" border="1" cellspacing="0" cellpadding="0">
+        	
+        	{loop $options $r}
+       		{$i++}
+       		{if $vote_data['total']==0 }
+       		{php $per=0;}
+       		{else}
+       		{php $per=intval($vote_data[$r['optionid']]/$vote_data['total']*100);}
+       		{/if}
+       		
+       		 
+              <tr>
+              	<th>{$i}</th>
+                <td class="tp_tit">{$r['option']}</td>
+                <td class="tdcol3">{$per} %</td>
+                <td><div><img src="statics/images/vote/tit_cs.jpg" width="{$per}%" /></div></td>
+                <td class="tdcol3">{php echo $vote_data[$r['optionid']]==''? 0:$vote_data[$r['optionid']]} 票</td>
+              </tr>
+            {/loop}  
+          
+            </table>
+        </div>
+    </div>
+    <div class="vote_listt">
+    	<div class="tit"><span class="r"><a href="{APP_PATH}index.php?m=vote&c=index&a=lists&siteid={$siteid}">查看更多>></a></span><h5>其他投票</h5></div>
+        <ul class="wrap licol2 icon3j">
+              {pc:vote action="other_vote" catid="$catid" num="8" order="subjectid DESC"}
+				{loop $data $r}
+				 <li><a title="{$r['subject']}" href="{APP_PATH}index.php?m=vote&c=index&a=show&show_type=1&subjectid={$r['subjectid']}&siteid={$siteid}">{$r['subject']}</a><span><font color="#1E50A0">(得票数: {$r['votenumber']})</font></span></li>
+				{/loop}
+			 {/pc}
+        </ul>
+    </div>
+</div>
+{template "content","footer"}

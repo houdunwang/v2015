@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>百度编辑器</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        window.hdjs = {};
+        window.hdjs.base = '../';
+        window.hdjs.uploader = 'php/uploader.php?';
+        window.hdjs.filesLists = 'php/filesLists.php?';
+    </script>
+    <script src="../dist/static/requirejs/require.js"></script>
+    <script src="../dist/static/requirejs/config.js"></script>
+</head>
+<body style="padding: 50px;">
+<textarea id="container" style="height:600px;width:100%;"></textarea>
+<script>
+    require(['hdjs'], function (hdjs) {
+        hdjs.ueditor('container', {hash: 2, data: 'hd'}, function (editor) {
+            console.log('编辑器执行后的回调方法1')
+        });
+    })
+</script>
+<div>
+    <textarea id="hdphp" style="height:600px;width:100%;"></textarea>
+</div>
+<script>
+    require(['hdjs'], function (hdjs) {
+        hdjs.ueditor('hdphp', {
+            toolbars: [['fullscreen', 'source', 'hdimage', 'preview']],
+        }, function (editor) {
+            console.log('编辑器执行后的回调方法2')
+        });
+    })
+</script>
+</body>
+</html>

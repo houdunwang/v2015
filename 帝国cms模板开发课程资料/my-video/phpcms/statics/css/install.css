@@ -1,0 +1,33 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{padding:0px; margin:0px;}
+fieldset, img{border:0;}
+ol, ul{list-style: none;}
+.clr:after{content:" "; display:block; height:0px; clear:both; visibility:hidden;}.clr{display:inline-block;}* html .clr{height:0%;}.clr{display:block;}
+.col{display:inline-block;zoom:1;*display:inline;overflow:hidden;vertical-align:middle;}
+.wrap{overflow:hidden; *display:inline-block;}.wrap{*display:block;}
+.l{ float:left;}.r{ float:right;}
+h1{font-size:34px;}h2{font-size:26px;}h3{font-size:18px; }h4{font-size:16px;}h5{font-size:14px;}h6{font-size:12px;}h1,h2,h3{font-family:microsoft yahei,simhei;}
+
+body{background:url(../images/i_body_bg.jpg) repeat-x #006295;}
+.body_box{background:url(../images/i_bodyb_bg.jpg) repeat-x 0% 100%; padding-bottom:28px;}
+.main_box{width:1000px; margin:0px auto;}
+.hd{height:288px; overflow:hidden; background:url(../images/i_hd_bg.jpg) no-repeat; position:relative;}
+
+.ct{ margin:10px 0px; background-color:#117CB9;}
+.ct .l{ background:url(../images/i_c_icon.jpg) no-repeat; width:231px; height:200px; margin:20px 40px 20px 20px;}
+.ct .ct_box{color:#fff; float:left; width:660px; font-size:12px; line-height:24px;height:auto!important; height:300px; min-height:300px;margin:20px 0;}
+.ct .bg_t{background:url(../images/i_c_tbg.gif) no-repeat; height:8px;}
+.ct .bg_b{background:url(../images/i_c_bbg.gif) no-repeat 0% 100%; height:8px;}
+
+
+.btn_box a{background:url(../images/i_t_btn.jpg) no-repeat; display:inline-block;zoom:1;*display:inline;overflow:hidden;vertical-align:middle;}
+.btn_box{text-align:center;}
+a.is_btn{width:140px; height:65px; background-position:-111px 0px; margin:0px 10px;line-height:40px;color:#FFF; font-size:16px; font-weight:bold; text-decoration:none;}
+a.s_btn,a.x_btn{background-position:0px 0px; width:100px; height:65px; line-height:40px; font-size:16px; font-weight:bold; text-decoration:none;color:#FFF;margin:0px 4px;}
+a.pre{color:#CCC;}
+a.pre:hover{color:#fff;}
+
+.bz{background:url(../images/i_loadin.jpg) no-repeat; width:1000px; height:114px; position:absolute; bottom:1px;}
+.bz .jj_bg{ background:url(../images/jj_bg.jpg) no-repeat 100% 0px; width:23px; height:8px; position:absolute;right:0;top:49px;}
+.hd .a1{width:140px;}.hd .a2{width:290px;}.hd .a3{width:440px;}.hd .a4{width:554px;}.hd .a5{width:704px;}.hd .a5{width:704px;}.hd .a6{width:818px;}.hd .a7{width:1000px;}
+.a7 .jj_bg{display:none;}
+

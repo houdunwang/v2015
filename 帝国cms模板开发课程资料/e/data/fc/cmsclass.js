@@ -1,1 +1,1 @@
-document.write("<option value=\'3\' style=\'background:#99C4E3\'>|-轮播图</option>");
+document.write("<option value=\'3\' style=\'background:#99C4E3\'>|-轮播图</option><option value=\'5\' style=\'background:#99C4E3\'>|-网站新闻</option>");

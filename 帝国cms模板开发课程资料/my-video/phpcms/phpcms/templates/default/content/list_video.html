@@ -1,0 +1,201 @@
+{template "content","header"}
+{php $c = isset($_GET['b'])?$_GET['b']:1;} 
+<link href="{CSS_PATH}vms/vms.css" rel="stylesheet" type="text/css" />
+<!--[if lt IE 9]><link href="{CSS_PATH}vms/ielt9.css" rel="stylesheet" type="text/css" /><![endif]-->
+<script type="text/javascript" src="{JS_PATH}cookie.js"></script>
+<div class="clr ct lst">
+    <div class="lyt_4">
+    	<h5>分类检索</h5>
+        <ul class="tp_lst"> 
+{php $nums = count(subcat($CATEGORYS[$catid]['parentid'],0,0,$siteid));}
+{loop subcat($CATEGORYS[$catid]['parentid'],0,0,$siteid) $r}
+{php $num++}	
+            <li {if $n == $nums}class="last"{/if}><a href="{$r[url]}" {if $catid == $r[catid]}class="ac"{/if}>{$r[catname]}</a></li> 
+ {/loop}			
+        </ul>
+    </div>
+     <div class="wp lyt_3">
+    	<div class="lstnav">
+    	  <span></span><span>本页共有<strong id="nums">{$items}</strong>个符合条件的内容  </span> <h5>{$catname}</h5>
+    	</div> 
+        <ul class="tpli">
+            <li class="clr"><span>按画质：</span> 
+   			{loop video_filters('vision',$modelid,$vision_rang) $r}
+				{$r[menu]}
+			{/loop}
+             </li>
+        </ul>
+		<ul class="clr ulitg">
+            <li><a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid={$catid}&b=1" {if $c==1}class="ac"{/if}>最近更新</a></li>
+             <li><a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid={$catid}&b=2" {if $c==2}class="ac"{/if}>最近热播</a></li>
+            <li><a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid={$catid}&b=3" {if $c==3}class="ac"{/if}>最热评论</a></li>
+        </ul>
+		<div class="lstnr">
+		
+		{if $c==1}
+        <div class="bct">
+        	<ul class="clr col4 col5"> 
+			{php $urlrule = video_makeurlrule();}
+  			{php $sql = video_filters_sql($modelid,$catid);$y=1;$listorder = array(1=>'price ASC', 'price DESC', 'updatetime ASC', 'updatetime DESC');}
+ 			{pc:content action="lists" where="$sql" catid="$catid" num="15"  order=" listorder desc,id DESC" moreinfo="1" page="$page" urlrule="$urlrule"}
+			{php $nums=count($data)}
+ 			{loop $data $v}	
+			<!-- 获取视频详细信息 -->
+			{php $video_info = get_vid($v[id], $v[catid], $isspecial = 0);} 
+			
+                 <li>
+                	<div class="w120">
+                        <div class="imgbox"><span class="tm">{dataformat($video_info['timelen'])}</span>
+ 						<a href="{APP_PATH}index.php?m=video&c=index&a=playlist&contentid={$v[id]}&catid={$v[catid]}&title={$v[title]}" class="j" title='{$v[title]}' onclick="toggle(this);return false;" id="abc{random(8)}" catid="{$v[catid]}" contentid="{$v[id]}"></a>
+ 						
+						<a href="{$v[url]}" target="_blank"><img src="{$v[thumb]}" width="120" height="75"></a></div>
+                        <div class="lh21"><a href="{$v[url]}" target="_blank">{str_cut($v[title],16,false)}</a></div>
+                        <div class="sz"><span class="shows">播放数：<cite>{get_views('c-'.$CATEGORYS[$v[catid]][modelid].'-'.$v['id'])}</cite></span><span>评论：<cite>{get_comments(id_encode("content_$v[catid]",$v[id],$siteid))}</cite></span></div>
+                    </div>
+                </li> 
+			{/loop}
+			{/pc}
+            </ul>
+			{if $pages}
+            <div class="pages"> 
+			{$pages}
+ 			</div>
+			{/if}
+        </div>
+		{/if}
+		
+		{if $c==2}
+        <div class="bct">
+        	<ul class="clr col4 col5"> 
+			{php $urlrule = video_makeurlrule();}
+ 			{php $sql = video_filters_sql($modelid,$catid);$y=1;$listorder = array(1=>'price ASC', 'price DESC', 'updatetime ASC', 'updatetime DESC');}
+ 			{pc:content action="hits" catid="$catid" num="15" order="views DESC" page="$page" urlrule="$urlrule"}
+ 			{php $nums=count($data)}
+ 			{loop $data $v}	
+			<!-- 获取视频详细信息 -->
+			{php $video_info = get_vid($v[id], $v[catid], $isspecial = 0);} 
+                <li>
+                	<div class="w120">
+                        <div class="imgbox"><span class="tm">{dataformat($video_info['timelen'])}</span>
+						<a href="{APP_PATH}index.php?m=video&c=index&a=playlist&contentid={$v[id]}&catid={$v[catid]}&title={$v[title]}" class="j" title='{$v[title]}' onclick="toggle(this);return false;" id="abc{random(8)}" catid="{$v[catid]}" contentid="{$v[id]}"></a>
+						
+						<a href="{$v[url]}" target="_blank"><img src="{$v[thumb]}" width="120" height="75"></a></div>
+                        <div class="lh21"><a href="{$v[url]}" target="_blank">{str_cut($v[title],16,false)}</a></div>
+                        <div class="sz"><span class="shows">播放数：<cite>{get_views('c-'.$CATEGORYS[$v[catid]][modelid].'-'.$v['id'])}</cite></span><span>评论：<cite>{get_comments(id_encode("content_$v[catid]",$v[id],$siteid))}</cite></span></div>
+                    </div>
+                </li> 
+			{/loop}
+			{/pc}
+            </ul>
+			{if $pages}
+            <div class="pages"> 
+			{$pages}
+ 			</div>
+			{/if}
+        </div>
+		{/if}
+		
+		<!-- 最多评论 -->
+		{if $c==3}
+        <div class="bct">
+        	<ul class="clr col4 col5"> 
+			{php $urlrule = video_makeurlrule();}
+ 			{php $sql = video_filters_sql($modelid,$catid);$y=1;$listorder = array(1=>'price ASC', 'price DESC', 'updatetime ASC', 'updatetime DESC');}
+ 			{pc:comment action="bang" num="15" cache="0"}
+  			{php $nums=count($data)}
+ 			{loop $data $v}
+			{php $com_arr = explode('_',$v['commentid']);$id_arr = explode('-',$com_arr[1]); $video_array =get_pic($id_arr[1],$id_arr[0]); } 
+			<!-- 获取视频详细信息 -->
+			{php $video_info = get_vid($id_arr[1], $id_arr[0], $isspecial = 0);} 
+                <li>
+                	<div class="w120">
+                        <div class="imgbox"><span class="tm">{dataformat($video_info['timelen'])}</span>
+						<a href="{APP_PATH}index.php?m=video&c=index&a=playlist&contentid={$id_arr[1]}&catid={$id_arr[0]}&title={$v[title]}" class="j" title='{$v[title]}' onclick="toggle(this);return false;" id="abc{random(8)}" catid="{$id_arr[0]}" contentid="{$id_arr[1]}"></a>
+						
+						<a href="{$v[url]}" target="_blank"><img src="{$video_array['thumb']}" width="120" height="75"></a></div>
+                        <div class="lh21"><a href="{$v[url]}" target="_blank">{str_cut($v[title],16,false)}</a></div>
+                        <div class="sz"><span class="shows">播放数：<cite>{get_views('c-'.$CATEGORYS[$id_arr[0]][modelid].'-'.$id_arr[1])}</cite></span><span>评论：<cite>{get_comments(id_encode("content_$id_arr[0]",$id,$siteid))}</cite></span></div>
+                    </div>
+                </li> 
+			{/loop}
+			{/pc}
+            </ul>
+			{if $pages}
+            <div class="pages"> 
+			{$pages}
+ 			</div>
+			{/if}
+        </div>
+		{/if}
+		
+		
+        </div>
+    </div>
+</div>
+<div class="ft"></div>
+<script type="text/javascript">
+$(function(){
+	$('#nums').html('<?php echo $nums;?>');  
+	ChangStatus(); 
+})
+
+/*
+*改变加入清单的图片事件和图片显示
+*/
+function ChangStatus(){
+	var player_list="";
+	var list_array= new Array();
+	player_list = getcookie('player_list');
+ 	if(player_list!=null){
+		list_array = player_list.split("|");
+		if(list_array.length>0){
+ 			for(var i=0;i<list_array.length;i++) {
+				var player;
+				player=list_array[i].split("@");  
+				$("a[contentid='"+player[2]+"']").removeClass("j"); 
+				$("a[contentid='"+player[2]+"']").addClass("j2");  
+			}
+		}
+	}
+}
+ 
+
+//加入到播放列表
+function toggle(object) { 
+ 	var url = $(object).attr("href");
+	var title = $(object).attr("title");
+	var id = $(object).attr("contentid");
+	var catid = $(object).attr("catid");
+   	var isCookieExist;   
+     isCookieExist = getcookie('player_list');  
+	if(!isCookieExist){
+ 		var new_player = url+'@'+title+'@'+id+'@'+catid;
+		player_list = new_player;
+	} else{
+		var player_list = getcookie('player_list'); 
+ 		//判断是否已经存在
+ 		if(player_list.indexOf(id)!=-1){
+			//已经加入播放菜单则设置COOKIE,直接跳转至播放页面
+   			var list_array = player_list.split("|"); 
+			var player=new Array();
+			for(var i=0;i<list_array.length;i++) {
+ 				player = list_array[i].split("@"); 
+				if(id == player[2]){
+					setcookie('now',i);
+					window.open(player[0],'_blank');
+				}
+			}
+  			return false;
+		}  
+		var new_player = '|'+url+'@'+title+'@'+id+'@'+catid;
+		player_list +=new_player;
+	}
+ 	//改变图片样式，并且去掉onclick函数
+ 	setcookie('player_list',player_list,1); 
+	$("a[contentid='"+id+"']").removeClass("j"); 
+	$("a[contentid='"+id+"']").addClass("j2"); 
+	$("a[contentid='"+id+"']").unbind("click");  
+	return false; 
+} 
+</script>
+{template "content","footer"}

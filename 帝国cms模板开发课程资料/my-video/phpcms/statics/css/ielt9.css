@@ -1,0 +1,4 @@
+ul li{line-height:22px;}
+a:link,a:visited{text-decoration:none; color:#5d5d5d;}a:hover{text-decoration:underline;}a img{overflow:hidden;}
+.clr:after{content:" "; display:block; height:0; font-size:0; clear:both; visibility:hidden;}
+.wp{overflow:hidden;}.p_r{position:relative; overflow:hidden;}.r{float:right;}.l{float:left;}

@@ -1,0 +1,13 @@
+	<div class="col-left col-1 left-memu">
+        	<h5 class="title">{L('account_manage')}</h5>
+            <ul>
+                <li{if ROUTE_A=="account_manage_info"} class="on"{/if}><a href="index.php?m=member&c=index&a=account_manage_info&t=1"><img src="{IMG_PATH}icon/user_edit.png" width="16" /> {L('modify').L('memberinfo')}</a></li>
+                <li{if ROUTE_A=="account_manage_avatar"} class="on"{/if}><a href="index.php?m=member&c=index&a=account_manage_avatar&t=1"><img src="{IMG_PATH}icon/vcard.png" width="16" /> {L('modify').L('avatar')}</a></li>
+				{if !empty($memberinfo['encrypt'])}
+				<li{if ROUTE_A=="account_manage_password"} class="on"{/if}><a href="index.php?m=member&c=index&a=account_manage_password&t=1"><img src="{IMG_PATH}icon/icon_key.gif" width="16" height="16" /> {L('modify').L('email')}/{L('password')}</a></li>
+				{/if}
+				<li{if ROUTE_A=="account_manage_upgrade"} class="on"{/if}><a href="index.php?m=member&c=index&a=account_manage_upgrade&t=1"><img src="{IMG_PATH}icon/Upload.png" />&nbsp;&nbsp;{L('member').L('allowupgrade')}</a></li>
+				<li{if ROUTE_A=="account_change_mobile"} class="on"{/if}><a href="index.php?m=member&c=index&a=account_change_mobile&t=1"><img src="{IMG_PATH}icon/mobile_phone.png" /> {L('change_mobile')}</a></li>
+            </ul>
+        <span class="o1"></span><span class="o2"></span><span class="o3"></span><span class="o4"></span>
+    </div>

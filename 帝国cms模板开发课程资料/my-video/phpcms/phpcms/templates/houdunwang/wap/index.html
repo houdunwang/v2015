@@ -1,0 +1,25 @@
+{template "wap","header"}
+<h2><a href="#" class="cat">焦点推荐</a>&nbsp;<span style="color:#999; font-size:12px; font-weight:100;">{date('Y-m-d',SYS_TIME)}</span></h2>
+<div>
+{pc:wap  action="position" posid="12" order="listorder DESC" num="6"}
+ {loop $data $r}
+	<a href="{$r[url]}">{str_cut($r['title'],26,'')}</a><br/>
+   {/loop}  
+ {/pc} 
+</div>
+<div class="ad1"><a href="#"><img src="{IMG_PATH}wap/ad220x26.gif" alt="phpcms手机网建站利器" width="220" height="26" /></a></div>
+{loop subtype(0) $s}
+	{php $typeid=$s[typeid]}
+	{pc:wap action="lists" typeid="$typeid" num="10" order="id DESC" return="info"}
+		<h2><a href="{list_url($typeid)}" class="cat">{$s['typename']}</a>
+		 {loop subtype($typeid) $_s}<a href="{list_url($_s[typeid])}">{$_s[typename]}</a>{/loop}
+		</h2>
+		<div>
+		{loop $info $i}
+			<a href="{show_url($i[catid],$i[id])}">{str_cut($i['title'],26,'')}</a><br/>
+		{/loop}
+		</div>
+	{/pc}
+{/loop}
+
+{template "wap","footer"}

@@ -1,0 +1,182 @@
+.main{
+	width: 100%;
+	position: relative;
+	margin-top: 80px !important;
+}
+.main .chanpin{
+	width: 100%;
+	background: url("../images/chanpinBack.jpg");
+	background-size: cover;
+	position: relative;
+	text-align: center;
+	padding-bottom:20px;
+}
+.main .chanpin:nth-child(2){
+	background: none;
+}
+.main .chanpin:nth-child(4){
+	background: none;
+}
+.main .chanpin:nth-child(6){
+	background: none;
+}
+.main .chanpin:nth-child(8){
+	background: none;
+}
+.main .chanpin img.biaoti{
+	display: block;
+	width: 30%;
+	margin: 0 auto;
+	padding: 50px 0;
+	padding-bottom: 30px
+}
+.main .chanpin .title{
+	margin-bottom: 30px;
+	text-align: center;
+	font-size: 28px;
+}
+.main .chanpin .english{
+	margin-bottom: 30px;
+	text-align: center;
+	font-size: 17px;
+	color: #ccc;
+}
+.main .chanpin .xinghao{
+	margin-bottom: 30px;
+	text-align: center;
+	font-size: 33px;
+}
+.main .chanpin .more{
+	display: inline-block;
+	margin: 0 auto;
+	background: #06f;
+	text-align: center;
+	color: white;
+	padding: 10px 30px;
+	border-radius: 20px;
+	box-shadow: 3px 3px 20px rgba(0,102,255,0.5);
+	/*position: absolute;*/
+	/*left: calc((100% - 124px) / 2);*/
+	/*top: 275px;*/
+}
+.main .chanpin .productpic{
+	width:30%;
+	display: block;
+	/*height: 450px;*/
+	margin: 0 auto;
+}
+/*产品详情css开始*/
+
+.details{
+	 width: 100%;
+	 margin-top: 80px;
+	 overflow: hidden;
+ }
+.details .chanpin{
+	width: 100%;
+	height: 400px;
+	background: url("../images/chanpinBack.jpg") no-repeat;
+	position: relative;
+}
+.details .chanpin .ziliao{
+	width: 1280px;
+	height: 80%;
+	margin: 0 auto;
+	position: absolute;
+	top: 10%;
+	left: calc((100% - 1280px) / 2);
+}
+.details .chanpin .ziliao img{
+	/*width: 40%;*/
+	/*margin-left: 50px;*/
+	float: left;
+	margin-bottom:20px;
+}
+.details .chanpin .ziliao .sjcpimg{
+	display: none;
+}
+.details .chanpin .ziliao .left{
+	width:40%;
+	float: left;
+	min-height: 300px;
+}
+.details .chanpin .ziliao .right{
+	width: 40%;
+	height: 100%;
+	margin-right: 50px;
+	float: right;
+}
+.details .chanpin .ziliao .right .lmm{
+	width: 100%;
+	margin-top: 50px;
+	font-size: 36px;
+	color: #666;
+	overflow: hidden;
+}
+.details .chanpin .ziliao .right .title{
+	width: 100%;
+	margin: 50px 0;
+	font-size: 44px;
+	color: #333;
+	text-align: center;
+}
+.details .chanpin .ziliao .right .xh{
+	width: 100%;
+	margin-top: 15px;
+	font-size: 44px;
+	color: #999;
+}
+.details .chanpin .ziliao .right .ctag{
+	width: 100%;
+	margin-top: 15px;
+	font-size: 24px;
+	color: #999;
+	text-align: center;
+}
+.details .chanpin .ziliao .right ul{
+	width: 100%;
+	margin: 20px 0;
+	overflow: hidden;
+}
+.details .chanpin .ziliao .right ul li{
+	width: 42%;
+	padding-right: 5%;
+	float: left;
+	line-height: 2em;
+	color: #666;
+}
+.details .chanpin .ziliao .right .pics{
+	width: 100%;
+	height: 50px;
+}
+.details .chanpin .ziliao .right .pics span{
+	display: block;
+	width: 65px;
+	height:60px;
+	border: solid 1px #ccc;
+	float: left;
+	margin: 0 10px;
+}
+.details .chanpin .ziliao .right .pics .yi{
+	background: url("../images/1601Licon.png") no-repeat 5px 5px;
+}
+.details .chanpin .ziliao .right .pics .er{
+	background: url("../images/1601Licon.png") no-repeat -95px 5px;
+}
+.details .chanpin .ziliao .right .pics .san{
+	background: url("../images/1601Licon.png") no-repeat -187px 5px;
+}
+.details .chanpin .ziliao .right .pics .si{
+	background: url("../images/1601Licon.png") no-repeat -282px 5px;
+}
+.xiangqing{
+	width: 1280px;
+	margin: 40px auto;
+	overflow: hidden;
+
+}
+.xiangqing p{
+	line-height: 2em;
+	text-indent: 2em;
+}
+

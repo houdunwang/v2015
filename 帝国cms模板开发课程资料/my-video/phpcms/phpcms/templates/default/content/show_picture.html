@@ -1,0 +1,105 @@
+{template "content","header"}
+<style type="text/css" >
+.photo_prev a{cursor:url({IMG_PATH}v9/prev.cur), auto;}
+.photo_next a{cursor:url({IMG_PATH}v9/next.cur), auto;}
+
+</style>
+<div class="main photo-channel">
+	<div class="crumbs"><a href="{siteurl($siteid)}">首页</a><span> > {catpos($catid)}</div>
+    <div id="Article">
+        	<h1>{$title}<br />
+			<span>{$inputtime}&nbsp;&nbsp;&nbsp;来源：{$copyfrom}&nbsp;&nbsp;&nbsp;评论：<a href="#comment_iframe" id="comment">0</a></span></h1>
+<div class="tool">
+		<a name="pic"></a>
+        <a class="up" href="javascript:;" title="上一张" onclick="showpic('pre')"><span>上一张</span></a><a class="next" href="javascript:;" onclick="showpic('next')" title="下一张"><span>下一张</span></a><span class="stat" id="picnum"></span>
+        <div class="Article-Tool"><span id='favorite'><a href="javascript:;" onclick="add_favorite('{$title}');" class="t6">收藏</a></span>&nbsp;&nbsp;分享到：
+		<img src="http://v.t.qq.com/share/images/s/weiboicon16.png" style="padding-bottom:3px;" onclick="postToWb();" class="cu" title="分享到腾讯微博"/><script type="text/javascript">
+	function postToWb(){
+		var _t = encodeURI(document.title);
+		var _url = encodeURIComponent(document.location);
+		var _appkey = encodeURI("cba3558104094dbaa4148d8caa436a0b");
+		var _pic = encodeURI('{$thumb}');
+		var _site = '';
+		var _u = 'http://v.t.qq.com/share/share.php?url='+_url+'&appkey='+_appkey+'&site='+_site+'&pic='+_pic+'&title='+_t;
+		window.open( _u,'', 'width=700, height=680, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, location=yes, resizable=no, status=no' );
+	}
+</script>
+          <script type="text/javascript">document.write('<a href="http://v.t.sina.com.cn/share/share.php?url='+encodeURIComponent(location.href)+'&appkey=3172366919&title='+encodeURIComponent('{new_addslashes($title)}')+'" title="分享到新浪微博" class="t1" target="_blank">&nbsp;</a>');</script>
+		  <script type="text/javascript">document.write('<a href="http://www.douban.com/recommend/?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent('{new_addslashes($title)}')+'" title="分享到豆瓣" class="t2" target="_blank">&nbsp;</a>');</script>
+		  <script type="text/javascript">document.write('<a href="http://share.renren.com/share/buttonshare.do?link='+encodeURIComponent(location.href)+'&title='+encodeURIComponent('{new_addslashes($title)}')+'" title="分享到人人" class="t3" target="_blank">&nbsp;</a>');</script>
+		  <script type="text/javascript">document.write('<a href="http://www.kaixin001.com/repaste/share.php?rtitle='+encodeURIComponent('{new_addslashes($title)}')+'&rurl='+encodeURIComponent(location.href)+'&rcontent=" title="分享到开心网" class="t4" target="_blank">&nbsp;</a>');</script>
+		  <script type="text/javascript">document.write('<a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+encodeURIComponent(location.href)+'" title="分享到QQ空间" class="t5" target="_blank">&nbsp;</a>');</script></div>
+</div>
+    <div class="big-pic" style="height:650px;">
+		<div id="big-pic"></div>
+    	<div class="photo_prev"><a id="photoPrev" title="&lt;上一页" class="btn_pphoto" target="_self" hidefocus="true" href="javascript:;" onclick="showpic('pre');"></a></div>
+        <div class="photo_next"><a id="photoNext" title="下一页&gt;"class="btn_nphoto" target="_self" hidefocus="true" href="javascript:;" onclick="showpic('next')"></a></div>
+        <a href="javascript:;" class="max" onclick="showpic('big');">查看原图</a>
+        
+        <div id="endSelect" style="display: none;">
+			<div id="endSelClose" onclick="$('#endSelect').hide();"></div>
+			<div class="bg"></div>
+			<div class="E_Cont">
+				<p>您已经浏览完所有图片</p>
+				<p><a id="rePlayBut" href="javascript:void(0)" onclick="showpic('next', 1);"></a><a id="nextPicsBut" href="{$next_page[url]}"></a></p>	
+			</div>
+		</div>
+        
+    </div>
+
+    <div class="list-pic">
+        <div class="pre picbig">
+        	<div class="img-wrap"><a href="{$previous_page[url]}"><img src="{thumb($previous_page[thumb], 100, 137, 0)}" title="{$previous_page[title]}"></a></div><a href="{$previous_page[url]}">&lt;上一组</a>
+        </div>
+        <a href="javascript:;" onclick="showpic('pre')" class="pre-bnt"><span></span></a>
+		<div class="cont" style="position:relative">
+			<ul class="cont picbig" id="pictureurls"  style="position:absolute">
+			{loop $pictureurls $pic_k $r}
+			 <li><div class="img-wrap"><a href="javascript:;" hidefocus="true"><img src="{thumb($r[url], 100, 137, 0)}" alt="{$r[alt]}" rel="{$r[url]}"/></a></div></li>
+			{/loop}
+			</ul>
+		</div>
+        <a href="javascript:;" onclick="showpic('next')" class="next-bnt"><span></span></a>
+        <div class="next picbig">
+        	<div class="img-wrap"><a href="{$next_page[url]}" title="{$next_page[title]}"><img src="{thumb($next_page[thumb], 100, 137, 0)}"></a></div><a href="{$next_page[url]}">下一组&gt;</a>
+        </div>
+    </div>
+            <div class="text" id="picinfo"></div>
+	<div class="content">
+		{$content}
+	</div>
+  </div>
+  <div class="bk10"></div>
+	<div class="relevance">
+	<h5>相关图集</h5>
+		{pc:content action="relation" relation="$relation" id="$id" catid="$catid" num="6" keywords="$rs[keywords]"}
+			<ul class="photo-list">
+				{loop $data $r}
+				<li><div class="img-wrap"><a href="{$r[url]}"><img src="{thumb($r[thumb])}" width="100" height="86"/></a></div><a href="{$r[url]}">{$r[title]}</a></li>
+				{/loop}
+			</ul>
+		{/pc}
+	</div>
+  <div class="bk10"></div>
+  {if $allow_comment && module_exists('comment')}
+  <iframe src="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={id_encode("content_$catid",$id,$siteid)}&iframe=1" width="100%" height="100%" id="comment_iframe" frameborder="0" scrolling="no"></iframe>
+  {/if}
+</div>
+<div id="load_pic" style="display:none;" rel="{IMG_PATH}msg_img/loading_d.gif">
+</div>
+<script language="JavaScript">
+<!--
+	function add_favorite(title) {
+		$.getJSON('{APP_PATH}api.php?op=add_favorite&title='+encodeURIComponent(title)+'&url='+encodeURIComponent(location.href)+'&'+Math.random()+'&callback=?', function(data){
+			if(data.status==1)	{
+				$("#favorite").html('收藏成功');
+			} else {
+				alert('请登录');
+			}
+		});
+	}
+//-->
+</script>
+<script type="text/javascript" src="{JS_PATH}show_picture.js"></script>
+<script type="text/javascript" src="{APP_PATH}api.php?op=count&id={$id}&modelid={$modelid}"></script>
+{template "content","footer"}

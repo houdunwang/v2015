@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        window.hdjs = {};
+        window.hdjs.base = '../';
+        window.hdjs.uploader = 'php/uploader.php?';
+        window.hdjs.filesLists = 'php/filesLists.php?';
+    </script>
+    <script src="../dist/static/requirejs/require.js"></script>
+    <script src="../dist/static/requirejs/config.js"></script>
+</head>
+<body style="padding: 50px;">
+<textarea id="text" cols="30" rows="10">后盾网</textarea>
+<button id="bt1">插入到尾部</button>
+<button id="bt2">插入到第二个字</button>
+<button id="bt3">获取当前位置</button>
+<script>
+    require(['hdjs'], function (hdjs) {
+        $("#bt1").click(function () {
+            //插入到文本框尾部
+            hdjs.caret('#text', -1)
+        })
+        $("#bt2").click(function () {
+            //插入到指定位置
+            hdjs.caret('#text', 2)
+        })
+        $("#bt3").click(function () {
+            //获取位置
+            hdjs.caret('#text', function (pos) {
+                alert('当前位置'+pos);
+            })
+        })
+    })
+</script>
+</body>
+</html>

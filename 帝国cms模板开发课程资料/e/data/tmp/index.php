@@ -97,6 +97,7 @@ if(!defined('InEmpireCMS'))
 
         <div id="navbar-spy" class="collapse navbar-collapse navbar-responsive-collapse">
             <ul class="nav navbar-nav pull-right">
+
                 <li class="active">
                     <a href="index.html">Home</a>
                 </li>
@@ -117,8 +118,8 @@ if(!defined('InEmpireCMS'))
     </div>
 </nav>
 
-<!-- End Header -->
 
+<!-- End Header -->
 
 <!-- Begin #carousel-section -->
 <div class="swiper-container">
@@ -240,7 +241,6 @@ $bqno++;
 <!-- End #services-section -->
 
 
-<!-- Footer -->
 <footer>
     <div class="container">
         <div class="row">

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        window.hdjs = {};
+        window.hdjs.base = '../';
+        window.hdjs.uploader = 'php/uploader.php?';
+        window.hdjs.filesLists = 'php/filesLists.php?';
+    </script>
+    <script src="../dist/static/requirejs/require.js"></script>
+    <script src="../dist/static/requirejs/config.js"></script>
+</head>
+<body style="padding: 50px;">
+<h1>复制</h1>
+<input id="foo" value="https://github.com/zenorocha/clipboard.js.git" class="form-control">
+<button class="btn btn-default" data-clipboard-target="#foo">复制</button>
+<script>
+    require(['hdjs'], function (hdjs) {
+        var clipboard = hdjs.clipboard('.btn', {},function (e) {
+            console.info('Action:', e.action);
+            console.info('Text:', e.text);
+            console.info('Trigger:', e.trigger);
+            hdjs.notify('复制成功');
+            e.clearSelection();
+        })
+    })
+</script>
+<h1>复制元素文本</h1>
+
+<a href="javascript:;" class="copy" data-clipboard-text="我是复制的内容">点我复制</a>
+<script>
+    require(['hdjs'], function (hdjs) {
+        hdjs.clipboard('.copy',{},function(e){
+            hdjs.notify('复制成功');
+            e.clearSelection();
+        })
+    });
+</script>
+
+<h1>指定复制内容</h1>
+
+<input name="content" value="后盾人 人人做后盾" class="form-control">
+<button class="btn btn-default hdphp">复制内容</button>
+<script>
+    require(['hdjs'], function (hdjs) {
+        var clipboard = hdjs.clipboard('.hdphp', {
+            text: function (trigger) {
+                return $("[name='content']").val();
+            }
+        }, function (e) {
+            console.info('Action:', e.action);
+            console.info('Text:', e.text);
+            console.info('Trigger:', e.trigger);
+            hdjs.notify('复制成功');
+            e.clearSelection();
+        })
+    })
+</script>
+</body>
+</html>

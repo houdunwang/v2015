@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        window.hdjs = {};
+        window.hdjs.base = '../';
+        window.hdjs.uploader = 'php/uploader.php?';
+        window.hdjs.filesLists = 'php/filesLists.php?';
+    </script>
+    <script src="../dist/static/requirejs/require.js"></script>
+    <script src="../dist/static/requirejs/config.js"></script>
+</head>
+<body style="padding: 50px;">
+<h2>请在console控制台看效果</h2>
+<button class="btn btn-default" onclick="set()">设置</button>
+<script>
+    function set() {
+        require(['hdjs'], function (hdjs) {
+            hdjs.cookie(function (Cookie) {
+                Cookie.set('hdjs', '这是使用 hdjs 创建的cookie');
+            })
+        })
+    }
+</script>
+
+<button class="btn btn-default" onclick="alls()">获取所有</button>
+<script>
+    function alls() {
+        require(['hdjs'], function (hdjs) {
+            hdjs.cookie(function (Cookie) {
+                console.log(Cookie.get());
+            })
+        })
+    }
+</script>
+
+<button class="btn btn-default" onclick="remove()">删除</button>
+<script>
+    function remove() {
+        require(['hdjs'], function (hdjs) {
+            hdjs.cookie(function (Cookie) {
+                Cookie.remove('hdjs');
+            })
+        })
+    }
+</script>
+</body>
+</html>

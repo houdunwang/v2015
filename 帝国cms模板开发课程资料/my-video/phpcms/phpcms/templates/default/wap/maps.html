@@ -1,0 +1,17 @@
+{template "wap","min_header"}
+<div class="wrap">
+   <div class="adds" id="hd">{$WAP['sitename']} - 导航</div>
+    <div class="cts">
+	{php $i=1}
+	 {loop subtype(0) $s}
+		<a href="{list_url($s[typeid])}">[{$s[typename]}]</a>
+		{loop subtype($s[typeid]) $r}
+		<a href="{list_url($r[typeid])}">{$r[typename]}</a>
+		{if $i%4==0}<br />{/if}
+		{php $i++}
+		{/loop}
+		<br />
+	 {/loop}
+
+    </div>
+{template "wap","min_footer"}

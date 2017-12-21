@@ -1,0 +1,19 @@
+<div class="sr_footer">	  
+{pc:content action="category" catid="1" num="15" siteid="$siteid" order="listorder ASC"}
+{loop $data $r}
+<a href="{$r[url]}" target="_blank">{$r[catname]}</a> |  
+{/loop}
+{/pc}
+<a href="{APP_PATH}index.php?m=link" target="_blank">友情链接</a>
+<p class="cp">Powered by <strong><a href="http://www.phpcms.cn" target="_blank">PHPCMS</a></strong> v9 &copy; {date('Y', SYS_TIME)} <img src="{IMG_PATH}copyright.gif"/>
+</p></div>
+      </div>
+    </div>
+<!--[if IE 6]>
+<script type="text/javascript" src="{JS_PATH}nsz.js"></script>
+<script type="text/javascript">
+	nsz.fix('.sr_logo img');
+</script>
+<![endif]-->
+</body>
+</html>

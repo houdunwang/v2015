@@ -1,0 +1,85 @@
+ul li { line-height: 22px; }
+a:link, a:visited { text-decoration: none; color: #5d5d5d; }
+a:hover { text-decoration: underline; }
+a img { overflow: hidden; }
+ul.cola { text-align: justify; text-justify: distribute; }
+ul.cola li { display: inline-block; text-align: center; vertical-align: top; *display:inline;
+overflow: hidden; }
+ul.col li { display: inline-block; vertical-align: middle; text-align: center; }
+.clr:after { content: " "; display: block; height: 0; font-size: 0; clear: both; visibility: hidden; }
+.cr:before, .cr:after { content: ""; display: table; }
+.cr:after { clear: both; }
+.cr { zoom: 1; }
+.wp { overflow: hidden; }
+.p_r { position: relative; overflow: hidden; }
+.r { float: right; }
+.l { float: left; }
+.hd, .ct, .ft { width: 960px; margin-left: auto; margin-right: auto; }
+
+a img{ display:block;}
+/*box*/
+/*.box { border: 1px solid #C3D4E7; }
+.box .nav { background:url(../../images/vms/navbg_x.jpg) repeat-x; height: 29px; line-height: 29px; }
+.box .nav h5 { margin-left: 0.5em; }
+.box .nav .more { margin-right: 1em; float: right; }
+
+.box2 { border: 1px solid #C3D4E7; }
+.box2 .nav { background:url(../../images/vms/navbg_x.jpg) repeat-x; height: 29px; line-height: 29px; }
+.box2 .nav h5 { margin-left: 0.5em; }
+.box2 .nav .more { margin-right: 1em; float: right; }
+	.tag3{ position:relative;}
+	.tag3 a{ float:left;}
+	.tag3 a.ac{ font-weight:bold; background:url(../../images/vms/aac1.jpg) no-repeat; width:100px; height:29px; line-height:29px; text-align:center; margin:0px 10px; position:absolute; bottom:-1px;}*/
+/*tmp*/
+
+
+/*temps*/
+.idx{ margin-bottom:10px;}
+.mFocus { height: 454px; margin-top:10px;}
+.mFocus { background-color: #FFFFFF; overflow: hidden; width: 660px; }
+.mFocus .mBoxL { float: left; width: 328px; }
+dl.boxVideo { overflow: hidden; }
+.mFocus .focusVideo dt { height: 252px; overflow: hidden; width: 328px; }
+.boxVideo dd { line-height: 20px; }
+.mFocus .title { height: 18px; overflow: hidden; padding-top: 15px; }
+.mFocus .title h3 { font-size: 16px; line-height: 18px; }
+.mFocus .focusVideo .ico_zt { display: none; }
+.boxVideo dd span { white-space: nowrap; }
+.boxVideo .text { overflow: hidden; padding-top: 5px; }
+.mFocus .boxVideo .info { height: 20px; width: 134px; }
+.boxVideo dd span { white-space: nowrap; }
+.show, .review { color: #666666; }
+.boxVideo dd cite { font-family: Arial; font-size: 11px; }
+.boxVideo dd span { white-space: nowrap; }
+.boxVideo dd cite { font-family: Arial; font-size: 11px; }
+.show cite, .review cite { color: #FF6600; }
+cite, em { font-style: normal; }
+.mFocus .mNewsList { height: 96px; background-color:#F7F7F7;}
+.mFocus .mNewsList li { background-position: -221px -231px; height: 24px; line-height: 24px; }
+.mFocus .mNewsList li { width: 290px; }
+.aream .mNewsList li { color: #666666; overflow: hidden; padding-left: 20px; }
+.mFocus .mBoxR { float: right; width: 328px; }
+.mFocus .mVideoList li { padding-bottom: 16px; }
+.mFocus .mVideoList li { float: left; }
+.aream .mVideoList li { overflow: hidden; padding-left:30px; }
+dl.boxVideo { overflow: hidden; }
+.boxV_1 dt { height: 77px; width: 134px; position:relative;}
+.boxVideo .time { background-color: #666666; color: #FFFFFF; display: block; font-size: 9px; height: 12px; left: 0; line-height: 12px; overflow: hidden; position: absolute; text-align: center; top: 0; width: 28px; z-index: 4; }
+.boxVideo .plus { bottom: 0; display: block; height: 15px; position: absolute; right: 0; width: 15px; z-index: 5; }
+.boxV_1 dt .pic { height: 75px; width: 132px; }
+.boxVideo .plus a { background: url(http://img.c4.ku6.cn/index/upload/20100430/niubin/index/img/ico.png) no-repeat scroll -59px -24px transparent; display: block; height: 15px; width: 15px; }
+.boxV_1 dt .pic { height: 75px; width: 132px; }
+.boxV_1 dt .pic img { height: 75px; width: 132px; }
+.boxVideo .pic img { position: absolute; z-index: 2; }
+.boxV_1 .text { height: 40px; width: 132px; }
+.boxVideo dd span { white-space: nowrap; }
+.mFocus .boxVideo .info { height: 20px; width: 134px; }
+.boxVideo dd { line-height: 20px; overflow: hidden; }
+.boxVideo dd span { white-space: nowrap; }
+.boxVideo dd cite { font-family: Arial; font-size: 11px; }
+.boxVideo dd span { white-space: nowrap; }
+.show, .review { color: #666666; }
+.boxVideo dd cite { font-family: Arial; font-size: 11px; }
+.show cite, .review cite { color: #FF6600; }
+
+.tct{ background:url(../../img/tmps1.jpg) no-repeat; width:234px; height:370px; margin-left:10px; margin-top:10px;}

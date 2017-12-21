@@ -1,0 +1,26 @@
+{template 'content', 'header'}
+<!--main-->
+<div class="main">
+	<div class="col-left">
+    	<div class="crumbs"><a href="">首页</a><span> > </span><a href="">公告</a></div>
+        <div id="Article">
+        	<h1>{$title}<br />
+<span></span></h1>
+			<div class="content">
+			  {$content}
+			</div>
+      </div>
+  </div>
+    <div class="col-auto">
+        <div class="box pd_b0">
+		{pc:comment action="bang" cache="3600"}
+            <ul class="itemli">
+			{loop $data $r}
+                <li><a href="{$r[url]}" target="_blank">{str_cut($r[title], 26)}</a></li>
+            {/loop}
+            </ul>
+		{/pc}
+        </div>
+    </div>
+</div>
+{template 'content', 'footer'}

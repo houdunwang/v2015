@@ -1,0 +1,6 @@
+.admin_piao{background-color:#E8F2FE;position:relative;min-height:24px; height:auto !important;height:24px;overflow:visible;
+}
+.admin_piao_img{cursor: pointer;float:right;}
+.admin_piao_edit{ z-index:100;color:#fff;height:24px;line-height:24px;width:60px;text-align:center;font-size:12px;position:absolute;top:0;right:0;text-decoration: none;background:#1162a7}
+.admin_piao_edit:hover{background-color:#ff6600}
+.admin_block{background-color:#FFFFC2; border:#F3F3B6 solid 1px; cursor: pointer;}

@@ -1,0 +1,913 @@
+/*.header{
+	margin-top: -86px;
+}*/
+.banner{
+	width: 100%;
+	/*position: relative;*/
+	margin-top: 80px !important;
+}
+.banner img.pcbanner{
+	width: 100%;
+}
+.banner img.sjbanner{
+	display: none;
+}
+/*5大创始人*/
+.founder {
+	width: 100%;
+	/*height: 560px;*/
+	overflow: hidden;
+	border-bottom: solid 1px #ccc;
+	padding-bottom:30px;
+}
+.founder .center{
+	width: 1280px;
+	margin: 0 auto;
+}
+.founder .center .top{
+	width: 100%;
+	margin: 30px 0;
+}
+.founder .center .top .title{
+	font: bold 36px/1.5em "Microsoft YaHei";
+	text-align: center;
+}
+.founder .center .top .line{
+	width: 100px;
+	border: solid 1px #f22f16;
+	margin: 20px auto;
+}
+.founder .center .top .etitle{
+	font: 18px/1.5em "Microsoft YaHei";
+	color: #f22f16;
+	text-align: center;
+}
+.founder .center .bottom{
+	width: 100%;
+	margin-bottom: 50px;
+}
+.founder .center .bottom .csr{
+	width: 300px;
+	float: left;
+	margin-right: 20px;
+}
+.founder .center .bottom .csr:nth-child(5){
+	margin-right: 0;
+}
+.founder .center .bottom .csr img{
+	width: 100%;
+}
+.founder .center .bottom .csr .line{
+	width: 30px;
+	margin: 15px 0;
+	border: solid 1px #f22f16;
+}
+.founder .center .bottom .csr .jieshao{
+	font: 16px/1.5em "Microsoft YaHei";
+}
+.founder .center .bottom .csr .jieshao .name{
+	font-size: 26px;
+}
+.founder .center .bottom .csr .jieshao .name small{
+	font-size: 16px;
+}
+.founder .center .bottom .csr .jieshao .desc{
+	text-indent: 2em;
+	line-height:1.5em;
+	margin-top:20px;
+}
+/*5大创始人*/
+/*关于翼猫*/
+.about{
+	width: 100%;
+	margin: 50px auto;
+	padding-bottom: 50px;
+	overflow: hidden;
+	border-bottom: solid 1px #ccc;
+}
+.about .center{
+	width: 1280px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.about .left{
+	width: 620px;
+	float: left;
+	padding-bottom: 20px;
+}
+.about .left .title{
+	text-align: right;
+	font-size: 20px;
+	font-weight: 700;
+	color: #333;
+	line-height: 1.5em;
+	padding: 30px 0;
+	border-bottom: solid 2px #333;
+}
+.about .left .aboutus{
+	padding-top: 30px;
+	font-size: 17px;
+	color: #999;
+	line-height: 2em;
+}
+.about .more{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 30px;
+    color: #f22f16;
+    border: solid 1px #f22f16;
+    border-radius: 20px;
+    float: right;
+    position: relative;
+	-webkit-transition:0.5s;
+	-moz-transition:0.5s;
+	-ms-transition:0.5s;
+	-o-transition:0.5s;
+	transition:0.5s;
+}
+.about .more:hover{
+	background:#f22f16;
+	color: white;
+	box-shadow: 3px 3px 12px rgba(0,102,255,0.4);
+}
+.about .right{
+	width: 620px;
+	height: 600px;
+	float: right;
+	position: relative;
+}
+.about .right img{
+	width: 90%;
+	margin-left: 5%;
+	margin-top: 100px;
+}
+.about .right .about1{
+	width: 300px;
+    position: absolute;
+    left: 0;
+    top: 30px;
+    
+}
+.about .right .about2{
+    position: absolute;
+    left: 27px;
+    top: 367px;
+}
+.about .right .about3{
+	width: 300px;
+	position: absolute;
+    right: 0;
+    top: 150px;
+}
+.about .right .about4{
+	position: absolute;
+    right: 24px;
+    top: 367px;
+}
+/*关于翼猫*/
+.three{
+	padding-bottom: 30px;
+	border-bottom: solid 1px #ccc;
+}
+.four{
+	border-bottom: solid 1px #ccc;
+}
+.three .center{
+	width: 1280px;
+	margin: 0 auto;
+	height: 470px;
+	padding-top: 80px;
+	background: url("../images/diTU.jpg") no-repeat left bottom;
+	background-size: 40%;
+	overflow: hidden;
+}
+.three .center .right{
+	width: 45%;
+	margin-top: 30px;
+	margin-left: 50%;
+	float: left;
+}
+.three .center .right .title{
+	font-size: 36px;
+	color: black;
+	margin-bottom: 20px;
+}
+.three .center .right .small{
+	font-size: 26px;
+	color: black;
+	padding-bottom: 20px;
+	border-bottom: solid 2px #f22f16;
+}
+.three .center .right .jieshao{
+	line-height: 2em;
+	color: #999;
+	font-size: 20px;
+	margin-top: 20px;
+}
+.three .center .right .more{
+	display: inline-block;
+	margin-top: 20px;
+	padding: 10px 30px;
+	color: #f22f16;
+	border: solid 1px #f22f16;
+	border-radius: 20px;
+	position: relative;
+	-webkit-transition:0.5s;
+	-moz-transition:0.5s;
+	-ms-transition:0.5s;
+	-o-transition:0.5s;
+	transition:0.5s;
+}
+.three .center .right .more .jiantou{
+	display: block;
+	width: 10px;
+	height: 11px;
+	background: url("../images/lanSanjiao.png") no-repeat;
+	position: absolute;
+	right: 20px;
+	top: 13px;
+}
+.three .center .right .more:hover{
+	background:#f22f16;
+	color: white;
+	box-shadow: 3px 3px 12px rgba(0,102,255,0.4);
+}
+
+.three .center .right .more:hover .jiantou{
+	background: url("../images/baiSanjiao.png") no-repeat;
+}
+.three .center .left{
+	width: 50%;
+	float: left;
+}
+.three .center .left img{
+	width: 100%;
+}
+/*人才招聘*/
+
+.rencai{
+	/*padding-bottom: 30px;*/
+}
+.rencai .center{
+	width: 1280px;
+	margin: 0 auto;
+	height: 470px;
+	margin-top: 80px;
+	background: url("../images/rencai.jpg") no-repeat 15% bottom;
+	background-size: 26%;
+	overflow: hidden;
+}
+.rencai .center .right{
+	width: 45%;
+	margin-top: 30px;
+	margin-left: 50%;
+	float: left;
+}
+.rencai .center .right .title{
+	font-size: 36px;
+	color: black;
+	margin-bottom: 20px;
+}
+.rencai .center .right .small{
+	font-size: 26px;
+	color: black;
+	padding-bottom: 20px;
+	border-bottom: solid 2px #f22f16;
+}
+.rencai .center .right .jieshao{
+	line-height: 2em;
+	color: #999;
+	font-size: 20px;
+	margin-top: 20px;
+}
+.rencai .center .right .more{
+	display: inline-block;
+	margin-top: 20px;
+	padding: 10px 30px;
+	color: #f22f16;
+	border: solid 1px #f22f16;
+	border-radius: 20px;
+	position: relative;
+}
+.rencai .center .right .more .jiantou{
+	display: block;
+	width: 10px;
+	height: 11px;
+	background: url("../images/lanSanjiao.png") no-repeat;
+	position: absolute;
+	right: 20px;
+	top: 13px;
+	-webkit-transition:0.5s;
+	-moz-transition:0.5s;
+	-ms-transition:0.5s;
+	-o-transition:0.5s;
+	transition:0.5s;
+}
+.rencai .center .right .more:hover{
+	background:#f22f16;
+	color: white;
+	box-shadow: 3px 3px 12px rgba(0,102,255,0.4);
+}
+
+.rencai .center .right .more:hover .jiantou{
+	background: url("../images/baiSanjiao.png") no-repeat;
+}
+.rencai .center .left{
+	width: 50%;
+	float: left;
+}
+.rencai .center .left img{
+	width: 65%;
+}
+
+/*人才招聘*/
+
+.four .center{
+	width: 1280px;
+	margin: 0 auto;
+	height: 470px;
+	background: url("../images/sanKou.jpg") no-repeat right bottom;
+	background-size: 43%;
+	margin-top: 80px;
+	overflow: hidden;
+}
+.four .center .left{
+	width: 50%;
+	margin-top: 30px;
+	float: left;
+}
+.four .center .left .title{
+	font-size: 36px;
+	color: black;
+	margin-bottom: 20px;
+}
+.four .center .left .small{
+	font-size: 26px;
+	color: black;
+	padding-bottom: 20px;
+	border-bottom: solid 2px #f22f16;
+}
+.four .center .left .jieshao{
+	line-height: 2em;
+	color: #999;
+	font-size: 20px;
+	margin-top: 20px;
+}
+.four .center .left .more{
+	display: inline-block;
+	margin-top: 20px;
+	padding: 10px 30px;
+	color: #f22f16;
+	border: solid 1px #f22f16;
+	border-radius: 20px;
+	position: relative;
+}
+.four .center .left .more .jiantou{
+	display: block;
+	width: 10px;
+	height: 11px;
+	background: url("../images/lanSanjiao.png") no-repeat;
+	position: absolute;
+	right: 20px;
+	top: 13px;
+	-webkit-transition:0.5s;
+	-moz-transition:0.5s;
+	-ms-transition:0.5s;
+	-o-transition:0.5s;
+	transition:0.5s;
+}
+.four .center .left .more:hover{
+	background:#f22f16;
+	color: white;
+	box-shadow: 3px 3px 12px rgba(0,102,255,0.4);
+}
+
+.four .center .left .more:hover .jiantou{
+	background: url("../images/baiSanjiao.png") no-repeat;
+}
+.four .center .right{
+	width: 45%;
+	height: 340px;
+	margin-left: 5%;
+	float: left;
+	/*background: url("../images/sanKou.jpg") no-repeat;*/
+	background-size: cover;
+	background-position: 100%;
+}
+.four .center .right img{
+	width: 100%;
+}
+.five{
+	width: 100%;
+	position: relative;
+}
+.five .title{
+	width: 50%;
+	font-size: 42px;
+	color: white;
+	text-align: center;
+	position: absolute;
+	left: 25%;
+	top: 10%;
+}
+.five .small{
+	width: 50%;
+	margin: 20px auto;
+	font-size:20px;
+	color: white;
+	text-align: center;
+	position: absolute;
+	left: 25%;
+	top: 18%;
+}
+.five img.pcbackimg{
+	display: block;
+}
+.five img.sjbackimg{
+	display: none;
+}
+.five img.smallimg{
+	width: 50%;
+	position: absolute;
+	left: 25%;
+	top: 30%;
+}
+.five .more{
+	display: inline-block;
+	width: 120px;
+	padding: 10px;
+	color: #f22f16;
+	border-radius: 20px;
+	position: absolute;
+	left: 45%;
+	bottom: 15%;
+	text-indent: 1em;
+	background: white url("../images/lanSanjiao.png") no-repeat 80% center;
+	-webkit-transition:0.5s;
+	-moz-transition:0.5s;
+	-ms-transition:0.5s;
+	-o-transition:0.5s;
+	transition:0.5s;
+}
+.five .more .jiantou{
+	display: block;
+	width: 10px;
+	height: 11px;
+	background: url("../images/lanSanjiao.png") no-repeat;
+	position: absolute;
+	right: 20px;
+	top: 13px;
+}
+.five .more:hover{
+	color: white;
+	background: #f22f16 url("../images/baiSanjiao.png") no-repeat 80% center;
+}
+
+.five .more:hover .jiantou{
+	background: url("../images/baiSanjiao.png") no-repeat;
+}
+
+
+/*联系翼猫*/
+.contact{
+	width: 1280px;
+	height: 600px;
+	height: auto;
+	margin: 60px auto;
+	margin-top: 0;
+	padding-top: 60px;
+}
+.contact .top{
+	width: 100%;
+	margin:0 auto;
+	margin-bottom: 30px;
+}
+.contact .bottom{
+	width: 100%;
+	margin: 0 auto;
+}
+.contact .bottom .xianlu{
+	height: 60px;
+}
+.contact .bottom .xianlu img{
+	float: left;
+}
+.contact .bottom .xianlu .chengche{
+	float: right;
+	width: calc(100% - 70px);
+	height: 30px;
+	margin-top: 30px;
+}
+.contact .bottom .map{
+	width: 100%;
+	height: 500px;
+	margin-top: 20px;
+}
+
+@media screen and (max-device-width : 768px){
+	.header,.list,.share,.foot{
+		display: none;
+	}
+	.banner{
+		margin-top: 60px !important;
+	}
+	.banner img.pcbanner{
+		display: none;
+	}
+	.banner img.sjbanner{
+		display: block;
+		width: 100%;
+	}
+
+	/*5大创始人*/
+	.founder{
+		width: 100%;
+		height: auto;
+		border-bottom: solid 1px #ccc;
+	}
+	.founder .center{
+		width: 100%;
+		margin: 0 auto;
+	}
+	.founder .center .top{
+		width: 100%;
+		margin: 30px 0;
+	}
+	.founder .center .top .title{
+		font: bold 24px/1.5em "Microsoft YaHei";
+		text-align: center;
+	}
+	.founder .center .top .line{
+		width: 100px;
+		border: solid 1px #f22f16;
+		margin: 20px auto;
+	}
+	.founder .center .top .etitle{
+		font: 18px/1.5em "Microsoft YaHei";
+		color: #f22f16;
+		text-align: center;
+	}
+	.founder .center .bottom{
+		width: 90%;
+		margin: 0 auto;
+		margin-bottom: 0px;
+		overflow: hidden;
+	}
+	.founder .center .bottom .csr{
+		width: 60%;
+		float: left;
+		margin: 0 20%;
+		margin-bottom: 40px;
+	}
+	.founder .center .bottom .csr:nth-child(5){
+		margin-right: 0;
+	}
+	.founder .center .bottom .csr img{
+		width: 100%;
+	}
+	.founder .center .bottom .csr .line{
+		width: 30px;
+		margin: 15px 0;
+		border: solid 1px #f22f16;
+	}
+	.founder .center .bottom .csr .jieshao{
+		font: 14px/1.5em "Microsoft YaHei";
+	}
+	/*5大创始人*/
+
+
+	.about{
+		width: 100%;
+		margin: 0;
+	}
+	.about .center{
+		width: 100%;
+	}
+	.about .left{
+		width: 90%;
+		margin-left: 4%;
+	}
+	.about .left .title{
+		text-align: left;
+		padding: 10px 0;
+	}
+	.about .left .aboutus{
+		font-size: 14px;
+		padding-top: 10px;
+	}
+	.about .more{
+		margin-top: 10px;
+		font-size: 15px;
+	}
+	.about .right{
+		display: none;
+	}
+	.main{
+		width: 100%;
+	}
+	.main .three{
+		width: 100%;
+	}
+	.main .three .center,.main .four .center,.main .rencai .center{
+		width: 100%;
+		margin-top: 10px;
+		padding-top: 0;
+	}
+	.three .center{
+	    background: url(../images/diTU.jpg) no-repeat center top;
+    	background-size: 80%;
+    	height: auto;
+	}
+	.three .center .right{
+		padding-top: 58%;
+	}
+	.three .center .right .title{
+		font: bold 20px/1.5em "Microsoft YaHei";
+		margin-bottom: 0;
+		padding-bottom: 10px;
+	}
+	.three .center .right .small{
+		font: 20px/1.5em "Microsoft YaHei";
+		margin-bottom: 10px;
+		padding-bottom: 10px;
+	}
+	.three .center .right .jieshao{
+		font-size: 14px;
+		line-height: 2em;
+		margin-top: 10px;
+	}
+	.four .center{
+	    background: url(../images/sanKou.jpg) no-repeat center top;
+    	background-size: 70%;
+	}
+	.four .center .left{
+    	padding-top: 45%;
+	}
+	.four .center .left .title{
+		font: bold 20px/1.5em "Microsoft YaHei";
+		margin-bottom: 0;
+		padding-bottom: 10px;
+	}
+	.four .center .left .small{
+		font: 20px/1.5em "Microsoft YaHei";
+		margin-bottom: 0;
+		padding-bottom: 10px;
+	}
+	.four .center .left .jieshao{
+		font-size: 14px;
+		line-height: 2em;
+		margin-top: 10px;
+	}
+	.main .rencai .center{
+		height: auto;
+		padding-top: 0;
+	    background: url(../images/rencai.jpg) no-repeat center top;
+    	background-size: 50%;
+	}
+	.rencai .center .right .title{
+		font: bold 20px/1.5em "Microsoft YaHei";
+		margin-bottom: 0;
+		padding-bottom: 10px;
+	}
+	.rencai .center .right .small{
+		font: 20px/1.5em "Microsoft YaHei";
+		margin-bottom: 0;
+		padding-bottom: 10px;
+	}
+	.rencai .center .right .jieshao{
+		font-size: 14px;
+		line-height: 2em;
+		margin-top: 10px;
+	}
+
+
+
+
+
+
+
+
+
+	
+	.main .three .center .left{
+		width: 90%;
+		margin-left:4%;
+	}
+	.main .three .center .right{
+		width: 90%;
+		margin-left:4%;
+	}
+	.main .four{
+		padding-bottom: 0;
+	}
+	.main .four .center .left{
+		width: 90%;
+		margin-left:4%;
+		margin-bottom: 10px;
+		float: left;
+	}
+	.main .four .center .right{
+		width: 90%;
+		margin-left:4%;
+		float: left;
+		height: auto;
+	}
+
+	.main .rencai .center .left{
+		width: 90%;
+		margin-left:4%;
+		float: left;
+	}
+	.rencai .center .left img{
+		width: 90%;
+	}
+	.main .rencai .center .right{
+		width: 90%;
+		margin-left:4%;
+		margin-bottom: 20px;
+		padding-top: 60%;
+		float: left;
+	}
+	.five{
+		background: url(../images/mobile/bg3.jpg) no-repeat;
+	    background-size: cover;
+	    background-position: 100%;
+	}
+	.five .title{
+		width: 90%;
+		left: 5%;
+		top: 5%;
+		font: bold 20px/1.5em "Microsoft YaHei";
+	}
+	.five .small {
+	    width: 90%;
+	    left: 5%;
+	    top: 10%;
+	    font: 14px/1.5em "Microsoft YaHei";
+	}
+	.five img{
+		width: 100%;
+	}
+	.five img.pcbackimg{
+		display: none;
+	}
+	.five img.sjbackimg{
+		display: block;
+	}
+	.five img.smallimg{
+		width: 90%;
+	    position: absolute;
+	    left: 5%;
+	    top: 30%;
+	}
+	.five .more {
+	    width: 34%;
+	    padding: 10px 15px 10px 0px;
+	    left: 32%;
+	    bottom: 5%;
+	    text-align: center;
+	    text-indent: 0;
+	}
+	.five .more .jiantou{
+		top: 8px;
+	}
+	.contact{
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	.contact .bottom .xianlu .chengche {
+	    width: calc(100% - 70px);
+	    line-height: 2em;
+	    /*height: 3.6em;*/
+	    font-size: 12px;
+	    margin-top: 0;
+	}
+	.contact .bottom .map{
+		height: 300px;
+	}
+	.BMapLib_SearchInfoWindow{
+		display: none !important;
+	}
+	.hylx{
+		width: 100%;
+		padding: 20px 0;
+	}
+	.hylx img{
+		width: 80%;
+	}
+	.hylx .xinxi{
+		width: 90%;
+		margin-left: 8%;
+		color: black;
+		line-height: 2em;
+		font-size: 18px;
+	}
+	.hylx .email,.hylx .phone{
+		width: 90%;
+		margin-left: 8%;
+		color: #999;
+		line-height: 2em;
+		font-size: 16px;
+	}
+	.lastdiv{
+		width: 100%;
+		background: #333;
+		padding-bottom: 20px;
+	}
+	.lastdiv .company{
+		width: 92%;
+		height: 20px;
+		line-height: 20px;
+		margin: 0 auto;
+		padding: 20px 0 10px 0;
+		font-size: 16px;
+	}
+	.lastdiv .company img{
+		width: 24%;
+		margin-right: 5px;
+	}
+	.lastdiv .copyr{
+		width: 92%;
+		line-height: 1.2em;
+		margin: 0 auto;
+		padding: 5px 0;
+		font-size: 12px;
+	}
+	.lastdiv .co{
+		width: 92%;
+		line-height: 1.2em;
+		margin: 0 auto;
+		padding: 5px 0;
+		font-size: 12px;
+	}
+	.lastdiv .lastshare{
+		width: 92%;
+		margin: 0 auto;
+		padding: 10px 0;
+		overflow: hidden;
+	}
+	.lastdiv .lastshare .weixin{
+		display: block;
+	    float: left;
+	    width: 50px;
+	    height: 50px;
+	    background: url("../images/follow.png") no-repeat 0 0;
+	    margin-right: 20px;
+	}
+	.lastdiv .lastshare .weibo{
+		display: block;
+	    float: left;
+	    width: 50px;
+	    height: 50px;
+	    background: url("../images/follow.png") no-repeat -58px 0;
+	    margin-right: 20px;
+	}
+
+
+}
+
+
+/*联系翼猫*/
+@keyframes m
+{
+0%   {opacity: 0.2}
+33%  {opacity: 0.5}
+66%  {opacity: 0.8}
+100% {opacity: 1}
+}
+
+@-moz-keyframes m /* Firefox */
+{
+0%   {opacity: 0.2}
+33%  {opacity: 0.5}
+66%  {opacity: 0.8}
+100% {opacity: 1}
+}
+
+@-webkit-keyframes m /* Safari and Chrome */
+{
+0%   {opacity: 0.2}
+33%  {opacity: 0.5}
+66%  {opacity: 0.8}
+100% {opacity: 1}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

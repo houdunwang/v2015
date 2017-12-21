@@ -1,0 +1,80 @@
+{template 'content', 'header'}
+<!--main-->
+<div class="main special-channel">
+	<div class="col-left">
+        <div class="box-hots">
+            <div class="icon"></div>
+            <div class="content">
+            	<div class="special-slide">
+				{pc:special  action="lists" siteid="$siteid" elite="1" listorder="3" num="2"}
+                    <div class="changeDiv">
+					{loop $data $r}
+                        <a href="{$r['url']}"><img src="{thumb($r['thumb'], 224, 112)}" width="224" height="112" alt="{$r['title']}" /><p><strong>{$r['title']}</strong><br />
+{$r['description']}</p></a>
+					{/loop}
+                    </div>
+				{/pc}
+                    <div class="change">
+                        <i class="cur">1</i>
+                        <i>2</i>
+                    </div>
+                </div>
+<script type="text/javascript"> 
+$(function(){
+	new slide(".special-slide","cur",674,126);
+})
+</script>
+<div class=" bk30 hr"></div>
+{pc:special action="lists" siteid="$siteid" elite="1" listorder="3"}
+<ul class="list row-2 f14 lh24">
+	{loop $data $r}
+    <li>·<a href="{$r['url']}" target="_blank">{str_cut($r['title'], 42)}</a></li>
+   {/loop}
+</ul>
+
+{/pc}
+</div>
+        </div>
+        <div class="bk10"></div>
+        <div class="box">
+        		<h5>专题</h5>
+<div class="pad-lr-10">
+{pc:special action="lists" siteid="$siteid" listorder="3" page="$page" num="20"}
+    <ul class="list row-2 f14 lh24">
+	{loop $data $r}
+		<li>·<a href="{$r['url']}" target="_blank">{str_cut($r['title'], 42)}</a></li>
+
+	{/loop}
+    </ul>
+	<div id="pages" class="text-c">{$pages}</div>
+{/pc}
+</div>
+        </div>
+    </div>
+<div class="col-auto">
+
+    <div class="box">
+            <h5 class="title-2">一周点击排行</h5>
+			{pc:special action="hits" num="10" order="views DESC"}
+            <ul class="content digg">
+				{loop $data $r}
+                <li><a href="{$r[url]}" target="_blank">{$r[title]}</a></li>
+            {/loop}
+            </ul>
+			{/pc}
+    </div>
+    <div class="bk10"></div>
+    <div class="box">
+            <h5 class="title-2">一周评论排行</h5>
+			{pc:comment action="bang" cache="3600"}
+            <ul class="content digg">
+				{loop $data $r}
+                <li><a href="{$r[url]}" target="_blank">{$r[title]}</a></li>
+            {/loop}
+            </ul>
+			{/pc}
+    </div>
+</div>
+
+</div>
+{template 'content', 'footer'}

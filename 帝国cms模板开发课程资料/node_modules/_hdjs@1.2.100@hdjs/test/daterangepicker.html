@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        window.hdjs = {};
+        window.hdjs.base = '../';
+        window.hdjs.uploader = 'test/php/uploader.php?';
+        window.hdjs.filesLists = 'test/php/filesLists.php?';
+    </script>
+    <script src="../dist/static/requirejs/require.js"></script>
+    <script src="../dist/static/requirejs/config.js"></script>
+</head>
+<body style="padding: 50px;">
+<input name="birthdate" value="2017-11-07 至 2017-12-22"  class="form-control"/>
+<script>
+    require(['hdjs'], function (hdjs) {
+        hdjs.daterangepicker({
+            //标签元素
+            element: 'input[name="birthdate"]'
+        });
+    })
+</script>
+<hr>
+<input name="birthdate" value="2019-02-22 至 2020-3-22" class="form-control"/>
+<script>
+    require(['hdjs', 'moment'], function (hdjs, moment) {
+        hdjs.daterangepicker({
+            //标签元素
+            element: 'input[name="birthdate"]',
+            //选项参考插件官网
+            options: {
+                ranges: {
+                    //'最近1小时': [moment().subtract('hours',1), moment()],
+                    '今日': [moment().startOf('day'), moment()],
+                    '昨日': [moment().subtract('days', 1).startOf('day'), moment().subtract('days', 1).endOf('day')],
+                    '最近7日': [moment().subtract('days', 6), moment()],
+                    '最近30日': [moment().subtract('days', 29), moment()],
+                    '本月': [moment().startOf("month"), moment().endOf("month")],
+                    '上个月': [moment().subtract(1, "month").startOf("month"), moment().subtract(1, "month").endOf("month")]
+                },
+                showDropdowns: true,
+                alwaysShowCalendars: true,
+            },
+            callback: function (start, end, label) {
+                var str = start.format('YYYY-MM-DD') + ' 至 ' + end.format('YYYY-MM-DD');
+                console.log(str);
+            }
+        });
+    })
+</script>
+</body>
+</html>

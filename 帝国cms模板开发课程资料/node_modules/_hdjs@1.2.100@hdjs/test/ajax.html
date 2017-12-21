@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        window.hdjs = {};
+        window.hdjs.base = '../';
+        window.hdjs.uploader = 'php/uploader.php?';
+        window.hdjs.filesLists = 'php/filesLists.php?';
+    </script>
+    <script src="../dist/static/requirejs/require.js"></script>
+    <script src="../dist/static/requirejs/config.js"></script>
+</head>
+<body style="padding: 50px;">
+<button onclick="get()">GET请求</button>
+<button onclick="post()">POST请求</button>
+<script>
+    function get() {
+        require(['hdjs'], function (hdjs) {
+            hdjs.ajax({
+                type: 'get',
+                data: {id: 22, name: 'hdjs'},
+                successUrl: 'http://hdjs.hdphp.com'
+            })
+        });
+    }
+
+    function post() {
+        require(['hdjs'], function (hdjs) {
+            hdjs.ajax({
+                data: {id: 22, name: 'hdjs'}
+            })
+        });
+    }
+</script>
+</body>
+</html>

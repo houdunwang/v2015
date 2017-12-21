@@ -1,0 +1,67 @@
+{template 'member', 'header'}
+<script language="javascript" type="text/javascript" src="{JS_PATH}admin_common.js"></script> 
+<link href="{CSS_PATH}dialog.css" rel="stylesheet" type="text/css" /> 
+<script language="javascript" type="text/javascript" src="{JS_PATH}dialog.js"></script>
+<div id="memberArea">
+{template 'member', 'left'}
+<div class="col-auto">
+<div class="col-1 ">
+<h6 class="title">收件箱</h6>
+<div class="content"> 
+<form name="myform" id="myform" action="{APP_PATH}index.php?m=message&c=index&a=delete" method="post" onsubmit="checkuid();return false;">
+<table width="100%" cellspacing="0"  class="table-list">
+        <thead>
+            <tr>
+            <th width="5%"><input type="checkbox" value="" id="check_box" onclick="selectall('messageid[]');"></th>
+            <th width="35%">标 题</th>
+            <th width="8%">回 复</th>
+            <th width="15%">发件人</th>
+            <th width="15%">发送时间</th>
+            </tr>
+        </thead>
+    <tbody>
+	{loop $infos $info} 
+	<tr>
+	<td width="5%" align="center"><input type="checkbox" name="messageid[]" value="{$info['messageid']}"></td>
+	<td  width="35%" align=""><a href="{APP_PATH}index.php?m=message&c=index&a=read&messageid={$info['messageid']}">{if $info['status']==1}<font color=red><b>{$info['subject']}</b></font>{else}{$info['subject']}{/if}</a></td>
+	<td width="8%" align="center">{if $info['status']!=2}{/if}{$info['reply_num']}</td>
+	<td width="15%" align="center">{$info['send_from_id']}</td>
+	<td width="15%" align="center">{date('Y-m-d H:i:s',$info['message_time'])} </a>
+	</tr>
+	{/loop}
+	
+    </tbody>
+    </table>
+<div class="btn"><a href="#" onClick="javascript:$('input[type=checkbox]').attr('checked', true)">全选</a>/<a href="#" onClick="javascript:$('input[type=checkbox]').attr('checked', false)">取消</a> 
+<input name="submit" type="submit" class="button" value="删除选中" onClick="return confirm('确认要删除 『 选中 』 吗？')">&nbsp;&nbsp;</div> 
+
+</form>   
+
+<div id="pages">{$pages}</div>
+</div>
+<span class="o1"></span><span class="o2"></span><span class="o3"></span><span class="o4"></span>
+</div>
+
+</div>
+</div>
+<script type="text/javascript">
+function read(id, name) {
+	window.top.art.dialog({id:'sell_all'}).close();
+	window.top.art.dialog({title:'查看详情'+name+' ',id:'edit',iframe:'?m=message&c=index&a=read&messageid='+id,width:'700',height:'450'}, function(){var d = window.top.art.dialog({id:'see_all'}).data.iframe;var form = d.document.getElementById('dosubmit');form.click();return false;}, function(){window.top.art.dialog({id:'see_all'}).close()});
+}
+function checkuid() {
+	var ids='';
+	$("input[name='messageid[]']:checked").each(function(i, n){
+		ids += $(n).val() + ',';
+	});
+	if(ids=='') {
+		window.top.art.dialog({content:'请选择再执行操作',lock:true,width:'200',height:'50',time:1.5},function(){});
+		return false;
+	} else {
+		myform.submit();
+	}
+}
+
+</script>
+{template 'member', 'footer'}
+

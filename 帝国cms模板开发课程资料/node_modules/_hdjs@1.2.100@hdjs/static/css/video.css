@@ -1,0 +1,31 @@
+#VideoSpeed {
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  position: relative;
+  cursor: pointer;
+  padding: 0px 10px;
+  line-height: 36px;
+  text-align: center;
+  flex: 0.06;
+}
+#VideoSpeed ul {
+  position: absolute;
+  width: 100%;
+  background: #1E242C;
+  bottom: 36px;
+  padding: 0px;
+  left: 0px;
+  display: none;
+}
+#VideoSpeed ul li {
+  padding: 2px 5px;
+  cursor: pointer;
+  list-style: none;
+  width: 100%;
+  font-size: 14px;
+}
+#VideoSpeed .active {
+  color: red;
+  font-weight: 700;
+}

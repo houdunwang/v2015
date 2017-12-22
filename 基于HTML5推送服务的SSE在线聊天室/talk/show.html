@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+	</head>
+
+	<body>
+		<div class="container">
+			<div id="msg-div" class="animated slideInUp"></div>
+			<form class="form-inline " action="javascript:;">
+				<input type="text" class="form-control" required="" name="message" placeholder="" autofocus="autofocus">
+				<button type="submit" class="btn btn-primary" id="submit">发言</button>
+			</form>
+		</div>
+
+	</body>
+	<script type="text/javascript">
+		var evtSource;
+		function get(){
+			evtSource = new EventSource("index.php?a=get");
+			evtSource.onmessage = function(e){
+				$('#msg-div').html(e.data);
+			}
+		}
+		get();
+		$('form').submit(function(){
+			var input = $('input[name=message]');
+			var msg = input.val();
+			$.ajax({
+				type:"post",
+				url:"index.php?a=put",
+				data:{content:msg}
+			});
+			input.val('');
+		})
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+</html>

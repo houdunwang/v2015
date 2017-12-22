@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			var source = new EventSource('send.php');
+			source.onmessage = function(e){
+				document.getElementById('span-box').innerHTML = e.data;
+			}
+		</script>
+	</head>
+	<body>
+		<p>接收到的数据：<span id="span-box"></span></p>
+	</body>
+</html>

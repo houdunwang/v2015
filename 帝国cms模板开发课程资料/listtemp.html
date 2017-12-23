@@ -92,21 +92,20 @@
 
         <div id="navbar-spy" class="collapse navbar-collapse navbar-responsive-collapse">
             <ul class="nav navbar-nav pull-right">
+
                 <li class="active">
-                    <a href="index.html">Home</a>
+                    <a href="/">首页</a>
                 </li>
-                <!--<li>-->
-                    <!--<a href="about.html">About</a>-->
-                <!--</li>-->
-                <!--<li>-->
-                    <!--<a href="blog.html">Blog</a>-->
-                <!--</li>-->
-                <!--<li>-->
-                    <!--<a href="team.html">Team</a>-->
-                <!--</li>-->
-                <!--<li>-->
-                    <!--<a href="contact.html"><span>Contact</span></a>-->
-                <!--</li>-->
+                [e:loop={'select * from phome_enewsclass where showclass = 0',5,24,0}]
+                <li>
+                    <a href="[!--news.url--]e/action/ListInfo/?classid=<?=$bqr['classid']?>"><?=$bqr['classname']?></a>
+                </li>
+                [/e:loop]
+                [e:loop={'select * from phome_enewspage',5,24,0}]
+                <li>
+                    <a href="[!--news.url--]<?=$bqr['path']?>"><?=$bqr['title']?></a>
+                </li>
+                [/e:loop]
             </ul>
         </div>
     </div>

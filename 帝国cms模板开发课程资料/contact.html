@@ -114,128 +114,91 @@
 </nav>
 
 
-<!-- End Header -->
+        <!--End Header -->
 
-<!-- Begin #carousel-section -->
-<div class="swiper-container">
-    <div class="swiper-wrapper">
-                <div class="swiper-slide">
-            <a href="http://bbs.houdunwang.com" target="_blank" style="display:block;width: 100%;"><img src="/d/file/slide/2017-12-13/41bb2c604b7bb4b657444ef497f1a656.jpg" style="width: 100%;">
-                <p>向军大叔带你学习 react native</p>
-            </a>
-        </div>
-                <div class="swiper-slide">
-            <a href="http://www.houdunren.com" target="_blank" style="display:block;width: 100%;"><img src="/d/file/slide/2017-12-13/71f7a4c6fcc584dfc4494c3c993b5c89.jpg" style="width: 100%;">
-                <p>年终盛会,换个姿势迎新年</p>
-            </a>
-        </div>
-                <div class="swiper-slide">
-            <a href="http://www.houdunwang.com" target="_blank" style="display:block;width: 100%;"><img src="/d/file/slide/2017-12-13/c244a3c55e620899588c9880e7e66927.jpg" style="width: 100%;">
-                <p>后盾人 人人做后盾</p>
-            </a>
-        </div>
+
+        <!-- Main Container -->
+
+        <div class="container-fluid-kamn">
+            <div class="row">
+                <div>
+                    <!--<iframe width="100%" height="450px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3618.727010735933!2d91.837871!3d24.907291700000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1404919738144"></iframe>-->
+                    <div class="map" style="height: 500px;" id="allmap"></div>
+                    <br />
+                </div>
+                <div class="col-lg-4 col-lg-offset-1">
+                    <h4>联系我们:</h4>
+                    <p class="block-author"> 后盾人 人人做后盾</p>
+                    <p>北京市朝阳区马泉营顺白路12号 后盾IT教育</p>
+                    <p>联系电话: 400-682-3231</p>
+                </div>
+                <div class="col-lg-5">
+                    <div class="feedback-form">
+          
+                        <div id="contact-response"></div>
+            
+                        <form action="http://templates.designorbital.com/baleen/contact.php" method="post" id="contact-form">
+                            <fieldset>
+                                <div class="form-group form-group-fullname">
+                                    <label class="control-label" for="fullname">姓名 *</label>
+                                    <input type="text" class="form-control" name="fullname" id="fullname" placeholder="请输入你的姓名...">
+                                </div>
+                                <div class="form-group form-group-email">
+                                    <label class="control-label" for="email">邮箱 *</label>
+                                    <input type="text" class="form-control" name="email" id="email" placeholder="请输入你的邮箱...">
+                                </div>
+                                <div class="form-group form-group-message">
+                                    <label class="control-label" for="message">说点什么 *</label>
+                                    <textarea class="form-control" name="message" id="message" rows="10" style="resize: none;"></textarea>
+                                </div>           
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </fieldset>
+                        </form>
+                    </div> 
+                </div>
             </div>
-    <!-- Add Pagination -->
-    <div class="swiper-pagination"></div>
-    <!-- Add Arrows -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-</div>
-<script src="/skin/houdunren/js/swiper.min.js"></script>
-<script>
-    var swiper = new Swiper('.swiper-container', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
+        </div>    
+            
+    <!--End Main Container -->
+
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=849628ca3f0fd087fa3558737aa03109"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+<link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+<!--地图js-->
+<script type="text/javascript">
+    // 百度地图API功能
+    var map = new BMap.Map('allmap');
+    var poi = new BMap.Point(116.52179315359358,40.04801374641647);
+    map.centerAndZoom(poi, 18);
+    map.disableScrollWheelZoom();
+
+    var content = '<div style="margin:0;line-height:20px;padding:2px;">' +
+        '<img src="/skin/houdunren/images/houdunwang.jpg" alt="" style="float:right;zoom:1;overflow:hidden;width:70px;height:70;margin-left:3px;background:#f22f16"/>' +
+        '地址：北京市朝阳区马泉营顺白路12号比目鱼创业园A区<br/>电话：400-682-3231<br/>简介：后盾网隶属于北京后盾计算机技术培训有限责任公司，是专注于培养中国互联网顶尖PHP程序语言专业人才的专业型培训机构。' +
+        '</div>';
+
+    //创建检索信息窗口对象
+    var searchInfoWindow = null;
+    searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {
+        title  : "后盾IT教育",      //标题
+        width  : 340,             //宽度
+        height : 125,              //高度
+        panel  : "panel",         //检索结果面板
+        enableAutoPan : true,     //自动平移
+        searchTypes   :[
+            BMAPLIB_TAB_SEARCH,   //周边检索
+            BMAPLIB_TAB_TO_HERE,  //到这里去
+            BMAPLIB_TAB_FROM_HERE //从这里出发
+        ]
     });
+    var marker = new BMap.Marker(poi); //创建marker对象
+    searchInfoWindow.open(marker);
+    marker.addEventListener("click", function(e){
+        searchInfoWindow.open(marker);
+    })
+    map.addOverlay(marker); //在地图中添加marker
 </script>
-<!-- Begin #services-section -->
-
-
-<section id="services" class="services-section section-global-wrapper">
-    <div class="container">
-        <div class="row">
-            <div class="services-header">
-                <h3 class="services-header-title">推荐新闻</h3>
-                <!--<p class="services-header-body"><em> Things we provide in Office </em>  </p><hr>-->
-            </div>
-        </div>
-
-        <!-- Begin Services Row 1 -->
-        <div class="row services-row services-row-head services-row-1">
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                <div class="services-group wow animated fadeInLeft" data-wow-offset="40">
-                    <p class="services-icon"><span class="fa fa-android fa-5x"></span></p>
-                    <h4 class="services-title">文章标题</h4>
-                    <p class="services-body">文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介.</p>
-                    <p class="services-more"><a href="#">了解更多</a></p>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                <div class="services-group wow animated zoomIn" data-wow-offset="40">
-                    <p class="services-icon"><i class="fa fa-apple fa-5x"></i></p>
-                    <h4 class="services-title">文章标题</h4>
-                    <p class="services-body">文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介.</p>
-                    <p class="services-more"><a href="#">了解更多</a></p>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                <div class="services-group wow animated fadeInRight" data-wow-offset="40">
-                    <p class="services-icon"><i class="fa fa-thumbs-o-up fa-5x"></i></p>
-                    <h4 class="services-title">文章标题</h4>
-                    <p class="services-body">文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介.</p>
-                    <p class="services-more"><a href="#">了解更多</a></p>
-                </div>
-            </div>
-        </div>
-        <!-- End Serivces Row 1 -->
-
-        <!-- Begin Services Row 2 -->
-        <div class="row services-row services-row-tail services-row-2">
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                <div class="services-group wow animated fadeInLeft" data-wow-offset="40">
-                    <p class="services-icon"><span class="fa fa-windows fa-5x"></span></p>
-                    <h4 class="services-title">文章标题</h4>
-                    <p class="services-body">文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介.</p>
-                    <p class="services-more"><a href="#">了解更多</a></p>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                <div class="services-group wow animated zoomIn" data-wow-offset="40">
-                    <p class="services-icon"><i class="fa fa-eye fa-5x"></i></p>
-                    <h4 class="services-title">文章标题</h4>
-                    <p class="services-body">文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介.</p>
-                    <p class="services-more"><a href="#">了解更多</a></p>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                <div class="services-group wow animated fadeInRight" data-wow-offset="40">
-                    <p class="services-icon"><i class="fa fa-cube fa-5x"></i></p>
-                    <h4 class="services-title">文章标题</h4>
-                    <p class="services-body">文章简介文章简介文章简介文章简介文章简介文章简介文章简介文章简介.</p>
-                    <p class="services-more"><a href="#">了解更多</a></p>
-                </div>
-            </div>
-        </div>
-        <!-- End Serivces Row 2 -->
-
-    </div>
-</section>
-<!-- End #services-section -->
-
-
+<!--地图js-->
 <footer>
     <div class="container">
         <div class="row">

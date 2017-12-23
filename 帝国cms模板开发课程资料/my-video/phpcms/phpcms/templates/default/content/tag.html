@@ -1,6 +1,0 @@
-{template "content","header"}
-
-{loop $infos $info}
-	<a href="{APP_PATH}index.php?m=content&c=tag&a=lists&tag={urlencode($info['keyword'])}">{$info['keyword']}</a>({$info['videonum']}) 
-{/loop}
-{template 'content', 'footer'}

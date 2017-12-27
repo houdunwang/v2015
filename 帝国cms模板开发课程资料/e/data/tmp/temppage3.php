@@ -9,10 +9,10 @@ if(!defined('InEmpireCMS'))
 
     <!-- meta data & title -->
     <meta charset="utf-8">
-    <title>Office</title>
+    <title>[!--pagetitle--]</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="[!--pagedes--]">
+    <meta name="keywords" content="[!--pagekey--]">
 
     <!-- Favicon and touch icons -->
     <link rel="shortcut icon" href="[!--news.url--]skin/houdunren/assets/ico/favicon.ico">
@@ -76,6 +76,16 @@ if(!defined('InEmpireCMS'))
             bottom:8%;
             color:white;
             font-size:30px;
+        }
+        .introduce{
+            overflow : hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+        .news{
+            margin:20px 0;
         }
     </style>
 </head>

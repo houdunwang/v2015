@@ -19,7 +19,7 @@ if(!defined('InEmpireCMS'))
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;颜色: <input name="titlecolor" type="text" value="<?=stripSlashes($r[titlecolor])?>" size="10"><a onclick="foreColor();"><img src="../data/images/color.gif" width="21" height="21" align="absbottom"></a>
   </td>
 </tr>
-</table></td></tr><tr><td width='16%' height=25 bgcolor='ffffff'>特殊属性</td><td bgcolor='ffffff'><table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#DBEAF5">
+</table></td></tr><tr><td width='16%' height=25 bgcolor='ffffff'>是否推荐</td><td bgcolor='ffffff'><input name="is_commend" type="radio" value="1"<?=$r[is_commend]=="1"?' checked':''?>>是<input name="is_commend" type="radio" value="0"<?=$r[is_commend]=="0"||$ecmsfirstpost==1?' checked':''?>>否:</td></tr><tr><td width='16%' height=25 bgcolor='ffffff'>特殊属性</td><td bgcolor='ffffff'><table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#DBEAF5">
   <tr>
     <td height="25" bgcolor="#FFFFFF">信息属性: 
       <input name="checked" type="checkbox" value="1"<?=$r[checked]?' checked':''?>>

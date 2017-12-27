@@ -29,6 +29,20 @@ if(!defined('InEmpireCMS'))
         </tr>
       </table></td>
   </tr>
+
+  <tr bgcolor="#FFFFFF"> 
+    <td height="22" valign="top"><strong>是否推荐正则：</strong><br>
+      (<input name="textfield" type="text" id="textfield" value="[!--is_commend--]" size="20">)</td>
+    <td><table width="100%" border="0" cellspacing="1" cellpadding="3">
+        <tr> 
+          <td><textarea name="add[zz_is_commend]" cols="60" rows="10" id="textarea"><?=ehtmlspecialchars(stripSlashes($r[zz_is_commend]))?></textarea></td>
+        </tr>
+        <tr> 
+          <td><input name="add[z_is_commend]" type="text" id="add[z_is_commend]" value="<?=stripSlashes($r[z_is_commend])?>">
+            (如填写这里，将为字段的值)</td>
+        </tr>
+      </table></td>
+  </tr>
   <tr bgcolor="#FFFFFF"> 
     <td height="22" valign="top"><strong>发布时间正则：</strong><br>
       (<input name="textfield" type="text" id="textfield" value="[!--newstime--]" size="20">)</td>

@@ -1,0 +1,23 @@
+@import url("base.css");
+.table{
+	border: none;
+}
+.table tr td{
+	font-size: 2.9vw;
+	line-height: 1.5em;
+	color: white;
+}
+.table tr th{
+	font-size: 2.9vw;
+	line-height: 1.5em;
+	color: white;
+}
+.main{
+	background: #E70012 url(../images/hongbangbg.jpg) no-repeat;
+	background-size: 100% auto;
+	padding-top: 50%;
+	
+}
+.table>tbody>tr>td{
+	border: none;
+}

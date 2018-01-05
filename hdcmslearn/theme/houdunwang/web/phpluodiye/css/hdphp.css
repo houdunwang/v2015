@@ -1,0 +1,407 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "microsoft yahei";
+}
+ol,
+ul {
+  padding: 0px;
+  margin: 0px;
+}
+ol,
+ul li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+p {
+  margin: 0px;
+  padding: 0px;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none !important;
+}
+a:focus {
+  text-decoration: none !important;
+}
+h1,
+h2,
+h3 {
+  margin: 0px;
+}
+body {
+  font-family: "PingFangSC", Helvetica, Arial, sans-serif;
+}
+html {
+  height: 100%;
+}
+.pad {
+  padding: 80px 0px;
+}
+.Htitle {
+  text-align: center;
+}
+.Htitle p {
+  font-size: 24px;
+  margin-bottom: 17px;
+}
+.Htitle span {
+  font-size: 12px;
+  display: block;
+}
+.menu {
+  height: 80px;
+  background: #fff;
+}
+.menu .menuCenter {
+  height: 80px;
+  width: 1200px;
+  margin: 0px auto;
+}
+.menu .menuCenter .logo {
+  float: left;
+}
+.menu .menuCenter .menuList {
+  line-height: 80px;
+  float: left;
+  padding-left: 40px;
+}
+.menu .menuCenter .menuList a {
+  padding: 0px 20px;
+  border-right: 1px dashed #DCDDDD ;
+  color: #000;
+}
+.menu .menuCenter .menuList .end {
+  border: none;
+}
+.menu .menuCenter .menuRight {
+  float: right;
+}
+.TopImg {
+  height: 501px;
+  background: url(../img/banner.jpg) no-repeat center;
+}
+.authority .authorityCenter {
+  width: 1200px;
+  margin: 0px auto;
+}
+.authority .authorityCenter ul {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 55px;
+}
+.authority .authorityCenter ul li {
+  flex: 1;
+  text-align: center;
+}
+.authority .authorityCenter ul li img {
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+}
+.authority .authorityCenter ul li p {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 17px;
+}
+.authority .authorityCenter ul li span {
+  font-size: 12px;
+  line-height: 24px;
+}
+.prospect {
+  background: #52AAC1;
+  color: #FFFFFF;
+  padding-bottom: 60px;
+}
+.prospect .prospectCenter {
+  width: 1200px;
+  margin: 0px auto;
+}
+.prospect .prospectCenter .Htitle p {
+  margin: 0px;
+}
+.prospect .prospectCenter .Htitle span {
+  line-height: 40px;
+  font-size: 14px;
+}
+.select {
+  background: #FFFFFF;
+}
+.select .selectCenter {
+  width: 1200px;
+  margin: 0px auto;
+}
+.select .selectCenter .selectBox {
+  width: 1200px;
+  height: 270px;
+  position: relative;
+}
+.select .selectCenter .selectBox .LeftBtn {
+  position: absolute;
+  left: -100px;
+  top: 50%;
+  margin-top: -20px;
+  width: 40px;
+  height: 40px;
+}
+.select .selectCenter .selectBox .LeftBtn img {
+  transform: rotate(180deg);
+}
+.select .selectCenter .selectBox .RightBtn {
+  position: absolute;
+  right: -100px;
+  top: 50%;
+  margin-top: -20px;
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.select .selectCenter .selectList {
+  width: 1200px;
+  height: 270px;
+  margin-top: 45px;
+  overflow: hidden;
+  position: relative;
+}
+.select .selectCenter .selectList ul {
+  margin-left: -432px;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.select .selectCenter .selectList ul li {
+  overflow: hidden;
+  width: 220px;
+  height: 270px;
+  border: 1px solid #52AAC1 ;
+  background: #F5F5F5;
+  padding-top: 40px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  text-align: center;
+  float: left;
+  margin-left: 106px;
+}
+.select .selectCenter .selectList ul li img {
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0px auto;
+  overflow: hidden;
+}
+.select .selectCenter .selectList ul li .name {
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.select .selectCenter .selectList ul li p {
+  font-size: 14px;
+}
+.select .selectCenter .selectList ul li a {
+  font-size: 13px;
+  line-height: 30px;
+  color: #52AAC1;
+}
+.select .selectCenter .selectList ul li a:hover {
+  color: #2D8AA2;
+}
+.apply {
+  background: #52AAC1;
+}
+.apply .Htitle {
+  color: #fff;
+}
+.apply .applyCenter {
+  width: 1200px;
+  margin: 0px auto;
+  margin-top: 50px;
+}
+.salary {
+  background: #fff;
+}
+.salary .salaryCenter {
+  width: 1200px;
+  margin: 0px auto;
+  margin-top: 50px;
+}
+.feedback {
+  background: #F5F5F5;
+}
+.feedback .feedbackList {
+  width: 1200px;
+  margin: 0px auto;
+  margin-top: 50px;
+  /**********roundabout**********/
+}
+.feedback .feedbackList .roundabout_box img {
+  width: 100%;
+}
+.feedback .feedbackList .roundabout_box {
+  height: 460px;
+  width: 1180px;
+  margin: 40px auto 20px auto;
+}
+.feedback .feedbackList .roundabout-holder {
+  list-style: none;
+  width: 900px;
+  height: 460px;
+  margin: 0px auto;
+}
+.feedback .feedbackList .roundabout-moveable-item {
+  font-size: 12px!important;
+  height: 460px;
+  width: 258px;
+  cursor: pointer;
+  background: #f9f9f9;
+  overflow: hidden;
+  opacity: 1 !important;
+  border-radius: 20px ;
+  box-shadow: 0px 0px 21px 5px #E6E6E6;
+}
+.concentration {
+  background: #52AAC1;
+}
+.concentration .Htitle {
+  color: #fff;
+}
+.concentration .concentrationC {
+  width: 1200px;
+  margin: 0px auto;
+  margin-top: 50px;
+}
+.independent {
+  background: #F5F5F5;
+}
+.independent .independentC {
+  width: 1200px;
+  margin: 0px auto;
+  margin-top: 50px;
+}
+.bottom {
+  text-align: center;
+  background: #52AAC1;
+  color: #fff;
+  line-height: 40px;
+}
+.bottom .title {
+  font-size: 28px;
+}
+.bottom p {
+  font-size: 24px;
+}
+.bottom .Hbtn {
+  display: inline-block;
+  width: 152px;
+  height: 44px;
+  background: #FFFFFF;
+  color: #13365C;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 44px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+#syllabus {
+  width: 1200px;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+#syllabus .title {
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#syllabus .title li {
+  list-style: none;
+  width: 190px;
+  background: dodgerblue;
+  background: #F5F5F5;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+#syllabus .title li h4 {
+  text-align: center;
+  font-size: 18px;
+}
+#syllabus .title li p {
+  text-align: center;
+  line-height: 1.5em;
+  font-size: 16px;
+}
+#syllabus .title li.cur {
+  background: #52AAC1;
+  color: white;
+  font-weight: 700;
+}
+#syllabus .con {
+  width: 1200px;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 2px solid #52AAC1;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  display: none;
+}
+#syllabus .con > li {
+  background: #F5F5F5;
+  width: 550px;
+  min-height: 200px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 2px dashed #52AAC1;
+  float: left;
+  box-sizing: border-box;
+  position: relative;
+}
+#syllabus .con > li .title {
+  font-weight: 700;
+  color: #52AAC1;
+  margin-top: 20px;
+  text-indent: 35px;
+  margin-bottom: 10px;
+}
+#syllabus .con > li > ul {
+  margin-left: 35px;
+  overflow: hidden;
+}
+#syllabus .con > li > ul > li {
+  line-height: 30px;
+  font-size: 13px;
+  list-style: none;
+  float: left;
+  margin-right: 10px;
+  width: 230px;
+  color: #333;
+  position: relative;
+  text-indent: 10px;
+}
+#syllabus .con > li > ul > li:after {
+  content: ' ';
+  width: 4px;
+  height: 4px;
+  background: #666;
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 13px;
+}
+#syllabus .con > li .bot {
+  clear: both;
+  padding: 10px 35px;
+  border-top: 1px dashed #52AAC1;
+  color: #333;
+  font-size: 13px;
+  margin-top: 10px;
+  line-height: 30px;
+}

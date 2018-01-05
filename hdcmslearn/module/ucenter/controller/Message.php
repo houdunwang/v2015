@@ -30,7 +30,7 @@ class Message extends Auth
      */
     public function lists(Notification $model)
     {
-        $data = $model->getPageLists(30);
+        $data = $model->getPageLists(30, Request::get('status'));
 
         return $this->view($this->template.'/message_lists', compact('data'));
     }

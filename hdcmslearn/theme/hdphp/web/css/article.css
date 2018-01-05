@@ -1,0 +1,52 @@
+.article {
+  width: 90%;
+  margin: 20px auto 20px;
+}
+.article .left {
+  background: #ffffff;
+  border: solid 1px #dcdcdc;
+  padding: 15px;
+}
+.article .left h1 {
+  font-size: 25px;
+  color: #666666;
+  text-align: center;
+  padding-bottom: 20px;
+}
+.article .left h2 {
+  margin-bottom: 5px;
+}
+.article .left div.times {
+  font-size: 14px;
+  color: #666666;
+  text-align: center;
+  clear: both;
+  margin-bottom: 15px;
+}
+.article .left div.times div.bdsharebuttonbox {
+  display: inline;
+  margin-left: 30px;
+  font-size: 13px;
+  height: 55px;
+}
+.article .left div.times div.bdsharebuttonbox a {
+  float: none;
+  font-size: 18px;
+}
+.article .right {
+  height: 300px;
+}
+.article .right .panel-body {
+  padding: 0px;
+}
+.article .right .panel-body ul,
+.article .right .panel-body li {
+  border: none;
+}
+.article .right .panel-body li {
+  border-bottom: solid 1px #dddddd;
+  background: none;
+}
+.article .right .panel-body li:last-child {
+  border-bottom: none;
+}

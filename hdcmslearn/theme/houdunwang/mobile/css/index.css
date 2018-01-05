@@ -1,0 +1,910 @@
+#slideArea {
+  width: 1200px;
+  height: 335px;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+#slideArea .topone {
+  float: left;
+  width: 213px;
+  height: 335px;
+  border: 1px solid #eaeaea;
+  position: relative;
+  background: #FFFFFF;
+}
+#slideArea .topone img {
+  float: left;
+  width: 213px;
+  height: 167px;
+}
+#slideArea .topone div.play {
+  background: url(../images/play.png) no-repeat 0px 0px;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 10px;
+  top: 184px;
+  color: white;
+  z-index: 10;
+  font-size: 40px;
+}
+#slideArea .topone .bodyarea {
+  float: left;
+  width: 100%;
+  height: 95px;
+  padding-top: 10px;
+}
+#slideArea .topone .bodyarea p {
+  margin: 0px;
+  text-indent: 11px;
+}
+#slideArea .topone .bodyarea .title {
+  font-size: 34px;
+  color: #141517;
+}
+#slideArea .topone .bodyarea .sectitle {
+  font-size: 20px;
+  color: #ff4300;
+}
+#slideArea div.banner {
+  margin: 0px 10px;
+  float: left;
+  position: relative;
+  overflow: auto;
+  width: 699px;
+  height: 335px;
+  border: solid 1px #dddddd;
+}
+#slideArea div.banner .dots {
+  bottom: 0px;
+  position: absolute;
+  right: 10px;
+}
+#slideArea div.banner .dots .dot {
+  border: 2px solid #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-block;
+  height: 10px;
+  margin: 0 4px;
+  opacity: 0.4;
+  text-indent: -999em;
+  transition: background 0.5s ease 0s, opacity 0.5s ease 0s;
+  width: 10px;
+}
+#slideArea div.banner .dots li.active {
+  background: none repeat scroll 0 0 #fff;
+  opacity: 1;
+}
+#slideArea div.banner li {
+  list-style: none;
+  float: left;
+}
+#slideArea div.banner li img {
+  width: 699px;
+  height: 335px;
+}
+#slideArea div.lession {
+  float: left;
+  width: 268px;
+  height: 335px;
+  padding: 0px 10px 0px 10px;
+  border: 1px solid #eaeaea;
+  background: #FFFFFF;
+}
+#slideArea div.lession h2 {
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  margin: 0px;
+  padding-left: 7px;
+}
+#slideArea div.lession p {
+  height: 30px;
+  line-height: 30px;
+}
+#slideArea div.lession p span {
+  font-size: 12px;
+  color: #ED4A57;
+  float: left;
+  color: #C11A17;
+}
+#slideArea div.lession p b {
+  font-size: 12px;
+  float: left;
+  color: #323232;
+  font-weight: 400;
+}
+#slideArea div.lession p i {
+  font-size: 12px;
+  float: right;
+  font-style: normal;
+  color: #999999;
+}
+#stuStyle {
+  width: 1200px;
+  height: 408px;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+#stuStyle .styleArea {
+  border: 1px solid #eaeaea;
+  width: 922px;
+  height: 100%;
+  float: left;
+  background: #FFFFFF;
+  margin-right: 10px;
+}
+#stuStyle .styleArea .styleHead {
+  float: left;
+  width: 100%;
+  height: 34px;
+  line-height: 34px;
+  background: #efefef;
+}
+#stuStyle .styleArea .styleHead h2 {
+  text-indent: 15px;
+  margin: 0px;
+  font-size: 14px;
+  float: left;
+  height: 100%;
+  line-height: 34px;
+}
+#stuStyle .styleArea .styleHead a {
+  float: right;
+  padding-right: 20px;
+  text-decoration: none;
+  color: #535353;
+}
+#stuStyle .styleArea .list {
+  float: left;
+}
+#stuStyle .styleArea .list li {
+  float: left;
+  width: 133px;
+  height: 165px;
+  margin: 12px 10px;
+  position: relative;
+  overflow: hidden;
+}
+#stuStyle .styleArea .list li a {
+  color: #333333;
+  font-size: 12px;
+  width: 135px;
+  height: 125px;
+  overflow: hidden;
+  display: block;
+}
+#stuStyle .styleArea .list li img {
+  border: 1px solid #E2E2E2;
+  width: 135px;
+}
+#stuStyle .styleArea .list li span.play {
+  background: url(../images/play.png) no-repeat 0px 0px;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 10px;
+  top: 58px;
+  z-index: 10;
+}
+#stuStyle .styleArea .list li p {
+  margin: 0px;
+}
+#stuStyle .styleArea .list li .title {
+  padding-top: 5px;
+  width: 100%;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+#stuStyle .styleArea .list li .title a {
+  color: #236EB2;
+  font-weight: bold;
+}
+#stuStyle .styleArea .list li .cate {
+  padding-top: 0px;
+  color: #555;
+}
+#stuStyle .eduinfo {
+  float: left;
+  width: 264px;
+  height: 100%;
+  padding: 0px 10px 0px 14px;
+  border: 1px solid #eaeaea;
+  background: #FFFFFF;
+}
+#stuStyle .eduinfo h2 {
+  height: 34px;
+  line-height: 34px;
+  font-size: 14px;
+  color: #535353;
+  margin: 0px;
+}
+#stuStyle .eduinfo .bodyarea {
+  float: left;
+  padding-top: 12px;
+}
+#stuStyle .eduinfo .bodyarea ul {
+  float: left;
+}
+#stuStyle .eduinfo .bodyarea ul li {
+  float: left;
+  width: 100%;
+  height: 23px;
+  line-height: 23px;
+}
+#stuStyle .eduinfo .bodyarea ul li b {
+  font-size: 12px;
+  color: #AAAAAA;
+  font-weight: 400;
+  padding-right: 5px;
+}
+#stuStyle .eduinfo .bodyarea ul li span {
+  color: #555;
+  font-size: 12px;
+  font-weight: normal;
+  float: left;
+  display: block;
+}
+#stuStyle .eduinfo .bodyarea ul li span.class {
+  width: 30px;
+}
+#stuStyle .eduinfo .bodyarea ul li span.name {
+  width: 52px;
+}
+#stuStyle .eduinfo .bodyarea ul li span.company {
+  width: 120px;
+  overflow: hidden;
+  height: 23px;
+}
+#stuStyle .eduinfo .bodyarea ul li span.salary {
+  float: right;
+}
+#stuStyle .eduinfo .bodyarea ul li.first {
+  height: auto;
+}
+#stuStyle .eduinfo .bodyarea ul li.first img {
+  width: 230px;
+}
+#stuStyle .eduinfo .bodyarea ul li.first p {
+  width: 100%;
+  float: left;
+  height: 30px;
+  line-height: 34px;
+  margin: 0px;
+}
+#stuStyle .eduinfo .bodyarea ul li.first p b {
+  color: #ff5300;
+  font-size: 16px;
+  font-weight: 400;
+}
+div#product {
+  width: 100%;
+  min-width: 1200px;
+  height: 360px;
+  overflow: hidden;
+  background: #DAE6EE;
+  margin-top: 10px;
+}
+div#product .productarea {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+div#product .productarea img {
+  float: left;
+}
+div#product .productarea .productbtn {
+  display: block;
+  position: absolute;
+  left: 595px;
+  top: 265px;
+  width: 230px;
+  height: 60px;
+}
+#stupro {
+  width: 1198px;
+  height: 338px;
+  margin: 10px auto;
+  border: 1px solid #eaeaea;
+  background: white;
+}
+#stupro .proheader {
+  text-indent: 10px;
+  width: 100%;
+  height: 51px;
+  line-height: 51px;
+  font-size: 14px;
+}
+#stupro .proheader span {
+  padding-left: 10px;
+  font-size: 12px;
+  color: #ff6500;
+}
+#stupro .proheader span a {
+  padding-left: 4px;
+  color: #ff6500;
+}
+#stupro .probody {
+  width: 100%;
+  overflow: hidden;
+}
+#stupro .probody li {
+  width: 208px;
+  float: left;
+  margin-left: 15px;
+  margin-right: 15px;
+  position: relative;
+}
+#stupro .probody li a {
+  float: left;
+  display: block;
+  width: 208px;
+  height: 208px;
+  overflow: hidden;
+}
+#stupro .probody li img {
+  /*width: 220px;*/
+  height: 208px;
+  border: 1px solid #e2e2e2;
+}
+#stupro .probody li div.play {
+  background: url(../images/play.png) no-repeat 0px 0px;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 10px;
+  top: 170px;
+  z-index: 100;
+}
+#stupro .probody li .title {
+  text-indent: 5px;
+  height: 20px;
+  line-height: 20px;
+  margin: 5px 0px;
+  font-size: 14px;
+  float: left;
+  width: 100%;
+  color: #252525;
+}
+#stupro .probody li .title a {
+  color: #333333;
+  font-size: 12px;
+}
+#stupro .probody li .des {
+  color: #989898;
+  float: left;
+  padding-left: 5px;
+  height: 32px;
+}
+#team {
+  width: 100%;
+  min-width: 1200px;
+  height: 450px;
+  margin-bottom: 10px;
+}
+#team .teamarea {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  background: #ffffff;
+  border: solid 1px #eaeaea;
+  position: relative;
+  overflow: hidden;
+}
+#team .teamarea .header {
+  width: 100%;
+  height: 80px;
+}
+#team .teamarea .header img {
+  display: block;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+#team .teamarea .member {
+  width: 100%;
+  height: auto;
+  margin-top: 25px;
+  position: absolute;
+  margin-left: 20px;
+}
+#team .teamarea .member li {
+  float: left;
+  width: 290px;
+  overflow: hidden;
+}
+#team .teamarea .member li img {
+  display: block;
+  width: 166px;
+  height: 166px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+#team .teamarea .member li h2 {
+  width: 100%;
+  margin: 5px 0px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 18px;
+}
+#team .teamarea .member li span {
+  color: #545454;
+  display: block;
+  width: 100%;
+  float: left;
+  text-align: center;
+  padding-bottom: 5px;
+}
+#team .teamarea .member li p {
+  float: left;
+  height: 130px;
+  line-height: 20px;
+  color: #55555f;
+  padding: 0px 10px;
+  width: 100%;
+  text-align: center;
+  margin: 0px auto;
+}
+#dream {
+  width: 100%;
+  height: 615px;
+  background: url(../images/bg.jpg) repeat 0px 0px;
+}
+#dream .content {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+#dream .content .font,
+#dream .content .oursuccess {
+  opacity: 0.7;
+  display: block;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+#dream .content .imgs {
+  margin-top: 26px;
+}
+#dream .content .imgs .left {
+  display: block;
+  float: left;
+  margin-left: 138px;
+  margin-right: 6px;
+}
+#dream .content .imgs .right {
+  float: left;
+  width: 487px;
+}
+#dream .content .imgs .right a {
+  display: block;
+  float: left;
+}
+#dream .content .imgs .right a.img2 {
+  margin-bottom: 5px;
+}
+#dream .content .imgs .right a.img3 {
+  margin-right: 6px;
+}
+#video {
+  width: 1200px;
+  height: 302px;
+  min-width: 1200px;
+  background: white;
+  margin: 0 auto;
+  margin-top: 10px;
+  border: solid 1px #eaeaea;
+  margin-bottom: 10px;
+}
+#video .videoarea {
+  width: 1000px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+#video .videoarea h2 {
+  position: absolute;
+  left: 0px;
+  top: 30px;
+  overflow: hidden;
+  line-height: 1000px;
+  width: 165px;
+  height: 41px;
+  background: url(../images/videotitle.jpg) no-repeat 0px 0px;
+}
+#video .videoarea .detail {
+  width: 481px;
+  height: 60px;
+  position: absolute;
+  left: 0px;
+  top: 100px;
+  color: #999999;
+  line-height: 23px;
+  font-size: 14px;
+}
+#video .videoarea .btn {
+  width: 208px;
+  height: 46px;
+  padding: 0px;
+  line-height: 46px;
+  display: block;
+  text-align: center;
+  background: #2cb753;
+  color: #FFFFFF;
+  font-size: 16px;
+  position: absolute;
+  left: 0px;
+  top: 200px;
+}
+#video .videoarea img {
+  position: absolute;
+  right: 0px;
+  top: 50px;
+}
+#clients {
+  width: 100%;
+  height: 380px;
+  background: url(../images/coroperation.jpg) repeat 0px 0px;
+  overflow: hidden;
+}
+#clients .clientarea {
+  position: relative;
+  width: 1000px;
+  margin: 0 auto;
+  height: 100%;
+}
+#clients .clientarea h2 {
+  text-indent: 93px;
+  color: #f4231a;
+  font-size: 16px;
+  height: 50px;
+  line-height: 40px;
+  background: url(../images/clients.jpg) no-repeat 0px 0px;
+  float: left;
+  width: 100%;
+  font-weight: 600;
+  margin: 0px;
+  margin-top: 4px;
+}
+#clients .clientarea p {
+  width: 100%;
+  float: left;
+  margin: 0px;
+  font-size: 14px;
+  color: #f4231a;
+}
+#clients .clientarea ul {
+  float: left;
+  width: 1017px;
+  margin-top: 20px;
+}
+#clients .clientarea ul li {
+  float: left;
+  padding-right: 17px;
+  padding-bottom: 17px;
+}
+#clients .clientarea ul li a {
+  float: left;
+}
+#clients .clientarea ul li a img {
+  float: left;
+  width: 120px;
+  height: 120px;
+}
+#news {
+  width: 100%;
+  min-width: 1200px;
+  height: 373px;
+  background: #FFFFFF;
+  overflow: hidden;
+}
+#news .newsarea {
+  width: 1000px;
+  height: 100%;
+  margin: 0 auto;
+}
+#news .newsarea dl {
+  width: 500px;
+  float: left;
+  margin: 0px;
+}
+#news .newsarea dl dt {
+  color: #666666;
+  width: 100%;
+  height: 50px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 50px;
+}
+#news .newsarea dl dd {
+  float: left;
+}
+#news .newsarea dl dd ul {
+  float: left;
+}
+#news .newsarea dl dd ul li {
+  width: 100%;
+  float: left;
+}
+#news .newsarea dl dd ul li a {
+  float: left;
+}
+#news .newsarea dl dd ul li div.font {
+  width: 370px;
+  float: left;
+}
+#news .newsarea dl dd ul li div.font p {
+  float: left;
+  padding-left: 0px;
+  margin: 0px;
+}
+#news .newsarea dl dd ul li div.font p.title {
+  color: #555;
+  margin-bottom: 3px;
+}
+#news .newsarea dl dd ul li div.font p.title a {
+  font-size: 12px;
+  color: #555;
+}
+#bbs {
+  width: 100%;
+  height: 476px;
+  background: url(../images/bbs.jpg) repeat 0px 0px;
+}
+#bbs .bbsarea {
+  width: 1000px;
+  height: 100%;
+  margin: 0 auto;
+}
+#bbs .bbsarea h2 {
+  float: left;
+  width: 100%;
+  height: 50px;
+  line-height: 300px;
+  margin: 0px;
+  margin-top: 30px;
+  overflow: hidden;
+  background: url(../images/bbstitle.jpg) no-repeat center center;
+}
+#bbs .bbsarea .nav {
+  float: left;
+  height: 34px;
+  width: 500px;
+  background: #009cdf;
+  margin: 14px 252px;
+}
+#bbs .bbsarea .nav a {
+  font-weight: 700;
+  font-size: 14px;
+  display: block;
+  float: left;
+  color: white;
+  height: 14px;
+  line-height: 14px;
+  margin-top: 10px;
+  padding: 0px 16px;
+  border-right: 3px solid #61c3ec;
+}
+#bbs .bbsarea .nav a.last {
+  border-right: 0px;
+  padding-right: 0px;
+}
+#bbs .bbsarea .des {
+  width: 100%;
+  height: 30px;
+  float: left;
+  margin-top: 10px;
+  font-size: 15px;
+  color: #5b5d5c;
+  font-weight: 700;
+  text-align: center;
+}
+#bbs .bbsarea .list {
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+}
+#bbs .bbsarea .list li {
+  padding-top: 10px;
+  border-top: 4px solid #0079ac;
+  width: 304px;
+  float: left;
+  margin-right: 34px;
+}
+#bbs .bbsarea .list li a {
+  display: block;
+  width: 100%;
+  height: 44px;
+  border-bottom: 1px solid #dde1e3;
+  color: #5a6063;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 44px;
+  text-indent: 24px;
+  background: url(../images/front.jpg) no-repeat 8px 17px;
+}
+#bbs .bbsarea .list li.last {
+  margin: 0px;
+}
+div#notice div.noticearea {
+  width: 1200px;
+  height: auto;
+  overflow: hidden;
+  margin: 10px auto;
+}
+div#notice div.noticearea div.kaixue {
+  width: 880px;
+  border: 1px solid #eaeaea;
+  float: left;
+  height: auto;
+  overflow: hidden;
+  padding-bottom: 10px;
+  background: #ffffff;
+}
+div#notice div.noticearea div.kaixue h2 {
+  margin: 0px;
+  text-indent: 15px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 34px;
+  background: #efefef;
+}
+div#notice div.noticearea div.kaixue h2 a {
+  float: right;
+  margin-right: 10px;
+}
+div#notice div.noticearea div.kaixue div.pics {
+  padding: 10px;
+  height: auto;
+  overflow: hidden;
+}
+div#notice div.noticearea div.kaixue div.pics div.big {
+  float: left;
+  height: 250px;
+  height: 230px;
+  margin-right: 20px;
+  text-align: center;
+  overflow: hidden;
+}
+div#notice div.noticearea div.kaixue div.pics div.big a {
+  color: #555;
+}
+div#notice div.noticearea div.kaixue div.pics div.big a img {
+  width: 300px;
+  min-height: 230px;
+}
+div#notice div.noticearea div.kaixue div.pics div.smallimg {
+  float: left;
+  width: 520px;
+  overflow: hidden;
+}
+div#notice div.noticearea div.kaixue div.pics div.smallimg ul li {
+  float: left;
+  margin: 0px 5px 5px 5px;
+  text-align: center;
+}
+div#notice div.noticearea div.kaixue div.pics div.smallimg ul li img {
+  width: 120px;
+  height: 95px;
+}
+div#notice div.noticearea div.kaixue div.pics div.smallimg ul li a {
+  color: #555555;
+}
+div#notice div.noticearea div.kaixue div.pics div.smallimg ul li a p {
+  margin-top: 5px;
+}
+div#notice div.noticearea div.kaixue div.blogs {
+  border-top: solid 1px #F2F2F2;
+  padding-left: 10px;
+}
+div#notice div.noticearea div.kaixue div.blogs ul li {
+  float: left;
+  width: 30%;
+  padding: 3px;
+}
+div#notice div.noticearea div.kaixue div.blogs ul li a {
+  color: #555;
+}
+div#notice div.noticearea div.ganyan {
+  float: right;
+  width: 310px;
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+}
+div#notice div.noticearea div.ganyan h2 {
+  margin: 0px;
+  text-indent: 15px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 34px;
+  background: #efefef;
+}
+div#notice div.noticearea div.ganyan div.ganyanpic {
+  height: 205px;
+  overflow: hidden;
+  padding: 5px;
+}
+div#notice div.noticearea div.ganyan div.ganyanpic ul {
+  margin: 0px;
+}
+div#notice div.noticearea div.ganyan div.ganyanpic ul li {
+  clear: both;
+  height: auto;
+  overflow: hidden;
+  margin-top: 5px;
+  border-bottom: solid 1px #eaeaea;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+div#notice div.noticearea div.ganyan div.ganyanpic ul li div {
+  float: left;
+  margin-right: 5px;
+}
+div#notice div.noticearea div.ganyan div.ganyanpic ul li div img {
+  width: 110px;
+  height: 80px;
+}
+div#notice div.noticearea div.ganyan div.ganyanpic ul li div.desc {
+  float: left;
+  width: 170px;
+  line-height: 1.5em;
+}
+div#notice div.noticearea div.ganyan div.ganyanpic ul li div.desc h3 {
+  color: #236EB2;
+  font-size: 12px;
+}
+div#notice div.noticearea div.ganyan div.ganyanpic ul li div.desc p {
+  text-indent: 2em;
+  color: #989898;
+}
+div#notice div.noticearea div.ganyan div.glist {
+  margin: 2px;
+}
+div#notice div.noticearea div.ganyan div.glist ul li {
+  line-height: 1.9em;
+  text-indent: 10px;
+}
+div#notice div.noticearea div.ganyan div.glist ul li a {
+  color: #666;
+}
+.bbs_list {
+  width: 1200px;
+  overflow: hidden;
+}
+.bbs_list div {
+  padding-top: 10px;
+  border-top: 4px solid #0079ac;
+  width: 304px;
+  float: left;
+  margin-right: 34px;
+}
+.bbs_list div li {
+  height: 44px;
+  overflow: hidden;
+}
+.bbs_list div li a {
+  display: block;
+  width: 100%;
+  height: 44px;
+  border-bottom: 1px solid #dde1e3;
+  color: #5a6063;
+  font-size: 14px;
+  line-height: 44px;
+  text-indent: 24px;
+  background: url(../images/front.jpg) no-repeat 8px 17px;
+}
+.bbs_title {
+  width: 1200px;
+  overflow: hidden;
+}
+.bbs_title li {
+  padding-top: 10px;
+  width: 304px;
+  float: left;
+  margin-right: 34px;
+  line-height: 40px;
+  font-weight: 700;
+  font-size: 14px;
+}
+/*# sourceMappingURL=index.css.map */

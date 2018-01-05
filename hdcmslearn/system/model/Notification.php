@@ -39,12 +39,17 @@ class Notification extends Model
     /**
      * 获取分页数据
      *
-     * @param int $row 每页显示条数
+     * @param int  $row    每页显示条数
+     * @param null $status 状态
      *
      * @return mixed
      */
-    public function getPageLists($row = 30)
+    public function getPageLists($row = 30, $status = null)
     {
-        return $this->where('siteid', siteid())->orderBy('id', 'DESC')->paginate($row);
+        if (is_null($status)) {
+            return $this->where('siteid', siteid())->orderBy('id', 'DESC')->paginate($row);
+        } else {
+            return $this->where('siteid', siteid())->orderBy('id', 'DESC')->where('status', $status)->paginate($row);
+        }
     }
 }

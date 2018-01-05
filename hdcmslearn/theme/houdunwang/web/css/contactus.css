@@ -1,0 +1,113 @@
+#content {
+  width: 100%;
+  min-width: 1200px;
+  margin-top: 31px;
+  height: auto;
+  overflow: hidden;
+}
+#content .contentarea {
+  width: 1200px;
+  height: auto;
+  margin: 0 auto 30px;
+}
+#content .contentarea .left {
+  float: left;
+  width: 215px;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: auto;
+  background: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+#content .contentarea .left li {
+  height: 60px;
+  line-height: 60px;
+  text-indent: 10px;
+  border-bottom: 1px solid #ecf0f2;
+  position: relative;
+}
+#content .contentarea .left li a {
+  display: block;
+  float: left;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  color: #14191e;
+}
+#content .contentarea .left li i {
+  display: none;
+  position: absolute;
+  left: -20px;
+  top: 0px;
+  height: 100%;
+  width: 2px;
+  font-size: 0;
+  background: #cf1c00;
+}
+#content .contentarea .left li.current_article i {
+  display: block;
+}
+#content .contentarea .right {
+  width: 970px;
+  float: right;
+  padding: 0px 40px;
+  height: auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: #FFFFFF;
+  overflow: hidden;
+}
+#content .contentarea .right h2 {
+  width: 100%;
+  float: left;
+  height: 60px;
+  line-height: 60px;
+  border-bottom: 1px solid #ecf0f2;
+  margin: 0px;
+  font-size: 16px;
+  color: #14191e;
+  margin-bottom: 30px;
+}
+#content .contentarea .right img {
+  width: 840px;
+}
+#content .contentarea .right .imgs {
+  margin-top: 30px;
+  height: 80px;
+  width: 100%;
+  background: url(../images/contactusfont.png) no-repeat center center;
+  margin-bottom: 20px;
+}
+#content .contentarea .right dl {
+  width: 960px;
+}
+#content .contentarea .right dl dt {
+  width: 100%;
+  float: left;
+  background: #f3f7fb;
+  height: 34px;
+  line-height: 34px;
+  text-indent: 10px;
+  font-size: 14px;
+}
+#content .contentarea .right dl dd {
+  width: 100%;
+  line-height: 24px;
+  font-size: 12px;
+  margin-bottom: 30px;
+}
+#content .contentarea .right dl dd table {
+  float: left;
+  width: 850px;
+  margin: 10px 0px 30px 10px;
+  color: #666;
+}
+#content .contentarea .right dl dd table tr td {
+  vertical-align: top;
+  line-height: 30px;
+  font-size: 14px;
+  text-align: left;
+}
+#content .contentarea .right dl dd table tr td img {
+  margin-top: 20px;
+  width: 712px;
+}

@@ -1,5 +1,8 @@
 .table-hover tr td {
   line-height: 2em !important;
   color: #93999f;
-  font-size: 15px;
+  font-size: 14px;
+}
+.table-hover tr td a {
+  color: #28b28b;
 }

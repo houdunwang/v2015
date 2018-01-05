@@ -123,8 +123,12 @@ class Boot
     public function initSiteData()
     {
         //初始站点数据
-        Site::siteInitialize();
+        if (Site::siteInitialize() == false) {
+            die(Response::_404());
+        }
         //初始模块数据
-        Modules::moduleInitialize();
+        if(Modules::moduleInitialize()==false){
+            die(Response::_404());
+        }
     }
 }

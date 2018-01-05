@@ -1,0 +1,256 @@
+#content {
+  width: 100%;
+  min-width: 1200px;
+  height: auto;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+#content .contentarea {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 24px;
+}
+#content .contentarea .left {
+  width: 927px;
+  float: left;
+  border: 1px solid #d2d0d0;
+  padding: 0px 60px;
+  background: #FFFFFF;
+  color: #313131;
+}
+#content .contentarea .left .title {
+  width: 100%;
+  float: left;
+  height: 40px;
+  line-height: 40px;
+  font-size: 25px;
+  text-align: center;
+  margin-top: 40px;
+  font-weight: 700;
+
+}
+#content .contentarea .left dl {
+  width: 100%;
+  float: left;
+  margin-top: 10px;
+}
+#content .contentarea .left dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  background: #f3f3f3;
+  padding: 5px 10px;
+}
+#content .contentarea .left dl dd {
+  text-indent: 10px;
+  line-height: 23px;
+  height: auto;
+  overflow: hidden;
+}
+#content .contentarea .left dl dd img {
+  min-width: 500px;
+  float: left;
+}
+#content .contentarea .left dl dd .videoarea {
+  width: 100%;
+  height: 550px;
+  margin-bottom: 30px;
+}
+#content .contentarea .left dl dd table tr td {
+  vertical-align: top;
+  line-height: 25px;
+  text-align: left;
+}
+#content .contentarea .left dl dd .btn {
+  padding-top: 20px;
+}
+#content .contentarea .left dl dd .btn a {
+  display: inline-block;
+  width: 216px;
+  height: 46px;
+  text-align: center;
+  line-height: 46px;
+  color: #FFFFFF;
+  text-indent: 0px;
+  font-size: 18px;
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+#content .contentarea .left dl dd .btn .down {
+  background: #0091d6;
+}
+#content .contentarea .left dl dd .btn .bbs {
+  background: #b5b5b5;
+}
+#content .contentarea .right {
+  width: 254px;
+  float: right;
+}
+#content .contentarea .right div.lession {
+  float: left;
+  width: 100%;
+  padding: 0px 10px 0px 10px;
+  border: 1px solid #d3d1d1;
+  background: #FFFFFF;
+}
+#content .contentarea .right div.lession h2 {
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  margin: 0px;
+  padding-left: 7px;
+}
+#content .contentarea .right div.lession p {
+  height: 19px;
+  line-height: 19px;
+}
+#content .contentarea .right div.lession p span {
+  font-size: 12px;
+  float: left;
+  color: #C11A17;
+}
+#content .contentarea .right div.lession p b {
+  font-size: 12px;
+  float: left;
+  color: #323232;
+  font-weight: 400;
+}
+#content .contentarea .right div.lession p i {
+  font-size: 12px;
+  float: right;
+  font-style: normal;
+  color: #999999;
+}
+#content .contentarea .right div.newvideo {
+  float: left;
+  margin-top: 19px;
+  width: 100%;
+  padding-left: 14px;
+  background: #FFFFFF;
+  border: 1px solid #d3d1d1;
+}
+#content .contentarea .right div.newvideo .headarea {
+  float: left;
+  width: 100%;
+  background: #f8f8f8;
+}
+#content .contentarea .right div.newvideo .headarea h3 {
+  float: left;
+  height: 20px;
+  line-height: 20px;
+  font-size: 16px;
+  margin: 0px;
+  margin-top: 10px;
+  padding-left: 10px;
+  border-left: 6px solid #05b276;
+}
+#content .contentarea .right div.newvideo .headarea a {
+  float: right;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  padding-right: 10px;
+  color: #999999;
+}
+#content .contentarea .right div.newvideo .conarea {
+  float: left;
+  width: 100%;
+  margin-top: 10px;
+}
+#content .contentarea .right div.newvideo .conarea ul {
+  float: left;
+  width: 100%;
+  border-left: 1px solid #d3d1d1;
+}
+#content .contentarea .right div.newvideo .conarea ul li {
+  margin-left: -5px;
+  padding-left: 20px;
+  line-height: 25px;
+}
+#content .contentarea .right div.newvideo .conarea ul li i {
+  font-style: normal;
+  padding-right: 10px;
+  color: #999999;
+}
+#content .contentarea .right div.newvideo .conarea ul li a {
+  color: #333333;
+}
+#content .contentarea .right div.newvideo .conarea ul li.active {
+  margin-left: -5px;
+  padding-left: 20px;
+  line-height: 25px;
+  background: url(../images/circle.jpg) no-repeat 0px 8px;
+}
+#content .contentarea .right .show {
+  float: left;
+  width: 100%;
+  height: auto;
+  margin-top: 15px;
+  border: 1px solid #d3d1d1;
+  background: #FFFFFF;
+}
+#content .contentarea .right .show .headarea {
+  float: left;
+  width: 100%;
+  background: #f8f8f8;
+  border-bottom: px solid #d3d1d1;
+}
+#content .contentarea .right .show .headarea h3 {
+  float: left;
+  height: 20px;
+  line-height: 20px;
+  font-size: 16px;
+  margin: 0px;
+  margin-top: 10px;
+  padding-left: 15px;
+}
+#content .contentarea .right .show .headarea a {
+  float: right;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  padding-right: 10px;
+  color: #999999;
+}
+#content .contentarea .right .show .conarea {
+  float: left;
+  width: 100%;
+  min-height: 200px;
+  padding: 13px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+#content .contentarea .right .show .conarea li {
+  float: left;
+  border-bottom: 1px dashed #cccccc;
+  padding-bottom: 10px;
+  padding-top: 13px;
+}
+#content .contentarea .right .show .conarea li a {
+  float: left;
+  color: #333;
+  font-size: 13px;
+}
+#content .contentarea .right .show .conarea li img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+#content .contentarea .right .show .conarea li p {
+  margin: 0px;
+  float: left;
+  width: 100%;
+}
+#content .contentarea .right .show .conarea li p a {
+  color: #333333;
+}
+#content .contentarea .right .show .conarea li p.light {
+  height: auto;
+  color: #ff6e00;
+  line-height: 20px;
+}
+#content .contentarea .right .show .conarea li.last {
+  border-bottom: none;
+  padding-bottom: 0px;
+}

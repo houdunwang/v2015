@@ -1,0 +1,96 @@
+#footer {
+  width: 100%;
+  height: 120px;
+  background: #000000;
+}
+#footer_box {
+  width: 1200px;
+  height: 120px;
+  margin: 0 auto;
+  position: relative;
+  font-family: "微软雅黑";
+  font-size: 11px;
+  color: #787D82;
+}
+#footer_box .logo {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+#footer_box div.msg {
+  position: absolute;
+  left: 210px;
+  top: 40px;
+  line-height: 20.4px;
+  width: 480px;
+  height: 50px;
+}
+#footer_box div.msg p {
+  margin: 0px;
+}
+#footer_box div.msg p a {
+  color: #787D82;
+}
+#footer_box div.footer_link {
+  width: 320px;
+  height: 40px;
+  padding: 0px 30px;
+  position: absolute;
+  left: 654px;
+  top: 40px;
+  border-right: 1px solid #555;
+  border-left: 1px solid #555;
+}
+#footer_box div.footer_link ul li {
+  width: 80px;
+  text-align: center;
+  height: 20px;
+  float: left;
+}
+#footer_box div.footer_link ul li a {
+  font-size: 12px;
+  color: #787D82;
+  text-decoration: none;
+}
+#footer_box div.footer_link ul li a:hover {
+  color: #fff;
+}
+#footer_box .followus {
+  width: 132px;
+  height: 40px;
+  position: absolute;
+  top: 40px;
+  right: 0px;
+}
+#footer_box .followus a {
+  display: inline-block;
+  width: 32px;
+  height: 36px;
+  margin-right: 4px;
+  opacity: 0.5;
+}
+#footer_box .followus a:hover {
+  opacity: 1;
+}
+#footer_box .followus .followus_weixin {
+  background: url('../images/weixin.png') no-repeat -1px 1px;
+  position: relative;
+}
+#footer_box .followus .followus_weixin:hover .weixin_box {
+  display: block;
+}
+#footer_box .followus .followus_weixin .weixin_box {
+  width: 160px;
+  heigth: 220px;
+  box-shadow: 3px 3px 3px 3px solid #787D82;
+  display: none;
+  position: absolute;
+  top: -215px;
+  left: -65px;
+}
+#footer_box .followus .followus_sina {
+  background: url('../images/weixin.png') no-repeat -1px -41px;
+}
+#footer_box .followus .followus_qq {
+  background: url('../images/weixin.png') no-repeat -1px -82px;
+}

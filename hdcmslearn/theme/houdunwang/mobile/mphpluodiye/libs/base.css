@@ -1,0 +1,51 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+/*导航条*/
+#menu{
+	display: flex;
+}
+#menu a{
+	display: block;
+	width: 300px;
+	text-align: center;
+	line-height: 3em;
+	font-size: 3.8vw;
+	color: white;
+	background: #303030;
+	text-decoration: none;
+	flex: 2;
+	position: relative;
+}
+#menu a img{
+	width: 40%;
+	/*position: relative;
+	top: 0px;
+	left: 0;*/
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+}
+#menu2{
+	display: flex;
+	height: 0;
+	overflow: hidden;
+}
+#menu2 a{
+	display: block;
+	width: 300px;
+	text-align: center;
+	line-height: 3em;
+	font-size: 3.8vw;
+	color: white;
+	background: #303030;
+	text-decoration: none;
+	flex: 2;
+}
+/*导航条结束*/

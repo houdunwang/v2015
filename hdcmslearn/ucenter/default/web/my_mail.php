@@ -6,12 +6,10 @@
     </div>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h4 class="panel-title">
                 绑定邮箱
                 <if value="v('member.info.email_valid')">
                     <span class="label label-success">邮箱已经绑定</span>
                 </if>
-            </h4>
         </div>
         <div class="panel-body">
             <form class="form-horizontal" onsubmit="post(event)">

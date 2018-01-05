@@ -100,11 +100,11 @@ class Entry extends HdController
 
     /**
      * 注册页面
-     *
      * @param \system\model\Member  $Member
      * @param \system\model\Message $message
      *
-     * @return array|bool
+     * @return array|string
+     * @throws \Exception
      */
     public function register(Member $Member, Message $message)
     {

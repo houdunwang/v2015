@@ -1,0 +1,29 @@
+body {
+  background: #F5F5F5 !important;
+}
+.body h1 {
+  color: #D64D31;
+  font-size: 40px;
+}
+.body p {
+  font-size: 16px;
+}
+.body img {
+  width: 55%;
+}
+.body .qq {
+  font-size: 14px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.body .btn {
+  padding: 10px 60px;
+  font-size: 16px;
+}
+.copyright {
+  border-top: solid 1px #dedede;
+  font-size: 14px;
+  padding-top: 30px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}

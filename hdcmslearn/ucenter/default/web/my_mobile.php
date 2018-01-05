@@ -5,12 +5,10 @@
     </div>
     <div class="panel panel-default" id="app">
         <div class="panel-heading">
-            <h4 class="panel-title">
                 绑定手机
                 <if value="v('member.info.mobile_valid')">
                     <span class="label label-success">手机号已经绑定</span>
                 </if>
-            </h4>
         </div>
         <div class="panel-body">
             <form class="form-horizontal" onsubmit="post(event)">

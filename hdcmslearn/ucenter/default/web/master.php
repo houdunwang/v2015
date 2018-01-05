@@ -15,8 +15,7 @@
             </a>
             <div class="TopMenu">
                 <a href="{{__ROOT__}}"> <i class="fa fa-home"></i> 网站首页</a>
-                <a href="{{url('message.lists',[],'ucenter')}}"> <i class="fa fa-rss-square"></i> 消息中心</a>
-                <a href="http://www.houdunwang.com"> <i class="fa fa-github"></i> 猎人训练</a>
+                <a href="{{url('message.lists',['status'=>0],'ucenter')}}"> <i class="fa fa-rss-square"></i> 消息中心</a>
             </div>
         </div>
     </div>
@@ -121,6 +120,16 @@
                                     <a href="{!! url('my.mail',[],'ucenter') !!}">邮箱验证</a>
                                 </li>
                             <?php endif; ?>
+                        </ul>
+                    </div>
+                    <div class="AccountManagementBox">
+                        <div class="AccountManagement">
+                            <a href="">其他设置</a>
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="{!! url('message/lists',['status'=>0],'ucenter') !!}">站内消息</a>
+                            </li>
                             <li>
                                 <a href="{!! url('entry/out',['from'=>__ROOT__],'ucenter') !!}">退出登录</a>
                             </li>
@@ -140,7 +149,7 @@
             <!--左侧部分结束-->
             <!--右侧部分开始-->
             <div class="BodyRight">
-                    <blade name="content"/>
+                <blade name="content"/>
             </div>
             <!--右侧部分结束-->
         </div>

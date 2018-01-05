@@ -1,0 +1,106 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  font-size: 12px;
+  font-family: tahoma, arial, "微软雅黑", sans-serif;
+}
+body {
+  background: #f4f5f6;
+}
+li {
+  list-style: none;
+}
+a {
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a:focus {
+  outline: 0;
+  text-decoration: none;
+}
+#head {
+  height: 89px;
+  width: 100%;
+  min-width: 1200px;
+  line-height: 89px;
+  background: #1e2128;
+ position: relative;
+ z-index: 99;
+}
+#head .header {
+  width: 1200px;
+  margin: 0 auto;
+  background: #FFF;
+  height: 89px;
+}
+#head .header .logo {
+  float: left;
+  width: 213px;
+  height: 89px;
+  background: #f22f16 url(../images/logo.png) no-repeat center center;
+}
+#head .header .cate {
+  float: left;
+}
+#head .header .cate li {
+  float: left;
+  text-align: center;
+}
+#head .header .cate li a {
+  color: #3a3a3a;
+  display: inline-block;
+  line-height: 14px;
+  font-size: 14px;
+  text-align: center;
+  border-left: 1px dotted #cccccc;
+  padding: 0px 10px;
+}
+#head .header .cate li a:hover {
+  text-decoration: none;
+}
+#head .header .cate li.index {
+  width: 76px;
+}
+#head .header .cate li.index a {
+  color: #F22F16;
+  border-left: none;
+}
+#head .header .our {
+  float: right;
+  width: 259px;
+  margin-top: 25px;
+}
+#head .header .our img {
+  float: left;
+  padding-right: 13px;
+}
+#head .header .our p {
+  line-height: 20px;
+  font-size: 14px;
+  width: 100%;
+  color: #7d7d7d;
+  margin: 0px;
+}
+#head .header .focus {
+  float: right;
+  width: 45px;
+  height: 100%;
+}
+#head .header .focus span.qq {
+  width: 45px;
+  height: 45px;
+  display: block;
+  float: left;
+  background: url(../images/focus.jpg) no-repeat 0px 0px;
+}
+#head .header .focus span.weibo {
+  width: 45px;
+  height: 44px;
+  display: block;
+  float: left;
+  background: url(../images/focus.jpg) no-repeat 0px -45px;
+}

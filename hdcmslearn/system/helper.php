@@ -103,8 +103,6 @@ function notification($data)
  * 在创建模块时自定义的权限需要指定权限标识
  *
  * @param string $permission 权限标识
- *
- * @return bool
  */
 function auth($permission = '')
 {
@@ -137,10 +135,11 @@ function memberIsLogin($return = false)
  * @param string $action 动作标识
  * @param array  $args   GET参数
  * @param string $module 模块标识 为空时使用当前模块
+ * @param bool   $merge
  *
- * @return string
+ * @return mixed
  */
-function url($action, $args = [], $module = '')
+function url($action, $args = [], $module = '', $merge = false)
 {
     $info   = preg_split('#\.|/#', $action);
     $module = $module ? $module : v('module.name');
@@ -159,8 +158,14 @@ function url($action, $args = [], $module = '')
     if ($mt = \houdunwang\request\Request::get('mt')) {
         $args['mt'] = $mt;
     }
+    if (isset($_GET['m'])) {
+        unset($_GET['m']);
+    }
+    if (isset($_GET['action'])) {
+        unset($_GET['action']);
+    }
 
-    return __ROOT__."/?m=".$module."&action=".implode('/', $info).'&'.http_build_query($args);
+    return u(__ROOT__."/?m=".$module."&action=".implode('/', $info), $args, $merge);
 }
 
 /**
@@ -219,8 +224,7 @@ function controller_action()
     $method     = array_pop($info);
     array_push($info, ucfirst(array_pop($info)));
     $module = Db::table('modules')->where('name', $moduleName)->first();
-    $class  = ($module['is_system'] ? 'module' : 'addons').'\\'.$moduleName.'\\controller\\'
-              .implode('\\', $info);
+    $class  = ($module['is_system'] ? 'module' : 'addons').'\\'.$moduleName.'\\controller\\'.implode('\\', $info);
 
     return call_user_func_array([new $class, $method], $args);
 }

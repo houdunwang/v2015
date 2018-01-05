@@ -6,7 +6,7 @@
     </ul>
     <div class="panel panel-default" id="app">
         <div class="panel-heading">
-            <h4 class="panel-title">修改密码</h4>
+            修改密码
         </div>
         <div class="panel-body">
             <form class="form-horizontal" onsubmit="post(event)">

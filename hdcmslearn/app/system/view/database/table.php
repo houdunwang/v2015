@@ -19,7 +19,9 @@
             2. 请查看 <a href="http://doc.hdphp.com/217074" target="_blank">数据填充文档</a> 学习使用方法 <br>
             3. 迁移文件在安装或卸载模块时执行<br/>
             4. 填充文件用于开发时测试使用，安装模块时不会执行<br/>
-            5. 表名称设置规则：如我们的模块是shop 现在要创建表 hd_shop_user，我们只需要填写 user 系统会自动补上 hd_shop
+            5. 表名称设置规则：如我们的模块是shop 现在要创建表 hd_shop_user，我们只需要填写 user 系统会自动补上 hd_shop <br>
+            6. 迁移重置会执行所有迁移文件的down方法 <br>
+            7. 迁移回滚只执行最近一次的迁移文件的down方法 <br>
         </div>
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -39,6 +41,7 @@
                     <button type="button" class="btn btn-default" @click="fieldMigrate">创建字段维护迁移文件</button>
                     <button type="button" class="btn btn-default" @click="makeMigrate">执行迁移</button>
                     <button type="button" class="btn btn-default" @click="resetMigrate">迁移重置</button>
+                    <button type="button" class="btn btn-default" @click="resetRollback">迁移回滚</button>
                 </div>
             </div>
         </div>
@@ -84,19 +87,32 @@
                         hdjs.submit({url: "{!! u('fieldMigrate',[name=>$_GET['name']]) !!}", successUrl: ''})
                     },
                     makeMigrate: function () {
-                        hdjs.submit({url: "{!! u('makeMigrate',[name=>$_GET['name']]) !!}", successUrl: ''})
+                        hdjs.confirm('确定执行迁移文件吗?',function() {
+                            hdjs.submit({url: "{!! u('makeMigrate',[name=>$_GET['name']]) !!}", successUrl: ''})
+                        })
                     },
                     resetMigrate: function () {
-                        hdjs.submit({url: "{!! u('resetMigrate',[name=>$_GET['name']]) !!}", successUrl: ''})
+                        hdjs.confirm('确定执行迁移重置吗?',function() {
+                            hdjs.submit({url: "{!! u('resetMigrate',[name=>$_GET['name']]) !!}", successUrl: ''})
+                        })
+                    },
+                    resetRollback: function () {
+                        hdjs.confirm('确定执行迁移会滚吗?',function(){
+                        hdjs.submit({url: "{!! u('rollbackMigrate',[name=>$_GET['name']]) !!}", successUrl: ''})
+                        })
                     },
                     createSeed: function () {
                         hdjs.submit({url: "{!! u('createSeed',[name=>$_GET['name']]) !!}", successUrl: ''})
                     },
                     makeSeed: function () {
-                        hdjs.submit({url: "{!! u('makeSeed',[name=>$_GET['name']]) !!}", successUrl: ''})
+                        hdjs.confirm('确定执行数据填充吗?',function() {
+                            hdjs.submit({url: "{!! u('makeSeed',[name=>$_GET['name']]) !!}", successUrl: ''})
+                        });
                     },
                     resetSeed: function () {
-                        hdjs.submit({url: "{!! u('resetSeed',[name=>$_GET['name']]) !!}", successUrl: ''})
+                        hdjs.confirm('确定执行填充重置吗?',function() {
+                            hdjs.submit({url: "{!! u('resetSeed',[name=>$_GET['name']]) !!}", successUrl: ''})
+                        });
                     }
                 }
             })

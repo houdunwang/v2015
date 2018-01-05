@@ -284,9 +284,9 @@ class Member extends Common
     /**
      * 会员登录
      *
-     * @param      $data
+     * @param $data
      *
-     * @return bool|string
+     * @return array
      */
     public static function login($data)
     {
@@ -432,7 +432,7 @@ class Member extends Common
         $model->save();
 
 
-        return ['valid' => 1, 'message' => '注册成功'];
+        return ['valid' => 1, 'message' => '注册成功', 'uid' => $model['uid']];
     }
 
     /**

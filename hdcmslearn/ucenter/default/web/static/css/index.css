@@ -84,7 +84,6 @@ body {
   background: #353644;
   padding: 11px 0px;
   box-sizing: border-box;
-  position: fixed;
   z-index: 1000;
 }
 .ciTop .ciTopCenter {
@@ -128,7 +127,6 @@ body {
   width: 100%;
   background: #F5F5F5 !important;
   position: relative;
-  top: 55px;
 }
 .CenterMain .CenterBody {
   margin: 0px auto;
@@ -138,8 +136,6 @@ body {
 .CenterMain .CenterBody .BodyLeft {
   width: 150px;
   float: left;
-  background: #f8f8f8;
-  height: 100vh;
   overflow: auto;
   box-sizing: border-box;
   border-right: solid 1px #ddd;
@@ -154,14 +150,12 @@ body {
 .CenterMain .CenterBody .BodyLeft .HeaerTop .portrait {
   float: left;
   width: 90px;
-  background: #fff;
-  border: 1px solid #CBCFD6;
-  padding: 4px;
-  border-radius: 4px;
   box-sizing: border-box;
 }
 .CenterMain .CenterBody .BodyLeft .HeaerTop .portrait img {
   width: 80px;
+  border: solid 1px #ddd;
+  padding: 2px;
 }
 .CenterMain .CenterBody .BodyLeft .HeaerTop .name {
   width: 50px;
@@ -198,7 +192,7 @@ body {
   color: #FFFFFF;
 }
 .CenterMain .CenterBody .BodyLeft .HeaerBottom .active {
-  background-color: #1CB9F7;
+  background-color: #28b28b;
 }
 .CenterMain .CenterBody .BodyLeft .BodyLeftBottom {
   overflow: hidden;
@@ -221,16 +215,15 @@ body {
   font-size: 14px;
 }
 .CenterMain .CenterBody .BodyLeft .AccountManagementBox .AccountManagement {
-  height: 45px;
-  line-height: 50px;
+  padding: 10px 0px 10px;
   text-align: left;
   text-indent: 25px;
   border-bottom: solid 1px #ddd;
   margin-bottom: 10px;
 }
 .CenterMain .CenterBody .BodyLeft .AccountManagementBox .AccountManagement a {
-  color: #3EA0EC;
-  font-size: 16px;
+  color: #454C6E;
+  font-size: 14px;
   font-weight: 600;
 }
 .CenterMain .CenterBody .BodyLeft .AccountManagementBox .AccountManagement a .glyphicon {

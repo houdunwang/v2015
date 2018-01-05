@@ -95,7 +95,7 @@ body {
   background: #353644;
   padding: 11px 0px;
   box-sizing: border-box;
-  position: fixed;
+  //position: fixed;
   z-index: 1000;
   .ciTopCenter {
     height: 58px;
@@ -140,7 +140,6 @@ body {
   width: 100%;
   background: #F5F5F5 !important;
   position: relative;
-  top: 55px;
   .CenterBody {
     margin: 0px auto;
     overflow: hidden;
@@ -148,12 +147,9 @@ body {
     .BodyLeft {
       width: 150px;
       float: left;
-      background: #f8f8f8;
-      height: 100vh;
       overflow: auto;
       box-sizing: border-box;
       border-right: solid 1px #ddd;
-      //position: fixed;
       .BodyHeader {
         padding: 0px 23px;
       }
@@ -163,13 +159,15 @@ body {
         .portrait {
           float: left;
           width: 90px;
-          background: #fff;
-          border: 1px solid #CBCFD6;
-          padding: 4px;
-          border-radius: 4px;
+          //background: #fff;
+          //border: 1px solid #CBCFD6;
+          //padding: 4px;
+          //border-radius: 4px;
           box-sizing: border-box;
           img {
             width: 80px;
+            border: solid 1px #ddd;
+            padding: 2px;
           }
         }
         .name {
@@ -208,7 +206,7 @@ body {
           color: #FFFFFF;
         }
         .active {
-          background-color: #1CB9F7;
+          background-color: #28b28b;
         }
       }
       .BodyLeftBottom {
@@ -235,15 +233,14 @@ body {
       //账号管理
       .AccountManagementBox {
         .AccountManagement {
-          height: 45px;
-          line-height: 50px;
+          padding: 10px 0px 10px;
           text-align: left;
           text-indent: 25px;
           border-bottom: solid 1px #ddd;
           margin-bottom: 10px;
           a {
-            color: #3EA0EC;
-            font-size: 16px;
+            color: #454C6E;
+            font-size: 14px;
             font-weight: 600;
             .glyphicon {
               margin-right: 10px;

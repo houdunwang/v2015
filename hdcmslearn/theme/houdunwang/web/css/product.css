@@ -1,0 +1,94 @@
+#content {
+  width: 100%;
+  min-width: 1200px;
+  margin-top: 31px;
+  height: auto;
+  overflow: hidden;
+}
+#content .contentarea {
+  width: 1200px;
+  height: auto;
+  margin: 0 auto;
+}
+#content .contentarea .left {
+  float: left;
+  width: 215px;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: auto;
+  background: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+#content .contentarea .left li {
+  height: 60px;
+  line-height: 60px;
+  text-indent: 10px;
+  border-bottom: 1px solid #ecf0f2;
+  position: relative;
+}
+#content .contentarea .left li a {
+  font-size: 14px;
+  color: #14191e;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+#content .contentarea .left li i {
+  display: none;
+  position: absolute;
+  left: -21px;
+  top: 0px;
+  height: 100%;
+  width: 2px;
+  font-size: 0;
+  background: #cf1c00;
+}
+#content .contentarea .left li.current_article i {
+  display: block;
+}
+#content .contentarea .right {
+  width: 970px;
+  float: right;
+  padding: 0px 40px 50px;
+  height: auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: #FFFFFF;
+}
+#content .contentarea .right h2 {
+  width: 100%;
+  float: left;
+  height: 60px;
+  line-height: 60px;
+  border-bottom: 1px solid #ecf0f2;
+  margin: 0px;
+  font-size: 16px;
+  color: #14191e;
+  margin-bottom: 30px;
+}
+#content .contentarea .right img {
+  width: 840px;
+}
+#content .contentarea .right .imgs {
+  margin-top: 30px;
+  height: 80px;
+  width: 100%;
+  background: url(../images/productfont.png) no-repeat center center;
+  margin-bottom: 20px;
+}
+#content .contentarea .right dl {
+  width: 100%;
+}
+#content .contentarea .right dl dt {
+  width: 100%;
+  float: left;
+  color: #313131;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 30px;
+}
+#content .contentarea .right dl dd {
+  width: 100%;
+  line-height: 24px;
+  font-size: 12px;
+  margin-bottom: 30px;
+}

@@ -10,6 +10,7 @@
 
 namespace app\site\controller;
 
+use houdunwang\response\Response;
 use Request;
 use houdunwang\route\Controller;
 use system\model\CreditsRecord;
@@ -97,8 +98,15 @@ class Entry extends Controller
         $controller = ucfirst(array_pop($info));
         $namespace  = v('module.name').'\\'.implode('\\', $info);
         $class      = (v('module.is_system') ? "module\\" : "addons\\")."{$namespace}\\{$controller}";
+        if ( ! class_exists($class)) {
+            return Response::_404();
+        }
+        if (method_exists($class, $action)) {
+            return App::callMethod($class, $action);
+        }
 
-        return App::callMethod($class, $action);
+        return call_user_func_array([new $class, $action], []);
+
     }
 
     /**

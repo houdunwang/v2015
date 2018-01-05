@@ -1,0 +1,39 @@
+#contentarea{
+    .left{
+        box-sizing: border-box;
+    }
+    .right{
+        .weekly{
+            overflow: hidden;
+//          height: 600px;
+            margin-top: 20px;
+            position: relative;
+            li{
+//              float: left;
+//              width: 220px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                transition: all 0.5s;
+                border: 1px solid #eee;
+                padding: 10px;
+                box-sizing: border-box;
+                border-radius: 5px;
+                
+                img{
+                    width: 50px;
+                    height: 50px;
+                    float: left;
+                    margin-right: 10px;
+//                  margin-bottom: 5px;
+                }
+                p{
+                    color: #666;
+                    line-height: 1.5em;
+                    word-wrap:break-word;
+                    word-break: break-all;
+                }
+            }
+        }
+    }
+} 

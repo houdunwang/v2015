@@ -1,0 +1,910 @@
+*{
+	padding: 0;
+	margin: 0;
+	font-family: "微软雅黑";
+}
+a{
+	text-decoration: none;
+}
+body{
+	padding-top: 50px;
+}
+li{
+	list-style: none;
+}
+/*固定导航条*/
+#menu{
+	width: 100%;
+	height: 50px;
+	background: #303030;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+}
+#menu .center{
+	width: 1200px;
+	height: 50px;
+	margin: 0 auto;
+	position: relative;
+}
+#menu .center a{
+	color: white;
+	line-height: 50px;
+	padding: 0 16px;
+	display: block;
+	height: 50px;
+	float: left;
+}
+#menu .center .bg{
+	width: 128px;
+	height: 50px;
+	background: #454444;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: -1;
+}
+#menu .center a.hot{
+	color: yellow;
+}
+/*固定导航条结束*/
+
+
+
+
+/*顶部大图*/
+#top{
+	height: 340px;
+	background: #EB0000;
+}
+#top img{
+	display: block;
+	margin: 0 auto;		cursor: pointer;
+}
+/*顶部大图结束*/
+
+/*薪资展示*/
+h2.title{
+	color: white;
+	background: #EB0000;
+	line-height: 2em;
+	text-align: center;
+	font-weight: 700;
+	font-size: 40px;
+	margin-top: 20px;
+	letter-spacing: 2px;
+	margin-bottom: 20px;
+}
+.xinzibox{
+	width: 1207px;
+	height: 411px;
+	margin: 0 auto;
+	display: block;
+	overflow: hidden;
+	position: relative;
+	color: #333;	
+}
+.xinzibox li.one{
+	border-top: 1px solid #999;
+	font-weight: 700;
+	background: #D50100;
+	color: white;
+}
+
+.xinzibox li{
+	overflow: hidden;
+	/*width: 1200px;*/
+	
+}
+.xinzibox li p{
+	float: left;
+	line-height: 40px;
+	font-size: 15px;
+	text-align: center;
+	border-left: 1px solid #999;
+	border-bottom: 1px solid #999;
+	/*color: white;*/
+}
+.xinzibox li p:nth-child(1){
+	width: 220px;
+}
+.xinzibox p:nth-child(2){
+	width: 421px;
+}
+.xinzibox p:nth-child(3){
+	width: 180px;
+}
+.xinzibox p:nth-child(4){
+	width: 190px;
+}
+.xinzibox p:nth-child(5){
+	width: 190px;
+	border-right: 1px solid #999;
+	
+}
+/*.xinzibox p:nth-child(6){
+	width: 250px;
+	border-right: 1px solid #999;
+}*/
+.xinzibox tr.one{
+	font-weight: 700;
+}
+
+/*薪资展示结束*/
+
+
+#douhao{
+	height: 65px;
+	/*border: 1px solid blue;*/
+	margin: 0 auto;
+	margin-top: 30px;
+}
+#douhao .dou1{
+	background: url(images/dou1.gif) no-repeat;
+	width: 33px;
+	height: 65px;
+	float: left;
+}
+#douhao .title{
+	float: left;
+	font-size: 40px;
+	line-height: 65px;
+	font-weight: 700;
+	padding: 0 20px;
+	letter-spacing: 3px;
+}
+#douhao .title span{
+	color: #EB0000;
+}
+#douhao .dou2{
+	background: url(images/dou2.gif) no-repeat;
+	width: 33px;
+	height: 65px;
+	float: left;
+}
+p.description{
+	text-align: center;
+	font-size: 16px;
+	color: #4a4a4a;
+	line-height: 1.6em;
+}
+p.description a{
+	color: #999;
+}
+#chat{
+	width: 1200px;
+	overflow: hidden;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+#chat img{
+	width:230px;
+	margin-right: 10px;
+	float: left;
+	height: 400px;
+	margin-bottom: 10px;		cursor: pointer;
+}
+#phpshidai{
+	width: 1000px;
+	height: 530px;
+	margin: 0 auto;
+	position: relative;
+}
+#phpshidai .left{
+	width: 340px;
+	height: 530px;
+	float: left;
+	/*border-right: 2px solid blue;*/
+	position: relative;
+	float: left;
+}
+#phpshidai .left .tu1{
+	width: 120px;
+	margin: 0 auto;
+	display: block;
+}
+#phpshidai .left .jieshao{
+	height: 200px;
+	width: 100%;
+	color: #777777;
+}
+#phpshidai .left .jieshao .one{
+	text-align: center;
+	color: #777777;
+	font-size: 20px;
+}
+#phpshidai .left .jieshao .two{
+	text-align: center;
+	color: #777777;
+	font-size: 30px;
+}
+#phpshidai .left .tu2{
+	width: 145px;
+	margin: 0 auto;
+	display: block;
+	position: absolute;
+	right: 30px;
+	top: 195px;
+}
+#phpshidai .left .jieshao2{
+	width: 180px;
+	height: 200px;
+	color: #777777;
+	position: absolute;
+	right: 0px;
+	top: 330px;
+}
+#phpshidai .left .jieshao2 .one{
+	text-align: center;
+	color: #777777;
+	font-size: 20px;
+}
+#phpshidai .left .jieshao2 .two{
+	text-align: center;
+	color: #777777;
+	font-size: 30px;
+}
+#phpshidai .left .tu3{
+	width: 130px;
+	margin: 0 auto;
+	display: block;
+	position: absolute;
+	left: 20px;
+	top: 300px;
+}
+#phpshidai .left .jieshao3{
+	width: 140px;
+	height: 200px;
+	color: #777777;
+	position: absolute;
+	left: 10px;
+	top: 430px;
+}
+#phpshidai .left .jieshao3 .one{
+	text-align: center;
+	color: #777777;
+	font-size: 20px;
+}
+#phpshidai .left .jieshao3 .two{
+	text-align: center;
+	color: #777777;
+	font-size: 30px;
+}
+#phpshidai p.right1{
+	width: 660px;
+	font-size: 30px;
+	color: #232323;
+	line-height: 1.5em;
+	float: right;
+	text-align: center;
+	font-weight: 700;
+	letter-spacing: 2px;
+}
+#phpshidai p.right2{
+	width: 660px;
+	padding-top: 10px;
+	font-size: 18px;
+	line-height: 2em;
+	text-indent: 2em;
+	float: right;
+}
+#phpshidai h3{
+	padding-top: 20px;
+	float: right;
+	width: 660px;
+}
+#phpshidai .icons{
+	width: 660px;
+	overflow: hidden;
+	bottom: 10px;
+	right: 0px;
+	position: absolute;
+}
+#phpshidai .icons img{
+	float: left;
+	margin-right: 10px;
+	width: 200px;
+	height: 80px;
+	margin-bottom: 20px;
+}
+.phpgongzi{
+	display: block;
+	margin: 10px auto;
+	width: 1050px;
+}
+
+/*企业展示*/
+#qiye{
+	width: 1100px;
+	overflow: hidden;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+#qiye img{
+	width: 132px;
+	height: 85px;
+	float: left;
+	margin: 0 23px;
+	margin-bottom: 5px;		cursor: pointer;
+}
+/*企业展示结束*/
+
+/*需求量大*/
+#xuqiu{
+	width: 1000px;
+	height: 290px;
+	margin: 0 auto;
+	margin-bottom: 60px;
+}
+#xuqiu .shuzhuangtu{
+	float: left;
+}
+#xuqiu .right{
+	float: right;
+	width: 630px;
+	height: 80px;
+}
+#xuqiu .right p.title{
+	float: left;
+	width: 90px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background: #077BB8;
+	color: white;
+	margin-right: 20px;
+	position: relative;
+	top: 5px;
+}
+#xuqiu .right p.description{
+	line-height: 24px;
+	color: #161616;
+	font-size: 14px;
+	text-align: left;
+	
+	
+}
+/*需求量大结束*/
+
+/*特色文字介绍*/
+#tswz{
+	width: 1200px;
+	margin: 0 auto;
+	padding: 20px 0;
+	padding-bottom: 420px;
+	background: url(images/xiangshan.jpg) no-repeat center bottom;
+}
+#tswz h2{
+	color: #1B1B1B;
+	text-align: center;
+	font-size: 50px;
+	font-weight: 400;
+	margin-bottom: 10px;
+	letter-spacing: 3px;
+}
+#tswz h2 span{
+	font-weight: 700;
+	color: #EB1232;
+}
+#tswz p{
+	text-align: center;
+	font-size: 20px;
+	line-height: 45px;
+	color: #1b1b1b;
+	text-shadow: 0px 0px 15px #FFFFFF;
+}
+/*特色文字介绍结束*/
+
+
+
+/*课程特色*/
+#kcts{
+	width: 100%;
+	height: 555px;
+	background: #FACC43;
+}
+#kcts .center{
+	width: 1200px;
+	height: 555px;
+	margin: 0 auto;
+	position: relative;
+}
+#kcts .center img{
+	position: absolute;
+	top: 50px;
+	left: 0;
+}
+#kcts .center .right{
+	width: 820px;
+	height: 460px;
+	float: right;
+	padding-top: 50px;
+}
+#kcts .center .right li{
+	float: left;
+	width: 328px;
+	height: 218px;
+	background: #0397E3;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	position: relative;
+	list-style: none;	cursor: pointer;
+}
+#kcts .center .right li h3{
+	font-size: 27px;
+	font-weight: 700;
+	color: white;
+	line-height: 60px;
+	position: absolute;
+	top: 5px;
+	left: 0px;
+	padding-left: 30px;
+}
+#kcts .center .right li p{
+	line-height: 28px;
+	font-size: 16px;
+	color: white;
+	position: absolute;
+	top: 70px;
+	left: 0px;
+	padding-left: 30px;
+	width: 268px;
+}
+/*课程特色结束*/
+
+.jinqi{
+	width: 1000px;
+	display: block;
+	margin: 10px auto;		cursor: pointer;
+}
+
+/*锦旗展示*/
+.jinqi{
+	overflow: hidden;
+	margin: 10px auto;
+	width: 1200px;
+}
+.jinqi>img{
+	width: 280px;
+	margin-right: 3px;
+	margin-left: 3px;
+	width: 290px;
+	margin-bottom: 5px;
+	border-radius: 5px;
+}
+.jinqi .last{
+	width: 290px;
+	height: 163px;
+	float: right;
+	background: #EB0000;
+	line-height: 163px;
+	text-align: center;
+	font-size: 50px;
+	letter-spacing: 2px;
+	font-weight: 700;
+	color: white;
+	border-radius: 5px;
+	position: relative;
+}
+.jinqi .last img{
+	position: absolute;
+	top: 95px;
+	left: 120px;
+}
+/*锦旗展示结束*/
+
+
+
+/*底部*/
+#bottom{
+	background: #1357AA;
+	padding-top: 40px;
+	padding-bottom: 20px;
+	/*margin-top: 20px;*/
+}
+#bottom p.title{
+	font-size: 50px;
+	color: white;
+	line-height: 80px;
+	text-align: center;
+	font-weight: 700;
+}
+#bottom a.contact{
+	font-size: 50px;
+	color: #1357AA;
+	background: #fffc00;
+	display: block;
+	width: 250px;
+	text-align: center;
+	display: block;
+	line-height: 80px;
+	margin: 20px auto;
+	border-radius: 15px;
+}
+#bottom .biecuoguo{
+	display: block;
+	margin: 0 auto;		cursor: pointer;
+}
+#bottom p.copy{
+	text-align: center;
+	font-size: 15px;
+	line-height: 35px;
+	color: white;
+}
+#bottom p.copy a{
+	color: white;
+}
+/*底部结束*/
+
+
+/*教学案例图片展示*/
+.objshow{
+	width: 1200px;
+	overflow: hidden;
+	/*border: 1px solid blue;*/
+	margin:  0 auto;
+	margin-top: 20px;
+}
+.objshow>div{
+	float: left;
+	overflow: hidden;
+}
+.objshow>div img{
+	display: block;
+	width: 100%;	cursor: pointer;
+}
+.objshow .one{
+	width: 300px;
+	height: 620px;
+}
+.objshow .two{
+	width: 430px;
+	float: left;
+	height: 300px;
+	margin-left: 15px;
+	margin-bottom: 15px;
+	border-radius: 15px;
+}
+.objshow .three{
+	width: 430px;
+	float: left;
+	height: 300px;
+	margin-left: 15px;
+	border-radius: 15px;
+}
+/*教学案例图片展示结束*/
+
+
+
+/*对比*/
+#duibi{
+	width: 1200px;
+	height: 500px;
+	margin: 10px auto;
+}
+#duibi .left{
+	width: 600px;
+	height: 500px;
+	background: #EB0000;
+	position: relative;
+	float: left;
+}
+#duibi .left h3.title{
+	text-align: center;
+	line-height: 2em;
+	color: white;
+	font-weight: 700;
+	padding-top: 40px;
+	font-size: 30px;
+	margin-bottom: 25px;
+}
+#duibi .left p.v{
+	font-weight: 700;
+	font-family: arial;
+	color: white;
+	position: absolute;
+	font-size: 90px;
+	position: absolute;
+	line-height: 100px;
+	top: 20px;
+	right: 20px;
+}
+#duibi .left ul li{
+	padding-left: 50px;
+	list-style: none;
+	color: white;
+	margin-bottom: 5px;
+}
+#duibi .left ul li .wjx{
+	float: left;
+	/*margin-bottom: 10px;*/
+	margin-right: 10px;
+	line-height: 30px;
+}
+#duibi .left ul li .right{
+	padding-right: 20px;
+	font-size: 14px;
+	line-height: 30px;
+}
+
+#duibi .rightbox{
+	width: 600px;
+	height: 500px;
+	background: #EEEEEE;
+	position: relative;
+	float: right;
+}
+#duibi .rightbox h3.title{
+	text-align: center;
+	line-height: 2em;
+	color: #898989;
+	font-weight: 700;
+	padding-top: 40px;
+	font-size: 30px;
+	margin-bottom: 25px;
+}
+#duibi .rightbox p.s{
+	color: #EB0000;
+	font-weight: 700;
+	font-family: arial;
+	color: #E60012;
+	position: absolute;
+	font-size: 90px;
+	position: absolute;
+	line-height: 100px;
+	top: 20px;
+	left: 20px;
+}
+#duibi .rightbox ul li{
+	padding-left: 50px;
+	list-style: none;
+	color: #333;
+	margin-bottom: 5px;
+}
+#duibi .rightbox ul li .wjx{
+	float: left;
+	/*margin-bottom: 20px;*/
+	margin-right: 10px;
+	line-height: 30px;
+}
+#duibi .rightbox ul li .right{
+	padding-right: 20px;
+	font-size: 14px;
+	line-height: 30px;
+}
+
+/*对比结束*/
+
+/*新课程*/
+.newclass{
+	width: 1200px;
+	height: 190px;
+	/*border: 2px solid blue;*/
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.newclass>div{
+	width: 300px;
+	height: 190px;
+	text-align: center;
+	float: left;
+}
+.newclass>div img{
+	height: 120px;	cursor: pointer;
+}
+.newclass>div p{
+	font-size: 18px;
+	color: #343434;
+	line-height: 28px;
+	margin-top: 5px;
+}
+/*新课程结束*/
+
+
+/*课程阶段*/
+h2.kcjd{
+	text-align: center;
+	font-size: 40px;
+	color: #1B1B1B;
+	font-weight: 400;
+	line-height: 60px;
+	margin-top: 20px;
+}
+h2.kcjd span{
+	font-weight: 700;
+	color: #EC1332;
+}
+p.kcjd_js{
+	font-size: 30px;
+	color: #1B1B1B;
+	text-align: center;
+	line-height: 50px;
+	margin-bottom: 20px;
+}
+a.xmzs{
+	text-align: center;
+	display: block;
+	color: #999;
+	line-height: 30px;
+	font-size: 16px;
+	width: 320px;
+	margin: 0 auto;
+}
+a.xmzs:hover{
+	color: #0397E3;
+	text-decoration: underline;
+}
+/*课程阶段结束*/
+
+p.description.red{
+	background: #EB0000;
+	color: white;
+	width: 820px;
+	margin: 0 auto;
+	letter-spacing: 1px;
+	margin-top: 10px;
+}
+
+/*第一阶段*/
+.class{
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+	/*transition: height 1s;*/
+	margin-bottom: 10px;
+}
+.class.limit{
+	height: 65px;
+}
+.class h3{
+	background: #053563;
+	/*text-align: center;*/
+	text-indent: 70px;
+	font-size: 23px;
+	font-weight: 700;
+	color: white;
+	line-height: 65px;
+	position: relative;
+}
+.class h3 img{
+	position: absolute;
+	top: 5px;
+	right: 10px;
+}
+.class table{
+	border-top: 1px solid #eee;
+	border-left: 1px solid #eee;
+}
+.class table td{
+	border-right: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+}
+.class table tr.title td{
+	text-align: center;
+	line-height: 40px;
+	background: #EEEEEE;
+	font-weight: 700;
+	font-size: 16px;
+}
+.class table tr td{
+	line-height: 25px;
+	font-size: 14px;
+}
+.class table tr td p{
+	text-indent: 20px;
+}
+/*第一阶段结束*/
+
+/*毕业学员作品*/
+#byxy{
+	width: 1000px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+#byxy img{
+	float: left;
+	width: 250px;
+	height: 141px;
+}
+/*毕业学员作品结束*/
+
+/*趋势*/
+#qushi{
+	width: 1000px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+#qushi dl{
+	float: left;
+	width: 470px;
+	/*border: 1px solid blue;*/
+}
+#qushi dt{
+	font-size: 25px;
+	color: #333;
+	line-height: 50px;
+}
+#qushi dl dt span{
+	color: #EB0000;
+}
+#qushi dl dd p{
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	font-size: 16px;
+}
+#qushi dl dd p.one{
+	width: 50px;
+	text-align: center;
+	color: #666;
+}
+#qushi dl dd p.two{
+	width: 80px;
+	color: #099;
+
+}
+#qushi dl dd p.line{
+	width: 210px;
+	height: 15px;
+	border-bottom: 1px #CCCCCC dotted;
+}
+#qushi dl dd p.three{
+	width: 130px;
+	text-align: right;
+	color: #099;
+}
+/*趋势结束*/
+
+
+.liaojie{
+	font-size: 35px;
+	line-height: 100px;
+	border-radius: 15px;
+	background: #EB0000;
+	color: white;
+	font-weight: 700;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	width: 550px;
+}
+
+/*暑期优惠*/
+#sq{
+	width: 1000px;
+	border: 3px dotted #EB0000;
+	margin: 10px auto;
+	border-radius: 10px;
+	/*padding-bottom: 10px;*/
+}
+#sq p.shuqititle{
+	text-align: center;
+	font-size: 40px;
+	line-height: 1.8em;
+	font-weight: 700;
+	/*width: 400px;*/
+	color: #EB0000;
+	margin: 10px auto;
+	letter-spacing: 4px;
+}
+#sq p.shuqi{
+	width: 1000px;
+	margin: 0 auto;
+	font-size: 18px;
+	color: #333;
+	line-height: 1.8em;
+	text-indent: 40px;
+	
+}
+#sq p.shuqi span{
+	color: #EB0000;
+	font-weight: 700;
+}
+/*暑期优惠结束*/
+
+
+
+
+

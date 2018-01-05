@@ -1,0 +1,605 @@
+*{
+    padding:0;
+    margin: 0;
+}
+.banner{
+    width: 10rem;
+    
+}
+body{
+    padding-bottom: 2rem;
+    li{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+        &:hover{
+            text-decoration: none;
+        }
+        
+    }
+    >h2{
+        line-height: 2em;
+        text-align: center;
+        font-weight: 700;
+        margin-top: 0.2rem;
+    }
+    >.desc{
+        line-height: 1.5em;
+        width: 9rem;
+        margin: 0 auto;
+        text-align: justify;
+    }
+    
+//  四个核心课程
+    >.class{
+        width: 9rem;
+        margin: 0 auto;
+        margin-top:0.3rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        li{
+            width: 4.2rem;
+            overflow: hidden;
+            margin-bottom: 0.2rem;
+            img{
+                width: 1.3rem;
+                display: block;
+                float: left;
+                margin-right: 0.2rem;
+            }
+            h3{
+                line-height: 1.5em;
+            }
+            .desc{
+                line-height: 1.5em;
+            }
+        }
+    }
+//  四个核心课程结束
+    
+    .bg{
+        background: #52AAC1;
+        padding: 0.3rem 0;
+        margin-top: 0.3rem;
+        h2{
+            line-height: 1.5em;
+            color: white;
+            text-align: center;
+        }
+        p{
+            width: 9rem;
+            margin: 0 auto;
+            line-height: 1.5em;
+            color: white;
+            margin-bottom: 0.1rem;
+            text-align: justify;
+        }
+        .companys{
+            width: 9rem;
+            display: block;
+            margin: 0 auto;
+            margin-top: 0.2rem;
+        }
+    }
+    
+    >.h2{
+        text-align: center;
+        line-height: 1.5em;
+        color: #666;
+    }
+    
+//  学员回访
+    .reback{
+        margin-top: 0.3rem;
+        margin-bottom: 0.3rem;
+        position: relative;
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+            .swiper-slide{
+                background: #F5F5F5;
+                border-radius: 0.3rem;
+                border: 1px solid #52AAC1;
+                img{
+                    border-radius: 50%;
+                    width: 45%;
+                    display: block;
+                    margin: 0 auto;
+                    margin-top: 0.2rem;
+                    margin-bottom: 0.2rem;
+                }
+                span.desc{
+                    display: block;
+                    text-align: center;
+                    line-height: 1.2em;
+                    color: #666;
+                }
+                span.link{
+                    text-align: center;
+                    display: block;
+                    color: #52AAC1;
+                    line-height: 1.8em;
+                    margin-bottom: 0.1rem;
+                }
+            }
+        }
+    }
+//学员回访结束
+
+    .job{
+        display: block;
+        width: 9rem;
+        margin: 0.3rem auto;
+    }
+//  反馈
+    #feedback{
+        overflow: hidden;
+        background: #F5F5F5;
+        padding: 0.3rem 0;
+        h3{
+            text-align: center;
+            line-height: 1.5em;
+            margin-bottom: 0.2rem;
+        }
+        p{
+            text-align: center;
+            color: #666;
+            line-height: 1.5em;
+            margin-bottom: 0.3rem;
+        }
+        
+    }
+//反馈结束
+    .features{
+        display: flex;
+        justify-content: space-between;
+        width: 9rem;
+        margin: 0 auto;
+        background: #52AAC1;
+        li{
+            width: 2rem;
+            img{
+                width: 30%;
+                margin: 0.1rem auto;
+                display: block;
+            }
+            h3{
+                text-align: center;
+                line-height: 1.5em;
+                color: white;
+//              font-weight: 700;
+            }
+            >p{
+                width: 100%;
+                line-height: 1.5em;
+                text-align: justify;
+                opacity: 0.8;
+            }
+        }
+    }
+//  project
+    #project{
+        background: #F5F5F5;
+        padding: 0.3rem 0;
+        h2{
+            text-align: center;
+        }
+        img{
+            display: block;
+            width: 9rem;
+            display: block;
+            margin: 0 auto;
+            margin-top: 0.3rem;
+        }
+    }
+    
+//  课程表
+    .course{
+        width: 9.8rem;
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 0.2rem;
+        li{
+            width: 32.5%;
+            padding: 0.3rem 0;
+            background: #F5F5F5;
+            text-align: center;
+            line-height: 1.6em;
+            margin: 0.1rem 0;
+            border-radius: 0.16rem;
+            &.cur{
+                background: #52AAC1;
+                color: white;
+            }
+        }
+    }
+    
+    .con{
+        width: 9.8rem;
+        overflow: hidden;
+        box-sizing: border-box;
+        border: 2px solid #52AAC1;
+        border-radius: 10px;
+        display: flex;
+        flex-wrap: wrap;
+//      justify-content: space-around;
+        display: none;
+        >li{
+            
+            background: #F5F5F5;
+            width: 95%;
+            margin: 0.2rem auto;
+            border-radius: 10px;
+            border: 2px dashed #52AAC1;
+            box-sizing: border-box;
+            position: relative;
+            .title{
+                font-weight: 700;
+                color: #52AAC1;
+                margin-top: 0.2rem;
+                text-indent: 0.2rem;
+                margin-bottom: 0.1rem;
+            }
+            >ul{
+                margin-left: 0.2rem;
+                overflow: hidden;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                >li{
+                    line-height: 1.5em;
+//                  font-size: 13px;
+                    list-style: none;
+                    margin-right: 10px;
+                    width: 48%;
+                    color: #333;
+                    position: relative;
+                    text-indent: 0.15rem;
+                    &:after{
+                        content: ' ';
+                        width: 0.06rem;
+                        height: 0.06rem;
+                        background: #666;
+                        display: block;
+//                      border-radius: 50%;
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+
+                    }
+                }
+            }
+            .bot{
+                clear: both;
+                padding: 0.2rem 0.2rem;
+                border-top: 1px dashed #52AAC1;
+                color: #333;
+//              font-size: 13px;
+                margin-top: 0.1rem;
+                line-height: 1.5em;
+                text-align: justify;
+                margin-top: 0.3rem;
+            }            
+        }
+    }
+//  课程表结束
+    .contectus{
+        display: block;
+        width: 5rem;
+        line-height: 3em;
+        background: white;
+        color: #52AAC1;
+        text-align: center;
+        margin: 0 auto;
+        border-radius: 0.3rem;
+        margin-top: 0.3rem;
+    }
+    #bottom{
+        position: fixed;
+        bottom: 0px;
+        left: 0;
+        overflow: hidden;
+        width: 100%;
+        z-index: 99999;
+        a{
+            display: block;
+            width: 50%;
+            float: left;
+            img{
+                width: 100%;
+                display: block;
+            }
+        }
+    }
+}
+
+[data-dpr='2']{
+    body{
+        >h2{
+            font-size: 32px;
+        }
+        >.desc{
+            font-size: 24px;
+            color: #666;
+        }
+        >.class{
+            li{
+                h3{
+                    font-size: 26px;
+                }
+                .desc{
+                    font-size: 16px;
+                }
+            }
+        }
+        .bg{
+            h2{
+                font-size: 36px;
+                
+            }
+            p{
+                font-size: 24px;
+            }
+        }
+        >.h2{
+            font-size: 24px;
+        }
+        
+        .reback{
+            .swiper-container{
+                .swiper-slide{
+                    span.desc{
+                        font-size: 22px;
+                    }
+                    span.link{
+                        font-size: 22px;
+                    }
+                }
+            }
+        }
+    
+        #feedback{
+            h3{
+                font-size: 36px;
+            }
+            p{
+                font-size: 24px;
+            }
+        }
+        
+        .features{
+            h3{
+                font-size: 26px;
+            }
+            p{
+                font-size: 20px;
+            }
+        }
+        
+        #project{
+            h2{
+                font-size: 36px;
+            }
+        }
+        
+        .course{
+            li{
+                font-size: 24px;
+            }
+        }
+        .con{
+            >li{
+                >ul{
+                    >li{
+                        font-size: 24px;
+                    }
+                }
+                .bot{
+                    font-size: 22px;
+                }
+            }
+        }
+        
+        .contectus{
+            font-size: 40px;
+        }
+    }
+//  body end
+}
+
+
+
+
+[data-dpr='3']{
+    body{
+        >h2{
+            font-size: 48px;
+        }
+        >.desc{
+            font-size: 36px;
+            color: #666;
+        }
+        >.class{
+            li{
+                h3{
+                    font-size: 39px;
+                }
+                .desc{
+                    font-size: 24px;
+                }
+            }
+        }
+        .bg{
+            h2{
+                font-size: 54px;
+                
+            }
+            p{
+                font-size: 36px;
+            }
+        }
+        >.h2{
+            font-size: 36px;
+        }
+        
+        .reback{
+            .swiper-container{
+                .swiper-slide{
+                    span.desc{
+                        font-size: 30px;
+                    }
+                    span.link{
+                        font-size: 30px;
+                    }
+                }
+            }
+        }
+    
+        #feedback{
+            h3{
+                font-size: 54px;
+            }
+            p{
+                font-size: 36px;
+            }
+        }
+        
+        .features{
+            h3{
+                font-size: 39px;
+            }
+            p{
+                font-size: 30px;
+            }
+        }
+        
+        #project{
+            h2{
+                font-size: 54px;
+            }
+        }
+        
+        .course{
+            li{
+                font-size: 36px;
+            }
+        }
+        .con{
+            >li{
+                >ul{
+                    >li{
+                        font-size: 36px;
+                    }
+                }
+                .bot{
+                    font-size: 33px;
+                }
+            }
+        }
+        
+        .contectus{
+            font-size: 60px;
+        }
+    }
+//  body end
+}
+
+
+[data-dpr='4']{
+    body{
+        >h2{
+            font-size: 64px;
+        }
+        >.desc{
+            font-size: 48px;
+            color: #666;
+        }
+        >.class{
+            li{
+                h3{
+                    font-size: 52px;
+                }
+                .desc{
+                    font-size: 32px;
+                }
+            }
+        }
+        .bg{
+            h2{
+                font-size: 72px;
+                
+            }
+            p{
+                font-size: 48px;
+            }
+        }
+        >.h2{
+            font-size: 48px;
+        }
+        
+        .reback{
+            .swiper-container{
+                .swiper-slide{
+                    span.desc{
+                        font-size: 44px;
+                    }
+                    span.link{
+                        font-size: 44px;
+                    }
+                }
+            }
+        }
+    
+        #feedback{
+            h3{
+                font-size: 72px;
+            }
+            p{
+                font-size: 48px;
+            }
+        }
+        
+        .features{
+            h3{
+                font-size: 52px;
+            }
+            p{
+                font-size: 40px;
+            }
+        }
+        
+        #project{
+            h2{
+                font-size: 72px;
+            }
+        }
+        
+        .course{
+            li{
+                font-size: 48px;
+            }
+        }
+        .con{
+            >li{
+                >ul{
+                    >li{
+                        font-size: 48px;
+                    }
+                }
+                .bot{
+                    font-size: 44px;
+                }
+            }
+        }
+        
+        .contectus{
+            font-size: 80px;
+        }
+    }
+//  body end
+}

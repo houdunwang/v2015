@@ -1,0 +1,457 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.banner {
+  width: 10rem;
+}
+body {
+  padding-bottom: 2rem;
+}
+body li {
+  list-style: none;
+}
+body a {
+  text-decoration: none;
+}
+body a:hover {
+  text-decoration: none;
+}
+body > h2 {
+  line-height: 2em;
+  text-align: center;
+  font-weight: 700;
+  margin-top: 0.2rem;
+}
+body > .desc {
+  line-height: 1.5em;
+  width: 9rem;
+  margin: 0 auto;
+  text-align: justify;
+}
+body > .class {
+  width: 9rem;
+  margin: 0 auto;
+  margin-top: 0.3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+body > .class li {
+  width: 4.2rem;
+  overflow: hidden;
+  margin-bottom: 0.2rem;
+}
+body > .class li img {
+  width: 1.3rem;
+  display: block;
+  float: left;
+  margin-right: 0.2rem;
+}
+body > .class li h3 {
+  line-height: 1.5em;
+}
+body > .class li .desc {
+  line-height: 1.5em;
+}
+body .bg {
+  background: #52AAC1;
+  padding: 0.3rem 0;
+  margin-top: 0.3rem;
+}
+body .bg h2 {
+  line-height: 1.5em;
+  color: white;
+  text-align: center;
+}
+body .bg p {
+  width: 9rem;
+  margin: 0 auto;
+  line-height: 1.5em;
+  color: white;
+  margin-bottom: 0.1rem;
+  text-align: justify;
+}
+body .bg .companys {
+  width: 9rem;
+  display: block;
+  margin: 0 auto;
+  margin-top: 0.2rem;
+}
+body > .h2 {
+  text-align: center;
+  line-height: 1.5em;
+  color: #666;
+}
+body .reback {
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  position: relative;
+}
+body .reback .swiper-container {
+  width: 100%;
+  height: 100%;
+}
+body .reback .swiper-container .swiper-slide {
+  background: #F5F5F5;
+  border-radius: 0.3rem;
+  border: 1px solid #52AAC1;
+}
+body .reback .swiper-container .swiper-slide img {
+  border-radius: 50%;
+  width: 45%;
+  display: block;
+  margin: 0 auto;
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+body .reback .swiper-container .swiper-slide span.desc {
+  display: block;
+  text-align: center;
+  line-height: 1.2em;
+  color: #666;
+}
+body .reback .swiper-container .swiper-slide span.link {
+  text-align: center;
+  display: block;
+  color: #52AAC1;
+  line-height: 1.8em;
+  margin-bottom: 0.1rem;
+}
+body .job {
+  display: block;
+  width: 9rem;
+  margin: 0.3rem auto;
+}
+body #feedback {
+  overflow: hidden;
+  background: #F5F5F5;
+  padding: 0.3rem 0;
+}
+body #feedback h3 {
+  text-align: center;
+  line-height: 1.5em;
+  margin-bottom: 0.2rem;
+}
+body #feedback p {
+  text-align: center;
+  color: #666;
+  line-height: 1.5em;
+  margin-bottom: 0.3rem;
+}
+body .features {
+  display: flex;
+  justify-content: space-between;
+  width: 9rem;
+  margin: 0 auto;
+  background: #52AAC1;
+}
+body .features li {
+  width: 2rem;
+}
+body .features li img {
+  width: 30%;
+  margin: 0.1rem auto;
+  display: block;
+}
+body .features li h3 {
+  text-align: center;
+  line-height: 1.5em;
+  color: white;
+}
+body .features li > p {
+  width: 100%;
+  line-height: 1.5em;
+  text-align: justify;
+  opacity: 0.8;
+}
+body #project {
+  background: #F5F5F5;
+  padding: 0.3rem 0;
+}
+body #project h2 {
+  text-align: center;
+}
+body #project img {
+  width: 9rem;
+  display: block;
+  margin: 0 auto;
+  margin-top: 0.3rem;
+}
+body .course {
+  width: 9.8rem;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 0.2rem;
+}
+body .course li {
+  width: 32.5%;
+  padding: 0.3rem 0;
+  background: #F5F5F5;
+  text-align: center;
+  line-height: 1.6em;
+  margin: 0.1rem 0;
+  border-radius: 0.16rem;
+}
+body .course li.cur {
+  background: #52AAC1;
+  color: white;
+}
+body .con {
+  width: 9.8rem;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 2px solid #52AAC1;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  display: none;
+}
+body .con > li {
+  background: #F5F5F5;
+  width: 95%;
+  margin: 0.2rem auto;
+  border-radius: 10px;
+  border: 2px dashed #52AAC1;
+  box-sizing: border-box;
+  position: relative;
+}
+body .con > li .title {
+  font-weight: 700;
+  color: #52AAC1;
+  margin-top: 0.2rem;
+  text-indent: 0.2rem;
+  margin-bottom: 0.1rem;
+}
+body .con > li > ul {
+  margin-left: 0.2rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+body .con > li > ul > li {
+  line-height: 1.5em;
+  list-style: none;
+  margin-right: 10px;
+  width: 48%;
+  color: #333;
+  position: relative;
+  text-indent: 0.15rem;
+}
+body .con > li > ul > li:after {
+  content: ' ';
+  width: 0.06rem;
+  height: 0.06rem;
+  background: #666;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+body .con > li .bot {
+  clear: both;
+  padding: 0.2rem 0.2rem;
+  border-top: 1px dashed #52AAC1;
+  color: #333;
+  margin-top: 0.1rem;
+  line-height: 1.5em;
+  text-align: justify;
+  margin-top: 0.3rem;
+}
+body .contectus {
+  display: block;
+  width: 5rem;
+  line-height: 3em;
+  background: white;
+  color: #52AAC1;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 0.3rem;
+  margin-top: 0.3rem;
+}
+body #bottom {
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  z-index: 99999;
+}
+body #bottom a {
+  display: block;
+  width: 50%;
+  float: left;
+}
+body #bottom a img {
+  width: 100%;
+  display: block;
+}
+[data-dpr='2'] body > h2 {
+  font-size: 32px;
+}
+[data-dpr='2'] body > .desc {
+  font-size: 24px;
+  color: #666;
+}
+[data-dpr='2'] body > .class li h3 {
+  font-size: 26px;
+}
+[data-dpr='2'] body > .class li .desc {
+  font-size: 16px;
+}
+[data-dpr='2'] body .bg h2 {
+  font-size: 36px;
+}
+[data-dpr='2'] body .bg p {
+  font-size: 24px;
+}
+[data-dpr='2'] body > .h2 {
+  font-size: 24px;
+}
+[data-dpr='2'] body .reback .swiper-container .swiper-slide span.desc {
+  font-size: 22px;
+}
+[data-dpr='2'] body .reback .swiper-container .swiper-slide span.link {
+  font-size: 22px;
+}
+[data-dpr='2'] body #feedback h3 {
+  font-size: 36px;
+}
+[data-dpr='2'] body #feedback p {
+  font-size: 24px;
+}
+[data-dpr='2'] body .features h3 {
+  font-size: 26px;
+}
+[data-dpr='2'] body .features p {
+  font-size: 20px;
+}
+[data-dpr='2'] body #project h2 {
+  font-size: 36px;
+}
+[data-dpr='2'] body .course li {
+  font-size: 24px;
+}
+[data-dpr='2'] body .con > li > ul > li {
+  font-size: 24px;
+}
+[data-dpr='2'] body .con > li .bot {
+  font-size: 22px;
+}
+[data-dpr='2'] body .contectus {
+  font-size: 40px;
+}
+[data-dpr='3'] body > h2 {
+  font-size: 48px;
+}
+[data-dpr='3'] body > .desc {
+  font-size: 36px;
+  color: #666;
+}
+[data-dpr='3'] body > .class li h3 {
+  font-size: 39px;
+}
+[data-dpr='3'] body > .class li .desc {
+  font-size: 24px;
+}
+[data-dpr='3'] body .bg h2 {
+  font-size: 54px;
+}
+[data-dpr='3'] body .bg p {
+  font-size: 36px;
+}
+[data-dpr='3'] body > .h2 {
+  font-size: 36px;
+}
+[data-dpr='3'] body .reback .swiper-container .swiper-slide span.desc {
+  font-size: 30px;
+}
+[data-dpr='3'] body .reback .swiper-container .swiper-slide span.link {
+  font-size: 30px;
+}
+[data-dpr='3'] body #feedback h3 {
+  font-size: 54px;
+}
+[data-dpr='3'] body #feedback p {
+  font-size: 36px;
+}
+[data-dpr='3'] body .features h3 {
+  font-size: 39px;
+}
+[data-dpr='3'] body .features p {
+  font-size: 30px;
+}
+[data-dpr='3'] body #project h2 {
+  font-size: 54px;
+}
+[data-dpr='3'] body .course li {
+  font-size: 36px;
+}
+[data-dpr='3'] body .con > li > ul > li {
+  font-size: 36px;
+}
+[data-dpr='3'] body .con > li .bot {
+  font-size: 33px;
+}
+[data-dpr='3'] body .contectus {
+  font-size: 60px;
+}
+[data-dpr='4'] body > h2 {
+  font-size: 64px;
+}
+[data-dpr='4'] body > .desc {
+  font-size: 48px;
+  color: #666;
+}
+[data-dpr='4'] body > .class li h3 {
+  font-size: 52px;
+}
+[data-dpr='4'] body > .class li .desc {
+  font-size: 32px;
+}
+[data-dpr='4'] body .bg h2 {
+  font-size: 72px;
+}
+[data-dpr='4'] body .bg p {
+  font-size: 48px;
+}
+[data-dpr='4'] body > .h2 {
+  font-size: 48px;
+}
+[data-dpr='4'] body .reback .swiper-container .swiper-slide span.desc {
+  font-size: 44px;
+}
+[data-dpr='4'] body .reback .swiper-container .swiper-slide span.link {
+  font-size: 44px;
+}
+[data-dpr='4'] body #feedback h3 {
+  font-size: 72px;
+}
+[data-dpr='4'] body #feedback p {
+  font-size: 48px;
+}
+[data-dpr='4'] body .features h3 {
+  font-size: 52px;
+}
+[data-dpr='4'] body .features p {
+  font-size: 40px;
+}
+[data-dpr='4'] body #project h2 {
+  font-size: 72px;
+}
+[data-dpr='4'] body .course li {
+  font-size: 48px;
+}
+[data-dpr='4'] body .con > li > ul > li {
+  font-size: 48px;
+}
+[data-dpr='4'] body .con > li .bot {
+  font-size: 44px;
+}
+[data-dpr='4'] body .contectus {
+  font-size: 80px;
+}

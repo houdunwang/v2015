@@ -41,14 +41,15 @@ class CreditsRecord extends Common
      * 更改会员积分或余额
      *
      * @param array $data
-     *  array(
+     * [
      *  'uid'=>会员编号,//不设置时取当前会员
      *  'credittype'=>积分类型,如credit1
      *  'num'=>数量,负数为减少
      *  'remark'=>说明
-     *  );
+     * ]
      *
-     * @return bool
+     * @return bool|string
+     * @throws \Exception
      */
     public static function change(array $data)
     {
@@ -72,12 +73,20 @@ class CreditsRecord extends Common
         $action = $data['num'] > 0 ? 'increment' : 'decrement';
         //用户原积分数量
         $userTickNum = $member[$data['credittype']];
-        //减少时不能小于用户现有积分
-        if ($action == 'decrement' && $userTickNum < abs($data['num'])) {
-            return self::title($data['credittype']).'数量不够';
+        switch ($action) {
+            case 'increment':
+                //增加
+                $member[$data['credittype']] = $userTickNum + $data['num'];
+                break;
+            case 'decrement':
+                //减少时不能小于用户现有积分
+                if ($userTickNum < abs($data['num'])) {
+                    return self::title($data['credittype']).'数量不够';
+                }
+                $member[$data['credittype']] = $userTickNum - abs($data['num']);
+                break;
         }
-        $num = $data['num'] > 0 ? $data['num'] : abs($data['num']);
-        if ( ! Member::where('uid', $data['uid'])->where('siteid', siteid())->$action($data['credittype'], $num)) {
+        if ( ! $member->save()) {
             return '修改会员 '.self::title($data['credittype'])." 失败";
         }
         //记录变量日志
@@ -114,6 +123,7 @@ class CreditsRecord extends Common
      * @param $data
      *
      * @return bool
+     * @throws \Exception
      */
     protected static function log($data)
     {

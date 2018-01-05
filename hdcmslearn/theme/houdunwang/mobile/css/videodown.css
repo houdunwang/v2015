@@ -1,0 +1,156 @@
+#down {
+  width: 100%;
+  height: 643px;
+  background: #e7e3e3;
+  border-bottom: 3px solid #313131;
+  min-width: 1200px;
+}
+#down .downarea {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  background: url(../images/bigimg2.png) no-repeat center center;
+  overflow: hidden;
+  position: relative;
+}
+#down .downarea .lucky {
+  display: block;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+#down .downarea p {
+  width: 788px;
+  margin: 0 auto;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #434343;
+}
+#down .downarea .btn {
+  width: 208px;
+  height: 46px;
+  border: none;
+  padding: 0px;
+  line-height: 46px;
+  text-align: center;
+  text-indent: 0px;
+  color: #FFFFFF;
+  font-size: 14px;
+  display: block;
+  background: #35c54d;
+  position: absolute;
+  left: 510px;
+  top: 500px;
+}
+#videodetail {
+  width: 100%;
+  height: auto;
+  background: #f4f5f6;
+  min-width: 1200px;
+  border-top: 2px solid #e7e6e4;
+}
+#videodetail .detailarea {
+  width: 1200px;
+  height: auto;
+  margin: 0 auto;
+  padding-top: 50px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+#videodetail .detailarea .left {
+  float: left;
+  width: 260px;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: auto;
+  background: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+#videodetail .detailarea .left li {
+  height: 60px;
+  line-height: 60px;
+  text-indent: 10px;
+  border-bottom: 1px solid #ecf0f2;
+  position: relative;
+}
+#videodetail .detailarea .left li a {
+  font-size: 14px;
+  color: #14191e;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#videodetail .detailarea .left li i {
+  display: none;
+  position: absolute;
+  left: -21px;
+  top: 0px;
+  height: 100%;
+  width: 2px;
+  font-size: 0;
+  background: #cf1c00;
+}
+#videodetail .detailarea .left li b {
+  width: 6px;
+  height: 12px;
+  display: block;
+  position: absolute;
+  right: 0px;
+  top: 30px;
+  background: url(../images/arrow2.png) no-repeat 0px 0px;
+}
+#videodetail .detailarea .left li.active i {
+  display: block;
+}
+#videodetail .detailarea .left li.active b {
+  display: none;
+}
+#videodetail .detailarea .right {
+  width: 927px;
+  float: right;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+#videodetail .detailarea .right li {
+  height: 184px;
+  width: 100%;
+  float: left;
+  position: relative;
+  background: #FFFFFF;
+  padding: 7px;
+  border-bottom: 1px solid #d7d7d7;
+}
+#videodetail .detailarea .right li img {
+  width: 300px;
+  height: 169px;
+  float: left;
+}
+#videodetail .detailarea .right li div.desc {
+  width: 560px;
+  float: right;
+}
+#videodetail .detailarea .right li div.desc .title {
+  font-size: 16px;
+}
+#videodetail .detailarea .right li div.desc .author {
+  font-size: 13px;
+  color: #7e7e7e;
+}
+#videodetail .detailarea .right li div.desc .content {
+  text-indent: 20px;
+  font-size: 12px;
+  line-height: 1.8em;
+  color: #888;
+}
+#videodetail .detailarea .right li div.desc .btn {
+  width: 120px;
+  height: 32px;
+  background: #0091d6;
+  display: block;
+  border: 0px;
+  text-indent: 0px;
+  font-size: 14px;
+  line-height: 32px;
+  text-align: center;
+  border-radius: 0px;
+  color: #FFFFFF;
+  padding: 0px;
+}

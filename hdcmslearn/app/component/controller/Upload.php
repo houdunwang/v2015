@@ -25,17 +25,10 @@ class Upload extends Common
      * @param \system\model\Attachment $attachment
      *
      * @return array
+     * @throws \Exception
      */
     public function uploader(Attachment $attachment)
     {
-        //使用站点阿里云配置
-        if (SITEID && v('site.setting.aliyun.aliyun.use_site_aliyun')) {
-            Config::set('aliyun', v('site.setting.aliyun.aliyun'));
-        }
-        //使用站点阿里云OSS配置
-        if (SITEID && v('site.setting.aliyun.oss.use_site_oss')) {
-            Config::set('oss', v('site.setting.aliyun.oss'));
-        }
         //中间件
         Middleware::web('upload_begin');
         $path = Request::post('uploadDir', Config::get('upload.path'));
@@ -95,7 +88,7 @@ class Upload extends Common
             }
         }
 
-        return ['data' => $data, 'page' => $Res->links()];
+        return ['data' => $data, 'page' => $Res->links()->show()];
     }
 
     /**

@@ -1,0 +1,60 @@
+@import "style/normal";
+//后台编辑样式
+.quickmenuBox {
+  background: #f9f9f9;
+  padding: 20px;
+  border: solid 1px #dcdcdc;
+  border-radius: 5px;
+  //左侧手机预览
+  .mobile_view {
+    width: 350px;
+    border: solid 1px #e5e5e5;
+    border-radius: 15px;
+    .mobile-header {
+      height: 60px;
+    }
+    .mobile-body {
+      position: relative;
+      height: 500px;
+      border: solid 1px #e5e5e5;
+    }
+    .mobile-footer {
+      height: 50px;
+      //底部按钮
+      .home-btn {
+        border: solid 1px #e5e5e5;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        margin: 10px auto 0px;
+      }
+    }
+  }
+  //左侧编辑区域
+  .slide {
+    margin: 0px 0px 0px 10px;
+    .well {
+      position: relative;
+      .arrow-left:after {
+        border-right: 11px solid #f5f5f5;
+      }
+    }
+    .menus_setting {
+      .page-header {
+        margin: 10px 0 10px;
+      }
+    }
+  }
+}
+//风格选择
+//模板样式
+.quickmenu_normal_img {
+  background: url("../images/quickmenu.png") 0 0 no-repeat;
+  height: 40px;
+}
+
+//商城界面
+.quickmenu_shop_img {
+  background: url("../images/quickmenu.png") 0px -40px no-repeat;
+  height: 40px;
+}

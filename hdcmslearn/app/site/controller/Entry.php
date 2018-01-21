@@ -10,6 +10,7 @@
 
 namespace app\site\controller;
 
+use houdunwang\aliyunsms\Sms;
 use houdunwang\response\Response;
 use Request;
 use houdunwang\route\Controller;

@@ -161,10 +161,16 @@ class Site extends Common
         Config::set('wechat', array_merge(Config::get('wechat'), $config));
         //设置邮箱配置
         Config::set('mail', v('site.setting.smtp'));
-        //短信配置
-        Config::set('aliyunsms', v('site.setting.sms.aliyun'));
         //支付宝配置
         Config::set('alipay', v('site.setting.pay.alipay'));
+        //阿里云配置
+        if (SITEID && v('site.setting.aliyun.aliyun.use_site_aliyun')) {
+            Config::set('aliyun', v('site.setting.aliyun.aliyun'));
+        }
+        //使用站点阿里云OSS配置
+        if (SITEID && v('site.setting.aliyun.oss.use_site_oss')) {
+            Config::set('oss', v('site.setting.aliyun.oss'));
+        }
 
         return true;
     }
@@ -498,7 +504,6 @@ class Site extends Common
             //模板目录独立
             'template_dir_diff' => 1,
         ], json_decode($setting['config'], true));
-
         //阿里云
         $setting ['aliyun'] = Arr::merge([
             'aliyun' => [

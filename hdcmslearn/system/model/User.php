@@ -238,10 +238,10 @@ class User extends Common
 
     /**
      * 帐号注册
-     *
      * @param $data
      *
      * @return bool
+     * @throws \Exception
      */
     public function register($data)
     {

@@ -114,7 +114,7 @@ class Database extends Admin
     }
 
     /**
-     * 重置回滚
+     * 迁移回滚
      *
      * @param \system\model\Modules $Module
      *
@@ -122,7 +122,6 @@ class Database extends Admin
      */
     public function rollbackMigrate(Modules $Module)
     {
-        $data = glob("addons/houdunren/database/migrations/*");
         $Module->migrateRollback($this->module);
 
         return message('迁移回滚完毕');

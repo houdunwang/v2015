@@ -100,6 +100,7 @@ class Entry extends HdController
 
     /**
      * 注册页面
+     *
      * @param \system\model\Member  $Member
      * @param \system\model\Message $message
      *
@@ -160,11 +161,18 @@ class Entry extends HdController
     public function login()
     {
         if (memberIsLogin(true) == true) {
+            Session::del('from');
+
             return $this->fromUrl;
         }
 
         if (IS_POST) {
-            return Member::login(Request::post());
+            $res = Member::login(Request::post());
+            if ($res['valid'] == 1) {
+                Session::del('from');
+            }
+
+            return $res;
         }
         $placeholder = [
             0 => '登录暂时关闭',

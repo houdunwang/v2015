@@ -1,0 +1,56 @@
+//normal样式后台编辑样式
+@import "../../../../../../resource/css/quickmenu.css";
+.quickmenu_normal_setting {
+  //添加一级菜单按钮
+  .add-top-menu {
+    margin-top  : 10px;
+    height      : 45px;
+    line-height : 45px;
+    padding     : 0 13px;
+    border      : 1px dashed #cccccc;
+    background  : #ffffff;
+    font-size   : 13px;
+    cursor      : pointer;
+  }
+  .item {
+    background    : #ffffff;
+    border        : solid 1px #e5e5e5;
+    position      : relative;
+    padding       : 15px;
+    border-radius : 5px;
+    margin-top    : 15px;
+    &:hover {
+      .delete-ico {
+        display : block;
+      }
+    }
+    //删除按钮
+    .delete-ico {
+      position  : absolute;
+      opacity   : .3;
+      top       : -10px;
+      right     : -5px;
+      font-size : 20px;
+      cursor    : pointer;
+      display   : none;
+    }
+    h3 {
+      font-size : 14px; font-weight : bold;
+    }
+    //一级菜单
+    .top_menus {  }
+    //二级菜单
+    .child_menus {
+      padding-left : 30px;
+      .add-child-menu {
+        height      : 45px;
+        border      : 1px dashed #cccccc;
+        margin-top  : 10px;
+        line-height : 45px;
+        font-size   : 13px;
+        cursor      : pointer;
+        padding     : 0 13px;
+      }
+    }
+  }
+}

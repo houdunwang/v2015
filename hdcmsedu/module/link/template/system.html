@@ -1,0 +1,96 @@
+<!--设置手机号-->
+<div class="link-modal">
+	<div id="tel-modal">
+		<ol class="breadcrumb">
+			<li><a href="javascript:;" onclick="returnLinkBrowser();">选择器首页</a></li>
+			<li><a href="javascript:;" onclick="returnLinkBrowser();">系统默认链接</a></li>
+			<li class="active">一键拨号</li>
+		</ol>
+		<div class="form-group clearfix list-group-item">
+			<label class="col-sm-2 control-label" style="margin-top:5px;">号码</label>
+			<div class="col-sm-5">
+				<input type="text" class="form-control" id="mobile" placeholder="">
+			</div>
+			<div class="col-sm-4">
+				<button class="btn btn-primary" onclick="selectLink('tel:'+$('#mobile').val())">确定</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="link-ceil">
+	<div id="link-btns">
+		<div>
+			<div class="page-header">
+				<h4><i class="fa fa-folder-open-o"></i> 系统默认链接</h4>
+			</div>
+			<div class="btn btn-default" onclick="selectLink('?m=article&action=controller/entry/index&siteid={{SITEID}}')">微站首页</div>
+			<div class="btn btn-default" onclick="selectLink('?m=ucenter&action=controller/member/index&siteid={{SITEID}}')">个人中心</div>
+			<div class="btn btn-default" onclick="loadModal('#tel-modal')">一键拨号</div>
+		</div>
+
+		<div>
+			<div class="page-header">
+				<h4><i class="fa fa-folder-open-o"></i> 会员相关操作</h4>
+			</div>
+			<div class="btn btn-default"
+			     onclick="selectLink('?a=ticket/lists&t=web&siteid={{SITEID}}&m=uc&type=1&status=1')">我的折扣券
+			</div>
+			<div class="btn btn-default"
+			     onclick="selectLink('?a=ticket/lists&t=web&siteid={{SITEID}}&m=uc&type=2&status=1')">我的代金券
+			</div>
+			<div class="btn btn-default" onclick="selectLink('?a=mobile/changeMobile&t=web&siteid={{SITEID}}&m=uc')">
+				修改手机号
+			</div>
+			<div class="btn btn-default" onclick="selectLink('?a=address/lists&t=web&siteid={{SITEID}}&m=uc')">修改收货地址
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+	.link-ceil div .page-header {
+		margin: 0px 0px 15px;
+	}
+
+	.link-ceil div .page-header > h4 {
+		margin-bottom: 0px;
+	}
+
+	.link-ceil #link-btns > div:nth-child(2) {
+		margin-top: 30px;
+	}
+
+	.link-ceil .btn {
+		min-width: 100px;
+		margin-right: 6px;
+	}
+
+	.link-modal > div {
+		display: none;
+	}
+</style>
+
+<script>
+	//选择链接
+	function selectLink(url) {
+		if (url == 'tel:') {
+			require(['hdjs'], function (hdjs) {
+				hdjs.message('请输入电话号', '', 'error');
+			})
+			return false;
+		}
+		if ($.isFunction(selectSystemLinkComplete)) {
+			selectSystemLinkComplete(url);
+		}
+	}
+	//模态框显示控制
+	function loadModal(id) {
+		$("#link-btns").hide();
+		$(id).show();
+	}
+	//链接导航控制
+	function returnLinkBrowser() {
+		$("#link-btns").show();
+		$('.link-modal>div').hide();
+	}
+</script>

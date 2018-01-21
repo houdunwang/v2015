@@ -1,0 +1,12 @@
+<div class="form-group">
+    <label class="col-sm-2 control-label">{{$field['title']}}</label>
+    <div class="col-sm-9">
+        <if value="$field['required']">
+            <input type="text" class="form-control" name="{{$field['name']}}" value="{{$field['value']}}"
+                   required="required">
+            <else/>
+            <input type="text" class="form-control" name="{{$field['name']}}" value="{{$field['value']}}">
+        </if>
+
+    </div>
+</div>

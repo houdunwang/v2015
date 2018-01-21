@@ -56,6 +56,21 @@ class Cli extends Base
     }
 
     /**
+     * 获取排序后的标签
+     *
+     * @return mixed
+     */
+    protected function getTags()
+    {
+        exec("git tag -l", $tags);
+        usort($tags, function ($a, $b) {
+            return substr($a, 1) < substr($b, 1);
+        });
+
+        return $tags;
+    }
+
+    /**
      * 生成版本编号
      *
      * @param string $type 类型
@@ -63,17 +78,11 @@ class Cli extends Base
     public function version($type)
     {
         //最新的标签
-        exec("git tag -l", $tags);
+        $tags            = $this->getTags();
         $newTag          = array_pop($tags);
         $data['version'] = $newTag;
         $data['build']   = date("YmdHis");
-        //更新日志
-        exec("git log -1", $logs);
-        $logs = array_splice($logs, 4);
-        array_walk($logs, function (&$v) {
-            $v = trim($v);
-        });
-        $data['logs']    = implode('####', $logs);
+        $data['logs']    = '';
         $data['type']    = $type;
         $data['explain'] = '';
         file_put_contents('version.php', "<?php return ".var_export($data, true).';');
@@ -92,8 +101,6 @@ class Cli extends Base
             is_dir($d) ? Dir::del($file) : Dir::delFile($file);
         }
         //创建压缩包
-        exec("git tag -l", $tags);
-        $newVersion = array_pop($tags);
         Zip::create(dirname($this->savePath).'/hdcms.full.zip', [$this->savePath]);
         exec('rm -rf '.$this->savePath);
     }
@@ -106,7 +113,7 @@ class Cli extends Base
     public function upgrade($oldVersion = '')
     {
         $this->version('upgrade');
-        exec("git tag -l", $tags);
+        $tags       = $this->getTags();p($tags);
         $newVersion = array_pop($tags);
         $oldVersion = $oldVersion ?: array_pop($tags);
         exec("git diff $oldVersion $newVersion --name-status ", $files);

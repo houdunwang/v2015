@@ -1,0 +1,163 @@
+.ticket div.voucher {
+  width: 300px;
+  box-sizing: content-box;
+  background: #ffffff;
+  margin: 10px auto;
+  border: solid 1px #dddddd;
+}
+.ticket div.voucher .info {
+  margin: 0px;
+  padding: 10px 10px 0px;
+}
+.ticket div.voucher .info h3 {
+  font-size: 16px;
+  margin: 0px;
+  font-weight: bold;
+}
+.ticket div.voucher .info p.endtime {
+  font-size: 12px;
+  color: #666666;
+  margin: 5px 0px 0px;
+}
+.ticket div.voucher .info .thumb {
+  height: 120px;
+  overflow: hidden;
+  border: solid 1px #dddddd;
+}
+.ticket div.voucher .info .thumb img {
+  min-width: 100%;
+}
+.ticket div.voucher .integral {
+  padding: 5px 10px;
+  line-height: 2em;
+}
+.ticket div.voucher .integral button {
+  float: right;
+}
+.ticket div.voucher .more {
+  margin-top: 6px;
+  clear: both;
+  background: #00a0e9;
+  height: 25px;
+  text-align: center;
+  color: #ffffff;
+  line-height: 2em;
+  font-size: 12px;
+}
+.ticket div.voucher .desc {
+  font-size: 12px;
+  line-height: 2em;
+  color: #252525;
+  text-indent: 2em;
+  padding: 6px;
+}
+.ticket div.card {
+  width: 320px;
+  margin: 5px auto;
+}
+.ticket div.card div.item {
+  border: solid 2px #dddddd;
+  height: 75px;
+  background: #f5f5f5;
+  box-sizing: content-box;
+  background: #ffffff;
+  padding: 5px;
+}
+.ticket div.card div.item:first-child {
+  margin-top: 20px;
+}
+.ticket div.card div.item .left-i {
+  width: 228px;
+  float: left;
+  border-right: solid 1px #dddddd;
+}
+.ticket div.card div.item .left-i .info {
+  clear: both;
+  border-bottom: solid 1px #dcdcdc;
+  height: 40px;
+  box-sizing: content-box;
+  padding: 3px 5px;
+}
+.ticket div.card div.item .left-i .info .title {
+  font-size: 25px;
+  color: #4bbe97;
+  float: left;
+}
+.ticket div.card div.item .left-i .info .nums {
+  float: right;
+  font-size: 12px;
+  line-height: 1.5em;
+  color: #666666;
+  text-align: center;
+}
+.ticket div.card div.item .left-i .info .nums i {
+  color: #4bbe97;
+  font-size: 23px;
+  display: block;
+}
+.ticket div.card div.item .left-i .desc {
+  margin: 10px 0 0 6px;
+  font-size: 12px;
+  color: #666666;
+}
+.ticket div.card div.item .right-i {
+  width: 68px;
+  float: left;
+  box-sizing: content-box;
+  padding: 5px;
+}
+.ticket div.card div.item .right-i .tile {
+  font-size: 14px;
+  font-weight: bold;
+  color: #4bbe97;
+  text-align: center;
+}
+.ticket div.card div.item .right-i .times {
+  text-align: center;
+  font-size: 12px;
+  color: #666666;
+}
+.ticket div.card div.item .right-i .times .white-line {
+  margin: 0px;
+}
+.ticket div.card .convert {
+  height: 30px;
+  background: #4bbe97;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  line-height: 2.2em;
+}
+.ticket div.card .convert a {
+  display: block;
+  color: #ffffff;
+}
+.ticket .status2 .title,
+.ticket .status3 .title {
+  color: #afafaf !important;
+}
+.ticket .status2 .nums i,
+.ticket .status3 .nums i {
+  color: #afafaf !important;
+}
+.ticket .status2 .tile,
+.ticket .status3 .tile {
+  color: #afafaf !important;
+}
+.ticket .status2 .convert,
+.ticket .status3 .convert {
+  background: #afafaf !important;
+}
+.ticket .employ {
+  background: #458c9a;
+  margin-top: -5px;
+  padding: 10px;
+  color: #ffffff;
+  text-align: center;
+}
+.ticket .em-btns {
+  margin: 10px 0px;
+}
+.ticket .em-btns .btn {
+  border-radius: 0px;
+}

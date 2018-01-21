@@ -1,0 +1,155 @@
+div.news .lists {
+  width: 250px;
+  float: left;
+  margin-right: 10px;
+}
+div.news .lists ul {
+  list-style: none;
+  padding: 0px;
+}
+div.news .lists ul li {
+  padding: 10px;
+  border: 1px solid #e7e7eb;
+  background: #ffffff;
+  position: relative;
+  margin-bottom: 0px;
+  cursor: pointer;
+  border-top: 0px;
+}
+div.news .lists ul li:first-child {
+  border-top: solid 1px #e7e7eb;
+}
+div.news .lists ul li.action {
+  background: #ffffff;
+  color: #999999;
+  padding: 5px 10px;
+  text-align: center;
+}
+div.news .lists ul li.action a {
+  font-size: 14px;
+  color: #666;
+}
+div.news .lists ul li div.pic {
+  height: 160px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+}
+div.news .lists ul li div.pic h3 {
+  height: 25px;
+  font-size: 12px;
+  margin-bottom: 0px;
+  padding-top: 0;
+  line-height: 28px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6) !important;
+  color: #dddddd;
+  text-indent: 10px;
+}
+div.news .lists ul li.small {
+  clear: both;
+}
+div.news .lists ul li.small p {
+  float: left;
+  width: 100px;
+}
+div.news .lists ul li.small div.pic {
+  width: 78px;
+  height: 78px;
+  float: right;
+}
+.preview {
+  position: relative;
+  padding-bottom: 0px;
+}
+.preview .lists {
+  border-right: solid 1px #dddddd;
+  border-bottom: solid 1px #dddddd;
+  width: 250px;
+  background: #f8f8f8;
+  padding: 10px;
+  margin-top: -15px;
+  margin-left: -15px;
+  top: 0px;
+  bottom: 0px;
+  min-height: 800px;
+}
+.preview .lists ul {
+  list-style: none;
+  padding: 0px;
+}
+.preview .lists ul li {
+  padding: 10px;
+  border: 1px solid #e7e7eb;
+  background: #ffffff;
+  position: relative;
+  margin-bottom: 0px;
+  cursor: pointer;
+  border-top: 0px;
+}
+.preview .lists ul li:first-child {
+  border-top: solid 1px #e7e7eb;
+}
+.preview .lists ul li.add {
+  font-size: 50px;
+  text-align: center;
+  font-weight: normal;
+  color: #aaaaaa;
+}
+.preview .lists ul li div.action {
+  display: none;
+  background: red;
+  position: absolute;
+  bottom: 0px;
+  z-index: 100;
+  left: 0px;
+  right: 0px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #aaaaaa;
+  padding: 5px 10px;
+}
+.preview .lists ul li div.action a {
+  font-weight: bold;
+  font-size: 22px;
+  color: #ffffff;
+}
+.preview .lists ul li:hover div.action {
+  display: block;
+}
+.preview .lists ul li div.pic {
+  height: 120px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+}
+.preview .lists ul li div.pic h3 {
+  height: 25px;
+  font-size: 12px;
+  margin-bottom: 0px;
+  padding-top: 0;
+  line-height: 28px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6) !important;
+  color: #dddddd;
+  text-indent: 10px;
+}
+.preview .lists ul li.small {
+  clear: both;
+}
+.preview .lists ul li.small p {
+  float: left;
+  width: 100px;
+}
+.preview .lists ul li.small div.pic {
+  width: 78px;
+  height: 78px;
+  float: right;
+}

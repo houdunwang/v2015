@@ -87,7 +87,8 @@ class Boot
                 Request::set('get.siteid', $match[2]);
                 Request::set('get.m', $match[1]);
             }
-            if ($siteid = Request::get('siteid')) {
+            $siteid = Request::get('siteid');
+            if ($siteid && ! Request::get('s')) {
                 $routes = Db::table('router')->where('siteid', $siteid)->where('status', 1)->get();
                 foreach ($routes as $r) {
                     Route::any($r['router'], 'app\site\controller\Entry@moduleRoute');
@@ -127,7 +128,7 @@ class Boot
             die(Response::_404());
         }
         //初始模块数据
-        if(Modules::moduleInitialize()==false){
+        if (Modules::moduleInitialize() == false) {
             die(Response::_404());
         }
     }

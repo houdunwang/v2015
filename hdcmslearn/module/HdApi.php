@@ -32,11 +32,11 @@ abstract class HdApi extends Controller
     protected $config;
 
     /**
-     * 会员令牌资料
+     * 登录帐号资料
      *
      * @var string
      */
-    protected $token;
+    protected $user;
 
     /**
      * 构造函数
@@ -47,8 +47,11 @@ abstract class HdApi extends Controller
         $this->siteid = siteid();
         $module       = new Modules();
         $this->config = $module->getModuleConfig();
+        if ($uid = v('member.info.uid')) {
+            $this->user = Member::find($uid);
+        }
         if ($token = Request::post('token')) {
-            $this->token = MemberToken::where('token', $token)->first();
+            $this->user = MemberToken::where('token', $token)->first();
         }
         //验证直接返回，不进行页面响应
         Config::set('validate.dispose', 'default');
@@ -69,21 +72,29 @@ abstract class HdApi extends Controller
     /**
      * 验证登录状态
      *
+     * @param bool $dispose
+     * true:验证失败时直接响应给客户端JSON（默认） false:返回验证状态
+     *
      * @return bool
      */
-    public function auth()
+    public function auth($dispose = true)
     {
-        return $this->token ? true : false;
+        $stat = $this->user ? true : false;
+        if ($stat === false && $dispose) {
+            die(json_encode($this->error('请登录后操作')));
+        }
+
+        return $stat;
     }
 
     public function success($message, $data = [])
     {
-        return ['vaid' => 1, 'messate' => $message, 'data' => $data];
+        return ['valid' => 1, 'message' => $message, 'data' => $data];
     }
 
     public function error($message, $data = [])
     {
-        return ['vaid' => 0, 'messate' => $message, 'data' => $data];
+        return ['valid' => 0, 'message' => $message, 'data' => $data];
     }
 
     /**

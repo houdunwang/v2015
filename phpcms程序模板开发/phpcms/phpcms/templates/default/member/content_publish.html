@@ -1,0 +1,69 @@
+{template 'member', 'header'}
+<script type="text/javascript">
+<!--
+	var charset = '{CHARSET}';
+	var uploadurl = '{php echo pc_base::load_config('system','upload_url')}';
+//-->
+</script>
+<link href="{CSS_PATH}dialog.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="{JS_PATH}dialog.js"></script>
+<script language="javascript" type="text/javascript" src="{JS_PATH}content_addtop.js"></script>
+<div id="memberArea">
+	{template 'member', 'left'}
+	<div class="col-auto">
+		<div class="col-1 ">
+			<h5 class="title">{L('online_publish')}</h5>
+			<div class="content">
+				
+			<form method="post" action="" id="myform" name="myform">
+				<table width="100%" cellspacing="0" class="table_form">
+				{if ROUTE_A=='publish'}
+				<script language="JavaScript">
+				<!--
+					function c_c(catid) {
+						location.href='index.php?m=member&c=content&a=publish&siteid={$siteid}&catid='+catid;
+					}
+				//-->
+				</script>
+					<tr>
+						<th>{L('please_select_cat')}：</th>
+						<td>{form::select_category('', $catid, 'name="info[catid]" onchange="javascript:c_c(this.value);"','','',0,1,$siteid,'1')}</td>
+					</tr>
+				{/if}
+					{loop $forminfos $k $v}
+					<tr>
+						<th width="100">{if $v['star']} <font color="red">*</font>{/if} {$v['name']}：</th> 
+						<td>{$v['form']}{if $v['tips']}{$v['tips']}{/if}</td>
+					</tr>
+					{/loop}
+					<tr>
+						<th></th>
+						<td>
+						<input name="forward" type="hidden" value="{HTTP_REFERER}">
+						<input name="id" type="hidden" value="{$id}">
+						<input name="dosubmit" type="submit" id="dosubmit" value="{L('submit')}" class="button"></td>
+					</tr>
+				</table>
+			</form>
+
+			</div>
+			<span class="o1"></span><span class="o2"></span><span class="o3"></span><span class="o4"></span>
+		</div>
+	</div>
+</div>
+<div class="clear"></div>
+<script type="text/javascript"> 
+<!--
+//只能放到最下面
+$(function(){
+	$.formValidator.initConfig({formid:"myform",autotip:true,onerror:function(msg,obj){window.top.art.dialog({content:msg,lock:true,width:'200',height:'50'}, 	function(){$(obj).focus();
+	boxid = $(obj).attr('id');
+	if($('#'+boxid).attr('boxid')!=undefined) {
+		check_content(boxid);
+	}
+	})}});
+	{$formValidator}
+})
+//-->
+</script>
+{template 'member', 'footer'}

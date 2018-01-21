@@ -1,0 +1,4 @@
+.progress_bar{height:30px; border:#214D7C solid 1px;margin-bottom:10px}
+.p_bar{height:30px; background:#3A6EA5;width:0px;}
+.progress_status{color:red;margin-left:10px}
+#msg{padding:5px;background:#FFFFE1 url(../images/msg_bg.png) no-repeat 5px -194px; border:#808080 solid 1px;margin-bottom:10px;padding-left:23px}

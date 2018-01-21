@@ -1,0 +1,287 @@
+[!--text--]
+<input name="[!--enews.var--]" type="text" id="[!--enews.var--]" value="<?=$ecmsfirstpost==1?"[!--enews.def.val--]":DoReqValue($mid,'[!--enews.var--]',stripSlashes($r[[!--enews.var--]]))?>" size="[!--fsize.w--]">
+[!--text--]
+[!--password--]
+<input name="[!--enews.var--]" type="password" id="[!--enews.var--]" value="<?=$ecmsfirstpost==1?"[!--enews.def.val--]":DoReqValue($mid,'[!--enews.var--]',stripSlashes($r[[!--enews.var--]]))?>" size="[!--fsize.w--]">
+[!--password--]
+[!--select--]
+<select name="[!--enews.var--]" id="[!--enews.var--]">
+[!--enews.select.var--]
+</select>
+[!--select--]
+[!--radio--]
+<select name="[!--enews.var--]" id="[!--enews.var--]">
+[!--enews.radio.var--]
+</select>
+[!--radio--]
+[!--textarea--]
+<textarea name="[!--enews.var--]" cols="[!--fsize.w--]" rows="[!--fsize.h--]" id="[!--enews.var--]"><?=$ecmsfirstpost==1?"[!--enews.def.val--]":DoReqValue($mid,'[!--enews.var--]',stripSlashes($r[[!--enews.var--]]))?></textarea>
+[!--textarea--]
+[!--img--]
+<input type="file" name="[!--enews.var--]file" size="[!--fsize.w--]">
+[!--img--]
+[!--flash--]
+<input type="file" name="[!--enews.var--]file" size="[!--fsize.w--]">
+[!--flash--]
+[!--file--]
+<input type="file" name="[!--enews.var--]file" size="[!--fsize.w--]">
+[!--file--]
+[!--newstext--]
+<?=ECMS_ShowEditorVar("newstext",$ecmsfirstpost==1?"[!--enews.def.val--]":DoReqValue($mid,'newstext',stripSlashes($r[newstext])),"[!--editor.type--]","[!--editor.basepath--]","[!--fsize.h--]","[!--fsize.w--]")?>
+[!--newstext--]
+[!--writer--]
+<input type=text name=writer value="<?=$ecmsfirstpost==1?"[!--enews.def.val--]":DoReqValue($mid,'[!--enews.var--]',stripSlashes($r[[!--enews.var--]]))?>" size="[!--fsize.w--]"> 
+[!--writer--]
+[!--befrom--]
+<input type="text" name="befrom" value="<?=$ecmsfirstpost==1?"[!--enews.def.val--]":DoReqValue($mid,'[!--enews.var--]',stripSlashes($r[[!--enews.var--]]))?>" size="[!--fsize.w--]"> 
+[!--befrom--]
+[!--downpath--]
+<input type="file" name="[!--enews.var--]file" size="[!--fsize.w--]">
+[!--downpath--]
+[!--onlinepath--]
+<input type="file" name="[!--enews.var--]file" size="[!--fsize.w--]">
+<input type="hidden" name="[!--enews.var--]mtfile" value=1>
+[!--onlinepath--]
+[!--morepic--]
+<script>
+function dopicadd()
+{var i;
+var str="";
+var oldi=0;
+var j=0;
+oldi=parseInt(document.add.morepicnum.value);
+for(i=1;i<=document.add.downmorepicnum.value;i++)
+{
+j=i+oldi;
+str=str+"<tr><td width=7%><div align=center>"+j+"</div></td><td width=33%><div align=center><input name=msmallpic[] type=text size=28 id=msmallpic"+j+"></div></td><td width=30%><div align=center><input name=mbigpic[] type=text size=28 id=mbigpic"+j+"></div></td><td width=30%><div align=center><input name=mpicname[] type=text></div></td></tr>";
+}
+document.getElementById("addpicdown").innerHTML="<table width='100%' border=0 cellspacing=1 cellpadding=3>"+str+"</table>";
+}
+</script>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="25">
+	图片地址前缀:
+      <input name="mpicurl_qz" type="text" id="mpicurl_qz" size="32">
+      &nbsp;</td>
+  </tr>
+  <tr> 
+    <td><table width=100% border=0 align=center cellpadding=3 cellspacing=1>
+  <tr bgcolor='#DBEAF5'> 
+    <td width=7%><div align=center>编号</div></td>
+    <td width=33%><div align=center>缩图</div></td>
+    <td width=30%><div align=center>大图</div></td>
+    <td width=30%><div align=center>图片说明</div></td>
+  </tr>
+</table></td>
+  </tr>
+  <tr> 
+    <td id=defmorepicid> 
+    <?php
+    if($ecmsfirstpost==1)
+    {
+	?>
+	<table width='100%' border=0 align=center cellpadding=3 cellspacing=1>
+	<?php
+	$morepicnum=3;
+	for($mppathi=1;$mppathi<=$morepicnum;$mppathi++)
+	{
+	?>
+	<tr> 
+		<td width='7%'><div align=center><?=$mppathi?></div></td>
+		<td width='33%'><div align=center>
+		<input name=msmallpic[] type=text id=msmallpic[] size=28>
+		</div></td>
+		<td width='30%'><div align=center>
+		<input name=mbigpic[] type=text id=mbigpic[] size=28>
+		</div></td>
+		<td width='30%'><div align=center>
+		<input name=mpicname[] type=text id=mpicname[]>
+		</div></td>
+	</tr>
+	<?php
+	}
+	?>
+	</table>
+	<?php
+    }
+    else
+    {
+	$morepicpath="";
+	$morepicnum=0;
+	if($r[morepic])
+	{
+		$r[morepic]=stripSlashes($r[morepic]);
+		//地址
+		$j=0;
+		$pd_record=explode("\r\n",$r[morepic]);
+		for($i=0;$i<count($pd_record);$i++)
+		{
+			$j=$i+1;
+			$pd_field=explode("::::::",$pd_record[$i]);
+			$morepicpath.="<tr> 
+	<td width='7%'><div align=center>".$j."</div></td>
+    <td width='33%'><div align=center>
+        <input name=msmallpic[] type=text value='".$pd_field[0]."' size=28>
+      </div></td>
+    <td width='30%'><div align=center>
+        <input name=mbigpic[] type=text value='".$pd_field[1]."' size=28>
+      </div></td>
+    <td width='30%'><div align=center>
+        <input name=mpicname[] type=text value='".$pd_field[2]."'><input type=hidden name=mpicid[] value=".$j."><input type=checkbox name=mdelpicid[] value=".$j.">删
+      </div></td></tr>";
+		}
+		$morepicnum=$j;
+		$morepicpath="<table width='100%' border=0 cellspacing=1 cellpadding=3>".$morepicpath."</table>";
+	}
+	echo $morepicpath;
+    }
+    ?>
+    </td>
+  </tr>
+  <tr> 
+    <td height="25">地址扩展数量: <input name="morepicnum" type="hidden" id="morepicnum" value="<?=$morepicnum?>">
+      <input name="downmorepicnum" type="text" value="1" size="6"> <input type="button" name="Submit5" value="输出地址" onclick="javascript:dopicadd();"></td>
+  </tr>
+  <tr> 
+    <td id=addpicdown></td>
+  </tr>
+</table>
+[!--morepic--]
+[!--date--]
+<input name="[!--enews.var--]" type="text" id="[!--enews.var--]" value="<?=$ecmsfirstpost==1?"[!--enews.def.val--]":ehtmlspecialchars(stripSlashes($r[[!--enews.var--]]))?>" size="[!--fsize.w--]" onclick="setday(this);">
+[!--date--]
+[!--color--]
+<input name="[!--enews.var--]" type="text" id="[!--enews.var--]" value="<?=$ecmsfirstpost==1?"[!--enews.def.val--]":ehtmlspecialchars(stripSlashes($r[[!--enews.var--]]))?>" size="[!--fsize.w--]" onclick="FieldChangeColor(this);">
+[!--color--]
+[!--linkfield--]
+<input name="[!--enews.var--]" type="text" id="[!--enews.var--]" value="<?=$ecmsfirstpost==1?"[!--enews.def.val--]":DoReqValue($mid,'[!--enews.var--]',stripSlashes($r[[!--enews.var--]]))?>" size="[!--fsize.w--]">
+[!--linkfield--]
+[!--playerid--]
+<?php
+$player_sql=$empire->query("select id,player from {$dbtbpre}enewsplayer");
+while($player_r=$empire->fetch($player_sql))
+{
+	$select_player='';
+	if($r[playerid]==$player_r[id])
+	{
+		$select_player=' selected';
+	}
+	$player_class.="<option value='".$player_r[id]."'".$select_player.">".$player_r[player]."</option>";
+}
+?>
+<select name="playerid">
+<option value=0>自动识别</option>
+<?=$player_class?>
+</select>
+[!--playerid--]
+[!--editor--]
+<?=ECMS_ShowEditorVar("[!--enews.var--]",$ecmsfirstpost==1?"[!--enews.def.val--]":DoReqValue($mid,'[!--enews.var--]',stripSlashes($r[[!--enews.var--]])),"[!--editor.type--]","[!--editor.basepath--]","[!--fsize.h--]","[!--fsize.w--]")?>
+[!--editor--]
+[!--ubbeditor--]
+<textarea name="[!--enews.var--]" cols="[!--fsize.w--]" rows="[!--fsize.h--]" id="[!--enews.var--]"><?=$ecmsfirstpost==1?"[!--enews.def.val--]":DoReqValue($mid,'[!--enews.var--]',stripSlashes($r[[!--enews.var--]]))?></textarea>
+[!--ubbeditor--]
+[!--linkfieldselect--]
+<select name="[!--enews.var--]" id="[!--enews.var--]">
+<?php
+$[!--enews.var--]defval=$ecmsfirstpost==1?"[!--enews.def.val--]":$r[[!--enews.var--]];
+$[!--enews.var--]sql=$empire->query("select [!--enews.selectf--] from {$dbtbpre}ecms_[!--enews.ctbname--] order by newstime desc");
+while($[!--enews.var--]r=$empire->fetch($[!--enews.var--]sql))
+{
+	$slselect='';
+	if($[!--enews.var--]defval==$[!--enews.var--]r[[!--enews.cfield.var--]])
+	{
+		$slselect=' selected';
+	}
+	echo"<option value=\"".$[!--enews.var--]r[[!--enews.cfield.var--]]."\"".$slselect.">".$[!--enews.var--]r[[!--enews.vfield.var--]]."</option>";
+}
+?>
+</select>
+[!--linkfieldselect--]
+[!--morevaluefield--]
+<script>
+function domvadd_[!--enews.var--]()
+{
+	var i;
+	var str='';
+	var oldi=0;
+	var j=0;
+	var addnum=0;
+	addnum=parseInt(document.add.mvaddnum_[!--enews.var--].value);
+	oldi=parseInt(document.add.mveditnum_[!--enews.var--].value);
+	for(i=1;i<=addnum;i++)
+	{
+		j=i+oldi;
+		str=str+'[!--enews.jstr--]';
+	}
+	document.getElementById("mvadd_[!--enews.var--]").innerHTML="<table width='100%' border=0 cellspacing=1 cellpadding=3>"+str+"</table>";
+}
+</script>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td>
+		<table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#DBEAF5">
+        [!--enews.saytr--]
+      </table>
+	</td>
+  </tr>
+  <tr> 
+    <td>
+    <?php
+    if($ecmsfirstpost==1)
+    {
+    ?>
+		<table width='100%' border=0 cellspacing=1 cellpadding=3>
+		<?php
+		$editnum=[!--enews.mvline--];
+		for($i=1;$i<=$editnum;$i++)
+		{
+		?>
+			[!--enews.deftr--]
+		<?php
+		}
+		?>
+		</table>
+    <?php
+    }
+    else
+    {
+		$editnum=0;
+		if($r['[!--enews.var--]'])
+		{
+			$r['[!--enews.var--]']=stripSlashes($r['[!--enews.var--]']);
+			?>
+			<table width='100%' border=0 cellspacing=1 cellpadding=3>
+			<?php
+			//录入项
+			$j=0;
+			$mvf_record=explode('||||||',$r['[!--enews.var--]']);
+			$mvf_count=count($mvf_record);
+			for($i=0;$i<$mvf_count;$i++)
+			{
+				$j=$i+1;
+				$mvf_field=explode("::::::",$mvf_record[$i]);
+				?>
+				[!--enews.edittr--]
+				<?php
+			}
+			?>
+			</table>
+			<?php
+			$editnum=$j;
+		}
+    }
+    ?>
+    </td>
+  </tr>
+  <tr> 
+    <td height="25">扩展数量: <input name="mveditnum_[!--enews.var--]" type="hidden" id="mveditnum_[!--enews.var--]" value="<?=$editnum?>">
+      <input name="mvnum_[!--enews.var--]" type="hidden" id="mvnum_[!--enews.var--]" value="[!--enews.mvnum--]">
+      <input name="mvmust_[!--enews.var--]" type="hidden" id="mvmust_[!--enews.var--]" value="[!--enews.mvmust--]">
+      <input name="mvaddnum_[!--enews.var--]" type="text" id="mvaddnum_[!--enews.var--]" value="1" size="6"> <input type="button" name="Submit5" value="输出" onclick="javascript:domvadd_[!--enews.var--]();"></td>
+  </tr>
+  <tr> 
+    <td id="mvadd_[!--enews.var--]"></td>
+  </tr>
+</table>
+[!--morevaluefield--]

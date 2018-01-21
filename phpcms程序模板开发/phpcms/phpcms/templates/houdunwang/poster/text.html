@@ -1,0 +1,66 @@
+function PCMSAD(PID) {
+  this.ID        = PID;
+  this.PosID  = 0; 
+  this.ADID		  = 0;
+  this.ADType	  = "";
+  this.ADName	  = "";
+  this.ADContent = "";
+  this.PaddingLeft = 0;
+  this.PaddingTop  = 0;
+  this.Width = 0;
+  this.Height = 0;
+  this.IsHitCount = "N";
+  this.UploadFilePath = "";
+  this.URL = "";
+  this.SiteID = 0;
+  this.ShowAD  = showADContent;
+  this.Stat = statAD;
+}
+
+function statAD(id) {
+	var sp = document.createElement("SCRIPT");
+	sp.type = "text/javascript";
+	sp.src = "{APP_PATH}index.php?m=poster&c=index&a=show&siteid="+this.SiteID+"&id="+id+"&spaceid="+this.PosID;
+	document.body.appendChild(sp);
+}
+
+function showADContent() {
+  var content = this.ADContent;
+  var isIE=!!window.ActiveXObject;
+  var str = "<div id='PCMSAD_"+this.PosID+"'>";
+  var AD = eval('('+content+')');
+  var count = 0;
+  if(AD.ADText.length){
+	  count = AD.ADText.length;
+  }
+  for(var i=0;i<count;i++){
+	if (isIE){
+
+		if (document.readyState=="complete"){
+			this.Stat(AD.ADText[i].textID);
+		} else {
+			document.onreadystatechange=function(){
+				if(document.readyState=="complete") this.Stat(AD.ADText[i].textID);
+			}
+		}
+	} else {
+		this.Stat(AD.ADText[i].textID);
+	}
+	  str += "<li><a href="+this.URL+"&a=poster_click&siteid="+this.SiteID+"&id="+AD.ADText[i].textID+"&url="+AD.ADText[i].textLinkUrl+" target='_blank' title='"+AD.ADText[i].textContent+"'>"+AD.ADText[i].textContent+"</a></li>";
+	}
+  str += "</div>";
+  document.write(str);
+}
+ 
+var cmsAD_{$pinfo[0]['id']} = new PCMSAD('cmsAD_{$pinfo[0]['id']}'); 
+cmsAD_{$pinfo[0]['id']}.PosID = {$spaceid}; 
+cmsAD_{$pinfo[0]['id']}.ADID = {$pinfo[0]['id']}; 
+cmsAD_{$pinfo[0]['id']}.ADType = "{$pinfo[0]['type']}"; 
+cmsAD_{$pinfo[0]['id']}.ADName = "{$pinfo[0]['name']}"; 
+cmsAD_{$pinfo[0]['id']}.ADContent = "{'ADText':[{loop $pinfo $p} {if $n!=1},{/if} {'textID':'{$p['id']}','textContent':'{$p['setting'][1]['title']}','textLinkUrl':'{urlencode($p['setting'][1]['linkurl'])}'} {/loop}]}"; 
+cmsAD_{$pinfo[0]['id']}.URL = "{APP_PATH}index.php?m=poster&c=index"; 
+cmsAD_{$pinfo[0]['id']}.SiteID = {$siteid}; 
+cmsAD_{$pinfo[0]['id']}.Width = {$width}; 
+cmsAD_{$pinfo[0]['id']}.Height = {$height}; 
+cmsAD_{$pinfo[0]['id']}.UploadFilePath = ""; 
+cmsAD_{$pinfo[0]['id']}.ShowAD();

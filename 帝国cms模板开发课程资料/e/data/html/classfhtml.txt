@@ -1,0 +1,40 @@
+[!--text--]
+<input name="[!--enews.var--]" type="text" id="[!--enews.var--]" value="<?=$ecmsfirstpost==1?"[!--enews.def.val--]":ehtmlspecialchars($addr[[!--enews.var--]])?>" size="[!--fsize.w--]">
+[!--text--]
+[!--password--]
+<input name="[!--enews.var--]" type="password" id="[!--enews.var--]" value="<?=$ecmsfirstpost==1?"[!--enews.def.val--]":ehtmlspecialchars($addr[[!--enews.var--]])?>" size="[!--fsize.w--]">
+[!--password--]
+[!--select--]
+<select name="[!--enews.var--]" id="[!--enews.var--]">
+[!--enews.select.var--]
+</select>
+[!--select--]
+[!--radio--]
+<select name="[!--enews.var--]" id="[!--enews.var--]">
+[!--enews.radio.var--]
+</select>
+[!--radio--]
+[!--textarea--]
+<textarea name="[!--enews.var--]" cols="[!--fsize.w--]" rows="[!--fsize.h--]" id="[!--enews.var--]"><?=$ecmsfirstpost==1?"[!--enews.def.val--]":ehtmlspecialchars($addr[[!--enews.var--]])?></textarea>
+[!--textarea--]
+[!--img--]
+<input name="[!--enews.var--]" type="text" id="[!--enews.var--]" value="<?=$ecmsfirstpost==1?"[!--enews.def.val--]":ehtmlspecialchars($addr[[!--enews.var--]])?>" size="[!--fsize.w--]">
+<a onclick="window.open('[!--enews.path--]ecmseditor/FileMain.php?modtype=[!--enews.modtype--]&type=1&classid=&filepass=<?=$filepass?>&sinfo=1&doing=2&field=[!--enews.var--]<?=$ecms_hashur[ehref]?>','','width=700,height=550,scrollbars=yes');" title="选择已上传的图片"><img src="[!--enews.path--]../data/images/changeimg.gif" border="0" align="absbottom"></a> 
+[!--img--]
+[!--flash--]
+<input name="[!--enews.var--]" type="text" id="[!--enews.var--]" value="<?=$ecmsfirstpost==1?"[!--enews.def.val--]":ehtmlspecialchars($addr[[!--enews.var--]])?>" size="[!--fsize.w--]">
+<a onclick="window.open('[!--enews.path--]ecmseditor/FileMain.php?modtype=[!--enews.modtype--]&type=2&classid=&filepass=<?=$filepass?>&sinfo=1&doing=2&field=[!--enews.var--]<?=$ecms_hashur[ehref]?>','','width=700,height=550,scrollbars=yes');" title="选择已上传的FLASH"><img src="[!--enews.path--]../data/images/changeflash.gif" border="0" align="absbottom"></a> 
+[!--flash--]
+[!--file--]
+<input name="[!--enews.var--]" type="text" id="[!--enews.var--]" value="<?=$ecmsfirstpost==1?"[!--enews.def.val--]":ehtmlspecialchars($addr[[!--enews.var--]])?>" size="[!--fsize.w--]">
+<a onclick="window.open('[!--enews.path--]ecmseditor/FileMain.php?modtype=[!--enews.modtype--]&type=0&classid=&filepass=<?=$filepass?>&sinfo=1&doing=2&field=[!--enews.var--]<?=$ecms_hashur[ehref]?>','','width=700,height=550,scrollbars=yes');" title="选择已上传的文件"><img src="[!--enews.path--]../data/images/changefile.gif" border="0" align="absbottom"></a>
+[!--file--]
+[!--date--]
+<input name="[!--enews.var--]" type="text" id="[!--enews.var--]" value="<?=$ecmsfirstpost==1?"[!--enews.def.val--]":ehtmlspecialchars($addr[[!--enews.var--]])?>" size="[!--fsize.w--]" onclick="setday(this);">
+[!--date--]
+[!--color--]
+<input name="[!--enews.var--]" type="text" id="[!--enews.var--]" value="<?=$ecmsfirstpost==1?"[!--enews.def.val--]":ehtmlspecialchars($addr[[!--enews.var--]])?>" size="[!--fsize.w--]" onclick="FieldChangeColor(this);">
+[!--color--]
+[!--editor--]
+<?=ECMS_ShowEditorVar("[!--enews.var--]",$ecmsfirstpost==1?"[!--enews.def.val--]":$addr[[!--enews.var--]],"[!--editor.type--]","[!--editor.basepath--]","[!--fsize.h--]","[!--fsize.w--]")?>
+[!--editor--]

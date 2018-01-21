@@ -1,0 +1,18 @@
+<text>我是首页！</text>
+
+<!-- 定义模板 -->
+<template name='hdtpl'>
+  <view>用户名：{{name}}</view>
+  <view>年龄：{{age}}</view>
+  <view>后盾人欢迎你！www.houdunren.com</view>
+</template>
+
+
+<!-- 调用模板 -->
+<!-- ...表示将对象展开成独立的变量 -->
+
+<template is="hdtpl" data="{{...yongyong}}" />
+
+<template is="hdtpl" data="{{...xianyu}}" />
+
+<button bindtap="gotest">跳转到test页面</button>

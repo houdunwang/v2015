@@ -1,0 +1,30 @@
+body {
+  background: url(../img/bg.jpg);
+}
+.container {
+  width: 700px;
+  margin-top: 30px;
+  overflow: hidden;
+}
+.container #msg-div {
+  height: 400px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 20px #91E18A;
+  background: #000;
+  color: #5BF48A;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 18px;
+}
+@media only screen and (min-width: 768px) {
+}
+.container .form-inline {
+  margin-top: 20px;
+}
+.container .form-inline input[name=message] {
+  width: 79%;
+}
+.container .form-inline #submit {
+  width: 20%;
+}
+/*# sourceMappingURL=index.css.map */

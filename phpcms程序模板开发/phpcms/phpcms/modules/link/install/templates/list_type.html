@@ -1,0 +1,54 @@
+{template "content","header"}
+<link href="{CSS_PATH}link.css" rel="stylesheet" type="text/css" />
+<!--main-->
+<div class="main">
+	<!--left_bar-->
+	{pc:link action="get_type" typeid="$type_id" siteid="$siteid"}
+     {php $type_arr = $data;}
+  	 {/pc}
+	<div class="col-left"> 
+    <div class="crumbs"><a href="{siteurl($siteid)}">网站首页</a><span> &gt; </span><a href="{APP_PATH}index.php?m={ROUTE_M}&siteid={$siteid}">友情链接</a><span> &gt; </span>{$type_arr[name]}</div>
+    <div class="box boxsbg cboxs">
+     
+ 	 	<h5>{$type_arr[name]} </h5>
+        <div class="tag_a">
+        	{pc:link action="lists" typeid="$type_id" siteid="$siteid" linktype="1" order="desc" num="6" return="dat"}
+				{loop $dat $v}
+	       		 <a href="{$v[url]}" title="{$v[name]}"  target="_blank"><img src="{$v[logo]}" width="92" height="31" /></a>
+		        {/loop}
+			{/pc}
+         </div>
+        <div class="tag_a">
+        	{pc:link action="lists" typeid="$type_id" siteid="$siteid" linktype="0" order="desc" num="10" return="dat"}
+				{loop $dat $v}
+	       		 <a href="{$v[url]}" title="{$v[name]}" target="_blank">{$v[name]} </a>
+		        {/loop}
+			{/pc}
+         </div>
+    	 
+         	<!--pages-->
+         </div>
+    </div>
+    <!--right_bar-->
+    <div class="col-auto">
+    	<!--广告228x90-->
+        <div class="box">
+            <h5 class="title-2">友情链接分类</h5>
+            <div class="tag_a">
+            <a href="{APP_PATH}index.php?m=link&c=index&a=list_type&type_id=0&siteid={$siteid}" title="默认分类">默认分类</a>
+            {pc:link action="type_lists" listorder="desc" siteid="$siteid"}
+            {loop $data $type_v}
+            <a href="{APP_PATH}index.php?m=link&c=index&a=list_type&type_id={$type_v[typeid]}&siteid={$siteid}" title="{$type_v[name]}">{$type_v[name]}</a>
+            {/loop}
+            {/pc}
+             </div>
+        </div>
+        <div class="bk10"></div>
+        {if $setting['is_post']=='1'}
+        <div class="txt_c">
+            <a href="{APP_PATH}index.php?m=link&c=index&a=register&siteid={$siteid}" class="sqlj_btn"></a>
+        </div>
+        {/if}
+    </div>
+</div>
+{template "content","footer"}

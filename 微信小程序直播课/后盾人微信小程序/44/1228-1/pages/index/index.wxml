@@ -1,0 +1,11 @@
+
+
+<button bindtap="showorhide">来无影去无踪！</button>
+<!-- <image src='../../source/dog.jpg' wx:if="{{stat}}"></image> -->
+
+<!-- 如果hidden属性值是真，元素就隐藏 -->
+<image src='../../source/dog.jpg' hidden="{{stat}}"></image>
+
+<!-- 一般来讲，如果元素在小程序运行过程中不经常被切换显隐状态，用wx:if来控制显隐
+如果元素在小程序运行过程中，会频繁被切换显隐状态，用hidden属性来控制 -->
+

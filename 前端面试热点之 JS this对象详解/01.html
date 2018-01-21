@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+//			this是js对象中的一个特殊指针,他的指向根据环境不同而会发生改变
+			
+//			this指向:哪个对象调用this所在的函数,this就指向谁
+			
+			var name = '后盾人';
+			var obj = {
+				name:'后盾论坛',
+				foo:function(){
+					console.log(this.name);
+				}
+			}
+			
+			obj.foo();
+			
+			
+		</script>
+		
+	</body>
+</html>

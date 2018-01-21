@@ -1,0 +1,34 @@
+<script language="javascript" type="text/javascript" src="{JS_PATH}dialog.js"></script>
+<link href="{CSS_PATH}table_form.css" rel="stylesheet" type="text/css" />
+<link href="{CSS_PATH}dialog.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{JS_PATH}dialog.js"></script>
+<div class="box">
+    <h5>表单向导</h5>
+    <div class="content">
+				<form method="post" action="{APP_PATH}index.php?m=formguide&c=index&a=show&formid={$formid}&siteid=<?php echo $this->siteid;?>"{if $no_allowed} target="member_login"{/if} name="myform" id="myform">
+<table class="table_form" width="100%" cellspacing="0">
+<tbody>
+ {loop $forminfos_data $field $info}
+	{if $info['formtype']=='omnipotent'}
+		{loop $forminfos_data $_fm $_fm_value}
+			{if $_fm_value['iscomnipotent']}
+				{php $info['form'] = str_replace('{'.$_fm.'}',$_fm_value['form'],$info['form']);}
+			{/if}
+		{/loop}
+	{/if}
+	<tr>
+      <th width="80">{if $info['star']} <font color="red">*</font>{/if} {$info['name']}
+	  </th>
+      <td>{$info['form']}  {$info['tips']}</td>
+    </tr>
+{/loop}
+<tr>
+<td></td>
+<td><div class="submit ib"><input type="submit"{if $no_allowed} disabled=""{/if} name="dosubmit" id="dosubmit" value=" 提交 "></div> {if $no_allowed}您还没有<a href="{APP_PATH}index.php?m=member&c=index&alogin&forward={urlencode(HTTP_REFERER)}" style="color:red">登录</a>或<a href="" style="color:red">注册</a>网站，请登录后提交表单{/if}</td>
+</tr>
+	</tbody>
+</table>
+
+</form>
+    </div>
+</div>

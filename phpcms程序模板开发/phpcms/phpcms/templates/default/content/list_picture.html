@@ -1,0 +1,21 @@
+{template "content","header"}
+<!--main-->
+<div class="main photo-channel">
+<div class="crumbs"><a href="{siteurl($siteid)}">首页</a><span> > {catpos($catid)}</div>
+<div class="bk10"></div>
+	{pc:content action="lists" catid="$catid" num="10" order="id DESC" page="$page"}
+		<ul class="photo-list picbig">
+			{loop $data $r}
+			<li>
+			<div class="img-wrap">
+			<a href="{$r[url]}"><img src="{thumb($r[thumb],150,112)}" width="150" height="112" alt="{$r[title]}"/></a>
+			</div>
+			<span style="color:{$r[style]}">{str_cut($r[title],28)}</span>
+			</li>
+			{/loop}
+		</ul>
+		<div id="pages" class="text-c">{$pages}</div>
+	{/pc}
+    </div>
+</div>
+{template "content","footer"}

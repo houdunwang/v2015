@@ -1,0 +1,3 @@
+<button bindtap='tapscreen'>我是一个按钮</button>
+
+<view class='word'>你点击了{{click}}次按钮</view>

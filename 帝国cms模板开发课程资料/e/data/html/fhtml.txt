@@ -1,0 +1,581 @@
+[!--text--]
+<input name="[!--enews.var--]" type="text" id="[!--enews.var--]" value="<?=$ecmsfirstpost==1?"[!--enews.def.val--]":ehtmlspecialchars(stripSlashes($r[[!--enews.var--]]))?>" size="[!--fsize.w--]">
+[!--text--]
+[!--password--]
+<input name="[!--enews.var--]" type="password" id="[!--enews.var--]" value="<?=$ecmsfirstpost==1?"[!--enews.def.val--]":ehtmlspecialchars(stripSlashes($r[[!--enews.var--]]))?>" size="[!--fsize.w--]">
+[!--password--]
+[!--select--]
+<select name="[!--enews.var--]" id="[!--enews.var--]">
+[!--enews.select.var--]
+</select>
+[!--select--]
+[!--radio--]
+<select name="[!--enews.var--]" id="[!--enews.var--]">
+[!--enews.radio.var--]
+</select>
+[!--radio--]
+[!--textarea--]
+<textarea name="[!--enews.var--]" cols="[!--fsize.w--]" rows="[!--fsize.h--]" id="[!--enews.var--]"><?=$ecmsfirstpost==1?"[!--enews.def.val--]":ehtmlspecialchars(stripSlashes($r[[!--enews.var--]]))?></textarea>
+[!--textarea--]
+[!--img--]
+<input name="[!--enews.var--]" type="text" id="[!--enews.var--]" value="<?=$ecmsfirstpost==1?"[!--enews.def.val--]":ehtmlspecialchars(stripSlashes($r[[!--enews.var--]]))?>" size="[!--fsize.w--]">
+<a onclick="window.open('ecmseditor/FileMain.php?type=1&classid=<?=$classid?>&infoid=<?=$id?>&filepass=<?=$filepass?>&sinfo=1&doing=1&field=[!--enews.var--]<?=$ecms_hashur[ehref]?>','','width=700,height=550,scrollbars=yes');" title="选择已上传的图片"><img src="../data/images/changeimg.gif" border="0" align="absbottom"></a> 
+[!--img--]
+[!--flash--]
+<input name="[!--enews.var--]" type="text" id="[!--enews.var--]" value="<?=$ecmsfirstpost==1?"[!--enews.def.val--]":ehtmlspecialchars(stripSlashes($r[[!--enews.var--]]))?>" size="[!--fsize.w--]">
+<a onclick="window.open('ecmseditor/FileMain.php?type=2&classid=<?=$classid?>&infoid=<?=$id?>&filepass=<?=$filepass?>&sinfo=1&doing=1&field=[!--enews.var--]<?=$ecms_hashur[ehref]?>','','width=700,height=550,scrollbars=yes');" title="选择已上传的FLASH"><img src="../data/images/changeflash.gif" border="0" align="absbottom"></a> 
+[!--flash--]
+[!--file--]
+<input name="[!--enews.var--]" type="text" id="[!--enews.var--]" value="<?=$ecmsfirstpost==1?"[!--enews.def.val--]":ehtmlspecialchars(stripSlashes($r[[!--enews.var--]]))?>" size="[!--fsize.w--]">
+<a onclick="window.open('ecmseditor/FileMain.php?type=0&classid=<?=$classid?>&infoid=<?=$id?>&filepass=<?=$filepass?>&sinfo=1&doing=1&field=[!--enews.var--]<?=$ecms_hashur[ehref]?>','','width=700,height=550,scrollbars=yes');" title="选择已上传的文件"><img src="../data/images/changefile.gif" border="0" align="absbottom"></a>
+[!--file--]
+[!--newstext--]
+<?=ECMS_ShowEditorVar("newstext",$ecmsfirstpost==1?"[!--enews.def.val--]":stripSlashes($r[newstext]),"[!--editor.type--]","[!--editor.basepath--]","[!--fsize.h--]","[!--fsize.w--]")?>
+<table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#DBEAF5">
+          <tr> 
+            <td bgcolor="#FFFFFF"> <input name="dokey" type="checkbox" value="1"<?=$r[dokey]==1?' checked':''?>>
+              关键字替换&nbsp;&nbsp; <input name="copyimg" type="checkbox" id="copyimg" value="1">
+      远程保存图片(
+      <input name="mark" type="checkbox" id="mark" value="1">
+      <a href="SetEnews.php<?=$ecms_hashur[whehref]?>" target="_blank">加水印</a>)&nbsp;&nbsp; 
+      <input name="copyflash" type="checkbox" id="copyflash" value="1">
+      远程保存FLASH(地址前缀： 
+      <input name="qz_url" type="text" id="qz_url" size="">
+              )</td>
+          </tr>
+          <tr>
+            
+    <td bgcolor="#FFFFFF"><input name="repimgnexturl" type="checkbox" id="repimgnexturl" value="1"> 图片链接转为下一页&nbsp;&nbsp; <input name="autopage" type="checkbox" id="autopage" value="1"> 自动分页
+      ,每 
+      <input name="autosize" type="text" id="autosize" value="5000" size="5">
+      个字节为一页&nbsp;&nbsp; 取第 
+      <input name="getfirsttitlepic" type="text" id="getfirsttitlepic" value="" size="1">
+      张上传图为标题图片( 
+      <input name="getfirsttitlespic" type="checkbox" id="getfirsttitlespic" value="1">
+      缩略图: 宽 
+      <input name="getfirsttitlespicw" type="text" id="getfirsttitlespicw" size="3" value="<?=$public_r[spicwidth]?>">
+      *高
+      <input name="getfirsttitlespich" type="text" id="getfirsttitlespich" size="3" value="<?=$public_r[spicheight]?>">
+      )</td>
+          </tr>
+        </table>
+[!--newstext--]
+[!--writer--]
+<?php
+$writer_sql=$empire->query("select writer from {$dbtbpre}enewswriter");
+while($w_r=$empire->fetch($writer_sql))
+{
+	$w_class.="<option value='".$w_r[writer]."'>".$w_r[writer]."</option>";
+}
+?>
+<input type=text name=writer value="<?=$ecmsfirstpost==1?"[!--enews.def.val--]":ehtmlspecialchars(stripSlashes($r[writer]))?>" size="[!--fsize.w--]"> 
+        <select name="w_id" id="select7" onchange="document.add.writer.value=document.add.w_id.value">
+          <option>选择作者</option>
+		  <?=$w_class?>
+        </select>
+<input type="button" name="wbutton" value="增加作者" onclick="window.open('NewsSys/writer.php?<?=$ecms_hashur[ehref]?>&addwritername='+document.add.writer.value);">
+[!--writer--]
+[!--befrom--]
+<?php
+$befrom_sql=$empire->query("select sitename from {$dbtbpre}enewsbefrom");
+while($b_r=$empire->fetch($befrom_sql))
+{
+	$b_class.="<option value='".$b_r[sitename]."'>".$b_r[sitename]."</option>";
+}
+?>
+<input type="text" name="befrom" value="<?=$ecmsfirstpost==1?"[!--enews.def.val--]":ehtmlspecialchars(stripSlashes($r[befrom]))?>" size="[!--fsize.w--]"> 
+        <select name="befrom_id" id="befromid" onchange="document.add.befrom.value=document.add.befrom_id.value">
+          <option>选择信息来源</option>
+          <?=$b_class?>
+        </select>
+<input type="button" name="wbutton" value="增加来源" onclick="window.open('NewsSys/BeFrom.php?<?=$ecms_hashur[ehref]?>&addsitename='+document.add.befrom.value);">
+[!--befrom--]
+[!--downpath--]
+<script>
+function doadd()
+{var i;
+var str="";
+var oldi=0;
+var j=0;
+oldi=parseInt(document.add.editnum.value);
+for(i=1;i<=document.add.downnum.value;i++)
+{
+j=i+oldi;
+str=str+"<tr><td width=7%> <div align=center>"+j+"</div></td><td width=19%><div align=left><input name=downname[] type=text id=downname[] value=下载地址"+j+" size=17></div></td><td width=40%><input name=downpath[] type=text size=36 id=downpath"+j+" ondblclick=SpOpenChFile(0,'downpath"+j+"')><select name=thedownqz[]><option value=''>--地址前缀--</option><?=$newdownqz?></select></td><td width=21%><div align=center><select name=downuser[] id=select><option value=0>游客</option><?=$ygroup?></select></div></td><td width=13%><div align=center><input name=fen[] type=text id=fen[] value=0 size=6></div></td></tr>";
+}
+document.getElementById("adddown").innerHTML="<table width='100%' border=0 cellspacing=1 cellpadding=3>"+str+"</table>";
+}
+</script>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="25">下载地址前缀&nbsp;:
+      <input name="downurl_qz" type="text" size="32">
+      <select name="changeurl_qz" onchange="document.add.downurl_qz.value=document.add.changeurl_qz.value">
+        <option value="" selected>选择前缀</option>
+        <?=$downurlqz?>
+      </select>
+	  </td>
+  </tr>
+  <tr>
+    <td height="25">选择/上传附件:
+      <input name="changedown_url" id="changedown_url" type="text" size="32">
+      <input type="button" name="Submit" value="选择" onclick="window.open('ecmseditor/FileMain.php?type=0&classid=<?=$classid?>&infoid=<?=$id?>&filepass=<?=$filepass?>&sinfo=1&doing=1&field=changedown_url<?=$ecms_hashur[ehref]?>','','width=700,height=550,scrollbars=yes');">&nbsp;
+	  <input type="button" name="Submit" value="复制" onclick="document.getElementById('changedown_url').focus();document.getElementById('changedown_url').select();clipboardData.setData('text',document.getElementById('changedown_url').value);"></td>
+  </tr>
+  <tr> 
+    <td><table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#DBEAF5">
+        <tr> 
+          <td width="7%"> <div align="center">编号</div></td>
+          <td width="19%"><div align="left">下载名称</div></td>
+          <td width="40%">下载地址 <font color="#666666">(双击选择)</font></td>
+          <td width="21%"> <div align="center">权限</div></td>
+          <td width="13%"> <div align="center">点数</div></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr> 
+    <td>
+    <?php
+    if($ecmsfirstpost==1)
+    {
+    ?>
+	<table width='100%' border=0 cellspacing=1 cellpadding=3>
+	<?php
+	$editnum=3;
+	for($pathi=1;$pathi<=$editnum;$pathi++)
+	{
+	?>
+           <tr> 
+              <td width='7%'> <div align=center><?=$pathi?></div></td>
+              <td width='19%'> <div align=left> 
+                  <input name=downname[] type=text value='下载地址<?=$pathi?>' size=17>
+                    </div></td>
+              <td width='40%'>
+	      <input name=downpath[] type=text size=36 id='downpath<?=$pathi?>' ondblclick="SpOpenChFile(0,'downpath<?=$pathi?>');">
+	      <select name=thedownqz[]><option value=''>--地址前缀--</option><?=$newdownqz?></select> 
+                  </td>
+                  <td width='21%'><div align=center> 
+                      <select name=downuser[]>
+                        <option value=0>游客</option>
+                        <?=$ygroup?>
+                      </select>
+                    </div></td>
+                  <td width='13%'> <div align=center> 
+                      <input name=fen[] type=text value=0 size=6>
+                    </div></td>
+            </tr>
+	<?php
+	}
+	?>
+	</table>
+    <?php
+    }
+    else
+    {
+	$editnum=0;
+	$downloadpath="";
+	if($r[downpath])
+	{
+		$r[downpath]=stripSlashes($r[downpath]);
+		//下载地址
+		$j=0;
+		$d_record=explode("\r\n",$r[downpath]);
+		for($i=0;$i<count($d_record);$i++)
+		{
+			$j=$i+1;
+			$d_field=explode("::::::",$d_record[$i]);
+			//权限
+			$tgroup=str_replace(" value=".$d_field[2].">"," value=".$d_field[2]." selected>",$ygroup);
+			//地址前缀
+			$tnewdownqz=str_replace(" value='".$d_field[4]."'>"," value='".$d_field[4]."' selected>",$newdownqz);
+			$downloadpath.="<tr><td width='7%'><div align=center>".$j."</div></td><td width='19%'><div align=left><input name=downname[] type=text id=downname[] value='".$d_field[0]."' size=17></div></td><td width='40%'><input name=downpath[] type=text id=downpath".$j." value='".$d_field[1]."' size=36 ondblclick=\"SpOpenChFile(0,'downpath".$j."');\"><select name=thedownqz[]><option value=''>--地址前缀--</option>".$tnewdownqz."</select><input type=hidden name=pathid[] value=".$j."><input type=checkbox name=delpathid[] value=".$j.">删</td><td width='21%'><div align=center><select name=downuser[] id=select><option value=0>游客</option>".$tgroup."</select></div></td><td width='13%'><div align=center><input name=fen[] type=text id=fen[] value='".$d_field[3]."' size=6></div></td></tr>";
+		}
+		$editnum=$j;
+		$downloadpath="<table width='100%' border=0 cellspacing=1 cellpadding=3>".$downloadpath."</table>";
+	}
+	echo $downloadpath;
+    }
+    ?>
+    </td>
+  </tr>
+  <tr> 
+    <td height="25">下载地址扩展数量: <input name="editnum" type="hidden" id="editnum" value="<?=$editnum?>">
+      <input name="downnum" type="text" id="downnum" value="1" size="6"> <input type="button" name="Submit5" value="输出地址" onclick="javascript:doadd();"></td>
+  </tr>
+  <tr> 
+    <td id=adddown></td>
+  </tr>
+</table>
+[!--downpath--]
+[!--onlinepath--]
+<script>
+function dooadd()
+{var i;
+var str="";
+var oldi=0;
+var j=0;
+oldi=parseInt(document.add.oeditnum.value);
+for(i=1;i<=document.add.odownnum.value;i++)
+{
+j=i+oldi;
+str=str+"<tr><td width=7%> <div align=center>"+j+"</div></td><td width=19%><div align=left><input name=odownname[] type=text value="+j+" size=17></div></td><td width=40%><input name=odownpath[] type=text size=36 id=odownpath"+j+" ondblclick=SpOpenChFile(0,'odownpath"+j+"')><select name=othedownqz[]><option value=''>--地址前缀--</option><?=$newdownqz?></select></td><td width=21%><div align=center><select name=odownuser[] id=select><option value=0>游客</option><?=$ygroup?></select></div></td><td width=13%><div align=center><input name=ofen[] type=text value=0 size=6></div></td></tr>";
+}
+document.getElementById("addonline").innerHTML="<table width='100%' border=0 cellspacing=1 cellpadding=3>"+str+"</table>";
+}
+</script>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td height="25">观看地址前缀&nbsp;: 
+      <input name="onlineurl_qz" type="text" size="32"> <select name="changeonlineurl_qz" onchange="document.add.onlineurl_qz.value=document.add.changeonlineurl_qz.value">
+        <option value="" selected>选择前缀</option>
+        <?=$downurlqz?>
+      </select>
+      </td>
+  </tr>
+  <tr> 
+    <td height="25">选择/上传附件: 
+      <input name="changeonline_url" id="changeonline_url" type="text" size="32"> <input type="button" name="Submit" value="选择" onclick="window.open('ecmseditor/FileMain.php?type=0&classid=<?=$classid?>&infoid=<?=$id?>&filepass=<?=$filepass?>&sinfo=1&doing=1&field=changeonline_url<?=$ecms_hashur[ehref]?>','','width=700,height=550,scrollbars=yes');">&nbsp;
+	  <input type="button" name="Submit" value="复制" onclick="document.getElementById('changeonline_url').focus();document.getElementById('changeonline_url').select();clipboardData.setData('text',document.getElementById('changeonline_url').value);"></td>
+  </tr>
+  <tr> 
+    <td><table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#DBEAF5">
+        <tr> 
+          <td width="7%"> <div align="center">编号</div></td>
+          <td width="19%"><div align="left">观看名称</div></td>
+          <td width="40%">观看地址 <font color="#666666">(双击选择)</font></td>
+          <td width="21%"> <div align="center">权限</div></td>
+          <td width="13%"> <div align="center">点数</div></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr> 
+    <td>
+    <?php
+    if($ecmsfirstpost==1)
+    {
+	?>
+	<table width='100%' border=0 cellspacing=1 cellpadding=3>
+	<?php
+	$oeditnum=3;
+	for($opathi=1;$opathi<=$oeditnum;$opathi++)
+	{
+	?>
+		<tr> 
+                  <td width='7%'> <div align=center><?=$opathi?></div></td>
+                  <td width='19%'> <div align=left> 
+                      <input name=odownname[] type=text value='<?=$opathi?>' size=17>
+                    </div></td>
+                  <td width='40%'> 
+		  <input name=odownpath[] type=text id='odownpath<?=$opathi?>' size=36 ondblclick="SpOpenChFile(0,'odownpath<?=$opathi?>');">
+		  <select name=othedownqz[]><option value=''>--地址前缀--</option><?=$newdownqz?></select> 
+                  </td>
+                  <td width='21%'><div align=center> 
+                      <select name=odownuser[] id=select>
+                        <option value=0>游客</option>
+                        <?=$ygroup?>
+                      </select>
+                    </div></td>
+                  <td width='13%'> <div align=center> 
+                      <input name=ofen[] type=text id=ofen[] value=0 size=6>
+                    </div></td>
+                </tr>
+	<?php
+	}
+	?>
+	</table>
+	<?php
+    }
+    else
+    {
+	$oeditnum=0;
+	$onlinemoviepath="";
+	if($r[onlinepath])
+	{
+		$j=0;
+		$od_record=explode("\r\n",$r[onlinepath]);
+		for($i=0;$i<count($od_record);$i++)
+		{
+			$j=$i+1;
+			$od_field=explode("::::::",$od_record[$i]);
+			//权限
+			$tgroup=str_replace(" value=".$od_field[2].">"," value=".$od_field[2]." selected>",$ygroup);
+			//地址前缀
+			$tnewdownqz=str_replace(" value='".$od_field[4]."'>"," value='".$od_field[4]."' selected>",$newdownqz);
+			$onlinemoviepath.="<tr><td width='7%'><div align=center>".$j."</div></td><td width='19%'><div align=left><input name=odownname[] type=text value='".$od_field[0]."' size=17></div></td><td width='40%'><input name=odownpath[] type=text value='".$od_field[1]."' size=36 id=odownpath".$j." ondblclick=\"SpOpenChFile(0,'odownpath".$j."');\"><select name=othedownqz[]><option value=''>--地址前缀--</option>".$tnewdownqz."</select><input type=hidden name=opathid[] value=".$j."><input type=checkbox name=odelpathid[] value=".$j.">删</td><td width='21%'><div align=center><select name=odownuser[] id=select><option value=0>游客</option>".$tgroup."</select></div></td><td width='13%'><div align=center><input name=ofen[] type=text value='".$od_field[3]."' size=6></div></td></tr>";
+		}
+		$oeditnum=$j;
+		$onlinemoviepath="<table width='100%' border=0 cellspacing=1 cellpadding=3>".$onlinemoviepath."</table>";
+	}
+	echo $onlinemoviepath;
+    }
+    ?>
+    </td>
+  </tr>
+  <tr> 
+    <td height="25">在线地址扩展数量: <input name="oeditnum" type="hidden" id="oeditnum" value="<?=$oeditnum?>">
+      <input name="odownnum" type="text" id="odownnum" value="1" size="6"> <input type="button" name="Submit5" value="输出地址" onclick="javascript:dooadd();"></td>
+  </tr>
+  <tr> 
+    <td id=addonline></td>
+  </tr>
+</table>
+[!--onlinepath--]
+[!--morepic--]
+<script>
+function dopicadd()
+{var i;
+var str="";
+var oldi=0;
+var j=0;
+oldi=parseInt(document.add.morepicnum.value);
+for(i=1;i<=document.add.downmorepicnum.value;i++)
+{
+j=i+oldi;
+str=str+"<tr><td width=7%><div align=center>"+j+"</div></td><td width=33%><div align=center><input name=msmallpic[] type=text size=28 id=msmallpic"+j+" ondblclick=SpOpenChFile(1,'msmallpic"+j+"')><br><input type=file name=msmallpfile[] size=15></div></td><td width=30%><div align=center><input name=mbigpic[] type=text size=28 id=mbigpic"+j+" ondblclick=SpOpenChFile(1,'mbigpic"+j+"')><br><input type=file name=mbigpfile[] size=15></div></td><td width=30%><div align=center><input name=mpicname[] type=text></div></td></tr>";
+}
+document.getElementById("addpicdown").innerHTML="<table width='100%' border=0 cellspacing=1 cellpadding=3>"+str+"</table>";
+}
+</script>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="25">
+	图片地址前缀:
+      <input name="mpicurl_qz" type="text" id="mpicurl_qz">&nbsp;&nbsp;
+	  <input type="checkbox" name="msavepic" value="1">远程保存&nbsp;<input type="checkbox" name="mcreatespic" value="1" onclick="if(this.checked){setmcreatespic.style.display='';}else{setmcreatespic.style.display='none';}">生成缩图
+	  <span id="setmcreatespic" style="display:none">：<input type=text name="mcreatespicwidth" size=4 value="<?=$public_r[spicwidth]?>">*<input type=text name="mcreatespicheight" size=4 value="<?=$public_r[spicheight]?>">(宽*高)</span>
+	  <?php
+	  if(TranmoreIsOpen())
+	  {
+	  ?>
+	  <input type="button" name="Submit" value="多选上传" onclick="window.open('ecmseditor/tranmore/tranmore.php?type=1&classid=<?=$classid?>&filepass=<?=$filepass?>&infoid=<?=$id?>&modtype=0&sinfo=1&ecmsdo=ecmstmmorepic&tranfrom=2<?=$ecms_hashur['ehref']?>&oldmorepicnum='+document.add.morepicnum.value,'ecmstmpage','width=700,height=550,scrollbars=yes');">
+	  <?php
+	  }
+	  ?>
+ </td>
+  </tr>
+  <tr> 
+    <td><table width="100%" border=0 align=center cellpadding=3 cellspacing=1>
+  <tr bgcolor="#DBEAF5"> 
+    <td width="7%"><div align=center>编号</div></td>
+    <td width="33%"><div align=center>缩图 <font color="#666666">(双击选择)</font></div></td>
+    <td width="30%"><div align=center>大图 <font color="#666666">(双击选择)</font></div></td>
+    <td width="30%"><div align=center>图片说明</div></td>
+  </tr>
+</table></td>
+  </tr>
+  <tr> 
+    <td id=defmorepicid>
+    <?php
+    if($ecmsfirstpost==1)
+    {
+	?>
+	<table width='100%' border=0 align=center cellpadding=3 cellspacing=1>
+	<?php
+	$morepicnum=3;
+	for($mppathi=1;$mppathi<=$morepicnum;$mppathi++)
+	{
+	?>
+	<tr> 
+		<td width='7%'><div align=center><?=$mppathi?></div></td>
+		<td width='33%'><div align=center>
+		<input name=msmallpic[] type=text id='msmallpic<?=$mppathi?>' size=28 ondblclick="SpOpenChFile(1,'msmallpic<?=$mppathi?>');">
+		<br><input type=file name=msmallpfile[] size=15>
+		</div></td>
+		<td width='30%'><div align=center>
+		<input name=mbigpic[] type=text id='mbigpic<?=$mppathi?>' size=28 ondblclick="SpOpenChFile(1,'mbigpic<?=$mppathi?>');">
+		<br><input type=file name=mbigpfile[] size=15>
+		</div></td>
+		<td width='30%'><div align=center>
+		<input name=mpicname[] type=text id='mpicname<?=$mppathi?>'>
+		</div></td>
+	</tr>
+	<?php
+	}
+	?>
+	</table>
+	<?php
+    }
+    else
+    {
+	$morepicpath="";
+	$morepicnum=0;
+	if($r[morepic])
+    	{
+    		$r[morepic]=stripSlashes($r[morepic]);
+    		//地址
+    		$j=0;
+    		$pd_record=explode("\r\n",$r[morepic]);
+    		for($i=0;$i<count($pd_record);$i++)
+    		{
+			$j=$i+1;
+    			$pd_field=explode("::::::",$pd_record[$i]);
+			$morepicpath.="<tr> 
+    <td width='7%'><div align=center>".$j."</div></td>
+    <td width='33%'><div align=center>
+        <input name=msmallpic[] type=text value='".$pd_field[0]."' size=28 id=msmallpic".$j." ondblclick=\"SpOpenChFile(1,'msmallpic".$j."');\">
+		<br><input type=file name=msmallpfile[] size=15>
+      </div></td>
+    <td width='30%'><div align=center>
+        <input name=mbigpic[] type=text value='".$pd_field[1]."' size=28 id=mbigpic".$j." ondblclick=\"SpOpenChFile(1,'mbigpic".$j."');\">
+		<br><input type=file name=mbigpfile[] size=15>
+      </div></td>
+    <td width='30%'><div align=center>
+        <input name=mpicname[] type=text value='".$pd_field[2]."'><input type=hidden name=mpicid[] value=".$j."><input type=checkbox name=mdelpicid[] value=".$j.">删
+      </div></td>
+  </tr>";
+    		}
+    		$morepicnum=$j;
+    		$morepicpath="<table width='100%' border=0 cellspacing=1 cellpadding=3>".$morepicpath."</table>";
+    	}
+	echo $morepicpath;
+    }
+    ?>
+    </td>
+  </tr>
+  <tr> 
+    <td height="25">地址扩展数量: <input name="morepicnum" type="hidden" id="morepicnum" value="<?=$morepicnum?>">
+      <input name="downmorepicnum" type="text" value="1" size="6"> <input type="button" name="Submit5" value="输出地址" onclick="javascript:dopicadd();"></td>
+  </tr>
+  <tr> 
+    <td id=addpicdown></td>
+  </tr>
+</table>
+[!--morepic--]
+[!--date--]
+<input name="[!--enews.var--]" type="text" id="[!--enews.var--]" value="<?=$ecmsfirstpost==1?"[!--enews.def.val--]":ehtmlspecialchars(stripSlashes($r[[!--enews.var--]]))?>" size="[!--fsize.w--]" onclick="setday(this);">
+[!--date--]
+[!--color--]
+<input name="[!--enews.var--]" type="text" id="[!--enews.var--]" value="<?=$ecmsfirstpost==1?"[!--enews.def.val--]":ehtmlspecialchars(stripSlashes($r[[!--enews.var--]]))?>" size="[!--fsize.w--]" onclick="FieldChangeColor(this);">
+[!--color--]
+[!--linkfield--]
+<input name="[!--enews.var--]" type="text" id="[!--enews.var--]" value="<?=$ecmsfirstpost==1?"[!--enews.def.val--]":ehtmlspecialchars(stripSlashes($r[[!--enews.var--]]))?>" size="[!--fsize.w--]">
+<input type="button" name="changebutton" value="选择" onclick="window.open('db/ChangeField.php?viewf=[!--enews.vfield.var--]&changef=[!--enews.cfield.var--]&tbname=[!--enews.ctbname--]&form=add&field=[!--enews.var--]<?=$ecms_hashur[ehref]?>','','width=700,height=550,scrollbars=yes');">
+[!--linkfield--]
+[!--playerid--]
+<?php
+$player_sql=$empire->query("select id,player from {$dbtbpre}enewsplayer");
+while($player_r=$empire->fetch($player_sql))
+{
+	$select_player='';
+	if($r[playerid]==$player_r[id])
+	{
+		$select_player=' selected';
+	}
+	$player_class.="<option value='".$player_r[id]."'".$select_player.">".$player_r[player]."</option>";
+}
+?>
+<select name="playerid">
+<option value=0>自动识别</option>
+<?=$player_class?>
+</select>
+[!--playerid--]
+[!--editor--]
+<?=ECMS_ShowEditorVar("[!--enews.var--]",$ecmsfirstpost==1?"[!--enews.def.val--]":stripSlashes($r[[!--enews.var--]]),"[!--editor.type--]","[!--editor.basepath--]","[!--fsize.h--]","[!--fsize.w--]")?>
+[!--editor--]
+[!--ubbeditor--]
+<textarea name="[!--enews.var--]" cols="[!--fsize.w--]" rows="[!--fsize.h--]" id="[!--enews.var--]"><?=$ecmsfirstpost==1?"[!--enews.def.val--]":ehtmlspecialchars(stripSlashes($r[[!--enews.var--]]))?></textarea>
+[!--ubbeditor--]
+[!--linkfieldselect--]
+<select name="[!--enews.var--]" id="[!--enews.var--]">
+<?php
+$[!--enews.var--]defval=$ecmsfirstpost==1?"[!--enews.def.val--]":$r[[!--enews.var--]];
+$[!--enews.var--]sql=$empire->query("select [!--enews.selectf--] from {$dbtbpre}ecms_[!--enews.ctbname--] order by newstime desc");
+while($[!--enews.var--]r=$empire->fetch($[!--enews.var--]sql))
+{
+	$slselect='';
+	if($[!--enews.var--]defval==$[!--enews.var--]r[[!--enews.cfield.var--]])
+	{
+		$slselect=' selected';
+	}
+	echo"<option value=\"".$[!--enews.var--]r[[!--enews.cfield.var--]]."\"".$slselect.">".$[!--enews.var--]r[[!--enews.vfield.var--]]."</option>";
+}
+?>
+</select>
+[!--linkfieldselect--]
+[!--morevaluefield--]
+<script>
+function domvadd_[!--enews.var--]()
+{
+	var i;
+	var str='';
+	var oldi=0;
+	var j=0;
+	var addnum=0;
+	addnum=parseInt(document.add.mvaddnum_[!--enews.var--].value);
+	oldi=parseInt(document.add.mveditnum_[!--enews.var--].value);
+	for(i=1;i<=addnum;i++)
+	{
+		j=i+oldi;
+		str=str+'[!--enews.jstr--]';
+	}
+	document.getElementById("mvadd_[!--enews.var--]").innerHTML="<table width='100%' border=0 cellspacing=1 cellpadding=3>"+str+"</table>";
+}
+</script>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td>
+		<table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#DBEAF5">
+        [!--enews.saytr--]
+      </table>
+	</td>
+  </tr>
+  <tr> 
+    <td>
+    <?php
+    if($ecmsfirstpost==1)
+    {
+    ?>
+		<table width='100%' border=0 cellspacing=1 cellpadding=3>
+		<?php
+		$editnum=[!--enews.mvline--];
+		for($i=1;$i<=$editnum;$i++)
+		{
+		?>
+			[!--enews.deftr--]
+		<?php
+		}
+		?>
+		</table>
+    <?php
+    }
+    else
+    {
+		$editnum=0;
+		if($r['[!--enews.var--]'])
+		{
+			$r['[!--enews.var--]']=stripSlashes($r['[!--enews.var--]']);
+			?>
+			<table width='100%' border=0 cellspacing=1 cellpadding=3>
+			<?php
+			//录入项
+			$j=0;
+			$mvf_record=explode('||||||',$r['[!--enews.var--]']);
+			$mvf_count=count($mvf_record);
+			for($i=0;$i<$mvf_count;$i++)
+			{
+				$j=$i+1;
+				$mvf_field=explode("::::::",$mvf_record[$i]);
+				?>
+				[!--enews.edittr--]
+				<?php
+			}
+			?>
+			</table>
+			<?php
+			$editnum=$j;
+		}
+    }
+    ?>
+    </td>
+  </tr>
+  <tr> 
+    <td height="25">扩展数量: <input name="mveditnum_[!--enews.var--]" type="hidden" id="mveditnum_[!--enews.var--]" value="<?=$editnum?>">
+      <input name="mvnum_[!--enews.var--]" type="hidden" id="mvnum_[!--enews.var--]" value="[!--enews.mvnum--]">
+      <input name="mvmust_[!--enews.var--]" type="hidden" id="mvmust_[!--enews.var--]" value="[!--enews.mvmust--]">
+      <input name="mvaddnum_[!--enews.var--]" type="text" id="mvaddnum_[!--enews.var--]" value="1" size="6"> <input type="button" name="Submit5" value="输出" onclick="javascript:domvadd_[!--enews.var--]();"></td>
+  </tr>
+  <tr> 
+    <td id="mvadd_[!--enews.var--]"></td>
+  </tr>
+</table>
+[!--morevaluefield--]

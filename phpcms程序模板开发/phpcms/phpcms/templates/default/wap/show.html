@@ -1,0 +1,29 @@
+{template "wap","min_header"}
+<div class="wrap" id="hd">
+ <div class="adds">{wap_pos($typeid)}</div>
+<h1>{$title}</h1>
+<div class="tm">作者：{$username}&nbsp;&nbsp;日期：{date('m-d',strtotime($inputtime))}<br/>来源：{$copyfrom}</div>
+<div class="content">
+{if $pictureurl}{$pictureurl}<br>{$pages}{/if}
+{$content}
+</div>
+{if !$pictureurl}<div class="pages">{$pages}</div>{/if}
+{php $commentid=id_encode('content_'.$catid,$id,$siteid)}
+{pc:comment action="get_comment" commentid="$commentid"}
+{php $comment = $data;}
+{/pc}
+<div class="mg_b6"><a href="{APP_PATH}index.php?m=wap&amp;c=index&amp;a=comment_list&amp;commentid={$commentid}&amp;typeid={$typeid}">网友评论({if $comment[total]}{$comment[total]}{else}0{/if})</a></div>
+<form action="{APP_PATH}index.php?m=wap&amp;c=index&amp;a=comment" method="post">
+<div class="comment">
+<textarea name="msg" rows="2"></textarea>
+<input type="hidden" name="commentid" value="{id_encode('content_'.$catid,$id,$siteid)}" />
+<input type="hidden" name="typeid" value="{$typeid}" />
+<input type="hidden" name="catid" value="{$catid}" />
+<input type="hidden" name="id" value="{$id}" />
+<input type="hidden" name="title" value="{urlencode(($comment[title] ? $comment[title] : $title))}">
+<input type="hidden" name="url" value="{urlencode(show_url($catid,$typeid,$id))}">
+<br/>
+<input type="submit" value="发言" name="dosumbit" class="ipt"/> 
+</div>
+</form>	
+{template "wap","min_footer"}

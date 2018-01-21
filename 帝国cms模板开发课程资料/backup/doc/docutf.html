@@ -1,0 +1,576 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>帝国备份王说明文档</title>
+<link href="../images/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<table width="99%" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="#0472BC">
+  <tr> 
+    <td height="25"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="50%"><strong><font color="#FFFFFF">帝国备份王(Empirebak)说明文档</font></strong></td>
+          <td width="50%"><div align="right"><font color="#FFFFFF">Language: </font>
+              <select name="select" onchange="self.location.href=this.value;" style="width:300">
+                <option value='doc.html'>Chinese simplified (gb2312)</option>
+                <option value='docutf.html' selected>Chinese simplified (utf-8)</option>
+                <option value='bigdoc.html'>Chinese traditional (big5)</option>
+                <option value='bigdocutf.html'>Chinese traditional (utf-8)</option>
+              </select>
+            </div></td>
+        </tr>
+      </table>      </td>
+  </tr>
+  <tr>
+    <td height="25" bgcolor="#FFFFFF"><table width="100%" border="0" cellspacing="1" cellpadding="3">
+        <tr> 
+          <td width="10%" height="30" onmouseover="this.style.backgroundColor='#DBEAF5'" onmouseout="this.style.backgroundColor='#ffffff'"> 
+            <div align="center"><a href="#aboutebak">关于备份王</a></div></td>
+          <td width="10%" onmouseover="this.style.backgroundColor='#DBEAF5'" onmouseout="this.style.backgroundColor='#ffffff'">
+<div align="center"><a href="#ebak">系统特性</a></div></td>
+          <td width="10%" onmouseover="this.style.backgroundColor='#DBEAF5'" onmouseout="this.style.backgroundColor='#ffffff'">
+<div align="center"><a href="#hj">运行环境</a></div></td>
+          <td width="10%" onmouseover="this.style.backgroundColor='#DBEAF5'" onmouseout="this.style.backgroundColor='#ffffff'">
+<div align="center"><a href="#setup">安装说明</a></div></td>
+          <td width="10%" onmouseover="this.style.backgroundColor='#DBEAF5'" onmouseout="this.style.backgroundColor='#ffffff'">
+<div align="center"><a href="#usebak">使用说明</a></div></td>
+<td width="10%" onmouseover="this.style.backgroundColor='#DBEAF5'" onmouseout="this.style.backgroundColor='#ffffff'">
+<div align="center"><a href="#question">常见问题</a></div></td>
+          <td width="10%" onmouseover="this.style.backgroundColor='#DBEAF5'" onmouseout="this.style.backgroundColor='#ffffff'"><div align="center"><a href="#mustdobak">注意事项</a></div></td>
+		  <td width="10%" onmouseover="this.style.backgroundColor='#DBEAF5'" onmouseout="this.style.backgroundColor='#ffffff'"><div align="center"><a href="#ebma" title="EmpireBak+phpMyAdmin+高安全"><font color="#ff0000"><strong>EBMA系统</strong></font></a></div></td>
+		  <td width="10%" onmouseover="this.style.backgroundColor='#DBEAF5'" onmouseout="this.style.backgroundColor='#ffffff'">
+<div align="center"><a href="http://bbs.phome.net/ListThread?forumid=27" target="_blank">技术支持</a></div></td>
+          <td width="10%" onmouseover="this.style.backgroundColor='#DBEAF5'" onmouseout="this.style.backgroundColor='#ffffff'">
+<div align="center"><a href="http://www.phome.net/service/xuke.html" target="_blank">许可协议</a></div></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td height="38" bgcolor="#FFFFFF"><div align="center"><a href="http://www.phome.net/ecms72/" target="_blank"><strong><font color="#FF0000" size="3">帝国网站管理系统全面开源 
+    － 最安全、最稳定的开源CMS系统</font></strong></a></div></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#FFFFFF"><table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" id="aboutebak">
+        <tr> 
+          <td height="23" bgcolor="#DBEAF5"><strong><font color="#0000FF">前言、帝国备份王(Empirebak)简介</font></strong></td>
+        </tr>
+        <tr> 
+          <td height="22">帝国备份王(EmpireBak)是一款完全开源免费、专门为Mysql大数据的备份与导入而设计的软件,系统采用分卷备份与导入,理论上可备份任何大小的数据库.</td>
+        </tr>
+      </table>
+      <br> 
+      <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" id="ebak">
+        <tr> 
+          <td height="23" bgcolor="#DBEAF5"><strong><font color="#0000FF">一、帝国备份王(Empirebak)系统特性</font></strong></td>
+        </tr>
+        <tr>
+          <td height="30"><strong><font color="#0000FF">(一)、帝国备份王解决MYSQL备份三大难题</font></strong></td>
+        </tr>
+        <tr>
+          <td height="22">1、解决备份大数据问题，采用分组备份，备份稳定高效；</td>
+        </tr>
+        <tr>
+          <td height="22">2、解决备份数据编码乱码问题，备份王智能识别编码；</td>
+        </tr>
+        <tr>
+          <td height="22">3、解决不同MYSQL版本数据不能互导问题，通过备份王不存在数据版本区别。</td>
+        </tr>
+        <tr>
+          <td height="30"><strong><font color="#0000FF">(二)、帝国备份王(Empirebak)主要特性</font></strong></td>
+        </tr>
+        <tr> 
+          <td height="22"><strong>1、分组备份</strong></td>
+        </tr>
+        <tr> 
+          <td height="22"> <table border=0 width=100% cellspacing=1 cellpadding=10 bgcolor='#cccccc'>
+              <tr> 
+                <td width='100%' bgcolor='#FFFFFF' style='word-break:break-all;line-height: 20px'>采用分组备份，系统自动将数据库分成多部分导出导入．理论上不限数据库大小，均可备份与恢复；<br>
+                  支持按“文件大小”与“记录数”两种分组备份方式，特别是针对大数据库而设计的“按记录数”备份算法，效率极高；<br>
+                  每组备份数据大小后台直接设置，依服务器配置自已设定。</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td height="22"><strong>2、不同MYSQL版本数据可直接备份与恢复</strong></td>
+        </tr>
+        <tr> 
+          <td height="22"><table border=0 width=100% cellspacing=1 cellpadding=10 bgcolor='#cccccc'>
+              <tr> 
+                <td width='100%' bgcolor='#FFFFFF' style='word-break:break-all;line-height: 20px'><p>系统自动识别MYSQL版本格式，然后进行转换恢复；<br>
+                    不同编码数据库之间可直接备份与恢复，系统自动识别数据编码；<br>
+                    系统支持完整备份，即使备份与恢复两个数据表结构不一致，也可备份与恢复；<br>
+                    支持数据表编码转换；<br>
+                    支持正常数据与十六进制数据备份。<br>
+                    支持mysql和mysqli两种接口类型链接数据库。<br>
+                  </p></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td height="22"><strong>3、安全性</strong></td>
+        </tr>
+        <tr> 
+          <td height="22"><table border=0 width=100% cellspacing=1 cellpadding=10 bgcolor='#cccccc'>
+              <tr> 
+                <td width='100%' bgcolor='#FFFFFF' style='word-break:break-all;line-height: 20px'>备份文件均生成*.php文件，并且采用登录验证，只有登录的管理员才能进行数据恢复；<br>
+                  备份目录、压缩目录可自定义；<br>
+                  支持密码与认证码双重密码登录验证；<br>
+                  登录支持验证码验证，采用过期时间+加密字符验证，有效防止暴力提交表单；<br>
+                  第一重安全验证：登录随机验证码加密验证；<br>
+                  第二重安全验证：随机变量名+随机验证字符，无规律可寻，并且后台无法查看，必须进入FTP查看配置文件内容，高安全性；<br>
+                  第三重通用性安全验证：给整合程序增加第三重验证，验证字符由系统随机生成，并且后台无法查看，必须进入FTP查看配置文件内容，高安全性；<br>
+                  第四重安全验证：支持浏览器USER-AGENT验证功能，只有包含指定信息的浏览器才可以访问后台，也就是说可以指定某一台机器才能访问后台；<br>
+                  安装目录可任意自定义；<br>
+                  管理员登录验证COOKIE变量前缀后台直接设置。</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td height="22"><strong>4、使用方便</strong></td>
+        </tr>
+        <tr> 
+          <td height="22"><table border=0 width=100% cellspacing=1 cellpadding=10 bgcolor='#cccccc'>
+              <tr> 
+                <td width='100%' bgcolor='#FFFFFF' style='word-break:break-all;line-height: 20px'>备份参数可保存，待以后使用时选择，无需重复设置；<br>
+                  备份目录直接后台管理(打包下载/删除)，支持在线压缩下载与FTP直接下载；<br>
+                  备份设置与备份目录管理，并可直接转向数据备份与恢复页面，很人性化；<br>
+                  在线建立、删除数据库，优化、修复、清空、删除数据表、批量替换表名，查看表字段等功能，管理数据很方便；<br>
+                  在线执行SQL、导入*.sql文件，方便操作数据；<br>
+                  支持批量替换备份目录文件内容，非常方便的文本替换功能；<br>
+                  可随时关闭与启用系统使用。</td>
+              </tr>
+            </table></td>
+        </tr>
+		<tr> 
+          <td height="22"><strong>5、多MYSQL服务器支持</strong></td>
+        </tr>
+        <tr> 
+          <td height="22"><table border=0 width=100% cellspacing=1 cellpadding=10 bgcolor='#cccccc'>
+              <tr> 
+                <td width='100%' bgcolor='#FFFFFF' style='word-break:break-all;line-height: 20px'>支持一个后台对多台MYSQL数据库服务器的数据进行备份与恢复，后台管理可直接切换数据库服务器。 </td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td height="22"><strong>6、多语言</strong></td>
+        </tr>
+        <tr> 
+          <td height="22"><table border=0 width=100% cellspacing=1 cellpadding=10 bgcolor='#cccccc'>
+              <tr> 
+                <td width='100%' bgcolor='#FFFFFF' style='word-break:break-all;line-height: 20px'>系统默认内置“简体中文(gb2312)”、“简体中文(utf-8)”、“繁体中文(big5)”、“繁体中文(utf-8)”。<br>
+                  用户也可增加语言包，制作更多的语言支持。 </td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td height="22"><strong>7、安装/卸载简单</strong></td>
+        </tr>
+        <tr> 
+          <td height="22"><table border=0 width=100% cellspacing=1 cellpadding=10 bgcolor='#cccccc'>
+              <tr> 
+                <td width='100%' bgcolor='#FFFFFF' style='word-break:break-all;line-height: 20px'>安装：上传程序即可直接使用，数据库参数可在线设置(HTTP)。<br>
+                  卸载：删除程序目录即可完全清除。</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td height="22"><strong>8、支持数据累加</strong></td>
+        </tr>
+        <tr> 
+          <td height="22"><table border=0 width=100% cellspacing=1 cellpadding=10 bgcolor='#cccccc'>
+              <tr> 
+                <td width='100%' bgcolor='#FFFFFF' style='word-break:break-all;line-height: 20px'> 
+                  可设置是否增加递增字段值，可以将本地数据累加到服务器数据库上。</td>
+              </tr>
+            </table></td>
+        </tr>
+		<tr> 
+          <td height="22"><strong>9、内置帝国PHP探针</strong></td>
+        </tr>
+        <tr> 
+          <td height="22"><table border=0 width=100% cellspacing=1 cellpadding=10 bgcolor='#cccccc'>
+              <tr> 
+                <td width='100%' bgcolor='#FFFFFF' style='word-break:break-all;line-height: 20px'> 
+                  方便测试服务器或空间运行环境是否支持各类网站程序的安装与使用。</td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <br> <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" id="hj">
+        <tr> 
+          <td height="23" bgcolor="#DBEAF5"><strong><font color="#0000FF">二、程序运行环境</font></strong></td>
+        </tr>
+        <tr> 
+          <td height="22">WINDOWS/LINUX/UNIX + PHP</td>
+        </tr>
+      </table>
+      <br> 
+      <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" id="setup">
+        <tr> 
+          <td height="23" bgcolor="#DBEAF5"><strong><font color="#0000FF">三、程序安装说明</font></strong></td>
+        </tr>
+        <tr> 
+          <td height="22"><strong>第 1 步：上传程序包</strong></td>
+        </tr>
+        <tr> 
+          <td height="22"><table width="98%" border="0" align="right" cellpadding="3" cellspacing="1">
+              <tr> 
+                <td>将安装包的 upload 目录中的全部文件和目录上传到服务器。</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td height="22"><strong>第 2 步：设置目录属性</strong></td>
+        </tr>
+        <tr> 
+          <td height="22"><table width="98%" border="0" align="right" cellpadding="3" cellspacing="1">
+              <tr> 
+                <td>
+<p>您在正式使用以前，需要设置相关的目录属性，以便数据文件可以被 EmpireBak 正确的读写。使用 FTP 软件登录您的服务器，将服务器上以下的文件/目录属性设置为 
+                    777。<strong></strong></p></td>
+              </tr>
+              <tr> 
+                <td><table width="350" border="0" cellpadding="3" cellspacing="1" bgcolor="#CCCCCC">
+                    <tr> 
+                      <td width="45%" height="23"><div align="center">目录文件名称</div></td>
+                      <td width="55%"><div align="center">说明</div></td>
+                    </tr>
+                    <tr bgcolor="#FFFFFF"> 
+                      <td height="23">bdata</td>
+                      <td><font color="#666666">备份目录</font></td>
+                    </tr>
+                    <tr bgcolor="#FFFFFF"> 
+                      <td height="23">bdata/safemod</td>
+                      <td><font color="#666666">安全模式下数据备份目录</font></td>
+                    </tr>
+                    <tr bgcolor="#FFFFFF"> 
+                      <td height="23">class/config.php</td>
+                      <td><font color="#666666">配置文件</font></td>
+                    </tr>
+                    <tr bgcolor="#FFFFFF"> 
+                      <td height="23">setsave</td>
+                      <td><font color="#666666">保存设置目录</font></td>
+                    </tr>
+                    <tr bgcolor="#FFFFFF"> 
+                      <td height="23">setsave/def</td>
+                      <td><font color="#666666">默认备份设置文件</font></td>
+                    </tr>
+                    <tr bgcolor="#FFFFFF"> 
+                      <td height="23">zip</td>
+                      <td><font color="#666666">压缩包存放目录</font></td>
+                    </tr>
+                    <tr bgcolor="#FFFFFF">
+                      <td height="23">tmp</td>
+                      <td><font color="#666666">临时文件目录</font></td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td height="22"><strong>第 3 步：登录后台</strong></td>
+        </tr>
+        <tr>
+          <td height="22"><table width="98%" border="0" align="right" cellpadding="3" cellspacing="1">
+              <tr> 
+                <td>请在浏览器中运行 index.php，即访问 http://您的域名/安装目录/index.php。<br>
+                  <br>
+                  <font color="#FF0000"><strong>(默认的管理员用户名与密码分别为：admin,123456)</strong></font><br> <br>
+                  登录后<strong>修改默认的用户密码、验证随机码与数据库设置</strong>(全局参数设置) 即可完成安装。</td>
+              </tr>
+            </table>          </td>
+        </tr>
+      </table>
+      <br> 
+      <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" id="usebak">
+        <tr> 
+          <td height="23" bgcolor="#DBEAF5"><strong><font color="#0000FF">四、使用说明</font></strong></td>
+        </tr>
+        <tr> 
+          <td height="22">1．<strong>备份数据：</strong>后台 －＞备份数据 －＞ 选择备份的数据库 －＞ 选择备份的表与设定备份参数 
+            －＞ 备份完毕。</td>
+        </tr>
+        <tr> 
+          <td height="22">2．<strong>恢复数据：</strong>后台 －＞恢复数据 －＞ 选择恢复源目录，数据库 －＞ 恢复完毕。</td>
+        </tr>
+        <tr> 
+          <td height="22">3．<strong>下载备份文件：</strong>FTP下载备份目录下相应的备份目录即可。默认的备份目录为“bdata”。(对于文件少的也可直接到“管理备份目录”打包下载)</td>
+        </tr>
+      </table>
+      <br> 
+      <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" id="question">
+        <tr> 
+          <td height="23" bgcolor="#DBEAF5"><strong><font color="#0000FF">五、常见问题</font></strong></td>
+        </tr>
+        <tr> 
+          <td height="22"><table width="100%" border="0" cellspacing="1" cellpadding="3">
+              <tr> 
+                <td height="25"><strong>1.如何备份MYSQL数据库？</strong></td>
+              </tr>
+              <tr> 
+                <td height="25"><font color="#333333">&nbsp;&nbsp;答：点菜单“备份数据”-&gt;“选择要备份的数据库”-&gt;“选择要备份的数据表”-&gt; 
+                  设置好备份选项，点击“开始备份”按钮即可进行备份操作。</font></td>
+              </tr>
+              <tr> 
+                <td height="25"><strong>2.如何恢复数据？</strong></td>
+              </tr>
+              <tr> 
+                <td height="25"><font color="#333333">&nbsp;&nbsp;答：点菜单“恢复数据”-&gt; 
+                  选择恢复源目录、数据库 -&gt; 点击“开始恢复”即可进行恢复数据操作。</font></td>
+              </tr>
+              <tr> 
+                <td height="25"><strong>3.如何下载已备份的数据？</strong></td>
+              </tr>
+              <tr> 
+                <td height="25"><font color="#333333">&nbsp;&nbsp;答：直接通过FTP下载“bdata/”下的备份目录即可，恢复时将此目录复制到《帝国备份王》的“bdata/”目录即可。<br>
+                  &nbsp;&nbsp;(小数据也可以直接在线“打包并下载”)</font></td>
+              </tr>
+              <tr> 
+                <td height="25"><strong>4.第一次使用，怎么设置更安全？</strong></td>
+              </tr>
+              <tr> 
+                <td height="25"><font color="#333333">&nbsp;&nbsp;答：(1)、后台-&gt;“全局参数设置”-&gt;“管理员设置”：修改默认的用户名、密码、认证码与验证随机码；<br>
+                  (2)、后台-&gt;“全局参数设置”-&gt;“COOKIE设置”：修改COOKIE变量前缀(只能用字母和下划线)；<br>
+                  (3)、安装目录命名为不容易被猜到且容易记忆的目录名。</font></td>
+              </tr>
+              <tr> 
+                <td height="25"><strong>5.出现”You have an error in your SQL syntax;...right 
+                  syntax to use near '-1' at line 1”错误</strong></td>
+              </tr>
+              <tr> 
+                <td height="25"><font color="#333333">&nbsp;&nbsp;解决方法：后台”全局参数设置”-&gt;”其它设置”那把”MYSQL支持查询方式”项打勾去掉即可。</font></td>
+              </tr>
+              <tr> 
+                <td height="25"><strong>6.备份时提示”您来自的链接不存在”</strong></td>
+              </tr>
+              <tr> 
+                <td height="25"><font color="#333333">&nbsp;&nbsp;解决方法：您没设置好目录权限，重新设置安装说明第2步需要设置的目录权限即可解决。</font></td>
+              </tr>
+              <tr> 
+                <td height="25"><strong>7.空间的PHP运行于安全模式怎么备份？</strong></td>
+              </tr>
+              <tr> 
+                <td height="25"><font color="#333333">&nbsp;&nbsp;解决方法：”全局参数设置”-&gt;”其它设置”那把”PHP运行于安全模式”项打勾．这样每次都会备份到”safemod”目录。</font></td>
+              </tr>
+              <tr> 
+                <td height="25"><strong>8.不想显示数据库列表的方法</strong></td>
+              </tr>
+              <tr> 
+                <td height="25"><font color="#333333">&nbsp;&nbsp;解决方法：”全局参数设置”-&gt;”数据库设置”那输入”默认备份的数据库”即可</font></td>
+              </tr>
+              <tr> 
+                <td height="25"><strong>9.MYSQL 4.1以上版本备份推荐检查一下备份数据</strong></td>
+              </tr>
+              <tr> 
+                <td height="25"><font color="#333333">&nbsp;&nbsp;备份好数据后，然后到备份目录下打开任意一个备份.php文件，看备份数据文件内容是否正常。如果都是“???”之类数据，说明编码不对，需要重新备份数据，并选择默认编码。</font></td>
+              </tr>
+              <tr> 
+                <td height="25"><p><strong>10、将数据累加到服务器数据表里</strong></p></td>
+              </tr>
+              <tr> 
+                <td height="25"><font color="#333333">&nbsp;&nbsp;如果要将数据累加到数据表。备份数据时，设置相应的“去除自增值的字段”即可，格式为“表名.字段名”。</font></td>
+              </tr>
+              <tr> 
+                <td height="25"><strong>11、忘记后台登录密码怎么办？</strong></td>
+              </tr>
+              <tr> 
+                <td height="25"><font color="#333333">&nbsp;&nbsp;解决方法：修改class/config.php文件，内容找到“$set_password”，把它的值改为“14e1b600b1fd579f47433b88e8d85291”，密码就是：123456</font></td>
+              </tr>
+              <tr> 
+                <td height="25"><strong>12、忘记后台登录认证码怎么办？</strong></td>
+              </tr>
+              <tr> 
+                <td height="25"><font color="#333333">&nbsp;&nbsp;解决方法：打开class/config.php文件，内容找到“$set_loginauth”，把它的值就是认证码</font></td>
+              </tr>
+              <tr> 
+                <td height="25"><strong>13、出现“Access denied; you need the SHOW 
+                  DATABASES privilege for this operation”错误</strong></td>
+              </tr>
+              <tr> 
+                <td height="25"><font color="#333333">&nbsp;&nbsp;</font>解决方法：<font color="#333333">”全局参数设置”-&gt;”其它设置”那把”空间不支持数据库列表”项打勾去掉即可。</font></td>
+              </tr>
+              <tr> 
+                <td height="25"><strong>14、如何增加默认数据编码选项？</strong></td>
+              </tr>
+              <tr> 
+                <td height="25"><font color="#333333">&nbsp;&nbsp;答：修改“lang/dbchar.php”编码配置文件。</font></td>
+              </tr>
+              <tr>
+                <td height="25"><strong>15、如何自己做语言包？</strong></td>
+              </tr>
+              <tr>
+                <td height="25"><font color="#333333">&nbsp;&nbsp;答：(1)、先复制lang/gb目录，然后重命名，比如说英文语言包，用&quot;en&quot;目录名；<br>
+                  (2)、修改语言包里的文字为其它语言；<br>
+                  (3)、修改“lang/dbchar.php”文件中的$langcharr数组加上新增的语言(目录名,编码,语言名称)；<br>
+                  (4)、新增语言包完毕。</font></td>
+              </tr>
+              <tr>
+                <td height="25"><strong>16、如何增加多MYSQL服务器？</strong></td>
+              </tr>
+              <tr>
+                <td height="25"> <font color="#333333">&nbsp;&nbsp;答：点菜单“全局参数设置”-&gt; “多服务器设置”-&gt; “增加服务器”：填写数据库服务器信息后点“设置”按钮，增加后刷新后台主界面即可看到服务器切换选项。</font></td>
+              </tr>
+              <tr>
+                <td height="25"><strong>17、如何隐藏数据库显示？</strong></td>
+              </tr>
+              <tr>
+                <td height="25"><font color="#333333">&nbsp;&nbsp;答：点菜单“全局参数设置”-&gt; “其它设置”-&gt; “隐藏数据库显示”：填写不想显示的数据库名，多个数据库名用半角逗号&quot;,&quot;隔开。</font></td>
+              </tr>
+              <tr>
+                <td height="25"><strong>18、数据存放格式“正常”与“十六进制方式”区别？</strong></td>
+              </tr>
+              <tr>
+                <td height="25"><font color="#333333">&nbsp;&nbsp;答：两种备份方式恢复后内容都一样，“十六进制方式”备份的数据不容易受编码影响，但备份文件更大，会占用更多的空间。</font></td>
+              </tr>
+              <tr>
+                <td height="25"><strong>19、如何随时关闭帝国备份王使用？</strong></td>
+              </tr>
+              <tr>
+                <td height="25"><font color="#333333">&nbsp;&nbsp;答：只需将closesys目录下的“empirebak.off.txt”文件重命名为“empirebak.off”即可关闭。<br>
+    开启同样将“empirebak.off”重命名为“empirebak.off.txt”即可开启。</font></td>
+              </tr>
+              <tr>
+                <td height="25"><strong>20、如何利用帝国备份王对数据库进行数据编码转换？</strong></td>
+              </tr>
+              <tr>
+                <td height="25"><font color="#333333">&nbsp;&nbsp;答：可以参考这个教程：<a href="http://bbs.phome.net/showthread-13-45475-0.html" target="_blank">http://bbs.phome.net/showthread-13-45475-0.html</a></font></td>
+              </tr>
+              <tr>
+                <td height="25"><strong>21、设置错访问的UserAgent信息，怎么办？</strong></td>
+              </tr>
+              <tr>
+                <td height="25"><font color="#333333">&nbsp;&nbsp;解决方法：修改class/config.php文件，内容找到“$ebak_set_ckuseragent”，把它的值设置为空。</font></td>
+              </tr>
+              <tr>
+                <td height="25"><strong>22、不小心把验证码过期时间设置为0秒，无法登录，怎么办？</strong></td>
+              </tr>
+              <tr>
+                <td height="25"><font color="#333333">&nbsp;&nbsp;解决方法：修改class/config.php文件，内容找到“$ebak_set_keytime”，把它的值改为对应的秒数。</font></td>
+              </tr>
+              
+              
+              <tr> 
+                <td height="36">（其他问题您可以到官方论坛咨询：<a href="http://bbs.phome.net" target="_blank"><u>http://bbs.phome.net</u></a>）</td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      
+	  <br>
+	  <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" id="mustdobak">
+        <tr> 
+          <td height="23" bgcolor="#DBEAF5"><strong><font color="#0000FF">六、注意事项</font></strong></td>
+        </tr>
+        <tr> 
+          <td height="22">1、备份或恢复数据前一定要选择对“全局参数设置”的mysql版本。</td>
+        </tr>
+        <tr> 
+          <td height="22">2、从mysql4.0版本导入mysql4.1以上，备份时一定要选择固定编码，而不能采用自动识别编码。</td>
+        </tr>
+        <tr> 
+          <td height="22">3、当前窗口正在备份或恢复数据库过程中一定不要切换服务器。</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+      </table>    </td>
+  </tr>
+  
+  <tr>
+    <td height="36" bgcolor="#FFFFFF"><table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" id="ebma">
+      <tr>
+        <td height="23" bgcolor="#DBEAF5"><strong><font color="#0000FF">七、EBMA系统简介</font></strong></td>
+      </tr>
+      <tr>
+        <td height="22">“EmpireBak+phpMyAdmin+高安全”整合包就是EBMA系统、开源免费。是一款更安全的MYSQL数据库管理和备份系统。字母取自“Empire”的E、“Bak”的B、“My”的M、“Admin”的A。</td>
+      </tr>
+
+    </table>
+      <br>
+      <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1">
+      <tr>
+        <td height="23" bgcolor="#DBEAF5"><strong><font color="#0000FF">八、EBMA系统常见问题</font></strong></td>
+      </tr>
+      <tr>
+        <td height="22"><table width="100%" border="0" cellspacing="1" cellpadding="3">
+          <tr>
+            <td height="25"><strong>1、EBMA系统是什么？</strong></td>
+          </tr>
+          <tr>
+            <td height="25"><font color="#333333">&nbsp;&nbsp;答：“EmpireBak+phpMyAdmin+高安全”整合包就是EBMA系统、开源免费。字母取自“Empire”的E、“Bak”的B、“My”的M、“Admin”的A。</font></td>
+          </tr>
+          <tr>
+            <td height="25"><strong>2、为什么要使用EBMA系统的phpMyAdmin，而不使用原生的phpMyAdmin？</strong></td>
+          </tr>
+          <tr>
+            <td height="25"><font color="#333333">&nbsp;&nbsp;答：因为EBMA系统具有高安全性。而众所周知原生的phpMyAdmin本身是不安全的，必须非常小心谨慎的隐藏目录，是服务器的安全隐患之一(这也是帝国官方开发EBMA系统的初衷)。<br>
+使用EBMA系统安全性更高，即使目录被知道，也不会有安全问题。</font></td>
+          </tr>
+          <tr>
+            <td height="25"><strong>3、EBMA系统优势有哪些？</strong></td>
+          </tr>
+          <tr>
+            <td height="25"><font color="#333333">&nbsp;&nbsp;答：(1)、高安全性；<br>
+              (2)、帝国备份王备份大数据稳定高效；<br>
+              (3)、高安全的phpMyAdmin，管理更放心；<br>
+              (4)、支持多MYSQL服务器一起管理与备份；<br>
+              (5)、不同MYSQL版本平滑转换，系统自动识别，兼容性好；<br>
+              (6)、自带探针功能，方便检测服务器运行环境状态；<br>
+              (7)、可以按需开启phpMyAdmin，使用时开启，不使用时关闭，后台直接在线设置；<br>
+              (8)、安装使用方便：全部WEB在线配置参数，无需手动修改文件。<br>
+              管理和备份MYSQL用一套EBMA系统就够了，安全又好用。</font></td>
+          </tr>
+          <tr>
+            <td height="25"><strong>4、EBMA系统的phpMyAdmin和原生的phpMyAdmin代码有什么区别？</strong></td>
+          </tr>
+          <tr>
+            <td height="25"><font color="#333333">&nbsp;&nbsp;答：代码一样，唯一的区别：所有php文件都加上了帝国备份王安全验证代码。</font></td>
+          </tr>
+          <tr>
+            <td height="25"><strong>5、帝国官方开发EBMA系统的初衷是什么？</strong></td>
+          </tr>
+          <tr>
+            <td height="25"><font color="#333333">&nbsp;&nbsp;答：让大家使用上更安全的phpMyAdmin来管理MYSQL，让网站更安全。</font></td>
+          </tr>
+          <tr>
+            <td height="25"><strong>6、已经安装过帝国备份王，如何再安装EBMA的phpMyAdmin？</strong></td>
+          </tr>
+          <tr>
+            <td height="25"><font color="#333333">&nbsp;&nbsp;答：可以下载EBMA系统安装包，然后把upload目录里的“eapi”目录上传到帝国备份王目录即可安装成功。(说明：需要使用帝国备份王5.1及以上版本。)<br>
+EBMA系统下载地址：<a href="http://ebak.phome.net" target="_blank">http://ebak.phome.net</a></font></td>
+          </tr>
+          <tr>
+            <td height="25"><strong>7、如何修改EBMA系统的phpMyAdmin目录名？</strong></td>
+          </tr>
+          <tr>
+            <td height="25"><font color="#333333">&nbsp;&nbsp;答：先重命名“/eapi/phpmyadmin”目录名(phpmyadmin目录可任意重命名，eapi目录不能修改)，然后登录帝国备份王后台&gt;“全局参数设置”&gt;“EBMA系统”：修改“phpmyadmin目录名”即可。</font></td>
+          </tr>
+          <tr>
+            <td height="25"><strong>8、EBMA系统的phpMyAdmin可以随时关闭吗？</strong></td>
+          </tr>
+          <tr>
+            <td height="25"><font color="#333333">&nbsp;&nbsp;答：可以要使用时开启，不使用时关闭。开启/关闭方法：登录帝国备份王后台&gt;“全局参数设置”&gt;“EBMA系统”：设置“是否开启phpmyadmin”。</font></td>
+          </tr>
+          <tr>
+            <td height="25"><strong>9、使用时有什么注意事项？</strong></td>
+          </tr>
+          <tr>
+            <td height="25"><font color="#333333">&nbsp;&nbsp;答：使用phpmyadmin更改数据表过程中一定不要切换服务器。</font></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td height="22">&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+  
+  <tr> 
+    <td height="36" bgcolor="#FFFFFF"> 
+      <div align="center">Powered By <a href="http://www.phome.net" target="_blank"><strong>EmpireBak</strong></a></div></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+			var name = '后盾人';
+			
+			var obj = {
+				name:'淘宝',
+				fn:function(){
+					console.log(this.name);
+				},
+				foo:function(){
+					setTimeout(this.fn,1000);
+				}
+			}
+			
+			obj.foo();
+			
+		</script>
+		
+		
+		
+	</body>
+</html>

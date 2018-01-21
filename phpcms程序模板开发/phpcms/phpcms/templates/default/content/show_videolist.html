@@ -1,0 +1,191 @@
+{template "content","header"} 
+{php $video_cache = getcache('video', 'video');}
+<link href="{CSS_PATH}vms/vms.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{JS_PATH}cookie.js"></script>
+<div class="clr ct show_pg">
+	<div class="crumbs"><a href="{APP_PATH}">首页</a>  <span id="play_title"> > 我的播放列表 > {$title}</span></div>
+	<div class="ad">
+	<a href="http://www.phpcms.cn" title="随机广告位，欢迎访问PHPCMS.CN"><img src="http://www.phpcms.cn/statics/images/video/ad960x40.gif"></a>
+	
+	</div>
+    <div class="lty1">
+    	<div class="clr">
+    <div class="zj"><h5>{$title}</h5></div>
+    <div class="clr xxg">
+        <div class="clr">总播放：<span id="hits"></span>  <span>|</span>  更新时间：{$inputtime}</div>
+    </div>
+    </div>
+    	<div class="plbox clr"> 
+{if $video_info[vid]!=""}
+{player_code('video_player',$video_info['channelid'],$video_info['vid'],600,500)}
+{else}
+非常抱歉，该视频不存在，或者尚没有通过审核！
+{/if}
+		
+		
+		</div>
+        <div class="sr">
+        	<ul class="srli">
+               <li>
+                 	<strong>分享视频：</strong><a href="#" title="text" class=""></a>
+                    <div class="clr sr_tag wp">
+                     <!-- Baidu Button BEGIN -->
+    <div id="bdshare" class="bdshare_b" style="line-height: 12px;"><img src="http://share.baidu.com/static/images/type-button-5.jpg" />
+		<a class="shareCount"></a>
+	</div>
+<script type="text/javascript" id="bdshare_js" data="type=button&amp;uid=6434581" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+	document.getElementById("bdshell_js").src = "http://share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+</script>
+<!-- Baidu Button END -->
+                   </div>
+                </li>
+                <li>
+                <strong>嵌入代码：</strong>
+                <input name="html" id="html" type="text" size="50" class="fz_ipt" style="margin-left:2px;" ><input type="button" class="fz_btn" value="复制" onclick="copy_text(html);">
+				</li> 
+            </ul>
+        </div>
+        <div class="clr bfj">
+		{if $video[data]}
+		{loop $video[data] $v}
+         	<a href="{$v[url]}" >{$v[title]}</a>
+		{/loop}
+		{/if}
+        </div> 
+		
+		 <div class="bk10"></div>
+      {if $allow_comment && module_exists('comment')}
+      <iframe src="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={id_encode("content_$catid",$id,$siteid)}&iframe=1" width="100%" height="100%" id="comment_iframe" frameborder="0" scrolling="no"></iframe>
+      <div class="box">
+        		<h5>评论排行</h5>
+				 {pc:comment action="bang" siteid="$siteid" cache="3600"}
+            	<ul class="content list blue f14 row-2">
+				{loop $data $r}
+                	<li>·<a href="{$r[url]}" target="_blank">{str_cut($r[title], 40)}</a><span>({$r[total]})</span></li>
+					{/loop}
+                </ul>
+				{/pc}
+        </div>
+        {/if}
+		 
+    </div>
+  <div class="wp lty2">  
+	
+	  <div class="box0">
+    	<div class="nav">
+			<span class="more" onclick="delcookie('player_list');alert('已经清空播放列表！');javascript:window.location.href='{APP_PATH}';"><label for="lb">清空播放列表</label></span>
+             <h5>上升最快的视频</h5>
+        </div>
+        <div class="bct">
+        	<div class="lbbox">
+            <ul class="c1 c2" id="select_video"> 
+				
+            </ul>
+            </div>
+        </div>
+    </div>
+	
+	
+	
+    <div class="ad"> 
+	
+	<a href="http://www.phpcms.cn" title="随机广告位，欢迎访问PHPCMS.CN"><img src="http://www.phpcms.cn/statics/images/video/ad318x64.gif"></a>
+	
+	</div>
+     <div class="box0">
+    	<div class="nav"><h5>精彩推荐</h5></div>
+        <div class="bct">
+        	<ul class="c1 c2">
+			{pc:content  action="position" posid="18" catid="$catid" order="listorder DESC" num="6" return="info"}
+			{loop $info $v}
+                <li>
+                    <div class="clr h77">
+                      <a href="{$v[url]}" target="_blank" title="{$v[title]}"><img src="{$v[thumb]}" width="104" height="65" class="l"></a>
+                      <div class="lh21"><a href="{$v[url]}" title="{$v[title]}" target="_blank">{str_cut($v[title],22,false)}</a></div>
+                      <div class="sz"><span class="shows">播放次数：{get_views('c-'.$CATEGORYS[$v[catid]][modelid].'-'.$v['id'])}</span><span>评论：{get_comments(id_encode("content_$v[catid]",$v[id],$siteid))}</span></div>
+                    </div>
+                </li>  
+			{/loop}
+			{/pc}
+					
+            </ul>
+        </div>
+    </div>
+  </div>
+  <div class="hr"></div>
+</div>
+<script language="JavaScript" src="{APP_PATH}api.php?op=count&id={$contentid}&modelid={$CATEGORYS[$catid][modelid]}"></script>
+<script language="JavaScript">
+<!--
+$(function(){ 
+	var ck = getcookie('player_list'); 
+	show_playerlist();
+	$('#html').val('<embed src="{player_code('video_player',$video_info['channelid'],$video_info['vid'],600,500)}" quality="high" width="600" height="500" align="middle" allowScriptAccess="always" allowfullscreen="true" flashvars="auto=1" type="application/x-shockwave-flash"></embed>');
+	return false;
+})
+
+//设置COOKIE
+function set_cookie(id,title){
+	setcookie('now',id);
+}	
+
+//切换地址 playReady, playFinish.
+function playReady() { 
+}
+
+function playFinish(id,vid) {  
+ 	var player_list = getcookie('player_list');
+	var now = getcookie('now'); 
+   	if(player_list!=null){
+		var list_array=new Array();
+		var player=new Array();
+		list_array = player_list.split("|"); 
+		if(now==null){
+			alert('now 是空的');exit;
+			setcookie('now','0');
+			player=list_array[0].split("@");//url@标题@vid
+ 			document.getElementById('video_player').playVideoByVid(player[2]);
+		}else{
+ 			var new_now = parseInt(now)+1;
+      		if(typeof(list_array[new_now])=="undefined"){
+				setcookie('now','0');
+				alert('播完了');
+				return false;
+			} 
+ 			setcookie('now',new_now);
+ 			window.open($('#url'+new_now).attr("href"),'_self');
+			//return false;
+		} 
+ 	}
+ }
+
+// 数组循环 
+function show_playerlist() {
+	var player_list = getcookie('player_list');
+	var now = getcookie('now');
+	var content = "";
+	if(player_list!=null){
+		var list_array=new Array();
+		var player=new Array();
+		list_array = player_list.split("|");
+ 		for(var i=0;i<list_array.length;i++) {//调条记录循环
+			player=list_array[i].split("@"); 
+			
+			if('{$contentid}'==player[2]){
+				var ac = 'ac';
+			}else {
+				var ac = '';
+			}
+			content +=("<li class='"+ac+"' id='playid"+i+"'><a href='"+player[0]+"' onclick='set_cookie("+i+");' id='url"+i+"' title='"+player[1]+"'>"+player[1].substring(0,24)+"</a></li>");
+		}
+ 	}else{
+		content = "<li>没有播放列表</li>";
+	}
+	$('#select_video').html(content);
+}
+
+//-->
+</script>
+{template "content","footer"}

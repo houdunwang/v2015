@@ -1,0 +1,49 @@
+<script type="text/javascript" src="{JS_PATH}search_common.js"></script>
+<style type="text/css" >
+.photo_prev a{cursor:url({IMG_PATH}v9/prev.cur), auto;}
+.photo_next a{cursor:url({IMG_PATH}v9/next.cur), auto;}
+.photo-channel #Article .big-pic #big-pic{ width:900px;}
+.photo-channel #Article .big-pic,#Article .list-pic,.photo-channel #Article .text{ margin:0 10px}
+#Article .list-pic{ height:80px}
+#Article .cont{ width:884px}
+</style>
+<div class="main photo-channel">
+	
+    <div id="Article" class="box" style="padding:0">
+	<h5>图片报道<a href="{$t['url']}" class="more">更多>></a></h5>
+    <div class="big-pic">
+		<div id="big-pic"></div>
+    	<div class="photo_prev"><a id="photoPrev" class="btn_pphoto" target="_self" hidefocus="true" href="javascript:;" onclick="showpic('pre');"></a></div>
+        <div class="photo_next"><a id="photoNext" class="btn_nphoto" target="_self" hidefocus="true" href="javascript:;" onclick="showpic('next')"></a></div>
+        <a href="javascript:;" class="max" onclick="showpic('big');">查看原图</a>
+        
+        <div id="endSelect" style="display: none;">
+			<div id="endSelClose" onclick="$('#endSelect').hide();"></div>
+			<div class="bg"></div>
+			<div class="E_Cont">
+				<p>您已经浏览完所有图片</p>
+				<p><a id="rePlayBut" href="javascript:void(0)" onclick="showpic('next', 1);"></a></p>	
+			</div>
+		</div>
+    </div>
+    <div class="list-pic">
+        <a href="javascript:;" onclick="showpic('pre')" class="pre-bnt"><span></span></a>
+		<div class="cont" style="position:relative">
+			<ul class="cont picbig" id="pictureurls"  style="position:absolute">
+			{loop $pictureurls $pic_k $r}
+			 <li><div class="img-wrap"><a href="javascript:;" hidefocus="true"><img src="{thumb($r[url], 100, 137, 0)}" alt="{$r[alt]}" rel="{$r[url]}"/></a></div></li>
+			{/loop}
+			</ul>
+		</div>
+        <a href="javascript:;" onclick="showpic('next')" class="next-bnt"><span></span></a>
+    </div>
+            <div class="text" id="picinfo"></div>
+	<div class="content">
+		{$content}
+	</div>
+  </div>
+
+</div>
+<div id="load_pic" style="display:none;" rel="{IMG_PATH}msg_img/loading_d.gif">
+</div>
+<script type="text/javascript" src="{JS_PATH}show_picture.js"></script>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style media="screen">
+    *{
+      padding-left: 0;
+      margin-left: 0;
+    }
+    li{
+      list-style: none;
+      width: 300px;
+      height: 100px;
+      background: green;
+      float: left;
+      margin: 20px;
+      color: white;
+      text-align: center;
+      line-height: 100px;
+      font-size: 30px;
+    }
+  </style>
+</head>
+<body>
+
+    <ul id="hd">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+    </ul>
+
+  <script>
+
+  // 抓li标签
+  var lis = document.getElementsByTagName('li');
+  // 循环，给每个li加单击事件
+  for (var i = 0; i < 8; i++) {
+    lis[i].xuhao = i;
+    // 给i号li加单击事件
+    lis[i].onclick = function(){
+      alert(this.xuhao);
+    }
+  }
+
+  </script>
+
+
+
+
+</body>
+</html>

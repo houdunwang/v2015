@@ -1,0 +1,16 @@
+body {
+  background: #3C3C3C;
+}
+.container {
+  margin-top: 50%;
+}
+.container input[name=nickname] {
+  margin-bottom: 30px;
+}
+@media only screen and (min-width: 768px) {
+  .container {
+    margin-top: 20%;
+    width: 50%;
+  }
+}
+/*# sourceMappingURL=login.css.map */

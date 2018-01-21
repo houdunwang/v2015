@@ -1,0 +1,135 @@
+{template "content","header"}
+<script type="text/javascript" src="{JS_PATH}formvalidator.js" charset="UTF-8"></script> 
+<script type="text/javascript" src="{JS_PATH}formvalidatorregex.js" charset="UTF-8"></script>
+<link href="{CSS_PATH}link.css" rel="stylesheet" type="text/css" />
+<link href="{CSS_PATH}table_form.css" rel="stylesheet" type="text/css" /> 
+<!--main-->
+<div class="main">
+<!--left_bar-->
+<div class="col-left">
+<div class="crumbs"><a href="{siteurl($siteid)}">网站首页</a><span> &gt; </span><a href="{APP_PATH}index.php?m={ROUTE_M}&siteid={$siteid}">友情链接</a><span> &gt; </span>{$type_arr[name]}</div>
+<div>
+
+<form action="{APP_PATH}index.php?m=link&c=index&a=register&siteid={$siteid}" method="post" name="myform" id="myform">
+<table cellspacing="1" cellpadding="0" class="table_form">
+<caption>申请友情链接</caption>
+<tbody><tr> 
+<th width='60'>链接类型</th>
+<td width="300"><input type="radio" onclick="$('#logolink').hide()" checked="checked" value="0" name="linktype" class="radio_style"> 文字链接
+<input type="radio" onclick="$('#logolink').show()" value="1" name="linktype" class="radio_style"> Logo链接
+</td>
+</tr>
+<tr> 
+<th>所属分类</th>
+<td>
+<select  style="width: 36%;" id="typeid" name="typeid">
+<option value="0">默认分类</option>
+{loop $types $type_arr}
+<option value="{$type_arr['typeid']}">{$type_arr['name']}</option>
+{/loop}
+</select>
+</td>
+</tr>
+<tr> 
+<th>网站名称</th>
+<td><input type="text" value="" id="name" name="name" class="input-text"></td>
+</tr>
+<tr> 
+<th>网站地址</th>
+<td><input type="text" size="40" value="" name="url" id="url" class="input-text"></td>
+</tr>
+<tr style="display: none;" id="logolink"> 
+<th>Logo地址</th>
+<td><input type="text" size="40" value="" name="logo" id="logo" class="input-text"></td>
+</tr>
+{if $setting['enablecheckcode']=='1'}
+<tr>
+       <th>验证码：</th>
+       <td><input name="code" type="text" id="code" size="10"  class="input-text"/> {form::checkcode('code_img','4','14',110,30)}</td>
+</tr>
+{/if}
+<tr> 
+<th></th>
+<td><input type="submit" value=" 申 请 " name="dosubmit" class="button"> <input type="reset" value=" 取 消 " name="reset" class="button"> </td>
+</tr> 
+</tbody></table>
+</form>
+        </div>
+
+    </div>
+    <!--right_bar-->
+    <div class="col-auto">
+    	<!--广告228x90-->
+        <div class="box">
+            <h5 class="title-2">友情链接分类</h5>
+            <div class="tag_a">
+            <a href="{APP_PATH}index.php?m=link&c=index&a=list_type&type_id=0&siteid={$siteid}" title="默认分类">默认分类</a>
+	            {pc:link action="type_lists" listorder="desc" siteid="$siteid"}
+	            {loop $data $type_v}
+	            <a href="{APP_PATH}index.php?m=link&c=index&a=list_type&type_id={$type_v[typeid]}&siteid={$siteid}" title="{$type_v[name]}">{$type_v[name]}</a>
+	            {/loop}
+	            {/pc}
+           </div>
+        </div>
+         
+        <div class="bk10"></div>
+         <div class="box">
+            <h5 class="title-2">本站LOGO：</h5>
+            <div class="tag_a pad-lr-10">
+	        {pc:block pos="3"}
+			{/pc}
+           </div>
+        </div>
+        <div class="bk10"></div>
+        <div class="box">
+            <h5 class="title-2">合作联系方式</h5>
+            <div class="tag_a pad-lr-10">
+	        {pc:block pos="2"}
+			{/pc}
+           </div>
+        </div>
+        <div class="bk10"></div>
+         <div class="box">
+            <h5 class="title-2">链接要求</h5>
+            <div class="tag_a pad-lr-10">
+	        {pc:block pos="1"}
+			{/pc}
+           </div>
+        </div>
+        
+        
+    </div>
+    
+    
+    
+</div>
+<script type="text/javascript">
+<!--
+	$(function(){
+	$.formValidator.initConfig({autotip:true,formid:"myform",onerror:function(msg){}});
+	$("#name").formValidator({onshow:"请输入网站名称",onfocus:"请输入网站名称"}).inputValidator({min:1,max:999,onerror:"网站名称不能为空"});
+ 	$("#url").formValidator({onshow:"请输入网站网址",onfocus:"请输入网站网址"}).inputValidator({min:1,onerror:"请输入网站网址"}).regexValidator({regexp:"^http:\/\/[A-Za-z0-9]+\.[A-Za-z0-9]+[\/=\?%\-&]*([^<>])*$",onerror:"格式应该为http://www.phpcms.cn/"})
+ 	$("#code").formValidator({onshow:"请输入验证码",onfocus:"验证码不能为空"}).inputValidator({min:1,max:999,onerror:"验证码不能为空"}).ajaxValidator({
+	    type : "get",
+		url : "",
+		data :"m=pay&c=deposit&a=public_checkcode",
+		datatype : "html",
+		async:'false',
+		success : function(data){	
+            if(data == 1)
+			{
+                return true;
+			}
+            else
+			{
+                return false;
+			}
+		},
+		buttons: $("#dosubmit"),
+		onerror : "验证码错误",
+		onwait : "验证中"
+	});
+ 	})
+//-->
+</script>
+{template "content","footer"}

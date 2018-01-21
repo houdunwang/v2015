@@ -1,0 +1,16 @@
+<form style="border: medium none;" id="voteform{$id}" method="post" action="{APP_PATH}index.php?m=vote&c=index&a=post&subjectid={$id}">
+ <dl>
+      <dt>{$subject}</dt>
+      </dl>
+<dl>
+{loop $options $r}
+{$i++}
+<dd>
+&nbsp;&nbsp;<input type={if $ischeckbox=='0'}"radio"{else}"checkbox"{/if} name="radio[]" id="radio" value="{$r['optionid']}" {$check_status}/>
+{$r['option']}
+</dd>
+{/loop}
+<input type="hidden" name="voteid" value="{$id}">
+</dl> 
+<p> &nbsp;&nbsp; <input type="submit" value="提交" name="dosubmit" style="{$display}" />    &nbsp;&nbsp; <a href="{APP_PATH}/index.php?m=vote&c=index&a=result&id={$id}" target="_blank">查看结果</a> </p>
+</form>

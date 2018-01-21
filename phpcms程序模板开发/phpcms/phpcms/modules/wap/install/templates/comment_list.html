@@ -1,0 +1,16 @@
+{template "wap","min_header"}
+<body>
+<div class="wrap">
+   <div class="adds" id="hd">{wap_pos($typeid)}</div>
+  <h1><a href="{show_url($catid,$contentid,$typeid)}">{$title}</a></h1>
+<div class="b_adds">网友评论：</div>
+{pc:comment action="lists" commentid="$commentid" siteid="$siteid" page="$_GET[page]" hot="$hot" num="25"}  
+	{loop $data $r} 
+        <div class="lists {if $n%2==0}gap{/if}">
+          <p class="yk">[{$r[username]}]{format::date($r[creat_at], 1)}</p>
+          <p>{$r[content]}</p>
+        </div>
+	{/loop}
+    <a href="{show_url($catid,$contentid,$typeid)}">返回文章</a>
+{/pc}	
+{template "wap","min_footer"}

@@ -1,0 +1,35 @@
+body{
+    background: url(../img/bg.jpg);
+}
+.container{
+    width: 700px;
+    margin-top: 30px;
+    overflow: hidden;
+    #msg-div{
+        height: 400px;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 20px #91E18A;
+        background: #000;
+        color:#5BF48A;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 18px;
+    }
+    //大于768像素时
+    @media only screen and (min-width: 768px) {
+         #msg-div{
+           
+        } 
+    }
+    .form-inline{
+        margin-top: 20px;
+        input[name=message]{
+            width: 79%;
+        }
+        #submit{
+            width: 20%;
+        }
+    }
+}
+
+

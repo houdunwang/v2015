@@ -1,0 +1,74 @@
+{template 'member', 'header'}
+<div id="memberArea">
+{template 'member', 'account_manage_left'}
+<div class="col-auto">
+	<div class="col-1 ">
+		<h5 class="title">{L('memberinfo')}：</h5>
+		<div class="content">
+		<div class="col-1 member-info">
+		<div class="content">
+			<div class="col-left himg">
+				<a title="{L('modify').L('avatar')}" href="index.php?m=member&c=index&a=account_manage_avatar&t=1"><img src="{$avatar[90]}" width="60" height="60" onerror="this.src='{$phpsso_api_url}/statics/images/member/nophoto.gif'"></a>
+			</div>
+			<div class="col-auto">
+				<h5>{if $memberinfo['vip']}<img src="{IMG_PATH}icon/vip.gif">{elseif $memberinfo['overduedate']}<img src="{IMG_PATH}icon/vip-expired.gif" title="{L('overdue')}，{L('overduedate')}：{format::date($memberinfo['overduedate'],1)}">{/if}
+				<font color="{$grouplist[$memberinfo[groupid]]['usernamecolor']}">
+				{if $memberinfo['nickname']} {$memberinfo['nickname']} {else} {$memberinfo['username']}{/if} 
+				</font>
+				{if $memberinfo['email']}（{$memberinfo['email']}）{/if}</h5>
+				<p class="blue">
+				{L('member_group')}：{$grouplist[$memberinfo['groupid']]['name']}，
+				{L('account_remain')}：<font style="color:#F00; font-size:22px;font-family:Georgia,Arial; font-weight:700">{$memberinfo[amount]}</font> {L('unit_yuan')}，
+				{L('point')}：<font style="color:#F00; font-size:12px;font-family:Georgia,Arial; font-weight:700">{$memberinfo[point]}</font> {L('unit_point')}{if $memberinfo['vip']}，vip{L('overduedate')}：<font style="color:#F00; font-size:12px;font-family:Georgia,Arial; font-weight:700">{format::date($memberinfo['overduedate'])}</font>{/if}
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="bk10"></div>	
+	<div class="col-1 ">
+		<h5 class="title">{L('more_configuration')}：</h5>
+		<div class="content">
+				<table width="100%" cellspacing="0" class="table_form">
+					<tr>
+						<th width="120">{L('username')}</th>        
+						<td>{$memberinfo['username']}</td>
+					</tr>
+					<tr>
+						<th width="120">{L('in_model')}：</th>        
+						<td>{$member_model[$memberinfo['modelid']]['name']}</td>
+					</tr>
+					<tr>
+						<th width="120">{L('regtime')}：</th>        
+						<td>{FORMAT::date($memberinfo['regdate'] ,1)}</td>
+					</tr>
+					<tr>
+						<th width="120">{L('lastlogintime')}：</th>        
+						<td>{FORMAT::date($memberinfo['lastdate'] ,1)}</td>
+					</tr>
+					<tr>
+						<th width="120">{L('regip')}：</th>        
+						<td>{$memberinfo['regip']}</td>
+					</tr>
+					<tr>
+						<th width="120">{L('lastip')}：</th>        
+						<td>{$memberinfo['lastip']}</td>
+					</tr>
+					<tr>
+						<th width="120">{L('mp')}：</th>        
+						<td style="color:#ff6600;"><strong>{if $memberinfo['mobile']}{substr($memberinfo['mobile'],0,3)}****{substr($memberinfo['mobile'],-4)}{/if}</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="更换手机" class="button" onclick="redirect('?m=member&c=index&a=account_change_mobile&t=1')"></td>
+					</tr>
+					{loop $member_modelinfo $k $v}
+					<tr>
+						<th width="120">{$k}：</th>        
+						<td>{$v}</td>
+					</tr>
+					{/loop}
+				</table>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+<div class="clear"></div>
+{template 'member', 'footer'}

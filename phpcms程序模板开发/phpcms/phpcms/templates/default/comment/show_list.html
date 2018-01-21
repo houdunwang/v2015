@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="description" content="{$SEO['description']}">
+<link href="{CSS_PATH}reset.css" rel="stylesheet" type="text/css" />
+<link href="{CSS_PATH}default_blue.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="{JS_PATH}jquery.sgallery.js"></script>
+<style>
+body{background:none;}
+</style>
+</head>
+<body onload="iframe_height()">
+{pc:comment action="get_comment" commentid="$commentid"}
+{php $comment = $data;}
+{/pc}
+<div id="bodyheight">
+<form action="{APP_PATH}index.php?m=comment&c=index&a=post&commentid={$commentid}" method="post" onsubmit="return on_submit()">
+<input type="hidden" name="title" value="{urlencode(($comment[title] ? $comment[title] : $title))}">
+<input type="hidden" name="url" value="{urlencode(($comment[url] ? $comment[url] : $url))}">
+      <div class="comment-form">
+      	<h5><strong>我来说两句</strong><span class="fn rt blue">已有<font color="#FF0000">{if $comment[total]}{$comment[total]}{else}0{/if}</font>条评论，<a href="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={$commentid}" target="_blank">点击全部查看</a></span></h5>
+        <div class="posn">我的态度：<input type="radio" name="direction" value="1" /> <img src="{IMG_PATH}icon/zheng.png" /> <input type="radio" name="direction" value="2" /> <img src="{IMG_PATH}icon/fan.png" /> <input type="radio" name="direction" value="3"  /> <img src="{IMG_PATH}icon/zhong.png" />
+</div>
+        <textarea rows="8" cols="80" name="content"></textarea><br>
+		{if $setting[code]}
+		
+		  <label>验证码：<input type="text" name="code"  class="input-text" id="yzmText" onfocus="var offset = $(this).offset();$('#yzm').css({'left': +offset.left-8, 'top': +offset.top-$('#yzm').height()});$('#yzm').show();$('#yzmText').data('hide', 1)" onblur='$("#yzmText").data("hide", 0);setTimeout("hide_code()", 3000)' /></label>
+		  <div id="yzm" class="yzm">{form::checkcode()}<br />点击图片更换</a></div>
+        <div class="bk10"></div>
+		{/if}
+        <div class="btn"><input type="submit" value="发表评论" /></div>&nbsp;&nbsp;&nbsp;&nbsp;{if $userid}{get_nickname()} <a href="{APP_PATH}index.php?m=member&c=index&a=logout&forward={urlencode(($comment[url] ? $comment[url] : $url))}"  target="_top">退出</a>{else}<a href="{APP_PATH}index.php?m=member&c=index&a=login&forward={urlencode(($comment[url] ? $comment[url] : $url))}" target="_top" class="blue">登录</a><span> | </span><a href="{APP_PATH}index.php?m=member&c=index&a=register" class="blue"  target="_top">注册</a> {if !$setting[guest]}<span style="color:red">需要登陆才可发布评论</span>{/if}{/if}
+      </div>  
+</form>   
+{pc:comment action="lists" commentid="$commentid" siteid="$siteid" page="$_GET[page]" hot="$hot" num="20"}
+{if !empty($data)}      
+<div class="comment_button"><a href="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={$commentid}&title={urlencode(($comment[title] ? $comment[title] : $title))}&url={urlencode(($comment[url] ? $comment[url] : $url))}&hot=0&iframe=1"{if empty($hot)} class="on"{/if}>最新</a> <a href="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={$commentid}&title={urlencode(($comment[title] ? $comment[title] : $title))}&url={urlencode(($comment[url] ? $comment[url] : $url))}&hot=1&iframe=1"{if $hot} class="on"{/if}>最热</a></div>
+    
+<div class="comment">
+{loop $data $r}
+    <h5 class="title fn">{direction($r[direction])} <font color="#FF0000">{format::date($r[creat_at], 1)}</font> {if $r[userid]}{get_nickname($r[userid])}{else}{$r[username]}{/if} </h5>
+    <div class="content">{$r[content]}
+	<div class="rt"><a href="javascript:void(0)" onclick="reply({$r[id]}, '{$commentid}')">回复</a>  <a href="javascript:void(0)" onclick="support({$r[id]}, '{$commentid}')">支持</a>（<font id="support_{$r[id]}">{$r[support]}</font>）
+	</div>
+	<div id="reply_{$r[id]}" style="display:none"></div>
+	</div>
+	
+  <div class="bk30 hr mb8"></div>
+  {/loop}
+</div>
+
+ <div id="pages" class="text-r">{$pages}</div>
+ {/if}
+ {/pc}
+<div class="bk10"></div>
+<script type="text/javascript">
+function support(id, commentid) {
+	$.getJSON('{APP_PATH}index.php?m=comment&c=index&a=support&format=jsonp&commentid='+commentid+'&id='+id+'&callback=?', function(data){
+		if(data.status == 1) {
+			$('#support_'+id).html(parseInt($('#support_'+id).html())+1);
+		} else {
+			alert(data.msg);
+		}
+	});
+}
+
+function reply(id,commentid) {
+	var str = '<form action="{APP_PATH}index.php?m=comment&c=index&a=post&commentid='+commentid+'&id='+id+'" method="post" onsubmit="return on_submit()"><textarea rows="10" style="width:100%" name="content"></textarea>{if $setting[code]}<label>验证码：<input type="text" name="code" id="yzmreplay" class="input-text" onfocus="var offset = $(this).offset();$(\'#yzm\').css({\'left\': +offset.left-8, \'top\': +offset.top-$(\'#yzm\').height()});$(\'#yzm\').show();$(\'#yzmText\').data(\'hide\', 1)" onblur=\'$("#yzmText").data("hide", 0);setTimeout("hide_code()", 3000)\' /></label>{/if}  <div class="btn"><input type="submit" value="发表评论" /></div>&nbsp;&nbsp;&nbsp;&nbsp;{if $userid}{get_nickname()} <a href="{APP_PATH}index.php?m=member&c=index&a=logout&forward={urlencode(($comment[url] ? $comment[url] : $url))}" target="_top">退出</a>{else}<a href="{APP_PATH}index.php?m=member&c=index&a=login&forward={urlencode(($comment[url] ? $comment[url] : $url))}" class="blue" target="_top">登录</a> | <a href="{APP_PATH}index.php?m=member&c=index&a=register" class="blue" target="_top">注册</a>  {if !$setting[guest]}<span style="color:red">需要登陆才可发布评论</span>{/if}{/if}</form>';
+	$('#reply_'+id).html(str).toggle();
+	iframe_height();
+}
+
+function hide_code() {
+	if ($('#yzmText').data('hide')==0) {
+		$('#yzm').hide();
+	}
+}
+function on_submit() {
+	{if $setting[code]}
+		var checkcode = $("#yzmText").val() == '' ? $("#yzmreplay").val() : $("#yzmText").val();
+		var res = $.ajax({
+			url: "{APP_PATH}index.php?m=pay&c=deposit&a=public_checkcode&code="+checkcode,
+			async: false
+		}).responseText;
+	{else}
+		var res = 1;
+	{/if}
+	if(res != 1) {
+		alert('验证码错误');
+		return false;
+	} else {
+		iframe_height(200);
+		$('#bodyheight').hide();
+		$('#loading').show();
+		return true;
+	}
+}
+function iframe_height(height) {
+	if (!height) {
+		var height = document.getElementById('bodyheight').scrollHeight;
+	} 
+	$('#top_src').attr('src', "{$domain}js.html?"+height+'|'+{if $comment['total']}{$comment['total']}{else}0{/if});
+}
+
+
+
+</script>
+</div>
+<iframe width='0' id='top_src' height='0' src=''></iframe>
+<div class="hidden text-c" id="loading">
+<img src="{IMG_PATH}msg_img/loading.gif" /> 正在提交中...
+</div>
+</body>
+</html>

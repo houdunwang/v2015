@@ -1,0 +1,31 @@
+{template 'special', 'header_video'} 
+<div class="clr ct zt_pg">
+	<div class="mgt10 w960 bnr"><img src="{$banner}" ></div>
+	<div class="crumbs"><a href="">首页</a><span> &gt; </span> <a href="{APP_PATH}index.php?m=special&c=index&a=special">专题</a> <span> &gt; </span> <a href="{$url}">{$title}</a> </div>
+        <div class="box">
+          <div class="nav2"><h5>{$info[name]}</h5></div>
+          <div class="clr bct yct">
+            <ul class="clr wp col4 col5">
+			
+             {pc:special  action="content_list" specialid="$specialid" typeid="$typeid" listorder="3" page="$page" num="10"}
+			 {loop $data $r}
+                <li>
+                  <div class="w120">
+                      <div class="imgbox">
+					  
+ 					  <a href="{$r[url]}" target="_blank"><img src="{$r[thumb]}" width="120" height="75"></a>
+					  </div>
+                    <div class="lh21"><a href="{$r[url]}" title="{$r[title]}" target="_blank">{str_cut($r[title],18,false)}</a></div>
+                      <div class="sz"><span class="shows">播放数：<cite>{get_views('c-'.$CATEGORYS[$v[catid]][modelid].'-'.$v['id'])}</cite></span><span>评论：<cite>{get_comments(id_encode("content_$v[catid]",$v[id],$siteid))}</cite></span></div>
+                  </div>
+                </li>
+			{/loop}
+			{/pc}
+ 				
+            </ul>
+            <div id="pages" class="pages">{$pages}</div>
+        </div>
+        </div> 
+</div>
+
+{template 'content', 'footer'}

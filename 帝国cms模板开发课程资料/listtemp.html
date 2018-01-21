@@ -1,0 +1,69 @@
+[!--temp.header--]
+
+<!-- End Header -->
+
+<!-- Begin #carousel-section -->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        [e:loop={'slide',5,18,1}]
+        <div class="swiper-slide">
+            <a href="<?=$bqsr['titleurl']?>" target="_blank" style="display:block;width: 100%;"><img src="<?=$bqr['titlepic']?>" style="width: 100%;">
+                <p><?=$bqr['title']?></p>
+            </a>
+        </div>
+        [/e:loop]
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</div>
+<script src="[!--news.url--]skin/houdunren/js/swiper.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
+<!-- Begin #services-section -->
+
+
+<section id="services" class="services-section section-global-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="services-header">
+                <h3 class="services-header-title">推荐新闻</h3>
+                <!--<p class="services-header-body"><em> Things we provide in Office </em>  </p><hr>-->
+            </div>
+        </div>
+
+        <!-- Begin Services Row 1 -->
+        <div class="row services-row services-row-head services-row-1">
+            [e:loop={'news',4,18,0,'is_commend = 1','newstime DESC'}]
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 news">
+                <div class="services-group wow animated fadeInLeft" data-wow-offset="40">
+                    <p class="services-icon"><img src="<?=$bqr['titlepic']?>" style="height: 80px;"></p>
+                    <h4 class="services-title"><?=$bqr['title']?></h4>
+                    <p class="services-body introduce"><?=$bqr['smalltext']?></p>
+                    <p class="services-more"><a href="<?=$bqsr['titleurl']?>">了解更多</a></p>
+                </div>
+            </div>
+            [/e:loop]
+        </div>
+        <!-- End Serivces Row 1 -->
+    </div>
+</section>
+<!-- End #services-section -->
+
+
+[!--temp.footer--]

@@ -1,0 +1,7 @@
+
+关闭帝国备份王方法：将本文件重命名为“empirebak.off”即可。
+
+开启只需将“empirebak.off”本文件重命名为其它文件名即可，如：empirebak.off.txt
+
+
+

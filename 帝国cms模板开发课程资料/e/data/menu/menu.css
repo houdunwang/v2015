@@ -1,0 +1,88 @@
+/* CSS Document */
+.menu1 {
+	background-image: url(folder1.png);
+	background-repeat: no-repeat;
+	height: 17px;
+	left: 32px;
+	padding-left: 32px;
+	cursor: hand;
+}
+.menu2 {
+	background-image: url(folder2.png);
+	background-repeat: no-repeat;
+	height: 17px;
+	left: 32px;
+	padding-left: 32px;
+	cursor: hand;
+}
+.menu3 {
+	background-image: url(folder3.png);
+	background-repeat: no-repeat;
+	height: 17px;
+	left: 32px;
+	padding-left: 32px;
+	cursor: hand;
+}
+.menu4{
+	background-image: url(folder4.png);
+	background-repeat: no-repeat;
+	height: 17px;
+	left: 32px;
+	padding-left: 32px;
+	cursor: hand;
+}
+.list{
+	padding-left: 20px;
+	background-image: url(list.gif);
+	background-repeat: repeat-y;
+}
+.list1{
+	padding-left: 20px;
+}
+.file{
+	background-image: url(file.png);
+	background-repeat: no-repeat;
+	height: 18px;
+	cursor: hand;
+	padding-left: 32px;
+}
+.file1 {
+	background-image: url(file1.png);
+	background-repeat: no-repeat;
+	height: 18px;
+	cursor: hand;
+	padding-left: 32px;
+}
+body {
+	font-size: 9pt;
+	color: #000000;
+	background-color: #ffffff;
+}
+	td {font-size: 9pt;}
+a:link {
+	font-size: 9pt;
+	color: #000000;
+	text-decoration: none;
+}
+a:visited {
+	font-size: 9pt;
+	color: #000000;
+	text-decoration: none;
+}
+a:hover {
+	font-size: 9pt;
+	color: #0000FF;
+	text-decoration: none;
+	position: relative;
+	right: 1px;
+	bottom: 1px;
+}
+a:active {
+	font-size: 9pt;
+	color: #000000;
+	text-decoration: none;
+}
+.test {
+	font-size:24px;
+	background-color:#FF0000;
+}

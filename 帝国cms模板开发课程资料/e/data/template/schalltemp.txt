@@ -1,0 +1,105 @@
+<?php
+require("../class/connect.php");
+if(!defined('InEmpireCMS'))
+{
+	exit();
+}
+require("../class/db_sql.php");
+require("../data/dbcache/class.php");
+require LoadLang("pub/fun.php");
+require("../class/schallfun.php");
+$link=db_connect();
+$empire=new mysqlquery();
+eCheckCloseMods('sch');//关闭模块
+$searchtime=time();
+$totalnum=(int)$_GET['totalnum'];
+$firstsearch=0;
+if($totalnum<1)
+{
+	$firstsearch=1;
+	//搜索间隔
+	$lastsearchtime=(int)getcvar('lastschalltime');
+	if($lastsearchtime)
+	{
+		if($searchtime-$lastsearchtime<$public_r[schalltime])
+		{
+			printerror('SchallOutTime','',1);
+		}
+	}
+	//设置最后搜索时间
+	esetcookie('lastschalltime',$searchtime,$searchtime+3600*24);
+}
+$page=(int)$_GET['page'];
+$page=RepPIntvar($page);
+$start=0;
+$page_line=$public_r['schallpagenum'];//每页显示链接数
+$line=$public_r['schallnum'];//每页显示记录数
+$offset=$start+$page*$line;//总偏移量
+//编码
+$iconv='';
+$char='';
+$targetchar='';
+if($ecms_config['sets']['pagechar']!='gb2312')
+{
+	include_once(ECMS_PATH.'e/class/doiconv.php');
+	$iconv=new Chinese('');
+	$char=$ecms_config['sets']['pagechar']=='big5'?'BIG5':'UTF8';
+	$targetchar='GB2312';
+}
+$schallr=ReturnSearchAllSql($_GET);
+require("../data/dbcache/SearchAllTb.php");
+$keyboard=$schallr['keyboard'];
+$query="select id,classid from {$dbtbpre}enewssearchall where ".$schallr['where'];
+if($totalnum<1)
+{
+	$totalquery="select count(*) as total from {$dbtbpre}enewssearchall where ".$schallr['where'];
+	$num=$empire->gettotal($totalquery);
+	if(empty($num))
+	{
+		printerror('SchallNotRecord','',1);
+	}
+}
+else
+{
+	$num=$totalnum;
+}
+$search=$schallr['search']."&totalnum=".$num;
+$query.=" order by infotime desc limit $offset,$line";
+$sql=$empire->query($query);
+$listpage=page1($num,$line,$page_line,$start,$page,$search);
+$url="<a href='".ReturnSiteIndexUrl()."'>".$fun_r['index']."</a>&nbsp;>&nbsp;".$fun_r['SearchAllNav'];
+?>
+<!--empire.listtemp.top-->
+<?php
+$no=$offset;
+$subnum=<!--empire.listtemp.subnum-->;
+$formatdate="<!--empire.listtemp.formatdate-->";
+while($r=$empire->fetch($sql))
+{
+	$tbname=$class_r[$r[classid]]['tbname'];
+	if(empty($tbname))
+	{
+		continue;
+	}
+	$titlefield=$schalltb_r[$tbname]['titlefield'];
+	$smalltextfield=$schalltb_r[$tbname]['smalltextfield'];
+	$infor=$empire->fetch1("select id,classid,titlepic,newstime,isurl,titleurl,".$titlefield.",".$smalltextfield." from {$dbtbpre}ecms_".$tbname." where id='$r[id]' limit 1");
+	if(empty($infor['id']))
+	{
+		continue;
+	}
+	$no++;
+	$titleurl=sys_ReturnBqTitleLink($infor);
+	$titlepic=$infor['titlepic']?$infor['titlepic']:$public_r['newsurl']."e/data/images/notimg.gif";
+	$smalltext=SubSchallSmalltext($infor[$smalltextfield],$subnum);
+	$title=DoReplaceFontRed($infor[$titlefield],$keyboard);
+	$smalltext=DoReplaceFontRed($smalltext,$keyboard);
+	$newstime=date($formatdate,$infor['newstime']);
+?>
+<!--empire.listtemp.center-->
+<?php
+}
+db_close();
+$empire=null;
+?>
+<!--empire.listtemp.footer-->

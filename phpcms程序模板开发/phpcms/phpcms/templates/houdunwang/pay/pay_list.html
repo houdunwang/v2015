@@ -1,0 +1,50 @@
+{template 'member', 'header'}
+<div id="memberArea">
+{template 'member', 'left'}
+<div class="col-auto">
+<div class="col-1 ">
+<h6 class="title">支付记录</h6>
+<div class="content">
+<form name="searchform" action="{APP_PATH}index.php?m=pay&c=deposit" method="get" >
+<input type="hidden" value="pay" name="m">
+<input type="hidden" value="deposit" name="c">
+<input type="hidden" value="init" name="a">
+		<div class="search">
+		订单时间  {form::date('info[start_addtime]',$start_addtime)} 到   {form::date('info[end_addtime]',$end_addtime)}
+		{form::select($trade_status,$status,'name="info[status]"', L('all_status'))}  
+		<input type="submit" value="查询" class="button" name="dosubmit">
+		</div>
+</form>
+<table width="100%" cellspacing="0"  class="table-list">
+        <thead>
+            <tr>
+            <th width="20%">支付单号</th>
+            <th width="20%">时间</th>
+            <th width="15%">支付方式</th>
+            <th width="8%">存入金额</th>
+            <th width="15%">支付状态</th>
+            <th width="8%">操作</th>
+            </tr>
+        </thead>
+    <tbody>
+	{loop $infos $info} 
+	<tr>
+	<td width="20%" align="center">{$info['trade_sn']}</td>
+	<td  width="20%" align="center">{date('Y-m-d H:i:s',$info['addtime'])}</td>
+	<td width="15%" align="center">{$info['payment']}</td>
+	<td width="8%" align="center">{$info['money']} {php echo $info['type']==1 ? '元':'点'}</td>
+	<td width="15%" align="center">{L($info['status'])} </a>
+	<td width="8%" align="center">{$info['pay_btn']}</td>
+	</tr>
+	{/loop}
+    </tbody>
+    </table>
+
+ <div id="pages"> {$pages}</div>
+</div>
+<span class="o1"></span><span class="o2"></span><span class="o3"></span><span class="o4"></span>
+</div>
+
+</div>
+</div>
+{template 'member', 'footer'}

@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>图片浏览</title>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+<script>
+function Request(sName)
+{
+
+  /*
+   get last loc. of ?
+   right: find first loc. of sName
+   +2
+   retrieve value before next &
+  
+  */
+  
+  var sURL = new String(window.location);
+  var iQMark= sURL.lastIndexOf('?');
+  var iLensName=sName.length;
+  
+  //retrieve loc. of sName
+  var iStart = sURL.indexOf('?' + sName +'=') //limitation 1
+  if (iStart==-1)
+        {//not found at start
+        iStart = sURL.indexOf('&' + sName +'=')//limitation 1
+		if (iStart==-1)
+		   {//not found at end
+		    return 0; //not found
+		   }   
+        }
+        
+  iStart = iStart + + iLensName + 2;
+  var iTemp= sURL.indexOf('&',iStart); //next pair start
+  if (iTemp ==-1)
+		{//EOF
+		iTemp=sURL.length;
+		}  
+  return sURL.slice(iStart,iTemp ) ;
+  sURL=null;//destroy String
+}
+</script>
+</head>
+<body leftmargin='0' topmargin='0' marginwidth='0' marginheight='0'>
+<table width='100%' cellpadding="0" cellspacing="0">
+  <tr>
+    <td align='center' valign='middle'>
+
+	<script>
+	if(Request("url")!=0){
+	document.write("<img name=\"images1\" src=\""+Request("url")+"\" border=0 class=\"picborder\" ><input type='hidden' name='PhotoUrl' value='"+Request("url")+"'><div id='hiddenPic' style='position:absolute; left:0px; top:0px; width:100px; height:100px; z-index:-1; visibility: hidden;'><img name='images2' src='"+Request("url")+"' border='0'></div>");
+    }
+	</script>
+
+
+	</td>
+  </tr>
+</table>
+</body>
+</html>

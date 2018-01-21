@@ -1,0 +1,75 @@
+{template "content","header"}
+<link href="{CSS_PATH}download.css" rel="stylesheet" type="text/css" />
+<!--main-->
+<div class="main">
+	<!--left_bar-->
+	<div class="col-left">
+    <div class="crumbs"><a href="{siteurl($siteid)}">首页</a><span> &gt; </span>{catpos($catid)}</div>
+    <!--广告698x90-->
+    <div class="brd mg_b10 ad698"><script language="javascript" src="{APP_PATH}caches/poster_js/8.js"></script></div>
+    	<!--最新下载-->
+    <div class="box mg_b10">
+        		<h5>最新下载</h5>
+            <ul class="content news-photo col4 picbig">
+            {pc:content action="lists" catid="$catid" num="8"  thumb="1" order="id DESC" page="$page"}
+			{loop $data $r}
+            	<li>
+                    <div class="img-wrap"><a href="{$r[url]}#"><img src="{$r[thumb]}"></a></div><a href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],24,'')}</a>
+                </li>
+            {/loop}	
+			{/pc}    
+            </ul>
+        </div>
+        {loop subcat($catid,0) $r}
+        {php $num++}
+        <div {if $num%2!=0}style="margin-right: 10px;"{/if} class="box cat-area">
+        		<h5 class="title-1">{$r[catname]}<a class="more" href="{$r[url]}">更多&gt;&gt;</a></h5>
+             <div class="content">
+                <ul class="list lh24 f14">
+                {pc:content action="lists" catid="$r[catid]" num="10"  order="id DESC" return="info"}
+             	{loop $info $v}
+                	<li><span class="rt">{date('m-d',$v['inputtime'])}</span>·<a target="_blank" href="{$v['url']}" title="{$v['title']}">{str_cut($v['title'],38)}</a></li>
+              {/loop}
+              {/pc}
+                </ul>
+            </div>
+        </div>
+        {if $num%2==0}<div class="bk10"></div>{/if}
+ 		{/loop}
+		 {/pc}       
+    </div>
+    <!--right_bar-->
+    <div class="col-auto">
+        <div class="box">
+            <h5 class="title-2">下载分类</h5>
+            <ul class="content col3 h28">
+            	{loop subcat($catid) $r}
+            	<li><a href="{$r[url]}" title="{$r[catname]}">{$r[catname]}</a></li>
+            	{/loop}
+            </ul>
+        </div>
+        <div class="bk10"></div>
+        <div class="box">
+            <h5 class="title-2">下载排行</h5>
+            <ul class="content digg">
+			{pc:content action="hits" catid="$catid" num="10" order="views DESC" cache="3600"}
+				{loop $data $r}
+					<li><a href="{$r[url]}" target="_blank">{$r[title]}</a></li>
+				{/loop}
+			{/pc}
+            </ul>
+        </div>
+        <div class="bk10"></div>
+        <div class="box">
+            <h5 class="title-2">推荐下载</h5>
+            <ul class="content digg">
+            	{pc:content  action="position" posid="5" order="listorder DESC" num="4"}
+        	 	{loop $data $r}        
+                <li><a href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],34)}</a></li>
+               	{/loop}  
+             	{/pc}
+            </ul>
+        </div>
+    </div>
+</div>
+{template "content","footer"}

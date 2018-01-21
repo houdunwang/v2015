@@ -1,0 +1,186 @@
+[!--text--]
+  <tr bgcolor="#FFFFFF"> 
+    <td height="22" valign="top"><strong>[!--enews.name--]正则：</strong><br>
+      (<input name="textfield" type="text" id="textfield" value="[!--[!--enews.var--]--]" size="20">)</td>
+    <td><table width="100%" border="0" cellspacing="1" cellpadding="3">
+        <tr> 
+          <td><textarea name="add[zz_[!--enews.var--]]" cols="60" rows="10" id="textarea"><?=ehtmlspecialchars(stripSlashes($r[zz_[!--enews.var--]]))?></textarea></td>
+        </tr>
+        <tr> 
+          <td><input name="add[z_[!--enews.var--]]" type="text" id="add[z_[!--enews.var--]]" value="<?=stripSlashes($r[z_[!--enews.var--]])?>">
+            (如填写这里，将为字段的值)</td>
+        </tr>
+      </table></td>
+  </tr>
+[!--text--]
+[!--textarea--]
+  <tr bgcolor="#FFFFFF"> 
+    <td height="22" valign="top"><strong>[!--enews.name--]正则：</strong><br>
+      (<input name="textfield" type="text" id="textfield" value="[!--[!--enews.var--]--]" size="20">)</td>
+    <td><table width="100%" border="0" cellspacing="1" cellpadding="3">
+        <tr> 
+          <td><textarea name="add[zz_[!--enews.var--]]" cols="60" rows="10" id="textarea"><?=ehtmlspecialchars(stripSlashes($r[zz_[!--enews.var--]]))?></textarea></td>
+        </tr>
+        <tr> 
+          <td><input name="add[z_[!--enews.var--]]" type="text" id="add[z_[!--enews.var--]]" value="<?=stripSlashes($r[z_[!--enews.var--]])?>">
+            (如填写这里，将为字段的值)</td>
+        </tr>
+      </table></td>
+  </tr>
+[!--textarea--]
+[!--img--]
+  <tr bgcolor="#FFFFFF"> 
+    <td height="22" valign="top"><strong>[!--enews.name--]正则：</strong><br>
+      ( 
+      <input name="textfield" type="text" id="textfield" value="[!--[!--enews.var--]--]" size="20">
+      )</td>
+    <td><table width="100%" border="0" cellspacing="1" cellpadding="3">
+    <tr>
+      <td>附件前缀 
+        <input name="add[qz_[!--enews.var--]]" type="text" id="add[qz_[!--enews.var--]]" value="<?=stripSlashes($r[qz_[!--enews.var--]])?>"> 
+        <input name="add[save_[!--enews.var--]]" type="checkbox" id="add[save_[!--enews.var--]]" value=" checked"<?=$r[save_[!--enews.var--]]?>>
+        远程保存 </td>
+    </tr>
+    <tr> 
+      <td><textarea name="add[zz_[!--enews.var--]]" cols="60" rows="10" id="add[zz_[!--enews.var--]]"><?=ehtmlspecialchars(stripSlashes($r[zz_[!--enews.var--]]))?></textarea></td>
+    </tr>
+    <tr> 
+      <td><input name="add[z_[!--enews.var--]]" type="text" id="[!--enews.var--]5" value="<?=stripSlashes($r[z_[!--enews.var--]])?>">
+        (如填写这里，这就是字段的值)</td>
+    </tr>
+  </table></td>
+  </tr>
+[!--img--]
+[!--flash--]
+  <tr bgcolor="#FFFFFF"> 
+    <td height="22" valign="top"><strong>[!--enews.name--]正则：</strong><br>
+      ( 
+      <input name="textfield" type="text" id="textfield" value="[!--[!--enews.var--]--]" size="20">
+      )</td>
+    <td><table width="100%" border="0" cellspacing="1" cellpadding="3">
+    <tr>
+      <td>附件前缀 
+        <input name="add[qz_[!--enews.var--]]" type="text" id="add[qz_[!--enews.var--]]" value="<?=stripSlashes($r[qz_[!--enews.var--]])?>"> 
+        <input name="add[save_[!--enews.var--]]" type="checkbox" id="add[save_[!--enews.var--]]" value=" checked"<?=$r[save_[!--enews.var--]]?>>
+        远程保存 </td>
+    </tr>
+    <tr> 
+      <td><textarea name="add[zz_[!--enews.var--]]" cols="60" rows="10" id="add[zz_[!--enews.var--]]"><?=ehtmlspecialchars(stripSlashes($r[zz_[!--enews.var--]]))?></textarea></td>
+    </tr>
+    <tr> 
+      <td><input name="add[z_[!--enews.var--]]" type="text" id="[!--enews.var--]5" value="<?=stripSlashes($r[z_[!--enews.var--]])?>">
+        (如填写这里，这就是字段的值)</td>
+    </tr>
+  </table></td>
+  </tr>
+[!--flash--]
+[!--file--]
+  <tr bgcolor="#FFFFFF"> 
+    <td height="22" valign="top"><strong>[!--enews.name--]正则：</strong><br>
+      ( 
+      <input name="textfield" type="text" id="textfield" value="[!--[!--enews.var--]--]" size="20">
+      )</td>
+    <td><table width="100%" border="0" cellspacing="1" cellpadding="3">
+    <tr>
+      <td>附件前缀 
+        <input name="add[qz_[!--enews.var--]]" type="text" id="add[qz_[!--enews.var--]]" value="<?=stripSlashes($r[qz_[!--enews.var--]])?>"> 
+        <input name="add[save_[!--enews.var--]]" type="checkbox" id="add[save_[!--enews.var--]]" value=" checked"<?=$r[save_[!--enews.var--]]?>>
+        远程保存 </td>
+    </tr>
+    <tr> 
+      <td><textarea name="add[zz_[!--enews.var--]]" cols="60" rows="10" id="add[zz_[!--enews.var--]]"><?=ehtmlspecialchars(stripSlashes($r[zz_[!--enews.var--]]))?></textarea></td>
+    </tr>
+    <tr> 
+      <td><input name="add[z_[!--enews.var--]]" type="text" id="[!--enews.var--]5" value="<?=stripSlashes($r[z_[!--enews.var--]])?>">
+        (如填写这里，这就是字段的值)</td>
+    </tr>
+  </table></td>
+  </tr>
+[!--file--]
+[!--downpath--]
+  <tr bgcolor="#FFFFFF"> 
+    <td height="22" valign="top"><strong>[!--enews.name--]正则：</strong><br>
+      (
+      <input name="textfield" type="text" id="textfield" value="[!--ecmsdownpathurl--]" size="20">
+      <br>
+      <input name="textfield2" type="text" id="textfield2" value="[!--ecmsdownpathname--]" size="20">
+      )<br>
+      格式:地址正则(url)[!empirecms!]名称正则(name)</td>
+    <td><table width="100%" border="0" cellspacing="1" cellpadding="3">
+        <tr> 
+          <td><textarea name="add[zz_[!--enews.var--]]" cols="60" rows="10" id="textarea"><?=ehtmlspecialchars(stripSlashes($r[zz_[!--enews.var--]]))?></textarea></td>
+        </tr>
+        <tr> 
+          <td>地址前缀:
+<input name="add[qz_[!--enews.var--]]" type="text" id="add[qz_[!--enews.var--]]" value="<?=stripSlashes($r[qz_[!--enews.var--]])?>">
+        </td>
+        </tr>
+      </table></td>
+  </tr>
+[!--downpath--]
+[!--onlinepath--]
+  <tr bgcolor="#FFFFFF"> 
+    <td height="22" valign="top"><strong>[!--enews.name--]正则：</strong><br>
+      (
+      <input name="textfield" type="text" id="textfield" value="[!--ecmsonlinepathurl--]" size="20">
+      <br>
+      <input name="textfield2" type="text" id="textfield2" value="[!--ecmsonlinepathname--]" size="20">
+      )<br>
+      格式:地址正则(url)[!empirecms!]名称正则(name)</td>
+    <td><table width="100%" border="0" cellspacing="1" cellpadding="3">
+        <tr> 
+          <td><textarea name="add[zz_[!--enews.var--]]" cols="60" rows="10" id="textarea"><?=ehtmlspecialchars(stripSlashes($r[zz_[!--enews.var--]]))?></textarea></td>
+        </tr>
+        <tr> 
+          <td>地址前缀:
+<input name="add[qz_[!--enews.var--]]" type="text" id="add[qz_[!--enews.var--]]" value="<?=stripSlashes($r[qz_[!--enews.var--]])?>">
+        </td>
+        </tr>
+      </table>
+	  </td>
+  </tr>
+[!--onlinepath--]
+[!--morepic--]
+  <tr bgcolor="#FFFFFF"> 
+    <td height="22" valign="top"><strong>[!--enews.name--]正则：</strong><br>
+      (
+      <input name="textfield" type="text" id="textfield" value="[!--ecmsspicurl--]" size="20">
+      <br>
+      <input name="textfield2" type="text" id="textfield2" value="[!--ecmsbpicurl--]" size="20">
+	  <br>
+      <input name="textfield2" type="text" id="textfield2" value="[!--ecmspicname--]" size="20">
+      )<br>
+      格式:缩略图[!empirecms!]大图[!empirecms!]名称</td>
+    <td><table width="100%" border="0" cellspacing="1" cellpadding="3">
+        <tr> 
+          <td><textarea name="add[zz_[!--enews.var--]]" cols="60" rows="10" id="textarea"><?=ehtmlspecialchars(stripSlashes($r[zz_[!--enews.var--]]))?></textarea></td>
+        </tr>
+        <tr> 
+          <td>地址前缀:
+<input name="add[qz_[!--enews.var--]]" type="text" id="add[qz_[!--enews.var--]]" value="<?=stripSlashes($r[qz_[!--enews.var--]])?>">
+<input name="add[save_[!--enews.var--]]" type="checkbox" id="add[save_[!--enews.var--]]" value=" checked"<?=$r[save_[!--enews.var--]]?>>
+        远程保存
+        </td>
+        </tr>
+      </table></td>
+  </tr>
+[!--morepic--]
+[!--playerid--]
+<?php
+$player_sql=$empire->query("select id,player from {$dbtbpre}enewsplayer");
+while($player_r=$empire->fetch($player_sql))
+{
+	$select_player='';
+	if($r[z_playerid]==$player_r[id])
+	{
+		$select_player=' selected';
+	}
+	$player_class.="<option value='".$player_r[id]."'".$select_player.">".$player_r[player]."</option>";
+}
+?>
+  <tr bgcolor="#FFFFFF"> 
+    <td height="22" valign="top"><strong>[!--enews.name--]：</strong><br>
+      (<input name="textfield" type="text" id="textfield" value="[!--[!--enews.var--]--]" size="20">)</td>
+    <td><select name="add[z_[!--enews.var--]]"><option value=0>自动识别</option><?=$player_class?></select></td>
+  </tr>
+[!--playerid--]

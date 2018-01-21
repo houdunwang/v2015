@@ -1,0 +1,55 @@
+{template 'member', 'header'}
+<script language="javascript" type="text/javascript" src="{JS_PATH}admin_common.js"></script> 
+<link href="{CSS_PATH}dialog.css" rel="stylesheet" type="text/css" /> 
+<script language="javascript" type="text/javascript" src="{JS_PATH}dialog.js"></script>
+<div id="memberArea">
+{template 'member', 'left'}
+<div class="col-auto">
+<div class="col-1 ">
+<h6 class="title">系统消息</h6>
+<div class="content"> 
+ <table width="100%" cellspacing="0"  class="table-list">
+        <thead>
+            <tr>
+             <th>标 题</th>
+             <th width="20%">发送时间</th>
+            </tr>
+        </thead>
+    <tbody>
+	{loop $infos $info} 
+	<tr>
+	<td><a href="?m=message&c=index&a=read_group&group_id={$info['id']}">{if $status[$info['id']]==0}<font color=red><b>{$info['subject']}</b></font>{else}{$info['subject']}{/if}</a></td>
+ 	<td width="20%" align="center">{date('Y-m-d H:i:s',$info['inputtime'])} </a>
+	</tr>
+	{/loop}
+	
+    </tbody>
+    </table>
+ <div id="pages">{$pages}</div>
+</div>
+<span class="o1"></span><span class="o2"></span><span class="o3"></span><span class="o4"></span>
+</div>
+
+</div>
+</div>
+<script type="text/javascript">
+function read(id, name) {
+	window.top.art.dialog({id:'sell_all'}).close();
+	window.top.art.dialog({title:'查看详情'+name+' ',id:'edit',iframe:'?m=message&c=index&a=read&messageid='+id,width:'700',height:'450'}, function(){var d = window.top.art.dialog({id:'see_all'}).data.iframe;var form = d.document.getElementById('dosubmit');form.click();return false;}, function(){window.top.art.dialog({id:'see_all'}).close()});
+}
+function checkuid() {
+	var ids='';
+	$("input[name='messageid[]']:checked").each(function(i, n){
+		ids += $(n).val() + ',';
+	});
+	if(ids=='') {
+		window.top.art.dialog({content:'请选择再执行操作',lock:true,width:'200',height:'50',time:1.5},function(){});
+		return false;
+	} else {
+		myform.submit();
+	}
+}
+
+</script>
+{template 'member', 'footer'}
+

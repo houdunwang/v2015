@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={CHARSET}" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="description" content="{$SEO['description']}">
+<link href="{CSS_PATH}reset.css" rel="stylesheet" type="text/css" />
+<link href="{CSS_PATH}default_blue.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="{JS_PATH}jquery.sgallery.js"></script>
+<style type="text/css">
+.special-bg{ background-color:#fff; width:960px; margin:auto; padding:0 6px}
+.z table td{ padding:0}
+</style>
+</head>
+<body class="special-channel">
+<div class="body-top special-body-top">
+{pc:content action="category" catid="0" num="25" order="listorder ASC"}
+    <div class="content">
+    	<a href="" class="logo"><img src="{IMG_PATH}v9/logo.jpg" height="30" /></a><div class="nav"><a href="{siteurl($siteid)}">首页</a>{loop $data $r}<span>|</span><a href="{$r[url]}">{$r[catname]}</a>{/loop}</div>
+    </div>
+	{/pc}
+</div>
+<div class="special-bg">
+<div class="header">
+<img src="{$banner}" width="954" />
+</div><div class="bk10"></div>

@@ -1,0 +1,5 @@
+.word{
+  color: blue;
+  line-height: 5em;
+  text-align: center;
+}

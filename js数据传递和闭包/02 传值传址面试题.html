@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    var a = {
+      a1: '后盾人',
+      a2: '淘宝'
+    };
+    var b = a;
+    var c = {
+      a1: a.a1,
+      a2: a.a2
+    };
+    b.a1 = '新浪';
+    c.a2 = '搜狐';
+
+    console.log(a.a1); //新浪
+    console.log(a.a2); //淘宝
+    console.log(b.a1); //新浪
+    console.log(b.a2); //淘宝
+    console.log(c.a1); //后盾人
+    console.log(c.a2); //搜狐
+  </script>
+
+
+
+</body>
+
+</html>

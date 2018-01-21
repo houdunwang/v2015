@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS `phpcms_message_data`;

@@ -1,0 +1,54 @@
+{template 'member', 'header'}
+<link href="{CSS_PATH}dialog.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="{JS_PATH}dialog.js"></script>
+<script language="javascript" type="text/javascript" src="{JS_PATH}content_addtop.js"></script>
+<div id="memberArea">
+	{template 'member', 'left'}
+	<div class="col-auto">
+		<div class="col-1 ">
+			<h5 class="title">{L('published_content')}</h5>
+
+			<div class="content">
+		
+			<table width="100%" cellspacing="0"  class="table-list">
+        <thead>
+            <tr>
+            <th width="30">ID</th>
+            <th>{L('title')}</th>
+            <th width="80">{L('category')}</th>
+            <th width="80">{L('adddate')}</th>
+            <th width="90">{L('operation')}</th>
+            </tr>
+        </thead>
+    <tbody>
+   	{loop $datas $info} 
+	<tr>
+	<td align="center">{$info['id']}</td>
+	<td align="left"><a href="{$info[url]}" target="_blank" title="{$info['title']}">{str_cut($info['title'], 60)}</a> {if $info[status]==0}<font color="red">{L('reject_content')}</font>{elseif $info[status]!='99'}<font color="#1D94C7">待审中</font>{/if}</td>
+	<td align="center"><a href="{if strpos($CATEGORYS[$info['catid']][url],'http://')===false}{$siteurl}{/if}{$CATEGORYS[$info['catid']][url]}" target="_blank">{$CATEGORYS[$info['catid']][catname]}</a></td>
+	<td align="center">{date('Y-m-d',$info['inputtime'])}</td>
+	<td align="center">
+	{if $info[status]==99}<font color="green">{L('pass')}</font>{elseif !$info[flag]}<a href="index.php?m=member&c=content&a=edit&catid={$info[catid]}&id={$info[id]}"><font color="red">{L('edit')}</font></a> | <a href="index.php?m=member&c=content&a=delete&catid={$info[catid]}&id={$info[id]}">删除</a>{else}<a href="index.php?m=member&c=content&a=edit&catid={$info[catid]}&id={$info[id]}"><font color="red">{L('edit')}</font></a> | <a href="index.php?m=member&c=content&a=delete&catid={$info[catid]}&id={$info[id]}">删除</a>{/if}
+  	 
+	</td>
+	</tr>
+	{/loop}
+    </tbody>
+    </table>
+
+ <div id="pages"> {$pages}</div>
+
+			</div>
+			<span class="o1"></span><span class="o2"></span><span class="o3"></span><span class="o4"></span>
+		</div>
+	</div>
+</div>
+<div class="clear"></div>
+<script language="JavaScript">
+<!--
+	function c_c(catid) {
+		location.href='index.php?m=member&c=content&a=published&siteid={$siteid}&catid='+catid;
+	}
+//-->
+</script>
+{template 'member', 'footer'}

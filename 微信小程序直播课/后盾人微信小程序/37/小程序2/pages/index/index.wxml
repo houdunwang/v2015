@@ -1,0 +1,9 @@
+<block wx:for="{{hd}}">
+  <view>id:{{item.id}}</view>
+  <view>名字:{{item.name}}</view>
+</block>
+
+<!-- <block wx:for="{{[1, 2, 3]}}">
+  <view> {{index}}: </view>
+  <view> {{item}} </view>
+</block> -->

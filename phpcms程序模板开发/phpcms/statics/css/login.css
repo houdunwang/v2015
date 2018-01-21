@@ -1,0 +1,10 @@
+div{overflow:hidden; *display:inline-block;}div{*display:block;}
+	.login_box{background:url(../images/admin_img/login_bg.jpg) no-repeat; width:602px; height:416px; margin:auto; overflow:hidden;}
+	.login_iptbox{margin-top:295px;*margin-top:297px; height: 26px; line-height:26px; margin-left: 68px;}
+	.login_iptbox .ipt{border:none; margin-top: 4px; height: 20px; width: 90px; margin-right:62px; *margin-right:60px; background:none;font-size:12px;}
+	.login_iptbox img{ cursor:pointer;}
+	.login_iptbox .ipt_reg{margin-left:12px;width:46px; margin-right:16px;}
+	.login_tj_btn{ background:url(../images/admin_img/login_dl_btn.jpg) no-repeat 0px 0px; width:52px; height:24px; margin-left:16px; _margin-left:8px; border:none; cursor:pointer; padding:0px; float:right;margin-right:20px;
+margin-top:2px;}
+	.cr{ margin-top:22px;font-size:12px;font-style:inherit;text-align:center;color:#ccc;}
+	.login_box{position: fixed;top: 25%;left: 50%; margin:0 0 0 -301px;_position:absolute;}

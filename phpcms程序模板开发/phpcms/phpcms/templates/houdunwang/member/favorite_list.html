@@ -1,0 +1,36 @@
+{template 'member', 'header'}
+<link href="{CSS_PATH}dialog.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="{JS_PATH}dialog.js"></script>
+<script language="javascript" type="text/javascript" src="{JS_PATH}content_addtop.js"></script>
+<div id="memberArea">
+	{template 'member', 'left'}
+	<div class="col-auto">
+		<div class="col-1 ">
+			<h5 class="title">{L('favorite_list')}</h5>
+			<div class="content">
+				
+			<form method="post" action="" id="myform" name="myform">
+				<table width="100%" cellspacing="0" class="table_form">
+					<tr>
+						<td>{L('title')}</td>
+						<td>{L('adddate')}</td>
+						<td>{L('operation')}</td>
+					</tr>
+					{loop $favoritelist $k $v}
+					<tr>
+						<td><a href="{$v['url']}" target="_blank">{$v['title']}</a></td>
+						<td>{format::date($v['adddate'], 1)}</td>
+						<td><a href="index.php?m=member&c=index&a=favorite&id={$v['id']}">{L('delete')}</a></td>
+					</tr>
+					{/loop}
+				</table>
+			</form>
+			
+			</div>
+			<div id="pages">{$pages}</div>
+			<span class="o1"></span><span class="o2"></span><span class="o3"></span><span class="o4"></span>
+		</div>
+	</div>
+</div>
+<div class="clear"></div>
+{template 'member', 'footer'}

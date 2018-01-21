@@ -1,0 +1,122 @@
+{template 'member', 'header'}
+<div id="memberArea">
+	{template 'member', 'account_manage_left'}
+	<div class="col-auto">
+		<div class="col-1 ">
+			<h5 class="title">{L('memberinfo')}：</h5>
+			<div class="content">
+			<div class="col-1 member-info">
+			<div class="content">
+				<div class="col-left himg">
+					<img src="{$avatar[90]}" width="60" height="60" onerror="this.src='{$phpsso_api_url}/statics/images/member/nophoto.gif'">
+				</div>
+				<div class="col-auto">
+					<h5>{if $memberinfo['vip']}<img src="{IMG_PATH}icon/vip.gif">{elseif $memberinfo['overduedate']}<img src="{IMG_PATH}icon/vip-expired.gif" title="{L('overdue')}，{L('overduedate')}：{format::date($memberinfo['overduedate'],1)}">{/if}
+					{if $memberinfo['nickname']} {$memberinfo['nickname']} {else} {$memberinfo['username']}{/if} {if $memberinfo['email']}（{$memberinfo['email']}）{/if}</h5>
+					<p class="blue">
+					{L('member_group')}：{$memberinfo['groupname']}，
+					{L('account_remain')}：<font style="color:#F00; font-size:22px;font-family:Georgia,Arial; font-weight:700">{$memberinfo[amount]}</font> {L('unit_yuan')}，
+					{L('point')}：<font style="color:#F00; font-size:12px;font-family:Georgia,Arial; font-weight:700">{$memberinfo[point]}</font> {L('unit_point')}{if $memberinfo['vip']}，vip{L('overduedate')}：<font style="color:#F00; font-size:12px;font-family:Georgia,Arial; font-weight:700">{format::date($memberinfo['overduedate'],1)}</font>{/if}
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="bk10"></div>
+{if $groupid}
+		<div class="col-1 ">
+			<h5 class="title">{L('member').L('allowupgrade')}</h5>
+			<div class="content">
+			<form method="post" action="" id="myform" name="myform">
+				<input name="groupid" value="{$groupid}" type="hidden" />
+				<table width="100%" cellspacing="0"  class="table-list">
+					<thead>
+						<tr>
+						<th width="50">{L('member_group')}</th>
+						<th width="100">{L('upgrade_price')}</th>
+						<th width="100">{L('upgrade_date')}</th>
+						<th width="300">{L('cost')}</th>
+						<th width="90">{L('operation')}</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+						<td align="left">{$grouplist[$groupid]['name']}</td>
+						<td align="left">
+						<input type="radio" name='upgrade_type' value="0
+" checked>{$grouplist[$groupid]['price_y']}/{L('year')}<br /><input type="radio" name='upgrade_type' value="1
+">{$grouplist[$groupid]['price_m']}/{L('month')}<br /><input type="radio" name='upgrade_type' value="2
+">{$grouplist[$groupid]['price_d']}/{L('day')}</td>
+						<td align="center"><input type="text" name="upgrade_date" id="upgrade_date" class="input-text" size="4"><font color="red" id="unit">{L('year')}</font></td>
+						<td align="center"><span id="cost">0</span> {L('unit_yuan')}<span id="pay" style="display:none">，<a href="index.php?m=pay&c=deposit&a=pay"><font color="red" id="unit">点击充值</font></a></span></td>
+						<td align="center"><input name="dosubmit" type="submit" id="dosubmit" value="{L('buy')}" class="button"></td>
+						</tr>
+					</tbody>
+				</table>			
+			</form>
+			</div>
+<script language="JavaScript">
+<!--
+$(document).ready(function() {
+	$(":input[type='radio']").click(function() {
+		var unitarr = new Array("{L('year')}","{L('month')}","{L('day')}");
+		var key = parseInt($(this).val());
+		$("#unit").html(unitarr[key]);
+		$("#upgrade_date").val('');
+		$("#cost").html('');
+	});
+	$("#upgrade_date").keyup(function() {
+		var prices = Array();
+		prices['0'] = {$grouplist[$groupid]['price_y']};
+		prices['1'] = {$grouplist[$groupid]['price_m']};
+		prices['2'] = {$grouplist[$groupid]['price_d']};
+		$(this).val($(this).val().replace(/[^\d]/g,''));
+		var unit = parseInt($("input[name=upgrade_type]:checked").val());
+		var price = prices[unit];
+		if({$memberinfo[amount]} < price*$(this).val()) {
+			$("#cost").html('{L('not_sufficient_funds')}'+price*$(this).val());
+			$("#pay").show();
+		} else {
+			$("#cost").html(price*$(this).val());
+		}
+	});
+});
+//-->
+</script>
+{else}
+		<div class="col-1 ">
+			<h5 class="title">{L('member').L('allowupgrade')}</h5>
+			<div class="content">
+			<form method="post" action="" id="myform" name="myform">
+				<table width="100%" cellspacing="0"  class="table-list">
+					<thead>
+						<tr>
+						<th width="50">{L('member_group')}</th>
+						<th>{L('description')}</th>
+						<th width="100">{L('upgrade_price')}</th>
+						<th width="90">{L('operation')}</th>
+						</tr>
+					</thead>
+					<tbody>
+						{loop $grouplist $k $v}
+						{if $v['point'] > $memberinfo['grouppoint']}
+						<tr>
+						<td align="left">{$v['name']}</td>
+						<td align="left">{$v['description']}</td>
+						<td align="center">
+						{$v['price_y']}/{L('year')}<br />{$v['price_m']}/{L('month')}<br />{$v['price_d']}/{L('day')}</td>
+						<td align="center"><a href="index.php?m=member&c=index&a=account_manage_upgrade&groupid={$v['groupid']}">升级</a></td>
+						</tr>
+						{/if}
+						{/loop}
+					</tbody>
+				</table>			
+			</form>
+			</div>
+{/if}
+		</div>
+	</div>
+</div>
+</div>
+<div class="clear"></div>
+
+{template 'member', 'footer'}

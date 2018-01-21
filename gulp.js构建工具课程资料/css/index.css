@@ -1,0 +1,453 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+ul li {
+  list-style: none !important;
+}
+a {
+  text-decoration: none !important;
+}
+body {
+  font: 12px "微软雅黑", "宋体";
+}
+.body {
+  width: 100%;
+  height: auto;
+  background: #F1F1F1;
+  padding-top: 30px;
+}
+.pageBody {
+  width: 1200px;
+  height: auto;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.pageBody .carrousel {
+  width: 1200px;
+  height: 350px;
+  overflow: hidden;
+}
+.pageBody .carrousel .lunbo {
+  float: left;
+  overflow: hidden;
+  position: relative;
+}
+.pageBody .carrousel .lunbo .lunbo-l {
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 55px;
+  left: 0px;
+  top: 148px;
+  z-index: 999;
+  background: url(../img/zuoyou.png) 0px 0px;
+}
+.pageBody .carrousel .lunbo .lunbo-r {
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 55px;
+  right: 0px;
+  top: 148px;
+  z-index: 999;
+  background: url(../img/zuoyou.png) 0px -55px;
+}
+.pageBody .carrousel .lunbo .hover {
+  background: #FF4400;
+  color: white;
+}
+.pageBody .carrousel .lunbo ul {
+  position: absolute;
+  z-index: 99;
+  right: 105px;
+  bottom: 15px;
+}
+.pageBody .carrousel .lunbo ul li {
+  width: 30px;
+  height: 30px;
+  float: left;
+  background: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 10px;
+}
+.pageBody .carrousel .lunbo ul li:hover {
+  color: white;
+  background: #FF4400;
+}
+.pageBody .carrousel .lunbo .nei {
+  overflow: hidden;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.pageBody .carrousel .lunbo .nei img {
+  float: left;
+  max-height: 350px;
+  max-width: 819px;
+}
+.pageBody .carrousel .carr-r {
+  height: 350px;
+  width: 351px;
+  float: right;
+  background: white;
+}
+.pageBody .carrousel .carr-r .sign {
+  padding: 28px 52px;
+  border-bottom: 1px solid #E9E9E9;
+}
+.pageBody .carrousel .carr-r .sign .sign-in {
+  display: block;
+  width: 247px;
+  height: 52px;
+  background: #FF4401;
+  font-size: 24px;
+  color: white;
+  line-height: 52px;
+  position: relative;
+  text-indent: 61px;
+}
+.pageBody .carrousel .carr-r .sign .sign-in .qiandao {
+  display: block;
+  width: 28px;
+  height: 35px;
+  background: url(../img/sprite.png) no-repeat 0px -61px;
+  position: absolute;
+  left: 24px;
+  top: 10px;
+}
+.pageBody .carrousel .carr-r .sign .sign-out {
+  display: block;
+  width: 247px;
+  height: 52px;
+  background: #FF4401;
+  font-size: 24px;
+  color: white;
+  line-height: 52px;
+  position: relative;
+  text-align: center;
+}
+.pageBody .carrousel .carr-r .carr-news {
+  padding: 15px 52px 0px;
+}
+.pageBody .carrousel .carr-r .carr-news h4 {
+  text-indent: 42px;
+  height: 31px;
+  font-size: 16px;
+  line-height: 31px;
+  overflow: hidden;
+  font-weight: bold;
+  margin: 0px;
+  background: url(../img/sprite.png) no-repeat 0px -104px;
+}
+.pageBody .carrousel .carr-r .carr-news .content {
+  font-size: 14px;
+  height: 197px;
+  overflow: hidden;
+  position: relative;
+}
+.pageBody .carrousel .carr-r .carr-news .content ul {
+  margin-left: 10px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.pageBody .carrousel .carr-r .carr-news .content ul li {
+  line-height: 28px;
+  position: relative;
+  padding-top: 12.5px;
+  padding-bottom: 12.5px;
+  border-bottom: 1px solid gainsboro;
+}
+.pageBody .carrousel .carr-r .carr-news .content ul li .ranking {
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-color: #FFF;
+  border: 1px solid #FF4400;
+  position: absolute;
+  left: 0px;
+  top: 15px;
+  line-height: 13px;
+  text-align: center;
+  font-style: normal;
+  font-size: 10px;
+  color: #FF4400;
+  border-radius: 50%;
+}
+.pageBody .carrousel .carr-r .carr-news .content ul li .seniority {
+  position: relative;
+  display: inline-block;
+  height: 40px;
+  color: #474747;
+  text-indent: 70px;
+  line-height: 40px;
+  font-size: 12px;
+}
+.pageBody .carrousel .carr-r .carr-news .content ul li .seniority .jifen {
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 10px;
+}
+.pageBody .carrousel .carr-r .carr-news .content ul li .seniority .portrait {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: 30px;
+}
+.pageBody .carrousel .carr-r .carr-news .content ul li .seniority:hover {
+  color: #FF4400;
+}
+.pageBody .h3 {
+  height: 52px;
+  line-height: 58px;
+  font-size: 16px;
+  margin: 0px 0px 25px;
+  font-weight: bold;
+  border-bottom: 2px solid #F1F1F1;
+  position: relative;
+}
+.pageBody .h3 a {
+  color: #969696;
+  float: right;
+  font-size: 14px;
+  font-weight: normal;
+}
+.pageBody .h3 a:hover {
+  color: #F40;
+}
+.pageBody .h3 .side {
+  display: block;
+  width: 97px;
+  height: 2px;
+  background-color: #F40;
+  position: absolute;
+  bottom: -2px;
+  left: 0px;
+}
+.pageBody .recommend {
+  width: 1200px;
+  height: auto;
+  margin-top: 30px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+.pageBody .recommend .tuijian {
+  width: 819px;
+  height: auto;
+  background: white;
+  padding: 0px 25px;
+  overflow: hidden;
+  float: left;
+}
+.pageBody .recommend .tuijian ul {
+  width: 795px;
+  margin-left: 2px;
+}
+.pageBody .recommend .tuijian ul li {
+  width: 235px;
+  height: 384px;
+  overflow: hidden;
+  float: left;
+  margin-right: 30px;
+  line-height: 22px;
+  position: relative;
+}
+.pageBody .recommend .tuijian ul li .re-img {
+  width: 233px;
+  height: 275px;
+  border: 1px solid #E9E9E9;
+  overflow: hidden;
+  display: block;
+}
+.pageBody .recommend .tuijian ul li .re-img img {
+  width: 233px;
+  height: 275px;
+}
+.pageBody .recommend .tuijian ul li p {
+  max-height: 44px;
+  overflow: hidden;
+  margin: 0px;
+  line-height: 22px;
+  font-size: 14px;
+  color: #474747;
+}
+.pageBody .recommend .tuijian ul li .ming {
+  padding: 12px 0px 0px;
+}
+.pageBody .recommend .tuijian ul li .ming a {
+  color: #474747;
+  transition: color 0.2s ease 0s;
+}
+.pageBody .recommend .tuijian ul li .ming a:hover {
+  color: #FF4400;
+}
+.pageBody .recommend .exchange {
+  background: #FFF;
+  padding: 0px 25px;
+  margin: 0px 0px 20px;
+  width: 351px;
+  height: auto;
+  float: right;
+}
+.pageBody .recommend .exchange h3 {
+  height: 52px;
+  line-height: 58px;
+  font-size: 16px;
+  margin: 0px;
+  font-weight: bold;
+  border-bottom: 2px solid #F1F1F1;
+  position: relative;
+}
+.pageBody .recommend .exchange h3 .side {
+  display: block;
+  width: 97px;
+  height: 2px;
+  background-color: #F40;
+  position: absolute;
+  bottom: -2px;
+  left: 0px;
+}
+.pageBody .recommend .exchange .d-lunbo {
+  width: 301px;
+  max-height: 793px;
+  overflow: hidden;
+  position: relative;
+}
+.pageBody .recommend .exchange .d-lunbo ul {
+  font-size: 14px;
+  color: #474747;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.pageBody .recommend .exchange .d-lunbo ul li {
+  overflow: hidden;
+  width: 301px;
+  border-bottom: 1px solid #F1F1F1;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+.pageBody .recommend .exchange .d-lunbo ul li .lb {
+  margin-top: 30px;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+.pageBody .recommend .exchange .d-lunbo ul li .d-a {
+  display: block;
+  float: left;
+  width: 88px;
+  height: 104px;
+  border: 1px solid #F1F1F1;
+  margin-right: 18px;
+  overflow: hidden;
+}
+.pageBody .recommend .exchange .d-lunbo ul li .d-a img {
+  width: 88px;
+  height: 104px;
+}
+.pageBody .recommend .exchange .d-lunbo ul li .name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 5px 0px;
+}
+.pageBody .recommend .exchange .d-lunbo ul li .commodity {
+  color: #F40;
+  display: block;
+  width: 195px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pageBody .recommend .exchange .d-lunbo ul li .commodity:hover {
+  border-bottom: 1px solid #F40;
+}
+.pageBody .task {
+  width: 1200px;
+  background: #FFF;
+  padding: 0px 25px;
+  margin: 0px auto 20px;
+  height: auto;
+  overflow: hidden;
+}
+.pageBody .task ul {
+  width: 1220px;
+}
+.pageBody .task ul li {
+  width: 367px;
+  height: 327px;
+  line-height: 30px;
+  float: left;
+  margin: 0px 24px 0px 0px;
+}
+.pageBody .task ul li .a-img {
+  display: block;
+  width: 367px;
+  height: 229px;
+  overflow: hidden;
+  margin: 0px 0px 14px;
+  position: relative;
+}
+.pageBody .task ul li .a-img img {
+  display: block;
+  width: 367px;
+  height: 229px;
+}
+.pageBody .task ul li .a-img .Em {
+  display: block;
+  width: 367px;
+  height: 229px;
+  background: url(../img/op.8.png);
+  position: absolute;
+  top: -229px;
+  left: 0px;
+  text-align: center;
+}
+.pageBody .task ul li .a-img .Em img {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.pageBody .task ul li .a-img .Em .jieshao {
+  height: 60px;
+  background: url(../img/op0.85.png);
+  color: #080808;
+  font-size: 14px;
+}
+.pageBody .task ul li p {
+  overflow: hidden;
+  font-size: 16px;
+}
+.pageBody .task ul li p a {
+  float: left;
+  font-weight: bold;
+  color: #48494B;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 75%;
+  height: 30px;
+}
+.pageBody .task ul li p a:hover {
+  color: #F40;
+}
+.pageBody .task ul li p span {
+  float: right;
+  font-size: 16px;
+  font-weight: bold;
+  color: #F40;
+  width: 23%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/*# sourceMappingURL=index.css.map */

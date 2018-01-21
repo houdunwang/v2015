@@ -1,0 +1,14 @@
+.ff {
+	BORDER-LEFT: 0px; BORDER-TOP: 0px; FILTER: DropShadow(Color=#000000, OffX=1, OffY=1, Positive=1)
+}
+td {font-size: 9pt;}
+.line{line-height: 14pt;font-size: 9pt;}
+A:link {text-decoration: none; color:#000000}
+A:visited {text-decoration: none; color: #000000} 
+A:active {text-decoration: underline; color: #000000 } 
+A:hover {text-decoration: underline;	color: #FF0000;}
+body{text-align: center;}
+input {	font-size: 9pt;}
+option[font-size:9pt;}
+textarea{font-size:9pt;}
+select {font-size: 9pt;}

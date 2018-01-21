@@ -1,0 +1,13 @@
+{template "wap","header"}
+<div class="adds" id="hd">{wap_pos($typeid)}</div>
+{loop subtype($typeid)  $type}
+	{pc:wap action="lists" typeid="$type[typeid]" num="10" order="id DESC" return="info"}
+	<h2><a href="{list_url($type['typeid'])}" class="cat">{$type['typename']}</a></h2>
+	<div>
+	{loop $info $v}
+	<a href="{show_url($v[catid],$v[id],$type['typeid'])}" title="{$v['title']}">{str_cut($v['title'],26,'')}</a><br/>
+	{/loop}
+	</div>
+	{/pc}
+{/loop}
+{template "wap","footer"}

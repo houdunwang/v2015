@@ -1,0 +1,93 @@
+{template 'search', 'header'}
+	<div class="clr sr_body sr_list">
+    	<div class="sr_main">
+        	<div class="sr_head">
+            	<div class="l" id="search">
+				{php $j=0}
+				{loop $search_model $k=>$v}
+				{php $j++;}
+					<a href="javascript:;" onclick="setmodel({$v['typeid']}, $(this),{$siteid}, '{$q}');" {if $v['typeid']==$typeid} class="on"{/if}>{$v['name']}</a>{if $j != count($search_model)} - {/if}
+				{/loop}
+				</div>
+            	<div class="r"><script type="text/javascript">document.write('<iframe src="{APP_PATH}index.php?m=member&c=index&a=mini&forward='+encodeURIComponent(location.href)+'&siteid={get_siteid()}" allowTransparency="true"  width="300" height="24" frameborder="0" scrolling="no"></iframe>')</script></div>
+            </div>
+
+            <div class="wrap sr_logo">
+            	<a href="index.php?m=search&siteid={$siteid}" class="l"><img src="{IMG_PATH}search/se_logo.png" width="230" height="158" /></a>
+                <div class="l">
+                	<div class="sr_frm_box">
+						<form name="search" type="get">
+                        <div class="sr_frmipt">
+						  <input type="hidden" name="m" value="search"/>
+						  <input type="hidden" name="c" value="index"/>
+						  <input type="hidden" name="a" value="init"/>
+						  <input type="hidden" name="typeid" value="{$typeid}" id="typeid"/>
+						  <input type="hidden" name="siteid" value="{$siteid}" id="siteid"/>
+						<input type="text" name="q" class="ipt" id="q" value="{$search_q}">
+						<div class="sp" id="aca">▼</div><input type="submit" class="ss_btn" value="搜 索"></div>
+						</form>
+						<div id="sr_infos" class="wrap sr_infoul">
+						</div>
+                    </div>
+                    <div class="jg">获得约 {$totalnums} 条结果 （用时{sprintf("%01.2f", $execute_time)} 秒）</div>
+                </div>
+            </div>
+            <div class="brd1s"></div>
+            <div class="wrap sr_lists">
+            	<div class="l">
+                	<div>
+                    	<span>网页结果</span>
+                        <ul>
+				{loop $search_model $k=>$v}
+						<li><a href="?m=search&c=index&a=init&typeid={$v['typeid']}&q={urlencode($search_q)}&siteid={$siteid}&time={$time}" {if $v['typeid']==$typeid} class="ac"{/if}>{$v['name']}</a>
+						</li>
+				{/loop}
+                         </ul>
+                    </div>
+                    <div>
+                    	<span>按时间搜索</span>
+                        <ul>
+                            <li><a href="?m=search&c=index&a=init&typeid={$typeid}&q={urlencode($search_q)}&siteid={$siteid}&time=all" {if $time=='all' || empty($time)}class="ac"{/if}>全部时间</a></li>
+                            <li><a href="?m=search&c=index&a=init&typeid={$typeid}&q={urlencode($search_q)}&siteid={$siteid}&time=day" {if $time=='day'}class="ac"{/if}>一天内</a></li>
+                            <li><a href="?m=search&c=index&a=init&typeid={$typeid}&q={urlencode($search_q)}&siteid={$siteid}&time=week" {if $time=='week'}class="ac"{/if}>一周内</a></li>
+                            <li><a href="?m=search&c=index&a=init&typeid={$typeid}&q={urlencode($search_q)}&siteid={$siteid}&time=month" {if $time=='month'}class="ac"{/if}>一月内</a></li>
+                            <li><a href="?m=search&c=index&a=init&typeid={$typeid}&q={urlencode($search_q)}&siteid={$siteid}&time=year" {if $time=='year'}class="ac"{/if}>一年内</a></li>
+                        </ul>
+                    </div>
+                    <div class="bgno">
+                    	<span>搜索历史</span>
+                        <ul id='history_ul'>
+                        </ul>
+                    </div>
+                </div>
+                <div class="c wrap">
+                	<ul class="wrap">
+						{loop $data $i $r}
+						<li class="wrap">
+							<div>
+								{if $r['thumb']}<a href="{$r[url]}"><img src="{$r[thumb]}" width="60" height="60" /></a>{/if}
+								<h5><a href="{$r[url]}">{$r[title]}</a>{if $r['posids']}<img src="{IMG_PATH}icon/small_elite.gif">{/if}</h5>
+								<p>{$r[description]}</p>
+							</div>
+							<div class="adds">发布时间：{format::date($r[inputtime], 1)}</div>
+						</li>
+						{/loop}
+						{if empty($data)}未找到结果{/if}
+                    </ul>
+                    <div id="pages" class="text-c mg_t20">{$pages}</div>
+					{if $setting['relationenble']}
+					<div class="wrap sgch"><strong>相关搜索：</strong>
+					{loop $relation $k $v}
+					<a href="?m=search&c=index&a=init&typeid={$typeid}&siteid={$siteid}&q={$v['keyword']}">{$v['keyword']}</a> 
+					{/loop}
+					</div>
+					{/if}
+                </div>
+            </div>
+      </div>
+<script type="text/javascript" src="{JS_PATH}search_history.js"></script>
+{if $setting['suggestenable']}
+<script type="text/javascript" src="{JS_PATH}jquery.suggest.js"></script>
+<script type="text/javascript" src="{JS_PATH}search_suggest.js"></script>
+{/if}
+{template 'search', 'footer'}

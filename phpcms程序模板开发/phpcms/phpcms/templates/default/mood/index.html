@@ -1,0 +1,28 @@
+<style type="text/css"> 
+	#mood{text-align: center;}
+	#mood ul li,#mood ul li div.pillar{display:inline-block;display:-moz-inline-stack;zoom:1;*display:inline;}
+	#mood ul li{vertical-align: bottom}
+	#mood ul li{width:80px; padding-bottom:10px}
+	#mood ul li span{ font-size:12px}
+	#mood ul li label{ display:block;}
+	#mood ul li div.pillar{ height:20px; width:80px; background:url({IMG_PATH}mood/mood.gif) repeat-y 28px center; margin-bottom:5px;}
+	#mood ul li div.pass{background-position: -83px center;}
+</style>
+<div id="mood">
+<ul>
+{loop $setting $k $v}
+<li><span>{$data[$v['fields']]}</span><div class="pillar{if isset($key) && $key==$k} pass{/if}" style="height:{$v[per]}px;"></div>{if $v[pic]}<img src="{IMG_PATH}{$v[pic]}">{/if}<br /><label for="n{$k}">{$v[name]}<br /><input type="radio" id="n{$k}" name="n" onclick="vote({$k})" {if isset($key) && $key==$k} checked{/if}></label></li>{/loop}
+</ul>
+</div>
+<script type="text/javascript">
+function vote(id) {
+	$.getJSON('{APP_PATH}index.php?m=mood&c=index&a=post&id={$mood_id}&k='+id+'&'+Math.random()+'&callback=?', function(data){
+		if(data.status==1)	{
+			$('#mood').html(data.data);
+		}else {
+			alert(data.data);
+		}
+	})
+}
+
+</script>                                                           

@@ -1,0 +1,230 @@
+<html>
+<head>
+<title>过滤字符</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="robots" content="noindex, nofollow" />
+<style type="text/css">
+html, body {
+  background: ButtonFace;
+  color: ButtonText;
+  font: 11px Tahoma,Verdana,sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+body { padding: 5px; }
+table {
+  font: 11px Tahoma,Verdana,sans-serif;
+}
+form p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.fl { width: 6em; float: left; padding: 2px 5px; text-align: right; }
+.fr { width: 7em; float: left; padding: 2px 5px; text-align: right; }
+fieldset { padding: 0px 10px 5px 5px; }
+select, input, button { font: 11px Tahoma,Verdana,sans-serif; }
+button { width: 70px; }
+.space { padding: 2px; }
+
+.title { background: #ddf; color: #000; font-weight: bold; font-size: 120%; padding: 3px 10px; margin-bottom: 10px;
+border-bottom: 1px solid black; letter-spacing: 2px;
+}
+form { padding: 0px; margin: 0px; }
+</style>
+<script src="../common/fck_dialog_common.js" type="text/javascript"></script>
+<script type="text/javascript">
+var dialog	= window.parent ;
+var oEditor = dialog.InnerDialogLoaded() ;
+var dialogArguments = dialog.Args() ;
+
+// Gets the document DOM
+var oDOM = oEditor.FCK.EditorDocument ;
+
+window.onload = function(){
+dialog.SetOkButton( true ) ;
+dialog.SetAutoSize( true ) ;
+}
+
+function Ok(){
+	if(!confirm('确认要过滤?'))
+	{
+		return false;
+	}
+	var r;
+	var s=0;
+	var D=oDOM.body.innerHTML;
+	var obj=document.repform;
+	if(obj.href1.checked)
+	{
+		s=1;
+		reg = /<a[^>]*?>([\w\W]*?)<\/a>/ig;
+		D=D.replace(reg,"$1");
+	}
+	if(obj.href2.checked)
+	{
+		s=1;
+		reg = /<a[^>]*?>([\w\W]*?)<\/a>/ig;
+		D=D.replace(reg,"");
+	}
+	if(obj.iframe.checked)
+	{
+		s=1;
+		reg = /<iframe[^>]*?>([\w\W]*?)<\/iframe>/ig;
+		D=D.replace(reg,"");
+	}
+	if(obj.object.checked)
+	{
+		s=1;
+		reg = /<object[^>]*?>([\w\W]*?)<\/object>/ig;
+		D=D.replace(reg,"");
+	}
+	if(obj.script.checked)
+	{
+		s=1;
+		reg = /<script[^>]*?>([\w\W]*?)<\/script>/ig;
+		D=D.replace(reg,"");
+	}
+	if(obj.style.checked)
+	{
+		s=1;
+		reg = /<style[^>]*?>([\w\W]*?)<\/style>/ig;
+		D=D.replace(reg,"");
+	}
+	if(obj.div1.checked)
+	{
+		s=1;
+		reg = /<div[^>]*?>([\w\W]*?)<\/div>/ig;
+		D=D.replace(reg,"$1");
+	}
+	if(obj.div2.checked)
+	{
+		s=1;
+		reg = /<div[^>]*?>([\w\W]*?)<\/div>/ig;
+		D=D.replace(reg,"");
+	}
+	if(obj.span1.checked)
+	{
+		s=1;
+		reg = /<span[^>]*?>([\w\W]*?)<\/span>/ig;
+		D=D.replace(reg,"$1");
+	}
+	if(obj.span2.checked)
+	{
+		s=1;
+		reg = /<span[^>]*?>([\w\W]*?)<\/span>/ig;
+		D=D.replace(reg,"");
+	}
+	if(obj.table.checked)
+	{
+		s=1;
+		reg = /<table[^>]*?>([\w\W]*?)<\/table>/ig;
+		D=D.replace(reg,"");
+	}
+	if(obj.img.checked)
+	{
+		s=1;
+		reg = /<img[^>]*?>/ig;
+		D=D.replace(reg,"");
+	}
+	if(obj.font1.checked)
+	{
+		s=1;
+		reg = /<font[^>]*?>([\w\W]*?)<\/font>/ig;
+		D=D.replace(reg,"$1");
+	}
+	if(obj.font2.checked)
+	{
+		s=1;
+		reg = /<font[^>]*?>([\w\W]*?)<\/font>/ig;
+		D=D.replace(reg,"");
+	}
+	if(obj.form.checked)
+	{
+		s=1;
+		reg = /<form[^>]*?>([\w\W]*?)<\/form>/ig;
+		D=D.replace(reg,"");
+	}
+	if(s==1)
+	{
+		oEditor.FCKUndo.SaveUndoStep();
+		oEditor.FCK.SetData(D);
+	}
+	return true;
+}
+</script>
+</head>
+<body>
+  
+<table width="100%" border="0" cellspacing="1" cellpadding="3">
+  <form action="" method="post" name="repform">
+    <tr> 
+      <td> <fieldset>
+        <legend>字符过虑设置</legend>
+        <table width="100%" border="0" cellspacing="1" cellpadding="3">
+          <tr> 
+            <td><input name="href1" type="checkbox" id="href1" value="1">
+              A： 过滤链接(字留下，链接去除)</td>
+          </tr>
+          <tr> 
+            <td><input name="href2" type="checkbox" id="href2" value="1">
+              A： 过滤链接(字与链接都去除)</td>
+          </tr>
+          <tr> 
+            <td><input name="iframe" type="checkbox" id="iframe" value="1">
+              Iframe： 过滤内联页</td>
+          </tr>
+          <tr> 
+            <td><input name="object" type="checkbox" id="object" value="1">
+              Object：过滤FLASH,控件等</td>
+          </tr>
+          <tr> 
+            <td><input name="script" type="checkbox" id="script" value="1">
+              Script：过滤JS等脚本</td>
+          </tr>
+          <tr> 
+            <td><input name="style" type="checkbox" id="style" value="1">
+              Style： 过滤CSS类</td>
+          </tr>
+          <tr> 
+            <td><input name="div1" type="checkbox" id="div1" value="1">
+              Div： 过滤层(保留中间的字)</td>
+          </tr>
+          <tr> 
+            <td><input name="div2" type="checkbox" value="1">
+              Div： 过滤层(不保留中间的字)</td>
+          </tr>
+          <tr> 
+            <td><input name="span1" type="checkbox" id="span1" value="1">
+              Span： 过滤Span容器(保留中间的字)</td>
+          </tr>
+          <tr> 
+            <td><input name="span2" type="checkbox" id="span2" value="1">
+              Span： 过滤Span容器(不保留中间的字)</td>
+          </tr>
+          <tr> 
+            <td><input name="table" type="checkbox" id="table" value="1">
+              Table： 过滤表格</td>
+          </tr>
+          <tr> 
+            <td><input name="img" type="checkbox" id="img" value="1">
+              Img： 过滤图片</td>
+          </tr>
+          <tr> 
+            <td><input name="font1" type="checkbox" id="font1" value="1">
+              Font： 过滤字体(保留中间的字)</td>
+          </tr>
+          <tr>
+            <td><input name="font2" type="checkbox" id="font3" value="1">
+              Font： 过滤字体(不保留中间的字)</td>
+          </tr>
+          <tr> 
+            <td><input name="form" type="checkbox" id="form" value="1">
+              Form： 过滤表单</td>
+          </tr>
+        </table>
+        </fieldset></td>
+    </tr>
+  </form>
+</table>
+</body>
+</html>

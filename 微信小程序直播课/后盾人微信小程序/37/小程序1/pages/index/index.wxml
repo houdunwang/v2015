@@ -1,0 +1,10 @@
+<button bindtap='addneighbor'>点我增加一位邻居</button>
+
+<!-- key用来指定列表中的唯一标识符 -->
+<!-- 1/字符串，代表在 for 循环的 array 中 item 的某个 property，该 property 的值需要是列表中唯一的字符串或数字，且不能动态改变。
+2/保留关键字 *this 代表在 for 循环中的 item 本身，这种表示需要 item 本身是一个唯一的字符串或者数字. -->
+<!-- 将当前循环到的数据中的id属性值作为key标识符 -->
+<switch wx:for="{{hd}}" wx:key="id" style="display:block;">{{item.name}}</switch>
+
+<button bindtap='addnumber'>点击增加一个数字</button>
+<switch wx:for="{{hd2}}" wx:key="*this" style='display:block;'>{{item}}</switch>

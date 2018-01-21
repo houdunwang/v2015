@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>帝国CMS-视频播放器集合插件</title>
+<style type=text/css>
+<!--
+{ font-family: 宋体; font-size: 12px; line-height: 19px; color: #333333;text-decoration: none} a:hover { color: #FF0000}a:hover { text-decoration: none}a:hover { line-height: 19px}a:link { font-family: 宋体; font-size: 14px; line-height: 19px; color: #333333;text-decoration: none} a:visited { text-decoration: none; }Table{ font-family: 宋体; font-size: 13px; color: #000000; line-height: 21px; text-decoration: none } }
+.box {border: 1px solid #333333;height: 10px;width: 10px;font-size:1px;cursor:hand;filter:blur(add=ture,direction=135,strength=2);}
+.STYLE1 {color: #666666}
+-->
+</Style>
+</head>
+
+<body>
+<table width="800" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="#4FB4DE">
+  <tr>
+    <td height="38"><div align="center"><strong><font color="#FFFFFF" size="4">帝国CMS-视频播放器集合插件使用说明</font></strong></div></td>
+  </tr>
+  
+  <tr> 
+    <td height="30" bgcolor="#FFFFFF"> <div align="center"><a href="http://www.phome.net/OpenSource/" target="_blank"><font color="#FF0000"><strong>帝国CMS                 － 最安全、最稳定的开源CMS系统</strong></font></a></div></td>
+  </tr>
+  <tr> 
+    <td height="23" bgcolor="#C9F1FF"><strong>一、显示效果：</strong></td>
+  </tr>
+  <tr> 
+    <td height="30" bgcolor="#FFFFFF"> <table width="99%" border="0" align="center" cellpadding="1" cellspacing="1">
+        <tr> 
+          <td height="23"><div align="center"><img src="doc/demopic.jpg" width="600" height="404"></div></td>
+        </tr>
+      </table>
+      <br></td>
+  </tr>
+  <tr> 
+    <td height="23" bgcolor="#C9F1FF"><strong>二、使用语法说明</strong></td>
+  </tr>
+  <tr> 
+    <td height="30" bgcolor="#FFFFFF"> <table width="99%" border="0" align="center" cellpadding="1" cellspacing="1">
+        <tr> 
+          <td height="25"><strong><font color="#0000FF">(一)、【显示视频播放器JS函数语法说明】</font></strong></td>
+        </tr>
+        <tr> 
+          <td height="25"><strong>1、格式：</strong></td>
+        </tr>
+        <tr> 
+          <td height="25"><textarea name="textarea" cols="60" rows="5" wrap="off" style="WIDTH:100%">&lt;script src=&quot;/e/data/modadd/moreplayer/empirecmsplayer.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+EmpireCMSPlayVideo('播放器类型','视频地址','显示宽度','显示高度',是否自动播放,'帝国CMS网站地址');
+&lt;/script&gt;</textarea></td>
+        </tr>
+        <tr>
+          <td height="25">参数说明：</td>
+        </tr>
+        <tr>
+          <td height="25"><table width="99%" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="#CCCCCC">
+            <tr>
+              <td width="22%" bgcolor="#FFFFFF">播放器类型：</td>
+              <td width="78%" bgcolor="#FFFFFF">设为空''或'auto'为自动识别<br>
+                设为'flash'为采用flash播放器<br>
+                设为'jwplayer'为采用jwplayer播放器<br>
+                设为'realplayer'为采用realplayer播放器<br>
+                设为'mediaplayer'为采用mediaplayer播放器</td>
+            </tr>
+            <tr>
+              <td bgcolor="#FFFFFF">视频地址：</td>
+              <td bgcolor="#FFFFFF">填要播放的视频地址，比如：http://localhost/file/movie.flv</td>
+            </tr>
+            <tr>
+              <td bgcolor="#FFFFFF">显示宽度：</td>
+              <td bgcolor="#FFFFFF">视频显示的宽度。</td>
+            </tr>
+            <tr>
+              <td bgcolor="#FFFFFF">显示高度：</td>
+              <td bgcolor="#FFFFFF">视频显示的高度。</td>
+            </tr>
+            <tr>
+              <td bgcolor="#FFFFFF">是否自动播放：</td>
+              <td bgcolor="#FFFFFF">0为不自动播放，1为自动播放。</td>
+            </tr>
+            <tr>
+              <td bgcolor="#FFFFFF">帝国CMS网站地址：</td>
+              <td bgcolor="#FFFFFF">要以“/”结尾，也就是后台系统参数设置的网站地址，模板中用“[!--news.url--]”即可。</td>
+            </tr>
+          </table></td>
+        </tr>
+        <tr>
+          <td height="25">&nbsp;</td>
+        </tr>
+        
+        <tr> 
+          <td height="25"><strong>2、使用范例1：</strong></td>
+        </tr>
+        <tr> 
+          <td height="25"><textarea name="textarea2" cols="80" rows="5" wrap="off" style="WIDTH:100%">&lt;script src=&quot;[!--news.url--]e/data/modadd/moreplayer/empirecmsplayer.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+EmpireCMSPlayVideo('auto','[!--movieurl--]','600','400',0,'[!--news.url--]');
+&lt;/script&gt;</textarea></td>
+        </tr>
+        <tr>
+          <td height="25"><font color="#666666">(其中例子中的“[!--movieurl--]”是假设视频地址字段名是movieurl，“[!--news.url--]”为网站地址。)</font></td>
+        </tr>
+        <tr> 
+          <td height="25"><strong>3、使用范例2：</strong>(不加到模板，直接在html页面中播放视频)</td>
+        </tr>
+        <tr> 
+          <td height="25"><textarea name="textarea3" cols="80" rows="5" wrap="off" style="WIDTH:100%">&lt;script src=&quot;/e/data/modadd/moreplayer/empirecmsplayer.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+EmpireCMSPlayVideo('auto','http://localhost/file/movie.flv','600','400',0,'/');
+&lt;/script&gt;</textarea></td>
+        </tr>
+        <tr> 
+          <td height="25"><strong>4、使用范例3：</strong>(播放电影系统模型中的第一个视频地址)</td>
+        </tr>
+        <tr>
+          <td height="25"><textarea name="textarea5" cols="80" rows="10" wrap="off" style="WIDTH:100%">&lt;?php
+$onlinepath=$navinfor['onlinepath'];//取得onlinepath字段内容
+$olr=explode(egetzy('rn'),$onlinepath);
+$olfr=explode('::::::',$olr[0]);
+?&gt;
+&lt;script src=&quot;[!--news.url--]e/data/modadd/moreplayer/empirecmsplayer.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+EmpireCMSPlayVideo('auto','&lt;?=$olfr[1]?&gt;','600','400',0,'[!--news.url--]');
+&lt;/script&gt;</textarea></td>
+        </tr>
+        <tr>
+          <td height="25">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td height="25"><strong><font color="#0000FF">(二)、【完整范例】</font></strong></td>
+        </tr>
+        
+        <tr>
+          <td height="25">
+          <textarea name="textarea4" cols="80" rows="22" wrap="off" style="WIDTH:100%">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=gb2312&quot;&gt;
+&lt;title&gt;视频播放&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;
+
+&lt;script src=&quot;/e/data/modadd/moreplayer/empirecmsplayer.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+EmpireCMSPlayVideo('auto','http://localhost/file/movie.flv','600','400',0,'/');
+&lt;/script&gt;
+
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea></td>
+        </tr>
+        <tr>
+          <td height="25">&nbsp;</td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<hr>
+<table width="100%" border="0" cellspacing="1" cellpadding="1">
+  <tr>
+    <td height="25">
+<div align="center"><a href="http://www.phome.net" target="_blank">官方网站</a> | 
+        <a href="http://bbs.phome.net" target="_blank">论坛交流</a> | <a href="http://www.phome.net/product/" target="_blank">产品中心</a> 
+        | <a href="http://www.phome.net/download/" target="_blank">产品下载中心</a></div></td>
+  </tr>
+</table>
+</body>
+</html>

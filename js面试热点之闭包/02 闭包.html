@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script type="text/javascript">
+
+
+        // 闭包所涉及到的数据，跟闭包函数原始作用域有关系，和闭包函数最终被导出到哪里没关系
+
+        function foo(){
+            var count = 0;
+            function hd(){
+                count++;
+                console.log(count);
+            }
+            return hd;
+        }
+
+        var result = foo();
+        result();//1
+        result();//2
+        result();//3
+
+
+
+
+    </script>
+
+
+
+
+
+
+</body>
+</html>

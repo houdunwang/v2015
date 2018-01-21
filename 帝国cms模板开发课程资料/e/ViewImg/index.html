@@ -1,0 +1,116 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>图片预览</title>
+<style>
+td {
+	font-size: 12px;
+}
+body {
+	font-size: 12px;
+	text-align: center;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+hr {  height: 1px; color: #000000 }
+textarea {
+	font-size: 12px;FONT-FAMILY: "Tahoma", "MS Shell Dlg";
+}
+A:link, A:active
+{
+	color: #333366;
+	text-decoration: none;
+}
+A:visited
+{  
+	color: #333366;
+	text-decoration: none;
+}
+A:hover
+{
+	color: #FF0000;
+	text-decoration: underline;
+}
+SELECT {
+	FONT-SIZE: 12px; FONT-FAMILY: "MS Shell Dlg"
+}
+FORM {
+	MARGIN-TOP: 3px; FONT-SIZE: 12px; MARGIN-BOTTOM: 0px; FONT-FAMILY: "Tahoma", "MS Shell Dlg"
+}
+INPUT {
+	FONT-SIZE: 12px; FONT-FAMILY: "Tahoma", "MS Shell Dlg"
+}
+.picborder {  border: #999999; border-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px}
+</style>
+<script>
+function Request(sName)
+{
+
+  /*
+   get last loc. of ?
+   right: find first loc. of sName
+   +2
+   retrieve value before next &
+  
+  */
+  
+  var sURL = new String(window.location);
+  var iQMark= sURL.lastIndexOf('?');
+  var iLensName=sName.length;
+  
+  //retrieve loc. of sName
+  var iStart = sURL.indexOf('?' + sName +'=') //limitation 1
+  if (iStart==-1)
+        {//not found at start
+        iStart = sURL.indexOf('&' + sName +'=')//limitation 1
+		if (iStart==-1)
+		   {//not found at end
+		    return 0; //not found
+		   }   
+        }
+        
+  iStart = iStart + + iLensName + 2;
+  var iTemp= sURL.indexOf('&',iStart); //next pair start
+  if (iTemp ==-1)
+		{//EOF
+		iTemp=sURL.length;
+		}  
+  return sURL.slice(iStart,iTemp ) ;
+  sURL=null;//destroy String
+}
+</script>
+<script>
+function bbimg(o){
+	var zoom=parseInt(o.style.zoom, 10)||100;zoom+=event.wheelDelta/12;if (zoom>0) o.style.zoom=zoom+'%';
+	return false;
+}
+</script>
+</head><body>
+<table width="100%" border="0" align="center" cellpadding="3" cellspacing="0">
+  <tr> 
+    <td><div align="center">
+	</div></td>
+  </tr>
+  <tr> 
+    <td align="center">
+	<script>
+	if(Request("url")!=0){
+	document.write("<a title=\"点击观看完整的图片...\" href=\""+Request("url")+"\" target=\"_blank\"><img src=\""+Request("url")+"\" border=0 class=\"picborder\" onmousewheel=\"return bbimg(this)\" onload=\"if(this.width>screen.width-500)this.style.width=screen.width-500;\">");
+    }
+	</script>
+	</td>
+  </tr>
+  <tr> 
+    <td><div align="center"></div></td>
+  </tr>
+  <tr> 
+    <td><div align="center">注:支持鼠标滚轮放大&amp;缩小图片.</div></td>
+  </tr>
+  <tr> 
+    <td><div align="center"> 
+        <input type="button" name="Submit" value="关闭" onclick="window.close();">
+      </div></td>
+  </tr>
+</table>
+</body>
+</html>

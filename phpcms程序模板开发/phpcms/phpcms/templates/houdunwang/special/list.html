@@ -1,0 +1,18 @@
+{template 'special', 'header'}
+<div class="main">
+	<div class="crumbs"><a href="">首页</a><span> &gt; </span> <a href="{APP_PATH}index.php?m=special&c=index&a=special">专题</a> <span> &gt; </span> <a href="{$url}">{$title}</a> </div>
+    <div class="box">
+        <h5>{$info[name]}</h5>
+        <div class="content">
+		{pc:special  action="content_list" specialid="$specialid" typeid="$typeid" listorder="3" page="$page" num="20"}
+            <ul class="list f14 lh26 row-2">
+			{loop $data $r}
+                <li>·<a href="{$r['url']}" target="_blank">{str_cut($r['title'], 40)}</a></li>
+				{/loop}
+            </ul>
+        </div>
+		<div id="pages" class="text-c">{$pages}</div>
+		{/pc}
+    </div>
+</div> 
+{template 'content', 'footer'}

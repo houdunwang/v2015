@@ -1,0 +1,75 @@
+BODY {
+	FONT-SIZE: 9pt; FONT-FAMILY: 宋体
+}
+BR {
+	FONT-SIZE: 9pt; FONT-FAMILY: 宋体
+}
+P {
+	FONT-SIZE: 9pt; FONT-FAMILY: 宋体
+}
+A {
+	FONT-SIZE: 9pt; FONT-FAMILY: "宋体"
+}
+TD {
+	FONT-SIZE: 12px; FONT-FAMILY: 宋体
+}
+A {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+A.a1 {
+	COLOR: red; TEXT-DECORATION: underline
+}
+A.a1:hover {
+	COLOR: red; TEXT-DECORATION: none
+}
+A.a2 {
+	COLOR: #000000; LINE-HEIGHT: 14pt; TEXT-DECORATION: underline
+}
+A.a2:hover {
+	COLOR: #000000; LINE-HEIGHT: 14pt; TEXT-DECORATION: none
+}
+A.a4 {
+	COLOR: #000000; LINE-HEIGHT: 14pt; TEXT-DECORATION: underline
+}
+A.a4:hover {
+	COLOR: #000000; LINE-HEIGHT: 14pt; TEXT-DECORATION: none
+}
+A.a3 {
+	FILTER: DropShadow(Color=#000000, OffX=1, OffY=1, Positive=1); COLOR: #ffffff; LINE-HEIGHT: 14pt; TEXT-DECORATION: none
+}
+A.a3:hover {
+	COLOR: #ffffff; LINE-HEIGHT: 14pt; TEXT-DECORATION: underline
+}
+A.a5 {
+	COLOR: #000000; LINE-HEIGHT: 18pt; TEXT-DECORATION: underline
+}
+A.a5:hover {
+	COLOR: red; LINE-HEIGHT: 18pt; TEXT-DECORATION: none
+}
+A.a6 {
+	COLOR: #999999; LINE-HEIGHT: 14pt; TEXT-DECORATION: none
+}
+A.a6:hover {
+	COLOR: #ffff00; LINE-HEIGHT: 14pt; TEXT-DECORATION: none
+}
+.inp {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid
+}
+.white {
+	FONT-SIZE: 9pt; COLOR: #ffffff; LINE-HEIGHT: 18px
+}
+.space {
+	LINE-HEIGHT: 16px
+}
+.list {
+	MARGIN-TOP: 5px; PADDING-LEFT: 5px; MARGIN-LEFT: 5px; LINE-HEIGHT: 16px; PADDING-TOP: 5px
+}
+.unnamed1 {
+	font-size: 12px;
+	line-height: 15px;}
+a.tit:link {  COLOR: c0c0c0; text-decoration: none}
+a.tit:visited {  COLOR: c0c0c0; text-decoration: none}
+a.tit:hover {  COLOR: ffffff; text-decoration: none}	

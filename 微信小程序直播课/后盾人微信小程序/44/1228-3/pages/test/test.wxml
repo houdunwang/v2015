@@ -1,0 +1,12 @@
+<!--pages/test/test.wxml-->
+<text>这里是test页面</text>
+
+
+<!-- import是导入wxml中定义的template模板，其他的结构不导入 -->
+<!-- <import src="../index/index.wxml" />
+<template is="hdtpl" /> -->
+
+<!-- include可以将目标页面中除了<template />,<wxs/>以外的所有标签都导入 -->
+
+<include src='../index/index.wxml' />
+

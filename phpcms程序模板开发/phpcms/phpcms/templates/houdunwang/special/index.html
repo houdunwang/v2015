@@ -1,0 +1,126 @@
+{template 'special', 'header'}
+<style type="text/css">
+.plan-2{ padding:0 8px; text-align:center; overflow:hidden}
+.plan-2 li div.img-wrap,.plan-2 li a{ width:120px; height:100px; margin:auto}
+</style>
+<!--main-->
+<div class="main">
+	<div class="col-left new">
+			<div class="FocusPic">
+            {pc:special  action="content_list" specialid="$specialid" thumb="1" listorder="3" num="5"}
+            	<div class="content" id="main-slide">
+                    <div class="changeDiv">  
+                    {loop $data $r}
+                        <a href="{$r['url']}" title="{str_cut($r['title'],30)}"><img src="{thumb($r['thumb'],310,260)}" alt="{$r['title']}" width="310" height="260" /></a>
+                    {/loop}
+                    </div>
+                </div>
+            {/pc}
+            </div>
+			<div class="bk10"></div>
+			<div class="box">
+			{php $blockid = 'special_'.$specialid.'_4';}
+			{pc:block pos="$blockid"}
+			{/pc}
+			</div>
+			<div class="bk10"></div>
+			<div class="box">
+			{php $blockid = 'special_'.$specialid.'_5';}
+			{pc:block pos="$blockid"}
+			{/pc}
+			</div>
+    </div>
+    <div class="col-left img-text" >
+		<div class="box intro"><strong>导读：</strong>{$description}</div>
+    	<div class="news-hot">
+		{pc:special  action="content_list" specialid="$specialid" listorder="3" num="3"}
+			{loop $data $r}
+            {if $n>1}<div class="bk20 hr"><hr></div>{/if}
+                <h4 class="blue"><a href="{$r['url']}" target="_blank">{str_cut($r['title'], 36, '')}</a></h4>
+                <p>{str_cut($r['description'], 100)}</p>
+			{/loop}
+		{/pc}
+        </div>
+        {loop $types $t}
+    <div class="bk10"></div>
+    <div class="box">
+        		<h5>{$t['name']}<a href="{$t['url']}" class="more">更多>></a></h5>
+			{pc:special action="content_list" specialid="$id" typeid="$t[typeid]" listorder="3" num="10"}
+				<ul class="list f14 lh26 ">
+				{loop $data $r}
+                <li>·<a href="{$r['url']}" target="_blank">{str_cut($r['title'], 36)}</a></li>
+            {/loop}
+            </ul>
+			{/pc}
+        </div>
+		{/loop}	
+    </div>
+    <div class="col-auto">
+	<div class="box">
+            {php $blockid = 'special_'.$specialid.'_1';}
+			{pc:block pos="$blockid"}
+			{/pc}
+    </div>
+	<div class="bk10"></div>
+	<div class="box">
+            {php $blockid = 'special_'.$specialid.'_2';}
+			{pc:block pos="$blockid"}
+			{/pc}
+    </div>
+	<div class="bk10"></div>
+	<div class="box">
+            {php $blockid = 'special_'.$specialid.'_3';}
+			{pc:block pos="$blockid"}
+			{/pc}
+    </div>
+	{if $voteid}
+	<div class="bk10"></div>
+    <div class="box vote">
+		<h5 class="title-2">在线调查</h5>
+			<script language="javascript" src="{APP_PATH}index.php?m=vote&c=index&a=show&action=js&subjectid={$voteid}&type=3"></script>
+	</div>
+	{/if}
+    </div>
+	<div class="bk10"></div>
+	{$pic_data}
+	{loop $types $t}
+    <div class="bk10"></div>
+    <div class="box">
+        		<h5>{$t['name']}<a href="{$t['url']}" class="more">更多>></a></h5>
+				{pc:special action="content_list" specialid="$id" typeid="$t[typeid]" thumb="1" listorder="3" num="6"}
+            <ul class="content news-photo picbig">
+			{loop $data $r}
+            	<li>
+                    <div class="img-wrap">
+                        <a href="{$r['url']}"><img src="{thumb($r['thumb'], 110, 85)}" /></a>
+                    </div>
+                    <a href="{$r['url']}">{str_cut($r['title'], 20)}</a>
+                </li>
+         {/loop}
+            </ul>
+			{/pc}
+			<div class="hr bk15"></div>
+			{pc:special action="content_list" specialid="$id" typeid="$t[typeid]" listorder="3" num="10"}
+				<ul class="list f14 lh26 row-2">
+				{loop $data $r}
+                <li>·<a href="{$r['url']}" target="_blank">{str_cut($r['title'], 36)}</a></li>
+            {/loop}
+            </ul>
+			</pc>
+        </div>
+		{/loop}	
+		<div class="bk10"></div>
+	  {if module_exists('comment')}
+      <iframe src="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={id_encode("special",$id,$siteid)}&iframe=1" width="100%" height="40%" id="comment_iframe" frameborder="0" scrolling="no"></iframe>
+	  {/if}
+	  <script language='javascript' src='{APP_PATH}index.php?m=formguide&c=index&a=show&formid=48&action=js'></script>
+</div>
+<script type="text/javascript"> 
+<!--
+$(function(){
+	new slide("#main-slide","cur",290,260,1);//焦点图
+	new SwapTab(".SwapTab","span",".tab-content","ul","fb");//排行TAB
+})
+//-->
+</script>
+{template 'content', 'footer'}

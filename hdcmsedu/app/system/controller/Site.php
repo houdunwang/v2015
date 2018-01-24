@@ -12,9 +12,7 @@ use system\model\Site as SiteModel;
 use system\model\User;
 use system\model\Package;
 use system\model\Template;
-use houdunwang\arr\Arr;
-use houdunwang\config\Config;
-use system\model\A;
+
 /**
  * 站点管理
  * Class Site
@@ -46,7 +44,11 @@ class Site extends Admin
         return view('', compact('sites', 'user'));
     }
 
-    //网站列表页面,获取站点包信息
+    /**
+     * 网站列表页面,获取站点包信息
+     *
+     * @return array
+     */
     public function package()
     {
         //根据站长所在会员组获取套餐
@@ -54,7 +56,7 @@ class Site extends Admin
         $package = [];
         if (in_array(-1, $pids)) {
             $package[] = "所有服务";
-        } else if ( ! empty($pids)) {
+        } elseif ( ! empty($pids)) {
             $package = Db::table('package')->whereIn('id', $pids)->lists('name');
         }
         //获取模块
@@ -74,9 +76,15 @@ class Site extends Admin
      * @param \system\model\Modules  $module
      *
      * @return mixed|string
+     * @throws \Exception
      */
-    public function access_setting(User $user, Package $package, SiteModel $site, Template $template, Modules $module)
-    {
+    public function access_setting(
+        User $user,
+        Package $package,
+        SiteModel $site,
+        Template $template,
+        Modules $module
+    ) {
         //非系统管理员直接跳转到第四步,只有系统管理员可以设置用户扩展套餐与模块
         if ($user->superUserAuth() === false) {
             return message('没有操作权限', '', 'error');
@@ -143,6 +151,7 @@ class Site extends Admin
      * @param \system\model\Site $site
      *
      * @return mixed|string
+     * @throws \Exception
      */
     public function wechat(User $user, SiteModel $site)
     {
@@ -245,6 +254,7 @@ class Site extends Admin
      * @param \system\model\Site $site
      *
      * @return mixed|string
+     * @throws \Exception
      */
     public function addSite(SiteModel $site)
     {
@@ -259,6 +269,8 @@ class Site extends Admin
 
     /**
      * 公众号连接测试
+     *
+     * @return array
      */
     public function connect()
     {
@@ -280,6 +292,7 @@ class Site extends Admin
      * @param \system\model\Site $siteModel
      *
      * @return mixed|string
+     * @throws \Exception
      */
     public function delOwner(User $UserModel, SiteModel $siteModel)
     {

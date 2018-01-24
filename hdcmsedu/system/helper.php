@@ -37,9 +37,9 @@ function icon($file, $pic = 'resource/images/user.jpg')
     if (preg_match('@^http@i', $file)) {
         return $file;
     } elseif (empty($file) || ! is_file($file)) {
-        return __ROOT__.'/'.$pic;
+        return __ROOT__ . '/' . $pic;
     } else {
-        return __ROOT__.'/'.$file;
+        return __ROOT__ . '/' . $file;
     }
 }
 
@@ -59,7 +59,7 @@ function icon($file, $pic = 'resource/images/user.jpg')
 function cache($name, $value = '[get]', $expire = 0, $field = [], $siteid = 0)
 {
     $siteid          = $siteid ?: siteid();
-    $name            = $name.':'.$siteid;
+    $name            = $name . ':' . $siteid;
     $field['siteid'] = $siteid;
     $field['module'] = $field['module'] ?: \Request::get('module', '');
     $field['type']   = $field['type'] ?: '';
@@ -133,7 +133,7 @@ function memberIsLogin($return = false)
 {
     $status = boolval(v('member.info.uid'));
     if ( ! $status && $return === false) {
-        die(go(web_url()."?m=ucenter&action=controller/entry/login&from=".urlencode(__URL__)));
+        die(go(web_url() . "?m=ucenter&action=controller/entry/login&from=" . urlencode(__URL__)));
     }
 
     return $status;
@@ -169,7 +169,7 @@ function url($action, $args = [], $module = '', $merge = false)
         $args['mt'] = $mt;
     }
 
-    return u(web_url()."/?m=".$module."&action=".implode('/', $info), $args, $merge);
+    return u(web_url() . "/?m=" . $module . "&action=" . implode('/', $info), $args, $merge);
 }
 
 /**
@@ -209,7 +209,8 @@ function service()
     $args   = func_get_args();
     $info   = explode('.', array_shift($args));
     $module = Db::table('modules')->where('name', $info[0])->first();
-    $class  = ($module['is_system'] ? 'module' : 'addons').'\\'.$info[0].'\\service\\'.ucfirst($info[1]);
+    $class  = ($module['is_system'] ? 'module' : 'addons') . '\\' . $info[0] . '\\service\\'
+              . ucfirst($info[1]);
 
     return call_user_func_array([new $class, $info[2]], $args);
 }
@@ -228,7 +229,13 @@ function controller_action()
     $method     = array_pop($info);
     array_push($info, ucfirst(array_pop($info)));
     $module = Db::table('modules')->where('name', $moduleName)->first();
-    $class  = ($module['is_system'] ? 'module' : 'addons').'\\'.$moduleName.'\\controller\\'.implode('\\', $info);
+    if (count($info) > 2) {
+        $class = ($module['is_system'] ? 'module' : 'addons') . '\\' . $moduleName
+                 . '\\' . implode('\\', $info);
+    } else {
+        $class = ($module['is_system'] ? 'module' : 'addons') . '\\' . $moduleName
+                 . '\\controller\\' . implode('\\', $info);
+    }
 
     return call_user_func_array([new $class, $method], $args);
 }

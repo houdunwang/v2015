@@ -12,7 +12,7 @@ namespace app\system\controller;
 
 use system\model\Config as ConfigModel;
 use houdunwang\request\Request;
-
+use houdunwang\db\Db;
 /**
  * 系统配置管理
  * Class Config

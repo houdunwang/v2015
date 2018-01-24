@@ -2,6 +2,7 @@
 
 use system\model\User;
 use system\model\Site;
+use houdunwang\dir\Dir;
 
 /**
  * 模块菜单和菜单组欢迎页
@@ -33,7 +34,8 @@ class Manage extends Admin
      *
      * @param \system\model\Site $site
      *
-     * @return mixed
+     * @return mixed|string
+     * @throws \Exception
      */
     public function updateCache(Site $site)
     {
@@ -43,24 +45,25 @@ class Manage extends Admin
         if (IS_POST) {
             //更新数据缓存
             if (isset($_POST['cache'])) {
-                Dir::del(ROOT_PATH.'/storage/cache');
+                Dir::del(ROOT_PATH . '/storage/cache');
             }
             //更新模板缓存
             if (isset($_POST['view'])) {
-                Dir::del(ROOT_PATH.'/storage/view');
+                Dir::del(ROOT_PATH . '/storage/view');
             }
             //站点日志
             if (isset($_POST['log'])) {
-                Dir::del(ROOT_PATH.'/storage/log');
+                Dir::del(ROOT_PATH . '/storage/log');
             }
             //微信缓存
             if (isset($_POST['weixin'])) {
-                Dir::del(ROOT_PATH.'/storage/weixin');
+                Dir::del(ROOT_PATH . '/storage/weixin');
             }
             //更新所有站点缓存
             if (isset($_POST['site'])) {
                 Site::updateAllCache();
             }
+
             return message('缓存更新成功', 'menu');
         }
         Site::updateAllCache();

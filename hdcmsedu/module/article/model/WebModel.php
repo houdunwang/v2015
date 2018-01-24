@@ -2,6 +2,7 @@
 
 use houdunwang\model\Model;
 use Db;
+use houdunwang\database\Schema;
 
 /**
  * 文章模型
@@ -33,7 +34,7 @@ class WebModel extends Model
     //验证模型表是否已经存在
     protected function checkName($field, $value, $params, $data)
     {
-        $table = "web_content_{$value}".SITEID;
+        $table = "web_content_{$value}" . SITEID;
         if ( ! Schema::tableExists($table)) {
             return true;
         }
@@ -43,7 +44,7 @@ class WebModel extends Model
     public function createModelTable($name, $siteid = 0)
     {
         $siteid = $siteid ?: siteid();
-        $table  = "web_content_{$name}".$siteid;
+        $table  = "web_content_{$name}" . $siteid;
         if ( ! Schema::tableExists($table)) {
             $sql
                 = <<<sql
@@ -83,7 +84,7 @@ sql;
      */
     public function delModel()
     {
-        $table = "web_content_".$this['name'].SITEID;
+        $table = "web_content_" . $this['name'] . SITEID;
         if (Schema::tableExists($table)) {
             if ( ! Schema::drop($table)) {
                 $this->error = '删除模型表失败';
@@ -116,8 +117,9 @@ sql;
     {
         static $cache = [];
         if ( ! isset($cache[$mid])) {
-            $name        = Db::table('web_model')->where('mid', $mid)->where('siteid', SITEID)->pluck('model_name');
-            $cache[$mid] = "web_content_".$name.SITEID;
+            $name        = Db::table('web_model')->where('mid', $mid)->where('siteid', SITEID)
+                             ->pluck('model_name');
+            $cache[$mid] = "web_content_" . $name . SITEID;
         }
 
         return $cache[$mid];

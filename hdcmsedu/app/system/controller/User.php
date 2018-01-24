@@ -7,6 +7,7 @@ use Session;
 use Request;
 use Middleware;
 use houdunwang\validate\Validate;
+use houdunwang\db\Db;
 /**
  * 用户管理
  * Class User
@@ -41,7 +42,8 @@ class User extends Admin
      *
      * @param \system\model\User $user
      *
-     * @return mixed
+     * @return mixed|string
+     * @throws \Exception
      */
     public function add(UserModel $user)
     {
@@ -53,13 +55,14 @@ class User extends Admin
             $user['password'] = $info['password'];
             $user['security'] = $info['security'];
             //用户组过期时间
-            $daylimit         = Db::table('user_group')->where('id', Request::post('groupid'))->pluck('daylimit');
+            $daylimit         = Db::table('user_group')->where('id', Request::post('groupid'))
+                                  ->pluck('daylimit');
             $user['endtime']  = time() + $daylimit * 3600 * 24;
             $user['groupid']  = Request::post('groupid');
             $user['username'] = Request::post('username');
             $user['remark']   = Request::post('remark');
             $user->save();
-            record('添加了新用户'.$user['username']);
+            record('添加了新用户' . $user['username']);
 
             return message('添加新用户成功', 'lists');
         }

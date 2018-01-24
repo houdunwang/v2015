@@ -6,7 +6,7 @@ use Request;
 use Tool;
 use Session;
 use View;
-
+use houdunwang\mail\Mail;
 /**
  * Class Message
  *

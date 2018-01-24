@@ -112,8 +112,7 @@ class Cloud extends Admin
         if (is_file('version.php')) {
             $version = include 'version.php';
             Db::table('cloud')->where('id', 1)->update(['build'   => $version['build'],
-                                                        'version' => $version['version'],
-            ]);
+                                                        'version' => $version['version']]);
             CloudModel::updateHDownloadNum();
         }
 

@@ -67,7 +67,8 @@ class Site extends Common
         } else {
             //普通站长获取站点列表
             $where[] = ['uid', v('user.info.uid')];
-            $sites   = self::join('site_user', 'site.siteid', '=', 'site_user.siteid')->groupBy('site.siteid')->where($where)->get();
+            $sites   = self::join('site_user', 'site.siteid', '=', 'site_user.siteid')
+                           ->groupBy('site.siteid')->where($where)->get();
         }
         if ($sites) {
             //获取站点套餐与所有者数据
@@ -192,7 +193,7 @@ class Site extends Common
          */
         $tables = \Schema::getAllTableInfo();
         foreach ($tables['table'] as $name => $info) {
-            $table = str_replace(Config::get('database.prefix'), '', $name);
+            $table = str_replace(\Config::get('database.prefix'), '', $name);
             //表中存在siteid字段时操作这个表
             if (\Schema::fieldExists('siteid', $table)) {
                 Db::table($table)->where('siteid', $siteId)->delete();
@@ -347,17 +348,17 @@ class Site extends Common
         $site['domain']           = Request::post('domain');
         $site['module']           = Request::post('module');
         $site['ucenter_template'] = 'default';
-        $siteId                   = $site->save($data);
+        $site                     = $site->save($data);
         //添加站长数据,系统管理员不添加数据
         $uid = v('user.info.uid');
         if ( ! User::isSuperUser($uid)) {
-            SiteUser::setSiteOwner($siteId, $uid);
+            SiteUser::setSiteOwner($site['siteid'], $uid);
         }
         //创建用户字段表等数据
-        $this->InitializationSiteTableData($siteId);
+        $this->InitializationSiteTableData($site['siteid']);
 
         //更新站点缓存
-        return $this->updateCache($siteId);
+        return $this->updateCache($site['siteid']);
     }
 
     /**
@@ -369,7 +370,8 @@ class Site extends Common
      */
     public function getUserAllSite($uid)
     {
-        return $this->join('site_user', 'site.siteid', '=', 'site_user.siteid')->where('site_user.uid', $uid)->get();
+        return $this->join('site_user', 'site.siteid', '=', 'site_user.siteid')
+                    ->where('site_user.uid', $uid)->get();
     }
 
     /**
@@ -394,7 +396,8 @@ class Site extends Common
         //站点模块
         $data['modules'] = (new Modules())->getSiteAllModules($siteId, false);
         foreach ($data as $key => $value) {
-            cache($key, $value, 0, ['siteid' => $siteId, 'module' => '', 'type' => 'system'], $siteId);
+            cache($key, $value, 0, ['siteid' => $siteId, 'module' => '', 'type' => 'system'],
+                $siteId);
         }
 
         return true;

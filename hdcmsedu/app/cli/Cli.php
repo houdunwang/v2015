@@ -16,7 +16,8 @@ class Cli extends Base
     use Make;
     //编译工作目录
     protected $savePath = '/Users/xj/Desktop/hdcms';
-
+    //编译时间
+    protected $build;
     //软件目录
     protected $hdcmsDir;
     //不进行打包的文件或目录
@@ -42,6 +43,7 @@ class Cli extends Base
     public function __construct()
     {
         $this->hdcmsDir = realpath('.');
+        $this->build    = date("YmdHis");
     }
 
     //不生成到更新压缩包的文件
@@ -79,10 +81,10 @@ class Cli extends Base
     public function version($type)
     {
         //最新的标签
-        $tags = $this->getTags();
+        $tags            = $this->getTags();
         $newTag          = array_pop($tags);
         $data['version'] = $newTag;
-        $data['build']   = date("YmdHis");
+        $data['build']   = $this->build;
         $data['logs']    = '';
         $data['type']    = $type;
         $data['explain'] = '';

@@ -2,6 +2,7 @@
 
 use module\article\model\WebModel;
 use module\HdService;
+use Db;
 
 /**
  * 初始化栏目
@@ -24,7 +25,11 @@ str;
         Db::execute($sql);
         //创建模型表
         $model = new WebModel();
-        $model->insertGetId(['siteid' => $siteId, 'model_title' => '普通文章', 'model_name' => 'news', 'is_system' => 1]);
+        $model->insertGetId(['siteid'      => $siteId,
+                             'model_title' => '普通文章',
+                             'model_name'  => 'news',
+                             'is_system'   => 1,
+        ]);
         //创建文章表
         $model->createModelTable('news', $siteId);
     }

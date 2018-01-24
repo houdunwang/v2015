@@ -42,6 +42,10 @@ class Boot
         $this->installed and $this->app();
         //执行安装程序时
         $this->defineConst();
+        //调试时允许跨域访问
+        if (\Config::get('app.debug')) {
+            header('Access-Control-Allow-Origin:*');
+        }
         $next();
     }
 

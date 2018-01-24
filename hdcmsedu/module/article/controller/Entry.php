@@ -17,6 +17,7 @@ use module\HdController;
 use View;
 use Db;
 use Request;
+
 /**
  * 前台入口处理
  * Class Entry
@@ -30,7 +31,11 @@ class Entry extends HdController
     public function __construct()
     {
         parent::__construct();
-        $this->web      = Web::where('siteid', SITEID)->first()->info();
+        $web = Web::where('siteid', SITEID)->first();
+        if (empty($web)) {
+            $this->_404();
+        }
+        $this->web      = $web->info();
         $this->template = $this->template();
         View::with('module.site', json_decode(Db::table('web')->pluck('site_info'), true));
         define('ARTICLE_PATH', $this->template);

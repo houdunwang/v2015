@@ -348,7 +348,7 @@ class User extends Common
      */
     public static function getLoginUrl()
     {
-        return __WEB__.'/'.q('session.system.login', 'hdcms');
+        return __ROOT__.'/index.php/'.q('session.system.login', 'hdcms');
     }
 
     /**

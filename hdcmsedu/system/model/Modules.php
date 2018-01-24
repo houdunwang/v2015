@@ -744,7 +744,7 @@ class Modules extends Common
             if ( ! Dir::create("{$dir}/{$d}")) {
                 return '模块目录创建失败,请修改addons目录的权限';
             }
-            file_put_contents("{$dir}/{$d}/index.html", 'Not allowed to access');
+//            file_put_contents("{$dir}/{$d}/index.html", 'Not allowed to access');
         }
         //模块预览图
         $info    = pathinfo($data['preview']);

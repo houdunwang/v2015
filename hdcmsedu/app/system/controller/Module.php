@@ -16,6 +16,7 @@ use system\model\Package;
 use system\model\Site;
 use houdunwang\zip\Zip;
 use houdunwang\file\File;
+use houdunwang\dir\Dir;
 
 /**
  * 模块管理
@@ -107,7 +108,8 @@ class Module extends Admin
      *
      * @param \system\model\Modules $module
      *
-     * @return mixed|string
+     * @return array|mixed|string
+     * @throws \Exception
      */
     public function resetDesign(Modules $module)
     {
@@ -124,8 +126,11 @@ class Module extends Admin
 
             return $this->success('模块配置更新成功');
         }
-        $json              = file_get_contents("addons/{$name}/package.json");
-        $config            = json_decode($json, true);
+        $json   = file_get_contents("addons/{$name}/package.json");
+        $config = json_decode($json, true);
+        if (empty($config['web']['entry'])) {
+            $config['web']['entry'] = ['title' => '', 'do' => '', 'params' => ''];
+        }
         $config['preview'] = 'addons/' . $config['name'] . '/' . $config['preview'];
 
         return view()->with('config', json_encode($config, JSON_UNESCAPED_UNICODE));

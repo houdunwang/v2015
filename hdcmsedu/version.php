@@ -1,6 +1,6 @@
 <?php return array (
-  'version' => 'v2.121',
-  'build' => '20180121174758',
+  'version' => 'v2.126',
+  'build' => '20180123142851',
   'logs' => '',
   'type' => 'full',
   'explain' => '',

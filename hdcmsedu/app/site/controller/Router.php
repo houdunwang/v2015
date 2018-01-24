@@ -12,6 +12,8 @@ namespace app\site\controller;
 
 use houdunwang\request\Request;
 use system\model\Router as RouterModel;
+use Db;
+use houdunwang\view\View;
 
 /**
  * 模块路由规则
@@ -25,6 +27,7 @@ class Router extends Admin
      * 路由列表
      *
      * @return array|mixed
+     * @throws \Exception
      */
     public function lists()
     {
@@ -41,7 +44,8 @@ class Router extends Admin
 
             return $this->success('路由规则保存成功');
         }
-        $data = Db::table('router')->where('siteid', siteid())->where('module', v('module.name'))->get();
+        $data = Db::table('router')->where('siteid', siteid())->where('module', v('module.name'))
+                  ->get();
         View::with('data', json_encode($data, JSON_UNESCAPED_UNICODE));
 
         return view();

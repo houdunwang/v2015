@@ -1,8 +1,8 @@
 <?php namespace app\system\controller;
 
 use system\model\Package as PackageModel;
-use system\model\User;
-
+use houdunwang\db\Db;
+use houdunwang\request\Request;
 /**
  * 套餐管理
  * Class Package
@@ -29,19 +29,24 @@ class Package extends Admin
         $packages = $packages ? $packages->toArray() : [];
         foreach ($packages as $k => $v) {
             //套餐模块
-            $modules                 = json_decode($v['modules']) ?: [];
-            $packages[$k]['modules'] = $modules ? Db::table('modules')->whereIn('name', $modules)->lists('title') : [];
+            $modules                 = json_decode($v['modules'], true) ?: [];
+            $packages[$k]['modules'] = $modules ? Db::table('modules')->whereIn('name', $modules)
+                                                    ->lists('title') : [];
             //套餐模板
-            $templates                = json_decode($v['template']) ?: [];
-            $packages[$k]['template'] = $templates ? Db::table('template')->whereIn('name', $templates)->lists('title') : [];
+            $templates                = json_decode($v['template'], true) ?: [];
+            $packages[$k]['template'] = $templates ? Db::table('template')
+                                                       ->whereIn('name', $templates)
+                                                       ->lists('title') : [];
         }
+
         return view()->with('data', $packages);
     }
 
     /**
      * 编辑&添加套餐
      *
-     * @return mixed
+     * @return mixed|string
+     * @throws \Exception
      */
     public function post()
     {
@@ -58,8 +63,8 @@ class Package extends Admin
         }
         //编辑时获取套餐
         if ($id) {
-            $package = PackageModel::find($id);
-            $package = $package->toArray();
+            $package             = PackageModel::find($id);
+            $package             = $package->toArray();
             $package['modules']  = json_decode($package['modules'], true) ?: [];
             $package['template'] = json_decode($package['template'], true) ?: [];
         }

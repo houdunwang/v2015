@@ -1,7 +1,7 @@
 <?php namespace module\cover\system;
 
 use module\HdProcessor;
-
+use houdunwang\db\Db;
 
 /**
  * 封面消息处理

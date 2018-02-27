@@ -9,7 +9,8 @@
         <label for="" class="col-sm-2 control-label">搜索内容</label>
         <div class="col-sm-10">
             <div class="input-group">
-                <input type="text" class="form-control" v-model.trim="searchName" placeholder="请输入搜索内容">
+                <input type="text" class="form-control" v-model.trim="searchName"
+                       placeholder="请输入搜索内容">
                 <span class="input-group-addon btn btn-default" @click="load">
                     <i class="fa fa-search"></i> 搜索
                 </span>
@@ -25,6 +26,9 @@
             </label>
             <label class="radio-inline">
                 <input type="radio" v-model="type" value="email"> 邮箱
+            </label>
+            <label class="radio-inline">
+                <input type="radio" v-model="type" value="uid"> 会员编号
             </label>
         </div>
     </div>
@@ -74,7 +78,10 @@
                         hdjs.message('没有内容用于搜索', '', 'warning');
                         return;
                     }
-                    axios.post("{!! __URL__ !!}", {name: this.searchName,type:this.type}).then((response) => {
+                    axios.post("{!! __URL__ !!}", {
+                        name: this.searchName,
+                        type: this.type
+                    }).then((response) => {
                         this.lists = response.data;
                     })
                 },

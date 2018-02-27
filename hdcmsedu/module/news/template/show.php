@@ -17,13 +17,12 @@
     </div>
 </div>
 <div class="content">
-    {{$hdcms['content']}}
+    {!! $hdcms['content'] !!}
 </div>
 <style>
     body {
         padding: 0px;
         margin: 0px;
-        background: #f3f3f3;
     }
 
     div.news-top {
@@ -43,7 +42,6 @@
 
     div.content {
         padding: 2vw;
-        background: #f3f3f3;
         font-size: 16px;
         line-height: 1.5em;
         color: #333;

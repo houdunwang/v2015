@@ -1,6 +1,7 @@
 <?php namespace app\component\controller;
 
 use houdunwang\request\Request;
+use houdunwang\view\View;
 
 /**
  * 选择文件
@@ -18,8 +19,8 @@ class File extends Common
     public function get()
     {
         $dir  = Request::post('dir', '.');
-        $data = glob($dir.'/*');
+        $data = glob($dir . '/*');
 
-        return View::fetch('', compact('data','dir'));
+        return View::fetch('', compact('data', 'dir'));
     }
 }

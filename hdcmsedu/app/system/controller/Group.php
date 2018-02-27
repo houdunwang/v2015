@@ -13,6 +13,7 @@ namespace app\system\controller;
 use system\model\UserGroup;
 use system\model\User;
 use houdunwang\request\Request;
+
 /**
  * 用户组管理
  * Class Group
@@ -58,7 +59,8 @@ class Group extends Admin
     {
         foreach ((array)Request::post('id') as $id) {
             //更改用户组下的用户组为系统默认用户组
-            Db::table('user')->where('groupid', $id)->update(['groupid' => v('config.register.groupid')]);
+            Db::table('user')->where('groupid', $id)
+              ->update(['groupid' => v('config.register.groupid')]);
             $group->where('system_group', 0)->delete($id);
         }
 
@@ -71,7 +73,8 @@ class Group extends Admin
      * @param \system\model\UserGroup $group
      * @param \system\model\Package   $package
      *
-     * @return mixed
+     * @return mixed|string
+     * @throws \Exception
      */
     public function post(UserGroup $group, \system\model\Package $package)
     {
@@ -86,6 +89,7 @@ class Group extends Admin
             $model['router_num']     = Request::post('router_num', 100, 'intval');
             $model['package']        = Request::post('package', []);
             $model->save();
+            \system\model\Site::updateAllCache();
 
             return message('用户组数据保存成功', 'lists', 'success');
         }

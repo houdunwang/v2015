@@ -10,6 +10,8 @@
 
 namespace system\model;
 
+use houdunwang\db\Db;
+
 /**
  * 微信回复规则
  * Class Rule
@@ -25,7 +27,7 @@ class Rule extends Common
         = [
             ['rank', 'num:0,255', '排序数字在0~255之间', self::MUST_VALIDATE, self::MODEL_BOTH],
             ['name', 'required', '规则名称不能为空', self::MUST_VALIDATE, self::MODEL_BOTH],
-            ['name', 'unique', '规则名称已经存在', self::MUST_VALIDATE, self::MODEL_BOTH],
+//            ['name', 'unique', '规则名称已经存在', self::MUST_VALIDATE, self::MODEL_BOTH],
             ['module', 'required', '模块字段不能为空', self::MUST_VALIDATE, self::MODEL_BOTH],
             ['rid', 'validateRid', '回复规则不属于本网站', self::EXIST_VALIDATE, self::MODEL_BOTH],
         ];
@@ -57,11 +59,11 @@ class Rule extends Common
     public static function getByKeyword($content)
     {
         $content = trim($content);
-        $sql     = "SELECT * FROM ".tablename('rule').' AS r INNER JOIN '.tablename('rule_keyword')
-                   ." as k ON r.rid = k.rid WHERE k.status=1 AND k.siteid=".SITEID
+        $sql     = "SELECT * FROM ".tablename('rule')." AS r INNER JOIN "
+                   .tablename('rule_keyword')." as k ON r.rid = k.rid "
+                   ." WHERE k.status=1 AND k.siteid=".SITEID
                    ." ORDER BY k.rank DESC,type DESC";
         $rules   = Db::query($sql);
-        $content = strtolower($content);
         foreach ($rules as $rule) {
             $rule['content'] = strtolower($rule['content']);
             switch ($rule['type']) {

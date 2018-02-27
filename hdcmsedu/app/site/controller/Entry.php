@@ -11,7 +11,7 @@
 namespace app\site\controller;
 
 use houdunwang\response\Response;
-use Request;
+use houdunwang\request\Request;
 use houdunwang\route\Controller;
 use system\model\Menu;
 use system\model\Modules;
@@ -19,7 +19,8 @@ use system\model\ModulesBindings;
 use system\model\Site;
 use App;
 use Route;
-use Db;
+use houdunwang\db\Db;
+
 /**
  * 网站入口管理
  * Class Entry
@@ -46,7 +47,8 @@ class Entry extends Controller
             }
             $do = $ModulesBindings->getWebDo($module);
             if ($module && $do) {
-                $class = (v('module.is_system') ? 'module' : 'addons').'\\'.$module.'\system\Navigate';
+                $class = (v('module.is_system') ? 'module' : 'addons').'\\'.$module
+                         .'\system\Navigate';
                 if (class_exists($class) && method_exists($class, $do['do'])) {
                     return call_user_func_array([new $class, $do['do']], []);
                 }
@@ -79,7 +81,8 @@ class Entry extends Controller
     public function moduleRoute()
     {
         $matchRoute = Route::getMatchRoute();
-        $route      = Db::table('router')->where('siteid', siteid())->where('module', v('module.name'))
+        $route      = Db::table('router')->where('siteid', siteid())
+                        ->where('module', v('module.name'))
                         ->where('router', $matchRoute['route'])->first();
         parse_str($route['url'], $gets);
         Request::set('get.action', $gets['action']);
@@ -97,7 +100,8 @@ class Entry extends Controller
         $action     = array_pop($info);
         $controller = ucfirst(array_pop($info));
         $namespace  = v('module.name').'\\'.implode('\\', $info);
-        $class      = (v('module.is_system') ? "module\\" : "addons\\")."{$namespace}\\{$controller}";
+        $class      = (v('module.is_system') ? "module\\" : "addons\\")
+                      ."{$namespace}\\{$controller}";
         if ( ! class_exists($class)) {
             return Response::_404();
         }

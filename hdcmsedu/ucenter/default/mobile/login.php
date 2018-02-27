@@ -7,7 +7,6 @@
         </if>
         <if value="v('site.setting.login.type') gt 0">
             <h1 class="big-title">会员登录</h1>
-
             <form class="form-horizontal" role="form" onsubmit="post(event)">
                 <div class="form-group">
                     <div class="col-sm-12">

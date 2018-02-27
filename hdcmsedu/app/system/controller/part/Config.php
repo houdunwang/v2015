@@ -33,6 +33,7 @@ class Config
  */
 use module\HdConfig;
 use View;
+use Request;
 class Config extends HdConfig {
 	public function settingsDisplay() {
 		if ( IS_POST ) {

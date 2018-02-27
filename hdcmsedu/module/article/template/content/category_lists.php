@@ -10,10 +10,11 @@
                 <thead>
                 <tr>
                     <th width="80">编号</th>
-                    <th>栏目名称</th>
+                    <th>名称</th>
+                    <th width="120">模型</th>
                     <th>排序</th>
-                    <th>封面栏目</th>
-                    <th>栏目状态</th>
+                    <th>封面</th>
+                    <th width="100">状态</th>
                     <th width="180">操作</th>
                 </tr>
                 </thead>
@@ -22,6 +23,7 @@
                     <tr>
                         <td>{{$d['cid']}}</td>
                         <td>{!! $d['_catname'] !!}</td>
+                        <td>{{$d['_model']['model_title']}}</td>
                         <td>{{$d['orderby']}}</td>
                         <td>
                             <if value="$d['is_system']==1">是<else/>否</if>

@@ -6,6 +6,7 @@ use houdunwang\file\File;
 use houdunwang\config\Config;
 use system\model\Attachment;
 use Db;
+
 /**
  * 后台站点平台上传处理
  * Class SiteUpload
@@ -32,6 +33,16 @@ class SiteUpload extends Common
         //中间件
         Middleware::web('upload_begin');
         $path = Request::post('uploadDir', Config::get('upload.path'));
+        //使用站点阿里云OSS配置
+        if (
+            v('site.setting.aliyun.aliyun.use_site_aliyun')
+            && v(
+                'site.setting.aliyun.oss.use_site_oss'
+            )) {
+            Config::set('oss', v('site.setting.aliyun.oss'));
+            Config::set('upload.mold', 'oss');
+        }
+        //前台自定义模式
         if ($uploadMold = Request::post('mold')) {
             Config::set('upload.mold', $uploadMold);
         }
@@ -67,6 +78,9 @@ class SiteUpload extends Common
      */
     public function filesLists()
     {
+        if (Request::post('mold') == 'local') {
+            return $this->filesListsLocal();
+        }
         $db = Db::table('attachment')
                 ->where('uid', v('user.info.uid'))
                 ->whereIn('extension', explode(',', strtolower(Request::post('extensions'))))
@@ -83,7 +97,7 @@ class SiteUpload extends Common
                 $data[$k]['createtime'] = date('Y/m/d', $v['createtime']);
                 $data[$k]['size']       = \Tool::getSize($v['size']);
                 $data[$k]['url']        = preg_match('/^http/i', $v['path']) ? $v['path']
-                    : __ROOT__ . '/' . $v['path'];
+                    : __ROOT__.'/'.$v['path'];
                 $data[$k]['path']       = $v['path'];
                 $data[$k]['name']       = $v['name'];
             }
@@ -97,7 +111,7 @@ class SiteUpload extends Common
      *
      * @return array
      */
-    public function filesListsLocal()
+    protected function filesListsLocal()
     {
         $db   = Db::table('attachment')
                   ->where('uid', v('user.info.uid'))
@@ -113,13 +127,13 @@ class SiteUpload extends Common
                 $data[$k]['createtime'] = date('Y/m/d', $v['createtime']);
                 $data[$k]['size']       = \Tool::getSize($v['size']);
                 $data[$k]['url']        = preg_match('/^http/i', $v['path']) ? $v['path']
-                    : __ROOT__ . '/' . $v['path'];
+                    : __ROOT__.'/'.$v['path'];
                 $data[$k]['path']       = $v['path'];
                 $data[$k]['name']       = $v['name'];
             }
         }
 
-        return ['data' => $data, 'page' => $Res->links()];
+        return ['data' => $data, 'page' => $Res->links()->show()];
     }
 
     /**

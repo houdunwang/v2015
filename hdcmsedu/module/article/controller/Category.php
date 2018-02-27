@@ -13,8 +13,8 @@ namespace module\article\controller;
 use module\article\model\WebCategory;
 use module\article\model\WebModel;
 use module\HdController;
-use Arr;
-use Request;
+use houdunwang\arr\Arr;
+use houdunwang\request\Request;
 
 /**
  * 栏目管理
@@ -51,6 +51,7 @@ class Category extends HdController
      * 修改栏目
      *
      * @return mixed|string
+     * @throws \Exception
      */
     public function post()
     {
@@ -72,7 +73,10 @@ class Category extends HdController
             $field = WebCategory::find($cid)->toArray();
         }
 
-        return view($this->template.'/content/category_post.php', compact('category', 'model', 'field'));
+        return view(
+            $this->template.'/content/category_post.php',
+            compact('category', 'model', 'field')
+        );
     }
 
     /**

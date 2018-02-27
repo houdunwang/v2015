@@ -147,7 +147,8 @@ class Member extends Common
      */
     public function checkUid($field, $value, $params, $data)
     {
-        return Db::table($this->table)->where('uid', $value)->where('siteid', SITEID)->first() ? true : false;
+        return Db::table($this->table)->where('uid', $value)->where('siteid', SITEID)->first()
+            ? true : false;
     }
 
     /**
@@ -205,10 +206,14 @@ class Member extends Common
         if (SITEID && $member_uid) {
             if ( ! v('member')) {
                 $user                 = [];
-                $user['info']         = Db::table('member')->where('siteid', siteid())->find($member_uid);
-                $user['group']        = Db::table('member_group')->where('id', $user['info']['group_id'])->first();
-                $user['auth']         = Db::table('member_auth')->where('id', $user['info']['group_id'])->first();
-                $user['notification'] = Db::table('notification')->where('status', 0)->where('siteid', SITEID)->count();
+                $user['info']         = Db::table('member')->where('siteid', siteid())
+                                          ->find($member_uid);
+                $user['group']        = Db::table('member_group')
+                                          ->where('id', $user['info']['group_id'])->first();
+                $user['auth']         = Db::table('member_auth')
+                                          ->where('id', $user['info']['group_id'])->first();
+                $user['notification'] = Db::table('notification')->where('status', 0)
+                                          ->where('siteid', SITEID)->count();
                 v('member', $user);
             }
         }
@@ -327,7 +332,7 @@ class Member extends Common
         if (empty($user)) {
             return ['valid' => 0, 'message' => '帐号不存在'];
         }
-        if (md5($data['password'].$user['security']) != $user['password']) {
+        if (md5($data['password'] . $user['security']) != $user['password']) {
             return ['valid' => 0, 'message' => '密码输入错误'];
         }
         Session::set('member_uid', $user['uid']);
@@ -404,7 +409,8 @@ class Member extends Common
                     return ['valid' => 0, 'message' => '请输入手机号'];
                 }
                 $model['mobile'] = $data['username'];
-                if (Db::table('member')->where('mobile', $data['username'])->where('siteid', siteid())->get()) {
+                if (Db::table('member')->where('mobile', $data['username'])
+                      ->where('siteid', siteid())->get()) {
                     return ['valid' => 0, 'message' => '手机号已经存在'];
                 }
                 break;
@@ -414,22 +420,26 @@ class Member extends Common
                     return ['valid' => 0, 'message' => '请输入邮箱'];
                 }
                 $model['email'] = $data['username'];
-                if (Db::table('member')->where('email', $data['username'])->where('siteid', siteid())->get()) {
+                if (Db::table('member')->where('email', $data['username'])
+                      ->where('siteid', siteid())->get()) {
                     return ['valid' => 0, 'message' => '邮箱已经存在'];
                 }
                 break;
             case 3:
                 //二者都行
-                if ( ! preg_match('/^\d{11}$/', $data['username']) && ! preg_match('/\w+@\w+/', $data['username'])) {
+                if ( ! preg_match('/^\d{11}$/', $data['username'])
+                     && ! preg_match('/\w+@\w+/', $data['username'])) {
                     return ['valid' => 0, 'message' => '请输入邮箱或手机号'];
-                } else if (preg_match('/^\d{11}$/', $data['username'])) {
+                } elseif (preg_match('/^\d{11}$/', $data['username'])) {
                     $model['mobile'] = $data['username'];
-                    if (Db::table('member')->where('mobile', $data['username'])->where('siteid', siteid())->get()) {
+                    if (Db::table('member')->where('mobile', $data['username'])
+                          ->where('siteid', siteid())->get()) {
                         return ['valid' => 0, 'message' => '手机号已经存在'];
                     }
                 } else {
                     $model['email'] = $data['username'];
-                    if (Db::table('member')->where('email', $data['username'])->where('siteid', siteid())->get()) {
+                    if (Db::table('member')->where('email', $data['username'])
+                          ->where('siteid', siteid())->get()) {
                         return ['valid' => 0, 'message' => '邮箱已经存在'];
                     }
                 }
@@ -457,7 +467,7 @@ class Member extends Common
      */
     public function checkPassword($password)
     {
-        if (md5($password.$this['security']) != $this['password']) {
+        if (md5($password . $this['security']) != $this['password']) {
             $this->setError('密码错误');
 
             return false;
@@ -507,7 +517,7 @@ class Member extends Common
         }
         $data             = [];
         $data['security'] = substr(md5(time()), 0, 10);
-        $data['password'] = md5($password.$data['security']);
+        $data['password'] = md5($password . $data['security']);
 
         return $data;
     }

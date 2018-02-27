@@ -15,9 +15,8 @@ use houdunwang\arr\Arr;
 use houdunwang\request\Request;
 use module\article\model\Web;
 use module\HdController;
-use system\model\WeChat;
 use system\model\SiteWeChat;
-use Db;
+use houdunwang\db\Db;
 
 class Site extends HdController
 {
@@ -30,12 +29,10 @@ class Site extends HdController
     /**
      * 添加站点
      *
-     * @param \system\model\WeChat $weChatModel
-     *
      * @return mixed|string
      * @throws \Exception
      */
-    public function post(SiteWeChat $weChatModel)
+    public function post(\system\model\Template $template)
     {
         if (IS_POST) {
             $model                  = Web::where('siteid', siteid())->first() ?: new Web();
@@ -48,14 +45,16 @@ class Site extends HdController
             $model->save();
             //添加回复规则
             if ( ! empty($data['keyword'])) {
-                $res = WeChat::cover([
-                    'keyword'     => $data['keyword'],
-                    'title'       => $data['title'],
-                    'description' => $data['description'],
-                    'thumb'       => $data['thumb'],
-                    'url'         => url('entry.index'),
-                    'name'        => 'site-cover-'.siteid(),
-                ]);
+                $res = SiteWeChat::cover(
+                    [
+                        'keyword'     => $data['keyword'],
+                        'title'       => $data['title'],
+                        'description' => $data['description'],
+                        'thumb'       => $data['thumb'],
+                        'url'         => url('entry.index'),
+                        'name'        => 'site-cover-'.siteid(),
+                    ]
+                );
                 if ($res !== true) {
                     return message($res, '', 'error');
                 }
@@ -64,36 +63,46 @@ class Site extends HdController
             return message('保存站点数据成功');
         }
         $model = Web::where('siteid', siteid())->first();
+        $field = [];
         if ($model) {
             //编辑数据时
-            $field       = json_decode($model['site_info'], true);
-            $field['id'] = $model['id'];
+            $field                  = json_decode($model['site_info'], true);
+            $field['id']            = $model['id'];
+            $field['template_name'] = $model['template_name'];
             /**
              * 微信回复规则编号
              * 用于检测关键词是否存在及添加到rule表中使用
              */
-            $field['rid'] = Db::table('rule')->where('name', "article:site:".SITEID)->pluck('rid');
+            $field['rid'] = Db::table('rule')->where('name', "article:site:".SITEID)
+                              ->pluck('rid');
         }
-        $field = Arr::merge([
-            'status'             => 1,
-            'is_default'         => 0,
-            'close_message'      => '网站暂时关闭,请稍候访问',
-            'title'              => '',
-            'template_type'      => 1,//1系统模板 2 自定义目录
-            'template_path'      => '',//自定义模板目录时选择的目录
-            'template_tid'       => '',
-            'template_title'     => '',
-            'template_name'      => '',
-            'template_thumb'     => '',
-            'keyword'            => '',
-            'thumb'              => '',
-            'keywords'           => '',
-            'description'        => '',
-            'footer'             => '',
-            'index_cache_expire' => 0,//首页缓存时间
-            'template_dir_part'  => true,//移动端与桌面端目录分层
-        ], $model ? $field : []);
-        $field = json_encode($field, JSON_UNESCAPED_UNICODE);
+        $field = Arr::merge(
+            [
+                'status'             => 1,
+                'is_default'         => 0,
+                'close_message'      => '网站暂时关闭,请稍候访问',
+                'title'              => '',
+                'template_type'      => 1,//1系统模板 2 自定义目录
+                'template_path'      => '',//自定义模板目录时选择的目录
+                'template_tid'       => '',
+                'template_title'     => '',
+                'template_name'      => '',
+                'template_thumb'     => '',
+                'keyword'            => '',
+                'thumb'              => '',
+                'keywords'           => '',
+                'description'        => '',
+                'footer'             => '',
+                'index_cache_expire' => 0,//首页缓存时间
+                'template_dir_part'  => true,//移动端与桌面端目录分层
+            ],
+            $model ? $field : []
+        );
+        //模板缩略图
+        $field['template_thumb'] = $template->thumb($field['template_name']);
+        $field['thumb']          = pic($field['thumb']);
+        $field                   = json_encode($field, JSON_UNESCAPED_UNICODE);
+
 
         return view($this->template.'/site/post.php', compact('field'));
     }

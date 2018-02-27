@@ -7,7 +7,7 @@ use system\model\Menu;
 use system\model\Modules;
 use Arr;
 use Request;
-
+use houdunwang\db\Db;
 /**
  * 站点权限设置
  * Class Permission

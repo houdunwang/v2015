@@ -43,11 +43,10 @@
                         <div class="col-sm-9 box" v-if="field.template_tid">
                             <div class="thumbnail">
                                 <h5 v-html="field.template_title"></h5>
-                                <img :src="'theme/'+field.template_name+'/'+field.template_thumb">
+                                <img :src="field.template_thumb">
                             </div>
                         </div>
                     </div>
-
                     <div class="form-group" v-if="field.template_type==2">
                         <label for="" class="col-sm-2 control-label">选择模板目录</label>
                         <div class="col-sm-9">
@@ -59,8 +58,6 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </div>

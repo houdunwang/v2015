@@ -211,9 +211,9 @@
                         var btn = e.target;
                         var ipt = $(btn).parents('div').eq(0).find('input');
                         var val = ipt.val();
-                        var ul = $("#searchKeyword");
+                        var ul = $("#searchKeyword"); 
                         var This = this;
-                        $.post('{{site_url("site.keyword.getKeywords")}}', {key: val}, (data) => {
+                        $.post('{!! site_url("site.keyword.getKeywords") !!}', {key: val}, (data) => {
                             var html = '';
                             if (vm.data.length == 0) {
                                 html += "<li><a href='javascript:;'>没有匹配到你输入的关键词</a></li>";

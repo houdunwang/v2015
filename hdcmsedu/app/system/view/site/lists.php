@@ -41,20 +41,27 @@
                     <label class="col-sm-2 control-label">搜索</label>
                     <div class="col-sm-10">
                         <div class="input-group">
-                            <input type="text" class="form-control" id="sitename" name="sitename" placeholder="请输入网站名称">
+                            <input type="text" class="form-control" id="sitename" name="sitename"
+                                   placeholder="请输入网站名称">
                             <input type="text" class="form-control hide" id="domain" name="domain"
                                    placeholder="请输入网站域名">
                             <div class="input-group-btn">
-                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i> 搜索</button>
-                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button type="submit" class="btn btn-default">
+                                    <i class="fa fa-search"></i> 搜索
+                                </button>
+                                <button type="button" class="btn btn-default dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
                                     <span class="caret"></span>
                                     <span class="sr-only">Toggle Dropdown</span>
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-right">
-                                    <li><a href="#"
+                                    <li>
+                                        <a href="#"
                                            onclick="$('#domain').addClass('hide').val('');$('#sitename').removeClass('hide')">根据网站名称搜索</a>
                                     </li>
-                                    <li><a href="#"
+                                    <li>
+                                        <a href="#"
                                            onclick="$('#sitename').addClass('hide').val('');$('#domain').removeClass('hide')">根据公众号中称搜索</a>
                                     </li>
                                 </ul>
@@ -92,11 +99,14 @@
                             </if>
                         </div>
                         <div class="col-xs-4 col-md-5">
-                            <h4 style="line-height:35px;overflow: hidden;height:30px;">{{$s['name']}}</h4>
+                            <h4 style="line-height:35px;overflow: hidden;height:30px;">
+                                {{$s['name']}}</h4>
                         </div>
-                        <div class="col-xs-4 col-md-6 text-right" style="line-height:60px;height:45px;">
+                        <div class="col-xs-4 col-md-6 text-right"
+                             style="line-height:60px;height:45px;">
                             <?php if ($s->wechat()->is_connect) { ?>
-                                <a href="javascript:;" data-toggle="tooltip" data-placement="top" title="接入状态: 接入成功">
+                                <a href="javascript:;" data-toggle="tooltip" data-placement="top"
+                                   title="接入状态: 接入成功">
                                     <i class="fa fa-check-circle fa-2x text-success"></i>
                                 </a>
                             <?php } else { ?>
@@ -112,16 +122,17 @@
                             服务有效期 :
                             <?php if (empty($s['owner'])) { ?>
                                 无限制
-                            <?php } else if ($s['owner']['endtime'] == 0) { ?>
+                            <?php } elseif ($s['owner']['endtime'] == 0) { ?>
                                 无限制
-                            <?php } else if ($s['owner']['endtime'] < time()) { ?>
+                            <?php } elseif ($s['owner']['endtime'] < time()) { ?>
                                 <span class="label label-danger">已到期</span>
                             <?php } else { ?>
                                 {!! date("Y-m-d", $s['owner']['starttime']) !!} ~
                                 {!!$s['owner']['endtime']==0?'无限制':date("Y-m-d", $s['owner']['endtime']) !!}
                             <?php } ?>
                             <if value="$s['owner']">
-                                &nbsp;&nbsp;&nbsp;站长 : {{$s['owner']['username']}} ({{$s['user_group']['name']}})
+                                &nbsp;&nbsp;&nbsp;站长 : {{$s['owner']['username']}}
+                                ({{$s['user_group']['name']}})
                             </if>
                         </div>
                         <div class="col-xs-6 text-right">
@@ -141,7 +152,8 @@
                                 </a>&nbsp;&nbsp;&nbsp;
                             <?php } ?>
                             <?php if ($user->isOwner($s['siteid'], v('user.info.uid'))) { ?>
-                                <a href="javascript:;" onclick="delSite({{$s['siteid']}},'{{$s['name']}}')">
+                                <a href="javascript:;"
+                                   onclick="delSite({{$s['siteid']}},'{{$s['name']}}')">
                                     <i class="fa fa-trash"></i> 删除
                                 </a>&nbsp;&nbsp;&nbsp;
                             <?php } ?>

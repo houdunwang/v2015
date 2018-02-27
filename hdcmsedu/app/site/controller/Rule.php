@@ -12,6 +12,8 @@ use houdunwang\request\Request;
 use system\model\Rule as Model;
 use system\model\RuleKeyword;
 use system\model\SiteWeChat;
+use houdunwang\db\Db;
+use houdunwang\view\View;
 
 /**
  * 模块回复规则管理
@@ -64,7 +66,8 @@ class Rule extends Admin
     {
         auth('system_rule');
         //模块关于回复关键词的处理类
-        $class    = (v('module.is_system') ? '\module\\' : 'addons\\').v('module.name').'\system\Rule';
+        $class    = (v('module.is_system') ? '\module\\' : 'addons\\').v('module.name')
+                    .'\system\Rule';
         $instance = new $class();
         if (IS_POST) {
             //添加规则数据
@@ -97,7 +100,8 @@ class Rule extends Admin
                 return message('回复规则不存在', site_url('lists'), 'error');
             }
             $data            = $data->toArray();
-            $data['keyword'] = Db::table('rule_keyword')->orderBy('id', 'asc')->where('rid', $rid)->get();
+            $data['keyword'] = Db::table('rule_keyword')->orderBy('id', 'asc')->where('rid', $rid)
+                                 ->get();
             View::with('rule', $data);
         }
         $moduleForm = $instance->fieldsDisplay($rid);
@@ -115,9 +119,9 @@ class Rule extends Admin
         auth('system_rule');
         $rid = Request::get('rid');
         SiteWeChat::removeRule($rid);
-
         //执行模块中的删除动作
-        $class    = (v('module.is_system') ? '\module\\' : 'addons\\').v('module.name').'\system\Rule';
+        $class    = (v('module.is_system') ? '\module\\' : 'addons\\').v('module.name')
+                    .'\system\Rule';
         $instance = new $class();
         $instance->ruleDeleted($rid);
 

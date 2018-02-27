@@ -11,9 +11,8 @@
 namespace app\site\controller;
 
 use houdunwang\request\Request;
-use system\model\Modules;
 use system\model\RuleKeyword;
-
+use houdunwang\db\Db;
 /**
  * 模块回复关键词处理
  * Class keyword

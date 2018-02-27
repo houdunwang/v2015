@@ -102,14 +102,17 @@
                         <div class="quickmenu">
                             <div class="normal">
                                 <div class="home" v-show="menu.params.has_home_button">
-                                    <a href=""><i class="fa fa-home"></i></a>
+                                    <a href="{!! __ROOT__ !!}"><i class="fa fa-home"></i></a>
                                 </div>
                                 <dl v-for="v in menu.params.menus">
-                                    <dt href="javascript:;">
-                                        <span><i class="fa fa-bars"></i> @{{v.title}}</span>
+                                    <dt>
+                                        <a :href="url(v.url)" v-if="v.submenus.length==0">
+                                            <span><i class="fa fa-bars"></i> @{{v.title}}</span>
+                                        </a>
+                                        <span v-if="v.submenus.length>0"><i class="fa fa-bars"></i> @{{v.title}}</span>
                                     </dt>
                                     <dd class="sub-menus" v-for="m in v.submenus">
-                                        <a href="javascript:;" v-html="m.title"></a>
+                                        <a :href="url(m.url)" v-html="m.title"></a>
                                     </dd>
                                 </dl>
                             </div>
@@ -212,6 +215,13 @@
                 menu: <?php echo $field;?>
             },
             methods: {
+                //菜单链接添加http
+                url:function(url){
+                  if(!/^http(s?):\//.test(url)){
+                      url='{{__ROOT__}}/'+url;
+                  }
+                  return url;
+                },
                 //添加顶级菜单
                 addTopMenu: function () {
                     var menu = {"title": "", "url": "", "submenus": []};

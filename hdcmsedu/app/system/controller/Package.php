@@ -3,6 +3,7 @@
 use system\model\Package as PackageModel;
 use houdunwang\db\Db;
 use houdunwang\request\Request;
+
 /**
  * 套餐管理
  * Class Package
@@ -58,6 +59,7 @@ class Package extends Admin
             $model['modules']  = Request::post('modules');
             $model['template'] = Request::post('template');
             $model->save();
+            \system\model\Site::updateAllCache();
 
             return message('套餐更新成功');
         }

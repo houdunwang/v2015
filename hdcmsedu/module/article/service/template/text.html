@@ -3,7 +3,9 @@
     <div class="col-sm-9">
         <textarea id="{{$field['name']}}" style="height:300px;width:100%;" name="{{$field['name']}}">{{$field['value']}}</textarea>
         <script>
-            hdjs.ueditor({{$field['name']}});
+            require(['hdjs'],function(hdjs){
+                hdjs.ueditor("{!! $field['name'] !!}",{autoHeightEnabled:false});
+            })
         </script>
     </div>
 </div>

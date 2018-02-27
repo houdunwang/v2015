@@ -13,7 +13,7 @@ namespace module\ucenter\controller;
 use houdunwang\request\Request;
 use system\model\Balance;
 use system\model\Pay;
-
+use houdunwang\view\View;
 /**
  * 会员积分余额管理
  * Class Account

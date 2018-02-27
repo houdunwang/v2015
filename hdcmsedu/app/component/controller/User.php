@@ -1,7 +1,7 @@
 <?php namespace app\component\controller;
 
 use houdunwang\request\Request;
-
+use houdunwang\db\Db;
 /**
  * 用户
  * Class User
@@ -23,7 +23,8 @@ class User
     public function select()
     {
         if (IS_POST) {
-            $db = Db::table('user')->join('user_group', 'user.groupid', '=', 'user_group.id')->limit(20);
+            $db = Db::table('user')->join('user_group', 'user.groupid', '=', 'user_group.id')
+                    ->limit(20);
             //过滤不显示的用户
             if ($filterUid = explode(',', Request::get('filterUid', ''))) {
                 $db->whereNotIn('uid', $filterUid);

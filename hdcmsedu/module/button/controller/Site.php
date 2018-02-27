@@ -12,7 +12,7 @@
 use module\HdController;
 use system\model\Button;
 use View;
-
+use houdunwang\request\Request;
 /**
  * 微信菜单
  * Class Site

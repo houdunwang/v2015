@@ -19,7 +19,7 @@ use system\model\TicketModule;
 use system\model\TicketRecord;
 use Db;
 use View;
-
+use houdunwang\validate\Validate;
 /**
  * 卡券管理
  * Class site
@@ -53,7 +53,7 @@ class site extends HdController
         $sql  .= "ON t.tid=r.tid WHERE t.type=".q('get.type')." GROUP BY t.tid ORDER BY t.tid DESC";
         $data = Db::query($sql);
 
-        return view($this->template.'/lists.html')->with(compact('data'));
+        return view($this->template.'/lists.php')->with(compact('data'));
     }
 
     /**
@@ -143,7 +143,7 @@ class site extends HdController
             'groupsIds' => $groupsIds,
         ]);
 
-        return view($this->template.'/post.html');
+        return view($this->template.'/post.php');
     }
 
     /**
@@ -193,7 +193,7 @@ class site extends HdController
         //卡券数据
         $ticket = Db::table('ticket')->where('siteid', SITEID)->where('type', Request::get('type'))->groupBy('tid')->get();
 
-        return view($this->template.'/charge.html', compact('ticket', 'data', 'page'));
+        return view($this->template.'/charge.php', compact('ticket', 'data', 'page'));
     }
 
     /**

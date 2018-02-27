@@ -131,7 +131,7 @@
                                     <div class="col-sm-10">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" v-model="activeItem.type">
+                                                <input type="checkbox" v-model="activeItem.type" true-value="1" false-value="0">
                                                 是否编辑图文消息
                                             </label>
                                         </div>
@@ -143,7 +143,8 @@
                                 <div class="form-group" v-show="activeItem.type==1">
                                     <label class="col-sm-2 control-label">详情</label>
                                     <div class="col-sm-10">
-                                        <textarea id="container" style="height:300px;width:100%;" v-model="activeItem.content"></textarea>
+                                        <textarea id="container" style="height:300px;width:100%;"
+                                                  v-model="activeItem.content"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group" v-if="activeItem.type==0">
@@ -158,7 +159,7 @@
                                                         class="btn btn-default dropdown-toggle"
                                                         data-toggle="dropdown" aria-haspopup="true"
                                                         aria-expanded="false">选择链接 <span
-                                                        class="caret"></span>
+                                                            class="caret"></span>
                                                 </button>
                                                 <ul class="dropdown-menu dropdown-menu-right">
                                                     <li>
@@ -180,11 +181,11 @@
     <textarea name="content" v-html="contents" hidden></textarea>
 </div>
 <script type="application/ecmascript">
-    require(['vue', 'hdjs', 'resource/js/hdcms.js','resource/js/link.js'], function (Vue, hdjs, hdcms,link) {
+    require(['vue', 'hdjs', 'resource/js/hdcms.js', 'resource/js/link.js'], function (Vue, hdjs, hdcms, link) {
         var vm = new Vue({
             el: '#newVue',
             data: {
-                contents: JSON.parse('{{$contents}}'),
+                contents: <?php echo  $contents;?>,
                 //当前操作的子新闻
                 activeItem: {},
             },
@@ -276,7 +277,7 @@
                             //上传成功的图片，数组类型
                             this.activeItem.thumb = images[0];
                         }
-                    })
+                    }, {data: {mold: 'local'}})
                 },
                 //文章下移
                 down(key) {
@@ -285,7 +286,6 @@
                         vm.$set(vm.contents, key, this.contents[key + 1]);
                         vm.$set(vm.contents, key + 1, item);
                     }
-                    console.log(this.contents);
                 },
                 //文章上移
                 up(key) {

@@ -15,7 +15,6 @@
     </div>
     <div class="form-group">
         <label class="col-sm-2 control-label star">确认密码</label>
-
         <div class="col-sm-10">
             <input type="password" class="form-control" name="password2" required="required">
             <span class="help-block">重复输入密码，确认正确输入</span>
@@ -51,7 +50,7 @@
             hdjs.submit({
                 el:'#addUserPost',
                 url:"{!! u('system.user.add') !!}",
-                successUrl:'refresh'
+                successUrl:'back'
             });
         })
     }

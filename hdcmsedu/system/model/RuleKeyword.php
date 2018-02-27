@@ -10,6 +10,8 @@
 
 namespace system\model;
 
+use houdunwang\db\Db;
+
 /**
  * 回复关键字
  * Class RuleKeyword
@@ -59,7 +61,7 @@ class RuleKeyword extends Common
         }
         if ($res = $db->field('rule.module')->first()) {
             $module  = Modules::where('name', $res['module'])->first();
-            $message = "关键字[$content]已经在 <b>"."{$module['title']}</b> 模块中定义";
+            $message = "关键字[$content]已经在 <b>" . "{$module['title']}</b> 模块中定义";
         }
 
         return $res ? $message : true;
@@ -116,7 +118,7 @@ class RuleKeyword extends Common
      */
     public static function checkKeywordHByName($name, $content)
     {
-        $name = v('module.name').'#'.$name;
+        $name = v('module.name') . '#' . $name;
         $res  = Db::table('rule_keyword')
                   ->join('rule', 'rule.rid', '=', 'rule_keyword.rid')
                   ->where('rule_keyword.siteid', siteid())
@@ -125,7 +127,7 @@ class RuleKeyword extends Common
         //查找使用关键词的模块
         if ($res) {
             $module  = Modules::where('name', $res['module'])->first();
-            $message = "该关键字已经在 <b>"."{$module['title']}</b> 模块中定义";
+            $message = "该关键字已经在 <b>" . "{$module['title']}</b> 模块中定义";
         }
         if ($res) {
             return ['valid' => 0, 'message' => $message];

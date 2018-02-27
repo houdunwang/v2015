@@ -37,8 +37,20 @@ class WebCategory extends Model
             ['index_tpl', 'article_index.html', 'string', self::EMPTY_AUTO, self::MODEL_INSERT],
             ['category_tpl', 'article_list.html', 'string', self::EMPTY_AUTO, self::MODEL_INSERT],
             ['content_tpl', 'article.html', 'string', self::EMPTY_AUTO, self::MODEL_INSERT],
-            ['html_category', 'article{siteid}-{cid}-{page}.html', 'string', self::EMPTY_AUTO, self::MODEL_INSERT],
-            ['html_content', 'article{siteid}-{aid}-{cid}-{mid}.html', 'string', self::EMPTY_AUTO, self::MODEL_INSERT],
+            [
+                'html_category',
+                'article{siteid}-{cid}-{page}.html',
+                'string',
+                self::EMPTY_AUTO,
+                self::MODEL_INSERT,
+            ],
+            [
+                'html_content',
+                'article{siteid}-{aid}-{cid}-{mid}.html',
+                'string',
+                self::EMPTY_AUTO,
+                self::MODEL_INSERT,
+            ],
 
         ];
     protected $filter
@@ -49,13 +61,14 @@ class WebCategory extends Model
     /**
      * 文章模块栏目伪静态
      *
-     * @param int $field 栏目字段数据
+     * @param array $field 栏目字段数据
+     * @param null  $page  页码
      *
      * @return mixed|string
      */
-    public static function url($field)
+    public static function url($field, $page = null)
     {
-        $field['page'] = Request::get('page', 1);
+        $field['page'] = is_null($page) ? Request::get('page', 1) : $page;
         $url           = web_url().'/article{siteid}-{cid}-{page}.html';
         foreach ($field as $k => $v) {
             $url = str_replace('{'.$k.'}', $v, $url);
@@ -75,7 +88,8 @@ class WebCategory extends Model
      */
     public static function getLevelCategory($cid = 0, $mid = 0)
     {
-        $category = Db::table('web_category')->where('siteid', SITEID)->orderBy('orderby', 'desc')->get();
+        $category = Db::table('web_category')->where('siteid', SITEID)->orderBy('orderby', 'desc')
+                      ->get();
         if ($category) {
             $category = Arr::tree($category, 'catname', 'cid', 'pid');
             foreach ($category as $k => $v) {
@@ -87,6 +101,8 @@ class WebCategory extends Model
                 if ($cid && ($v['cid'] == $cid || Arr::isChild($category, $v['cid'], $cid))) {
                     unset($category[$k]);
                 }
+                //模型数据
+                $category[$k]['_model'] = Db::table('web_model')->find($v['mid']);
             }
         }
 

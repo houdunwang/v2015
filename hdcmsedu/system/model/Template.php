@@ -92,7 +92,8 @@ class Template extends Common
             return $cache[$siteId];
         }
         //系统模板默认包含
-        $db = Db::table('template')->where('tid', '>', 0)->whereNotEmpty('industry', $industry)->orWhere('is_system', 1);
+        $db = Db::table('template')->where('tid', '>', 0)->whereNotEmpty('industry', $industry)
+                ->orWhere('is_system', 1);
         //获取站点可使用的所有套餐
         $PackageModel = new Package();
         $package      = $PackageModel->getSiteAllPackageData($siteId);
@@ -109,6 +110,10 @@ class Template extends Common
             }
             $templates = $db->get();
         }
+        foreach ($templates as $k => $v) {
+            $templates[$k]['thumb'] = pic("theme/{$v['name']}/{$v['thumb']}");
+        }
+
         return $cache[$siteId] = $templates;
     }
 
@@ -129,7 +134,7 @@ class Template extends Common
         $data     = [];
         if ($position) {
             for ($i = 1; $i <= $position; $i++) {
-                $data[] = ['position' => $i, 'title' => '位置'.$i];
+                $data[] = ['position' => $i, 'title' => '位置' . $i];
             }
         }
 
@@ -167,7 +172,8 @@ class Template extends Common
      */
     public function getTemplateData($industry = '')
     {
-        $name = Db::table('web')->where('siteid', SITEID)->whereNotEmpty('industry', $industry)->pluck('template_name');
+        $name = Db::table('web')->where('siteid', SITEID)->whereNotEmpty('industry', $industry)
+                  ->pluck('template_name');
         if ($name) {
             return Db::table('template')->where('name', $name)->first();
         }
@@ -187,6 +193,18 @@ class Template extends Common
         $model = $this->where('name', $name)->first();
 
         return $model && $model['is_system'] == 1;
+    }
+
+    /**
+     * 根据模板标签获取缩略图
+     *
+     * @param string $name 模板标识
+     *
+     * @return string
+     */
+    public function thumb($name)
+    {
+        return __ROOT__ . '/theme/' . $name . '/' . $this->where('name', $name)->pluck('thumb');
     }
 
     /**

@@ -1,7 +1,7 @@
 <?php namespace module;
 
 use system\model\Modules;
-use WeChat;
+use houdunwang\wechat\WeChat;
 
 /**
  * 模块订阅消息
@@ -10,7 +10,7 @@ use WeChat;
  * @package system\core
  * @author  向军
  */
-abstract class hdSubscribe
+abstract class HdSubscribe
 {
     //配置项
     protected $config;

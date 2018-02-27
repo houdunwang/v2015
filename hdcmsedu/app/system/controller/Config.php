@@ -10,9 +10,11 @@
 
 namespace app\system\controller;
 
+use houdunwang\dir\Dir;
 use system\model\Config as ConfigModel;
 use houdunwang\request\Request;
 use houdunwang\db\Db;
+
 /**
  * 系统配置管理
  * Class Config
@@ -53,8 +55,9 @@ class Config extends Admin
     public function site()
     {
         if (IS_POST) {
+            $post          = Request::post('site');
             $model         = ConfigModel::find(1);
-            $model['site'] = Request::post('site');
+            $model['site'] = $post;
             $model->save();
 
             return message('站点设置更新成功');

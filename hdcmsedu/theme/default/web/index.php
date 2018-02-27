@@ -8,6 +8,7 @@
     <script src="{{ARTICLE_URL}}/js/index.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
+33
 <!--头部-->
 <include file='ARTICLE_PATH/header'/>
 <!--头部结束-->

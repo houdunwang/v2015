@@ -3,7 +3,8 @@
 use module\HdController;
 use module\hdSite;
 use system\model\SiteSetting;
-
+use houdunwang\validate\Validate;
+use houdunwang\request\Request;
 /**
  * 微信关注时或默认回复内容设置
  * Class Site

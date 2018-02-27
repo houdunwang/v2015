@@ -12,6 +12,7 @@ namespace system\model;
 
 use houdunwang\arr\Arr;
 use Db;
+
 /**
  * 套餐模型
  * Class Package
@@ -132,10 +133,10 @@ class Package extends Common
             return $cache[$siteId];
         }
         //获取站长拥有的套餐
-        $sql = "SELECT ug.package FROM ".
-               tablename('user')." u JOIN ".
-               tablename('user_group')." ug ON u.groupid=ug.id JOIN ".
-               tablename('site_user')." su ON u.uid=su.uid ".
+        $sql = "SELECT ug.package FROM " .
+               tablename('user') . " u JOIN " .
+               tablename('user_group') . " ug ON u.groupid=ug.id JOIN " .
+               tablename('site_user') . " su ON u.uid=su.uid " .
                "WHERE su.siteid={$siteId} AND su.role='owner'";
         if ($res = Db::query($sql)) {
             $cache[$siteId] = json_decode($res[0]['package'], true) ?: [];
@@ -182,7 +183,8 @@ class Package extends Common
             }
 
             if ($template = unserialize($v['template'])) {
-                $packages[$k]['template'] = Db::table('template')->whereIn('name', $template)->get();
+                $packages[$k]['template'] = Db::table('template')->whereIn('name', $template)
+                                              ->get();
             }
         }
         array_unshift($packages, ['id' => -1, 'name' => '所有服务', 'modules' => [], 'template' => []]);
@@ -211,10 +213,12 @@ class Package extends Common
         foreach ($packages as $k => $p) {
             $packages[$k]['modules'] = $packages[$k]['template'] = [];
             if ($names = unserialize($p['modules'])) {
-                $packages[$k]['modules'] = Db::table('modules')->whereIn('name', $names)->get() ?: [];
+                $packages[$k]['modules'] = Db::table('modules')->whereIn('name', $names)->get()
+                    ?: [];
             }
             if ($names = unserialize($p['template'])) {
-                $packages[$k]['template'] = Db::table('template')->whereIn('name', $names)->get() ?: [];
+                $packages[$k]['template'] = Db::table('template')->whereIn('name', $names)->get()
+                    ?: [];
             }
         }
         //当套餐编号有-1为拥有所有套餐
@@ -283,7 +287,7 @@ class Package extends Common
      */
     public function removeTemplate($template)
     {
-        $package = $this->get() ?: [];
+        $package = Db::table('package')->get() ?: [];
         foreach ($package as $p) {
             $p['template'] = json_decode($p['template'], true) ?: [];
             if ($k = array_search($template, $p['template'])) {

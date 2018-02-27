@@ -30,7 +30,7 @@
     <div class="panel-footer clearfix">
         <button class="btn btn-default" type="button" @click="addContentItem();">添加回复条目</button>
         <span class="help-block">添加多条回复内容时, 随机回复其中一条</span>
-        <textarea name="content" v-html="{{content}}" hidden></textarea>
+        <textarea name="content" v-html="content" hidden></textarea>
     </div>
 </div>
 <script type="application/ecmascript">

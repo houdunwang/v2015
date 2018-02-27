@@ -1,6 +1,7 @@
 <?php namespace app\component\controller;
 
 use system\model\Template;
+use Db;
 
 /**
  * 模块与模板
@@ -60,6 +61,7 @@ class Module
      * @param \system\model\Template $templateModel
      *
      * @return mixed
+     * @throws \Exception
      */
     public function siteTemplateBrowser(Template $templateModel)
     {

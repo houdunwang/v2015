@@ -81,7 +81,7 @@ function record($message)
     $data['uid']           = v('user.info.uid');
     $data['content']       = $message;
     $data['url']           = __URL__;
-    $data['system_module'] = MODULE == 'system' ? 1 : 0;
+    $data['system_module'] = defined('MODULE') ? (MODULE == 'system' ? 1 : 2) : 0;
 
     return (new \system\model\Log())->save($data);
 }
@@ -133,7 +133,7 @@ function memberIsLogin($return = false)
 {
     $status = boolval(v('member.info.uid'));
     if ( ! $status && $return === false) {
-        die(go(web_url() . "?m=ucenter&action=controller/entry/login&from=" . urlencode(__URL__)));
+        die(go(web_url() . "?m=ucenter&action=controller/entry/login&siteid=".SITEID."&from=" . urlencode(__URL__)));
     }
 
     return $status;
@@ -169,7 +169,7 @@ function url($action, $args = [], $module = '', $merge = false)
         $args['mt'] = $mt;
     }
 
-    return u(web_url() . "/?m=" . $module . "&action=" . implode('/', $info), $args, $merge);
+    return u(web_url() . "?m=" . $module . "&action=" . implode('/', $info), $args, $merge);
 }
 
 /**

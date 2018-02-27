@@ -10,6 +10,8 @@
 
 namespace system\model;
 
+use houdunwang\db\Db;
+
 /**
  * 支付记录模型
  * Class Pay

@@ -1,6 +1,7 @@
 <?php namespace app\component\controller;
 
 use houdunwang\request\Request;
+use houdunwang\db\Db;
 
 /**
  * 前台会员
@@ -36,6 +37,9 @@ class Member
                 case 'email':
                     $db->where('email', 'like', "%{$name}%");
                     break;
+                case 'uid':
+                    $db->where('uid', $name);
+                    break;
             }
 
             return $db->get();
@@ -58,7 +62,8 @@ class Member
             $db   = Db::table('member')
                       ->join('member_auth', 'member.uid', '=', 'member_auth.uid')
                       ->join('member_group', 'member.group_id', '=', 'member_group.id')
-                      ->where('member_auth.wechat', '<>', '')->where('member.siteid', $siteid)->limit(20);
+                      ->where('member_auth.wechat', '<>', '')->where('member.siteid', $siteid)
+                      ->limit(20);
             $db->field('member.uid,email,mobile,group_id,member_group.title group_title,member.created_at,member.nickname,member.realname');
             switch (Request::post('type')) {
                 case 'mobile':
@@ -71,6 +76,7 @@ class Member
                     $db->where('nickname', 'like', "%{$name}%");
                     break;
             }
+
             return $db->get();
         }
 

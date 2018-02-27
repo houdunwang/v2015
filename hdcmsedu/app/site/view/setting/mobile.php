@@ -5,7 +5,7 @@
     </ul>
     <form class="form-horizontal" id="app" v-cloak @submit.prevent="submit">
         <div class="alert alert-success">
-            必须将 <a href="http://houdunren.hdcms.com/?s=site/setting/aliyun&siteid=18&mark=feature&mi=103&mt="> 阿里云基本设置</a> 配置正确才可以使用阿里云短信
+            必须将 <a href="{!!__ROOT__!!}/?s=site/setting/aliyun&siteid={{SITEID}}&mark=feature&mi=103&mt="> 阿里云基本设置</a> 配置正确才可以使用阿里云短信
         </div>
         <div class="panel panel-default" v-if="false">
             <div class="panel-heading">短信通知设置</div>

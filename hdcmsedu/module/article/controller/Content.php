@@ -13,10 +13,10 @@ namespace module\article\controller;
 use module\article\model\WebCategory;
 use module\article\model\WebContent;
 use module\HdController;
-use system\model\WeChat;
 use Request;
 use View;
 use Db;
+use system\model\SiteWeChat as WeChat;
 
 /**
  * 文章管理
@@ -67,7 +67,7 @@ class Content extends HdController
         View::with('category', WebCategory::getLevelCategory());
         View::with('WebContent', $model);
 
-        return view($this->template.'/content/content_lists');
+        return view($this->template . '/content/content_lists');
     }
 
     /**
@@ -127,7 +127,7 @@ class Content extends HdController
             'extField' => $extField,
         ]);
 
-        return view($this->template.'/content/content_post');
+        return view($this->template . '/content/content_post');
     }
 
     /**

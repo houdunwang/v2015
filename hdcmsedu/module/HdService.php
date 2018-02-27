@@ -21,8 +21,8 @@ abstract class HdService
 
     public function __construct()
     {
-        $this->siteid   = SITEID;
+        $this->siteid   = siteid();
         $this->config   = Modules::getModuleConfig();
-        $this->template = MODULE_PATH.'/service/template';
+        $this->template = (defined('MODULE_PATH') ? MODULE_PATH : '') . '/service/template';
     }
 }

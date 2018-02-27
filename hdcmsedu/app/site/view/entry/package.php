@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{{__VIEW__}}/entry/css/package.css">
 <block name="content">
 	<ul class="nav nav-tabs">
-		<li role="presentation" class="active"><a href="#">扩展功能管理</a></li>
+		<li role="presentation" class="active"><a href="javascript:;">扩展功能管理</a></li>
 	</ul>
 	<div class="row apps">
 		<foreach from="$data" value="$m">

@@ -1,7 +1,8 @@
 <?php namespace system\model;
 
 use houdunwang\model\Model;
-use WeChat;
+use houdunwang\wechat\WeChat;
+use houdunwang\arr\Arr;
 
 /**
  * 微信消息处理
@@ -25,7 +26,8 @@ class WeChatMessage extends Model
     {
         if ($content && $rule = Rule::getByKeyword($content)) {
             $module = v('site.modules.'.$rule['module']);
-            $class  = ($module['is_system'] == 1 ? '\module\\' : '\addons\\').$module['name'].'\system\Processor';
+            $type   = ($module['is_system'] == 1 ? '\module\\' : '\addons\\');
+            $class  = $type.$module['name'].'\system\Processor';
             if (class_exists($class)) {
                 return (new $class())->handle($rule['rid']);
             }
@@ -43,7 +45,8 @@ class WeChatMessage extends Model
         foreach (v('site.modules') as $module) {
             //模块可以处理该消息类型时
             if (Arr::get($module['processors'], strtolower(WeChat::getMessageType()))) {
-                $class = ($module['is_system'] == 1 ? '\module\\' : '\addons\\').$module['name'].'\system\Processor';
+                $type  = ($module['is_system'] == 1 ? '\module\\' : '\addons\\');
+                $class = $type.$module['name'].'\system\Processor';
                 if (class_exists($class)) {
                     (new $class())->handle(0);
                 }
@@ -61,9 +64,10 @@ class WeChatMessage extends Model
     {
         foreach (v('site.modules') as $module) {
             if (Arr::get($module['subscribes'], strtolower(WeChat::getMessageType()))) {
-                $class = ($module['is_system'] == 1 ? '\module\\' : '\addons\\').$module['name'].'\system\Subscribe';
+                $type  = ($module['is_system'] == 1 ? '\module\\' : '\addons\\');
+                $class = $type.$module['name'].'\system\Subscribe';
                 if (class_exists($class)) {
-                    (new $class())->handle();
+                    (new $class())->handle(0);
                 }
             }
         }

@@ -1,5 +1,6 @@
 <?php namespace module;
 
+use houdunwang\arr\Arr;
 use houdunwang\config\Config;
 use houdunwang\request\Request;
 use houdunwang\route\Controller;
@@ -49,14 +50,25 @@ abstract class HdApi extends Controller
         $this->siteid = siteid();
         $module       = new Modules();
         $this->config = $module->getModuleConfig();
-        if ($uid = v('member.info.uid')) {
-            $this->user = Member::find($uid);
-        }
-        if ($token = Request::post('token')) {
+
+        if ($token = $this->getToken()) {
             $this->user = MemberToken::where('token', $token)->first();
         }
+
         //验证直接返回，不进行页面响应
         Config::set('validate.dispose', 'default');
+    }
+
+    /**
+     * 获取令牌
+     *
+     * @return string
+     */
+    final protected function getToken()
+    {
+        $headers = getallheaders();
+
+        return isset($headers['Hdcms-Token']) ? $headers['Hdcms-Token'] : '';
     }
 
     /**
@@ -75,10 +87,10 @@ abstract class HdApi extends Controller
     /**
      * 验证登录状态
      *
-     * @param bool $dispose
-     * true:验证失败时直接响应给客户端JSON（默认） false:返回验证状态
+     * @param bool $dispose true:验证失败时直接响应给客户端JSON（默认） false:返回验证状态
      *
      * @return bool
+     * @throws \Exception
      */
     public function auth($dispose = true)
     {
@@ -86,18 +98,45 @@ abstract class HdApi extends Controller
         if ($stat === false && $dispose) {
             die(json_encode($this->error('请登录后操作')));
         }
+        $user = Member::find($this->user['uid'])->toArray();
+        v('member', ['info' => $user]);
+        (new MemberToken())->token($this->user['uid']);
 
         return $stat;
     }
 
+    /**
+     * 成功时响应消息
+     *
+     * @param mixed $message 消息内容
+     * @param array $data    附加数据
+     *
+     * @return array
+     */
     public function success($message, $data = [])
     {
-        return ['valid' => 1, 'message' => $message, 'data' => $data];
+        return [
+            'valid'   => 1,
+            'message' => $message,
+            'data'    => is_object($data) ? $data->toArray() : $data,
+        ];
     }
 
+    /**
+     * 失败时响应响应
+     *
+     * @param mixed $message 消息内容
+     * @param array $data    附加数据
+     *
+     * @return array
+     */
     public function error($message, $data = [])
     {
-        return ['valid' => 0, 'message' => $message, 'data' => $data];
+        return [
+            'valid'   => 0,
+            'message' => $message,
+            'data'    => is_object($data) ? $data->toArray() : $data,
+        ];
     }
 
     /**
@@ -110,16 +149,9 @@ abstract class HdApi extends Controller
     {
         $res = Member::register(Request::post());
         if ($res['valid'] == 1) {
-            $token = MemberToken::where('uid', $res['uid'])->first();
-            if (empty($token)) {
-                $model                = new MemberToken();
-                $model['uid']         = $res['uid'];
-                $model['token']       = md5($res['uid'], time());
-                $model['expire_time'] = '2020-2-22 3:22:12';
-                $model->save();
+            (new MemberToken())->token($res['uid']);
 
-                return $this->success('注册成功');
-            }
+            return $this->success('注册成功');
         }
 
         return $this->error($res['message'] ?: '登录失败');

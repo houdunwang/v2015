@@ -1,9 +1,8 @@
 <?php namespace module\special\system;
 
 use module\HdProcessor;
-use Db;
 use system\model\WeChatMessage;
-use WeChat;
+use houdunwang\wechat\WeChat;
 
 /**
  * 关注消息处理

@@ -1,5 +1,7 @@
 <?php namespace system\model;
 
+use Carbon\Carbon;
+use houdunwang\db\Db;
 use houdunwang\model\Model;
 
 class MemberToken extends Model
@@ -34,4 +36,33 @@ class MemberToken extends Model
 
     //时间操作,需要表中存在created_at,updated_at字段
     protected $timestamps = true;
+
+    /**
+     * 设置会员接口令牌
+     *
+     * @param int $uid    会员编号
+     * @param int $expire 过期时间，单位天
+     *
+     * @return bool
+     * @throws \Exception
+     */
+    public function token($uid, $expire = 100)
+    {
+        $user = Member::find($uid);
+        if (empty($user)) {
+            $this->setError('会员不存在');
+
+            return false;
+        }
+
+        $token = self::where('siteid', SITEID)->where('uid', $uid)->first();
+        if ( ! $token) {
+            $token          = new static();
+            $token['uid']   = $uid;
+            $token['token'] = md5(time() * mt_rand(1, 1000));
+        }
+        $token['expire_time'] = Carbon::now()->addDay($expire);
+
+        return $token->save();
+    }
 }

@@ -8,6 +8,7 @@ use Request;
 use Middleware;
 use houdunwang\validate\Validate;
 use houdunwang\db\Db;
+
 /**
  * 用户管理
  * Class User
@@ -54,6 +55,7 @@ class User extends Admin
             $info             = $user->getPasswordAndSecurity(Request::post('password'));
             $user['password'] = $info['password'];
             $user['security'] = $info['security'];
+            $user['status']   = 1;
             //用户组过期时间
             $daylimit         = Db::table('user_group')->where('id', Request::post('groupid'))
                                   ->pluck('daylimit');
@@ -81,11 +83,13 @@ class User extends Admin
      *
      * @param \system\model\User $user
      *
-     * @return mixed
+     * @return mixed|string
+     * @throws \Exception
      */
     public function edit(UserModel $user)
     {
-        $user = $user->find(Request::get('uid'));
+        $uid  = Request::get('uid');
+        $user = $user->find($uid);
         if (IS_POST) {
             if (Request::post('password')) {
                 Validate::make([
@@ -103,6 +107,7 @@ class User extends Admin
             $user['mobile']   = Request::post('mobile');
             $user['realname'] = Request::post('realname');
             $user->save();
+            Site::updateSiteCacheByUid($uid);
 
             return message('用户资料修改成功', 'lists');
         }

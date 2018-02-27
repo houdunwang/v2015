@@ -37,13 +37,13 @@
                                         <div class="pic" style="background-image:url({!! pic($v['pic']) !!})"></div>
                                     </li>
                                 </if>
-                                <li class="action">
-                                    <a href="{!! url('site/PostNews',['id'=>$m['id']]) !!}"><i class="fa fa-trash-o"></i> 编辑</a>&nbsp;&nbsp;
-                                    <a href="javascript:;" onclick="remove({{$m['id']}})"><i class="fa fa-pencil-square-o"></i> 删除</a>&nbsp;&nbsp;
-                                    <a href="javascript:;" onclick="send({{$m['id']}})"><i class="fa fa-paper-plane-o"></i> 群发</a>&nbsp;&nbsp;
-                                    <a href="javascript:;" onclick="preview({{$m['id']}})"><i class="fa fa-eye"></i> 预览</a>
-                                </li>
                             </foreach>
+                            <li class="action">
+                                <a href="{!! url('site/PostNews',['id'=>$m['id']]) !!}"><i class="fa fa-trash-o"></i> 编辑</a>&nbsp;&nbsp;
+                                <a href="javascript:;" onclick="remove({{$m['id']}})"><i class="fa fa-pencil-square-o"></i> 删除</a>&nbsp;&nbsp;
+                                <a href="javascript:;" onclick="send({{$m['id']}})"><i class="fa fa-paper-plane-o"></i> 群发</a>&nbsp;&nbsp;
+                                <a href="javascript:;" onclick="preview({{$m['id']}})"><i class="fa fa-eye"></i> 预览</a>
+                            </li>
                         </ul>
                     </div>
                 </foreach>

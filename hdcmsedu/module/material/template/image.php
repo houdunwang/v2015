@@ -73,7 +73,6 @@
 
 </block>
 <script>
-    window.hdjs.filesLists = 'http://houdunren.hdcms.com?s=component/upload/filesListsLocal&m=material&siteid={{SITEID}}';
     //上传图片
     function upImage() {
         require(['hdjs'], function (hdjs) {

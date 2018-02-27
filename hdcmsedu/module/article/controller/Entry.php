@@ -36,25 +36,8 @@ class Entry extends HdController
             $this->_404();
         }
         $this->web      = $web->info();
-        $this->template = $this->template();
+        $this->template = ARTICLE_PATH;
         View::with('module.site', json_decode(Db::table('web')->pluck('site_info'), true));
-        define('ARTICLE_PATH', $this->template);
-        define('ARTICLE_URL', root_url() . '/' . $this->template);
-    }
-
-    /**
-     * 设置模板目录
-     *
-     * @return string
-     */
-    protected function template()
-    {
-        $template = $this->web->getTemplate();
-        if ($this->web['site_info']['template_dir_part'] == true) {
-            return $template . (IS_MOBILE ? 'mobile' : 'web');
-        }
-
-        return $template;
     }
 
     /**

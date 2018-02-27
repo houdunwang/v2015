@@ -59,31 +59,13 @@ class Cli extends Base
     }
 
     /**
-     * 获取排序后的标签
-     *
-     * @return mixed
-     */
-    protected function getTags()
-    {
-        exec("git tag -l", $tags);
-        usort($tags, function ($a, $b) {
-            return substr($a, 1) > substr($b, 1);
-        });
-
-        return $tags;
-    }
-
-    /**
      * 生成版本编号
      *
      * @param string $type 类型
      */
     public function version($type)
     {
-        //最新的标签
-        $tags            = $this->getTags();
-        $newTag          = array_pop($tags);
-        $data['version'] = $newTag;
+        $data['version'] = 'V2.0';
         $data['build']   = $this->build;
         $data['logs']    = '';
         $data['type']    = $type;
@@ -110,16 +92,11 @@ class Cli extends Base
 
     /**
      * 生成HDCMS更新压缩包
-     *
-     * @param string $oldVersion 上版本号
      */
-    public function upgrade($oldVersion = '')
+    public function upgrade()
     {
         $this->version('upgrade');
-        $tags       = $this->getTags();
-        $newVersion = array_pop($tags);
-        $oldVersion = $oldVersion ?: array_pop($tags);
-        exec("git diff $oldVersion $newVersion --name-status ", $files);
+        exec("git diff master --name-status", $files);
         $files = $this->format($files);
         if ( ! empty($files)) {
             //复制文件
@@ -133,7 +110,7 @@ class Cli extends Base
             }
             file_put_contents($this->savePath . '/upgrade_files.php',
                 "<?php return " . var_export($files, true) . ';?>');
-            Zip::create(dirname($this->savePath) . '/hdcms.upgrade.' . $newVersion . '.zip',
+            Zip::create(dirname($this->savePath) . '/hdcms.upgrade.' . date('md') . '.zip',
                 [$this->savePath]);
             exec('rm -rf ' . $this->savePath);
         }

@@ -7,7 +7,7 @@
  * @url http://open.hdcms.com
  */
 use module\HdProcessor;
-use Db;
+use houdunwang\db\Db;
 
 class Processor extends HdProcessor
 {

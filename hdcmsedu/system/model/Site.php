@@ -170,10 +170,6 @@ class Site extends Common
         if (SITEID && v('site.setting.aliyun.aliyun.use_site_aliyun')) {
             C::set('aliyun', v('site.setting.aliyun.aliyun'));
         }
-        //使用站点阿里云OSS配置
-        if (SITEID && v('site.setting.aliyun.oss.use_site_oss')) {
-            C::set('oss', v('site.setting.aliyun.oss'));
-        }
 
         return true;
     }
@@ -540,6 +536,25 @@ class Site extends Common
     {
         foreach (self::lists('siteid') as $siteid) {
             self::updateCache($siteid);
+        }
+
+        return true;
+    }
+
+    /**
+     * 根据站长会员编号更新站点编号
+     *
+     * @param int $uid 站长编号
+     *
+     * @return bool
+     * @throws \Exception
+     */
+    public static function updateSiteCacheByUid($uid = 0)
+    {
+        $uid   = $uid ?: v('user.info.uid');
+        $sites = Db::table('site_user')->where('uid', $uid)->where('role', 'owner')->lists('siteid');
+        foreach ((array)$sites as $id) {
+            self::updateCache($id);
         }
 
         return true;

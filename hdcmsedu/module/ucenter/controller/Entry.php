@@ -16,6 +16,8 @@ use module\HdController;
 use system\model\Member;
 use system\model\Message;
 use View;
+use houdunwang\wechat\WeChat;
+
 /**
  * 会员登录注册管理
  * Class Entry
@@ -46,7 +48,10 @@ class Entry extends HdController
     {
         if (IS_POST) {
             //开启验证码验证时进行验证码发送
-            $codeData = ['code' => Request::post('valid_code'), 'user' => Request::post('username')];
+            $codeData = [
+                'code' => Request::post('valid_code'),
+                'user' => Request::post('username'),
+            ];
             if ( ! $message->checkCode($codeData)) {
                 return ['valid' => 0, 'message' => '验证码错误'];
             }
@@ -109,12 +114,18 @@ class Entry extends HdController
     public function register(Member $Member, Message $message)
     {
         if (IS_POST) {
-            $codeData = ['code' => Request::post('valid_code'), 'user' => Request::post('username')];
+            $codeData = [
+                'code' => Request::post('valid_code'),
+                'user' => Request::post('username'),
+            ];
             if (v('site.setting.register.auth') && ! $message->checkCode($codeData)) {
                 return ['valid' => 0, 'message' => '验证码错误'];
             }
 
             return $Member->register(Request::post());
+        }
+        if (v('site.setting.register.type') == 0) {
+            return $this->view($this->template.'/register_close');
         }
         $placeholder = [
             0 => '网站关闭注册',
@@ -164,7 +175,6 @@ class Entry extends HdController
 
             return $this->fromUrl;
         }
-
         if (IS_POST) {
             $res = Member::login(Request::post());
             if ($res['valid'] == 1) {
@@ -172,6 +182,9 @@ class Entry extends HdController
             }
 
             return $res;
+        }
+        if (v('site.setting.login.type') == 0) {
+            return $this->view($this->template.'/login_close');
         }
         $placeholder = [
             0 => '登录暂时关闭',
@@ -185,7 +198,7 @@ class Entry extends HdController
     }
 
     /**
-     * 微信登录
+     * 微信登录(微信APP)
      *
      * @param \system\model\Member $member
      *

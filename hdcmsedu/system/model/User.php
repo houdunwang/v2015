@@ -24,7 +24,13 @@ class User extends Common
         = [
             ['username', 'required', '用户名不能为空', self::MUST_VALIDATE, self::MODEL_INSERT,],
             ['username', 'minlen:3', '用户名不能少于三位', self::MUST_VALIDATE, self::MODEL_INSERT],
-            ['username', 'regexp:/^[a-z][\w@]+$/i', '用户名必须是字母与数字组成', self::EXIST_VALIDATE, self::MODEL_BOTH,],
+            [
+                'username',
+                'regexp:/^[a-z][\w@]+$/i',
+                '用户名必须是字母与数字组成',
+                self::EXIST_VALIDATE,
+                self::MODEL_BOTH,
+            ],
             ['username', 'unique', '用户名已经存在', self::EXIST_VALIDATE, self::MODEL_BOTH,],
             ['password', 'required', '密码不能为空', self::EXIST_VALIDATE, self::MODEL_UPDATE,],
             ['password', 'required', '密码不能为空', self::EXIST_VALIDATE, self::MODEL_INSERT,],
@@ -99,7 +105,7 @@ class User extends Common
     {
         $data             = [];
         $data['security'] = substr(md5(time()), 0, 10);
-        $data['password'] = md5($password.$data['security']);
+        $data['password'] = md5($password . $data['security']);
 
         return $data;
     }
@@ -170,7 +176,8 @@ class User extends Common
                 return true;
             }
 
-            $cache[$uid] = Db::table('site_user')->where('siteid', $siteId)->where('uid', $uid)->where('role', 'owner')
+            $cache[$uid] = Db::table('site_user')->where('siteid', $siteId)->where('uid', $uid)
+                             ->where('role', 'owner')
                              ->get() ? true
                 : false;
         }
@@ -193,16 +200,19 @@ class User extends Common
         if (self::loginAuth() == false) {
             return false;
         }
-        $siteId = $siteId ?: SITEID;
-        $uid    = $uid ?: v("user.info.uid");
-        if ( ! isset($cache[$uid])) {
+        $siteId    = $siteId ?: SITEID;
+        $uid       = $uid ?: v("user.info.uid");
+        $cacheName = $uid . $siteId;
+        if ( ! isset($cache[$cacheName])) {
             if (self::isSuperUser($uid)) {
                 return true;
             }
-            $cache[$uid] = Db::table('site_user')->where('siteid', $siteId)->where('uid', $uid)->WhereIn('role', ['manage', 'owner'])->get();
+            $cache[$cacheName] = Db::table('site_user')->where('siteid', $siteId)
+                                   ->where('uid', $uid)
+                                   ->WhereIn('role', ['manage', 'owner'])->get();
         }
 
-        return $cache[$uid];
+        return $cache[$cacheName];
     }
 
 
@@ -228,9 +238,10 @@ class User extends Common
                 return true;
             }
 
-            $cache[$uid] = Db::table('site_user')->where('siteid', $siteId)->where('uid', $uid)->WhereIn(
-                'role', ['owner', 'manage', 'operate',]
-            )->get();
+            $cache[$uid] = Db::table('site_user')->where('siteid', $siteId)->where('uid', $uid)
+                             ->WhereIn(
+                                 'role', ['owner', 'manage', 'operate',]
+                             )->get();
         }
 
         return $cache[$uid];
@@ -250,7 +261,8 @@ class User extends Common
         $User             = new self();
         $User['username'] = $data['username'];
         //用户组过期时间
-        $daylimit        = Db::table('user_group')->where('id', v('config.register.groupid'))->pluck('daylimit');
+        $daylimit        = Db::table('user_group')->where('id', v('config.register.groupid'))
+                             ->pluck('daylimit');
         $User['endtime'] = time() + $daylimit * 3600 * 24;
         //获取密码与加密密钥
         $info             = $User->getPasswordAndSecurity($data['password']);
@@ -307,7 +319,8 @@ class User extends Common
             if ( ! v('user')) {
                 $user                         = [];
                 $user['info']                 = Db::table('user')->find($adminUid);
-                $user['group']                = Db::table('user_group')->where('id', $user['info']['groupid'])->first();
+                $user['group']                = Db::table('user_group')
+                                                  ->where('id', $user['info']['groupid'])->first();
                 $user['system']['super_user'] = $user['group']['id'] == 0;
                 v('user', $user);
             }
@@ -328,7 +341,7 @@ class User extends Common
     {
         $user = Db::table('user')->where('username', $username)->first();
 
-        return $user && $user['password'] == md5($password.$user['security']);
+        return $user && $user['password'] == md5($password . $user['security']);
     }
 
     /**
@@ -348,7 +361,7 @@ class User extends Common
      */
     public static function getLoginUrl()
     {
-        return __ROOT__.'/index.php/'.q('session.system.login', 'hdcms');
+        return __ROOT__ . '/index.php/' . q('session.system.login', 'hdcms');
     }
 
     /**
@@ -363,7 +376,7 @@ class User extends Common
             //站点管理平台
             $site = Db::table('module_domain')->where('domain', $_SERVER['SERVER_NAME'])->first();
             if ($site) {
-                $url = __ROOT__.'?s=site/entry/home&siteid='.$site['siteid'];
+                $url = __ROOT__ . '?s=site/entry/home&siteid=' . $site['siteid'];
             }
         }
 
@@ -474,7 +487,8 @@ class User extends Common
             return true;
         }
 
-        $permission = Db::table('user_permission')->where('siteid', siteid())->where('uid', v("user.info.uid"))->get();
+        $permission = Db::table('user_permission')->where('siteid', siteid())
+                        ->where('uid', v("user.info.uid"))->get();
         if (empty($permission)) {
             return true;
         }
@@ -555,7 +569,8 @@ class User extends Common
     {
         $siteId = $siteId ?: SITEID;
 
-        return Db::table('site_user')->join('user', 'user.uid', '=', 'site_user.uid')->where('siteid', $siteId)->get();
+        return Db::table('site_user')->join('user', 'user.uid', '=', 'site_user.uid')
+                 ->where('siteid', $siteId)->get();
     }
 
     /**

@@ -18,7 +18,8 @@
         <if value="Request::get('entry')=='home'">
             <div class="alert alert-info">
                 <div v-show="template.position">
-                    当前使用的风格为：@{{template.title}}，模板目录：theme/@{{template.name}}。此模板提供 @{{template.position}}
+                    当前使用的风格为：@{{template.title}}，模板目录：theme/@{{template.name}}。此模板提供
+                    @{{template.position}}
                     个导航位置，您可以指定导航在特定的位置显示，未指位置的导航将无法显示
                 </div>
                 <div v-show="!template.position">
@@ -52,9 +53,11 @@
                     <tr v-for="(field,key) in nav">
                         <td v-html="field.id"></td>
                         <td>
-                            <i @click="upFont(field)" v-if="field.icontype==1" class="fa-2x" :class="field.css.icon"
+                            <i @click="upFont(field)" v-if="field.icontype==1" class="fa-2x"
+                               :class="field.css.icon"
                                :style="{color:field.css.color}"></i>
-                            <img v-if="field.icontype==2" :src="field.css.image" style="width:35px;">
+                            <img v-if="field.icontype==2" :src="field.css.image"
+                                 style="width:35px;">
                         </td>
                         <td>
                             <input type="text" class="form-control" v-model="field.name">
@@ -63,11 +66,14 @@
                             <div class="input-group">
                                 <input type="text" class="form-control" v-model="field.url">
                                 <div class="input-group-btn">
-                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                    <button type="button" class="btn btn-default dropdown-toggle"
+                                            data-toggle="dropdown"
                                             aria-haspopup="true"
-                                            aria-expanded="false">选择链接 <span class="caret"></span></button>
+                                            aria-expanded="false">选择链接 <span class="caret"></span>
+                                    </button>
                                     <ul class="dropdown-menu dropdown-menu-right">
-                                        <li><a href="javascript:;" @click="url.linkBrowsers(field)">系统菜单</a></li>
+                                        <li><a href="javascript:;" @click="systemLink(field)">系统菜单</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -79,17 +85,20 @@
                             <!--模块链接时不显示位置,位置在文章系统有效-->
                             <td>
                                 <select class="form-control" v-model="field.position">
-                                    <option v-for="(v,k) in template_position" :value="v.position" v-html="v.title"></option>
+                                    <option v-for="(v,k) in template_position" :value="v.position"
+                                            v-html="v.title"></option>
                                 </select>
                             </td>
                         </if>
                         <td>
                             <div class="switch" data-on="primary" data-off="info">
-                                <input type="checkbox" :data="key" :true-value="1" :false-value="0"  class="bootstrap-switch" v-model="field.status">
+                                <input type="checkbox" :data="key" :true-value="1" :false-value="0"
+                                       class="bootstrap-switch" v-model="field.status">
                             </div>
                         </td>
                         <td v-if="field.id">
-                            <select name="" class="form-control" v-model="field.groups" multiple size="3">
+                            <select name="" class="form-control" v-model="field.groups" multiple
+                                    size="3">
                                 <option v-for="v in groups" :value="v.id" v-html="v.title"></option>
                             </select>
                         </td>
@@ -98,7 +107,8 @@
                                 <a class="btn btn-default" @click.prevent="edit(field)">
                                     编辑
                                 </a>
-                                <a href="javascript:;" @click="del(field.id)" class="btn btn-default">删除</a>
+                                <a href="javascript:;" @click="del(field.id)"
+                                   class="btn btn-default">删除</a>
                             </div>
                         </td>
                         <td v-if="!field.id"></td>
@@ -110,25 +120,18 @@
         <textarea name="data" v-html="nav" hidden></textarea>
         <button type="submit" class="btn btn-default">保存修改</button>
     </form>
-    <script>
-        require(['hdjs'],function(hdjs){
-            hdjs.bootstrapswitch('.bootstrap-switch');
-        })
-    </script>
     <script type="text/ecmascript">
-        require(['hdjs', 'resource/js/hdcms.js','resource/js/link.js', 'vue'], function (hdjs, hdcms, link,Vue) {
+        require(['hdjs', 'resource/js/hdcms.js', 'resource/js/link.js', 'vue'], function (hdjs, hdcms, link, Vue) {
             var vm = new Vue({
                 el: '#form',
                 mounted() {
                     //更改状态
-                    setTimeout(() => {
-                        $(".bootstrap-switch").bootstrapSwitch();
-                        $('.bootstrap-switch').on('switchChange.bootstrapSwitch', (event, state) => {
-                            var data = this.nav[$(event.currentTarget).attr('data')];
-                            if (!data) return;
-                            data.status = state ? 1 : 0;
-                        });
-                    }, 100);
+                    hdjs.bootstrapswitch('.bootstrap-switch');
+                    $('.bootstrap-switch').on('switchChange.bootstrapSwitch', (event, state) => {
+                        var data = this.nav[$(event.currentTarget).attr('data')];
+                        if (!data) return;
+                        data.status = state ? 1 : 0;
+                    });
                 },
                 computed: {
                     //只有在菜单类型为封面菜单即GET参数entry='home'有template数据
@@ -150,7 +153,7 @@
                 methods: {
                     //编辑导航
                     edit(field) {
-                        var url = "{{site_url('navigate.post')}}&entry=" + field.entry + "&id=" + field.id;
+                        var url = "{!! site_url('navigate.post') !!}&entry=" + field.entry + "&id=" + field.id;
                         location.href = url;
                     },
                     //提交表单

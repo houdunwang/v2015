@@ -1,13 +1,11 @@
 <?php namespace module;
 
-use houdunwang\config\Config;
 use houdunwang\response\Response;
 use houdunwang\route\Controller;
-use system\model\Member;
 use system\model\Modules;
-use Code;
 use system\model\Site;
-
+use houdunwang\session\Session;
+use houdunwang\view\View;
 /**
  * 模块业务基类
  * Class HdController

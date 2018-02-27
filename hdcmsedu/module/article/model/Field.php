@@ -3,7 +3,8 @@
 use houdunwang\database\build\Blueprint;
 use houdunwang\model\Model;
 use houdunwang\request\Request;
-use Db;
+use houdunwang\db\Db;
+use houdunwang\database\Schema;
 
 /**
  * 字段管理

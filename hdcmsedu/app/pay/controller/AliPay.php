@@ -3,6 +3,7 @@
 use houdunwang\route\Controller;
 use Request;
 use system\model\Pay;
+use houdunwang\config\Config;
 
 /**
  * 支付宝支付处理
@@ -32,8 +33,8 @@ class AliPay extends Controller
         $pay['type'] = 'alipay';
         $pay->save();
         //发起支付
-        Config::set('alipay.return_url', web_url()."/alipay/sync/{$pay['module']}/".SITEID);
-        Config::set('alipay.notify_url', web_url()."/alipay/async/{$pay['module']}/".SITEID);
+        Config::set('alipay.return_url', web_url() . "/alipay/sync/{$pay['module']}/" . SITEID);
+        Config::set('alipay.notify_url', web_url() . "/alipay/async/{$pay['module']}/" . SITEID);
         $data = [
             //商户订单号，商户网站订单系统中唯一订单号，必填
             'WIDout_trade_no' => $pay['tid'],
@@ -62,7 +63,8 @@ class AliPay extends Controller
             $pay_id = htmlspecialchars($_GET['trade_no']);
             $pay    = $this->updateOrderStatus($tid, $pay_id);
 
-            return call_user_func_array([$this->getModule($pay['module']), 'sync'], [true, $pay['tid']]);
+            return call_user_func_array([$this->getModule($pay['module']), 'sync'],
+                [true, $pay['tid']]);
         } else {
             return call_user_func_array([$this->getModule($_GET['m']), 'sync'], [false, 0]);
         }
@@ -86,7 +88,8 @@ class AliPay extends Controller
             if ($trade_status) {
                 $pay = $this->updateOrderStatus($tid, $pay_id);
 
-                return call_user_func_array([$this->getModule($pay['module']), 'async'], [$trade_status, $pay['tid']]) ? 'success' : 'fail';
+                return call_user_func_array([$this->getModule($pay['module']), 'async'],
+                    [$trade_status, $pay['tid']]) ? 'success' : 'fail';
             }
         }
 

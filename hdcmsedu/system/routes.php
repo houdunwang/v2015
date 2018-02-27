@@ -11,35 +11,55 @@
 Route::get('update', 'app\system\controller\Cloud@localUpdate');
 
 //后台管理员登录
-Route::get('login', function () {
-    return go(web_url().'?m=ucenter&action=controller/entry/login');
-});
+Route::get(
+    'login',
+    function () {
+        return go(web_url().'?m=ucenter&action=controller/entry/login');
+    }
+);
 
 //后台管理员登录
-Route::get('register', function () {
-    return go(web_url().'?m=ucenter&action=controller/entry/register');
-});
+Route::get(
+    'register',
+    function () {
+        return go(web_url().'?m=ucenter&action=controller/entry/register');
+    }
+);
+
+//会员中心
+Route::get(
+    'member',
+    function () {
+        return go(web_url().'?m=ucenter&action=controller/member/index');
+    }
+);
 
 /**
  * 后台管理员登录
  * 会显示站点列表
  */
-Route::any('hdcms', function () {
-    \houdunwang\session\Session::set('system.login', 'hdcms');
+Route::any(
+    'hdcms',
+    function () {
+        \houdunwang\session\Session::set('system.login', 'hdcms');
 
-    return action(\app\system\controller\Entry::class, 'login');
-});
+        return action(\app\system\controller\Entry::class, 'login');
+    }
+);
 
 /**
  * 站点管理员登录
  * 站点管理员登录后直接登录到站点管理平台
  * 不显示系统管理界面
  */
-Route::any('admin', function () {
-    \houdunwang\session\Session::set('system.login', 'admin');
+Route::any(
+    'admin',
+    function () {
+        \houdunwang\session\Session::set('system.login', 'admin');
 
-    return action(\app\system\controller\Entry::class, 'login');
-});
+        return action(\app\system\controller\Entry::class, 'login');
+    }
+);
 
 /**
  * 文章模块路由规则

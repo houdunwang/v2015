@@ -39,13 +39,14 @@
                     <label class="col-sm-2 control-label">注册验证</label>
                     <div class="col-sm-10">
                         <label class="checkbox-inline">
-                            <input type="checkbox" v-model="register.auth" value="1" :true-value="1" :false-value="0">开启验证
+                            <input type="checkbox" v-model="register.auth" value="1" :true-value="1"
+                                   :false-value="0">开启验证
                         </label>
                         <span class="help-block">
                             开启验证将向用户发送验证码，验证通过后才可以完成注册。<br/>
                             用户填写的是邮箱将发送邮件，如果是手机号将向用户手机发送验证码<br/>
-                            <br/>邮箱验证需要先进行 <a href="{{site_url('site/setting/mail')}}">邮件通知设置</a>
-                            短信验证需要先进行 <a href="{{site_url('site/setting/mobile')}}">短信通知设置</a>
+                            <br/>邮箱验证需要先进行 <a href="{{site_url('site/setting/mail')}}" target="_blank">邮件通知设置</a>
+                            短信验证需要先进行 <a href="{{site_url('site/setting/mobile')}}" target="_blank">短信通知设置</a>
                         </span>
                     </div>
                 </div>
@@ -55,7 +56,7 @@
             <div class="panel-heading">会员登录选项</div>
             <div class="panel-body">
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">帐号登录方式</label>
+                    <label class="col-sm-2 control-label">登录方式</label>
                     <div class="col-sm-10">
                         <label class="radio-inline">
                             <input type="radio" v-model="login.type" value="0">
@@ -74,23 +75,24 @@
                             手机或邮箱登录
                         </label>
                         <span class="help-block">
-                              该项设置用户注册时用户名的格式,如果设置为:"邮箱注册",系统会判断用户的注册名是否是邮箱格式,不选时没有注册表单项
-                          </span>
+                              该项设置用户登录的方式,比如设置为:"邮箱登录"则用户必须使用邮箱才可以登录
+                        </span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">第三方登录</label>
                     <div class="col-sm-10">
                         <label class="checkbox-inline">
-                            <input type="checkbox" v-model="login.pc_wechat" :true-value="1" :false-value="0"> 桌面微信扫码登录
+                            <input type="checkbox" v-model="login.pc_wechat" :true-value="1"
+                                   :false-value="0"> 微信扫码登录
                         </label>
                         <span class="help-block">
-                            当设置为"微信登录"时需要站点的微信号已经认证。
+                            需要在 <a href="https://open.weixin.qq.com/" target="_blank">微信开放平台申请</a> 网站应用
                         </span>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">微信客户端设置</label>
+                    <label class="col-sm-2 control-label">微信客户端</label>
                     <div class="col-sm-10">
                         <label class="radio-inline">
                             <input type="radio" v-model="login.mobile_wechat" value="0"> 不使用微信登录
@@ -98,13 +100,8 @@
                         <label class="radio-inline">
                             <input type="radio" v-model="login.mobile_wechat" value="1"> 登录按钮
                         </label>
-                        <label class="radio-inline">
-                            <input type="radio" v-model="login.mobile_wechat" value="2"> 自动登录
-                        </label>
                         <span class="help-block">
-                              微信APP登录的处理方式,如果选择 "自动登录" 时系统自动使用微信号登录<br/>
-                            需要站点的微信号是认证服务号。<br/>
-                            需要将登录方式选择为 "微信登录" 才有效。
+                            微信APP登录的处理方式,如果选择 "自动登录" 时系统自动使用微信号登录
                           </span>
                     </div>
                 </div>

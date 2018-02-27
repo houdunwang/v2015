@@ -12,7 +12,7 @@ namespace module\quicknavigate\controller;
 
 use module\HdController;
 use Db;
-
+use houdunwang\request\Request;
 /**
  * 后台底部快捷导航
  * Class Site
@@ -39,11 +39,9 @@ class Site extends HdController
         $data           = $data ? json_decode($data, true) : ['system' => [], 'module' => [],];
         $data['status'] = 1;
         $post           = Request::post();
-        p($post);
         //分析链接检测是否有模块数据
         $urlInfo = parse_url($post['url']);
         parse_str($urlInfo['query'], $params);
-        p($params);
         $moduleName = isset($params['m']) ? $params['m'] : '';
         //当前模块数据
         $module = v('site.modules.'.$moduleName);

@@ -81,7 +81,7 @@
     function removeRule(rid, title, obj) {
         require(['hdjs'], function (hdjs) {
             hdjs.confirm('确定删除规则 [' + title + '] 吗?', function () {
-                $.get("{{site_url('site.rule.remove')}}&rid=" + rid, function (json) {
+                $.get("{!! site_url('site.rule.remove') !!}&rid=" + rid, function (json) {
                     hdjs.message(json.message, '', 'info');
                     if (json.valid == 1) {
                         $(obj).parents('.panel').eq(0).remove();

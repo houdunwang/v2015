@@ -1,7 +1,7 @@
 <?php namespace module;
 
 use system\model\Modules;
-use WeChat;
+use houdunwang\wechat\WeChat;
 
 /**
  * 模块处理消息
@@ -28,7 +28,7 @@ abstract class HdProcessor
     }
 
     //回复方法
-    abstract function handle($rid);
+    abstract function handle($rid = 0);
 
     public function __call($method, $arguments = [])
     {

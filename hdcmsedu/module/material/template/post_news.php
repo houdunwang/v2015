@@ -9,14 +9,15 @@
     <form method="post" id="app" class="form-horizontal" v-cloak @submit.prevent="submit">
         <div class="panel panel-default">
             <div class="panel-heading clearfix">
-                <h3 class="panel-title pull-left">图文消息管理</h3>
+                图文消息管理
             </div>
             <div class="panel-body preview">
                 <div class="row">
                     <div class="col-sm-3">
                         <div class="lists">
                             <ul>
-                                <li v-for="(v,i) in data.articles" @click="setActionItem(i)" v-if="i==0">
+                                <li v-for="(v,i) in data.articles" @click="setActionItem(i)"
+                                    v-if="i==0">
                                     <div class="pic"
                                          :style="{backgroundImage:'url('+(v.pic?v.pic:'resource/images/nopic.jpg')+')'}">
                                         <h3 v-html="v.title"></h3>
@@ -26,7 +27,8 @@
                                             <a href="javascript:;" @click="moveDown(i)"><i
                                                         class="fa fa-long-arrow-down"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
                                         </div>
-                                        <a href="javascript:;" class="pull-right" @click="remove(v)"><i
+                                        <a href="javascript:;" class="pull-right"
+                                           @click="remove(v)"><i
                                                     class="fa fa-trash-o"></i></a>
                                     </div>
                                 </li>
@@ -45,7 +47,8 @@
                                                 <i class="fa fa-long-arrow-up"></i>
                                             </a>
                                         </div>
-                                        <a href="javascript:;" class="pull-right" @click="remove(v)"><i
+                                        <a href="javascript:;" class="pull-right"
+                                           @click="remove(v)"><i
                                                     class="fa fa-trash-o"></i></a>
                                     </div>
                                 </li>
@@ -65,7 +68,14 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label star">封面图片</label>
                             <div class="col-sm-10">
-                                <button type="button" class="btn btn-default" @click="upImage()">选择图片</button>
+                                <div class="input-group">
+                                    <button type="button" class="btn btn-default" @click="upImage()">
+                                        选择图片
+                                    </button>
+                                </div>
+                                <div class="input-group" style="margin-top:5px;">
+                                    <img :src="action.pic" class="img-responsive img-thumbnail" width="150">
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
@@ -77,7 +87,8 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label star">摘要</label>
                             <div class="col-sm-10">
-                                <textarea rows="5" class="form-control" required v-model="action.digest"></textarea>
+                                <textarea rows="5" class="form-control" required
+                                          v-model="action.digest"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
@@ -93,17 +104,18 @@
                                 <span class="help-block"> <i class="fa fa-info-circle"></i> 设置链接时将跳转到此链接</span>
                             </div>
                         </div>
-                        <div class="btn-group col-sm-offset-2" role="group" aria-label="...">
-                            <button type="submit" class="btn btn-success"> 保存</button>
-                        </div>
                         <textarea name="data" v-html="data" hidden></textarea>
+                        <div class="form-group">
+                            <div class="btn-group col-sm-offset-2" role="group" aria-label="...">
+                                <button type="submit" class="btn btn-success"> 保存</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </form>
     <script type="application/ecmascript">
-        window.hdjs.filesLists = 'http://houdunren.hdcms.com?s=component/upload/filesListsLocal&m=material&siteid={{SITEID}}';
         require(['hdjs', 'vue'], function (hdjs, Vue) {
             var ve = new Vue({
                 el: '#app',
@@ -220,8 +232,8 @@
                             if ($.trim(v.digest) == '') {
                                 msg += "第" + pos + "个图文摘要为空<br/>";
                             }
-                            if ($.trim(v.content) == '') {
-                                msg += "第" + pos + "个图文内容为空<br/>";
+                            if (v.content_source_url == '' && $.trim(v.content) == '') {
+                                msg += "第" + pos + "个内容或链接没有设置<br/>";
                             }
                         })
                         if (msg) {

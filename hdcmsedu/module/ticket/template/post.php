@@ -2,13 +2,13 @@
 <block name="content">
     <ul class="nav nav-tabs">
         <li>
-            <a href="{!! url('site/lists')}}&type={{$_GET['type'] !!}">
+            <a href="{!! url('site/lists') !!}&type={{$_GET['type'] !!}">
                 管理{{$msg['module']['title']}}
             </a>
         </li>
         <if value="Request::get('tid')">
             <li>
-                <a href="{!! url('site/post')}}&type={{$_GET['type'] !!}">
+                <a href="{!! url('site/post') !!}&type={{$_GET['type'] !!}">
                     <i class="fa fa-plus"></i> 添加{{$msg['module']['title']}}
                 </a>
             </li>

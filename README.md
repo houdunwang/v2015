@@ -10,7 +10,7 @@
 
 | 仓库   | 地址                                  |
 | ------ | ------------------------------------- |
-| github | https://github.com/houdunwang/codeing |
+| github | https://github.com/houdunwang/coding |
 | gitee  | https://gitee.com/houdunren/code      |
 
 ## 八点直播

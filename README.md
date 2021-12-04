@@ -10,8 +10,8 @@
 
 | 仓库   | 地址                                  |
 | ------ | ------------------------------------- |
-| github | https://github.com/houdunwang/coding |
-| gitee  | https://gitee.com/houdunren/code      |
+| github | https://github.com/houdunwang/v2015 |
+| gitee  | https://gitee.com/houdunren/v2015      |
 
 ## 八点直播
 
@@ -20,6 +20,4 @@
 | 平台 | 地址                                                         |
 | ---- | ------------------------------------------------------------ |
 | B 站 | [https://live.bilibili.com/8515468](https://live.bilibili.com/8515468) |
-| 斗鱼 | [https://www.douyu.com/4179871](https://www.douyu.com/4179871) |
-| 腾讯 | [https://ke.qq.com/course/288236](https://ke.qq.com/course/288236) |
 | 抖音 | 抖音号: 268943416                                            |

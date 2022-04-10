@@ -1,23 +1,50 @@
-## 视频代码
+## 后盾人 / 2021年视频教程代码
 
-后盾人为了方便观看视频的同学掌握技术，将视频中的代码放 GIT 版本库中，同学们可以对照代码进行学习。
+本项目为视频代码或直播课程代码，希望大家能给个 `star` 这是对我们最好的鼓励和肯定。
 
-希望大家为本项目加个 Star，也是对我们小小的鼓励。
+> 更多视频教程请访问 [ houdunren.com](houdunren.com) 学习
 
-## 新仓库地址
 
-从 2019 年开始我们将代码提交到以下新仓库中
 
-| 仓库   | 地址                                  |
-| ------ | ------------------------------------- |
-| github | https://github.com/houdunwang/v2015 |
-| gitee  | https://gitee.com/houdunren/v2015      |
+![IMG_7099](./assets/IMG_7099.JPG)
 
-## 八点直播
 
-我们会在每天晚上八点直播（注：特殊情况会请假），非常感谢大家的光临。
 
-| 平台 | 地址                                                         |
-| ---- | ------------------------------------------------------------ |
-| B 站 | [https://live.bilibili.com/8515468](https://live.bilibili.com/8515468) |
-| 抖音 | 抖音号: 268943416                                            |
+## 在线直播
+
+<img src="./assets/xj.jpg" alt="image-20210216220804022" style="zoom:50%;" />
+
+
+
+向军大叔会在晚上八点在抖音与B站进行直播，请扫描下方二维码关注。
+
+| 抖音                                            | Bilibili                                         |
+| ----------------------------------------------- | ------------------------------------------------ |
+| ![image-20210216220804022](./assets/douyin.png) | ![image-20210216220804022](./assets/bilibli.jpg) |
+
+
+
+
+## 历史仓库
+
+下面是每年我们录制视频教程的代码仓库地址（非常早的就没有罗列了）。你可以访问 [https://www.houdunren.com](https://www.houdunren.com) 对我们进行更多的了解。
+
+| 年份      | GitHub                                                       | Gitee                                                        |
+| --------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 2022      | [https://github.com/houdunwang/v2022](https://github.com/houdunwang/v2022) | [https://gitee.com/houdunren/v2022](https://gitee.com/houdunren/v2022) |
+| 2021      | [https://github.com/houdunwang/v2021](https://github.com/houdunwang/v2021) | [https://gitee.com/houdunren/v2021](https://gitee.com/houdunren/v2021) |
+| 2019~2020 | [https://github.com/houdunwang/v2020](https://github.com/houdunwang/v2020) | [https://gitee.com/houdunren/v2020](https://gitee.com/houdunren/v2020) |
+| 2015~2018 | [https://github.com/houdunwang/v2015](https://github.com/houdunwang/v2015) | [https://gitee.com/houdunren/v2015](https://gitee.com/houdunren/v2015) |
+
+
+
+## 编码记录
+
+下面是近七天向军大叔的编码的时间与开发的语言，列出这个的目的就是希望大家也能坚持每周都写代码。
+
+> 下面的统计信息是动态实时更新的
+
+| **编码时间**                                                 | **开发语言**                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| <img src="https://wakatime.com/share/@houdunren/e20f8fb4-dc01-4898-8ea8-0b6eb0673e5e.png"  /> | <img src="https://wakatime.com/share/@houdunren/32b9163d-c433-47c6-a9aa-e92ab41a52a3.png" /> |
+

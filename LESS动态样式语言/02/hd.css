@@ -1,0 +1,109 @@
+.a,
+.b {
+  background: green;
+  color: white;
+}
+.c {
+  font-size: 12px;
+}
+.b {
+  width: 200px;
+  height: 100px;
+}
+#box a {
+  color: black;
+}
+#box a.index {
+  color: red;
+}
+#box a:hover {
+  color: yellow;
+}
+#box a {
+  color: black;
+}
+#box a.index {
+  color: red;
+}
+#box {
+  width: 40px;
+  height: 11px;
+}
+#houdun {
+  width: 1000px;
+  height: 60px;
+  border: 1px solid blue;
+  margin: 0 auto;
+}
+#houdun .left {
+  width: 200px;
+  height: 60px;
+  background: red;
+  float: left;
+}
+#houdun .left ul {
+  width: 50%;
+  position: relative;
+}
+#houdun .left ul li {
+  list-style: none;
+  line-height: 1.5em;
+  color: #333;
+}
+#houdun .left ul li a {
+  text-decoration: none;
+}
+#top {
+  width: 1000px;
+  height: 60px;
+  border: 1px solid blue;
+  margin: 0 auto;
+}
+#top .left {
+  width: 200px;
+  height: 60px;
+  background: orange;
+  float: left;
+}
+#top .left ul {
+  width: 50%;
+  position: relative;
+}
+#top .left ul li {
+  list-style: none;
+  line-height: 1.5em;
+  color: #333;
+}
+#top .left ul li a {
+  text-decoration: none;
+}
+.border {
+  border: 1px solid red;
+  box-shadow: 0 0 10px blue;
+}
+#a {
+  border: 1px solid red;
+  box-shadow: 0 0 10px blue;
+  width: 100px;
+  height: 100px;
+  background: red;
+}
+#b {
+  width: 30px;
+  height: 30px;
+  background: red;
+}
+#c {
+  width: 200px;
+  height: 200px;
+  background: red;
+}
+#top {
+  color: blue;
+}
+.bottom {
+  background: blue;
+}
+.hd {
+  border: 1px solid blue;
+}

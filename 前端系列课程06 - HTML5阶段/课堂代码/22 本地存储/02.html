@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="button" value="获得数据" id="r" />
+		
+		<script type="text/javascript">
+//			sessionStorage存储的数据在浏览器关闭后就清理掉
+//			sessionStorage写入数据的页面和获得数据的页面要在同一个浏览器标签中打开才可以
+			
+			document.getElementById("r").onclick = function(){
+				alert(sessionStorage.getItem('name'));
+			}
+			
+		</script>
+		
+	</body>
+</html>

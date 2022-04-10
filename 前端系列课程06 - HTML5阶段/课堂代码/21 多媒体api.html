@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				padding: 100px 200px;
+			}
+			#pro{
+				width: 600px;
+				height: 15px;
+				background: rgba(0,0,0,0.15);
+				position: relative;
+			}
+			#pro div{
+				height: 15px;
+				width: 0px;
+				background: dodgerblue;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<input type="button" value="播放" id="play" />
+		<input type="button" value="暂停" id="pause" />
+		<input type="button" value="后退5秒" id="back5s" />
+		<input type="button" value="快进5秒" id="go5s" />
+		<input type="button" value="静音" id="muted" />
+		<input type="button" value="提高音量" id="volume1" />
+		<input type="button" value="减少音量" id="volume2" />
+		<br />
+		播放进度： 
+		<div id="pro">
+			<div id="ls"></div>
+		</div>
+		
+		<br /><br /> 
+		
+		<video src="big_buck_bunny_720p_stereo.ogg" width="600" poster="big_buck_bunny_720p_stereo.jpg" id="v" ></video>
+		
+	
+	<script type="text/javascript">
+		
+		var v = document.getElementById("v");
+		var pro = document.getElementById("pro");
+		var ls = document.getElementById("ls");
+		
+//		播放
+		document.getElementById("play").onclick = function(){
+			v.play();
+		}
+		
+//		暂停
+		document.getElementById("pause").onclick = function(){
+			v.pause();
+		}
+		
+//		快进5s
+		document.getElementById("go5s").onclick = function(){
+//			获得当前的播放位置
+			var ctime = v.currentTime;
+			v.currentTime = ctime+5;
+		}
+		
+//		后退5秒
+		document.getElementById("back5s").onclick = function(){
+			var ctime = v.currentTime;
+			v.currentTime = ctime-5;
+		}
+		
+//		静音
+		document.getElementById("muted").onclick = function(){
+//			if(v.muted){//true表示正处于静音状态
+//				v.muted = false;
+//			}else{
+//				v.muted = true;
+//			}
+			v.muted = !v.muted;
+		}
+		
+		
+//		提高音量
+		document.getElementById("volume1").onclick = function(){
+//			获得当前音量
+			var curvolume = v.volume;
+			var newvolume = curvolume+0.1;
+//			赋值新的音量
+			v.volume = newvolume>1?1:newvolume;
+		}
+		
+//		减少音量
+		document.getElementById("volume2").onclick = function(){
+			var curvolume = v.volume;
+			var newvolume = curvolume-0.1;
+			v.volume = newvolume<0?0:newvolume;
+		}
+		
+//		进度条
+		v.onplay = function(){
+//			alert('开始播放啦！');
+			setInterval(function(){
+//				获得当前的播放位置
+				var ctime = v.currentTime;
+//				获得视频总长度
+				var alltime = v.duration;
+//				计算进度条长度
+				var lswidth = ctime/alltime*600;
+				ls.style.width = lswidth+'px';
+			},500)
+		}
+		
+//		点击播放位置
+		pro.onclick = function(e){
+			var ev = window.event || e;
+//			获得鼠标的位置
+			var mx = ev.layerX || offsetX;
+//			计算播放位置
+			var ctime = mx/600*v.duration;
+//			设置播放位置
+			v.currentTime = ctime;
+			ls.style.width = mx+'px';
+		}
+		
+		
+		
+	</script>
+		
+	</body>
+</html>

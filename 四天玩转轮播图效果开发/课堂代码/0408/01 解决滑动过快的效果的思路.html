@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#hd{
+				width: 200px;
+				height: 300px;
+				background: mediumpurple;
+				margin: 100px auto;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="hd">
+			
+		</div>
+		
+		
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script>
+			$("#hd").mouseenter(function(){
+				
+				timer = setTimeout(function(){
+					alert('移入啦');
+				},1000)
+				
+			})
+			
+			
+			$("#hd").mouseleave(function(){
+				clearTimeout(timer);
+			})
+			
+			
+		</script>
+		
+		
+	</body>
+</html>

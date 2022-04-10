@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				background: #272822;
+				margin: 0 auto;
+				display: block;
+				position: relative;
+				margin-top: 200px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<canvas id="canvas" width="200" height="50"></canvas>
+	
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+		
+//		获得绘画环境(相当于铺了一层画布)
+		var cv = canvas.getContext('2d');
+
+		cv.fillStyle = 'yellow';
+		cv.font = '30px arial';
+		var words = 'QWERTYUIOPASDFGHJKLZXCVBNM';
+		
+		for (var i=0;i<4;i++) {
+			var r = Math.floor(Math.random()*(words.length-1+1-0)+0);
+//			随机位置
+			var l = Math.floor(Math.random()*((i*50+20)+1-i*50)+i*50);
+			var t = Math.floor(Math.random()*(45+1-30)+30);
+			cv.fillText(words[r],l,t);
+			
+			
+			
+		}
+		
+		
+
+		
+	</script>
+		
+	</body>
+</html>

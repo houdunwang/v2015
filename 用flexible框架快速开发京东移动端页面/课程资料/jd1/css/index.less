@@ -1,0 +1,113 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+//顶部
+#top{
+    width: 10rem;
+    height: 100/75rem;
+    background: #232323;
+    .left{
+        float: left;
+        width: 510/75rem;
+        height: 100/75rem;
+//      border-right: 2px solid yellow;
+        display: flex;
+        align-items: center;
+        .close{
+            width: 34/75rem;
+            height: 34/75rem;
+            margin-left: 17/75rem;
+            margin-right: 36/75rem;
+        }
+        .appicon{
+            width: 70/75rem;
+            height: 70/75rem;
+            margin-right: 18/75rem;
+        }
+        .openapp{
+            width: 280/75rem;
+            height: 70/75rem;
+//          border: 1px solid yellow;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            p:nth-child(1){
+                color: white;
+            }
+            p:nth-child(2){
+                color: #999;
+            }
+        }
+    }
+//  右边
+    a.right{
+        float: left;
+        display: block;
+        width: 239/75rem;
+        height: 100/75rem;
+        background: #CD2525;
+        color: white;
+        text-align: center;
+        line-height: 100/75rem;
+    }
+//右边结束
+}
+//顶部结束
+
+
+
+
+[data-dpr="2"] #top{
+    .left{
+        .openapp{
+            p:nth-child(1){
+                font-size: 26px;
+            }
+            p:nth-child(2){
+                font-size: 26px;
+            }
+        }
+    }
+    a.right{
+        font-size: 30px;
+    }
+}
+
+
+
+[data-dpr="3"] #top{
+    .left{
+        .openapp{
+            p:nth-child(1){
+                font-size: 39px;
+            }
+            p:nth-child(2){
+                font-size: 39px;
+            }
+        }
+    }
+    a.right{
+        font-size: 45px;
+    }
+}
+
+
+
+[data-dpr="4"] #top{
+    .left{
+        .openapp{
+            p:nth-child(1){
+                font-size: 52px;
+            }
+            p:nth-child(2){
+                font-size: 52px;
+            }
+        }
+    }
+    a.right{
+        font-size: 60px;
+    }
+}
+

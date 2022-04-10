@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>阿里云邮件发送</title>
+    <link rel="stylesheet" href="./resource/layui/css/layui.css">
+</head>
+<body>
+    <div style="width: 60%;margin: 100px auto;">
+        <blockquote class="layui-elem-quote">
+            后盾人:www.houdunren.com <br>
+            邮件服务阿里云邮件服务提供
+        </blockquote>
+    </div>
+
+    <div style="width: 40%;margin: 0 auto;">
+        <form class="layui-form" action="" method="post">
+            <div class="layui-form-item">
+                <label class="layui-form-label">请输入邮箱</label>
+                <div class="layui-input-block">
+                    <input type="text" name="email" value="2684469574@qq.com"  autocomplete="off" placeholder="请输邮箱" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">请输入密码</label>
+                <div class="layui-input-block">
+                    <input type="text" name="password"  placeholder="请输入"  class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">验证码</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="code" required lay-verify="required" placeholder="请输入验证码" autocomplete="off" class="layui-input">
+                </div>
+                <div class="">
+                    <button class="layui-btn layui-btn-normal"  type="button" onclick="send(this)">发送验证码</button>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" type="button"   onclick="post()">立即提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="layui-layout-admin">
+        <div class="layui-footer "  style="left: 0;text-align: center">
+            ©copyright 后盾人 <a href="http://www.houdunren.com">www.houdunren.com</a>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./resource/layer/layer.js"></script>
+    <script src="./resource/layui/layui.js"></script>
+    <script>
+        function send(obj) {
+            if($(obj).hasClass('layui-btn-disabled')){
+                return false;
+            }
+            time = 60;
+            var timer = setInterval(function(){
+                time--;
+                $(obj).text(time+'s之后再试');
+                $(obj).removeClass('layui-btn-normal');
+                $(obj).addClass('layui-btn-disabled');
+                if(time==0){
+                    $(obj).text('发送验证码');
+                    clearInterval(timer);
+                    $(obj).addClass('layui-btn-normal');
+                    $(obj).removeClass('layui-btn-disabled');
+                }
+            },1000);
+            var email = $('input[name=email]').val();
+            $.post('?a=smtpSend',{email:email},function(res){
+                if(res.status==1){
+                    //说明邮件发送成功
+                    layer.alert(res.msg, {icon: 6});
+                }else{
+                    //说明邮件发送失败
+                    layer.msg(res.msg, {icon: 5});
+                }
+            },'json')
+        }
+        function post() {
+            var code = $('input[name=code]').val();
+            $.post('?a=post',{code:code},function(res){
+                if(res.status==1){
+                    layer.alert(res.msg, {icon: 6});
+                }else{
+                    layer.msg(res.msg, {icon: 5});
+                }
+            },'json')
+        }
+    </script>
+</body>
+</html>

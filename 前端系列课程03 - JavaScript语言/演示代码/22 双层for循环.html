@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				color: #D00404;
+			}
+		</style>
+		
+	<script type="text/javascript">
+//		1/看是否是死循环
+//		2/看执行次数
+//		3/看每次都执行了什么(每次都干啥了)
+		
+//		for (var i=0;i<10;i++) {
+//			
+//			document.write(i+'、');
+//			
+//		}
+
+//		for (var i=20;i>10;i--) {
+//			document.write("*");
+//		}
+
+//		for (var i=31;i<=45;i++) {
+//			document.write('i');
+//		}
+
+
+//		for (var i=0;i<10;i++) {
+//			document.write("❤");
+//		}
+		
+		
+//		里外层循环的计数器变量不能重名
+//		for (var i=0;i<5;i++) {
+////			输出十个心
+//			for (var j=0;j<10;j++) {
+//				document.write("❤");
+//			}
+//			document.write("<br />");
+//		}
+		
+		
+		for (var i=0;i<5;i++) {
+//			输出十个心
+			for (var j=0;j<i;j++) {
+				document.write("❤");
+			}
+			document.write("<br />");
+		}
+	</script>
+		
+		
+		
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+.y {
+  background: linear-gradient(left, green, yellow);
+  background: -webket-linear-gradient(left, green, yellow);
+  background: -moz-linear-gradient(left, green, yellow);
+  background: -o-linear-gradient(left, green, yellow);
+  background: -ms-linear-gradient(left, green, yellow);
+}
+.hd {
+  background: linear-gradient(top, black, white);
+  background: -webket-linear-gradient(top, black, white);
+  background: -moz-linear-gradient(top, black, white);
+  background: -o-linear-gradient(top, black, white);
+  background: -ms-linear-gradient(top, black, white);
+}
+.houdun {
+  background: linear-gradient(left, purple, blue);
+  background: -webket-linear-gradient(left, purple, blue);
+  background: -moz-linear-gradient(left, purple, blue);
+  background: -o-linear-gradient(left, purple, blue);
+  background: -ms-linear-gradient(left, purple, blue);
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				background: #272822;
+				margin: 0 auto;
+				display: block;
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<canvas id="canvas" width="800" height="500"></canvas>
+	
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+//		获得绘画环境(相当于铺了一层画布)
+		var cv = canvas.getContext('2d');
+		cv.strokeStyle = 'yellow';
+		canvas.onmousedown = function(e){
+			var ev = window.event || e;
+//			获得鼠标位置
+			var mousex = ev.layerX || ev.offsetX;
+			var mousey = ev.layerY || ev.offsetY;
+//			设置起点
+			cv.moveTo(mousex,mousey);
+//			加鼠标移动事件
+			canvas.onmousemove = function(e){
+				var ev = window.event || e;
+				var newx = ev.layerX || ev.offsetX;
+				var newy = ev.layerY || ev.offsetY;
+				cv.lineTo(newx,newy);
+				cv.stroke();
+			}
+		}
+		
+//		鼠标抬起事件
+		canvas.onmouseup = function(){
+//			取消鼠标移动事件
+			canvas.onmousemove = null;
+		}
+	</script>
+		
+	</body>
+</html>

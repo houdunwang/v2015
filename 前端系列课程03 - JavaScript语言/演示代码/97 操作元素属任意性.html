@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="button" value="我是一只按钮" id="btn" />
+		<br /><br />
+		
+		<h1 id="title" class="bt" hd="houdun">后盾人 人人做后盾</h1>
+		
+		
+	<script type="text/javascript">
+		
+		var btn = document.getElementById("btn");
+		var title = document.getElementById("title");
+		
+//		元素.属性这种形式只能操作特定属性 ,比如id class href src等等
+		
+		btn.onclick = function(){
+//			获得元素任意属性
+//			var attr = title.getAttribute('hd');
+//			alert(attr);
+			
+//			设置元素任意属性
+//			title.setAttribute('class','wwwwwwwwwwww');
+			title.setAttribute('abc','wwwwwwwwwwww');
+		}
+		
+		
+//		作业:
+//		1/小松鼠效果(两种切换效果)
+//		2/写一个随机点菜的效果
+		
+		
+	</script>
+	</body>
+</html>

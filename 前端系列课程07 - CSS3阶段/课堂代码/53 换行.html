@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			ul{
+				overflow: hidden;
+				border: 2px solid purple;
+				width: 1100px;
+				height: 550px;
+				margin: 30px auto;
+				display: flex;
+				/*主轴上的排列方式*/
+				justify-content: space-between;
+				/*换行*/
+				/*如果子元素总宽度大于父级元素宽度,那么就一行能放多少就放多少,放不下的就被挤到下一行*/
+				/*flex-wrap: wrap-reverse;*/
+				flex-wrap: wrap;
+			}
+			ul li{
+				list-style: none;
+				width: 160px;
+				height: 100px;
+				border: 2px solid yellow;
+				background: dodgerblue;
+				text-align: center;
+				font-size: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<!--主轴和交叉轴永远是垂直的-->
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		
+		
+		
+	</body>
+</html>

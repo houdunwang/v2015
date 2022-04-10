@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		
+	<div id="hd">
+		<p>后盾人 人人做后盾0</p>
+		<p id="one">后盾人 人人做后盾1</p>
+		<span>1111111</span>
+		<p hd="houdunren" class='hd'>后盾人 人人做后盾2</p>
+		<p name='about'>后盾人 人人做后盾3</p>
+		<p class='hd'>后盾人 人人做后盾4 <span>123</span></p>
+		<p class='hd'>后盾人 人人做后盾5</p>
+		<p name='abc'>后盾人 人人做后盾6 <span>123</span></p>
+		<p name='abc'>后盾人 人人做后盾7</p>
+		<div>
+			<p>我们也是p标签</p>
+			<p>我们也是p标签</p>
+			<p>我们也是p标签</p>
+			<p></p>
+			<p></p>
+		</div>
+	</div>
+	
+	
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	
+<script type="text/javascript">
+	
+//	选择的是内容中包含 盾3 的p标签
+//	$("#hd p:contains(盾3)").css({'color':'blue','font-size':'25px'});
+
+
+//	选择#hd里空的p标签
+//	$("#hd p:empty").css({width:'300px',height:'50px',background:'blue'});
+
+//	选择的是#hd里非空的p标签
+//	$("#hd p:parent").css({width:'300px',height:'50px',background:'blue'});
+
+//	选择的是含有span标签的p标签
+//	$("#hd p:has(span)").css({'color':'blue','font-size':'25px'});
+
+//	选择有name属性的p标签
+//	$("#hd p[name]").css({'color':'blue','font-size':'25px'});
+
+//	选择的是#hd里name属性值等于abc的p标签
+//	$("#hd p[name=abc]").css({'color':'blue','font-size':'25px'});
+//	$("#hd p[hd=houdunren]").css({'color':'blue','font-size':'25px'});
+
+//	选择的是name属性值以a开头的p标签
+//	$("#hd p[name^=a]").css({'color':'blue','font-size':'25px'});
+	
+//	$("#hd p[name$=t]").css({'color':'blue','font-size':'25px'});
+
+//	选择的是name属性值中有b的p标签
+//	$("#hd p[name*=b]").css({'color':'blue','font-size':'25px'});
+
+//	选择的是#hd中有class属性并且hd属性以h开头的p标签
+	$("#hd p[class][hd^=h]").css({'color':'blue','font-size':'25px'});
+
+		
+
+	
+	
+</script>
+		
+		
+		
+		
+		
+		
+	</body>
+</html>

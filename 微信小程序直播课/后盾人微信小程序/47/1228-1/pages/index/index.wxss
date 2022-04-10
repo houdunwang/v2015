@@ -1,0 +1,7 @@
+.hd{
+  background: purple;
+  width: 50%;
+  height: 400rpx;
+  margin: 0 auto;
+  margin-top: 100rpx;
+}

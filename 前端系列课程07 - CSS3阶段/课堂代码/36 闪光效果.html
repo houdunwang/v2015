@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#hd{
+				width: 600px;
+				height: 360px;
+				margin: 100px auto;
+				overflow: hidden;
+				position: relative;
+			}
+			#hd img{
+				width: 100%;
+			}
+			#hd .flash{
+				width: 30px;
+				height: 360px;
+				background: -moz-linear-gradient(left,transparent,rgba(255,255,255,0.5),transparent);
+				position: absolute;
+				left: -135px;
+				/*left: 704px;*/
+				top: 0;
+				transform: skew(-30deg);
+				
+			}
+			#hd:hover .flash{
+				left: 704px;
+				transition: all 1s;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<div id="hd">
+			<img src="jinbi.jpg" alt="" />
+			<div class="flash"></div>
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,59 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "ae690045ff86137cf62d3c65e40d3785",
+    "packages": [
+        {
+            "name": "vaptcha/vaptcha-sdk",
+            "version": "v1.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/VAPTCHA/vaptcha-php-sdk.git",
+                "reference": "79a8042987bb1f69c771f9b520fb91813a973409"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/VAPTCHA/vaptcha-php-sdk/79a8042987bb1f69c771f9b520fb91813a973409.zip",
+                "reference": "79a8042987bb1f69c771f9b520fb91813a973409",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Vaptcha\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "vaptcha",
+                    "email": "vaptcha@wlinno.com"
+                }
+            ],
+            "description": "vaptcha sdk for php",
+            "keywords": [
+                "captcha",
+                "sdk",
+                "vaptcha"
+            ],
+            "time": "2018-04-08T09:47:48+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

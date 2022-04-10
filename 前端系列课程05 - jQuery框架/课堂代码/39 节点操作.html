@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				padding:40px
+			}
+			#hd{
+				width: 600px;
+				border: 2px solid blue;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<input type="button" value="点我啊" id="btn" />
+		<br /><br />
+		
+		<h1 id="title">后盾人 人人做后盾</h1>
+		<div id="hd">
+
+			<p>我们是p标签0</p>
+			<p>我们是p标签1</p>
+			<p>我们是p标签2</p>
+			<p>我们是p标签3</p>
+			<p>我们是p标签4</p>
+			<p>我们是p标签5</p>
+			<p>我们是p标签6</p>
+			<p>我们是p标签7</p>
+		</div>
+	
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$("#btn").click(function(){
+//			$("#hd p").wrap("<u class='abc'></u>");
+//			取消包裹
+//			$("#hd p").unwrap('u');
+
+//			$("#hd p").wrapAll("<u class='abc'></u>");
+//			$("#hd p").wrapInner("<u class='abc'></u>");
+
+//			替换
+			$("#hd p").eq(2).replaceWith($("#title"));
+//			$("#hd p").replaceWith($("#title"));
+//			$("#title").replaceAll($("#hd p"));
+		})
+		
+	</script>
+		
+	</body>
+</html>

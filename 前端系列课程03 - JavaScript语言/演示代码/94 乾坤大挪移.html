@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#x{
+				width: 400px;
+				height: 200px;
+				border: 5px solid dodgerblue;
+				margin-left: 30px;
+			}
+			#y{
+				width: 400px;
+				height: 200px;
+				border: 5px solid orangered;
+				margin-left: 30px;
+			}
+			#btn{
+				margin-left: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="x">
+			后盾人 人人做后盾 www.houdunren.com后盾人 人人做后盾 www.houdunren.com后盾人 人人做后盾 www.houdunren.com <img src="jinmao.jpg" width="100" />
+		</div>
+		<br /><br />
+		
+		<input type="button" value="乾坤大挪移" id="btn" />
+		
+		<br /><br />
+		<div id="y"></div>
+		
+		
+	<script type="text/javascript">
+		
+		var x = document.getElementById("x");
+		var y = document.getElementById("y");
+		var btn = document.getElementById("btn");
+		
+		btn.onclick = function(){
+//			获得x的内容
+//			var con = x.innerHTML;
+////			将内容设置给y
+//			y.innerHTML = con;
+
+			y.innerHTML = x.innerHTML;
+//			将x清空
+			x.innerHTML = '';
+		}
+		
+	</script>
+		
+	</body>
+</html>

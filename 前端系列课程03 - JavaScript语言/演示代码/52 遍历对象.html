@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			var auas = {
+				price:'8000元',
+				size:'15.6寸',
+				weight:'3kg',
+				color:'黑色',
+				game:function (){
+					alert('玩游戏')
+				},
+				chat:function(){
+					alert('聊天')
+				}
+			};
+			
+//			x表示当前遍历到的属性的属性名字字符串形式
+			for (x in auas) {
+				document.write(x+'=>'+auas[x]+'<br />');
+			}
+			
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=4eQQ1fZAP1iwK5YekxqTtEjKkAZstwH5"></script>
+    <title>google转百度</title>
+</head>
+<body>
+<div id="allmap"></div>
+</body>
+</html>
+<script type="text/javascript">
+    // 百度地图API功能
+    //谷歌坐标
+    var x = 116.32715863448607;
+    var y = 39.990912172420714;
+    var ggPoint = new BMap.Point(x,y);
+
+    //地图初始化
+    var bm = new BMap.Map("allmap");
+    bm.centerAndZoom(ggPoint, 15);
+    bm.addControl(new BMap.NavigationControl());
+
+    //添加谷歌marker和label
+    var markergg = new BMap.Marker(ggPoint);
+    bm.addOverlay(markergg); //添加谷歌marker
+    var labelgg = new BMap.Label("未转换的谷歌标注（错误）",{offset:new BMap.Size(20,-10)});
+    markergg.setLabel(labelgg); //添加谷歌label
+
+    //坐标转换完之后的回调函数
+    translateCallback = function (data){
+        console.log(data);
+        if(data.status === 0) {
+            var marker = new BMap.Marker(data.points[0]);
+            bm.addOverlay(marker);
+            var label = new BMap.Label("转换后的百度标注（正确）",{offset:new BMap.Size(20,-10)});
+            marker.setLabel(label); //添加百度label
+            bm.setCenter(data.points[0]);
+        }
+    }
+
+    setTimeout(function(){
+        var convertor = new BMap.Convertor();
+        var pointArr = [];
+        pointArr.push(ggPoint);
+        convertor.translate(pointArr, 3, 5, translateCallback)
+    }, 1000);
+</script>

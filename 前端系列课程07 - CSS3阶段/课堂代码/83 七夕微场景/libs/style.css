@@ -1,0 +1,239 @@
+html,
+body {
+	position: relative;
+	height: 100%;
+}
+
+
+/*自定义运动*/
+
+@-webkit-keyframes wchange {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 70%;
+  }
+}
+@keyframes wchange {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 70%;
+  }
+}
+.wchange {
+  -webkit-animation-name: wchange;
+  animation-name: wchange;
+}
+
+/*自定义运动结束*/
+
+body {
+	background: #eee;
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	color: #000;
+	margin: 0;
+	padding: 0;
+}
+
+
+/*音乐*/
+#mpic{
+	width: 45px;
+	height: 45px;
+	position: fixed;
+	z-index: 99;
+	right: 6%;
+	top: 3%;
+	animation: r 5s linear infinite;
+	-webkit-animation: r 5s linear infinite;
+	animation-play-state: paused;
+}
+@keyframes r{
+	from{
+		transform: rotate(0);
+	}
+	to{
+		transform: rotate(360deg);
+	}
+}
+@-webkit-keyframes r{
+	from{
+		-webkit-transform: rotate(0);
+	}
+	to{
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+
+/*音乐结束*/
+
+
+.swiper-container {
+	width: 100%;
+	height: 100%;
+}
+
+
+
+/*第一屏*/
+.swiper-slide.one{
+	background: url(../images/one6.png) no-repeat;
+	background-size: 100% 100%;
+	position: relative;
+}
+.swiper-slide.one .top{
+	width: 100%;
+	/*border: 1px solid blue;*/
+	margin-top: 20%;
+	position: relative;
+}
+.swiper-slide.one .top img{
+	width: 100%;
+}
+.swiper-slide.one .top span{
+	position: absolute;
+	font-size: 20px;
+	color: white;
+	font-weight: 700;
+}
+.swiper-slide.one .top span:nth-of-type(1){
+	left: 23%;
+	top: 38%;
+}
+.swiper-slide.one .top span:nth-of-type(2){
+	left: 33%;
+	top: 19%;
+}
+.swiper-slide.one .top span:nth-of-type(3){
+	left: 43%;
+	top: 8%;
+}
+.swiper-slide.one .top span:nth-of-type(4){
+	left: 53%;
+	top: 9%;
+}
+.swiper-slide.one .top span:nth-of-type(5){
+	left: 63%;
+	top: 19%;
+}
+.swiper-slide.one .top span:nth-of-type(6){
+	left: 72%;
+	top: 38%;
+}
+.swiper-slide.one .bot{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+}
+.swiper-slide.one .people{
+	width: 75%;
+	position: absolute;
+	bottom: 0;
+	left: 13%;
+}
+.swiper-slide.one .love{
+	position: absolute;
+	left: 5%;
+	top: 41%;
+	width: 26%;
+}
+.swiper-slide.one .love3{
+	position: absolute;
+	left: 30%;
+	top: 24%;
+	width: 75%;
+}
+
+/*第一屏结束*/
+
+
+/*第二屏*/
+.swiper-slide.two{
+	position: relative;
+	background: url(../images/twobg.png) no-repeat;
+	background-size: 100% 100%;
+}
+.swiper-slide.two .top{
+	position: relative;
+}
+.swiper-slide.two .top .bg{
+	width: 100%;
+}
+.swiper-slide.two .top .o{
+	position: absolute;
+	left: 10%;
+	top: 14%;
+	font-size: 19px;
+	color: white;
+	/*background: yellow;*/
+	white-space: nowrap;
+	width: 0;
+	overflow: hidden;
+}
+.swiper-slide.two .top .t{
+	position: absolute;
+	left: 10%;
+	top: 36%;
+	font-size: 19px;
+	color: white;
+	white-space: nowrap;
+	width: 0;
+	overflow: hidden;
+}
+.swiper-slide.two .top .bbt{
+	position: absolute;
+	right: 5%;
+	bottom: 20%;
+	width: 35%;
+}
+.swiper-slide.two .q1{
+	position: absolute;
+	left: 5%;
+	top: 35%;
+	width: 35%;
+}
+.swiper-slide.two .q2{
+	position: absolute;
+	right: -20%;
+	top: 70%;
+	width: 35%;
+}
+.swiper-slide.two .people{
+	width: 78%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+.swiper-slide.two .bjl{
+	width: 22%;
+	position: absolute;
+	bottom: 8%;
+	right: 5%;
+}
+.swiper-slide.two .love{
+	width: 25%;
+	position: absolute;
+	bottom: 15%;
+	right: 3%;
+}
+
+/*第二屏结束*/
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,59 @@
+.hdhover{
+  background: yellow;
+  color: blue;
+  
+}
+
+.a{
+  width: 100%;
+  height: 150rpx;
+  background:pink;
+}
+
+.b{
+  width: 100%;
+  height: 150rpx;
+  background:greenyellow;
+}
+
+
+.c{
+  width: 100%;
+  height: 150rpx;
+  background:blueviolet;
+}
+
+
+.d{
+  width: 100%;
+  height: 150rpx;
+  background:blue;
+}
+
+.e{
+  width: 100%;
+  height: 150rpx;
+  background:yellow;
+}
+.scrollv{
+  width: 100%;
+  height: 350rpx;
+  border: 1px solid green;
+}
+.img{
+  width: 300px;
+  height: 100px;
+  border: 1px solid green;
+}
+
+
+
+
+
+
+
+
+
+
+
+

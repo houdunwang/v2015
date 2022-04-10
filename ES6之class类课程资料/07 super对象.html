@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			class animal{
+//				类的构造函数
+				constructor(){
+					this.weight = '重量';
+					this.color = '颜色';
+				}
+				move(){
+					console.log('能动');
+				}
+			}
+			
+//			类的继承
+			class fish extends animal{
+				constructor(){
+					super();
+//					super当做对象的话,指向的是父类的原型(prototype)
+					this.sai = '鱼鳃';
+					this.lin = '鱼鳞片';
+					super.move();
+//					console.log(super.color);
+				}
+//				给子类添加特有方法
+				moveabout(){
+					console.log('能游动');
+				}
+			}
+			
+			var goldfish = new fish;
+			
+//			console.log(goldfish.sai);
+
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

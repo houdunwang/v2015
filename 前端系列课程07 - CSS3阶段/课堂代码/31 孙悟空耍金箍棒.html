@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#hd{
+				width: 800px;
+				height: 550px;
+				border: 5px solid mediumpurple;
+				margin: 50px auto;
+				background: url(sunwukong.jpg) no-repeat right 0px;
+				background-size: 500px auto;
+				position: relative;
+			}
+			#hd:hover .jgb{
+				transform: rotate(360deg);
+			}
+			.jgb{
+				width: 35px;
+				height: 300px;
+				border: 1px solid black;
+				position: absolute;
+				left: 305px;
+				top: 140px;
+				transition: all 3s linear;
+			}
+			.jgb li{
+				list-style: none;
+			}
+			.jgb li:nth-child(1){
+				height: 50px;
+				background: yellow;
+			}
+			.jgb li:nth-child(2){
+				height: 200px;
+				background: red;
+				text-align: center;
+				color: white;
+				font-size: 20px;
+				font-weight: 700;
+				padding-top: 20px;
+				box-sizing: border-box;
+			}
+			.jgb li:nth-child(3){
+				height: 50px;
+				background: yellow;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div id="hd">
+			<ul class="jgb">
+				<li></li>
+				<li>如意金箍棒</li>
+				<li></li>
+			</ul>
+		</div>
+		
+		
+	</body>
+</html>

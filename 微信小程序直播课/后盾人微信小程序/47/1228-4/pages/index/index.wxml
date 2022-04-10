@@ -1,0 +1,3 @@
+<view class="a" bind:tap="fooa" bind:touchstart="start" bind:touchend="end">后盾人</view>
+
+<text>你按下了{{difftime}}毫秒</text>

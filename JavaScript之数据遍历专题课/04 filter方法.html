@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+//			filter方法会挨个遍历数组中的数据,如果回调函数返回的值是true,就保留当前遍历到的数据,如果返回的是false,就不保留当前的数据
+
+			var arr = [342,24,205,76,8,54,12,135];
+			
+			let newarr = arr.filter(x=>{
+				return x>100;
+			})
+			
+			console.log(arr);
+			console.log(newarr);
+			
+			
+			
+		</script>
+		
+		
+	</head>
+	<body>
+	</body>
+</html>

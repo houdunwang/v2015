@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				background: #272822;
+				margin: 0 auto;
+				display: block;
+				position: relative;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<canvas id="canvas" width="800" height="500"></canvas>
+	
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+		
+//		获得绘画环境(相当于铺了一层画布)
+		var cv = canvas.getContext('2d');
+		cv.fillStyle = 'yellow';
+		
+		
+		cv.textAlign = 'center';
+		cv.textBaseline = 'bottom';
+		
+//		设置文字大小和字体
+		cv.font = '50px 黑体';
+		cv.fillText('后盾人 人人做后盾',300,150,600);
+		
+		
+		cv.lineWidth = 1
+		cv.strokeStyle = 'white';
+		cv.moveTo(0,150);
+		cv.lineTo(800,150);		
+		cv.stroke();
+		
+		cv.moveTo(300,0);
+		cv.lineTo(300,500);
+		cv.stroke();
+		
+		console.log('宽度',cv.measureText('后盾人').width);
+		
+		
+	</script>
+		
+	</body>
+</html>

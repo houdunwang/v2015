@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{CHARSET}">
+		<title></title>
+		<style type="text/css">
+			#hd{
+				width: 500px;
+				height: 300px;
+				background: dodgerblue;
+				margin: 30px auto;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="hd"></div>
+		
+	<script type="text/javascript">
+		
+		var hd = document.getElementById("hd");
+//		this指向的是触发事件的时候的事件源
+		hd.onclick = function(){
+//			hd.style.background = 'orangered';
+			this.style.background = 'orangered';
+		}
+	</script>
+	
+	</body>
+</html>

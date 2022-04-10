@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#news{
+				width: 800px;
+				margin: 30px auto;
+			}
+			p.desc{
+				line-height: 20px;
+				height: 80px;
+				overflow: hidden;
+			}
+			h3{
+				line-height: 30px;
+				height: 60px;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+	<div id="news" class="row">
+		
+		  <!--<div class="col-sm-4 col-md-4">
+		    <div class="thumbnail">
+		      <img src="..." />
+		      <div class="caption">
+		        <h3>Thumbnail label</h3>
+		        <p>...</p>
+		      </div>
+		    </div>
+		  </div>-->
+		
+	</div>
+		
+		
+		
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		
+//		页面已加载就请求ajax数据
+		$.ajax({
+			type:"post",
+			url:"02.php",
+			data:{'page':1},
+			success:function(d){
+				d = JSON.parse(d);
+				console.log(d);
+				d.forEach(function(x){
+					var newnews = '<div class="col-sm-4 col-md-4"><div class="thumbnail"><img src="'+x.imgUrl+'" /><div class="caption"><h3>'+x.title+'</h3><p class="desc">'+x.desc+'</p></div></div></div>';
+					$("#news").append(newnews);
+				})
+			}
+		});
+		
+		
+//		给window加滚动条事件
+		$(window).scroll(function(){
+//			内容总高度-滚动上去的高度-可视区域的高度
+			var bt = $(document.body).height()-$(document).scrollTop()-$(window).height();
+			document.title = bt;
+			
+			if (bt<200) {
+				$.ajax({
+					type:"post",
+					url:"02.php",
+					data:{'page':1},
+					success:function(d){
+						d = JSON.parse(d);
+						console.log(d);
+						d.forEach(function(x){
+							var newnews = '<div class="col-sm-4 col-md-4"><div class="thumbnail"><img src="'+x.imgUrl+'" /><div class="caption"><h3>'+x.title+'</h3><p class="desc">'+x.desc+'</p></div></div></div>';
+							$("#news").append(newnews);
+						})
+					}
+				});
+			}
+		})
+		
+		
+	</script>		
+		
+		
+		
+		
+	</body>
+</html>

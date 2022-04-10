@@ -1,0 +1,67 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+
+//头部
+#header{
+    width: 100vw;
+    height: 74/7.5vw;
+    background: #FF852A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+        width: 54/7.5vw;
+        margin-right: 10/7.5vw;
+    }
+    a{
+        display: block;
+        width: 650/7.5vw;
+        height: 50/7.5vw;
+        background: #FF4E22;
+        border-radius: 6/7.5vw;
+        font-size: 3.5vw;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i{
+            color: white;
+            font-size: 4vw;
+            margin-right: 8/7.5vw;
+        }
+    }
+}
+
+//头部结束
+
+
+//轮播图
+.swiper-container{
+    width: 100vw;
+    height: 237/7.5vw;
+    border-bottom: 1px solid blue;
+    .swiper-wrapper{
+        .swiper-slide{
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    .swiper-pagination-bullet{
+        background: white;
+        opacity: 0.3;
+    }
+    .swiper-pagination-bullet-active{
+        background: rgb(255, 80, 0);
+        opacity: 1;
+    }
+    
+}
+
+//轮播图结束

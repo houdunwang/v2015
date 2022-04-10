@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#jt{
+				position: absolute;
+				left: 500px;
+				top: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<img src="jiantou.png" id="jt" />
+		
+		
+		<script type="text/javascript">
+			
+			document.onmousemove = function(e){
+				var ev = window.event || e;
+//				获得鼠标位置
+				var mx = ev.clientX;
+				var my = ev.clientY;
+//				console.log(mx,my);
+//				计算正切值
+				var t = (my-300)/(mx-600);
+//				求正切值对应的角度
+				var d = Math.atan(t)*(180/Math.PI);
+				d = mx<600?d+180:d;
+				console.log(d);
+				document.getElementById("jt").style.transform = 'rotate('+d+'deg)';
+			}
+			
+		</script>
+		
+		
+		
+	</body>
+</html>

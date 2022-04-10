@@ -1,0 +1,23 @@
+.item{
+  width: 45%;
+  /* border: 1px solid blue; */
+  float: left;
+  margin-left: 3.3%;
+  margin-top: 30rpx;
+  
+}
+.itemimage{
+  width: 100%;
+  height: 227rpx;
+  float: left;
+}
+.itemtitle{
+  font-size: 22rpx;
+  float: left;
+  line-height: 40rpx;
+  white-space: nowrap;
+  width: 100%;
+  /* background: yellow; */
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

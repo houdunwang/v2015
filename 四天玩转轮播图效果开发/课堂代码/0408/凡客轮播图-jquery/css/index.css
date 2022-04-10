@@ -1,0 +1,53 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+#flash{
+	width: 1200px;
+	height: 535px;
+	border: 1px solid blue;
+	margin: 20px auto;
+	position: relative;
+}
+#flash img{
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+#flash ul{
+	position: absolute;
+	left: 568px;
+	bottom: 23px;
+}
+#flash ul li{
+	list-style: none;
+	width: 12px;
+	height: 12px;
+	background: #DDDDDD;
+	float: left;
+	border-radius: 50%;
+	margin-right: 8px;
+}
+#flash .icon-xiangzuo{
+	position: absolute;
+	left: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 40px;
+	color: #666;
+}
+#flash .icon-xiangzuo:hover{
+	color: red;
+}
+#flash .icon-you{
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 45px;
+	color: #666;
+}
+#flash .icon-you:hover{
+	color: red;
+}

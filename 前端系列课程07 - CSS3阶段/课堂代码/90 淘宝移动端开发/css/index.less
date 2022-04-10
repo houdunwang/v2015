@@ -1,0 +1,227 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+
+
+//头部
+#header{
+    width: 100vw;
+    height: 74/7.5vw;
+    background: #FF852A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+        width: 54/7.5vw;
+        margin-right: 10/7.5vw;
+    }
+    a{
+        display: block;
+        width: 650/7.5vw;
+        height: 50/7.5vw;
+        background: #FF4E22;
+        border-radius: 6/7.5vw;
+        font-size: 3.5vw;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i{
+            color: white;
+            font-size: 4vw;
+            margin-right: 8/7.5vw;
+        }
+    }
+}
+
+//头部结束
+
+//app广告
+#appad{
+    width: 100vw;
+    height: 140/7.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .close{
+        width: 30/7.5vw;
+        margin-left: 21/7.5vw;
+    }
+    .icon{
+        width: 102/7.5vw;
+        margin-left: 18/7.5vw;
+    }
+    div{
+        width: 398/7.5vw;
+        a:nth-child(1){
+            font-size: 4.2vw;
+            color: rgb(51, 51, 51);
+            display: block;
+            text-indent: 14/7.5vw;
+            margin-bottom: 14/7.5vw;
+        }
+        a:nth-child(2){
+            display: block;
+            font-size: 3vw;
+            color: rgb(51, 51, 51);
+            text-indent: 14/7.5vw;
+        }
+    }
+    >a{
+        width: 180/7.5vw;
+        height: 140/7.5vw;
+        background: linear-gradient(225deg, rgb(254, 86, 10) 3%, rgb(255, 153, 1) 100%);
+        display: block;
+        text-align: center;
+        line-height: 140/7.5vw;
+        font-size: 3.6vw;
+        color: white;
+    }
+}
+//app广告结束
+
+
+//轮播图
+.swiper-container{
+    width: 100vw;
+    height: 237/7.5vw;
+    border-bottom: 1px solid blue;
+    .swiper-wrapper{
+        .swiper-slide{
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    .swiper-pagination-bullet{
+        background: white;
+        opacity: 0.3;
+    }
+    .swiper-pagination-bullet-active{
+        background: rgb(255, 80, 0);
+        opacity: 1;
+    }
+    
+}
+
+//轮播图结束
+
+.cbg{
+//  border: 1px solid blue;
+    width: 100vw;
+    float: left;
+    margin-top: -20/7.5vw;
+    position: relative;
+    z-index: 999;
+}
+
+//十个图标
+.icons{
+    width: 100vw;
+    height: 142/7.5vw;
+//  border: 1px solid blue;
+    margin: 10/7.5vw 0;
+    li{
+        float: left;
+        width: 20%;
+        a:nth-child(1){
+            display: block;
+            width: 88/7.5vw;
+            height: 88/7.5vw;
+            display: block;
+            margin: 0 auto;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        a:nth-child(2){
+            color: rgb(102, 102, 102);
+            font-size: 3vw;
+            text-align: center;
+            display: block;
+            line-height: 5vw;
+            margin-top: 5/7.5vw;
+        }
+    }
+}
+//十个图标结束
+
+
+//淘宝头条
+#hot{
+    width: 100vw;
+    height: 120/7.5vw;
+    >img{
+        width: 70/7.5vw;
+        height: 70/7.5vw;
+        float: left;
+        margin-left: 25/7.5vw;
+        margin-top: 25/7.5vw;
+    }
+    .swiper-container2{
+        width: 635/7.5vw;
+        height: 120/7.5vw;
+        float: right;
+        overflow: hidden;
+        .swiper-wrapper{
+            .swiper-slide{
+                background: url(../images/hotbg.png) no-repeat top right;
+                background-size: auto 100%;
+                >div{
+                    width: 97%;
+                    height: 100%;
+                    background: url(../images/whitebg.png) no-repeat top right;
+                    background-size: auto 100%;
+                    display: flex;
+//                  align-items: center;
+//                  flex-wrap: wrap;
+                    flex-direction: column;
+                    justify-content: center;
+                    a{
+                        font-size: 3vw;
+                        display: block;
+                        color: rgb(51, 51, 51);
+                        width: 460/7.5vw;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        margin: 5/7.5vw 0;
+                        span{
+                            border: 1px solid rgb(230, 10, 31);
+                            color: rgb(230, 10, 31);
+                            border-radius: 7/7.5vw;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+//淘宝头条结束
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

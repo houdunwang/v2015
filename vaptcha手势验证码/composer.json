@@ -1,0 +1,10 @@
+{
+  "autoload":{
+    "psr-4":{
+      "app\\":"app/"
+    }
+  },
+  "require": {
+    "vaptcha/vaptcha-sdk": "^1.2"
+  }
+}

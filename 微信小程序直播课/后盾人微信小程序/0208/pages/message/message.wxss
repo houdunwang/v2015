@@ -1,0 +1,12 @@
+.box{
+  display: flex;
+  font-size: 70rpx;
+  background:white;
+  width:100%;
+  height:100%;
+  position:fixed; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}

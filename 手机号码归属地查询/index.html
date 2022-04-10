@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>手机号码归属地查询</title>
+    <link rel="stylesheet" href="static/layui/css/layui.css">
+</head>
+<body>
+<div class="layui-main">
+    <div style="padding: 20px 0 10px 20px">
+        <blockquote class="layui-elem-quote">
+                模板使用layui+layer <br>手机号码归属地使用阿里云市场提供 <br>后盾人：<a href="http://www.houdunren.com">www.houdunren.com</a>
+        </blockquote>
+        <form class="layui-form" action="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">手机号码</label>
+                <div class="layui-input-block">
+                    <input type="text" name="phone"   placeholder="请输入11位手机号码" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn"  type="button" lay-filter="formDemo">点击查询</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </form>
+        <table class="layui-table" lay-size="lg" style="display: none">
+            <colgroup>
+                <col width="150">
+                <col width="200">
+                <col>
+            </colgroup>
+            <thead>
+            <tr>
+                <th >手机号码</th>
+                <th >运营商</th>
+                <th >归属地</th>
+                <th >邮政编码</th>
+                <th >区号</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td id="phone"></td>
+                <td id="types"></td>
+                <td id="city"></td>
+                <td id="zip_code"></td>
+                <td id="city_code"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="static/layer/layer.js"></script>
+<script src="static/js/index.js"></script>
+</body>
+</html>

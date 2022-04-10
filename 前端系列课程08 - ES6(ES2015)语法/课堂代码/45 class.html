@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+//			function ren(){
+//				this.name = '名字';
+//				this.age = '年龄';
+//				this.sex = '性别';
+//				this.run = function(){
+//					console.log('能跑');
+//				}
+//			}
+//			
+//			var zhangsan = new ren();
+//			console.log(zhangsan.sex);
+//			zhangsan.run();
+			
+//			class用来声明一个类
+			class animal{
+//				构造函数
+//				在实例化类的时候,会自动执行构造函数
+//				需要定义给对象的属性,都要声明在constructor里面
+				constructor(){
+//					console.log('类被实例化了');
+					this.color = '颜色';
+					this.size = '尺寸';
+					this.weight = '重量';
+				}
+				
+//				类里面不同方法之间不需要用逗号隔开
+//				类里面的方法不需要用function来声明
+				move(){
+					console.log('能动');
+				}
+			}
+			
+//			let xiaohuang = new animal();
+//			如果不需要传参,实例化的时候可以不用加括号
+//			let xiaohuang = new animal;
+			
+			let xiaohuang = new animal;
+			console.log(xiaohuang.color);
+			xiaohuang.move();
+			
+			
+		</script>
+		
+		
+	</body>
+</html>

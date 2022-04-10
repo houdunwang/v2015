@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				background: #272822;
+				display: block;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<canvas id="canvas" width="800" height="500"></canvas>
+		
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+//		获得绘画环境
+		var cv = canvas.getContext('2d');
+		
+		cv.moveTo(150,200);
+		cv.arc(150,200,100,-45*Math.PI/180,45*Math.PI/180,true);
+		
+		
+		cv.fillStyle = 'yellow';
+		cv.fill();
+		cv.closePath();
+		
+		
+		
+		cv.arc(300,200,20,0,360*Math.PI/180);
+		cv.fill();
+		cv.closePath();	
+	
+		cv.arc(400,200,20,0,360*Math.PI/180);
+		cv.fill();
+		cv.closePath();	
+		
+		cv.arc(500,200,20,0,360*Math.PI/180);
+		cv.fill();
+		cv.closePath();	
+		
+		
+	</script>
+		
+		
+		
+	</body>
+</html>

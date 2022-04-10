@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#hd{
+				width: 500px;
+				height: 300px;
+				background: mediumpurple;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<input type="button" id="btn" value="点我啊" />
+		<br /><br />
+		
+		<div id="hd"></div>
+		
+	
+		
+<script type="text/javascript">
+	var btn = document.getElementById("btn");
+	var hd = document.getElementById("hd");
+	
+	btn.onclick = function(){
+//				alert(hd.style.width);
+//				if (document.all) {//IE
+//					var w = hd.currentStyle.width;
+//				}else{//非IE
+//					var w = getComputedStyle(hd,null).width;
+//				}
+	
+		var w = getComputedStyle(hd,null).width || hd.currentStyle.width;
+		
+		alert(w);
+	}
+</script>
+		
+		
+		
+	</body>
+</html>

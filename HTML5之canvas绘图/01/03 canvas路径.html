@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			canvas{
+				background: #272822;
+			}
+		</style>
+	</head>
+	<body>
+		
+	<!--canvas标签的尺寸不能用css来定义-->
+	
+	<canvas id="canvas" width="950" height="550"></canvas>
+	
+	<script type="text/javascript">
+		
+//		获得画板
+		var canvas = document.getElementById("canvas");
+//		获得绘画环境（相当于铺了一层画布）
+		var cv = canvas.getContext('2d');
+		
+//		开启路径
+		cv.beginPath();
+//		设置起点
+		cv.moveTo(20,20);
+//		指定路径的一个终点
+		cv.lineTo(150,300);
+		cv.lineTo(280,20);
+//		关闭路径(关闭路径后，会将路径最后一个点和第一个点用直线连接起来)
+		cv.closePath();
+		
+		
+		
+		cv.strokeStyle = 'yellow';
+		cv.lineWidth = 5;
+//		绘制出来路径的线条
+		cv.stroke();
+		
+		cv.fillStyle = 'pink';
+//		填充路径
+		cv.fill();
+		
+		
+		
+		
+		
+	</script>
+		
+	</body>
+</html>

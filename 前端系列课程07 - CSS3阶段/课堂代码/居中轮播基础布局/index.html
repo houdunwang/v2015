@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>常用PC端banner-Swiper</title>
+		<link rel="stylesheet" href="css/swiper.min.css">
+		<link rel="stylesheet" type="text/css" href="css/s.css"/>
+	</head>
+
+	<body>
+		<!-- Swiper -->
+		<section class="pc-banner">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide swiper-slide-center none-effect">
+						<a href="#"><img src="images/top_hero_conc_2017.jpg"></a>
+					</div>
+					<div class="swiper-slide">
+						<a href="#"><img src="images/top_hero_cs_2017.jpg"></a>
+					</div>
+					<div class="swiper-slide">
+						<a href="#"><img src="images/top_hero_cw_im17.jpg"></a>
+					</div>
+					<div class="swiper-slide">
+						<a href="#"><img src="images/top_hero_hakko.jpg"></a>
+					</div>
+					<div class="swiper-slide">
+						<a href="#"><img src="images/top_hero_karadacalpis_im02.jpg"></a>
+					</div>
+				</div>
+
+			</div>
+			<div class="swiper-pagination"></div>
+			<div class="button">
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+			</div>
+		</section>
+		<!-- Swiper JS -->
+		<script src="js/swiper.min.js"></script>
+
+		<!-- Initialize Swiper -->
+		<script>
+
+				var swiper = new Swiper('.swiper-container', {
+					autoplay: 3000,
+					
+					pagination: '.swiper-pagination',
+					prevButton: '.swiper-button-prev',
+					nextButton: '.swiper-button-next',
+					
+				});
+
+		</script>
+	</body>
+
+</html>

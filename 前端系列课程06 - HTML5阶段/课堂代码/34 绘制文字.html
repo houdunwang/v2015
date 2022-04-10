@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				background: #272822;
+				margin: 0 auto;
+				display: block;
+				position: relative;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<canvas id="canvas" width="800" height="500"></canvas>
+	
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+		
+//		获得绘画环境(相当于铺了一层画布)
+		var cv = canvas.getContext('2d');
+		cv.fillStyle = 'yellow';
+		
+//		设置文字大小和字体
+		cv.font = '50px 黑体';
+		cv.fillText('后盾人 人人做后盾',100,100,600);
+		
+		cv.strokeStyle = 'yellow';
+		cv.strokeText('后盾人 人人做后盾',200,220);
+		
+		
+	</script>
+		
+	</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#hd{
+				width: 70%;
+				margin: 50px auto;
+
+			}
+			.table{
+				margin-top: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="hd">
+			
+			<form class="form-inline">
+			  
+			  <div class="form-group">
+			    <input type="text" class="form-control" id="cid" placeholder="请输入班级号">
+			  </div>
+			  <button type="button" class="btn btn-success chaxun">查询班级信息</button>
+			</form>
+			
+			
+			<table class="table">
+				
+				<tr>
+					<th>姓名</th>
+					<th>年龄</th>
+					<th>性别</th>
+					<th>家庭住址</th>
+				</tr>
+				
+			</table>
+			
+			
+		</div>
+		
+		
+		
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		
+//		给按钮加单击事件
+		$(".chaxun").click(function(){
+			$.ajax({
+				type:"post",
+				url:"01.php",
+				data:{'cid':$('#cid').val()},
+				success:function(d){
+					d = JSON.parse(d);
+					console.log(d);
+					d.forEach(function(x){
+//						组合新的tr标签
+						var newtr = '<tr><td>'+x.name+'</td><td>'+x.age+'</td><td>'+x.sex+'</td><td>'+x.address+'</td></tr>';
+						$(".table").append(newtr);
+					})
+				}
+			});
+		})
+		
+		
+	</script>
+		
+	</body>
+</html>

@@ -1,0 +1,401 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+body{
+    padding-bottom: 3000px;
+}
+
+//顶部
+#top{
+    width: 10rem;
+    height: 100/75rem;
+    background: #232323;
+
+    .left{
+        float: left;
+        width: 510/75rem;
+        height: 100/75rem;
+//      border-right: 2px solid yellow;
+        display: flex;
+        align-items: center;
+        .close{
+            width: 34/75rem;
+            height: 34/75rem;
+            margin-left: 17/75rem;
+            margin-right: 36/75rem;
+        }
+        .appicon{
+            width: 70/75rem;
+            height: 70/75rem;
+            margin-right: 18/75rem;
+        }
+        .openapp{
+            width: 280/75rem;
+            height: 70/75rem;
+//          border: 1px solid yellow;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            p:nth-child(1){
+                color: white;
+            }
+            p:nth-child(2){
+                color: #999;
+            }
+        }
+    }
+//  右边
+    a.right{
+        float: left;
+        display: block;
+        width: 239/75rem;
+        height: 100/75rem;
+        background: #CD2525;
+        color: white;
+        text-align: center;
+        line-height: 100/75rem;
+    }
+//右边结束
+}
+//顶部结束
+
+
+//搜索区域
+#search{
+    position: fixed;
+    z-index: 999;
+    width:10rem;
+    height: 100/75rem;
+//  background: #DE181B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .bgblack{
+        width:10rem;
+        height: 100/75rem;
+        background: linear-gradient(black,transparent);
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    
+    .bgred{
+        width:10rem;
+        height: 100/75rem;
+        background: #DE181B;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+    }
+    
+    .left{
+        position: relative;
+        width: 640/75rem;
+        height: 60/75rem;
+        background: white;
+        border-radius: 30/75rem;
+        display: flex;
+        align-items: center;
+        img:nth-child(1){
+            width: 33/75rem;
+            height: 25/75rem;
+            margin-left: 17/75rem;
+            margin-right: 16/75rem;
+        }
+        img:nth-child(2){
+            width: 24/75rem;
+            height: 24/75rem;
+        }
+        p{
+            color: #666;
+            margin-left: 14/75rem;
+        }
+    }
+    a.right{
+        color: white;
+        margin-left: 18/75rem;
+        position: relative;
+    }
+}
+//搜索区域结束
+
+
+//轮播图
+#flash{
+    width: 10rem;
+    height: 340/75rem;
+    background: yellow;
+    .swiper-container{
+        width: 100%;
+        height: 100%;
+        .swiper-wrapper{
+            .swiper-slide{
+                img{
+                    width: 10rem;
+                    height: 340/75rem;
+                }
+            }
+        }
+    }
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+    bottom: 40/75rem;
+}
+.swiper-pagination-bullet{
+    width: 15/75rem;
+    height: 15/75rem;
+}
+//轮播图结束
+
+
+
+
+//9.9折广告图
+#ad99{
+    display: block;
+    width: 10rem;
+    border-radius: 30/75rem;
+    overflow: hidden;
+    margin-top: -30/75rem;
+    position: relative;
+    z-index: 1;
+    img{
+        width: 100%;
+    }
+}
+//9.9折广告图结束
+
+
+//分类图标
+#classify{
+    width: 10rem;
+//   border: 1px solid red;
+     display: flex;
+    flex-wrap: wrap;
+    margin-top: 15/75rem;
+    >a{
+        display: block;
+        width: 20%;
+//      border: 1px solid blue;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 22/75rem;
+        img{
+            width: 80/75rem;
+            height: 80/75rem;
+        }
+        span{
+            margin-top: 12/75rem;
+            color: #686868;
+        }
+    }
+}
+//分类图标结束
+
+.daily{
+    display: block;
+    width: 10rem;
+//  border: 1px solid blue;
+    img{
+        width: 100%;
+    }
+}
+
+
+
+//每日快报
+#newsdaily{
+    width: 10rem;
+    height: 75/75rem;
+    background: #F6F6F6;
+    .center{
+        width: 718/75rem;
+        height: 58/75rem;
+        background: white;
+        margin: 0 auto;
+        border-radius: 10/75rem;
+        display: flex;
+        align-items: center;
+        img{
+            width: 147/75rem;
+//          height: 32/75rem;
+            margin-left: 16/75rem;
+        }
+        a.title{
+            color: #181818;
+            margin-left: 12/75rem;
+            width: 475/75rem;
+            display: block;
+            span{
+                color: #f23030;
+                margin-right: 18/75rem;
+            }
+        }
+        div{
+            width: 1px;
+            height: 32/75rem;
+            background: #ECECEC;
+        }
+        a.more{
+            color: #181818;
+            margin-left: 8/75rem;
+        }
+    }
+}
+//每日快报结束
+
+
+
+
+
+[data-dpr="2"]{
+    #top{
+        .left{
+            .openapp{
+                p:nth-child(1){
+                    font-size: 26px;
+                }
+                p:nth-child(2){
+                    font-size: 26px;
+                }
+            }
+        }
+        a.right{
+            font-size: 30px;
+        }
+    }
+    
+    #search{
+        .left{
+            p{
+                font-size: 26px;
+            }
+        }
+        a.right{
+            font-size: 26px;
+        }   
+    }
+    #classify{
+        >a{
+            span{
+                font-size: 24px;
+            }
+        }
+    }
+    #newsdaily{
+        .center{
+            a.title{
+                font-size: 26px;
+            }
+            a.more{
+                font-size: 26px;
+            }
+        }
+    }
+}
+
+
+
+
+
+[data-dpr="3"]{
+    #top{
+        .left{
+            .openapp{
+                p:nth-child(1){
+                    font-size: 39px;
+                }
+                p:nth-child(2){
+                    font-size: 39px;
+                }
+            }
+        }
+        a.right{
+            font-size: 45px;
+        }
+    }
+    
+    #search{
+        .left{
+            p{
+                font-size: 39px;
+            }
+        }
+        a.right{
+            font-size: 39px;
+        }   
+    }
+    #classify{
+        >a{
+            span{
+                font-size: 36px;
+            }
+        }
+    }
+    #newsdaily{
+        .center{
+            a.title{
+                font-size: 39px;
+            }
+            a.more{
+                font-size: 39px;
+            }
+        }
+    }
+}
+
+
+
+
+
+[data-dpr="4"]{
+    #top{
+        .left{
+            .openapp{
+                p:nth-child(1){
+                    font-size: 52px;
+                }
+                p:nth-child(2){
+                    font-size: 52px;
+                }
+            }
+        }
+        a.right{
+            font-size: 60px;
+        }
+    }
+    
+    #search{
+        .left{
+            p{
+                font-size: 52px;
+            }
+        }
+        a.right{
+            font-size: 52px;
+        }   
+    }
+    #classify{
+        >a{
+            span{
+                font-size: 48px;
+            }
+        }
+    }
+    #newsdaily{
+        .center{
+            a.title{
+                font-size: 52px;
+            }
+            a.more{
+                font-size: 52px;
+            }
+        }
+    }
+}

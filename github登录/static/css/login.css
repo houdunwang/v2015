@@ -1,0 +1,52 @@
+h1.big-title{
+    font-size: 35px;
+    font-weight: 700;
+    color: #383838;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+form{
+    width: 340px;
+    display: block;
+    margin: 0 auto;
+}
+form input, form button{
+    font-size: 16px !important;
+}
+.remind{
+    text-align: center;
+    font-size: 14px;
+    line-height: 2em;
+    color: #A6A6A6;
+    margin-top: 20px;
+}
+.other,.regqq{
+    text-align: center;
+}
+.other .regline{
+    width: 340px;
+    margin: 0 auto;
+    border-top: 1px solid #ccc;
+    height: 30px;
+    margin-top: 50px;
+}
+.other .regzi {
+    background: #fff;
+    margin: 0 auto;
+    width: 100px;
+    margin-top: -42px;
+}
+.regqq .regbian {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin: 10px auto 0;
+}
+
+.regqq .regbian a img{
+    width: 36px;
+    height: 36px;
+    opacity: .6;
+}

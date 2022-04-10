@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="fk.css"/>
+	</head>
+	<body>
+		
+		
+		<div id="fk">
+			<img src="images/1.jpg" style="display: block;" />
+			<img src="images/2.jpg" />
+			<img src="images/3.jpg" />
+			<img src="images/4.jpg" />
+			<img src="images/5.jpg" />
+			<img src="images/6.jpg" />
+			
+			<ul>
+				<li style="background: #A10000;"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		
+<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	
+	var c = 0;
+	
+//	定时器调用的函数
+	function autorun(){
+		c++;
+		c = c==6?0:c;
+//		让c号图片显示,兄弟图片隐藏
+		$("#fk img").eq(c).stop().fadeIn(200)
+		.siblings('img').stop().fadeOut(200);
+//		让c号li变红,兄弟li变灰
+		$("#fk ul li").eq(c).css('background','#A10000')
+		.siblings('li').css("background",'#DDDDDD');
+	}
+	
+	var timer = setInterval(autorun,1000);
+	
+	
+//	如果使用jquery,
+//	移入事件建议写成mouseenter
+//	移出事件建议写成mouseleave
+	
+	$("#fk").mouseenter(function(){
+//		清理定时器
+		clearInterval(timer);
+	})
+	
+	$("#fk").mouseleave(function(){
+		timer = setInterval(autorun,1000);
+	})
+	
+//	给小圆点加鼠标移入事件
+	$("#fk ul li").mouseenter(function(){
+		var jqthis = $(this);
+		t = setTimeout(function(){
+	//		获得移入的li的序号
+			c = jqthis.index();
+	//		让c号图片显示,兄弟图片隐藏
+			$("#fk img").eq(c).stop().fadeIn(200)
+			.siblings('img').stop().fadeOut(200);
+	//		让c号li变红,兄弟li变灰
+			$("#fk ul li").eq(c).css('background','#A10000')
+			.siblings('li').css("background",'#DDDDDD');		
+		},200)
+
+	})
+	
+	
+	$("#fk ul li").mouseleave(function(){
+		clearTimeout(t);
+	})
+	
+	
+	
+</script>
+		
+	</body>
+</html>

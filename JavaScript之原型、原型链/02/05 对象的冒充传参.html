@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+//			父级构造函数
+//			动物构造函数
+			function animal(w,c,s){
+				this.weight = w;
+				this.color = c;
+				this.size = s;
+			}
+			
+//			鱼类的构造函数
+//			子级构造函数
+			function fish(w,c,s){
+//				call方法传参的时候,将参数在第二个位置开始依次传入即可
+//				call方法只能继承非原型区域prototype的属性和方法
+				window.animal.call(this,w,c,s);
+			}
+			
+			var shayu = new fish('2000斤','黑色','15米');
+			console.log(shayu.color);
+
+			
+			
+		</script>
+		
+	</body>
+</html>
+
+
+
+
+
+

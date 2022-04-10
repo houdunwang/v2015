@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#hd{
+				width: 500px;
+				height: 300px;
+				background: dodgerblue;
+				margin: 10px auto;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="hd"></div>
+	
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//		绑定一次性事件
+		$("#hd").one('mouseover',function(){
+			alert(123);
+		})
+		
+	</script>
+		
+	</body>
+</html>

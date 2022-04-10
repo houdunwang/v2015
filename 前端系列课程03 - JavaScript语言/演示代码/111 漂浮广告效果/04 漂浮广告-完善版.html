@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#hd{
+				width: 300px;
+				height: 200px;
+				background: url(images/hd.jpg) no-repeat;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+			}
+			#close{
+				float: right;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="hd">
+			<img src="images/close.jpg" id="close" />
+		</div>
+		
+		
+		
+<script type="text/javascript">
+	
+	var hd = document.getElementById("hd");
+	var close = document.getElementById("close");
+	
+//	计算最大能到达的left和top值
+	var max_left = document.documentElement.clientWidth-hd.offsetWidth;
+	var max_top = document.documentElement.clientHeight-hd.offsetHeight;
+	var t=2,l=2;
+	
+	
+//	定时器调用的函数
+	function autorun(){
+//		获得元素旧的left和top值
+		var old_left = hd.offsetLeft;
+		var old_top = hd.offsetTop;
+//		计算新的left和top值
+		var new_left = old_left+l;
+		var new_top = old_top+t;
+		if (new_left>max_left) {
+			new_left = max_left;
+		}
+		if (new_top>max_top) {
+			new_top = max_top;
+		}
+		if (new_top<0) {
+			new_top = 0;
+		}
+		if (new_left<0) {
+			new_left=0;
+		}
+//		将新值赋值回去
+		hd.style.left = new_left+'px';
+		hd.style.top = new_top+'px';
+		
+		if (new_top==max_top || new_top==0) {
+			t = -1*t;
+		}
+		
+		if (new_left==max_left || new_left==0) {
+			l = -1*l;
+		}
+		
+	}
+	
+	var timer = setInterval(autorun,10);
+	
+	
+//	窗体事件
+	window.onresize = function(){
+//		重新计算运动范围
+		max_left = document.documentElement.clientWidth-hd.offsetWidth;
+		max_top = document.documentElement.clientHeight-hd.offsetHeight;
+//		让广告回到初始位置
+		hd.style.left = 0;
+		hd.style.top = 0;
+		t=2;
+		l=2;
+	}
+	
+	
+//	鼠标移入事件
+	hd.onmouseover = function(){
+//		清理定时器
+		clearInterval(timer);
+	}
+	
+//	鼠标移出事件
+	hd.onmouseout = function(){
+		timer = setInterval(autorun,10);
+	}
+	
+//	关闭效果
+	close.onclick = function(){
+		hd.style.display = 'none';
+	}
+	
+	
+</script>
+		
+		
+	</body>
+</html>

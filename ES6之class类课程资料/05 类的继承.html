@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			class animal{
+//				类的构造函数
+				constructor(){
+					this.weight = '重量';
+					this.color = '颜色';
+				}
+
+				move(){
+					console.log('能动');
+				}
+			}
+			
+			
+//			类的继承
+			class fish extends animal{
+				constructor(){
+//					如果子类要用this关键字来指定属性,就必须在constructor方法里先执行super方法
+//					super()方法代表的是父类的constructor构造函数
+//					必须先执行super()方法,再使用this关键字
+					super();
+					this.sai = '鱼鳃';
+					this.lin = '鱼鳞片';
+				}
+//				给子类添加特有方法
+				moveabout(){
+					console.log('能游动');
+				}
+			}
+			
+			var goldfish = new fish;
+			
+			console.log(goldfish.sai);
+//			goldfish.moveabout();
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

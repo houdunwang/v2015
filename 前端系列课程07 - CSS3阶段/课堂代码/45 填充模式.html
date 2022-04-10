@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#hd{
+				width: 300px;
+				height: 200px;
+				background: mediumpurple;
+				margin-top: 200px;
+				/*animation: hd 2s 1s forwards;*/
+				/*backwards 在延迟期间元素会保持运动的初始状态*/
+				/*animation: hd 2s 1s backwards;*/
+				/*both表示forwards和backwards同时存在*/
+				animation: hd 2s 1s both;
+				/*animation-fill-mode: forwards;*/
+			}
+			
+			@keyframes hd{
+				from{
+					width: 500px;
+				}
+				to{
+					width: 1000px;
+				}
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div id="hd"></div>
+		
+		
+	</body>
+</html>

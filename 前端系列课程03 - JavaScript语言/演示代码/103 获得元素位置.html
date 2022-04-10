@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#x{
+				width: 600px;
+				height: 500px;
+				border: solid 5px mediumpurple;
+				margin: 30px auto;
+			}
+			#y{
+				width: 400px;
+				height: 200px;
+				background: dodgerblue;
+				margin: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<div id="x">
+			<div id="y"></div>
+		</div>
+		
+		
+	<script type="text/javascript">
+		
+//		如果是没有定位的元素,offsetLet和offsetTop获得的是元素距离body左侧和顶部的距离
+		
+		var y = document.getElementById("y");
+		
+//		console.log(y.offsetLeft);
+		console.log(y.offsetTop);
+		
+	</script>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+			var x = {
+				a:1,
+				b:2,
+				c:3,
+			}
+			var y = x;
+			var z = {
+				a:x.a,
+				b:x.b,
+				c:x.c,
+			}
+			x.a = 11;
+			y.b = 22;
+			z.c = 33;
+			
+			console.log(x.a);//11
+			console.log(x.b);//22
+			console.log(x.c);//3
+			console.log(y.a);//11
+			console.log(y.b);//22
+			console.log(y.c);//3
+			console.log(z.a);//1
+			console.log(z.b);//2
+			console.log(z.c);//33
+		</script>
+		
+		
+	</body>
+</html>

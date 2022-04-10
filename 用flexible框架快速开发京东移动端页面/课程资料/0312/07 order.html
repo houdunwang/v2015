@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#hd{
+				width: 80%;
+				height: 500px;
+				border: 2px solid orange;
+				margin: 10px auto;
+				/*将#hd变为弹性盒模型*/
+				/*子元素在弹性盒模型中,默认沿着主轴排列*/
+				display: flex;
+			}
+			#hd div{
+				width:100px;
+				height:150px;
+				background: dodgerblue;
+				color: white;
+				line-height: 150px;
+				text-align: center;
+				font-size: 35px;
+				font-weight: 700;
+				border: 1px solid purple;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<div id="hd">
+			<div>01</div>
+			<div style="order:5;">02</div>
+			<div style="order:3;">03</div>
+			<div>04</div>
+			<div>05</div>
+			<div>06</div>
+			<div>07</div>
+		</div>
+		
+		
+		
+		
+		
+	</body>
+</html>

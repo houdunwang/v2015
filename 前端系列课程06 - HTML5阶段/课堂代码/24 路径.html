@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				background: #272822;
+				margin: 0 auto;
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<canvas id="canvas" width="800" height="500"></canvas>
+	
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+//		获得绘画环境(相当于铺了一层画布)
+		var cv = canvas.getContext('2d');
+		
+//		开启路径
+		cv.beginPath();
+//		指定路径起点
+		cv.moveTo(30,30);
+//		指定终点
+		cv.lineTo(160,300);
+		cv.lineTo(290,30);
+		cv.lineTo(420,300);
+		cv.lineTo(550,30);
+		
+		cv.strokeStyle = 'yellow';
+		cv.lineWidth = 5;
+//		绘制路径
+		cv.stroke();
+		
+		
+		
+	</script>
+		
+	</body>
+</html>

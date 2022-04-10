@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+//			类:有相同或相似属性的对象的抽象
+//			类是用来实例化(创建)对象的
+//			对象是通过类来创建的 
+			
+//			构造函数
+			function ren(){
+				this.name = '名字';
+				this.height = '身高';
+				this.sex = '性别';
+				this.age = '年龄';
+				this.eat = function(){
+					alert('会吃饭');
+				}
+			}
+			
+//			通过构造函数创建对象
+			var yadang = new ren();
+			yadang.name = '亚当';
+			yadang.sex = '男孩';
+			console.log(yadang.name,yadang.sex);
+			
+		</script>
+		
+	</head>
+	<body>
+	</body>
+</html>

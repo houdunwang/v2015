@@ -1,0 +1,26 @@
+<!-- wxs中的模块是用来定义各种功能的，每个功能是一个单独的模块，互相独立，互不干涉 -->
+
+<!-- 模块是完全封闭的，跟外界没有关系 -->
+<wxs module="hd">
+
+var houdun = '后盾人';
+var foo = function(){
+  console.log('后盾人，人人做后盾！');
+}
+
+module.exports = {
+  h:houdun,
+  f:foo
+}
+
+
+</wxs>
+
+<!-- 调用hd模块的数据 -->
+<text>{{hd.h}}</text>
+<text>{{hd.f()}}</text>
+
+
+
+
+

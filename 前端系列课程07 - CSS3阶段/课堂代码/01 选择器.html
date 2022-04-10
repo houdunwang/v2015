@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				padding: 0px 200px;
+			}
+			/*选择的是#hd里儿子辈的p标签*/
+			/*#hd>p{
+				color: blue;
+				font-size: 18px;
+			}*/
+			/*选择的是紧邻在#one后面的一个p标签*/
+			/*#one+p{
+				color: blue;
+				font-size: 18px;
+			}*/
+			
+			/*选择的是#one后面所有同级p标签*/
+			/*#one~p{
+				color: blue;
+				font-size: 18px;
+			}*/
+			
+			/*#hd p[name]{
+				color: blue;
+				font-size: 18px;
+			}*/
+			
+			/*选择的是name属性值以a开头的*/
+			/*#hd p[name^=a]{
+				color: blue;
+				font-size: 18px;
+			}*/
+			
+			/*#hd p[name$=t]{
+				color: blue;
+				font-size: 18px;
+			}*/
+			
+			/*#hd p[name=hd]{
+				color: blue;
+				font-size: 18px;
+			}*/
+			
+			#hd p[name*=o]{
+				color: blue;
+				font-size: 18px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="hd">
+			<p name='hd'>后盾人 人人做后盾0</p>
+			<p id="one">后盾人 人人做后盾1</p>
+			<p>后盾人 人人做后盾2</p>
+			<p name='abc'>后盾人 人人做后盾3</p>
+			<p>后盾人 人人做后盾4</p>
+			<p name='about'>后盾人 人人做后盾5</p>
+			<p>后盾人 人人做后盾6</p>
+			<p>后盾人 人人做后盾7</p>
+			<div id="">
+				<p>我们也是p标签</p>
+				<p>我们也是p标签</p>
+				<p>我们也是p标签</p>
+			</div>
+		</div>
+		
+		
+	</body>
+</html>

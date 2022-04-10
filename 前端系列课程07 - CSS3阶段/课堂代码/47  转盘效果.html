@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.zhuanpan{
+				width: 400px;
+				height: 400px;
+				display: block;
+				margin: 130px auto;
+				animation: z 5s linear infinite;
+			}
+			.zhuanpan:hover{
+				animation-play-state: paused;
+			}
+			@keyframes z{
+				from{
+					transform: rotate(0);
+				}
+				to{
+					transform: rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		
+		<img src="zhuanpan.jpg" class="zhuanpan" />
+		
+		
+	</body>
+</html>

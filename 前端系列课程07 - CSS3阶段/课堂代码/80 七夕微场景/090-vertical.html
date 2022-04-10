@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="libs/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="libs/animate.min.css"/>
+	<link rel="stylesheet" type="text/css" href="libs/style.css"/>
+	
+	
+</head>
+<body>
+  <!-- Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+    	
+      
+      <!--第二屏-->
+      <div class="swiper-slide two">
+				<div class="top">
+					<img src="images/two4.png" class="bg ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1.5s" swiper-animate-delay="0.1s" />
+					<p class="o ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay="1.3s">“遇见你，</p>
+					<p class="t ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay="2s">然后遇见了自己！”</p>
+					<img src="images/two3.png" class="bbt ani" swiper-animate-effect="bounceIn" swiper-animate-duration="1.5s" swiper-animate-delay="2.2s" />
+				</div>      	
+      	
+      	<img src="images/two5.png" class="q1 ani"  />
+      	<img src="images/two5.png" class="q2 ani" />
+      	<img src="images/two6.png" class="people ani"  swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.5s" swiper-animate-delay="0.2s" />
+      	<img src="images/two1.png" class="bjl ani"  swiper-animate-effect="zoomIn" swiper-animate-duration="1s" swiper-animate-delay="2s" />
+      	<img src="images/two2.png" class="love ani" swiper-animate-effect="rotateIn" swiper-animate-duration="1s" swiper-animate-delay="2.7s" />
+      	
+      	
+      	
+      </div>
+      <!--第二屏结束-->
+      
+      
+      <!--第一屏-->
+      <div class="swiper-slide one">
+      	<div class="top">
+      		<img src="images/one5.png" class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.6s" swiper-animate-delay="2.9s" />
+      		<span class="ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.6s" swiper-animate-delay="3.1s">七</span>
+      		<span class="ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.6s" swiper-animate-delay="3.3s">夕</span>
+      		<span class="ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.6s" swiper-animate-delay="3.5s">最</span>
+      		<span class="ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.6s" swiper-animate-delay="3.7s">美</span>
+      		<span class="ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.6s" swiper-animate-delay="3.9s">情</span>
+      		<span class="ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.6s" swiper-animate-delay="4.1s">话</span>
+      	</div>
+      	
+      	<img src="images/one2.png" class="bot ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.6s" swiper-animate-delay="0.1s" />
+      	<img src="images/one3.png" class="bot ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.6s" swiper-animate-delay="0.5s" />
+      	<img src="images/one7.png" class="bot ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.6s" swiper-animate-delay="0.7s" />
+      	<img src="images/one4.png" class="people ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.6s" swiper-animate-delay="1.1s" />
+      	<img src="images/one8.png" class="bot ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.6s" swiper-animate-delay="1.4s" />
+      	
+      	<img src="images/one9.png" class="love ani" swiper-animate-effect="zoomInLeft" swiper-animate-duration="1s" swiper-animate-delay="1.7s" />
+      	<img src="images/one1.png" class="love3 ani" swiper-animate-effect="zoomInDown" swiper-animate-duration="1s" swiper-animate-delay="2.1s" />
+      	
+      </div>
+      <!--第一屏结束-->
+      
+      <div class="swiper-slide">Slide 3</div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="libs/swiper.min.js"></script>
+	<script src="libs/swiper.animate1.0.3.min.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      direction: 'vertical',
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      
+      on:{
+	      init: function(){
+	        swiperAnimateCache(this); //隐藏动画元素 
+	        swiperAnimate(this); //初始化完成开始动画
+	      }, 
+	      slideChangeTransitionEnd: function(){ 
+	        swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+	      } 
+	    }
+
+      
+      
+    });
+  </script>
+</body>
+</html>

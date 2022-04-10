@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 300px;
+				height: 200px;
+				background: dodgerblue;
+				position: absolute;
+				left: 0;
+				top: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<input type="button" id="btn" value="┏ (゜ω゜)=☞" />
+		<br /><br />
+		
+		<div id="box">
+			
+		</div>
+		
+	
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//		一个函数当做另外一个函数的参数,这个当参数的函数就叫做回调函数
+		
+		$("#btn").click(function(){
+//			$("#box").animate({'width':'800px','height':'500px','top':'123px','left':'65px'},3000);
+//			$("#box").animate({'width':'800px'},3000,function(){
+////				alert('运动完毕！');
+//				$("#box").animate({'height':'500px'},2000);
+//			});
+
+//			$("#box").animate({'width':'600px','opacity':'0.3'},2000);
+			$("#box").animate({'background':'green'},2000);
+		})
+		
+		
+	</script>
+		
+		
+		
+	</body>
+</html>

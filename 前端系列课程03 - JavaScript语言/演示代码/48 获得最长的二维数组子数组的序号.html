@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+			
+			function max(arr){
+				var x = 0;//x用来存储长度最长的子数组序号
+				for (var i=0;i<arr.length;i++) {
+					if (arr[i].length>arr[x].length) {
+						x = i;
+					}
+				}
+				return x;
+			}
+			
+			var jingdian = [
+				['泰山','水泊梁山','三孔','青岛海滩','大明湖'],
+				['天安门','天坛','长城','故宫','地坛','鸟巢'],
+				['城隍庙','迪士尼','外滩',1,1,1,1,1],
+				['洪崖洞','磁器口古镇','解放碑','长江索道'],
+				['九寨沟','峨眉山','乐山大佛']
+			];
+			
+			var result = max(jingdian);
+			document.write(result);
+			
+			
+		</script>
+		
+		
+	</head>
+	<body>
+	</body>
+</html>

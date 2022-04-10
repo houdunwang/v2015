@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.qiang{
+				width: 200px;
+				height: 500px;
+				background: rgba(0,0,0,0.3);
+				position: absolute;
+				left: 700px;
+				top: 0;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<input type="button" id="btn" value="┏ (゜ω゜)=☞" />
+		<br /><br />
+		
+		<img src="xiaohuangya.png" id="pic" width="180" style="position: absolute;top: 50px;left:0px;" />
+		
+		<div class="qiang"></div>
+		
+		
+		
+		<script type="text/javascript">
+			
+			var btn = document.getElementById("btn");
+			var pic = document.getElementById("pic");
+			
+			var speed = 5;
+			
+			
+			btn.onclick = function(){
+				
+				
+				setInterval(function(){
+					
+					var ole_left = pic.style.left;
+					var new_left = parseInt(ole_left)+speed;
+					pic.style.left = new_left+'px';
+					
+//					if (new_left==520) {
+////						alert('撞墙啦');
+//						speed = -1*speed;
+//					}
+//					
+//					if (new_left==0) {
+//						speed = -1*speed;
+//					}
+//					
+					if (new_left==520 || new_left==0) {
+						speed = -1*speed;
+					}
+
+				},20)
+			}
+			
+			
+//			作业:一个200*200大小的div,逐渐变大到400*400,然后缩小到200*200,反复执行
+			
+		</script>
+		
+		
+		
+	</body>
+</html>

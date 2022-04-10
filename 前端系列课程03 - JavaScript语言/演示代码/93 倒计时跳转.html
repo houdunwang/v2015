@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<h1>页面在<span id="time">5</span>秒后跳转到后盾人首页</h1>
+		
+		<script type="text/javascript">
+			
+			var time = document.getElementById("time");
+			
+			setInterval(function(){
+//				获得span当前内容
+				var con = time.innerText || time.textContent;
+				var new_con = con-1;
+//				将新内容写回去
+				time.innerHTML = new_con;
+				
+				if (new_con==1) {
+//					跳转
+//					location.href = 'http://houdunren.com';
+//					location.assign('http://houdunren.com');
+					location.replace('http://houdunren.com');
+				}
+				
+			},1000);
+			
+		</script>
+		
+		
+	</body>
+</html>

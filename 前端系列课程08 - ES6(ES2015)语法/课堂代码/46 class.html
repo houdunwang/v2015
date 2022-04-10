@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+	
+			
+			class animal{
+//				构造函数
+//				在实例化类的时候,传入的参数都会被constructor接收
+				constructor(c,s,w){
+					this.color = c;
+					this.size = s;
+					this.weight = w;
+				}
+				
+				move(){
+					console.log('能动');
+				}
+			}
+			
+			let xiaohuang = new animal('黄色','0.5米','3公斤');
+			console.log(xiaohuang.weight);
+			let dahei = new animal('黑色','1米','50斤');
+			console.log(dahei.weight)
+			
+			
+		</script>
+		
+		
+	</body>
+</html>

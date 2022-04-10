@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="animate.css"/>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+				
+			}
+			h1{
+				width: 500px;
+				height: 100px;
+				background: deepskyblue;
+				color: white;
+				text-align: center;
+				line-height: 100px;
+				margin: 0px auto;
+			}
+			#btn{
+				margin: 100px 300px;
+			}
+		</style>
+		
+	</head>
+	<body>
+		
+		<input type="button" id="btn" value="运动！" />
+		<br /><br />
+		<h1 id="title">后盾人 人人做后盾</h1>
+		
+	
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			
+			$("#btn").click(function(){
+//				$("#title").attr('class','animated zoomInDown');
+				$("#title").addClass('animated zoomInDown');
+			})
+			
+		</script>
+		
+		
+	</body>
+</html>

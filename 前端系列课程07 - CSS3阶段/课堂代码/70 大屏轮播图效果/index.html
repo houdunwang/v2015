@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="libs/swiper-4.3.3.min.css"/>
+		<link rel="stylesheet" type="text/css" href="libs/animate.min.css"/>
+		<link rel="stylesheet" type="text/css" href="libs/flash.css"/>
+	</head>
+	<body>
+		
+		
+		<div class="swiper-container">
+		    <div class="swiper-wrapper">
+		    	
+		        <div class="swiper-slide one">
+		        	<div class="center">
+		        		<img src="images/banner-01-a.png" class="pic1 ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.6s" swiper-animate-delay="0.1s" />
+		        		<img src="images/banner-01-b.png" class="pic2 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.6s" swiper-animate-delay="0.5s" />
+		        	</div>
+		        </div>
+		        <div class="swiper-slide two">
+		        	<div class="center">
+			        	<img src="images/banner2-01.png" class="pic1 ani" swiper-animate-effect="zoomInLeft" swiper-animate-duration="0.6s" swiper-animate-delay="0.5s" />
+			        	<img src="images/banner2-02.png" class="pic2 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.6s" swiper-animate-delay="0.1s" />
+			        	<img src="images/banner2-03.png" class="pic3 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.6s" swiper-animate-delay="1s" />	
+		        	</div>
+		        </div>
+		        
+		        <div class="swiper-slide three">
+		        	<div class="center">
+		        		<img src="images/banner3-01.png" class="pic1 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.6s" swiper-animate-delay="0.1s" />
+		        		<img src="images/banner3-02.png" class="pic2 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.6s" swiper-animate-delay="0.5s" />
+		        		<img src="images/banner3-03.png" class="pic3 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.6s" swiper-animate-delay="0.9s" />
+		        		<img src="images/banner3-04.png" class="pic4 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.6s" swiper-animate-delay="1.3s" />
+		        	</div>
+		        </div>
+		       
+		    </div>
+		    <!-- 如果需要分页器 -->
+		    <div class="swiper-pagination"></div>
+		  
+		</div>
+		
+		
+		
+		<script src="libs/swiper-4.3.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="libs/swiper.animate1.0.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>        
+		  var mySwiper = new Swiper ('.swiper-container', {
+		    direction: 'horizontal',
+		    loop: true,
+		    effect: 'fade',
+		    // 如果需要分页器
+		    pagination: {
+		      el: '.swiper-pagination',
+		    },
+		    
+		    
+		    on:{
+		      init: function(){
+		        swiperAnimateCache(this); //隐藏动画元素 
+		        swiperAnimate(this); //初始化完成开始动画
+		      }, 
+		      slideChangeTransitionEnd: function(){ 
+		        swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+		      } 
+		    }
+		    
+		    
+		  })        
+		</script>
+	</body>
+</html>

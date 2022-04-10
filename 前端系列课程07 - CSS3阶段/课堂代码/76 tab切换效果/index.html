@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="libs/swiper-4.3.3.min.css"/>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#tab{
+				width: 600px;
+				height: 500px;
+				margin: 50px auto;
+				border: 3px solid blue;
+				position: relative;
+			}
+			#tab ul li{
+				float: left;
+				width: 200px;
+				text-align: center;
+				line-height: 50px;
+				font-size: 30px;
+				color: white;
+				list-style: none;
+				height: 50px;
+			}
+			#tab .swiper-container{
+				position: absolute;
+				width: 600px;
+				height: 430px;
+				top: 70px;
+				
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="tab">
+			<ul>
+				<li style="background: dodgerblue;">新闻</li>
+				<li style="background: orchid;">体育</li>
+				<li style="background: lightseagreen;">娱乐</li>
+			</ul>
+			
+			<div class="swiper-container">
+			    <div class="swiper-wrapper">
+			        <div class="swiper-slide" style="background: dodgerblue;">Slide 1</div>
+			        <div class="swiper-slide" style="background: orchid;">Slide 2</div>
+			        <div class="swiper-slide" style="background: lightseagreen;">Slide 3</div>
+			    </div>
+			</div>
+		</div>
+		
+		
+		
+		
+		<script src="libs/swiper-4.3.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script>        
+		  var mySwiper = new Swiper ('.swiper-container', {
+		    direction: 'vertical',
+//		    loop: true,
+			simulateTouch: false,//禁止鼠标操作
+			effect: 'cube',
+		  })        
+		  
+		  $("#tab ul li").click(function(){
+//		  	获得当前点击的li的序号
+			var c = $(this).index();
+			mySwiper.slideTo(c,0);
+		  })
+		  
+		  
+		</script>
+		
+		
+		
+		
+		
+	</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			li{
+				list-style: none;
+				font-size: 160px;
+				float: left;
+				margin: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<ul id="hd">
+			<li>A</li>
+			<li>B</li>
+			<li>C</li>
+			<li>D</li>
+			<li>E</li>
+		</ul>
+		
+<script type="text/javascript">
+	var hd = document.getElementById("hd");
+	var str = 'QWERTYUIOPASDFGHJKLZXCVBNM';
+	
+	
+	window.onkeydown = function(e){
+		var ev = window.event || e;
+//			获得按下的键
+		var key = String.fromCharCode(ev.keyCode);
+//			获得所有li标签
+		var ls = hd.getElementsByTagName('li');
+//		循环所有li
+		for (var i=0;i<ls.length;i++) {
+			if (ls[i].innerHTML==key) {
+//				删掉i号li
+				hd.removeChild(ls[i]);
+//				随机数
+				var rand = Math.floor(Math.random()*(str.length-1+1-0)+0);
+//				创建一个新的li标签
+				var newli = document.createElement('li');
+				newli.innerHTML = str[rand];
+//				将新li追加到ul中
+				hd.appendChild(newli);
+				break;//退出循环
+			}
+		}
+	}
+	
+</script>
+	</body>
+</html>

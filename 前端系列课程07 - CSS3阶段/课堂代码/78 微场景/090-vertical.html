@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="libs/swiper.min.css">
+  <link rel="stylesheet" type="text/css" href="libs/animate.min.css"/>
+
+  <!-- Demo styles -->
+  <style>
+    html, body {
+      position: relative;
+      height: 100%;
+    }
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color:#000;
+      margin: 0;
+      padding: 0;
+    }
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-slide.one h1{
+    	width: 70%;
+    	height: 50px;
+    	background: mediumpurple;
+    	color: white;
+    	text-align: center;
+    	font-size: 26px;
+    	margin: 0 auto;
+    	margin-top: 20%;
+    	line-height: 50px;
+    }
+    .swiper-slide .hd{
+    	width: 60%;
+    	height: 50%;
+    	margin: 10% auto;
+    	background: dodgerblue;
+    	
+    }
+  </style>
+</head>
+<body>
+  <!-- Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide one">
+      	<h1 class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.8s" swiper-animate-delay="0.1s">后盾人 人人做后盾</h1>
+      	<div class="hd ani" swiper-animate-effect="zoomInUp" swiper-animate-duration="0.6s" swiper-animate-delay="0.6s"></div>
+      </div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="libs/swiper.min.js"></script>
+	<script src="libs/swiper.animate1.0.3.min.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      direction: 'vertical',
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      
+      on:{
+	      init: function(){
+	        swiperAnimateCache(this); //隐藏动画元素 
+	        swiperAnimate(this); //初始化完成开始动画
+	      }, 
+	      slideChangeTransitionEnd: function(){ 
+	        swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+	      } 
+	    }
+
+      
+      
+    });
+  </script>
+</body>
+</html>

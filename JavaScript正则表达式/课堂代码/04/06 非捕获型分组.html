@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+			var reg = /(?:.{2}银行).+验证码(?:\d{3,6})/;
+			var str = '尊贵的vip用户您好，工商银行友情提示您，您本次登录的验证码562389，请在5分钟内输入，否则失效';
+			
+			var result = reg.exec(str);
+			console.log(result);
+
+			
+			
+		</script>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		<script type="text/javascript">
+			
+//			动物构造函数
+			function animal(){
+				this.live = '活的';
+				this.color = '颜色';
+				this.move = function(){
+					console.log('能动');
+				}
+			}
+			
+			animal.prototype.weight = '重量';
+			
+			
+//			鱼类构造函数
+			function fish(){
+//				通过call方法,不会继承原型中的数据
+				window.animal.call(this);
+			}
+			
+//			fish.prototype = animal.prototype;
+
+//			复制原型区域
+			for (x in animal.prototype) {
+				fish.prototype[x] = animal.prototype[x];
+			}
+			
+			
+			
+			var shayu = new fish();
+			
+			animal.prototype.weight = '6666';
+			console.log(shayu.weight);
+			
+			
+		</script>
+		
+		
+		
+	</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="animate.min.css"/>
+		<link rel="stylesheet" type="text/css" href="05.css"/>
+	</head>
+	<body>
+		
+		<div id="header" class="animated bounceInDown"></div>
+		<div id="menu" class="animated fadeInUp"></div>
+		<div id="main">
+			<div class="left animated bounceInLeft"></div>
+			<div class="right animated bounceInRight"></div>
+		</div>
+		
+		<div id="show">
+			<div class="left"></div>
+			<div class="center"></div>
+			<div class="right"></div>
+		</div>
+		
+		
+		<div id="footer"></div>
+		
+		
+		<script src="jquery_2.2.4_jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+//			计算滚动上去的高度
+			var s = 1000-$(window).height();
+			
+			$(window).scroll(function(){
+//				获得滚动上去的高度
+				var st = $(document).scrollTop();
+				document.title = st;
+				if (st>s) {
+					$("#show .left").addClass('animated bounceInLeft');
+					$("#show .center").addClass('animated bounceInDown');
+					$("#show .right").addClass('animated bounceInRight');
+				}else if (st<=s) {
+					$("#show .left").removeClass('animated bounceInLeft');
+					$("#show .center").removeClass('animated bounceInDown');
+					$("#show .right").removeClass('animated bounceInRight');
+				}
+				
+			})
+			
+		</script>
+		
+		
+	</body>
+</html>

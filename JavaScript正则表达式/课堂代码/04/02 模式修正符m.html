@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<textarea id="hd"></textarea>
+		<br /><br />
+		
+		<input type="button" id="btn" value="点我开始匹配" />
+		
+		
+		<script type="text/javascript">
+			
+			var hd = document.getElementById("hd");
+			var btn = document.getElementById("btn");
+			
+			btn.onclick = function(){
+				var reg = /^houdun$/m;
+				var result = reg.test(hd.value);
+				console.log(result);
+			}
+			
+		</script>
+		
+		
+	</body>
+</html>

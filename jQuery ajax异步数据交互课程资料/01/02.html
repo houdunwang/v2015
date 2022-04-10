@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				padding: 50px 200px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<input type="text" id="kw" />
+		
+		<input type="button" id="btn" value="查询" />
+		
+		<br /><br /><br />
+		<h1></h1>
+		
+	
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		
+		$("#btn").click(function(){
+
+//			获得用户输入的内容
+			var uname = $("#kw").val();
+//			给后台发送请求
+			$.ajax({
+				type:"post",//指定数据发送方式 post/get
+				url:"02.php",//指定数据发送给谁
+				data:{'stuname':uname},//要发送过去的数据
+				success:function(d){
+					d = JSON.parse(d);
+					console.log(d);
+					if (d.length==1) {
+						$("h1").html(d[0]);
+					}else{
+	//					$("h1").html(d[0]+d[1]+d[2]+d[3]);
+						$("h1").html(d.name+d.sex+d.age+d.tel);					
+					}
+
+				}
+			});
+		})
+		
+	</script>
+		
+	</body>
+</html>

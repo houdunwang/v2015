@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+			var x = prompt('请输入第一个数字')*1;
+			var charset = prompt('请输入运算符+-*/');
+			var y = prompt('请输入第二个数字')*1;
+			
+			switch(charset){
+				case '+':
+					var result = x+y;
+					break;
+				case '-':
+					var result = x-y;
+					break;
+				case '*':
+					var result = x*y;
+					break;
+				case '/':
+					var result = x/y;
+					break;
+				default:
+					var result = '你输入的有误';
+			}
+			
+			
+			document.write(result);
+			
+			
+			
+		</script>
+		
+	</head>
+	<body>
+	</body>
+</html>

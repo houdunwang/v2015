@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+*{
+	padding: 0;
+	margin: 0;
+}
+	#flash{
+		width: 473px;
+		height: 180px;
+		border: 5px solid blue;
+		margin: 20px auto;
+		position: relative;
+		overflow: hidden;
+	}
+	#flash .pic_box{
+		width: 1892px;
+		height: 190px;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+	}
+	#flash .pic_box img{
+		float: left;
+	}
+	#flash ul li{
+		list-style: none;
+		width: 36px;
+		height: 5px;
+		background: #999999;
+		float: left;
+		margin-right: 2px;
+	}
+	#flash ul{
+		position: absolute;
+		left: 161px;
+		top: 169px;
+	}
+	#flash ul li.cur{
+		background: #7ABD54;
+	}
+</style>
+
+</head>
+
+<body>
+<div id="flash">
+	<div class="pic_box">
+		<img src="images/1.jpg" alt="" />
+		<img src="images/2.jpg" alt="" />
+		<img src="images/3.jpg" alt="" />
+		<img src="images/4.jpg" alt="" />
+	</div>
+	<ul>
+		<li class="cur"></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>
+
+
+<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	
+	var c = 0;
+	
+	setInterval(function(){
+		c++;
+		c = c==4?0:c;
+//		计算大块的left值
+		var l = c*-473;
+//		让大块移动到对应的left值上
+		$("#flash .pic_box").animate({'left':l},300);
+//		让c号li变绿,兄弟li变灰
+		$("#flash ul li").eq(c).css('background','#7ABD54').siblings('li').css('background','#999999');
+	},1000);
+	
+</script>
+
+
+
+
+
+</body>
+</html>

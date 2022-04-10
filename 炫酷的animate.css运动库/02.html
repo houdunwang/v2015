@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="animate.min.css"/>
+		<style>
+			#hd{
+				width: 500px;
+				height: 300px;
+				background: dodgerblue;
+				margin: 50px auto;
+			}
+			#btn{
+				margin-left: 300px;
+				margin-top: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<input type="button" value="点我让元素运动" id="btn" />
+		
+		<div id="hd"></div>
+		
+		<script type="text/javascript">
+			
+			var btn = document.getElementById("btn");
+			var hd = document.getElementById("hd");
+			
+			btn.onclick = function(){
+				hd.setAttribute('class','animated bounceInDown');
+			}
+			
+		</script>
+		
+		
+	</body>
+</html>

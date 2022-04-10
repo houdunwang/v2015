@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		<input type="button" id="btn" value="点我进行操作" />
+		<br /><br />
+		
+		<h1 id="title">后盾人 <span>人人</span>做后盾</h1>
+		
+	<script type="text/javascript">
+		
+		var btn = document.getElementById("btn");
+		var title = document.getElementById("title");
+		
+		btn.onclick = function(){
+//			获得元素所有的内容(包含标签)
+//			var con = title.innerHTML;
+//			alert(con);
+
+//			获得纯文本内容
+//			document.all用来判断ie和非ie浏览器
+//			if (document.all) {//ie
+//				var con = title.innerText;
+//			}else{//非ie浏览器
+//				var con = title.textContent;
+//			}
+
+//			短路兼容性写法
+			var con = title.innerText || title.textContent;
+
+			alert(con);
+
+		}
+		
+	</script>
+		
+	</body>
+</html>

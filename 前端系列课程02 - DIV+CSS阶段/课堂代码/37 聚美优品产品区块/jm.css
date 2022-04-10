@@ -1,0 +1,98 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	background: #F7F7F7;
+}
+#jm{
+	width: 462px;
+	height: 332px;
+	border: 1px solid #999;
+	margin: 100px auto;
+	background: white;
+	position: relative;
+
+}
+#jm .time{
+	width: 194px;
+	height: 26px;
+	background: #333333;
+	font-size: 14px;
+	color: white;
+	text-align: center;
+	line-height: 26px;
+	position: absolute;
+	top: -2px;
+	left: 134px;
+	
+}
+#jm .description{
+	position: absolute;
+	top: 58px;
+	left: 40px;
+	width: 382px;
+	display: block;
+	text-decoration: none;
+	line-height: 24px;
+	font-size: 16px;
+	color: #767676;
+}
+#jm .description span{
+	color: #ed145b;
+}
+
+#jm .price{
+	position: absolute;
+	top: 226px;
+	left: 40px;
+	font-size: 34px;
+	line-height: 40px;
+	color: #000;
+}
+#jm .price .yuan{
+	font-size: 20px;
+	position: relative;
+	top: -5px;
+	margin-right: 2px;
+}
+#jm .price .old{
+	text-decoration: line-through;
+	font-size: 12px;
+	color: #727272;
+	font-family: arial,'Hiragino Sans GB','\5FAE\8F6F\96C5\9ED1',sans-serif;
+	margin-left: 5px;
+}
+#jm .fast{
+	position: absolute;
+	left: 32px;
+	bottom: 11px;
+	width: 134px;
+	height: 45px;
+}
+#jm .add{
+	width: 106px;
+	height: 36px;
+	background: #E81A62;
+	position: absolute;
+	right: 40px;
+	bottom: 64px;
+	font-size: 14px;
+	color: white;
+	line-height: 36px;
+	text-align: center;
+}
+#jm .total{
+	bottom: 26px;
+	right: 40px;
+	position: absolute;
+	font-size: 12px;
+	line-height: 20px;
+	
+}
+#jm .total span{
+	font-size: 18px;
+	color: #b9966a;
+	position: relative;
+	top: 4px;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		
+		<img src="images/1.png" id="pic"/>
+		
+		<script type="text/javascript">
+			
+			var pic = document.getElementById("pic");
+			var c = 1,d = 1;
+			
+//			设置定时器,每隔一段时间换一张图片
+			setInterval(function(){
+				c = c+d;
+//				组合出新src路径
+				var url = 'images/'+c+'.png';
+//				将新路径设置回去
+				pic.setAttribute('src',url);
+				
+				if (c==19 || c==1) {
+					d = -1*d;
+				}
+				
+//				if (c==19) {
+//					d = -1;
+//				}
+//				
+//				if (c==1) {
+//					d = 1;
+//				}
+			},100)
+			
+			
+		</script>
+		
+		
+		
+	</body>
+</html>

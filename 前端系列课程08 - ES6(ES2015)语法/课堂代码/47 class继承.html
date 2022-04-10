@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+	
+//			父类(动物类)
+			class animal{
+				constructor(){
+					this.color = '颜色';
+					this.size = '尺寸';
+					this.weight = '重量';
+				}
+				
+				move(){
+					console.log('能动');
+				}
+			}
+			
+			
+//			子类(鱼类)
+//			子类会继承父类的所有属性和方法
+			class fish extends animal{
+				
+//				子类特有的方法
+				moveabout(){
+					console.log('能游动');
+				}
+				
+//				子类中可以重写父类的方法
+				move(){
+					console.log('鱼类动');
+				}
+				
+				
+				
+			}
+			
+			let shayu = new fish();
+//			console.log(shayu.color);
+//			shayu.moveabout();
+			shayu.move();
+			
+			
+			
+			
+		</script>
+		
+		
+	</body>
+</html>

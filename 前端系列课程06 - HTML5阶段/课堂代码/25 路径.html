@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				background: #272822;
+				margin: 0 auto;
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<canvas id="canvas" width="800" height="500"></canvas>
+	
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+//		获得绘画环境(相当于铺了一层画布)
+		var cv = canvas.getContext('2d');
+		
+//		开启路径
+		cv.beginPath();
+//		指定路径起点
+		cv.moveTo(30,30);
+//		指定终点
+		cv.lineTo(160,300);
+		cv.lineTo(290,30);
+//		关闭路径,会将最后一个点和第一个点用直线连接,从而形成一个封闭的空间
+		cv.closePath();
+		
+//		边界类型
+		cv.lineJoin = 'round';
+		
+		
+		cv.strokeStyle = 'yellow';
+		cv.lineWidth = 5;
+//		绘制路径
+		cv.stroke();
+		
+		cv.fillStyle = 'deepskyblue';
+//		cv.fill();
+		
+		
+		
+	</script>
+		
+	</body>
+</html>

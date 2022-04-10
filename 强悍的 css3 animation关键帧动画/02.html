@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#hd{
+				width: 200px;
+				height: 150px;
+				background: dodgerblue;
+				/*指定运动名称*/
+				animation-name: houdun;
+				/*运动时间*/
+				animation-duration: 6s;
+				/*运动曲线*/
+				animation-timing-function: linear;
+				/*运动延迟*/
+				/*animation-delay: 2s;*/
+				animation-iteration-count: infinite;
+			}
+			
+			@keyframes houdun{
+				0%{
+					width: 200px;
+				}
+				50%{
+					width: 1000px;
+				}
+				100%{
+					width: 200px;
+				}
+			}
+			
+			/*@keyframes houdun{
+				from{
+					width: 200px;
+				}
+				to{
+					width: 1000px;
+				}
+			}*/
+			
+			
+		</style>
+	</head>
+	<body>
+		
+		<div id="hd"></div>
+		
+		
+	</body>
+</html>

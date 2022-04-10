@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				padding: 100px 150px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<input type="button" value="全选" id="quanxuan" />
+		<input type="button" value="反选" id="fanxuan" />
+		<input type="button" value="全不选" id="quanbuxuan" />
+		<br /><br /><br />
+		
+		<ul id="articles">
+			
+			<li><input type="checkbox" /> 后盾人 人人做后盾1</li>
+			<li><input type="checkbox" /> 后盾人 人人做后盾2</li>
+			<li><input type="checkbox" /> 后盾人 人人做后盾3</li>
+			<li><input type="checkbox" /> 后盾人 人人做后盾4</li>
+			<li><input type="checkbox" /> 后盾人 人人做后盾5</li>
+			<li><input type="checkbox" /> 后盾人 人人做后盾6</li>
+			<li><input type="checkbox" /> 后盾人 人人做后盾7</li>
+			<li><input type="checkbox" /> 后盾人 人人做后盾8</li>
+		</ul>
+		
+		
+		<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+//			全选
+			$("#quanxuan").click(function(){
+				$("#articles :checkbox").attr('checked','checked');
+				$("#articles :checkbox").prop('checked',true);
+			})
+			
+//			全不选
+			$("#quanbuxuan").click(function(){
+				$("#articles :checkbox").removeAttr('checked');
+				$("#articles :checkbox").removeProp('checked');
+			})
+			
+			
+//			反选
+			$("#fanxuan").click(function(){
+
+//				获得现在处在选中状态的元素
+				 var obj = $("#articles :checked");
+//				 全选
+				$("#articles :checkbox").attr('checked','checked');
+				$("#articles :checkbox").prop('checked',true);
+//				让刚才记录下来的元素取消选择
+				obj.removeAttr('checked');
+				obj.removeProp('checked');
+			})
+			
+			
+		</script>
+		
+		
+		
+		
+		
+		
+	</body>
+</html>

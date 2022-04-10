@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+//			async\await 异步函数
+			
+			
+//			张三  买鸡蛋和西红柿
+//			
+//			李四  
+//				刷锅
+//				准备佐料
+//				切菜
+//				炒菜
+//				over
+			
+			let x = ()=>{
+				console.log('去买菜啦！');
+				let p = new Promise((resolve,reject)=>{
+					setTimeout(()=>{
+						console.log('买菜完毕！');
+						resolve();
+					},3000)
+				})
+				return p;
+			}
+			
+			
+			let y = async ()=>{
+				console.log('刷锅');
+				console.log('准备佐料');
+//				遇到await程序会等待当前函数(x)执行完毕,再继续执行(阻塞)
+				await x();
+				console.log('切菜');
+				console.log('炒菜');
+				console.log('over');
+			}
+			
+			y();
+			
+		</script>
+		
+		
+		
+	</body>
+</html>

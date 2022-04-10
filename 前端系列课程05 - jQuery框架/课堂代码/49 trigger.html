@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				padding: 100px 200px;
+			}
+			#x{
+				width: 300px;
+				height: 40px;
+				background: orangered;
+				margin-bottom: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="x">x</div>
+		
+		
+		<form action="hd.php" id="f">
+			
+			用户名: <input type="text" />
+			<br /><br />
+			密码: <input type="password" />
+			<br /><br />
+			<input type="submit" value="登录" />
+			
+		</form>
+		
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$("#x").click(function(){
+//			触发表单的提交事件
+			$("#f").trigger('submit');
+		})
+		
+	</script>
+	
+	
+	</body>
+</html>

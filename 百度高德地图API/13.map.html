@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=4eQQ1fZAP1iwK5YekxqTtEjKkAZstwH5" type="text/javascript"></script>
+    <style>
+        html,body{
+            width:100%;
+            height:100%;
+            overflow: hidden;
+        }
+        #app{
+            width:100%;
+            height: 500px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+    <div id="r-result">
+        <input type="button" value="批量地理解析" onclick="jiexi()">
+    </div>
+    <script>
+        //百度地图API功能
+        var map = new BMap.Map('app'); //创建api应用
+        var point = new BMap.Point(121.4,31.2);
+        map.centerAndZoom(point,10); //初始化地图,设置中心店坐标和地图缩放级别
+        //开启鼠标滚轮缩放
+        map.enableScrollWheelZoom(true);
+
+        var adds = [
+            '上海市虹桥火车站',
+            '上海浦东国际机场',
+            '上海市松江区江田东路185号'
+        ]
+        var geo = new BMap.Geocoder();
+        var index = 0;
+        function jiexi() {
+            var add = adds[index];
+            geosearch(add);
+            index++;
+        }
+
+        function geosearch(add) {
+            if(index < adds.length){
+                setTimeout(window.jiexi,500);
+            }
+
+            geo.getPoint(add,function (point) {
+                if(point){
+                    var address = new BMap.Point(point.lng,point.lat);
+                    var marker = new BMap.Marker(address);
+                    map.addOverlay(marker);
+                }
+            });
+        }
+
+
+    </script>
+</body>
+</html>

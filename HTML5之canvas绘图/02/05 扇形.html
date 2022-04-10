@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				background: #272822;
+				display: block;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<canvas id="canvas" width="800" height="500"></canvas>
+		
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+//		获得绘画环境
+		var cv = canvas.getContext('2d');
+		
+		cv.moveTo(400,200);
+		cv.arc(400,200,200,0,45*Math.PI/180);
+		
+		
+		cv.fillStyle = 'pink';
+		cv.fill();
+			
+			
+			
+	
+		
+		
+	</script>
+		
+		
+		
+	</body>
+</html>

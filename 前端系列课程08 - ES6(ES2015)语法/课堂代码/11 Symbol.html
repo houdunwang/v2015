@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+			let a = Symbol('x');
+			
+			let obj = {
+				[a]:1,
+				b:2,
+				c:3,
+			}
+			
+//			console.log(obj.a);
+			obj.a = '123';
+			console.log(obj.a);
+			console.log(obj['a']);
+			
+//			Symbol类型的属性名对应的属性值的调用方法
+			console.log(obj[a]);
+			
+			
+			
+			obj[a] = 'aaaaaa';
+			console.log(obj[a]);
+			
+			
+			
+			
+			
+			
+		</script>		
+		
+	</body>
+</html>

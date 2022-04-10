@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=4eQQ1fZAP1iwK5YekxqTtEjKkAZstwH5" type="text/javascript"></script>
+    <style>
+        html,body{
+            width:100%;
+            height:100%;
+            overflow: hidden;
+        }
+        #app{
+            width:100%;
+            height: 500px;
+        }
+        #result{
+            width:100%;
+            height: 100px;
+            margin-top:20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+    <div id="result">
+        <input type="button" onclick="add_control()" value="添加控件">
+        <input type="button" onclick="del_control()" value="删除控件">
+    </div>
+    <script>
+        //百度地图API功能
+        var map = new BMap.Map('app'); //创建api应用
+        map.centerAndZoom(new BMap.Point(121.4,31.2),10); //初始化地图,设置中心店坐标和地图缩放级别
+        //定义需要添加的控件 工具条控件  比例尺控件
+        var top_left_control = new BMap.ScaleControl({anchor:BMAP_ANCHOR_TOP_LEFT});
+        var top_left_navigation = new BMap.NavigationControl();
+        var top_right_navigation = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_RIGHT,type:BMAP_NAVIGATION_CONTROL_SMALL});
+
+        //默认状态下需要添加控件
+        map.addControl(top_left_control);
+        map.addControl(top_left_navigation);
+        map.addControl(top_right_navigation);
+        //添加控件方法
+        function add_control() {
+            map.addControl(top_left_control);
+            map.addControl(top_left_navigation);
+            map.addControl(top_right_navigation);
+        }
+        
+        //删除控件fangfa 
+        function del_control() {
+            map.removeControl(top_left_control);
+            map.removeControl(top_left_navigation);
+            map.removeControl(top_right_navigation);
+        }
+
+    </script>
+</body>
+</html>

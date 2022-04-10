@@ -1,0 +1,208 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#panda-show {
+	font: 12px/1.5 "STHeiti","Microsoft YaHei","Helvetica Neue","Helvetica","SimSun","STSong","Arial","sans-serif";
+	background: url(../images/bg.jpg) no-repeat center top;
+	background-size: 100% auto;
+	margin-top: 150px;
+	width: 100%;
+	overflow: hidden;
+	min-width: 1000px;
+}
+
+#panda-show .shuffer-title {
+	height: 70px;
+	padding-top: 12px;
+	text-align: center;
+	box-sizing: border-box;
+	
+}
+
+/*
+#panda-show  .content {
+	width: 980px;
+	margin: 0 auto;
+	position: relative;
+}
+
+@media screen and (min-width:1400px) {
+	#panda-show	.content {
+		width: 1200px;
+	}
+}
+
+@media screen and (min-width:1660px) {
+	#panda-show	.content {
+		width: 1460px;
+	}
+}*/
+
+#panda-show  .cover-left {
+	width: 2000px;
+	position: absolute;
+	left: -2000px;
+	top: 0;
+	opacity: 0.7;
+	background: #000;
+	height: 240px;
+	z-index: 10;
+}
+
+#panda-show  .cover-right {
+	width: 2000px;
+	position: absolute;
+	right: -2000px;
+	top: 0;
+	background: #000;
+	opacity: 0.7;
+	height: 240px;
+	z-index: 10;
+}
+
+#panda-show  .swiper-container {
+	overflow: visible;
+	height: 240px;
+	width: 980px;
+	position: relative;
+}
+
+#panda-show  .swiper-slide {
+	height: 240px;
+	background: #000;
+	position: relative;
+}
+
+#panda-show  .swiper-slide img {
+	max-width: 100%;
+	opacity: 0.7;
+	-webkit-transition: all linear 300ms;
+	transition: all linear 300ms;
+}
+
+#panda-show  .swiper-slide  a:hover img {
+	opacity: 1;
+}
+
+#panda-show  .arrow-left {
+	background: url(../images/arrows.png) no-repeat left top;
+	position: absolute;
+	left: -40px;
+	top: 50%;
+	margin-top: -40px;
+	width: 35px;
+	height: 80px;
+	z-index: 15;
+}
+
+#panda-show .arrow-right {
+	background: url(../images/arrows.png) no-repeat right top;
+	position: absolute;
+	right: -40px;
+	top: 50%;
+	margin-top: -40px;
+	width: 35px;
+	height: 80px;
+	z-index: 15;
+}
+/**/
+#panda-show .shuffer-line {
+	height: 4px;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	opacity: 1;
+	-webkit-transition: all linear 300ms;
+	transition: all linear 300ms;
+	background-color: #1dd388;
+}
+
+#panda-show a:hover .shuffer-line {
+	height: 95px;
+	background-color: #1dd388;
+	opacity: .8;
+}
+
+#panda-show .stars-info {
+	height: 110px;
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+	width: 100%;
+	-webkit-transition: all linear 250ms;
+	transition: all linear 250ms;
+	color: #fff;
+}
+
+#panda-show a:hover .stars-info {
+	height: 95px;
+	border-bottom: 0 none;
+}
+
+#panda-show .stars-info .name {
+	font-size: 20px;
+	height: 26px;
+	line-height: 26px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+#panda-show a:hover .stars-info .name {
+	margin: 8px 0 0;
+}
+
+#panda-show .stars-info .intro {
+	padding: 0 10px;
+	font-size: 14px;
+	height: 18px;
+	line-height: 18px;
+	margin: 5px 0 30px;
+	color: rgba(255,255,255,.7);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+#panda-show .stars-info .icon-shuffer-live {
+	position: absolute;
+	left: 50%;
+	bottom: 38px;
+	width: 29px;
+	height: 9px;
+	margin-left: -15px;
+	background: url(../images/live.png) no-repeat;
+	opacity: 1;
+	-webkit-transition: all linear 250ms;
+	transition: all linear 250ms;
+}
+
+#panda-show a:hover .stars-info .icon-shuffer-live {
+	opacity: 0;
+}
+
+#panda-show .stars-info .number {
+	display: inline-block;
+	overflow: hidden;
+	-webkit-transition: all linear 250ms;
+	transition: all linear 250ms;
+	height: 20px;
+	line-height: 20px;
+	width: 100%;
+	position: absolute;
+	bottom: 8px;
+	left: 0;
+}
+
+#panda-show .stars-info .number i {
+	width: 16px;
+	height: 12px;
+	display: inline-block;
+	background: url(../images/eye.png) no-repeat center;
+	margin-right: 8px;
+}

@@ -1,0 +1,7 @@
+// 计算交强险的模块
+
+var foo = function(x){
+  return x*0.3;
+}
+
+module.exports.foo = foo;

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<link rel="stylesheet" type="text/css" href="libs/swiper-4.3.3.min.css"/>
+		<style type="text/css">
+			.swiper-container {
+			    width: 590px;
+			    height: 470px;
+			} 
+			.swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+				width: 35%;
+			}
+			.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet{
+				background: transparent;
+				width: 6px;
+				height: 6px;
+				border-radius: 50%;
+				border: 2px solid rgba(255,255,255,0.3);
+				opacity: 1;
+				margin-right: 10px;
+			}
+			.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active{
+				border: 2px solid white;
+				background: white;
+				outline: 5px solid rgba(255,255,255,0.2);
+				-moz-outline-radius: 9px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="swiper-container">
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide">
+		        	<img src="images/1.jpg" alt="" />
+		        </div>
+		        <div class="swiper-slide">
+		        	<img src="images/2.jpg" alt="" />
+		        </div>
+		        <div class="swiper-slide">
+		        	<img src="images/3.jpg" alt="" />
+		        </div>
+		        <div class="swiper-slide">
+		        	<img src="images/4.jpg" alt="" />
+		        </div>
+		        <div class="swiper-slide">
+		        	<img src="images/5.jpg" alt="" />
+		        </div>
+		    </div>
+		    <!-- 如果需要分页器 -->
+		    <div class="swiper-pagination"></div>
+		    
+		</div>
+
+		
+		<script src="libs/swiper-4.3.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>        
+		  var mySwiper = new Swiper ('.swiper-container', {
+		    direction: 'horizontal',
+		    loop: true,
+		    
+		    // 如果需要分页器
+		    pagination: {
+		      el: '.swiper-pagination',
+		    },
+		    
+		    
+		  })        
+		</script>
+	</body>
+</html>

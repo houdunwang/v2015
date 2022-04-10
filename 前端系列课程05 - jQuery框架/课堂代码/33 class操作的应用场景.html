@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				
+			}
+			#hd li{
+				list-style: none;
+				width: 260px;
+				height: 150px;
+				line-height: 150px;
+				color: white;
+				line-height: 150px;
+				text-align: center;
+				font-size: 30px;
+				background: purple;
+				float: left;
+				margin: 15px;
+			}
+			#hd li.cur{
+				text-decoration: underline;
+				background: deepskyblue;
+				font-size: 50px;
+				font-weight: 700;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<ul id="hd">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+		</ul>
+		
+		<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			$("#hd li").click(function(){
+//				$(this).css({
+//					'background':'deepskyblue',
+//					'font-weight':700,
+//					'font-size':'50px',
+//					'text-decoration':'underline',
+//				})
+//				.siblings().css({
+//					'background':'purple',
+//					'font-weight':400,
+//					'font-size':'30px',
+//					'text-decoration':'none',
+//				})
+
+				$(this).addClass('cur').siblings().removeClass('cur');
+
+			})
+			
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				padding:40px
+			}
+			#hd{
+				width: 600px;
+				border: 2px solid blue;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<input type="button" value="点我啊" id="btn" />
+		<br /><br />
+		
+		<h1 id="title" class="t">后盾人 人人做后盾</h1>
+		<div id="hd">
+			<p>我们是p标签0</p>
+			<p>我们是p标签1</p>
+			<p>我们是p标签2</p>
+			<p>我们是p标签3</p>
+			<span>我是span标签！</span>
+		</div>
+	
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//		事件委派
+		$("#hd").delegate('p','click',function(){
+			alert('触发了事件');
+		})
+		
+//		取消委派的事件
+		$("#hd").undelegate('click');
+		
+		$("#btn").click(function(){
+			$("#hd").append('<p>我是新来的！！！</p>');
+		})
+		
+	</script>
+		
+	</body>
+</html>

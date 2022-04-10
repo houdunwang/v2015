@@ -1,0 +1,42 @@
+<image
+ class='img'
+src='https://mp.weixin.qq.com/debug/wxadoc/dev/image/cat/0.jpg?t=2018125'
+mode='aspectFill'
+></image>
+
+
+<view
+  hover-class='hdhover'
+  hover-start-time='2000'
+  hover-stay-time='2000'
+>后盾人 人人做后盾！
+
+  <view hover-stop-propagation>我是子元素</view>
+
+</view>
+
+<scroll-view
+ class='scrollv'
+ scroll-y
+ bindscrolltoupper='toupper'
+ upper-threshold='150'
+ scroll-top='100'
+ >
+
+  <view class='a'>后盾人 人人做后盾！1</view>
+  <view class='b'>后盾人 人人做后盾！2</view>
+  <view class='c'>后盾人 人人做后盾！3</view>
+  <view class='d'>后盾人 人人做后盾！4</view>
+  <view class='e'>后盾人 人人做后盾！5</view>
+
+</scroll-view>
+
+<audio
+  src='http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46'
+controls
+poster='http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000'
+name='此时此刻'
+author='许巍'
+bindpause='audiopause'
+
+></audio>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#box{
+				width: 450px;
+				height: 450px;
+				margin: 80px auto;
+				position: relative;
+			}
+			#box .zp{
+				width: 450px;
+				height: 450px;
+				animation: z 1s infinite linear;
+			}
+			@keyframes z{
+				from{
+					transform: rotate(0);
+				}
+				to{
+					transform: rotate(360deg);
+				}
+			}
+			#box .btn{
+				position: absolute;
+				left: 134px;
+				top: 131px;
+				width: 180px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<div id="box">
+			<img src="zhuanpan.png" class="zp" />
+			<img src="zhuanpan2.png" class="btn" />
+		</div>
+		
+		
+		<script type="text/javascript">
+			
+			var btn = document.getElementsByClassName('btn')[0];
+			var zp = document.getElementsByClassName('zp')[0];
+			
+			var sta = 1;//1对应运动状态
+			btn.onclick = function(){
+				if (sta==1) {
+					zp.style.animationPlayState = 'paused';
+					sta = 2;				
+				}else if (sta==2) {
+					zp.style.animationPlayState = 'running';
+					sta = 1;
+				}
+			}
+			
+			
+		</script>
+		
+	</body>
+</html>

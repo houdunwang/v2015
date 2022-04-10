@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+//			setTimeout(()=>{
+//				console.log('脱衣服完毕');
+//			},3000)
+//			
+//			
+//			console.log('洗衣服');
+
+			let p = new Promise((resolve,reject)=>{
+//				resolve表示将状态变成成功完成
+//				reject表示将状态变成失败完成
+				
+				setTimeout(()=>{
+					console.log('脱完衣服啦！');
+//					表示完成
+					resolve();
+				},3000)
+
+			});
+			
+			
+			p.then(()=>{
+				console.log('Promise异步操作完成了');
+			})
+			
+		</script>
+		
+		
+	</body>
+</html>

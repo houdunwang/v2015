@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="button" id="btn" value="点我开始选水果！" />
+		<input type="button" value="停！" id="pause" />
+		<br /><br />
+		
+		<img src="images/1.jpg" alt="" id="pic" />
+		
+		
+	<script type="text/javascript">
+		
+		var pic = document.getElementById("pic");
+		var btn = document.getElementById("btn");
+		var pause = document.getElementById("pause");
+		
+		
+//		将所有图片的src值写到一个数组里
+		var arr = ['images/1.jpg','images/2.jpg','images/3.jpg','images/4.jpg','images/5.jpg','images/6.jpg','images/7.jpg','images/8.jpg','images/9.jpg','images/10.jpg'];
+		
+		btn.onclick = function(){
+			
+			timer = setInterval(function(){
+	//			随机数
+				var x = Math.floor(Math.random()*(arr.length-1+1-0)+0);
+	//			将x对应的数组元素设置给src
+				pic.setAttribute('src',arr[x]);				
+			},500)
+
+		}
+		
+//		给停止按钮加单击事件
+		pause.onclick = function(){
+//			清理定时器
+			clearInterval(timer);
+		}
+		
+		
+	</script>
+		
+		<!--{'images/$.jpg',}*10-->
+		
+		
+		
+	</body>
+</html>

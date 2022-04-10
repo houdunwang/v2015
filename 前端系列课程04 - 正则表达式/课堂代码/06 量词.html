@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			
+//			\d{3}表示前面的原子重复3次,和\d\d\d效果一样
+//			{3,}表示最少三个
+//			{3,6}表示3到6个
+//			* 表示的数量相当于非洲人的老婆,0或者任意个
+//			? 相当于中国人的老婆，0个或1个
+//			+ 相当于程序员的电脑，最少1个
+
+			var reg = /余额\d+元/;
+			var str = '您的银行卡余额6元';
+			var result = reg.test(str);
+			document.write(result);
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

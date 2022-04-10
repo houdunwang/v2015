@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script>
+			
+//			var reg= /王三|张三|赵三|李三/;
+			var reg= /[^王张赵李]三/;
+//			var reg = /[3-9][a-z][A-Z]/;
+			var str = '我小学同学叫王三，家里住在小河边二号楼,三单元';
+//			匹配
+			var result = reg.test(str);
+			
+			if (result) {
+				document.write("匹配成功！O(∩_∩)O");
+			}else{
+				document.write("匹配失败！o(╥﹏╥)o");
+			}
+		</script>
+		
+	</head>
+	<body>
+	</body>
+</html>

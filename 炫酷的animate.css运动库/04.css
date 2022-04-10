@@ -1,0 +1,43 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+#header{
+	width: 1000px;
+	height: 150px;
+	background: dodgerblue;
+	margin: 0 auto;
+	/*animation-duration: 1s;
+	animation-delay: 2s;*/
+}
+#menu{
+	width: 1000px;
+	height: 50px;
+	background: hotpink;
+	margin: 0 auto;
+	
+}
+#main{
+	width: 1000px;
+	height: 500px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+#main .left{
+	width: 500px;
+	height: 500px;
+	background: orange;
+	float: left;
+	/*运动时间*/
+	animation-duration: 2s;
+	/*运动延迟*/
+	animation-delay: 1s;
+}
+#main .right{
+	width: 500px;
+	height: 500px;
+	background: limegreen;
+	float: left;
+	animation-duration: 2s;
+	animation-delay: 1s;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+	
+//			父类(动物类)
+			class animal{
+				constructor(){
+					this.color = '颜色';
+					this.size = '尺寸';
+					this.weight = '重量';
+				}
+				
+				move(){
+					console.log('能动');
+				}
+			}
+			
+			
+//			子类(鱼类)
+			class fish extends animal{
+				constructor(){
+//					如果子类要用this关键字,就必须在constructor方法里先执行super()方法.
+//					super()方法表示的是父类的constructor方法
+					super();
+					this.lin = '鳞片';
+					this.sai = '鱼鳃';
+				}
+//				子类特有的方法
+				moveabout(){
+					console.log('能游动');
+				}
+				
+			}
+			
+			let shayu = new fish();
+			console.log(shayu.size);
+			
+			
+			
+		</script>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#box{
+				width: 150px;
+				height: 150px;
+				/*border: 3px solid orangered;*/
+				margin: 200px auto;
+				transform-style: preserve-3d;
+				perspective: 1000px;
+			}
+			#box ul{
+				position: relative;
+				width: 150px;
+				height: 150px;
+				transform-style: preserve-3d;
+				transform-origin: 50% 50% 75px;
+				animation: hd 5s linear infinite;
+			}
+			@keyframes hd{
+				from{
+					transform: rotateY(0deg);
+				}
+				to{
+					transform: rotateY(360deg);
+				}
+			}
+			
+			
+			#box ul li{
+				width: 150px;
+				height: 150px;
+				position: absolute;
+				list-style: none;
+				opacity: 0.3;
+			}
+			#box ul li:nth-child(1){
+				background: #FF7F27;
+				left: -150px;
+				top: 0;
+				transform: rotateY(90deg);
+				transform-origin: right;
+			}
+			#box ul li:nth-child(2){
+				background: #FFF200;
+				left: 0;
+				top: -150px;
+				transform: rotateX(-90deg);
+				transform-origin: bottom;
+			}
+			#box ul li:nth-child(3){
+				background: #22B14C;
+				left: 150px;
+				top: 0;
+				transform: rotateY(-90deg);
+				transform-origin: left;
+			}
+			#box ul li:nth-child(4){
+				background: #00A2E8;
+				left: 0;
+				top: 150px;
+				transform: rotateX(90deg);
+				transform-origin: top;
+			}
+			#box ul li:nth-child(5){
+				background: #B97A57;
+				left: 0;
+				top: 0;
+			}
+			#box ul li:nth-child(6){
+				background: #FFAEC9;
+				left: 0;
+				top: 0;
+				transform: translateZ(150px);
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		
+		<div id="box">
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		
+		
+		
+		
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				padding: 100px 200px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<input type="button" value="播放" id="play" />
+		<input type="button" value="暂停" id="pause" />
+		<input type="button" value="快进5秒" id="go5s" />
+		<br /><br /> 
+		
+		<video src="big_buck_bunny_720p_stereo.ogg" width="600" poster="big_buck_bunny_720p_stereo.jpg" id="v" ></video>
+		
+	
+	<script type="text/javascript">
+		
+		var v = document.getElementById("v");
+		
+//		播放
+		document.getElementById("play").onclick = function(){
+			v.play();
+		}
+		
+//		暂停
+		document.getElementById("pause").onclick = function(){
+			v.pause();
+		}
+		
+//		快进5s
+		document.getElementById("go5s").onclick = function(){
+//			获得当前的播放位置
+			var ctime = v.currentTime;
+			v.currentTime = ctime+5;
+		}
+		
+		
+	</script>
+		
+	</body>
+</html>

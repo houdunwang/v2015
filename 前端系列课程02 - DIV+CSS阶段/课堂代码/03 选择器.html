@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*标签选择器*/
+			/*选择的是标签名是p的元素*/
+			/*p{
+				color: blue;
+				font-size: 30px;
+			}*/
+			
+			/*id选择器*/
+			/*选择的是id属性值是three的元素*/
+			/*id要保证唯一性,一个页面中不能出现两个id一样的元素*/
+			/*#three{
+				color: blue;
+				font-size: 30px;
+			}
+			#five{
+				color: blue;
+				font-size: 30px;
+			}*/
+			
+			/*class选择器(类选择器)*/
+			/*选择的是class属性值为hd的元素*/
+			/*.hd{
+				color: blue;
+				font-size: 30px;
+			}*/
+			
+			/*交叉选择器*/
+			/*选择的是标签名是p,并且class是hd的元素*/
+			/*p.hd{
+				color: blue;
+				font-size: 30px;
+			}*/
+			
+			
+			/*子代选择器/父子选择器/包含选择器/后代选择器*/
+			/*选择的是p标签里的span标签*/
+			/*空格在选择器中表示父子关系*/
+			/*p span{
+				color: blue;
+				font-size: 30px;
+			}
+			div .hd{
+				
+			}*/
+			
+			
+			/*群组选择器*/
+			/*选择的是标签名是span或者class值是hd,或者id属性值是five的元素*/
+			/*span,.hd,#five{
+				color: blue;
+				font-size: 30px;
+			}*/
+			
+			/*通用选择器*/
+			/*选择的是页面中所有的元素*/
+			/**{
+				color: blue;
+				font-size: 30px;
+			}*/
+			
+			/*复合型选择器*/
+			/*#top .left .title a.link span{
+				
+			}*/
+			
+			
+		</style>
+	</head>
+	<body>
+		
+		<div id="top">
+			<div class="left">
+				<h4 class="title">
+					<a href="" class="link">
+						<span>后盾人</span>
+					</a>
+				</h4>
+			</div>
+		</div>
+		
+		
+		
+		<span class="hd">houdunren</span>
+		<span class="hd">houdunren</span>
+		
+		
+		<div>
+			<!--p{后盾人 人人做后盾$}*8-->
+			<p>后盾人 人人做后盾1</p>
+			<p class="hd">后盾人 人人做后盾2</p>
+			<p id="three">后盾人 人人做后盾3</p>
+			<p class="hd">后盾人 人人做后盾4</p>
+			<p id="five">后盾人 人人做后盾5 <span>houdunren.com</span></p>
+			<p class="hd">后盾人 人人做后盾6</p>
+			<p>后盾人 人人做后盾7</p>
+			<p>后盾人 人人做后盾8 <span>houdunren.com</span></p>
+		</div>
+		
+		
+	</body>
+</html>

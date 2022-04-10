@@ -1,0 +1,7 @@
+@import url("other.css");
+
+/*css文件中不需要加style标签*/
+h1{
+	font-size: 26px;
+	color: purple;
+}

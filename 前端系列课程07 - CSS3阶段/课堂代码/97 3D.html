@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#x{
+				width: 600px;
+				height: 500px;
+				border: 2px solid orangered;
+				margin: 50px auto;
+				/*创建3D环境*/
+				transform-style: preserve-3d;
+				/*景深*/
+				perspective: 1000px;
+			}
+			#y{
+				width: 300px;
+				height: 300px;
+				margin: 100px auto;
+				background: dodgerblue;
+				/*transform: rotate(60deg);*/
+				/*transform: rotateY(60deg);*/
+				animation: hd 5s linear infinite;
+			}
+			
+			@keyframes hd{
+				from{
+					transform: rotateY(0deg);
+				}
+				to{
+					transform: rotateY(360deg);
+				}
+			}
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		
+		
+		<div id="x">
+			<div id="y"></div>
+		</div>
+		
+		
+		
+	</body>
+</html>

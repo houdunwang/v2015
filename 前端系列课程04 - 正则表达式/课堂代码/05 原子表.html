@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+//			原子表只表示匹配一个字符
+//			var reg = /[^张王李]三/;
+//			var reg = /[5-9]/;
+			var reg = /[A-Za-z0-9]/;
+			var str = '5后盾人张三同学是个三好同学！AXhoudun';
+			var result = reg.test(str);
+			document.write(result);
+			
+			
+			
+		</script>
+		
+		
+	</body>
+</html>

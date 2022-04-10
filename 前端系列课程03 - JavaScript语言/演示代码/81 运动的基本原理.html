@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding:0;
+				margin: 0;
+			}
+			#btn{
+				margin: 20px;
+			}
+			#hd{
+				height: 200px;
+				background: mediumpurple;
+			}
+		</style>
+		<script type="text/javascript">
+			
+			window.onload = function(){
+				var btn = document.getElementById("btn");
+				var hd = document.getElementById("hd");
+				
+//				给按钮加单击事件
+				btn.onclick = function(){
+//					设置定时器,自动改变宽度
+					setInterval(function(){
+//						获得当前宽度
+						var old_width = hd.style.width;
+//						计算新宽度
+						var new_width = parseInt(old_width)+2;
+//						将新宽度赋值回来
+						hd.style.width = new_width+'px';
+					},50)
+				}
+			}
+			
+//			作业:点击按钮,让元素向右跑
+			
+		</script>
+	</head>
+	<body>
+		
+		<input type="button" id="btn" value="点我啊" />
+		<br /><br />
+		
+		<div id="hd" style="width: 300px;margin-left: 20px;"></div>
+		
+		
+		
+		
+	</body>
+</html>

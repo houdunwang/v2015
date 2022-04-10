@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#hd{
+				width: 500px;
+				height: 300px;
+				background: dodgerblue;
+				margin: 10px auto;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="hd"></div>
+	
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//		$("#hd").mouseenter(function(){
+//			$(this).css({'background':'purple'});
+//		})
+//		
+//		$("#hd").mouseleave(function(){
+//			$(this).css({'background':'green'});
+//		})
+
+
+//		hover方法其实就是mouseenter和mouseleave的集合体
+		$("#hd").hover(function(){
+			$(this).css({'background':'purple'});
+		},function(){
+			$(this).css({'background':'green'});
+		});
+
+		
+	</script>
+		
+	</body>
+</html>

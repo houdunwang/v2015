@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			header{
+				width: 1000px;
+				height: 150px;
+				background: dodgerblue;
+				margin: 0 auto;
+			}
+			nav{
+				width: 1000px;
+				height: 40px;
+				background: hotpink;
+				margin: 0 auto;
+			}
+			nav a{
+				float: left;
+				font-size: 15px;
+				line-height: 40px;
+				text-decoration: none;
+				margin: 0 10px;
+			}
+			#main{
+				width: 1000px;
+				height: 400px;
+				margin: 0 auto;
+
+			}
+			#main article{
+				width: 750px;
+				height: 400px;
+				background: greenyellow;
+				float: left;
+			}
+			#main aside{
+				width: 230px;
+				float: right;
+				height: 400px;
+				background: yellow;
+			}
+			footer{
+				width: 1000px;
+				height: 100px;
+				background: mediumpurple;
+				margin: 0 auto;
+			}
+			#main article .desc{
+				font-size: 13px;
+			}
+			mark{
+				font-weight: 700;
+				background: white;
+			}
+			progress{
+				background: #FF69B4;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<header></header>
+		<nav>
+			<a href="">后盾人</a>
+			<a href="">后盾人</a>
+			<a href="">后盾人</a>
+			<a href="">后盾人</a>
+			<a href="">后盾人</a>
+			<a href="">后盾人</a>
+			<a href="">后盾人</a>
+			<a href="">后盾人</a>
+		</nav>
+		
+		
+		<div id="main">
+			<!--文章区域-->
+			<article>
+				<h1>新时代人们常用的电子产品介绍</h1>
+				文章发布时间：<time datetime="2019-3-5 15:3:8">2019-3-5 15:3:8</time>
+				<p class="desc">本文详细介绍了大家在日常生活中常用的一些电子产品</p>
+				<!--文章章节-->
+				<section>
+					<h3>手机</h3>
+					<p>手机几乎人手一部，<mark>体积小，重量轻</mark>，方便携带，非常受大家欢迎！<ins>手机几乎人手一部</ins>，体积小，重量轻，方便携带，非常受大家欢迎！手机几乎人手一部，<del>体积小，重量轻，方便携带</del>，非常受大家欢迎！</p>
+				</section>
+				<!--文章章节结束-->
+				<section>
+					<h3>pc电脑</h3>
+					<p>pc电脑由来已久，每个家庭几乎都有。但是体积较大，不方便携带。相比手机而言，pc电脑性能更高，适合用来处理一些比较专业的事务，比如写代码、处理视频等</p>
+				</section>
+				<section>
+					 <h3>ipad平板电脑</h3>
+					 <p>ipad平板电脑体积比手机要大，重量适中，方便携带，深受目前学龄前小朋友的喜爱！ipad平板电脑体积比手机要大，重量适中，方便携带，深受目前学龄前小朋友的喜爱！</p>
+				</section>
+			</article>
+			
+			<!--文章区域结束-->
+			<aside>
+				js for循环写法：
+				<br />
+				<code>
+					for(var i=0;i<10;i++){
+						alert(i);
+					}
+				</code>
+				<!--进度条-->
+				<progress min='0' max='100' value="33"></progress>
+			</aside>
+		</div>
+		
+		
+		<footer>
+			<address>地址：北京市朝阳区顺白路12号</address>
+		</footer>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!-- 引入模块 -->
+<wxs src="./compulsory.wxs" module='compulsory'></wxs>
+<wxs src="./own.wxs" module='own'></wxs>
+
+
+<text>后盾人车险计算器</text>
+<view>
+  <text>请输入新车价格</text>
+</view>
+
+
+<input class='input' bindinput='inputfoo'></input>
+
+<view>
+  <text>交强险：{{compulsory.foo(price)}}元</text>
+</view>
+
+<view>
+  <text>商业自愿险：{{own.foo(price)}}元</text>
+</view>
+
+
+
+
+
+
+

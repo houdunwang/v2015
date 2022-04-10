@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				background: #272822;
+				margin: 0 auto;
+				display: block;
+				position: relative;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<canvas id="canvas" width="800" height="500"></canvas>
+	
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+		
+//		获得绘画环境(相当于铺了一层画布)
+		var cv = canvas.getContext('2d');
+		
+		cv.lineWidth = 5;
+		cv.strokeStyle = 'yellow';
+
+		cv.beginPath();
+		cv.moveTo(200,200);
+		cv.arc(200,200,100,-45*Math.PI/180,45*Math.PI/180,true);
+		cv.closePath();
+		cv.stroke();
+		
+		cv.fillStyle = 'yellow';
+		cv.fill();
+		
+		
+		cv.arc(350,200,20,0,360*Math.PI/180);
+		cv.fill();
+		
+		cv.arc(450,200,20,0,360*Math.PI/180);
+		cv.fill();
+		
+		cv.arc(550,200,20,0,360*Math.PI/180);
+		cv.fill();
+	</script>
+		
+	</body>
+</html>

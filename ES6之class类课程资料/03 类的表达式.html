@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+//			类的表达式
+			let a = class animal{
+
+//				类的构造函数
+				constructor(){
+					this.weight = '重量';
+					this.color = '颜色';
+				}
+
+				move(){
+					console.log('能动');
+				}
+			}
+			
+			let cat = new a;
+			console.log(cat.weight);
+			console.log(cat.color);
+			cat.move();
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

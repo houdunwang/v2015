@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+//			let [x,y] = [1,2];
+//			console.log(x,y);
+//			
+			
+//			字符串的解构赋值
+//			x、y、z分别对应后、盾、人
+//			let [x,y,z] = '后盾人';
+//			console.log(x);
+//			console.log(y);
+//			console.log(z);
+
+
+//			let {length:l} = '后盾人';
+//			console.log(l);
+
+
+//			函数参数的解构赋值
+			function foo([x,[[y]]]){
+				return x*y;
+			}
+			
+			document.write(foo([3,[[4]]]));
+			
+			
+		</script>
+		
+	</body>
+</html>

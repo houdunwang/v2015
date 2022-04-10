@@ -1,0 +1,14 @@
+<!-- 引入模块 -->
+<!-- 模块引入的时候必须用相对路径 -->
+<wxs src="./index.wxs" module="hd"></wxs>
+
+
+<!-- 调用hd模块的数据 -->
+<text>{{hd.h}}</text>
+<text>{{hd.f()}}</text>
+<text>{{hd.s(6)}}</text>
+
+
+
+
+

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=4eQQ1fZAP1iwK5YekxqTtEjKkAZstwH5" type="text/javascript"></script>
+    <style>
+        html,body,#app{
+            width:100%;
+            height:100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+
+    <script>
+        //百度地图API功能
+        var map = new BMap.Map('app'); //创建api应用
+//        map.centerAndZoom(new BMap.Point(121.4,31.2),10); //初始化地图,设置中心店坐标和地图缩放级别
+        //第二种方法,可以使用城市名称来定义中心点
+        //如果使用点坐标来定义中心坐标,nam第二个参数缩放级别必须填写
+        //如果使用城市名称来定义中心坐标,那么第二个参数可以不填写.不填写,则会默认缩放到适应的一个级别
+        map.centerAndZoom('北京');
+        map.addControl(new BMap.MapTypeControl()); //添加地图类型控件
+        map.setCurrentCity('上海'); //设置地图显示的城市
+        map.enableScrollWheelZoom(true); //开始鼠标滚轮缩放,默认是关闭
+    </script>
+</body>
+</html>

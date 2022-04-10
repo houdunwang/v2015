@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="libs/swiper-4.3.3.min.css"/>
+		<link rel="stylesheet" type="text/css" href="libs/animate.min.css"/>
+		<link rel="stylesheet" type="text/css" href="libs/a.css"/>
+	</head>
+	<body>
+		
+		
+	<div class="swiper-container">
+	    <div class="swiper-wrapper">
+	        <div class="swiper-slide one" style="background: dodgerblue;">
+				<h1 class="ani" swiper-animate-effect="fadeInDownBig" swiper-animate-duration="1s" swiper-animate-delay="0.1s">后盾人 人人做后盾</h1>	
+				<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.9s">后盾人提供海量原创web开发视频教程！</p>
+	        </div>
+	        <div class="swiper-slide two" style="background: orangered;">
+	        	<h1 class="ani" swiper-animate-effect="rotateIn" swiper-animate-duration="1s" swiper-animate-delay="0.2s">非常给力！</h1>
+	        	<img src="qiutian.jpg" class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s" />
+	        </div>
+	        <div class="swiper-slide" style="background: forestgreen;">Slide 3</div>
+	    </div>
+	    <!-- 如果需要分页器 -->
+	    <div class="swiper-pagination"></div>
+	    
+	</div>
+		
+	<script src="libs/swiper-4.3.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="libs/swiper.animate1.0.3.min.js" type="text/javascript" charset="utf-8"></script>
+	
+	
+	<script>        
+	  var mySwiper = new Swiper ('.swiper-container', {
+	    direction: 'horizontal',
+	    loop: true,
+	    
+	    // 如果需要分页器
+	    pagination: {
+	      el: '.swiper-pagination',
+	    },
+	    
+//	    运动的初始化
+	    on:{
+	      init: function(){
+	        swiperAnimateCache(this); //隐藏动画元素 
+	        swiperAnimate(this); //初始化完成开始动画
+	      }, 
+	      slideChangeTransitionEnd: function(){ 
+	        swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+	      } 
+	    }	
+	    
+	    
+	 
+	  })        
+	</script>
+	</body>
+</html>

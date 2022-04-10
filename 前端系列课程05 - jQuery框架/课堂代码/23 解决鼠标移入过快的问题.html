@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			
+			#box{
+				width: 200px;
+				height: 500px;
+				background: dodgerblue;
+				margin: 30px auto;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		
+		<div id="box"></div>
+	
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$("#box").mouseenter(function(){
+			
+			timer = setTimeout(function(){
+				alert('后盾人 人人做后盾');
+			},200)
+
+		})
+		
+		
+		$("#box").mouseleave(function(){
+			clearTimeout(timer);
+		})
+		
+	</script>
+		
+	</body>
+</html>

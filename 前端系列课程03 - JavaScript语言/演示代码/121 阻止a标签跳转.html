@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<a href="http://houdunren.com" id="link">后盾人</a>
+		
+		
+		<script type="text/javascript">
+			
+			document.getElementById("link").onclick = function(e){
+				alert('后盾人 人人做后盾');
+				var ev = window.event || e;
+//				阻止浏览器默认行为
+				if (document.all) {
+					ev.returnValue = false; 
+				}else{
+					ev.preventDefault(); 
+				}
+			}
+			
+		</script>
+	</body>
+</html>

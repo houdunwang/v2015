@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+<script type="text/javascript">
+	
+//	前瞻匹配到的具体数据不会在匹配总结果中显示出来
+	
+//	正向前瞻(正向零宽先行断言)
+//	var reg = /\w+?(?=\.jpg)/;
+//	var str = '123.jpg,hd.gif,houdun.doc,hdr.jpg,abc.mp4';
+
+
+//	反向前瞻(负向零宽先行断言)
+	var reg = /[a-z]{3,}(?!00)/i;
+	var str = 'aaa00,bbbb111,cccc22';
+	var result = reg.exec(str);
+	console.log(result);
+
+	
+</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				padding: 100px;
+				
+			}
+		</style>
+	</head>
+	<body>
+		
+		<input type="button" id="btn" value="点我操作属性" />
+		<br /><br />
+		
+		<h1 id="title" class="hd abc bt" houdun='hdr'>后盾人 人人做后盾</h1>
+		
+		<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript">
+			
+			$("#btn").click(function(){
+				//			设置属性
+//				$("#title").attr('class','wwwwwwwwwwwwww');
+//				$("#title").attr('houdun','qqqqqqqqq');
+//				获得元素属性
+//				alert($("#title").attr('houdun'));
+				
+//				$("#title").prop('class','qqqqqqqqqqq');
+//				$("#title").prop('hd','qqqqqqqqqqq');
+				
+//				attr是通过setAttribute和getAttribute来操作属性,会直接改变元素结构
+//				prop是通过给元素对象添加属性来实现属性的添加
+				
+//				attr一般用来操作自定义属性
+//				prop一般用来操作元素特定的属性
+
+
+//				删除属性
+				$("#title").removeAttr('houdun');
+				
+			})
+			
+			
+		</script>
+		
+		
+		
+	</body>
+</html>

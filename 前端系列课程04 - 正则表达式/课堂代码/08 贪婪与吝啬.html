@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	<script type="text/javascript">
+
+		var reg = /<p>.*?<\/p>/;
+		var str = '<p>我是第一个</p><p>22222</p>';
+		var result = reg.exec(str);
+		console.log(result);
+		console.log('匹配到的内容',result[0]);
+		console.log('在几号位置上匹配到的',result.index);
+		console.log('原始字符串',result.input);
+		
+	</script>
+		
+		
+	</head>
+	<body>
+	</body>
+</html>

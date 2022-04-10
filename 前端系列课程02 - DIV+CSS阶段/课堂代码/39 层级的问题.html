@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.a{
+				width: 800px;
+				height: 160px;
+				border: solid 5px limegreen;
+				margin: 30px auto;
+				position: relative;
+				z-index: 5;
+			}
+			.a .x{
+				width: 200px;
+				height: 500px;
+				position: absolute;
+				right: 100px;
+				top: 30px;
+				background: limegreen;
+			}
+			.b{
+				width: 800px;
+				height: 500px;
+				border: solid 5px dodgerblue;
+				margin: 0 auto;
+				position: relative;
+			}
+			.b .y{
+				width: 500px;
+				height: 400px;
+				background: dodgerblue;
+				position: absolute;
+				right: 50px;
+				top: 60px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<!--只有亲兄弟才能比层级-->
+		
+		
+		<div class="a">
+			<div class="x"></div>
+		</div>
+		
+		<div class="b">
+			<div class="y"></div>
+		</div>
+		
+		
+		
+	</body>
+</html>

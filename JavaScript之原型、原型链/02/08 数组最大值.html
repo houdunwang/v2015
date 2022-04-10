@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+	<script type="text/javascript">
+		
+	//	给js语法中自带的Array数组构造函数添加一个max方法.
+	//	通过Array构造函数再创建出来的对象就有max方法可以用了
+		Array.prototype.max = function(){
+	//	console.log('我是max方法');
+	//	console.log(this);
+			var m = Math.max.apply(null,this);
+			return m;
+		}
+		
+		var arr = [1,2,113,4,3];
+		var result = arr.max();
+		console.log(result);
+			
+			
+	</script>
+		
+		
+	</body>
+</html>

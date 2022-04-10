@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.mi{
+				width: 234px;
+				height: 300px;
+				border: 1px solid rgba(0,0,0,0.5);
+				margin: 100px auto;
+				position: relative;
+				transition: all 0.5s;
+				top: 0;
+				overflow: hidden;
+			}
+			.mi .bot{
+				width: 234px;
+				height: 75px;
+				background: #FF6700;
+				position: absolute;
+				left: 0;
+				top: 300px;
+				opacity: 0;
+				transition: all 0.5s;
+			}
+			.mi:hover{
+				top: -10px;
+				box-shadow: 0 0 10px 10px rgba(0,0,0,0.05);
+			}
+			.mi:hover .bot{
+				opacity: 1;
+				top: 225px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div class="mi">
+			<div class="bot"></div>
+		</div>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,72 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+#header{
+	width: 1000px;
+	height: 150px;
+	background: dodgerblue;
+	margin: 0 auto;
+}
+#menu{
+	width: 1000px;
+	height: 50px;
+	background: hotpink;
+	margin: 0 auto;
+	
+}
+#main{
+	width: 1000px;
+	height: 800px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+#main .left{
+	width: 500px;
+	height: 800px;
+	background: orange;
+	float: left;
+	/*运动时间*/
+	animation-duration: 1s;
+	/*运动延迟*/
+	animation-delay: 0.5s;
+}
+#main .right{
+	width: 500px;
+	height: 800px;
+	background: limegreen;
+	float: left;
+	animation-duration: 1s;
+	animation-delay: 0.5s;
+}
+#show{
+	width: 1000px;
+	height: 400px;
+	margin: 0 auto;
+}
+#show .left{
+	width: 300px;
+	height: 400px;
+	background: #A349A4;
+	float: left;
+}
+#show .center{
+	width: 400px;
+	height: 400px;
+	background: #FFAEC9;
+	float: left;
+}
+#show .right{
+	width: 300px;
+	height: 400px;
+	background: #FFC90E;
+	float: left;
+}
+#footer{
+	width: 1000px;
+	height: 200px;
+	background: #22B14C;
+	margin: 0 auto;
+}
+
+

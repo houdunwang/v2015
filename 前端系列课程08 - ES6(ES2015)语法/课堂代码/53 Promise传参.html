@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+			
+			let p = new Promise((resolve,reject)=>{
+				setTimeout(()=>{
+//					console.log('脱完衣服啦');
+					resolve(3);
+				},2000)
+			})	
+			
+			p.then((d)=>{
+				console.log('去洗'+d+'件衣服');
+			})
+			
+		</script>
+		
+		
+	</body>
+</html>

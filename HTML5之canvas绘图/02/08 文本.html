@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				background: #272822;
+				display: block;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<canvas id="canvas" width="800" height="500"></canvas>
+		
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+//		获得绘画环境
+		var cv = canvas.getContext('2d');
+		
+//		设置文本属性		
+		cv.font = '50px 微软雅黑';
+		cv.strokeStyle = 'yellow';
+		cv.strokeText('后盾人 人人做后盾',200,100,500);
+		
+		cv.fillStyle = 'yellow';
+		cv.fillText('后盾人免费直播课',150,300);
+		
+		console.log(cv.measureText('后盾人').width);
+		
+		
+		
+	</script>
+		
+		
+		
+	</body>
+</html>

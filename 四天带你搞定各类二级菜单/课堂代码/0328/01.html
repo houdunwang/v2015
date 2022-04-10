@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.customer{
+				width: 75px;
+				height: 29px;
+				background: #E3E4E5;
+				margin: 100px auto;
+				position: relative;
+			}
+			.customer:hover>div{
+				display: block;
+			}
+			.customer:hover>a{
+				background: white;
+				border: 1px solid #ccc;
+				border-bottom: none;
+				height: 30px;
+				position: relative;
+				z-index: 1;
+			}
+			.customer>a{
+				display: block;
+				width: 73px;
+				height: 28px;
+				text-align: center;
+				line-height: 28px;
+				font-size: 12px;
+				text-decoration: none;
+				color: #999;
+				border: 1px solid #E3E4E5;
+				border-bottom: none;
+				cursor: text;
+			}
+			.customer>div{
+				width: 170px;
+				border: 1px solid #ccc;
+				/*height: 100px;*/
+				position: absolute;
+				right: 0px;
+				top: 29px;
+				display: none;
+			}
+			.customer>div dl{
+				width: 100%;
+				border-bottom: 1px solid #EEEEEE;
+				overflow: hidden;
+				margin-bottom: 10px;
+			}
+			.customer>div dl.sh{
+				border-bottom: none;
+			}
+			.customer>div dl dt{
+				width: 100%;
+				line-height: 24px;
+				height: 24px;
+				font-size: 12px;
+				font-weight: 700;
+				color: #666;
+				text-indent: 15px;
+			}
+			.customer>div dl dd{
+				line-height: 24px;
+				height: 24px;
+				font-size: 12px;
+				color: #999;
+				width: 85px;
+				float: left;
+				text-indent: 15px;
+			}
+		</style>
+		
+		
+		<div class="customer">
+			<a href="">客户服务</a>
+			<div>
+				<dl>
+					<dt>客户</dt>
+					<dd>帮助中心</dd>
+					<dd>售后服务</dd>
+					<dd>在线客服</dd>
+					<dd>意见建议</dd>
+					<dd>电话客服</dd>
+					<dd>客服邮箱</dd>
+					<dd>金融咨询</dd>
+					<dd>售全球客服</dd>
+				</dl>
+				<dl class="sh">
+					<dt>商户</dt>
+					<dd>帮助中心</dd>
+					<dd>售后服务</dd>
+					<dd>在线客服</dd>
+					<dd>意见建议</dd>
+					<dd>电话客服</dd>
+					<dd>客服邮箱</dd>
+					<dd>金融咨询</dd>
+					<dd>售全球客服</dd>
+				</dl>
+			</div>
+		</div>
+		
+		
+	</body>
+</html>

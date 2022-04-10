@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#hd{
+				width: 500px;
+				border: 5px solid orangered;
+				margin: 40px auto;
+				padding: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<input type="button" value="设置宽度" id="btn" />
+		
+		<div id="hd">
+			后盾 HDPHP 框架是一个为用 PHP 程序语言编写网络应用程序的人员提供的软件包。 提供强大的、完整的类库包，满足开发中的项目需求，HDPHP 框架可以将需要完成的任务代码量最小化，大大提高项目开发效率与质量，当然使用是非常简便、快捷的。高效的核心编译处理机制让系统运行更快，提供丰富的的错误解决方案，让修正代码变得更快速。
+
+做为优秀的框架产品，HDPHP在系统性能上做了大量的优化处理，只为让程序员使用 HDPHP 框架强悍的功能，用最短的时间完成项目的开发。为了便于快速进行项目开发，框架也提供了相应的前端功能组件使程序员从繁琐的组件调试中解脱出来。
+		</div>
+	
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$("#btn").click(function(){
+			$("#hd").width(700).height(600);
+
+		})
+		
+		
+	</script>
+		
+	</body>
+</html>

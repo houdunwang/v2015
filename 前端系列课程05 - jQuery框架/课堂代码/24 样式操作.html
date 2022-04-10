@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				padding-top: 100px;
+				padding-left: 200px;
+			}
+			#hd{
+				width: 500px;
+				height: 300px;
+				background: mediumpurple;
+
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<input type="button" value="我是按钮" id="btn" />
+		<br /><br />
+		
+		<div id="hd">
+			
+		</div>
+		
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$("#btn").click(function(){
+//			设置单个样式
+//			$("#hd").css('background','orangered');
+//			设置多个样式
+//			$("#hd").css({'background':'green','width':'200px'});
+
+//			获得实际作用在元素身上的样式
+			var w = $("#hd").css('width');
+			alert(w);
+
+	
+		})
+		
+	</script>
+	
+		
+		
+	</body>
+</html>

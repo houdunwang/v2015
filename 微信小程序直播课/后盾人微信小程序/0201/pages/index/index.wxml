@@ -1,0 +1,10 @@
+
+
+<view class='item' wx:for="{{news}}">
+
+  <image src='{{item.imgUrl}}' class='itemimage'></image>
+  <text class='itemtitle'>{{item.title}}</text>
+</view>
+
+
+

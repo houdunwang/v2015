@@ -1,0 +1,170 @@
+.star:before {
+  color: #d20300;
+  content: ' * ';
+}
+a {
+  text-decoration: none !important;
+}
+.h4,
+h4 {
+  font-size: 18px;
+}
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+table > thead > tr > td,
+table > tbody > tr > td,
+table > tfoot > tr > td {
+  vertical-align: middle !important;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.admin-top {
+  background: #222222;
+  margin-bottom: 10px;
+}
+.admin-top .navbar {
+  border: 0;
+  margin-bottom: 0;
+}
+.list-group .list-group-item.active {
+  background: #428bca;
+  border-color: #428bca;
+}
+.list-group .list-group-item.active a {
+  color: #ffffff;
+}
+.nav.nav-tabs {
+  margin-bottom: 20px;
+  border-color: #428bca;
+}
+.nav.nav-tabs li.active a,
+.nav.nav-tabs li.active a:hover,
+.nav.nav-tabs li.active a:focus {
+  border: 1px solid #428bca !important;
+  background-color: #428bca !important;
+  color: #ffffff;
+}
+.nav.nav-tabs li a:hover {
+  background: #eeeeee !important;
+  border-color: #eeeeee #eeeeee #428bca #eeeeee;
+}
+.nav.nav-tabs li a:focus {
+  background: none;
+  border-bottom: solid 1px #428bca;
+}
+.nav.nav-pills li a {
+  font-size: 14px;
+}
+html,
+body,
+h1,
+h2,
+h3 {
+  font-family: arial, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', '宋体', Tahoma, Arial, Helvetica, STHeiti;
+}
+.ng-cloak {
+  display: none;
+}
+.row {
+  margin-left: auto;
+  margin-right: auto;
+}
+#modalMessage {
+  z-index: 10000000000;
+}
+.arrow-left {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 10px solid #dddddd;
+  left: -10px;
+  top: 25px;
+  z-index: 999;
+}
+.arrow-left:after {
+  content: "";
+  left: 1px;
+  top: -8px;
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 11px solid #ffffff;
+}
+.arrow-top {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-color: transparent transparent #d1d1d1 transparent;
+  border-width: 0px 8px 10px 8px;
+  left: 50%;
+  top: -10px;
+  z-index: 999;
+}
+.arrow-top:after {
+  content: "";
+  left: -8px;
+  top: 1px;
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0px 8px 10px 8px;
+  border-bottom-color: #f3f3f3;
+  border-color: transparent transparent #f3f3f3 transparent;
+}
+body {
+  background: #f9f9f9 !important;
+  font-size: 14px;
+}
+ol.breadcrumb {
+  background: #f9f9f9 !important;
+}
+.admin_menu .left-menu div#search-menu input {
+  border-radius: 0;
+  font-size: 14px;
+  height: 43px;
+}
+.admin_menu .left-menu .panel {
+  margin-bottom: 0px;
+  border-radius: 0px;
+  border-bottom: 0;
+  border-top: 0;
+}
+.admin_menu .left-menu .panel .panel-heading {
+  position: relative;
+  border-top-width: 0;
+}
+.admin_menu .left-menu .panel .panel-heading .panel-collapse {
+  width: 50px;
+  line-height: 2.5em;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  color: #cccccc;
+  text-align: center;
+  background: #eeeeee;
+  border-left: solid 1px #dddddd;
+}
+.admin_menu .left-menu .panel ul:last-child {
+  border-bottom: solid 1px #dddddd;
+}
+.admin_menu .left-menu .panel ul li {
+  cursor: pointer;
+}
+.master-footer {
+  text-align: center;
+  border-top: solid 1px #dddddd;
+  padding-top: 15px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}

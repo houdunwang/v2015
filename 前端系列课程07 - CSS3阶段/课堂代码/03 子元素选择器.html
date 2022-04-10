@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				padding-left: 200px;
+			}
+			#x{
+				width: 400px;
+				border: 2px solid orange;
+			}
+			#y{
+				width: 400px;
+				border: 2px solid mediumpurple;
+			}
+			
+			/*获得div中的p标签的父级元素中的和一个子元素, 并且要求第一个子元素是p标签*/
+			/*div p:nth-child(1){
+				color: blue;	
+				font-size: 20px;
+			}*/
+			
+			/*div p:last-child{
+				color: blue;	
+				font-size: 20px;
+			}*/
+			
+			/*选择的是独生子的p标签*/
+			/*不能有任何兄弟元素*/
+			/*div p:only-child{
+				color: blue;	
+				font-size: 20px;
+			}*/
+			
+			div p:nth-last-child(3){
+				color: blue;	
+				font-size: 20px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div id="">
+			<p>只有我自己是p标签</p>
+			<span>span</span>
+		</div>
+		
+		<div id="x">
+			<p>后盾人 人人做后盾1</p>
+			<p>后盾人 人人做后盾2</p>
+			<p>后盾人 人人做后盾3</p>
+			<p>后盾人 人人做后盾4</p>
+			<p>后盾人 人人做后盾5</p>
+			<p>后盾人 人人做后盾6</p>
+		</div>
+		
+		<br /><br />
+		
+		<div id="y">
+			<span>我是span标签！！！</span>
+			<p>后盾人 人人做后盾1</p>
+			<p>后盾人 人人做后盾2</p>
+			<p>后盾人 人人做后盾3</p>
+			<p>后盾人 人人做后盾4</p>
+			<p>后盾人 人人做后盾5</p>
+			<p>后盾人 人人做后盾6</p>
+		</div>
+		
+	</body>
+</html>

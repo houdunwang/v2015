@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+//			构造函数(类)
+			function ren(){
+				this.name = '名字';
+				this.sex = '性别';
+				this.height = '身高';
+				this.weight = '体重';
+				this.look = function(){
+					alert('能看见东西');
+				};
+				this.run = function(){
+					alert('能跑');
+				};
+			}
+			
+			
+//			通过构造函数实例化具体对象
+			var xiawa = new ren();
+			xiawa.name = '夏娃';
+			document.write(xiawa.name);
+			xiawa.sex = '女孩';
+			document.write(xiawa.sex);
+			
+			
+			var yadang = new ren();
+			yadang.name = '亚当';
+//			执行对象里的方法
+			yadang.run();
+			
+//			追加新属性和新方法
+			yadang.wenshen = '两只皮皮虾';
+			document.write(yadang.wenshen);
+			yadang.tree = function(){
+				alert('会爬树');
+			}
+			yadang.tree();
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

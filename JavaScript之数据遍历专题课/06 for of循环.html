@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+<script type="text/javascript">
+	
+//			var arr = ['苹果','鸭梨','香蕉','西瓜','火龙果','葡萄'];
+//			
+////			for of循环,遍历数组的时候,x代表是每次遍历到的数据的值
+//			for (x of arr) {
+//				console.log(x);
+//			}
+
+
+
+//	let s = new Set(['苹果','鸭梨','香蕉','西瓜','火龙果','葡萄']);
+//	
+//	for (x of s) {
+//		console.log(x);
+//	}
+
+
+
+
+	let m = new Map([
+		['a',1],
+		['b',2],
+		['c',3],
+		['d',4],
+	])
+
+//	for of遍历Map结构数据的时候,x代表的是每次遍历的键值对,键名和键值以数组的形式呈现
+	for (x of m) {
+		console.log('键名',x[0]);
+		console.log('键值',x[1]);
+	}
+
+	
+</script>
+	</head>
+	<body>
+	</body>
+</html>

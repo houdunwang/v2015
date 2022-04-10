@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				background: #272822;
+				margin: 0 auto;
+				display: block;
+				position: relative;
+				margin-top: 200px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<canvas id="canvas" width="200" height="50"></canvas>
+	
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+		
+//		获得绘画环境(相当于铺了一层画布)
+		var cv = canvas.getContext('2d');
+
+		cv.fillStyle = 'yellow';
+		cv.font = '30px arial';
+		var words = 'QWERTYUIOPASDFGHJKLZXCVBNM';
+		
+		for (var i=0;i<4;i++) {
+			var num = Math.floor(Math.random()*(words.length-1+1-0)+0);
+//			随机位置
+			var l = Math.floor(Math.random()*((i*50+20)+1-i*50)+i*50);
+			var t = Math.floor(Math.random()*(45+1-30)+30);
+			var r = Math.floor(Math.random()*256);
+			var g = Math.floor(Math.random()*256);
+			var b = Math.floor(Math.random()*256);
+			cv.fillStyle = 'rgb('+r+','+g+','+b+')';
+//			随机角度
+			var d = Math.floor(Math.random()*(5+1+5)-5);
+			cv.rotate(d*Math.PI/180);
+			cv.fillText(words[num],l,t);
+						
+		}
+		
+		
+		for (var i=0;i<10;i++) {
+			var startx = Math.floor(Math.random()*201);
+			var starty = Math.floor(Math.random()*51);
+			var endx = Math.floor(Math.random()*201);
+			var endy = Math.floor(Math.random()*51);
+			cv.beginPath();
+			cv.moveTo(startx,starty);
+			cv.lineTo(endx,endy);
+			cv.closePath();
+			var r = Math.floor(Math.random()*256);
+			var g = Math.floor(Math.random()*256);
+			var b = Math.floor(Math.random()*256);
+			var o = Math.floor(Math.random()*101);
+			cv.strokeStyle = 'rgba('+r+','+g+','+b+','+o/100+')';
+			cv.stroke();
+		}
+		
+		
+		
+		
+
+		
+	</script>
+		
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		<script type="text/javascript">
+			
+//			动物构造函数
+			function animal(){
+				this.live = '活的';
+				this.color = '颜色';
+				this.move = function(){
+					console.log('能动');
+				}
+			}
+			
+			
+//			鱼类构造函数
+			function fish(){
+//				对象的冒充，用来模拟类的继承效果
+//				this指向的对象,冒充window对象来执行animal方法
+				window.animal.call(this);
+			}
+			
+			
+			var shayu = new fish();
+			console.log(shayu.color);
+			
+			
+		</script>
+		
+		
+		
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				
+			}
+			div{
+				width: 300px;
+				height: 150px;
+			}
+			#x{
+				background: #00A2E8;
+			}
+			#y{
+				background: #FF7F27;
+				float: left;
+			}
+			#z{
+				background: #22B14C;
+				width: 500px;
+				height: 220px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<!--如果浮动元素的上一行是正常元素，那么浮动元素是跑不上去的-->
+		
+		<!--正常元素在排列自己位置的时候，会忽略掉他前面的浮动元素-->
+		
+		<div id="x"></div>
+		<div id="y"></div>
+		<div id="z">正常元素在排列自己位置的时候，会忽略掉他前面的浮动元素正常元素在排列自己位置的时候，会忽略掉他前面的浮动元素正常元素在排列自己位置的时候，会忽略掉他前面的浮动元素正常元素在排列自己位置的时候，会忽略掉他前面的浮动元素</div>
+		
+		
+		
+	</body>
+</html>

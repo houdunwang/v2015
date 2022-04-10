@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="libs/swiper-4.3.3.min.css"/>
+		<style>
+			.swiper-container{
+				width: 600px;
+				height: 260px;
+				border: 1px solid mediumpurple;
+				margin: 30px auto;
+			}
+			.swiper-container2{
+				width: 800px;
+				height: 200px;
+				border: 1px solid purple;
+				margin: 50px auto;
+				overflow: hidden;
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="swiper-container">
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide" style="background: dodgerblue;">Slide 1</div>
+		        <div class="swiper-slide" style="background: lightpink;">Slide 2</div>
+		        <div class="swiper-slide" style="background: orange">Slide 3</div>
+		    </div>
+		    <!-- 如果需要分页器 -->
+		    <div class="swiper-pagination"></div>
+		</div>
+		
+		
+		<div class="swiper-container2">
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide" style="background: dodgerblue;">Slide 1</div>
+		        <div class="swiper-slide" style="background: lightpink;">Slide 2</div>
+		        <div class="swiper-slide" style="background: orange">Slide 3</div>
+		    </div>
+		    <!-- 如果需要分页器 -->
+		    <div class="swiper-pagination"></div>
+		</div>
+		
+		
+		
+		
+		<script src="libs/swiper-4.3.3.min.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script>        
+		  var mySwiper = new Swiper ('.swiper-container', {
+		    direction: 'vertical',
+		    loop: true,
+		    
+		    // 如果需要分页器
+		    pagination: {
+		      el: '.swiper-pagination',
+		    },
+		  })  
+		  
+		  
+		  var mySwiper2 = new Swiper ('.swiper-container2', {
+		    direction: 'horizontal',
+//		    loop: true,
+		    
+		    // 如果需要分页器
+		    pagination: {
+		      el: '.swiper-pagination',
+		    },
+		  })   
+		</script>
+	</body>
+</html>

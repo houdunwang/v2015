@@ -1,0 +1,9 @@
+
+<!-- 事件流：如果多个元素层叠在一起，在事件触发的时候，会依次触发多个元素身上的事件 -->
+<!-- 触发的时候会先触发最上面的元素身上的事件 -->
+<!-- 用catch绑定的事件，会默认阻止掉事件流 -->
+<view class='a' bind:tap="fooa">a
+  <view class='b' bind:tap="foob">b
+    <view class='c' catch:tap="fooc">c</view>
+  </view>
+</view>

@@ -1,0 +1,23 @@
+#main {
+  width: 1000px;
+  height: 500px;
+  margin: 0 auto;
+  border: 2px solid blue;
+}
+#main .left {
+  width: 600px;
+  height: 500px;
+  float: left;
+  background: yellow;
+}
+#main .left h1 {
+  font-size: 30px;
+}
+#main .left p.desc {
+  font-size: 13px;
+  line-height: 2.5em;
+  color: green;
+}
+#main .left p.desc a {
+  color: purple;
+}

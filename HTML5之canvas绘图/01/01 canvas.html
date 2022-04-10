@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			canvas{
+				background: #272822;
+			}
+		</style>
+	</head>
+	<body>
+		
+	<!--canvas标签的尺寸不能用css来定义-->
+	
+	<canvas id="canvas" width="950" height="550"></canvas>
+	
+	<script type="text/javascript">
+		
+//		获得画板
+		var canvas = document.getElementById("canvas");
+//		获得绘画环境（相当于铺了一层画布）
+		var cv = canvas.getContext('2d');
+		
+//		设置填充颜色
+		cv.fillStyle = 'yellow';
+//		画一个实心的矩形
+		cv.fillRect(200,100,500,300);
+		
+		
+//		指定描边的颜色
+		cv.strokeStyle = 'purple';
+//		设置线条粗细
+		cv.lineWidth = 5;
+//		绘制空心矩形
+		cv.strokeRect(300,200,300,150);
+		
+		cv.clearRect(260,150,250,150);
+		
+		
+	</script>
+		
+	</body>
+</html>

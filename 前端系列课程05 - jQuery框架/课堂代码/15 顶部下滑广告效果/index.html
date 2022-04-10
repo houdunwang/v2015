@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			img{
+				display: block;
+				margin: 0 auto;
+				
+			}
+			#topad{
+				margin-top: -400px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<img src="images/topad.jpg" id="topad"/>
+		
+		<img src="images/fanke.jpg"/>
+		
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$("#topad").animate({'margin-top':'0'},3000,function(){
+			
+//			delay表示让后面的运动延迟执行
+			$("#topad").delay(3000).animate({'margin-top':'-400px'},2000);
+
+		});
+	</script>
+		
+	</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#kw{
+				margin-top: 50px;
+				margin-left: 100px;
+				width: 300px;
+				height: 30px;
+			}
+			#keylist{
+				position: absolute;
+				left: 100px;
+				top: 85px;
+				
+			}
+			#keylist li{
+				list-style: none;
+				font-size: 25px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<input type="text" id="kw"  />
+		<ul id="keylist">
+			
+		</ul>
+		
+		
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		$("#kw").keyup(function(){
+//			获得输入的内容
+			var kw = $("#kw").val();
+			$.ajax({
+				type:"post",
+				url:"03.php",
+				data:{'kw':kw},
+				success:function(d){
+					d = JSON.parse(d);
+					console.log(d);
+//					清空ul
+					$("#keylist").empty();
+					d.forEach(function(x){
+						x = x.replace(kw,'<strong>'+kw+'</strong>')
+						var newli = '<li>'+x+'</li>';
+						$("#keylist").append(newli);
+					})
+				}
+			});
+		})
+	</script>
+		
+	</body>
+</html>

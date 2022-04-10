@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+//			\1表示调用规则中的第一个分组
+//			分组在调用的时候,有一个特点,就是表示调用分组的时候匹配到的内容要和分组规则匹配到的内容要一样
+			
+			
+			var reg = /(\d{3})b\1/;
+//			var str = 'a123b456c';
+			var str = 'a123b123c';
+			var result = reg.exec(str);
+			console.log(result);
+
+			
+			
+		</script>
+		
+	</head>
+	<body>
+	</body>
+</html>

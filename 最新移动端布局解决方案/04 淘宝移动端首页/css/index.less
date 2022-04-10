@@ -1,0 +1,165 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+
+//顶部
+#top{
+    width: 100vw;
+    height: 74/7.5vw;
+    background: #FF852A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+        width: 55/7.5vw;
+        
+    }
+    a{
+        width: 650/7.5vw;
+        height: 50/7.5vw;
+        background: #FF4E22;
+        display: block;
+        color: white;
+        border-radius: 8/7.5vw;
+        margin-left: 11/7.5vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3.4vw;
+        i{
+            margin-right: 9/7.5vw;
+        }
+    }
+}
+//顶部结束
+
+//轮播图
+.swiper-container {
+    width: 100vw;
+    height: 237/7.5vw;
+//  border-bottom: 2px solid orangered;
+    .swiper-wrapper{
+        .swiper-slide{
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    
+    .swiper-pagination-bullet{
+        background: white;
+        opacity: 0.3;
+        &.swiper-pagination-bullet-active{
+            background: rgb(255, 80, 0);
+            opacity: 1;
+        }
+    }
+}  
+//轮播图结束
+
+
+.flashbot{
+    float: left;
+    width: 100vw;
+    margin-top: -20/7.5vw;
+    position: relative;
+    z-index: 9999;
+}
+
+//十个图标
+#icons{
+    width: 100vw;
+    overflow: hidden;
+    li{
+        width: 20%;
+        height: 142/7.5vw;
+        float: left;
+        img{
+            width: 88/7.5vw;
+            display: block;
+            margin: 0 auto;
+        }
+        a{
+            display: block;
+            text-align: center;
+            font-size: 3vw;
+            color: rgb(102, 102, 102);
+            line-height: 1.5em;
+            margin-top: 6/7.5vw;
+        }
+    }
+}
+//十个图标结束
+
+
+//淘宝头条
+#hot{
+    width: 100vw;
+    height: 119/7.5vw;
+
+    >img{
+        float: left;
+        width: 70/7.5vw;
+        margin-top: 24/7.5vw;
+        margin-left: 25/7.5vw;
+    }
+    >div{
+        width: 635/7.5vw;
+        height: 119/7.5vw;
+        float: right;
+
+        .swiper-container2{
+            width: 635/7.5vw;
+            height: 119/7.5vw;
+            overflow: hidden;
+            .swiper-wrapper{
+                .swiper-slide{
+                    background: url(../images/hot2.png) no-repeat right top;
+                    background-size: auto 100%;
+                    >div{
+                        width: 610/7.5vw;
+                        height: 119/7.5vw;
+                        background: url(../images/hot1.png) no-repeat right center;
+                        background-size: auto 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        a{
+                            color: rgb(51, 51, 51);
+                            font-size: 3vw;
+                            display: block;
+                            line-height: 1em;
+                            margin: 5/7.5vw 0;
+                            width: 450/7.5vw;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            span{
+                                color: rgb(230, 10, 31);
+                                border: 1px solid rgb(230, 10, 31);
+                                border-radius: 5/7.5vw;
+                                line-height: 1em;
+                                margin-right: 10/7.5vw;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//淘宝头条结束
+
+
+
+
+
+

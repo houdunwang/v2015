@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<ul id="hd">
+			<li>后盾人 人人做后盾0</li>
+			<li>后盾人 人人做后盾1</li>
+			<li>后盾人 人人做后盾2</li>
+			<li>后盾人 人人做后盾3</li>
+			<li>后盾人 人人做后盾4</li>
+			<li>后盾人 人人做后盾5</li>
+			<li>后盾人 人人做后盾6</li>
+			<li>后盾人 人人做后盾7</li>
+		</ul>
+		
+		
+	<script type="text/javascript">
+		
+		var lis = document.getElementById("hd").getElementsByTagName('li');
+//		for (var i=0;i<lis.length;i++) {
+//			lis[i].xuhao = i;
+//			lis[i].onclick = function(){
+//				alert(this.xuhao);
+//			}
+//		}
+
+		for (var i=0;i<lis.length;i++) {
+			let x = i;
+			lis[x].onclick = function(){
+				alert(x);
+			}
+		}
+		
+	</script>
+		
+	</body>
+</html>

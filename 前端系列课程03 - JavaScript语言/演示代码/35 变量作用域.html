@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+//			局部变量:在函数内部,用var声明的变量,叫做局部变量
+//			全局变量:不是局部变量,就一定是全局变量
+			
+			var hd = '后盾人';//全局变量
+			
+//			局部变量会在函数执行完毕后销毁
+			function foo(){
+				var url = 'www.houdunren.com';
+				console.log(hd);
+				console.log(url);
+			}
+			
+			foo();
+			
+			console.log(hd);
+			console.log(url);
+			
+			
+			
+			
+		</script>
+		
+		
+	</head>
+	<body>
+	</body>
+</html>

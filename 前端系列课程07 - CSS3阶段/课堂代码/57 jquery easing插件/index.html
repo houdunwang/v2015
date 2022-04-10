@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="jquery.easing.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.box{
+				width: 300px;
+				height: 200px;
+				background: dodgerblue;
+				position: absolute;
+				left: 0px;
+				top: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<input type="button" value="┏ (゜ω゜)=☞" id="btn" />
+		<br /><br />
+		<div class="box"></div>
+		
+		<script type="text/javascript">
+			
+			$("#btn").click(function(){
+//				$(".box").animate({'left':600},3000,'easeOutElastic');
+				$(".box").animate({'top':450},3000,'easeOutBounce');
+			})
+			
+		</script>
+		
+	</body>
+</html>

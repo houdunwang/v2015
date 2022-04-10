@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#zp{
+				width: 400px;
+				display: block;
+				margin: 80px auto;
+				animation: r 15s linear infinite;
+			}
+			#zp:hover{
+				/*暂停动画*/
+				animation-play-state: paused;
+			}
+			
+			@keyframes r{
+				from{
+					transform: rotate(0deg);
+				}
+				to{
+					transform: rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<img src="zhuanpan.png" alt="" id="zp" />
+		
+		
+		
+	</body>
+</html>

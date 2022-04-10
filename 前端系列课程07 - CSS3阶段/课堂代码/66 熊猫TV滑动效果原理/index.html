@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="libs/swiper-4.3.3.min.css"/>
+		<style type="text/css">
+			.swiper-container{
+				width: 980px;
+				height: 240px;
+				border: 1px solid blue;
+				margin: 0px auto;
+				overflow: visible;
+			}
+			.swiper-container .swiper-wrapper .swiper-slide{
+				font-size: 70px;
+				line-height: 240px;
+				text-align: center;
+				color: white;
+				font-weight: 700;
+			}
+			#panda{
+				width: 100%;
+				height: 240px;
+				overflow: hidden;
+				margin-top: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="panda">
+			
+			<div class="swiper-container">
+			    <div class="swiper-wrapper">
+			        <div class="swiper-slide" style="background: #FF7F27;">1</div>
+			        <div class="swiper-slide" style="background: #FFF200;">2</div>
+			        <div class="swiper-slide" style="background: #22B14C;">3</div>
+			        <div class="swiper-slide" style="background: #00A2E8;">4</div>
+			        <div class="swiper-slide" style="background: #A349A4;">5</div>
+			        <div class="swiper-slide" style="background: #C3C3C3;">6</div>
+			        <div class="swiper-slide" style="background: #B97A57;">7</div>
+			        <div class="swiper-slide" style="background: #FFAEC9;">8</div>
+			        <div class="swiper-slide" style="background: #FFC90E;">9</div>
+			        <div class="swiper-slide" style="background: #B5E61D;">10</div>
+			        <div class="swiper-slide" style="background: #7092BE;">11</div>
+			        <div class="swiper-slide" style="background: #C8BFE7;">12</div>
+			        
+			    </div>
+			    
+			    <!-- 如果需要导航按钮 -->
+			    <div class="swiper-button-prev"></div>
+			    <div class="swiper-button-next"></div>
+			    
+			</div>
+			
+		</div>
+		
+		<script src="libs/swiper-4.3.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>    
+
+		  var mySwiper = new Swiper ('.swiper-container', {
+		    direction: 'horizontal',
+		    loop: true,
+			slidesPerView: 4,
+			slidesPerGroup: 4,
+			loopAdditionalSlides: 8,
+			// 如果需要前进后退按钮
+		    navigation: {
+		      nextEl: '.swiper-button-next',
+		      prevEl: '.swiper-button-prev',
+		    },
+		    
+		   
+		  })        
+		</script>
+	</body>
+</html>

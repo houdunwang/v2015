@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				background: #272822;
+				margin: 0 auto;
+				display: block;
+				position: relative;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<canvas id="canvas" width="800" height="500"></canvas>
+	
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+		
+//		获得绘画环境(相当于铺了一层画布)
+		var cv = canvas.getContext('2d');
+		
+//		缩放
+//		cv.scale(1.5,0.5);
+//		平移
+//		cv.translate(-100,200);
+//		旋转(单位是弧度)
+//		360角度 对应 2π弧度
+		cv.rotate(30*Math.PI/180);
+		
+		cv.strokeStyle = 'yellow';
+		cv.lineWidth = 5;
+		cv.beginPath();
+		cv.moveTo(40,40);
+		cv.lineTo(200,300);
+		cv.lineTo(360,40);
+		cv.closePath();
+		cv.stroke();
+		
+	</script>
+		
+	</body>
+</html>

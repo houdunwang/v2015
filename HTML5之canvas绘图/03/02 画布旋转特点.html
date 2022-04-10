@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				background: #272822;
+				display: block;
+				margin: 10px auto;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<canvas id="canvas" width="800" height="500"></canvas>
+		
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+		var cv = canvas.getContext('2d');
+		
+		
+		cv.font = '30px arial';
+		cv.fillStyle = 'yellow';
+		
+		cv.rotate(30*Math.PI/180);
+		cv.fillText('www.houdunren.com',100,40);
+
+		cv.rotate(20*Math.PI/180);
+		cv.fillText('后盾人 免费公开直播课！',100,80);
+		
+		cv.rotate(-60*Math.PI/180);
+		cv.fillText('后盾人 免费公开直播课！',100,80);
+	</script>
+		
+		
+	</body>
+</html>

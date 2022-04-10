@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				background: #272822;
+				display: block;
+				margin: 10px auto;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<canvas id="canvas" width="800" height="500"></canvas>
+
+		
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+		var dog = document.getElementById("dog");
+		var cv = canvas.getContext('2d');
+	
+		var dog = document.createElement('img');
+		dog.src = 'xiaogou.jpg';
+		
+		dog.onload = function(){
+//			自定义填充规则
+			var g = cv.createPattern(dog,'repeat');
+			cv.fillStyle = g;
+			cv.fillRect(10,10,600,400);
+		}
+		
+		
+		
+	</script>
+		
+		
+	</body>
+</html>

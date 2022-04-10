@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		<div id="">
+			<p>后盾人 人人做后盾</p>
+			<p id="two">后盾人 人人做后盾</p>
+			<p class="hd">后盾人 人人做后盾</p>
+			<p id="two" name='houdun' class="hd">后盾人 人人做后盾</p>
+			<p name='houdun'>后盾人 人人做后盾</p>
+			<p class="hd">后盾人 人人做后盾</p>
+			<p name='houdun'>后盾人 人人做后盾</p>
+			<p class="hd">后盾人 人人做后盾</p>
+		</div>
+		
+	<script type="text/javascript">
+//		通过id选择元素
+//		var hd = document.getElementById("hd");
+//		hd.style.color = 'blue';
+//		hd.style.fontSize = '30px';
+
+
+//		注意:通过标签名/name属性/class属性选元素的时候,返回结果是一个数组,数组存着所有符合条件的元素
+
+//		通过标签名选元素
+//		var ps = document.getElementsByTagName('p');
+//		ps[0].style.color = 'blue';
+//		ps[1].style.color = 'blue';
+//		ps[2].style.color = 'blue';
+
+//		通过class属性来选择元素
+//		var ps = document.getElementsByClassName('hd');
+
+//		通过name属性选元素
+		var ps = document.getElementsByName('houdun');
+		
+		for (var i=0;i<ps.length;i++) {
+			ps[i].style.color = 'blue';
+		}
+	</script>
+		
+	</body>
+</html>

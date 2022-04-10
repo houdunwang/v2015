@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+		
+	<input type="button" id="btn" value="点我啊" />
+	<br /><br />
+		
+	<img src="jinmao.jpg" id="pic" />
+		
+		
+		
+	<script type="text/javascript">
+		
+		var btn = document.getElementById("btn");
+		var pic = document.getElementById("pic");
+		var sta = 1;//1对应显示状态
+		
+		
+		btn.onclick = function(){
+			if (sta==1) {
+	//			让图片隐藏
+				pic.style.display = 'none';
+				sta=2;
+			}else if(sta==2){
+//				让图片显示
+				pic.style.display = 'block';
+				sta=1;
+			}
+
+		}
+		
+	</script>
+		
+		
+		
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+//			小括号表示分组,分组中匹配到的内容会单独保存在匹配结果中
+			var reg = /验证码是(\d{4,6})，(请)在/;
+			var str = '尊贵的张三您好，您本次验证码是123456，请在10分钟内输入';
+			var result = reg.exec(str);
+			console.log(result);
+			console.log('验证码',result[1]);
+			
+			
+		</script>
+		
+	</head>
+	<body>
+	</body>
+</html>

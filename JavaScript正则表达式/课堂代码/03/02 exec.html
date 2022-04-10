@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			var reg = /\d\d/;
+			var str = '银行卡余额是1235元';
+//			var result = reg.test(str);
+			var result = reg.exec(str);
+			console.log(result.index);
+			document.write("在"+result.index+"号位置上匹配到了内容："+result[0]);
+			
+		</script>
+		
+		
+		
+	</body>
+</html>

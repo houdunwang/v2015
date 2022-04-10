@@ -1,0 +1,34 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+#top {
+  width: 100vw;
+  height: 9.86666667vw;
+  background: #FF852A;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#top img {
+  width: 7.33333333vw;
+}
+#top a {
+  width: 86.66666667vw;
+  height: 6.66666667vw;
+  background: #FF4E22;
+  display: block;
+  color: white;
+  border-radius: 1.06666667vw;
+  margin-left: 1.46666667vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.4vw;
+}
+#top a i {
+  margin-right: 1.2vw;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			ul{
+				overflow: hidden;
+				border: 2px solid purple;
+				/*将外层容器转换成弹性盒模型模式*/
+				display: flex;
+			}
+			ul li{
+				list-style: none;
+				width: 130px;
+				width: 300px;
+				height: 200px;
+				border: 2px solid dodgerblue;
+				background: yellow;
+				line-height: 200px;
+				text-align: center;
+				font-size: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<!--弹性盒模型容器中的项目默认在主轴上排列-->
+		<!--子元素默认都排列在主轴上，不换行-->
+		<!--如果项目总宽度小于容器宽度，就正常排列，按照设置的宽度-->
+		<!--如果项目总宽度大于容器宽度，那么子元素就均分容器宽度，设置宽度无效-->
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+		</ul>
+		
+		
+		
+	</body>
+</html>

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>后盾人-购物车</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.js"></script>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container" id="app">
+        <div class="row" >
+            <template v-if="goods.length==0">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                       <p>购物车空空如也~~</p>
+                    </div>
+                </div>
+            </template>
+            <template v-else>
+                <div class="panel panel-default">
+            	  <div class="panel-heading">
+            			<h3 class="panel-title">购物车</h3>
+            	  </div>
+            	  <div class="panel-body">
+            			<table class="table table-hover">
+            				<thead>
+            					<tr>
+            						<th>
+                                        <input type="checkbox" @click="selecAll" v-model="allChecked">
+                                    </th>
+            						<th>商品名称</th>
+            						<th>商品单价</th>
+            						<th>购买数量</th>
+            						<th>小计</th>
+            						<th>操作</th>
+            					</tr>
+            				</thead>
+            				<tbody>
+            					<tr v-for="(v,k) in goods">
+            						<td>
+                                        <input type="checkbox" @click="select(v.id)" :checked="allSelectData.indexOf(v.id)!=-1">
+                                    </td>
+            						<td>{{v.name}}</td>
+            						<td>{{v.price}}</td>
+            						<td>
+                                        <button @click="reduce(k)">-</button>
+                                        <input type="text" v-model="v.num" style="width: 30px;text-align: center">
+                                        <button @click="plus(k)">+</button>
+                                    </td>
+                                    <td>{{v.price*v.num}}</td>
+
+                                    <td>
+                                        <div class="btn-group btn-group-xs">
+                                            <button @click="del(k)" type="button" class="btn btn-danger">删除</button>
+                                        </div>
+                                    </td>
+            					</tr>
+            				</tbody>
+            			</table>
+            	  </div>
+                <div class="panel-footer" style="text-align: right">
+                   共计 <span>{{totalPrice}}</span> 元
+                </div>
+            </div>
+            </template>
+        </div>
+    </div>
+    <script>
+        var data = [1,2,6,7,8,9];
+        //检测元素是否在数组中
+        // console.log(data.indexOf(1));
+        new Vue({
+            el:'#app',
+            data:{
+                //购物车数据
+                goods:[
+                    {id:1,name:'联想 K5 Note 4GB+64GB 6英寸全面屏双摄手机 全网通 移动4G+ 双卡双待 极地黑',price:999,num:1},
+                    {id:2,name:'一加手机6 8GB+128GB 亮瓷黑 全面屏双摄游戏手机 全网通4G 双卡双待 骁龙845',price:3599,num:1},
+                    {id:3,name:'小米MIX2 全面屏游戏手机 6GB+64GB 黑色 全网通4G手机 双卡双待 5.99"大屏，',price:2599,num:1},
+                    {id:4,name:'OPPO R15 全面屏双摄拍照手机 4G+128G 幻色粉 全网通 移动联通电信',price:2699,num:1},
+                    {id:5,name:'Apple MacBook Air 13.3英寸笔记本电脑 银色(2017款Core i5 处理器/8GB内',price:6588,num:1},
+                    {id:6,name:'Apple MacBook Pro 15.4英寸笔记本电脑 银色(Core i7 处理器/16GB内存/256GB ',price:12277,num:1},
+                    {id:7,name:'Apple MacBook Pro 15.4英寸笔记本电脑 银色（2017款Multi-Touch Bar/Core ',price:17588,num:3},
+                    {id:8,name:'Apple iPhone X (A1903) 64GB 深空灰色 移动联通4G手机 【支持移动联通4G】',price:6999,num:1},
+                    {id:9,name:'Apple 苹果 iPhone X手机 银色 全网通64G 【6.5白条全场三期免息】下单送透明壳',price:7498,num:1},
+                    {id:10,name:'Apple 苹果X iPhoneX 全面屏手机 银色 全网通 256G 【京仓配送 时效快捷 】入仓',price:8738,num:1},
+                ],
+                //控制全选
+                allChecked:false,
+                //商品数据选中
+                allSelectData : [],
+            },
+            mounted(){
+                //控制加载完页面全部选中
+                // this.goods.forEach((v,k)=>{
+                //     this.allSelectData.push(v.id);
+                // })
+            },
+            methods:{
+                //购物车数量增加
+                plus(k){
+                    this.goods[k].num++;
+                },
+                //购物车数量减少
+                reduce(k){
+                    this.goods[k].num--;
+                    if(this.goods[k].num==0){
+                        this.goods.splice(k,1);
+                    }
+                },
+                //购物车删除
+                del(k){
+                    this.goods.splice(k,1);
+                },
+                //单击全选按钮
+                selecAll(){
+                    //console.log(event.currentTarget.checked);
+                    if(!event.currentTarget.checked){
+                        //取消全选
+                        this.allSelectData = [];
+                    }else{
+                        //全选
+                        this.goods.forEach((v,k)=>{
+                           this.allSelectData.push(v.id);
+                        })
+                    }
+                },
+                select(id){
+                    //知道当前点击商品对应的商品编号是否在allSelectData数组中
+                    var res = this.allSelectData.indexOf(id);
+                    res == -1 ? this.allSelectData.push(id) : this.allSelectData.splice(res,1);
+                    this.allChecked = this.goods.length == this.allSelectData.length;
+                }
+            },
+            computed:{
+                totalPrice(){
+                    var total=0;
+                    this.goods.forEach((v,k)=>{
+                        var res = this.allSelectData.indexOf(v.id);
+                        //计算总价只计算在allSelectData商品
+                        if(res != -1){
+                            total += v.num * v.price;
+                        }
+                    })
+                    return total;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

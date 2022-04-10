@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+			let arr = [5,6,7,8,9];
+//			map()方法不会改变原数组
+//			return的值会将原数组中的对应值替换掉
+			let newarr = arr.map((x,index,a)=>{
+//				console.log('序号',index);
+//				console.log(a);
+				return x*x;
+			})
+			console.log(arr);
+			console.log(newarr);
+			
+			
+		</script>
+		
+		
+	</body>
+</html>

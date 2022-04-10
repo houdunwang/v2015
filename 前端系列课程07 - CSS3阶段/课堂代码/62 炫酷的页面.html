@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="animate.css"/>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			header{
+				width: 1000px;
+				height: 1000px;
+				background: dodgerblue;
+				margin: 0 auto;
+				
+			}
+			nav{
+				width: 1000px;
+				height: 50px;
+				background: orangered;
+				margin: 0 auto;
+				opacity: 0;
+			}
+			#main{
+				width: 1000px;
+				height: 400px;
+				margin: 0 auto;
+			}
+			#main .left{
+				width: 500px;
+				height: 400px;
+				float: left;
+				background: hotpink;
+				opacity: 0;
+			}
+			#main .right{
+				width: 500px;
+				height: 400px;
+				float: right;
+				background: limegreen;
+				opacity: 0;
+			}
+			footer{
+				width: 1000px;
+				height: 300px;
+				background: darkgrey;
+				margin: 0 auto;
+				margin-bottom: 400px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<header></header>
+		<nav></nav>
+		<div id="main">
+			<div class="left"></div>
+			<div class="right"></div>
+		</div>
+		<footer></footer>
+		
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		
+		$(window).scroll(function(){
+//			获得滚动上去的距离
+			var st = $(document).scrollTop();
+			document.title = st;
+			if (st>=600&&st<=1400) {
+				$("nav").addClass('animated fadeInDown');
+				$("#main .left").addClass('animated fadeInLeft');
+				$("#main .right").addClass('animated fadeInRight');
+			}
+			if (st>1400||st<600) {
+				$("nav").removeClass('animated fadeInDown').css('opacity',0);
+				$("#main .left").removeClass('animated fadeInLeft').css('opacity',0);
+				$("#main .right").removeClass('animated fadeInRight').css('opacity',0);
+			}
+		})
+		
+	</script>
+	
+	
+	
+	</body>
+</html>

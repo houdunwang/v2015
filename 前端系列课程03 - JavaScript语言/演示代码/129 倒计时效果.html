@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<h1 id="t">距离2022年元旦还有 <span></span>天<span></span>小时<span></span>分钟<span></span>秒</h1>
+		
+		
+		
+		<script type="text/javascript">
+			
+//			倒计时函数
+			function djs(){
+				var timenow = new Date();
+				var time2022 = new Date(2022,0,1,0,0,0);
+				
+	//			获得到2022年之间的时间差
+				var diff = time2022.getTime() - timenow.getTime();
+	//			document.write(diff);
+	
+	//			计算天数
+				var days = parseInt(diff/(24*60*60*1000));
+	//			document.write(days);
+	//			获得计算完天数后还剩余的毫秒数
+				diff = diff%(24*60*60*1000);
+	//			计算小时
+				var hours = parseInt(diff/(60*60*1000));
+	//			获得计算完小时后还剩余的毫秒数
+				diff = diff%(60*60*1000);
+	//			计算分钟
+				var minutes = parseInt(diff/(60*1000));
+	//			计算分钟后还剩余的毫秒数
+				diff = diff%(60*1000);
+				var secondes = parseInt(diff/1000);
+				
+				var ss = document.getElementById("t").getElementsByTagName('span');
+				ss[0].innerHTML	 = days;
+				ss[1].innerHTML	 = hours;
+				ss[2].innerHTML	 = minutes;
+				ss[3].innerHTML	 = secondes;
+			}
+			
+			djs();
+			
+			setInterval(djs,1000);
+			
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			var str = '后盾人视频下载地址:www.houdunren.com,线下实战：www.houdunwang.com，在线学习平台：www.houdunren.com';
+			
+//			while(字符串中有houdun){
+//				获得houdun第一次出现的位置,并存储
+//				将第一次出现的houdun替换成等长的其他字符
+//			}
+			
+			var result = [];
+			
+			while(str.match('houdun')){
+//				查找houdun第一次出现的位置
+				var index = str.indexOf('houdun');
+//				将houdun第一次出现的位置存储
+				result.push(index);
+//				将第一个houdun替换成其他字符
+				str = str.replace('houdun','*******');
+			}
+			
+			document.write(result);
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

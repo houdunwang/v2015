@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#left{
+				width: 400px;
+				height: 400px;
+				border: 1px solid black;
+				margin: 20px;
+				background: url(images/400.jpg) no-repeat;
+				position: relative;
+				float: left;
+			}
+			#box{
+				width: 220px;
+				height: 200px;
+				background: purple;
+				opacity: 0.3;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			#right{
+				width: 440px;	
+				height: 400px;
+				border: 1px solid black;
+				position: relative;
+				float: left;
+				margin: 30px;
+				overflow: hidden;
+			}
+			#right #rpic{
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<div id="left">
+			<div id="box"></div>
+		</div>
+		
+		
+		<div id="right">
+			<img src="images/800.jpg" alt="" id="rpic" />
+		</div>
+		
+		
+	</body>
+</html>

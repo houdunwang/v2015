@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+//			匹配qq号
+//			var reg = /^[1-9]\d{4,10}$/;
+//			var str = '3103409232';
+
+//			匹配身份证号
+			var reg = /^[1-9]\d{16}[xX\d]$/;
+			var str = '341103197605256574';
+			var result = reg.test(str);
+			document.write(result);
+			
+			
+		</script>
+		
+	</body>
+</html>

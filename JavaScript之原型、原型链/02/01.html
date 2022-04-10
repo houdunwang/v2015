@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+			function foo(){
+				console.log('我执行啦！后盾人！');
+			}
+			
+			var obj = {};
+			
+//			对象的冒充
+//			obj对象冒充window对象执行了window对象中的foo方法
+//			foo方法并不是obj的
+			window.foo.call(obj);
+//			obj.foo();
+			
+			
+			
+		</script>
+		
+		
+	</body>
+</html>

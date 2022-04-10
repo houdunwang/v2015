@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				background: #272822;
+				margin: 0 auto;
+				display: block;
+				position: relative;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<canvas id="canvas" width="800" height="500"></canvas>
+	
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+		
+//		获得绘画环境(相当于铺了一层画布)
+		var cv = canvas.getContext('2d');
+		
+		cv.lineWidth = 5;
+		cv.strokeStyle = 'yellow';
+
+		cv.beginPath();
+		cv.moveTo(300,200);
+		cv.arc(300,200,150,0,60*Math.PI/180);
+		cv.closePath();
+		cv.fillStyle = 'pink';
+		cv.fill();
+		
+		
+		cv.beginPath();
+		cv.moveTo(300,200);
+		cv.arc(300,200,150,60*Math.PI/180,110*Math.PI/180);
+		cv.closePath();
+		cv.fillStyle = 'greenyellow';
+		cv.fill();
+		
+		cv.beginPath();
+		cv.moveTo(300,200);
+		cv.arc(300,200,150,110*Math.PI/180,220*Math.PI/180);
+		cv.closePath();
+		cv.fillStyle = 'yellow';
+		cv.fill();
+		
+		
+		cv.beginPath();
+		cv.moveTo(300,200);
+		cv.arc(300,200,150,220*Math.PI/180,300*Math.PI/180);
+		cv.closePath();
+		cv.fillStyle = 'deepskyblue';
+		cv.fill();
+		
+		cv.beginPath();
+		cv.moveTo(300,200);
+		cv.arc(300,200,150,300*Math.PI/180,360*Math.PI/180);
+		cv.closePath();
+		cv.fillStyle = 'orangered';
+		cv.fill();
+		
+	</script>
+		
+	</body>
+</html>

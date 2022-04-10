@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script src="layui/layui.js"></script>
+</head>
+<body>
+<div class="layui-container">
+    <div class="layui-row" style="margin-top: 100px;">
+        <form class="layui-form" action="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">快递单号</label>
+                <div class="layui-input-block">
+                    <input type="text" name="number" required lay-verify="required" placeholder="请输入快递单号"
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">请选择快递</label>
+                <div class="layui-input-block">
+                    <select name="type" lay-verify="required">
+                        <option value=""></option>
+                        <option value="SDEX">顺丰</option>
+                        <option value="ZTO">中通</option>
+                        <option value="UC56">优速</option>
+                        <option value="YTO">圆通</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit lay-filter="formDemo">查询</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </form>
+        <div id="resultbox">
+            <ul class="layui-timeline">
+
+
+            </ul>
+        </div>
+
+    </div>
+</div>
+<script>
+    //Demo
+    layui.use('form', function () {
+        var form = layui.form;
+        var $ = layui.jquery;
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            //layer.msg(JSON.stringify(data.field));
+            $.post('api.php',data.field,function (res) {
+                if(res.status==0){
+                    var str = '';
+                    $.each(res.result.list,function (k,v) {
+                        str += '<li class="layui-timeline-item">\n' +
+                            '                    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>\n' +
+                            '                    <div class="layui-timeline-content layui-text">\n' +
+                            '                        <h3 class="layui-timeline-title">'+v.time+'</h3>\n' +
+                            '                        <p>' + v.status+
+                            '                        </p>\n' +
+                            '                    </div>\n' +
+                            '                </li>';
+                    })
+                    $('#resultbox ul').html(str);
+                }else{
+                    layer.alert(res.msg,{icon:2});
+                }
+            },'json');
+            return false;
+        });
+    });
+</script>
+</body>
+</html>  

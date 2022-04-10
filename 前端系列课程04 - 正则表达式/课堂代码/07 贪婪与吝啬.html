@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+//			贪婪:正则在匹配的时候,默认返回的是最长的结果
+//			吝啬:在量词后面加上问号,就表示默认返回最短的符合条件的结果
+			var reg = /ren\d{1,6}?/;
+			var str = 'houdunren2019';
+			var result = reg.exec(str);
+			console.log(result);
+			console.log('匹配到的内容',result[0]);
+			console.log('在几号位置上匹配到的',result.index);
+			console.log('原始字符串',result.input);
+			
+		</script>
+		
+		
+	</head>
+	<body>
+	</body>
+</html>

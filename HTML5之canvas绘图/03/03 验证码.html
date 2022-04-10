@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				background: #272822;
+				display: block;
+				margin: 200px auto;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<canvas id="canvas" width="400" height="60"></canvas>
+		
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+		var cv = canvas.getContext('2d');
+		var str = 'QWERTYUIOPASDFGHJKLZXCVBNM';
+		
+		
+		cv.font = '30px arial';
+
+		
+		for (var i=0;i<4;i++) {
+			var num = Math.floor(Math.random()*(str.length-1+1-0)+0);
+//			随机left值
+			var l = Math.floor(Math.random()*(i*100+50+1-i*100)+i*100);
+			var t = Math.floor(Math.random()*(45+1-25)+25);
+			var r = Math.floor(Math.random()*256);
+			var g = Math.floor(Math.random()*256);
+			var b = Math.floor(Math.random()*256);
+			cv.fillStyle = 'rgba('+r+','+g+','+b+')';
+//			随机角度
+			var d = Math.floor(Math.random()*(3+1-(-3))+(-3));
+			cv.rotate(d*Math.PI/180);
+			cv.fillText(str[num],l,t);
+			cv.rotate(-d*Math.PI/180);
+			
+		}
+		
+		
+		for (var i=0;i<10;i++) {
+			var ax = Math.floor(Math.random()*401);
+			var ay = Math.floor(Math.random()*51);
+			var bx = Math.floor(Math.random()*401);
+			var by = Math.floor(Math.random()*51);
+			
+			cv.beginPath();
+			cv.moveTo(ax,ay);
+			cv.lineTo(bx,by);
+			var r = Math.floor(Math.random()*256);
+			var g = Math.floor(Math.random()*256);
+			var b = Math.floor(Math.random()*256);
+			var o = Math.floor(Math.random()*101);
+			cv.strokeStyle = 'rgba('+r+','+g+','+b+','+(o/100)+')';
+			cv.stroke();
+			cv.closePath();
+		}
+
+		
+		
+	</script>
+		
+		
+	</body>
+</html>

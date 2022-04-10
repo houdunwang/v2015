@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				padding-left: 200px;
+				padding-top: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		
+<form action="hd.php">
+	
+	邮箱： <input type="email" />
+	<br /><br />
+	
+	网址： <input type="url" />
+	<br /><br />
+	
+	数字： <input type="number" value="4" min="2" max="20" step="2" />
+	<br /><br />
+	
+	滑块： <input type="range" min="0" max="100" value="30" id="range" />
+	<span id="r">30</span>
+	<script type="text/javascript">
+		var range = document.getElementById("range");
+		range.onchange = function(){
+			document.getElementById("r").innerHTML = this.value;
+		}
+	</script>
+	<br /><br />
+	
+	日期： <input type="date" />
+	<br /><br />
+	
+	色板: <input type="color" id="color" />
+	<span id="c"></span>
+	
+	<script type="text/javascript">
+		var color = document.getElementById("color");
+		color.onchange = function(){
+			document.getElementById("c").innerHTML = this.value;
+			document.body.style.background = this.value;
+		}
+	</script>
+	
+	
+	<br /><br />
+	<input type="submit" />
+	
+	
+</form>
+		
+		
+	</body>
+</html>

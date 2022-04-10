@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="button" id="btn" value="点我进行数据交互" />
+		<h1></h1>
+		
+		
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		
+		$("#btn").click(function(){
+			$.ajax({
+				type:"post",
+				url:"01.php",
+//				data:{},
+//				success会在成功接收到返回数据后触发
+				success:function(d){
+//					JSON.parse是将数据转成对象
+					console.log(JSON.parse(d));
+					
+					$("h1").html(JSON.parse(d));
+				}
+			});
+		})
+		
+	</script>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+			let p1 = new Promise((resolve,reject)=>{
+				let time = Math.random()*4000+1000;
+				setTimeout(()=>{
+					console.log('p1完成');
+					resolve();
+				},time)
+			})
+			
+			let p2 = new Promise((resolve,reject)=>{
+				let time = Math.random()*4000+1000;
+				setTimeout(()=>{
+					console.log('p2完成');
+					resolve();
+				},time)
+			})
+			
+			let p3 = new Promise((resolve,reject)=>{
+				let time = Math.random()*4000+1000;
+				setTimeout(()=>{
+					console.log('p3完成');
+					resolve();
+				},time)
+			})
+			
+			let p4 = new Promise((resolve,reject)=>{
+				let time = Math.random()*4000+1000;
+				setTimeout(()=>{
+					console.log('p4完成');
+					resolve();
+				},time)
+			})
+			
+			
+//			监控多个Promise对象执行完成
+			let p = Promise.all([p1,p2,p3,p4]);
+			p.then(()=>{
+				console.log('全部执行完毕！');
+			})
+			
+		</script>
+		
+		
+		
+		
+	</body>
+</html>

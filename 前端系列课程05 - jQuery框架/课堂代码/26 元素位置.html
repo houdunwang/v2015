@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#x{
+				width: 500px;
+				height: 400px;
+				border: solid 5px blue;
+				margin: 160px;
+				position: relative;
+			}
+			#x .y{
+				width: 300px;
+				height: 200px;
+				background: orchid;
+				position: absolute;
+				left: 50px;
+				top: 44px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="x">
+			<div class="y"></div>
+		</div>
+	
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//		获得没有定位的元素在页面中的位置
+		var result = $("#x .y").position().left;
+		console.log(result);
+		
+	</script>
+		
+	</body>
+</html>

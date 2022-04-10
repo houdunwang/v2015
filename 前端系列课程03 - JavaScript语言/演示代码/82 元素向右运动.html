@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		<input type="button" id="btn" value="点我啊" />
+		
+		<br /><br />
+		
+		<img src="xiaohuangya.png" id="pic" width="180" style="position: absolute;left: 20px;top: 50px;" />
+		
+		
+		
+		
+		<script type="text/javascript">
+			
+			var btn = document.getElementById("btn");
+			var pic = document.getElementById("pic");
+			
+			btn.onclick = function(){
+				setInterval(function(){
+//					获得当前left值
+					var old_left = pic.style.left;
+//					计算新left值
+					var new_left = parseInt(old_left)+2;
+//					将新值赋值给元素
+					pic.style.left = new_left+'px'
+				},50)
+			}
+			
+		</script>
+		
+		
+		
+	</body>
+</html>

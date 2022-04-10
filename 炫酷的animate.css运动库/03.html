@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="animate.min.css"/>
+		<style>
+			#hd{
+				width: 500px;
+				height: 300px;
+				background: dodgerblue;
+				margin: 50px auto;
+			}
+			#btn{
+				margin-left: 300px;
+				margin-top: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<input type="button" value="点我让元素运动" id="btn" />
+		
+		<div id="hd"></div>
+		
+		
+		<script src="zepto_1.2.0_zepto.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			$("#btn").click(function(){
+				$("#hd").addClass('animated bounceInDown');
+			})
+			
+		</script>
+		
+		
+	</body>
+</html>

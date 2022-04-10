@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#hd{
+				width: 80%;
+				height: 500px;
+				border: 2px solid orange;
+				margin: 10px auto;
+				display: flex;
+				/*设置元素在主轴上的排列方式*/
+				justify-content: space-between;				
+				justify-content: center;
+				/*定义元素在交叉轴上的排列方式*/
+				align-items: center;
+				align-items: flex-end;			
+				
+			}
+			#hd div{
+				width:100px;
+				height:150px;
+				background: dodgerblue;
+				color: white;
+				line-height: 150px;
+				text-align: center;
+				font-size: 35px;
+				font-weight: 700;
+				border: 1px solid purple;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		
+		<div id="hd">
+			<div>01</div>
+			<div style="height: 400px;">02</div>
+			<div style="height: 300px;">03</div>
+			<div style="height: 330px;">04</div>
+			<div style="height: 230px;">05</div>
+			<div style="height: 130px;">06</div>
+			<div style="height: 180px;">07</div>
+		</div>
+		
+		
+		
+		
+		
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#hd{
+				width: 800px;
+				height: 500px;
+				border: solid 5px orangered;
+				margin: 50px auto;
+				position: relative;
+			}
+			#hd .x{
+				width: 300px;
+				height: 220px;
+				background: limegreen;
+				position: absolute;
+				left: 100px;
+				top: 80px;
+				z-index: 100;
+			}
+			#hd .y{
+				width: 320px;
+				height: 230px;
+				background: dodgerblue;
+				position: absolute;
+				left: 160px;
+				top: 200px;
+				z-index: 122;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<!--只有有定位属性的元素才有层级-->
+		<!--如果不给元素加层级，默认层级值是0-->
+		<!--如果层级值一样，后来者居上-->
+		<!--层级值越高，就在上面-->
+		
+		<div id="hd">
+			
+			<div class="x"></div>
+			<div class="y"></div>
+			
+		</div>
+		
+		
+	</body>
+</html>

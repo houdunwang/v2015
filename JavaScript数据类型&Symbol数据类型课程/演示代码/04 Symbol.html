@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		<script type="text/javascript">
+			
+			var x = Symbol('独一无二的x');
+			var y = Symbol('独一无二的y');
+			
+			var obj = {
+				[x]:1,
+				[y]:'后盾人',
+				b:2,
+				c:3,
+				d:function(){
+					return this[x];
+				}
+			}
+			
+			function(){
+				var url = qiniu();
+				return url;
+			}
+			
+			
+			
+			
+			
+//			obj[x] = 6666;
+//			document.write("<br />");
+//			document.write(obj.d());
+			
+//			document.write(obj[y]);
+			
+			
+//			document.write(obj[x]);
+			
+//			obj.x = 123;
+//			document.write(obj.x);
+//			document.write("<br />");
+//			document.write(obj.d());
+			
+//			document.write(obj.b);
+//			document.write(obj.d());
+			
+			
+		</script>
+		
+		
+		
+	</body>
+</html>

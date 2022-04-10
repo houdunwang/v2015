@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+	<script type="text/javascript">
+		
+		var arr = [12,35,65,34,56,76,19,88];
+//		filter方法的return只有两种情况,true或者false
+//		如果返回true就保留这个数据,如果返回false,就删除这个数据
+		var newarr = arr.filter((x,index,a)=>{
+			console.log(a);
+			console.log('序号',index);
+			return x>=60;
+		})
+		console.log(newarr);
+		
+	</script>
+		
+	</body>
+</html>

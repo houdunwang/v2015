@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="text" id="hd" />
+		<textarea id="t"></textarea>
+		
+		
+	<script type="text/javascript">
+		
+		var hd = document.getElementById("hd");
+		var t = document.getElementById("t");
+		
+		
+//		获得焦点事件
+		hd.onfocus = function(){
+			console.log('获得焦点');
+		}
+		
+//		失去焦点事件
+		hd.onblur = function(){
+			console.log('失去焦点');
+		}
+		
+//		内容发生变化,并且失去焦点的时候,会触发
+		t.onchange = function(){
+			console.log('onchange事件触发');
+		}
+		
+		
+		
+	</script>
+		
+		
+	</body>
+</html>

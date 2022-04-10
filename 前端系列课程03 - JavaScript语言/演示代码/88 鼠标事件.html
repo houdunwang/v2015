@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#hd{
+				width: 500px;
+				height: 300px;
+				background: dodgerblue;
+				margin: 30px auto;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		 <div id="hd"></div>
+		
+	<script type="text/javascript">
+		
+		var hd = document.getElementById("hd");
+		
+//		单击事件
+		hd.onclick = function(){
+			console.log('单击事件触发了');
+		}
+		
+//		双击事件
+		hd.ondblclick = function(){
+			console.log('双击事件触发了');
+		}
+		
+		
+//		鼠标按下事件
+		hd.onmousedown = function(){
+			console.log('鼠标按下事件触发了');
+		}
+		
+//		鼠标抬起事件
+		hd.onmouseup= function(){
+			console.log('鼠标抬起事件触发了');
+		}
+		
+		
+//		鼠标移入事件
+		hd.onmouseover= function(){
+			console.log('鼠标移入事件触发了');
+		}
+				
+		
+//		鼠标移出事件
+		hd.onmouseout = function(){
+			console.log('鼠标移出事件触发了');
+		}
+				
+		
+//		鼠标移动事件
+		hd.onmousemove = function(){
+			console.log('鼠标移动事件触发了');
+		}		
+		
+	</script>
+	</body>
+</html>

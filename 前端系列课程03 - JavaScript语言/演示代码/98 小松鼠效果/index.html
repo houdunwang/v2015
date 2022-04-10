@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		
+		<img src="images/1.png" id="pic"/>
+		
+		<script type="text/javascript">
+			
+			var pic = document.getElementById("pic");
+			var c = 1;
+			
+//			设置定时器,每隔一段时间换一张图片
+			setInterval(function(){
+				c++;
+//				if (c==20) {
+//					c=1;
+//				}
+				c = c==20?1:c;
+//				组合出新src路径
+				var url = 'images/'+c+'.png';
+//				将新路径设置回去
+				pic.setAttribute('src',url);
+				
+			},100)
+			
+			
+		</script>
+		
+		
+		
+	</body>
+</html>

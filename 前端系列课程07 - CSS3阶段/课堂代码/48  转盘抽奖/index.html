@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#main{
+				width: 500px;
+				height: 500px;
+				margin: 0 auto;
+				position: relative;
+				border: 1px solid black;
+				margin-top: 20px;
+			}
+			#main .zp{
+				width: 100%;
+				height: 100%;
+				transition: all 3s;
+			}
+			#main .zz{
+				position: absolute;
+				left: 148px;
+				top: 139px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<div id="main">
+			<img src="zhuanpan.png" alt="" class="zp" />
+			<img src="zhuanpan2.png" alt="" class="zz" />
+		</div>
+	
+<script type="text/javascript">
+	
+	var main = document.getElementById("main");
+	var zp = main.getElementsByClassName('zp')[0];
+	var zz = main.getElementsByClassName('zz')[0];
+	
+	zz.onclick = function(){
+		if (Math.random()<0.8) {
+			zp.style.transform = 'rotate(1080deg)';
+		}else{
+			var r = Math.floor(Math.random()*(1360+1-1000)+1000);
+			zp.style.transform = 'rotate('+r+'deg)';
+		}
+		
+	}
+	
+</script>
+		
+		
+	</body>
+</html>

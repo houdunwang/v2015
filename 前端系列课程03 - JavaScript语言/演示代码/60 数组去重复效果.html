@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+			
+			
+			function unique(arr){
+				var obj = {};
+				for (var i=0;i<arr.length;i++) {
+					obj[arr[i]] = 'hd';
+				}
+				
+				var result = [];
+//				循环,将obj的属性名提取出来
+				for (x in obj) {
+					result.push(x);
+				}
+				
+				return result;
+				
+			}
+			
+			var hd = ['a',5,'b','c','a','a','a','d','e','c','f','d'];
+			var result = unique(hd);
+			document.write(result);
+			
+			
+		</script>
+		
+		
+		
+	</head>
+	<body>
+	</body>
+</html>

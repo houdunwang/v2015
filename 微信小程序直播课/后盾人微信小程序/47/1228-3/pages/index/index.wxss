@@ -1,0 +1,11 @@
+.a{
+  background: purple;
+  width: 70%;
+  height: 600rpx;
+  margin: 0 auto;
+  margin-top: 100rpx;
+  color: white;
+  text-align: center;
+  line-height: 600rpx;
+  font-size: 80rpx;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+			function phone(w){
+				this.weight = w;
+			}
+			
+//			原型区域(prototype)是属于构造函数
+//			通过构造函数创建的对象,都可以访问该函数的原型区域
+//			原型其实就是一个对象
+			phone.prototype.color = '黑色';
+			phone.prototype.size = '5.5吋';
+			
+			
+			var i1 = new phone('100g');
+			var i2 = new phone('120g');
+//			每个对象都有一个__proto__属性,这个属性是对象和它的构造函数原型区域prototype之间的一个隐形链接,也就是说,__proto__属性指向对象的构造函数的原型区域.
+//			原型链:一个具体的对象和它的构造函数原型区域的一个隐形链接
+//			如果在对象对应的堆区地址中没有找到对应的属性,那么就会沿着原型链到上一级去找
+			phone.prototype.color = '红色';
+			console.log(i1.color);
+			
+			console.log(i1.__proto__);
+			
+			
+		</script>
+		
+		
+	</body>
+</html>

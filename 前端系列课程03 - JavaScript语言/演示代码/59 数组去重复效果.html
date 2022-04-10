@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+			function unique(arr){
+				for (var i=0;i<arr.length;i++) {
+//					document.write("让"+i+"号元素去跟它后面的所有元素进行对比，如果一样，就删掉后面的元素<br />");
+					for (var j=i+1;j<arr.length;j++) {
+						if (arr[j] === arr[i]) {
+//							删掉j号元素
+							arr.splice(j,1);
+							j--;
+						}
+					}
+				}
+				return arr;
+			}
+			
+			var hd = ['a','b','c','a','a','a','d','e','c','f','d'];
+			var result = unique(hd);
+			document.write(result);
+			
+			
+		</script>
+		
+		
+		
+	</head>
+	<body>
+	</body>
+</html>

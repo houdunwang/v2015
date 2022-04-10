@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+			function max(arr){
+				var x = arr[0];
+//				循环数组
+				for (var i=0;i<arr.length;i++) {
+//					如果arr[i]大于x,就让x存储arr[i]
+					if (arr[i]>x) {
+						x = arr[i];
+					}
+				}
+				return x;
+			}
+			
+			var sz = [1,56,213,6,43,87,3,5,55];
+			var result = max(sz);
+			document.write(result);
+			
+			
+			
+			
+		</script>
+		
+	</head>
+	<body>
+	</body>
+</html>

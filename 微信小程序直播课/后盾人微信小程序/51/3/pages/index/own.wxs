@@ -1,0 +1,7 @@
+// 计算商业自愿险的模块
+
+var foo = function (x) {
+  return x * 0.1;
+}
+
+module.exports.foo = foo;

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="text" id="tel" />
+		<input type="button" value="点击验证手机号" id="btn" />
+		
+		<script>
+			
+			var tel = document.getElementById("tel");
+			var btn = document.getElementById("btn");
+			
+			btn.onclick = function(){
+				var reg = /1\d{10}/;
+				var result = reg.test(tel.value);
+				if (result) {
+					alert('是合法手机号');
+				}else{
+					alert('不是手机号！！！！！');
+				}
+			}
+		</script>
+		
+		
+		
+	</body>
+</html>

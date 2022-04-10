@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				background: #272822;
+				display: block;
+				margin: 200px auto;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<canvas id="canvas" width="400" height="60"></canvas>
+		
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+		var cv = canvas.getContext('2d');
+		var str = 'QWERTYUIOPASDFGHJKLZXCVBNM';
+		
+		
+		cv.font = '30px arial';
+
+		
+		for (var i=0;i<4;i++) {
+			var num = Math.floor(Math.random()*(str.length-1+1-0)+0);
+//			随机left值
+			var l = Math.floor(Math.random()*(i*100+50+1-i*100)+i*100);
+			var t = Math.floor(Math.random()*(45+1-25)+25);
+			var r = Math.floor(Math.random()*256);
+			var g = Math.floor(Math.random()*256);
+			var b = Math.floor(Math.random()*256);
+			cv.fillStyle = 'rgba('+r+','+g+','+b+')';
+			cv.fillText(str[num],l,t);
+		}
+		
+		
+		
+//		cv.fillText('B',100,40);
+//		cv.fillText('C',200,40);
+//		cv.fillText('D',300,40);
+
+		
+		
+	</script>
+		
+		
+	</body>
+</html>

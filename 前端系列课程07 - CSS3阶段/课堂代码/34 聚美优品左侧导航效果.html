@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.left{
+				position: fixed;
+				top: 200px;
+				left: 80px;
+				background: #FD6397;
+				width: 60px;
+				height: 248px;
+				transition: all 1s;
+				opacity: 1;
+				color: white;
+			}
+			.left.h{
+				transform: scale(1.5,1.5);
+				opacity: 0;
+			}
+			img{
+				display: block;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="left h">后盾人 <br />人人做后盾</div>
+		
+		<img src="jumei.jpg" alt="" />
+		
+		
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		
+		$(window).scroll(function(){
+//			获得滚动上去的位置
+			var st = $(document).scrollTop();
+			document.title = st;
+			if (st>600) {
+				$(".left").removeClass('h');
+			}else{
+				$(".left").addClass('h');
+			}
+		})
+		
+	</script>
+		
+		
+		
+		
+	</body>
+</html>

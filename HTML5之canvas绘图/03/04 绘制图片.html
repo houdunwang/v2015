@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				background: #272822;
+				display: block;
+				margin: 10px auto;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<canvas id="canvas" width="800" height="500"></canvas>
+		<img src="qiutian.jpg" hidden id="dog" />
+		
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+		var dog = document.getElementById("dog");
+		var cv = canvas.getContext('2d');
+	
+//		新建图像资源
+		var newimg = document.createElement('img');
+		newimg.src = 'qiutian.jpg';
+	
+		newimg.onload = function(){
+//			cv.drawImage(dog,20,20);
+//			cv.drawImage(dog,20,20,300,100);
+//			在原始图像资源中,从150/45位置开始,截取200*200大小的区域,将这块区域放到画布100/100的位置上,并调整大小为150*150
+			cv.drawImage(dog,150,45,200,200,100,100,150,150);
+			
+		}
+		
+		
+		
+	</script>
+		
+		
+	</body>
+</html>

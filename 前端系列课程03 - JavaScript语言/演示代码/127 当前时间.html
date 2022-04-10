@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<h1 id="t">当前时间是：<span></span>年<span></span>月<span></span>日<span></span>时<span></span>分<span></span>秒</h1>
+		
+	<script type="text/javascript">
+		
+		
+		var ss = document.getElementById("t").getElementsByTagName('span');
+		
+		function changetime(){
+			var time = new Date();
+			ss[0].innerHTML = time.getFullYear();
+			ss[1].innerHTML = time.getMonth();
+			ss[2].innerHTML = time.getDate();
+			ss[3].innerHTML = time.getHours();
+			ss[4].innerHTML = time.getMinutes();
+			ss[5].innerHTML = time.getSeconds();
+		}
+		
+		
+		changetime();
+		
+		setInterval(function(){
+			
+			changetime();
+			
+		},1000)
+		
+	</script>
+		
+		
+		
+		
+	</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="libs/swiper-4.3.3.min.css"/>
+		<link rel="stylesheet" type="text/css" href="libs/animate.min.css"/>
+		<link rel="stylesheet" type="text/css" href="libs/flash.css"/>
+	</head>
+	<body>
+		
+		
+		<div class="swiper-container">
+		    <div class="swiper-wrapper">
+		    	
+		    	<div class="swiper-slide three">
+		        	<div class="center">
+		        		<img src="images/banner3-01.png" alt="" class="pic1" />
+		        		<img src="images/banner3-02.png" alt="" class="pic2" />
+		        		<img src="images/banner3-03.png" alt="" class="pic3" />
+		        		<img src="images/banner3-04.png" alt="" class="pic4" />
+		        	</div>
+		        </div>
+		    	
+		        <div class="swiper-slide one">
+		        	<div class="center">
+		        		<img src="images/banner-01-a.png" alt="" class="pic1" />
+		        		<img src="images/banner-01-b.png" alt="" class="pic2" />
+		        	</div>
+		        </div>
+		        <div class="swiper-slide two">
+		        	<div class="center">
+			        	<img src="images/banner2-01.png" alt="" class="pic1" />
+			        	<img src="images/banner2-02.png" alt="" class="pic2" />
+			        	<img src="images/banner2-03.png" alt="" class="pic3" />	
+		        	</div>
+		        	
+		        </div>
+		       
+		    </div>
+		    <!-- 如果需要分页器 -->
+		    <div class="swiper-pagination"></div>
+		  
+		</div>
+		
+		
+		
+		<script src="libs/swiper-4.3.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="libs/swiper.animate1.0.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>        
+		  var mySwiper = new Swiper ('.swiper-container', {
+		    direction: 'horizontal',
+		    loop: true,
+		    
+		    // 如果需要分页器
+		    pagination: {
+		      el: '.swiper-pagination',
+		    },
+		    
+		    // 如果需要前进后退按钮
+		    navigation: {
+		      nextEl: '.swiper-button-next',
+		      prevEl: '.swiper-button-prev',
+		    },
+		    
+		    // 如果需要滚动条
+		    scrollbar: {
+		      el: '.swiper-scrollbar',
+		    },
+		  })        
+		</script>
+	</body>
+</html>

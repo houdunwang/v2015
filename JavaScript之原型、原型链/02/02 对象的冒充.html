@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+//			父级构造函数
+//			动物构造函数
+			function animal(){
+				this.weight = '重量';
+				this.color = '颜色';
+				this.size = '尺寸';
+				this.move = function(){
+					console.log('能动');
+				}
+			}
+			
+			animal.prototype.age = '年龄';
+			
+			
+//			鱼类的构造函数
+//			子级构造函数
+			function fish(){
+//				call方法只能继承非原型区域prototype的属性和方法
+				window.animal.call(this);
+			}
+			
+//			原型区域的继承
+			fish.prototype = animal.prototype;
+			
+			
+			var shayu = new fish();
+//			console.log(shayu.color);
+			console.log(shayu.age);
+//			shayu.move();
+		</script>
+		
+	</body>
+</html>
+
+
+
+
+
+

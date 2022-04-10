@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#hd{
+				width: 300px;
+				height: 200px;
+				background: purple;
+				/*指定运动规则*/
+				animation-name: hd;
+				/*指定运动时间*/
+				animation-duration: 3s;
+				/*指定运动曲线*/
+				animation-timing-function: linear;
+				/*运动延迟*/
+				animation-delay: 2s;
+				/*指定运动次数*/
+				animation-iteration-count: infinite;
+			}
+			
+			/*设置运动规则*/
+			@keyframes hd{
+				from{
+					width: 300px;
+				}
+				to{
+					width: 900px;
+				}
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div id="hd">
+			
+		</div>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+	<script type="text/javascript">
+		
+//			密码强度要求:
+//			1/密码长度大于10位
+//			2/密码中要包含数字和字母
+		
+		
+		var str = 'houdunren2018666';
+		var reg = /\d[a-zA-Z]|[a-zA-Z]\d/;
+		if (str.length>10) {
+			
+			if (reg.test(str)) {
+				alert('密码强度符合要求');
+			}else{
+				alert('密码必须同时包含数字和字母');
+			}
+			
+		}else{
+			alert('密码长度必须大于10位');
+		}
+		
+		
+	</script>
+		
+		
+		
+	</body>
+</html>

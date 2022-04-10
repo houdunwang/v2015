@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+//			var reg = /验证码是\d{6}请尽快输入/;
+//			var reg = /验证码是\d{1,6}请尽快输入/;
+//			是和请之间至少一位数字
+//			var reg = /验证码是\d{1,}请尽快输入/;
+
+//			* 星号相当于非洲人的老婆,0个或者任意个
+//			? 问号相当于中国人的老婆,0个或者1个
+//			+ 相当于程序员的电脑,至少一个
+			
+//			var reg = /验证码是\d*请尽快输入/;
+//			var reg = /验证码是\d?请尽快输入/;
+			var reg = /验证码是\d+请尽快输入/;
+			
+			var str = '您的验证码是请尽快输入';
+//			匹配
+			var result = reg.test(str);
+			
+			if (result) {
+				document.write("匹配成功！O(∩_∩)O");
+			}else{
+				document.write("匹配失败！o(╥﹏╥)o");
+			}
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

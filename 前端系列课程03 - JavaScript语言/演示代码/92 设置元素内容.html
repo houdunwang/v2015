@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		<input type="button" id="btn" value="点我进行操作" />
+		<br /><br />
+		
+		<h1 id="title">后盾人 <span>人人</span>做后盾</h1>
+		
+	<script type="text/javascript">
+		
+		var btn = document.getElementById("btn");
+		var title = document.getElementById("title");
+		
+		btn.onclick = function(){
+//			设置元素内容
+			title.innerHTML = '我是新设置的内容';
+			
+		}
+		
+	</script>
+		
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			img{
+				width: 300px;
+				float: left;
+				margin: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<img src="images/1.jpg" alt="" />
+		<img src="images/2.jpg" alt="" />
+		<img src="images/3.jpg" alt="" />
+		<img src="images/4.jpg" alt="" />
+		<img src="images/5.jpg" alt="" />
+		<img src="images/6.jpg" alt="" />
+		<img src="images/7.jpg" alt="" />
+		<img src="images/8.jpg" alt="" />
+		<img src="images/9.jpg" alt="" />
+		<img src="images/10.jpg" alt="" />
+		
+	<script type="text/javascript">
+		
+//		抓取所有图片
+		var is = document.getElementsByTagName('img');
+//		循环,给每个图片都加单击事件
+		for (var i=0;i<is.length;i++) {
+//			this直白的来理解,就是点谁指谁
+			is[i].onclick = function(){
+//				is[i].style.visibility = 'hidden';
+				this.style.visibility = 'hidden';
+			}
+		}
+		
+	</script>
+	</body>
+</html>

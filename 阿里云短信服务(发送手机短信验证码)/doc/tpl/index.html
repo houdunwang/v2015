@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>阿里云邮件发送</title>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+</head>
+<body>
+    <div style="width: 60%;margin: 100px auto;">
+        <blockquote class="layui-elem-quote">
+            后盾人:www.houdunren.com <br>
+            消息服务阿里云消息服务提供
+        </blockquote>
+    </div>
+
+    <div style="width: 40%;margin: 0 auto;">
+        <form class="layui-form" action="" method="post">
+            <div class="layui-form-item">
+                <label class="layui-form-label">手机号</label>
+                <div class="layui-input-block">
+                    <input type="text" name="phone" value=""  autocomplete="off" placeholder="请输邮箱" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">请输入密码</label>
+                <div class="layui-input-block">
+                    <input type="text" name="password"  placeholder="请输入"  class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">验证码</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="code" required lay-verify="required" placeholder="请输入验证码" autocomplete="off" class="layui-input">
+                </div>
+                <div class="">
+                    <button class="layui-btn layui-btn-normal"  type="button" >发送验证码</button>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" type="button"   >立即提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="layui-layout-admin">
+        <div class="layui-footer "  style="left: 0;text-align: center">
+            ©copyright 后盾人 <a href="http://www.houdunren.com">www.houdunren.com</a>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./layer/layer.js"></script>
+    <script src="./layui/layui.js"></script>
+
+</body>
+</html>

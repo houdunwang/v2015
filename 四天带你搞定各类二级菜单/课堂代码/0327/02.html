@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#hd{
+				width: 200px;
+				height: 60px;
+				/*border: 2px solid blue;*/
+				margin: 100px auto;
+				position: relative;
+			}
+			#hd:hover>ul{
+				display: block;
+			}
+			#hd:hover>a{
+				border: 1px solid red;
+				border-bottom: none;
+				background: white;
+			}
+			#hd>a{
+				display: block;
+				width: 200px;
+				height: 61px;
+				background: yellow;
+				/*background: white;*/
+				text-decoration: none;
+				line-height: 60px;
+				text-align: center;
+				color: dodgerblue;
+				position: relative;
+				z-index: 2;
+			}
+			#hd>ul{
+				width: 260px;
+				border: 1px solid red;
+				display: none;
+				position: absolute;
+				right: -2px;
+				top: 60px;
+			}
+			#hd>ul li{
+				width: 100%;
+				height: 25px;
+				line-height: 25px;
+				text-indent: 15px;
+				font-size: 13px;
+				list-style: none;
+			}
+		</style>
+		
+		
+		<div id="hd">
+			<a href="">后盾人</a>
+			<ul>
+				<li>会员中心</li>
+				<li>最新课程</li>
+				<li>线下实训</li>
+				<li>盾友交流</li>
+				<li>会员中心</li>
+				<li>最新课程</li>
+				<li>线下实训</li>
+				<li>盾友交流</li>
+			</ul>
+		</div>
+		
+		
+		
+	</body>
+</html>

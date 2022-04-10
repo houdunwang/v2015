@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="button" value="获得local数据" id="r" />
+		<input type="button" value="删掉name数据" id="remove" />
+		<input type="button" value="获得数据数量" id="getlength" />
+		<input type="button" value="清理所有数据" id="clear" />
+		
+		<script type="text/javascript">
+			
+//			localStorage 是永久存储
+//			localStorage 多标签可以共享数据
+			document.getElementById("r").onclick = function(){
+				alert(localStorage.getItem('name'));
+			}
+			
+//			删掉数据
+			document.getElementById("remove").onclick = function(){
+				localStorage.removeItem('name');
+			}
+			
+//			获得数据数量
+			document.getElementById("getlength").onclick = function(){
+				alert(localStorage.length);
+			}
+			
+//			清理所有数据
+			document.getElementById("clear").onclick = function(){
+				localStorage.clear();
+			}
+			
+		</script>
+		
+	</body>
+</html>

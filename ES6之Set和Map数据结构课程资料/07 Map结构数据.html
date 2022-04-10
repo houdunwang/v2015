@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script type="text/javascript">
+		
+//		var obj = {
+//			'name':'后盾人',
+//			'url':'houdunren.com',
+//			'year':2018,
+//		}
+		
+//		
+//		 键名   键值
+//		1      2
+//		false  '后盾人'
+//		
+
+		
+//		Map结构的数据是一种键值对(键名=>键值)形式,键名可以是任意类型的数据
+		var m = new Map();
+		m.set(1,2);
+		console.log(m.get(1));
+		
+		var obj = {a:1,b:2};
+		m.set(obj,'后盾人');
+		console.log(m.get(obj));
+		
+		
+		console.log(m.has(obj));
+		
+		console.log(m);
+//		删除Map结构数据中的数据
+		m.delete(obj);
+		console.log(m);
+		
+	</script>	
+		
+		
+	</head>
+	<body>
+	</body>
+</html>

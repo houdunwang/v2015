@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			class animal{
+//				构造函数会在类被实例化的时候自动执行
+//				一般来讲,需要定义的属性(变量),都声明在constructor里面
+//				如果不需要在类里面声明属性,可以不用写constructor
+//				类的构造函数
+				constructor(){
+					this.weight = '重量';
+					this.color = '颜色';
+				}
+				
+//				创建类的时候,方法之间不需要逗号或分号
+//				类里面的方法不需要function声明
+				move(){
+					console.log('能动');
+				}
+			}
+			
+			
+//			通过类去实例化对象
+//			通过类创建对象的时候,必须用new命令
+//			如果需要传参数,可以不用写小括号
+//			let cat = new animal();
+			let cat = new animal;
+			console.log(cat.weight);
+			console.log(cat.color);
+			cat.move();
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

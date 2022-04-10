@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=4eQQ1fZAP1iwK5YekxqTtEjKkAZstwH5" type="text/javascript"></script>
+    <style>
+        html,body,#app{
+            width:100%;
+            height:100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+
+    <script>
+        //百度地图API功能
+        var map = new BMap.Map('app'); //创建api应用
+        var point = new BMap.Point(121.5,31.1);
+        map.centerAndZoom(point,10); //初始化地图,设置中心店坐标和地图缩放级别
+        //比如现在我只知道一个具体的地址,我想解析出来当前地址的坐标,并且标注在地图上
+        //创建一个地址解析器
+        var geo = new BMap.Geocoder();
+//        geo.getPoint('上海市松江区江田东路185号',function (point) {
+        //            if(point){
+        //                map.centerAndZoom(point,18);
+        //                var marker = new BMap.Marker(point);
+        //                map.addOverlay(marker);
+        //            }
+        //        });
+        var marker = new BMap.Marker(point);
+        map.addOverlay(marker);
+        function getInfo(e){
+            var p = e.point;
+            geo.getLocation(p,function (rs) {
+                console.log(rs);
+            });
+        }
+        marker.addEventListener('click',getInfo);
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				
+			}
+			div{
+				width: 300px;
+				height: 150px;
+			}
+			#x{
+				background: #00A2E8;
+			}
+			#y{
+				background: #FF7F27;
+				/*绝对定位*/
+				position: absolute;
+				top: 50px;
+				left: 100px;
+			}
+			#z{
+				background: #22B14C;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<!--绝对定位-->
+		<!--1、完全脱离文档流
+		2、元素在文档流中的位置不再被保留
+		3、元素参照于 离它最近的 有定位属性的 父级元素进行定位-->
+		
+		<div id="x"></div>
+		<div id="y"></div>
+		<div id="z"></div>
+		
+		
+		
+	</body>
+</html>

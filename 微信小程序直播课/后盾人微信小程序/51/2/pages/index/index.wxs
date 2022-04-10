@@ -1,0 +1,14 @@
+var houdun = '后盾人';
+var foo = function () {
+  console.log('后盾人，人人做后盾！');
+}
+var square = function(x){
+  return x*x;
+}
+
+
+module.exports = {
+  h: houdun,
+  f: foo,
+  s: square
+}

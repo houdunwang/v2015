@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<textarea id="t"></textarea>
+		<br /><br />
+		<input type="button" value="点我验证" id="btn" />
+	
+	<script type="text/javascript">
+		
+		var t = document.getElementById("t");
+		var btn = document.getElementById("btn");
+		
+//		正则表达式默认将被匹配的内容视为一行
+//		m模式修正符是将内容视为多行
+
+		btn.onclick = function(){
+//			获得多行文本的内容
+			var con = t.value;
+			var reg = /^houdun$/mi;
+			var result = reg.test(con);
+			console.log(result);
+		}
+		
+	</script>
+		
+		
+	</body>
+</html>

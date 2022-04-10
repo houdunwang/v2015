@@ -1,0 +1,133 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+#top {
+  width: 100vw;
+  height: 9.86666667vw;
+  background: #FF852A;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#top img {
+  width: 7.33333333vw;
+}
+#top a {
+  width: 86.66666667vw;
+  height: 6.66666667vw;
+  background: #FF4E22;
+  display: block;
+  color: white;
+  border-radius: 1.06666667vw;
+  margin-left: 1.46666667vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.4vw;
+}
+#top a i {
+  margin-right: 1.2vw;
+}
+.swiper-container {
+  width: 100vw;
+  height: 31.6vw;
+}
+.swiper-container .swiper-wrapper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+}
+.swiper-container .swiper-pagination-bullet {
+  background: white;
+  opacity: 0.3;
+}
+.swiper-container .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #ff5000;
+  opacity: 1;
+}
+.flashbot {
+  float: left;
+  width: 100vw;
+  margin-top: -2.66666667vw;
+  position: relative;
+  z-index: 9999;
+}
+#icons {
+  width: 100vw;
+  overflow: hidden;
+}
+#icons li {
+  width: 20%;
+  height: 18.93333333vw;
+  float: left;
+}
+#icons li img {
+  width: 11.73333333vw;
+  display: block;
+  margin: 0 auto;
+}
+#icons li a {
+  display: block;
+  text-align: center;
+  font-size: 3vw;
+  color: #666666;
+  line-height: 1.5em;
+  margin-top: 0.8vw;
+}
+#hot {
+  width: 100vw;
+  height: 15.86666667vw;
+}
+#hot > img {
+  float: left;
+  width: 9.33333333vw;
+  margin-top: 3.2vw;
+  margin-left: 3.33333333vw;
+}
+#hot > div {
+  width: 84.66666667vw;
+  height: 15.86666667vw;
+  float: right;
+}
+#hot > div .swiper-container2 {
+  width: 84.66666667vw;
+  height: 15.86666667vw;
+  overflow: hidden;
+}
+#hot > div .swiper-container2 .swiper-wrapper .swiper-slide {
+  background: url(../images/hot2.png) no-repeat right top;
+  background-size: auto 100%;
+}
+#hot > div .swiper-container2 .swiper-wrapper .swiper-slide > div {
+  width: 81.33333333vw;
+  height: 15.86666667vw;
+  background: url(../images/hot1.png) no-repeat right center;
+  background-size: auto 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#hot > div .swiper-container2 .swiper-wrapper .swiper-slide > div a {
+  color: #333333;
+  font-size: 3vw;
+  display: block;
+  line-height: 1em;
+  margin: 0.66666667vw 0;
+  width: 60vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#hot > div .swiper-container2 .swiper-wrapper .swiper-slide > div a span {
+  color: #e60a1f;
+  border: 1px solid #e60a1f;
+  border-radius: 0.66666667vw;
+  line-height: 1em;
+  margin-right: 1.33333333vw;
+}

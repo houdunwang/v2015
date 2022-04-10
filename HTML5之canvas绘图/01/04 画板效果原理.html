@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			canvas{
+				background: #272822;
+				margin: 10px auto;
+				display: block;
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		
+	<!--canvas标签的尺寸不能用css来定义-->
+	
+	<canvas id="canvas" width="950" height="550"></canvas>
+	
+	<script type="text/javascript">
+		
+//		获得画板
+		var canvas = document.getElementById("canvas");
+//		获得绘画环境（相当于铺了一层画布）
+		var cv = canvas.getContext('2d');
+		cv.strokeStyle = 'yellow';
+		cv.lineWidth = 3;
+		
+//		给canvas添加鼠标按下事件
+		canvas.onmousedown = function(e){
+			var ev = window.event || e;
+//			获得鼠标的位置
+			var mousex = ev.layerX || ev.offsetX;
+			var mousey = ev.layerY || ev.offsetY;
+//			设置起点
+			cv.moveTo(mousex,mousey);
+			canvas.onmousemove = function(e){
+				var ev = window.event || e;
+//				获得鼠标最新的位置
+				var newx = ev.layerX || ev.offsetX;
+				var newy = ev.layerY || ev.offsetY;
+				cv.lineTo(newx,newy);
+//				将路径绘制出来
+				cv.stroke();
+			}
+		}
+		
+		
+		canvas.onmouseup = function(){
+//			取消掉鼠标移动事件
+			canvas.onmousemove = null;
+		}
+		
+	</script>
+		
+	</body>
+</html>

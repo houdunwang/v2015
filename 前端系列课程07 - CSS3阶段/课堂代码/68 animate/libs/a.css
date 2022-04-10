@@ -1,0 +1,43 @@
+.swiper-container {
+    width: 800px;
+    height: 500px;
+    border: 1px solid purple;
+    margin-top: 50px;
+}  
+
+.swiper-container .swiper-wrapper .swiper-slide.one h1{
+	width: 600px;
+	margin: 100px auto;
+	margin-bottom: 0;
+	text-align: center;
+	color: white;
+	font-size: 60px;
+}
+.swiper-container .swiper-wrapper .swiper-slide.one p{
+	width: 600px;
+	margin: 20px auto;
+	text-align: center;
+	color: white;
+	font-size: 20px;
+}
+.swiper-container .swiper-wrapper .swiper-slide.two h1{
+	width: 500px;
+	margin: 50px auto;
+	margin-bottom: 0;
+	text-align: center;
+	color: white;
+	font-size: 60px;
+}
+.swiper-container .swiper-wrapper .swiper-slide.two img{
+	display: block;
+	margin: 0 auto;
+	margin-top: 40px;
+	width: 400px;
+}
+
+
+
+
+
+
+

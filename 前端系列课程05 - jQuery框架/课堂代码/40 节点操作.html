@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				padding:40px
+			}
+			#hd{
+				width: 600px;
+				border: 2px solid blue;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<input type="button" value="点我啊" id="btn" />
+		<br /><br />
+		
+		<h1 id="title" class="t">后盾人 人人做后盾</h1>
+		<div id="hd">
+			<p>我们是p标签0</p>
+			<p>我们是p标签1</p>
+			<p>我们是p标签2</p>
+			<p>我们是p标签3</p>
+			<p>我们是p标签4</p>
+			<p>我们是p标签5</p>
+			<p>我们是p标签6</p>
+			<p>我们是p标签7</p>
+		</div>
+	
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$(".t").click(function(){
+			alert(123);
+		})
+		
+		$("#btn").click(function(){
+//			清空元素
+//			$("#hd").empty();
+			
+//			复制节点
+//			clone 方法中的true参数表示元素的事件也复制过来
+			var newh = $("#title").clone(true);
+			$("#hd").append(newh);
+
+		})
+		
+	</script>
+		
+	</body>
+</html>

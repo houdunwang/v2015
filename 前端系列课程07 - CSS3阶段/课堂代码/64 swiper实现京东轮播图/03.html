@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<link rel="stylesheet" type="text/css" href="libs/swiper-4.3.3.min.css"/>
+		<style type="text/css">
+			.swiper-container {
+			    width: 590px;
+			    height: 470px;
+			} 
+			.swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+				width: 35%;
+			}
+			.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet{
+				background: transparent;
+				width: 6px;
+				height: 6px;
+				border-radius: 50%;
+				border: 2px solid rgba(255,255,255,0.3);
+				opacity: 1;
+				margin-right: 10px;
+				position: relative;
+				transition: all 0.5s;
+			}
+			.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet:after{
+				content:  ' ';
+				width: 20px;
+				height: 20px;
+				background: white;
+				opacity: 0;
+				border-radius: 50%;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%,-50%);
+				z-index: -1;
+				transition: all 0.5s;
+			}
+			.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active{
+				border: 2px solid white;
+				background: white;
+			}
+			.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active:after{
+				opacity: 0.3;
+			}
+			/*左侧按钮*/
+			.swiper-button-prev, .swiper-container-rtl .swiper-button-next{
+				width: 24px;
+				height: 40px;
+				background: black;
+				color: white;
+				opacity: 0.3;
+				text-align: center;
+				line-height: 40px;
+				left: 0;
+			}
+			.swiper-button-next, .swiper-container-rtl .swiper-button-prev{
+				width: 24px;
+				height: 40px;
+				background: black;
+				color: white;
+				opacity: 0.3;
+				text-align: center;
+				line-height: 40px;
+				right: 0;
+			}
+			.swiper-button-prev:hover, .swiper-container-rtl .swiper-button-next:hover,.swiper-button-next:hover, .swiper-container-rtl .swiper-button-prev:hover{
+				opacity: 0.6;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="swiper-container">
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide">
+		        	<img src="images/1.jpg" alt="" />
+		        </div>
+		        <div class="swiper-slide">
+		        	<img src="images/2.jpg" alt="" />
+		        </div>
+		        <div class="swiper-slide">
+		        	<img src="images/3.jpg" alt="" />
+		        </div>
+		        <div class="swiper-slide">
+		        	<img src="images/4.jpg" alt="" />
+		        </div>
+		        <div class="swiper-slide">
+		        	<img src="images/5.jpg" alt="" />
+		        </div>
+		    </div>
+		    <!-- 如果需要分页器 -->
+		    <div class="swiper-pagination"></div>
+		     <!-- 如果需要导航按钮 -->
+		    <div class="swiper-button-prev"><</div>
+		    <div class="swiper-button-next">></div>
+		</div>
+
+		
+		<script src="libs/swiper-4.3.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>        
+		  var mySwiper = new Swiper ('.swiper-container', {
+		    direction: 'horizontal',
+		    loop: true,
+		    effect : 'fade',
+		    speed: 1000,
+//		    自动切换
+		    autoplay: {
+			    delay: 3000,
+			    stopOnLastSlide: false,
+			    disableOnInteraction: true,
+		    },
+		    
+		    // 如果需要分页器
+		    pagination: {
+		      el: '.swiper-pagination',
+		      clickable :true,
+		    },
+		    
+		    // 如果需要前进后退按钮
+		    navigation: {
+		      nextEl: '.swiper-button-next',
+		      prevEl: '.swiper-button-prev',
+		    },
+				    
+		  })        
+		</script>
+	</body>
+</html>

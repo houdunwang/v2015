@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<meta name="viewport" content="width=deivce-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0" />
+		
+		<link rel="stylesheet" href="libs/swiper-4.3.3.min.css" />
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.swiper-container{
+				width: 100%;
+
+				box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+			}
+			.swiper-container .swiper-wrapper .swiper-slide{
+				line-height: 3em;
+				width: auto;
+				padding: 0 10px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<div class="swiper-container">
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide">新闻</div>
+		        <div class="swiper-slide">娱乐</div>
+		        <div class="swiper-slide">体育</div>
+		        <div class="swiper-slide">军事</div>
+		        <div class="swiper-slide">国内</div>
+		        <div class="swiper-slide">国际</div>
+		        <div class="swiper-slide">互联网</div>
+		        <div class="swiper-slide">科技</div>
+		        <div class="swiper-slide">网购</div>
+		    </div>
+		</div>
+		
+		
+		
+		<script src="libs/swiper-4.3.3.min.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script>        
+		  var mySwiper = new Swiper ('.swiper-container', {
+		    direction: 'horizontal',
+//		    loop: true,
+		    slidesPerView: 'auto',
+		    
+		  })        
+		</script>
+  
+  
+	</body>
+</html>

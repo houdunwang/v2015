@@ -1,0 +1,7 @@
+
+<!-- <view class="hd" bindtap='foo'></view> -->
+<!-- <view class="hd" bind:tap='foo'></view> -->
+<!-- <view class="hd" bind:touchstart='foo'></view> -->
+
+<!-- bind和catch都可以用来绑定事件 -->
+<view class="hd" catch:touchstart='foo'></view>

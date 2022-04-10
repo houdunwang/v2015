@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#hd{
+				width: 100px;
+				height: 150px;
+				background: dodgerblue;
+				/*start表示跳过0%的位置*/
+				/*animation: houdun 5s steps(5,start);*/
+				animation: houdun 5s steps(5,end);
+			}
+			
+			@keyframes houdun{
+				0%{
+					width: 100px;
+				}
+				100%{
+					width: 600px;
+				}
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div id="hd"></div>
+		
+		
+	</body>
+</html>

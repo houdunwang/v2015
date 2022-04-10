@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			form{
+				margin: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<form id="f" action="a.php" method="post">
+			名字： <input type="text" id="uname" />
+			<br /><br />
+			密码： <input type="password" />
+			<br /><br />
+			<input type="submit" value="点我提交"/>
+		</form>
+	
+	<script type="text/javascript">
+		
+	
+		var f = document.getElementById("f");
+		var uname = document.getElementById("uname");
+		
+//		onsubmit会在表单提交之前执行
+		f.onsubmit = function(e){
+			var ev = window.event || e;
+//			alert(name.value)
+//			alert('表单要提交！');
+			if (uname.value.length<6) {
+				alert('你的内容长度小于6，不能提交！');
+//				阻止表单的默认提交动作
+				if (document.all) {
+					ev.returnValue = false; 
+				}else{
+					ev.preventDefault();
+				}
+			}
+		}
+		
+	</script>
+	
+	
+		
+	</body>
+</html>

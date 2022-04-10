@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+			
+			let p = new Promise((resolve,reject)=>{
+				setTimeout(()=>{
+//					if (顺利完成) {
+//						resolve(3);
+//					}else{
+//						reject();
+//					}
+//					reject('读写失败！');
+					resolve(6);
+					
+				},2000)
+			})	
+			
+			p.then((d)=>{
+				console.log('去洗'+d+'件衣服');
+			},(err)=>{
+				console.log('遇到错误啦！',err);
+			})
+			
+		</script>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			
+			.menu{
+				width: 200px;
+				height: 40px;
+				border: 1px solid blue;
+				margin: 100px auto;
+			}
+			.menu>a{
+				display: block;
+				width: 100%;
+				height: 100%;
+				text-align: center;
+				line-height: 40px;
+				text-decoration: none;
+				font-size: 20px;
+				color: #333;
+			}
+			.menu ul{
+				width: 200px;
+				border: 1px solid yellow;
+				display: none;
+			}
+			.menu ul li{
+				width: 100%;
+				line-height: 25px;
+				font-size: 15px;
+				list-style: none;
+				text-indent: 20px;
+			}
+			.menu:hover ul{
+				display: block;
+			}
+			
+			
+			/*以下是less的写法*/
+			/*.menu{
+				width: 200px;
+				height: 40px;
+				border: 1px solid blue;
+				margin: 100px auto;
+				>a{
+					display: block;
+					width: 100%;
+					height: 100%;
+					text-align: center;
+					line-height: 40px;
+					text-decoration: none;
+					font-size: 20px;
+					color: #333;
+				}
+				ul{
+					dfadfdas
+					li{
+						fdsafdsafda
+					}
+				}
+			}*/
+			
+			
+			
+			#hd{
+				color: red;
+			}
+			#hd a{
+				color: blue;
+			}
+			
+			
+			#hd{
+				color: red;
+				a{
+					color: blue;
+				}
+			}
+			
+			
+		</style>
+		
+		<div class="menu">
+			<a href="">后盾人</a>
+			<ul>
+				<li>前端课程</li>
+				<li>php课程</li>
+				<li>mysql课程</li>
+				<li>服务器课程</li>
+			</ul>
+		</div>
+		
+		
+	</body>
+</html>

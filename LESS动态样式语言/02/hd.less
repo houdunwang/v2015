@@ -1,0 +1,153 @@
+//extend扩展
+.a{
+    background: green;
+    color: white;
+}
+.c{
+    font-size: 12px;
+}
+.b{
+    width: 200px;
+    height: 100px;
+    &:extend(.a);
+//  &:extend(.a,.c);
+//  .a;
+}
+
+
+
+
+
+//串联
+#box{
+    a{
+        color: black;
+        &.index{
+            color: red;
+        }
+        &:hover{
+            color: yellow;
+        }
+    }
+}
+
+
+#box a{
+    color: black;
+}
+#box a.index{
+    color: red;
+}
+
+
+
+//运算
+@w:10px;
+#box{
+    width: @w*2+20px;
+    height: @w+1px;
+}
+
+
+
+
+
+//嵌套规则
+#houdun{
+    width: 1000px;
+    height: 60px;
+    border: 1px solid blue;
+    margin: 0 auto;
+    .left{
+        width: 200px;
+        height: 60px;
+        background: red;
+        float: left;
+        ul{
+            width: 50%;
+            position: relative;
+            li{
+                list-style: none;
+                line-height: 1.5em;
+                color: #333;
+                a{
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+
+#top{
+    width: 1000px;
+    height: 60px;
+    border: 1px solid blue;
+    margin: 0 auto;
+}
+#top .left{
+    width: 200px;
+    height: 60px;
+    background: orange;
+    float: left;
+}
+#top .left ul{
+    width: 50%;
+    position: relative;
+}
+#top .left ul li{
+    list-style: none;
+    line-height: 1.5em;
+    color: #333;
+}
+#top .left ul li a{
+    text-decoration: none;
+}
+
+
+
+
+
+//混合
+.square(@w:100px){
+    width: @w;
+    height: @w;
+}
+
+.border{
+    border: 1px solid red;
+    box-shadow: 0 0 10px blue;
+}
+
+#a{
+    .border;
+    .square;
+    background: red;
+}
+#b{
+    .square(30px);
+    background: red;
+}
+#c{
+    .square(200px);
+    background: red;
+}
+
+
+
+
+
+//变量
+@fkred:blue;
+
+#top{
+    color: @fkred;
+}
+
+.bottom{
+    background: @fkred;
+}
+
+.hd{
+    border: 1px solid @fkred;
+}

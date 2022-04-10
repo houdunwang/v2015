@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			ul{
+				overflow: hidden;
+				border: 2px solid purple;
+				/*将外层容器转换成弹性盒模型模式*/
+				width: 1100px;
+				height: 550px;
+				margin: 30px auto;
+				display: flex;
+				/*设置主轴方向*/
+				/*flex-direction: row-reverse;*/
+				flex-direction: column-reverse;
+			}
+			ul li{
+				list-style: none;
+				width: 130px;
+				width: 300px;
+				height: 200px;
+				border: 2px solid dodgerblue;
+				background: yellow;
+				/*line-height: 200px;*/
+				text-align: center;
+				font-size: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<!--主轴和交叉轴永远是垂直的-->
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+		</ul>
+		
+		
+		
+	</body>
+</html>

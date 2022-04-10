@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>手势验证码</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+    <script type="text/javascript" src="./static/layer/layer.js">
+    </script>
+    <style>
+        .vaptcha-init-main {
+            display: table;
+            width: 100%;
+            height: 100%;
+            background-color: #EEEEEE;
+        }
+
+        .vaptcha-init-loading {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center
+        }
+
+        .vaptcha-init-loading > a {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: none;
+        }
+
+        .vaptcha-init-loading > a img {
+            vertical-align: middle
+        }
+
+        .vaptcha-init-loading .vaptcha-text {
+            font-family: sans-serif;
+            font-size: 12px;
+            color: #CCCCCC;
+            vertical-align: middle
+        }
+    </style>
+</head>
+
+<body>
+<div class="container" style="margin:200px auto">
+    <div class="row">
+        <form class="form-horizontal" method="post" onsubmit="return post(event)">
+            <div class="panel panel-default">
+                <div class="panel-heading">login panel</div>
+                <div class="panel-body">
+
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">用户名</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="username" value="houdunren" class="form-control" id="inputEmail3" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="password" value="houdunren" class="form-control" id="inputPassword3" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">验证码</label>
+                        <div class="col-sm-10">
+                            <!-- 点击式按钮建议宽度不低于200px,高度介于36px与46px  -->
+                            <!-- 嵌入式仅需设置宽度，高度根据宽度自适应，最小宽度为200px -->
+                            <div id="vaptcha_container" style="width:300px;height:36px;">
+                                <!--vaptcha_container是用来引入Vaptcha的容器，下面代码为预加载动画，仅供参考-->
+                                <div class="vaptcha-init-main">
+                                    <div class="vaptcha-init-loading">
+                                        <a href="/" target="_blank"><img
+                                                src="https://cdn.vaptcha.com/vaptcha-loading.gif"/></a>
+                                        <span class="vaptcha-text">Vaptcha启动中...</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" name="button">登录</button>
+        </form>
+    </div>
+</div>
+<script src="https://cdn.vaptcha.com/v.js"></script>
+<script>
+    var form = {
+        token: '',
+        challenge: '',
+        username: '',
+        password: ''
+    };
+    //Vaptcha对象
+    var obj;
+    $.post('?action=getvaptcha', function (res) {
+        //根据服务端接口获取的vid与challenge创建实例
+        //验证参数对象
+        var config = {
+            vid: res.vid, //验证单元id, string, 必填
+            challenge: res.challenge, //验证流水号, string, 必填
+            container: "#vaptcha_container",//验证码容器, HTMLElement或者selector, 必填
+            type: "click", //必填，表示点击式验证模式
+            https: false,//协议类型,boolean,可选true,false,不填则自适应。
+            outage: "?action=getDownTime", //服务器端配置的宕机模式接口地址
+            success: function (token, challenge) {//验证成功回调函数, 参数token, challenge 为string, 必填
+                //执行表单验证失败时，需要重新初始化VAPTCHA
+                //todo:执行人机验证成功后的操作
+                form.token = token;
+                form.challenge = challenge;
+            },
+        }
+
+        window.vaptcha(config, function (vaptcha_obj) {
+            obj = vaptcha_obj;
+            obj.init();
+        });
+    }, 'json');
+
+    function post(event) {
+        event.preventDefault();
+        if (!form.token) {
+            layer.alert('请先进行人机验证',{icon:3});
+            return;
+        }
+        form.username = $('input[name=username]').val();
+        form.password = $('input[name=password]').val();
+        $.post('?action=login', form, function (res) {
+            if(res.code){
+                layer.alert(res.msg,{icon:1});
+                //根据业务逻辑进行跳转或者其他处理
+            }else{
+                layer.alert(res.msg,{icon:3});
+                obj.init();
+            }
+        }, 'json');
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				background: #272822;
+				display: block;
+				margin: 10px auto;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<canvas id="canvas" width="800" height="500"></canvas>
+
+		
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+		var dog = document.getElementById("dog");
+		var cv = canvas.getContext('2d');
+	
+		var dog = document.createElement('img');
+		dog.src = 'qiutian.jpg';
+		
+		dog.onload = function(){
+			cv.drawImage(dog,20,20);
+//			获得指定区域的图像数据
+			var d = cv.getImageData(20,20,100,100);
+//			[2,3,4,255,44,55,66,255]
+			for (var i=0;i<d.data.length;i++) {
+				if (i%4!=3) {
+					d.data[i] = 255-d.data[i];
+				}
+			}
+			cv.putImageData(d,600,350);
+		}
+		
+		
+		
+	</script>
+		
+		
+	</body>
+</html>

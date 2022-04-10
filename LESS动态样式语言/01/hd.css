@@ -1,0 +1,13 @@
+#hd {
+  color: red;
+}
+#hd > a {
+  font-size: 30px;
+}
+#hd ul {
+  width: 100%;
+  height: 50px;
+}
+#hd ul li {
+  list-style: none;
+}

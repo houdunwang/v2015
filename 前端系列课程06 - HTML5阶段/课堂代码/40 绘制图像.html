@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				background: #272822;
+				margin: 0 auto;
+				display: block;
+				position: relative;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+	<canvas id="canvas" width="800" height="500"></canvas>
+	<img src="qiutian.jpg" id="dog" hidden/>
+	
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+		var dog = document.getElementById("dog");
+		
+//		也可以手动创建图像资源
+//		var newimg = document.createElement('img');
+//		newimg.src = 'qiutian.jpg';
+		
+//		获得绘画环境(相当于铺了一层画布)
+		var cv = canvas.getContext('2d');
+		
+//		等图片加载完再去绘制图像
+		dog.onload = function(){
+			//绘制图像
+//			cv.drawImage(dog,20,20);	
+//			cv.drawImage(dog,20,20,200,50);	
+			cv.drawImage(dog,150,50,200,150,30,30,400,250);	
+		}
+
+		
+		
+		
+		
+	</script>
+		
+	</body>
+</html>

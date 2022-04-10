@@ -1,0 +1,24 @@
+.a{
+  background: purple;
+  width: 70%;
+  height: 600rpx;
+  margin: 0 auto;
+  margin-top: 100rpx;
+  color: white;
+}
+.b{
+  background: yellow;
+  width: 70%;
+  height: 300rpx;
+  margin: 0 auto;
+  margin-top: 100rpx;
+  color: black;
+}
+.c{
+  background: green;
+  width: 70%;
+  height: 150rpx;
+  margin: 0 auto;
+  margin-top: 50rpx;
+  color: black;
+}

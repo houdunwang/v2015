@@ -1,0 +1,34 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/message/message",
+    "pages/mycenter/mycenter"
+  ],
+  "tabBar": {
+    "position":"bottom",
+    "color":"#2C2C2C",
+    "selectedColor":"#F15C3A",
+    "backgroundColor":"white",
+    "borderStyle":"black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath":"./images/home.png",
+        "selectedIconPath":"./images/homeactive.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "./images/msg.png",
+        "selectedIconPath": "./images/msgactive.png"
+      },
+      {
+        "pagePath": "pages/mycenter/mycenter",
+        "text": "我的",
+        "iconPath": "./images/mycenter.png",
+        "selectedIconPath": "./images/mycenteractive.png"
+      }
+    ]
+  }
+}

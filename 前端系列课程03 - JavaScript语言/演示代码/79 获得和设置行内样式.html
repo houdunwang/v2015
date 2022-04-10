@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding:0;
+				margin: 0;
+			}
+			#btn{
+				margin: 20px;
+			}
+			#hd{
+				height: 200px;
+				background: mediumpurple;
+			}
+		</style>
+		<script type="text/javascript">
+			
+			window.onload = function(){
+				var btn = document.getElementById("btn");
+				var hd = document.getElementById("hd");
+				
+//				给按钮加单击事件
+				btn.onclick = function(){
+//					获得元素的行内样式
+//					var w = hd.style.width;
+//					alert(w);
+					
+//					设置行内样式
+//					hd.style.width = '400px';
+					
+					var ml = hd.style.marginLeft;
+					alert(ml);
+				}
+			}
+			
+		</script>
+	</head>
+	<body>
+		
+		<input type="button" id="btn" value="点我啊" />
+		<br /><br />
+		
+		<div id="hd" style="width: 300px;margin-left: 20px;"></div>
+		
+		
+		
+		
+	</body>
+</html>

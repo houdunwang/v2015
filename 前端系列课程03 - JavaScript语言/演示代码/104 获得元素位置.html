@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#x{
+				width: 600px;
+				height: 500px;
+				border: solid 5px mediumpurple;
+				margin: 30px auto;
+				position: relative;
+			}
+			#y{
+				width: 400px;
+				height: 200px;
+				background: dodgerblue;
+				position: absolute;
+				left: 50px;
+				top: 66px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<div id="x">
+			<div id="y"></div>
+		</div>
+		
+		
+	<script type="text/javascript">
+//		有定位属性的元素,offsetLeft和offsetTop就是获得它的left和top值
+		
+		var y = document.getElementById("y");
+		
+		console.log(y.offsetLeft);
+		console.log(y.offsetTop);
+		
+	</script>
+	</body>
+</html>

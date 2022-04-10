@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			body{
+				padding: 100px 200px;
+			}
+			#pro{
+				width: 1000px;
+				height: 20px;
+				background: rgba(0,0,0,0.1);
+				position: relative;
+				border-radius: 6px;
+			}
+			#pro #in{
+				width: 0px;
+				height: 20px;
+				background-image: -moz-linear-gradient(top,transparent,rgba(0,162,232,0.8),transparent);
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<input type="button" value="播放" id="play" />
+		<input type="button" value="暂停" id="pause" />
+		<input type="button" value="快进5秒" id="go5s" />
+		<input type="button" value="快退5秒" id="back5s" />
+		<input type="button" value="静音" id="muted" />
+		<input type="button" value="增加音量" id="volume1" />
+		<input type="button" value="减小音量" id="volume2" />
+		<br /><br />
+		播放进度：
+		<div id="pro">
+			<div id="in"></div>
+		</div>
+		
+		
+		<br /><br />
+		<video src="big_buck_bunny_720p_stereo.ogg" width="600" loop poster="p.jpg" id="video"></video>
+		
+		
+		<script type="text/javascript">
+			
+			var video = document.getElementById("video");
+			var play = document.getElementById("play");
+			var pause = document.getElementById("pause");
+			var go5s = document.getElementById("go5s");
+			var back5s = document.getElementById("back5s");
+			var muted = document.getElementById("muted");
+			var volume1 = document.getElementById("volume1")
+			var volume2 = document.getElementById("volume2")
+			var pro = document.getElementById("pro");
+			var ls = document.getElementById("in");
+			
+//			播放
+			play.onclick = function(){
+				video.play();
+				
+//				获得视频总长度
+				var vlen = video.duration;
+				timer = setInterval(function(){
+//					获得当前播放的位置
+					var nowtime = video.currentTime;
+//					计算蓝色条的宽度
+					var inlen = nowtime/vlen*pro.offsetWidth;
+//					设置蓝色条宽度
+					ls.style.width = inlen + 'px';
+				},500)
+			}
+			
+			
+//			自定义播放进度
+			pro.onclick = function(e){
+				var ev = window.event || e;
+//				获得鼠标距离事件源左侧的距离
+				var mx = ev.offsetX || ev.layerX;
+				console.log(mx);
+//				计算视频应该播放到的位置
+//				鼠标的位置/元素总长度*视频的总长度
+				var vtime = mx/pro.offsetWidth*video.duration;
+				video.currentTime = vtime;
+				ls.style.width = mx+'px';
+			}
+			
+//			暂停
+			pause.onclick = function(){
+				video.pause();
+//				清理定时器
+				clearInterval(timer);
+			}
+			
+//			快进5s
+			go5s.onclick = function(){
+
+//				获得当前播放的位置
+				var nowtime = video.currentTime;
+//				计算5s之后的位置
+				var gotime = nowtime+5;
+//				将新位置设置回去
+				video.currentTime = gotime;
+				
+			}
+			
+			
+//			快退5s
+			back5s.onclick = function(){
+				var nowtime = video.currentTime;
+				var backtime = nowtime-5;
+				video.currentTime = backtime;
+			}
+			
+			
+//			静音
+			muted.onclick = function(){
+//				alert(video.muted);
+//				if (video.muted) {
+//					video.muted = false;
+//				}else{
+//					video.muted = true;
+//				}
+				video.muted = !video.muted;
+			}
+			
+			
+//			提高音量
+			volume1.onclick = function(){
+				var v = video.volume+0.1;
+				v = v>1?1:v;
+				video.volume = v;
+			}
+			
+			
+//			减小音量
+			volume2.onclick = function(){
+				var v = video.volume-0.1;
+				v = v<0?0:v;
+				video.volume = v;
+			}
+			
+			
+			
+			
+		</script>
+		
+		
+		
+	</body>
+</html>

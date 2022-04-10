@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="libs/swiper-4.3.3.min.css"/>
+		<style type="text/css">
+			.swiper-container {
+			    width: 600px;
+			    height: 300px;
+			    border: 3px solid purple;
+			    margin: 100px auto;
+			}  
+		</style>
+	</head>
+	<body>
+		
+		
+		<!--html结构-->
+		<div class="swiper-container">
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide" style="background: orangered;">Slide 1</div>
+		        <div class="swiper-slide" style="background: dodgerblue;">Slide 2</div>
+		        <div class="swiper-slide" style="background: limegreen;">Slide 3</div>
+		        <div class="swiper-slide" style="background: mediumpurple;">Slide 3</div>
+		        <div class="swiper-slide" style="background: hotpink;">Slide 3</div>
+		    </div>
+		    <!-- 如果需要分页器 -->
+		    <div class="swiper-pagination"></div>
+		    
+		    
+		</div>
+		<!--HTML结构结束-->
+		
+		
+		
+		<script src="libs/swiper-4.3.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>        
+		  var mySwiper = new Swiper ('.swiper-container', {
+//		  	horizontal 横向运动
+		    direction: 'horizontal',
+		    loop: true,//循环切换
+		    
+//		    autoplay:true,//等同于以下设置
+		  	autoplay: {
+			    delay: 1000,
+			    stopOnLastSlide: false,
+			    disableOnInteraction: true,
+		    },
+		    
+		    
+		    // 如果需要分页器
+		    pagination: {
+		      el: '.swiper-pagination',
+		      clickable :true,
+		    },
+		    
+		    
+		   
+		  })        
+		  </script>
+	</body>
+</html>

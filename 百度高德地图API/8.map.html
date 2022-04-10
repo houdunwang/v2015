@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=4eQQ1fZAP1iwK5YekxqTtEjKkAZstwH5" type="text/javascript"></script>
+    <style>
+        html,body,#app{
+            width:100%;
+            height:100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+
+    <script>
+        //百度地图API功能
+        var map = new BMap.Map('app'); //创建api应用
+        var point = new BMap.Point(121.4,31.2);
+        map.centerAndZoom(point,15); //初始化地图,设置中心店坐标和地图缩放级别
+
+        var options = {
+            position:point, //制定文本标注所在位置
+            offset:new BMap.Size(-70,-100), //设置文本偏移量
+        }
+        //创建文本标注的对象
+        var label = new BMap.Label('欢迎收看后盾人视频',options);
+        label.setStyle({
+            color:'red', //字体颜色
+            fontSize:'14px', //字体大小
+            height:'40px',
+            lineHeight:'40px',
+            padding:'0 10px'
+        })
+        //创建一个标注点
+        var marker = new BMap.Marker(point);
+        //将文本标注添加到地图中
+        map.addOverlay(marker);
+        map.addOverlay(label);
+        marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+    </script>
+</body>
+</html>

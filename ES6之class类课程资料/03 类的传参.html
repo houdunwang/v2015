@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			class animal{
+
+//				类的构造函数
+				constructor(w,c){
+					this.weight = w;
+					this.color = c;
+				}
+
+				move(){
+					console.log('能动');
+				}
+			}
+			
+			
+//			在通过类创建对象的时候,传入的参数,会默认被constructor接收
+			let cat = new animal('2kg','橘色');
+			console.log(cat.weight);
+			console.log(cat.color);
+			cat.move();
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

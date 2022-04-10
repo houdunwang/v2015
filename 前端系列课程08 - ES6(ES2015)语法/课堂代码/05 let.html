@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+//			let命令声明的变量在同一个代码块中不能被重复声明
+//			let hd = 1;
+//			let hd = 2;
+//			console.log(hd);
+
+
+
+			let hd = 0;
+			{
+				let hd = 1;
+				{
+					let hd = 2;
+//					console.log(hd);
+				}
+				console.log(hd);
+			}
+			
+			
+//			console.log(hd);
+			
+			
+		</script>
+		
+		
+		
+	</body>
+</html>

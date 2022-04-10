@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+//			function foo(x,y){
+////				arguments对象是获得所有传入的参数
+////				箭头函数中不支持arguments对象
+//				console.log(arguments);
+//				return x+y;
+//			}
+			
+//			rest参数会获得函数调用的时候多余的参数
+			let foo = (x,y,...f)=>{
+//				console.log(arguments);
+				console.log(f);
+				return x+y;
+			}
+
+			let result = foo(2,3,4,5,6);
+//			console.log(result);
+
+			
+		</script>
+	
+	</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.hd{
+				background: mediumpurple;
+				color: white;
+			}
+		</style>
+		<script type="text/javascript">
+
+//			document.write("后");
+//			document.write("盾");
+//			document.write("人");
+			
+			var rows = prompt('请输入行数');
+			var cols = prompt('请输入列数');
+			
+			
+//			js的字符串中不能换行
+			document.write("<table border='1'>");
+			for (var i=1;i<=rows;i++) {
+				if (i%2==1) {//奇数行
+					document.write("<tr class='hd'>");
+				}else{
+					document.write("<tr>");
+				}
+				
+				for (var j=1;j<=cols;j++) {
+					document.write("<td>"+i+"行"+j+"列</td>");
+				}
+				document.write("</tr>");
+			}
+			document.write("</table>");
+			
+		</script>
+	</head>
+	<body>
+		<!--tr*3>td{后盾人}*4-->
+		
+		<!--<table border="1">
+			<tr>
+				<td>后盾人</td>
+				<td>后盾人</td>
+				<td>后盾人</td>
+				<td>后盾人</td>
+			</tr>
+			<tr>
+				<td>后盾人</td>
+				<td>后盾人</td>
+				<td>后盾人</td>
+				<td>后盾人</td>
+			</tr>
+			<tr>
+				<td>后盾人</td>
+				<td>后盾人</td>
+				<td>后盾人</td>
+				<td>后盾人</td>
+			</tr>
+		</table>-->
+		
+		
+	</body>
+</html>

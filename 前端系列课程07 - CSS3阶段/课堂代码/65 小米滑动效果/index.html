@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="libs/swiper-4.3.3.min.css"/>
+		<style type="text/css">
+			.swiper-container{
+				width: 1226px;
+				height: 300px;
+				margin: 100px auto;
+				
+			}
+			.swiper-container .swiper-wrapper .swiper-slide{
+				background: dodgerblue;
+				line-height: 300px;
+				text-align: center;
+				color: white;
+				font-size: 35px;
+				font-weight: 700;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<div class="swiper-container">
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide">1</div>
+		        <div class="swiper-slide">2</div>
+		        <div class="swiper-slide">3</div>
+		        <div class="swiper-slide">4</div>
+		        <div class="swiper-slide">5</div>
+		        <div class="swiper-slide">6</div>
+		        <div class="swiper-slide">7</div>
+		        <div class="swiper-slide">8</div>
+		        <div class="swiper-slide">9</div>
+		        <div class="swiper-slide">10</div>
+		    </div>
+		    
+		    <!-- 如果需要导航按钮 -->
+		    <div class="swiper-button-prev"></div>
+		    <div class="swiper-button-next"></div>
+		   
+		</div>
+		
+		<script src="libs/swiper-4.3.3.min.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script>        
+		  var mySwiper = new Swiper ('.swiper-container', {
+		    direction: 'horizontal',
+//		    loop: true,
+		    slidesPerView: 5,
+		    slidesPerGroup: 5,
+		    spaceBetween: 14,
+		    
+		    // 如果需要前进后退按钮
+		    navigation: {
+		      nextEl: '.swiper-button-next',
+		      prevEl: '.swiper-button-prev',
+		    },
+		    
+		  })        
+		</script>
+		
+		
+	</body>
+</html>

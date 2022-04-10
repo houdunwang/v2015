@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+//			rest形参
+//			如果...hd当做形参，功能就是用来接收多余的参数
+
+//			let foo = (x,y,...hd)=>{
+////				hd是一个数组,存放多传入的参数
+//				console.log(hd);
+//			};
+//			
+//			foo(1,2,'a','b','c')
+			
+			
+			
+			let foo = (x,y)=>x+y;
+			
+			let arr = [3,4];
+//			document.write(foo(3,4));
+			document.write(foo(...arr));
+			
+			
+			
+			
+		</script>
+		
+	</head>
+	<body>
+	</body>
+</html>

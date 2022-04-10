@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#menu{
+				width: 100%;
+				height: 40px;
+				background: #01204F;
+				margin-top: 50px;
+			}
+			#menu .center{
+				width: 984px;
+				height: 40px;
+				border-left: 2px solid yellow;
+				border-right: 2px solid yellow;
+				margin: 0 auto;
+				position: relative;
+				overflow: hidden;
+			}
+			#menu .center a{
+				display: block;
+				float: left;
+				line-height: 40px;
+				color: white;
+				font-weight: 700;
+				text-align: center;
+				text-decoration: none;
+				font-size: 14px;
+				width: 45px;
+				position: relative;
+				z-index: 2;
+			}
+			#menu .center .box{
+				width: 45px;
+				height: 40px;
+				background: #CC0000;
+				position: absolute;
+				left: -45px;
+				top: 0;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="menu">
+			<div class="center">
+				<a href="">国内</a>
+				<a href="">国际</a>
+				<a href="">军事</a>
+				<a href="">财经</a>
+				<a href="">娱乐</a>
+				<a href="">体育</a>
+				<a href="">互联</a>
+				<a href="">科技</a>
+				<a href="">游戏</a>
+				<a href="">女人</a>
+				<a href="">汽车</a>
+				<a href="">房产</a>
+				<a href="">推荐</a>
+				<div class="box"></div>
+			</div>
+			
+		</div>
+		
+	
+	<script src="jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$("#menu .center a").mouseenter(function(){
+//			获得移入的a标签的序号
+			var c = $(this).index();
+//			计算left值
+			var l = 45*c;
+//			让红色块划过去
+			$("#menu .box").stop().animate({'left':l},300);
+		})
+		
+		
+		$("#menu .center").mouseleave(function(){
+			$("#menu .box").animate({'left':-45},300);
+		})
+		
+		
+	</script>
+	
+	
+	
+	
+	</body>
+</html>

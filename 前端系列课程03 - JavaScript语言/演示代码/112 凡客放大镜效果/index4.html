@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#left{
+				width: 400px;
+				height: 400px;
+				border: 1px solid black;
+				margin: 20px;
+				background: url(images/400.jpg) no-repeat;
+				position: relative;
+				float: left;
+			}
+			#box{
+				width: 220px;
+				height: 200px;
+				background: white;
+				opacity: 0.4;
+				position: absolute;
+				left: 0;
+				top: 0;
+				display: none;
+			}
+			#right{
+				width: 440px;	
+				height: 400px;
+				border: 1px solid black;
+				position: relative;
+				float: left;
+				margin: 30px;
+				overflow: hidden;
+				display: none;
+			}
+			#right #rpic{
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			#cover{
+				width: 400px;
+				height: 400px;
+				background: blue;
+				position: absolute;
+				left: 0;
+				top: 0;
+				opacity: 0;
+				filter: alpha(opacity=0);
+				cursor: crosshair;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<div id="left">
+			<div id="box"></div>
+			<div id="cover"></div>
+		</div>
+		
+		<div id="right">
+			<img src="images/800.jpg" alt="" id="rpic" />
+		</div>
+
+
+
+<script type="text/javascript">
+	
+//	鼠标和事件源之间如果有子元素存在的话,事件会托管到子元素身上.
+//	如果鼠标和事件源之间有其他元素存在,效果的触发就会有问题
+	
+	
+	var left = document.getElementById("left");
+	var box = document.getElementById("box");
+	var right = document.getElementById("right");
+	var rpic = document.getElementById("rpic");
+	var cover = document.getElementById("cover");
+	
+	
+//	给左侧加鼠标移动事件
+	cover.onmousemove = function(e){
+//		获得事件对象
+		var ev = window.event || e;
+//		获得鼠标的位置
+		var mouse_left = ev.offsetX || ev.layerX;
+		var mouse_top = ev.offsetY || ev.layerY;
+		console.log(mouse_left,mouse_top);
+		
+//		计算色块的位置
+		var box_left = mouse_left-110;
+		var box_top = mouse_top-100;
+		
+		if (box_left<0) {
+			box_left=0;
+		}
+		if (box_top<0) {
+			box_top=0;
+		}
+		if (box_left>180) {
+			box_left=180;
+		}
+		if (box_top>200) {
+			box_top=200;
+		}
+		
+//		设置色块的位置
+		box.style.left = box_left+'px';
+		box.style.top = box_top+'px';
+		
+//		计算右侧大图的位置
+		var rpic_left = box_left*-2;
+		var rpic_top = box_top*-2;
+//		设置右侧大图的位置
+		rpic.style.left = rpic_left+'px';
+		rpic.style.top = rpic_top+'px';
+		
+	}
+	
+	
+//	鼠标移入事件
+	cover.onmouseover = function(){
+//		左侧色块显示
+		box.style.display = 'block';
+//		右侧显示
+		right.style.display = 'block';
+	}
+	
+	
+//	鼠标移出事件
+	cover.onmouseout = function(){
+		box.style.display = 'none';
+		right.style.display = 'none';
+	}
+	
+	
+//	作业:写一个京东放大镜效果
+</script>
+
+
+		
+	</body>
+</html>

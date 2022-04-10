@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+			let s = new Set(['a','b','c','a','b','a','d','e']);
+
+//			[
+//				['a','a'],
+//				['b','b'],
+//				['c','c'],
+//				['d','d'],
+//			]
+			
+			
+			console.log(s);
+			
+//			s.forEach(x=>{
+//				console.log(x);
+//			})
+
+//			遍历器只能用for of来遍历
+//			for (x of s.keys()) {
+//				console.log(x);
+//			}
+			
+//			for (x of s.values()) {
+//				console.log(x);
+//			}
+
+
+			for (x of s.entries()) {
+				console.log(x);
+			}
+			
+			
+			
+		</script>
+		
+		
+	</body>
+</html>

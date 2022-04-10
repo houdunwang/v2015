@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+//			父级构造函数
+//			动物构造函数
+			function animal(w,c,s){
+				this.weight = w;
+				this.color = c;
+				this.size = s;
+			}
+			
+//			鱼类的构造函数
+//			子级构造函数
+			function fish(w,c,s){
+//				window.animal.call(this,w,c,s);
+//				apply方法也可以实现对象的冒充,从效果上来讲,功能是一样
+//				apply传参的时候必须是数组的形式
+				window.animal.apply(this,[w,c,s]);
+			}
+			
+			var shayu = new fish('2000斤','黑色','15米');
+			console.log(shayu.color);
+
+			
+			
+		</script>
+		
+	</body>
+</html>
+
+
+
+
+
+

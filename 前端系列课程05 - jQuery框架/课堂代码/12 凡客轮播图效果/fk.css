@@ -1,0 +1,33 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+#fk{
+	width: 1200px;
+	height: 535px;
+	border: 4px solid purple;
+	margin: 30px auto;
+	position: relative;
+}
+#fk img{
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+}
+
+#fk ul{
+	position: absolute;
+	left: 528px;
+	bottom: 23px;
+	
+}
+#fk ul li{
+	width: 12px;
+	height: 12px;
+	background: #DDDDDD;
+	list-style: none;
+	float: left;
+	margin-right: 8px;
+	border-radius: 50%;
+}

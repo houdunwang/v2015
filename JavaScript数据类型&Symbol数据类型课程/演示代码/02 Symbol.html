@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		<script type="text/javascript">
+			
+//			js的第七种数据类型:Symbol
+//			Symbol类型的数据是一个独一无二的数据,咱们并不能知道它具体的数据值是多少,但可以理解为任何一个Symbol类型的数据都是不会和其他Symbol数据相同
+//			也可以简单的将Symbol类型的数据理解为是类似字符串的数据.
+//			Symbol()
+			
+			
+//			var obj = {
+//				a:1,
+//				b:2,
+//				c:3,
+//				d:function(){
+//					return 4;
+//				}
+//			}
+//			
+//			obj.b = 666;
+//			document.write(obj.b);
+
+
+//			x就是一个独一无二的值（具体多少，我们无从考证，但就是独一无二，不可能和其他值相同）
+			var x = Symbol();
+			var y = Symbol();
+			document.write(x==y);
+//			document.write(typeof x);
+			
+			
+			
+			
+		</script>
+		
+		
+		
+	</body>
+</html>
